@@ -10,7 +10,6 @@ import (
 )
 
 func getCSBaseOptions(t *testing.T) integration.ProgramTestOptions {
-	envRegion := getEnvRegion(t)
 	base := getBaseOptions()
 	csharpBase := base.With(integration.ProgramTestOptions{
 		Dependencies: []string{
