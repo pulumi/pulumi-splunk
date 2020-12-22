@@ -1,3 +1,3 @@
-module github.com/pulumi/pulumi-xyz/sdk
+module github.com/pulumi/pulumi-splunk/sdk
 
 go 1.15
