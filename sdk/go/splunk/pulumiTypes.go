@@ -562,6 +562,282 @@ func (o ConfigsConfAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+type DataUiViewsAcl struct {
+	App            *string  `pulumi:"app"`
+	CanChangePerms *bool    `pulumi:"canChangePerms"`
+	CanShareApp    *bool    `pulumi:"canShareApp"`
+	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
+	CanShareUser   *bool    `pulumi:"canShareUser"`
+	CanWrite       *bool    `pulumi:"canWrite"`
+	Owner          *string  `pulumi:"owner"`
+	Reads          []string `pulumi:"reads"`
+	Removable      *bool    `pulumi:"removable"`
+	Sharing        *string  `pulumi:"sharing"`
+	Writes         []string `pulumi:"writes"`
+}
+
+// DataUiViewsAclInput is an input type that accepts DataUiViewsAclArgs and DataUiViewsAclOutput values.
+// You can construct a concrete instance of `DataUiViewsAclInput` via:
+//
+//          DataUiViewsAclArgs{...}
+type DataUiViewsAclInput interface {
+	pulumi.Input
+
+	ToDataUiViewsAclOutput() DataUiViewsAclOutput
+	ToDataUiViewsAclOutputWithContext(context.Context) DataUiViewsAclOutput
+}
+
+type DataUiViewsAclArgs struct {
+	App            pulumi.StringPtrInput   `pulumi:"app"`
+	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
+	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
+	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
+	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
+	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
+	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
+	Reads          pulumi.StringArrayInput `pulumi:"reads"`
+	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
+	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
+	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+}
+
+func (DataUiViewsAclArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataUiViewsAcl)(nil)).Elem()
+}
+
+func (i DataUiViewsAclArgs) ToDataUiViewsAclOutput() DataUiViewsAclOutput {
+	return i.ToDataUiViewsAclOutputWithContext(context.Background())
+}
+
+func (i DataUiViewsAclArgs) ToDataUiViewsAclOutputWithContext(ctx context.Context) DataUiViewsAclOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsAclOutput)
+}
+
+func (i DataUiViewsAclArgs) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutput {
+	return i.ToDataUiViewsAclPtrOutputWithContext(context.Background())
+}
+
+func (i DataUiViewsAclArgs) ToDataUiViewsAclPtrOutputWithContext(ctx context.Context) DataUiViewsAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsAclOutput).ToDataUiViewsAclPtrOutputWithContext(ctx)
+}
+
+// DataUiViewsAclPtrInput is an input type that accepts DataUiViewsAclArgs, DataUiViewsAclPtr and DataUiViewsAclPtrOutput values.
+// You can construct a concrete instance of `DataUiViewsAclPtrInput` via:
+//
+//          DataUiViewsAclArgs{...}
+//
+//  or:
+//
+//          nil
+type DataUiViewsAclPtrInput interface {
+	pulumi.Input
+
+	ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutput
+	ToDataUiViewsAclPtrOutputWithContext(context.Context) DataUiViewsAclPtrOutput
+}
+
+type dataUiViewsAclPtrType DataUiViewsAclArgs
+
+func DataUiViewsAclPtr(v *DataUiViewsAclArgs) DataUiViewsAclPtrInput {
+	return (*dataUiViewsAclPtrType)(v)
+}
+
+func (*dataUiViewsAclPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataUiViewsAcl)(nil)).Elem()
+}
+
+func (i *dataUiViewsAclPtrType) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutput {
+	return i.ToDataUiViewsAclPtrOutputWithContext(context.Background())
+}
+
+func (i *dataUiViewsAclPtrType) ToDataUiViewsAclPtrOutputWithContext(ctx context.Context) DataUiViewsAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsAclPtrOutput)
+}
+
+type DataUiViewsAclOutput struct{ *pulumi.OutputState }
+
+func (DataUiViewsAclOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataUiViewsAcl)(nil)).Elem()
+}
+
+func (o DataUiViewsAclOutput) ToDataUiViewsAclOutput() DataUiViewsAclOutput {
+	return o
+}
+
+func (o DataUiViewsAclOutput) ToDataUiViewsAclOutputWithContext(ctx context.Context) DataUiViewsAclOutput {
+	return o
+}
+
+func (o DataUiViewsAclOutput) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutput {
+	return o.ToDataUiViewsAclPtrOutputWithContext(context.Background())
+}
+
+func (o DataUiViewsAclOutput) ToDataUiViewsAclPtrOutputWithContext(ctx context.Context) DataUiViewsAclPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *DataUiViewsAcl {
+		return &v
+	}).(DataUiViewsAclPtrOutput)
+}
+func (o DataUiViewsAclOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.App }).(pulumi.StringPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
+}
+
+func (o DataUiViewsAclOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DataUiViewsAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
+}
+
+type DataUiViewsAclPtrOutput struct{ *pulumi.OutputState }
+
+func (DataUiViewsAclPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataUiViewsAcl)(nil)).Elem()
+}
+
+func (o DataUiViewsAclPtrOutput) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutput {
+	return o
+}
+
+func (o DataUiViewsAclPtrOutput) ToDataUiViewsAclPtrOutputWithContext(ctx context.Context) DataUiViewsAclPtrOutput {
+	return o
+}
+
+func (o DataUiViewsAclPtrOutput) Elem() DataUiViewsAclOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) DataUiViewsAcl { return *v }).(DataUiViewsAclOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.App
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanChangePerms
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareApp
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareGlobal
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareUser
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanWrite
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Owner
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Reads
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Removable
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Sharing
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DataUiViewsAclPtrOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DataUiViewsAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Writes
+	}).(pulumi.StringArrayOutput)
+}
+
 type IndexesAcl struct {
 	App            *string  `pulumi:"app"`
 	CanChangePerms *bool    `pulumi:"canChangePerms"`
@@ -4155,6 +4431,8 @@ func init() {
 	pulumi.RegisterOutputType(AppsLocalAclPtrOutput{})
 	pulumi.RegisterOutputType(ConfigsConfAclOutput{})
 	pulumi.RegisterOutputType(ConfigsConfAclPtrOutput{})
+	pulumi.RegisterOutputType(DataUiViewsAclOutput{})
+	pulumi.RegisterOutputType(DataUiViewsAclPtrOutput{})
 	pulumi.RegisterOutputType(IndexesAclOutput{})
 	pulumi.RegisterOutputType(IndexesAclPtrOutput{})
 	pulumi.RegisterOutputType(InputsHttpEventCollectorAclOutput{})

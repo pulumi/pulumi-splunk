@@ -8,6 +8,7 @@ from .apps_local import *
 from .authentication_users import *
 from .authorization_roles import *
 from .configs_conf import *
+from .data_ui_views import *
 from .global_http_event_collector import *
 from .indexes import *
 from .inputs_http_event_collector import *
@@ -54,6 +55,8 @@ def _register_module():
                 return AuthorizationRoles(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "splunk:index/configsConf:ConfigsConf":
                 return ConfigsConf(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "splunk:index/dataUiViews:DataUiViews":
+                return DataUiViews(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector":
                 return GlobalHttpEventCollector(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "splunk:index/indexes:Indexes":
@@ -94,6 +97,7 @@ def _register_module():
     pulumi.runtime.register_resource_module("splunk", "index/authenticationUsers", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/authorizationRoles", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/configsConf", _module_instance)
+    pulumi.runtime.register_resource_module("splunk", "index/dataUiViews", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/globalHttpEventCollector", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/indexes", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/inputsHttpEventCollector", _module_instance)
