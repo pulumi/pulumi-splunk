@@ -20,6 +20,7 @@
         "config/index.ts",
         "config/vars.ts",
         "configsConf.ts",
+        "dataUiViews.ts",
         "globalHttpEventCollector.ts",
         "index.ts",
         "indexes.ts",

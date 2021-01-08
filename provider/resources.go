@@ -193,6 +193,7 @@ func Provider() tfbridge.ProviderInfo {
 					Source: "configs_conf.md",
 				},
 			},
+			"splunk_data_ui_views": {Tok: makeResource(mainMod, "DataUiViews")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{},
 		JavaScript: &tfbridge.JavaScriptInfo{

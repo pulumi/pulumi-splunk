@@ -276,6 +276,122 @@
                 }
             }
         },
+        "splunk:index/DataUiViewsAcl:DataUiViewsAcl": {
+            "properties": {
+                "app": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canChangePerms": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareApp": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareGlobal": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareUser": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canWrite": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "owner": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "reads": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "removable": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "sharing": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "writes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "app",
+                        "canChangePerms",
+                        "canShareApp",
+                        "canShareGlobal",
+                        "canShareUser",
+                        "canWrite",
+                        "owner",
+                        "reads",
+                        "removable",
+                        "sharing",
+                        "writes"
+                    ]
+                }
+            }
+        },
         "splunk:index/IndexesAcl:IndexesAcl": {
             "properties": {
                 "app": {
@@ -2464,6 +2580,60 @@
                             "type": "string"
                         },
                         "description": "A map of key value pairs for a stanza.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "splunk:index/dataUiViews:DataUiViews": {
+            "description": "## # Resource: splunk.DataUiViews\n\nCreate and manage splunk dashboards/views.\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst dashboard = new splunk.DataUiViews(\"dashboard\", {\n    acl: {\n        app: \"search\",\n        owner: \"admin\",\n    },\n    eaiData: `  \u003cdashboard\u003e\n    \u003clabel\u003e \n      Terraform Test Dashboard\n    \u003c/label\u003e\n  \u003c/dashboard\u003e\n  `,\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\ndashboard = splunk.DataUiViews(\"dashboard\",\n    acl=splunk.DataUiViewsAclArgs(\n        app=\"search\",\n        owner=\"admin\",\n    ),\n    eai_data=\"\"\"  \u003cdashboard\u003e\n    \u003clabel\u003e \n      Terraform Test Dashboard\n    \u003c/label\u003e\n  \u003c/dashboard\u003e\n  \n\"\"\")\n```\n```csharp\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var dashboard = new Splunk.DataUiViews(\"dashboard\", new Splunk.DataUiViewsArgs\n        {\n            Acl = new Splunk.Inputs.DataUiViewsAclArgs\n            {\n                App = \"search\",\n                Owner = \"admin\",\n            },\n            EaiData = @\"  \u003cdashboard\u003e\n    \u003clabel\u003e \n      Terraform Test Dashboard\n    \u003c/label\u003e\n  \u003c/dashboard\u003e\n  \n\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"fmt\"\n\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewDataUiViews(ctx, \"dashboard\", \u0026splunk.DataUiViewsArgs{\n\t\t\tAcl: \u0026splunk.DataUiViewsAclArgs{\n\t\t\t\tApp:   pulumi.String(\"search\"),\n\t\t\t\tOwner: pulumi.String(\"admin\"),\n\t\t\t},\n\t\t\tEaiData: pulumi.String(fmt.Sprintf(\"%v%v%v%v%v%v\", \"  \u003cdashboard\u003e\\n\", \"    \u003clabel\u003e \\n\", \"      Terraform Test Dashboard\\n\", \"    \u003c/label\u003e\\n\", \"  \u003c/dashboard\u003e\\n\", \"  \\n\")),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/DataUiViewsAcl:DataUiViewsAcl"
+                },
+                "eaiData": {
+                    "type": "string",
+                    "description": "Dashboard XML definition.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n"
+                }
+            },
+            "required": [
+                "acl",
+                "eaiData",
+                "name"
+            ],
+            "inputProperties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/DataUiViewsAcl:DataUiViewsAcl"
+                },
+                "eaiData": {
+                    "type": "string",
+                    "description": "Dashboard XML definition.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n"
+                }
+            },
+            "requiredInputs": [
+                "eaiData"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DataUiViews resources.\n",
+                "properties": {
+                    "acl": {
+                        "$ref": "#/types/splunk:index/DataUiViewsAcl:DataUiViewsAcl"
+                    },
+                    "eaiData": {
+                        "type": "string",
+                        "description": "Dashboard XML definition.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n"
                     }
                 },
                 "type": "object"
