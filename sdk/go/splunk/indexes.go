@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -713,15 +713,15 @@ type IndexesInput interface {
 	ToIndexesOutputWithContext(ctx context.Context) IndexesOutput
 }
 
-func (Indexes) ElementType() reflect.Type {
-	return reflect.TypeOf((*Indexes)(nil)).Elem()
+func (*Indexes) ElementType() reflect.Type {
+	return reflect.TypeOf((*Indexes)(nil))
 }
 
-func (i Indexes) ToIndexesOutput() IndexesOutput {
+func (i *Indexes) ToIndexesOutput() IndexesOutput {
 	return i.ToIndexesOutputWithContext(context.Background())
 }
 
-func (i Indexes) ToIndexesOutputWithContext(ctx context.Context) IndexesOutput {
+func (i *Indexes) ToIndexesOutputWithContext(ctx context.Context) IndexesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesOutput)
 }
 
@@ -730,7 +730,7 @@ type IndexesOutput struct {
 }
 
 func (IndexesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*IndexesOutput)(nil)).Elem()
+	return reflect.TypeOf((*Indexes)(nil))
 }
 
 func (o IndexesOutput) ToIndexesOutput() IndexesOutput {

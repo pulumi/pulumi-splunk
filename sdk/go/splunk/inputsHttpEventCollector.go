@@ -174,15 +174,15 @@ type InputsHttpEventCollectorInput interface {
 	ToInputsHttpEventCollectorOutputWithContext(ctx context.Context) InputsHttpEventCollectorOutput
 }
 
-func (InputsHttpEventCollector) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsHttpEventCollector)(nil)).Elem()
+func (*InputsHttpEventCollector) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsHttpEventCollector)(nil))
 }
 
-func (i InputsHttpEventCollector) ToInputsHttpEventCollectorOutput() InputsHttpEventCollectorOutput {
+func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutput() InputsHttpEventCollectorOutput {
 	return i.ToInputsHttpEventCollectorOutputWithContext(context.Background())
 }
 
-func (i InputsHttpEventCollector) ToInputsHttpEventCollectorOutputWithContext(ctx context.Context) InputsHttpEventCollectorOutput {
+func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutputWithContext(ctx context.Context) InputsHttpEventCollectorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorOutput)
 }
 
@@ -191,7 +191,7 @@ type InputsHttpEventCollectorOutput struct {
 }
 
 func (InputsHttpEventCollectorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsHttpEventCollectorOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsHttpEventCollector)(nil))
 }
 
 func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutput() InputsHttpEventCollectorOutput {

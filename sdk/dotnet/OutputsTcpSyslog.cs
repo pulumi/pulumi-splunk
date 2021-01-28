@@ -34,6 +34,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/outputsTcpSyslog:OutputsTcpSyslog")]
     public partial class OutputsTcpSyslog : Pulumi.CustomResource
     {
         /// <summary>

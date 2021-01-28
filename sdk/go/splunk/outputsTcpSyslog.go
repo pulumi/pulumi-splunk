@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -208,15 +208,15 @@ type OutputsTcpSyslogInput interface {
 	ToOutputsTcpSyslogOutputWithContext(ctx context.Context) OutputsTcpSyslogOutput
 }
 
-func (OutputsTcpSyslog) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpSyslog)(nil)).Elem()
+func (*OutputsTcpSyslog) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutputsTcpSyslog)(nil))
 }
 
-func (i OutputsTcpSyslog) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutput {
+func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutput {
 	return i.ToOutputsTcpSyslogOutputWithContext(context.Background())
 }
 
-func (i OutputsTcpSyslog) ToOutputsTcpSyslogOutputWithContext(ctx context.Context) OutputsTcpSyslogOutput {
+func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutputWithContext(ctx context.Context) OutputsTcpSyslogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogOutput)
 }
 
@@ -225,7 +225,7 @@ type OutputsTcpSyslogOutput struct {
 }
 
 func (OutputsTcpSyslogOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpSyslogOutput)(nil)).Elem()
+	return reflect.TypeOf((*OutputsTcpSyslog)(nil))
 }
 
 func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutput {

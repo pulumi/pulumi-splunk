@@ -14,6 +14,7 @@ namespace Pulumi.Splunk
     /// 
     /// Create or update HTTP Event Collector input configuration tokens.
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsHttpEventCollector:InputsHttpEventCollector")]
     public partial class InputsHttpEventCollector : Pulumi.CustomResource
     {
         /// <summary>

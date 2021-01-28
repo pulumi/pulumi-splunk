@@ -50,6 +50,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/savedSearches:SavedSearches")]
     public partial class SavedSearches : Pulumi.CustomResource
     {
         /// <summary>

@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -148,15 +148,15 @@ type InputsTcpSslInput interface {
 	ToInputsTcpSslOutputWithContext(ctx context.Context) InputsTcpSslOutput
 }
 
-func (InputsTcpSsl) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpSsl)(nil)).Elem()
+func (*InputsTcpSsl) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsTcpSsl)(nil))
 }
 
-func (i InputsTcpSsl) ToInputsTcpSslOutput() InputsTcpSslOutput {
+func (i *InputsTcpSsl) ToInputsTcpSslOutput() InputsTcpSslOutput {
 	return i.ToInputsTcpSslOutputWithContext(context.Background())
 }
 
-func (i InputsTcpSsl) ToInputsTcpSslOutputWithContext(ctx context.Context) InputsTcpSslOutput {
+func (i *InputsTcpSsl) ToInputsTcpSslOutputWithContext(ctx context.Context) InputsTcpSslOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslOutput)
 }
 
@@ -165,7 +165,7 @@ type InputsTcpSslOutput struct {
 }
 
 func (InputsTcpSslOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpSslOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsTcpSsl)(nil))
 }
 
 func (o InputsTcpSslOutput) ToInputsTcpSslOutput() InputsTcpSslOutput {

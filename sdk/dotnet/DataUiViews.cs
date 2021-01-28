@@ -43,6 +43,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/dataUiViews:DataUiViews")]
     public partial class DataUiViews : Pulumi.CustomResource
     {
         [Output("acl")]

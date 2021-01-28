@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -246,15 +246,15 @@ type AuthorizationRolesInput interface {
 	ToAuthorizationRolesOutputWithContext(ctx context.Context) AuthorizationRolesOutput
 }
 
-func (AuthorizationRoles) ElementType() reflect.Type {
-	return reflect.TypeOf((*AuthorizationRoles)(nil)).Elem()
+func (*AuthorizationRoles) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthorizationRoles)(nil))
 }
 
-func (i AuthorizationRoles) ToAuthorizationRolesOutput() AuthorizationRolesOutput {
+func (i *AuthorizationRoles) ToAuthorizationRolesOutput() AuthorizationRolesOutput {
 	return i.ToAuthorizationRolesOutputWithContext(context.Background())
 }
 
-func (i AuthorizationRoles) ToAuthorizationRolesOutputWithContext(ctx context.Context) AuthorizationRolesOutput {
+func (i *AuthorizationRoles) ToAuthorizationRolesOutputWithContext(ctx context.Context) AuthorizationRolesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesOutput)
 }
 
@@ -263,7 +263,7 @@ type AuthorizationRolesOutput struct {
 }
 
 func (AuthorizationRolesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AuthorizationRolesOutput)(nil)).Elem()
+	return reflect.TypeOf((*AuthorizationRoles)(nil))
 }
 
 func (o AuthorizationRolesOutput) ToAuthorizationRolesOutput() AuthorizationRolesOutput {

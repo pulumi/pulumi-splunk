@@ -39,6 +39,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/authenticationUsers:AuthenticationUsers")]
     public partial class AuthenticationUsers : Pulumi.CustomResource
     {
         /// <summary>

@@ -37,6 +37,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/configsConf:ConfigsConf")]
     public partial class ConfigsConf : Pulumi.CustomResource
     {
         /// <summary>

@@ -188,15 +188,15 @@ type InputsScriptInput interface {
 	ToInputsScriptOutputWithContext(ctx context.Context) InputsScriptOutput
 }
 
-func (InputsScript) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsScript)(nil)).Elem()
+func (*InputsScript) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsScript)(nil))
 }
 
-func (i InputsScript) ToInputsScriptOutput() InputsScriptOutput {
+func (i *InputsScript) ToInputsScriptOutput() InputsScriptOutput {
 	return i.ToInputsScriptOutputWithContext(context.Background())
 }
 
-func (i InputsScript) ToInputsScriptOutputWithContext(ctx context.Context) InputsScriptOutput {
+func (i *InputsScript) ToInputsScriptOutputWithContext(ctx context.Context) InputsScriptOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptOutput)
 }
 
@@ -205,7 +205,7 @@ type InputsScriptOutput struct {
 }
 
 func (InputsScriptOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsScriptOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsScript)(nil))
 }
 
 func (o InputsScriptOutput) ToInputsScriptOutput() InputsScriptOutput {

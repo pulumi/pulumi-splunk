@@ -35,6 +35,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsTcpCooked:InputsTcpCooked")]
     public partial class InputsTcpCooked : Pulumi.CustomResource
     {
         /// <summary>

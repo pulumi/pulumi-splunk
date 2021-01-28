@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -174,15 +174,15 @@ type GlobalHttpEventCollectorInput interface {
 	ToGlobalHttpEventCollectorOutputWithContext(ctx context.Context) GlobalHttpEventCollectorOutput
 }
 
-func (GlobalHttpEventCollector) ElementType() reflect.Type {
-	return reflect.TypeOf((*GlobalHttpEventCollector)(nil)).Elem()
+func (*GlobalHttpEventCollector) ElementType() reflect.Type {
+	return reflect.TypeOf((*GlobalHttpEventCollector)(nil))
 }
 
-func (i GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutput() GlobalHttpEventCollectorOutput {
+func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutput() GlobalHttpEventCollectorOutput {
 	return i.ToGlobalHttpEventCollectorOutputWithContext(context.Background())
 }
 
-func (i GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutputWithContext(ctx context.Context) GlobalHttpEventCollectorOutput {
+func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutputWithContext(ctx context.Context) GlobalHttpEventCollectorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorOutput)
 }
 
@@ -191,7 +191,7 @@ type GlobalHttpEventCollectorOutput struct {
 }
 
 func (GlobalHttpEventCollectorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GlobalHttpEventCollectorOutput)(nil)).Elem()
+	return reflect.TypeOf((*GlobalHttpEventCollector)(nil))
 }
 
 func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorOutput() GlobalHttpEventCollectorOutput {

@@ -35,6 +35,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector")]
     public partial class GlobalHttpEventCollector : Pulumi.CustomResource
     {
         /// <summary>
