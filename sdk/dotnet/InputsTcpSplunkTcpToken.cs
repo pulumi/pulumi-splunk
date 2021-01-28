@@ -33,6 +33,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken")]
     public partial class InputsTcpSplunkTcpToken : Pulumi.CustomResource
     {
         /// <summary>

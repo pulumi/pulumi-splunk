@@ -41,6 +41,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/outputsTcpGroup:OutputsTcpGroup")]
     public partial class OutputsTcpGroup : Pulumi.CustomResource
     {
         /// <summary>

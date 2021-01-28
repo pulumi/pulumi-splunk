@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -250,15 +250,15 @@ type InputsUdpInput interface {
 	ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpOutput
 }
 
-func (InputsUdp) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsUdp)(nil)).Elem()
+func (*InputsUdp) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsUdp)(nil))
 }
 
-func (i InputsUdp) ToInputsUdpOutput() InputsUdpOutput {
+func (i *InputsUdp) ToInputsUdpOutput() InputsUdpOutput {
 	return i.ToInputsUdpOutputWithContext(context.Background())
 }
 
-func (i InputsUdp) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpOutput {
+func (i *InputsUdp) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpOutput)
 }
 
@@ -267,7 +267,7 @@ type InputsUdpOutput struct {
 }
 
 func (InputsUdpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsUdpOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsUdp)(nil))
 }
 
 func (o InputsUdpOutput) ToInputsUdpOutput() InputsUdpOutput {

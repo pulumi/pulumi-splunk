@@ -56,6 +56,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/authorizationRoles:AuthorizationRoles")]
     public partial class AuthorizationRoles : Pulumi.CustomResource
     {
         /// <summary>

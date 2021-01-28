@@ -34,6 +34,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/appsLocal:AppsLocal")]
     public partial class AppsLocal : Pulumi.CustomResource
     {
         /// <summary>

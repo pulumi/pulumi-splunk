@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -222,15 +222,15 @@ type OutputsTcpServerInput interface {
 	ToOutputsTcpServerOutputWithContext(ctx context.Context) OutputsTcpServerOutput
 }
 
-func (OutputsTcpServer) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpServer)(nil)).Elem()
+func (*OutputsTcpServer) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutputsTcpServer)(nil))
 }
 
-func (i OutputsTcpServer) ToOutputsTcpServerOutput() OutputsTcpServerOutput {
+func (i *OutputsTcpServer) ToOutputsTcpServerOutput() OutputsTcpServerOutput {
 	return i.ToOutputsTcpServerOutputWithContext(context.Background())
 }
 
-func (i OutputsTcpServer) ToOutputsTcpServerOutputWithContext(ctx context.Context) OutputsTcpServerOutput {
+func (i *OutputsTcpServer) ToOutputsTcpServerOutputWithContext(ctx context.Context) OutputsTcpServerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerOutput)
 }
 
@@ -239,7 +239,7 @@ type OutputsTcpServerOutput struct {
 }
 
 func (OutputsTcpServerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpServerOutput)(nil)).Elem()
+	return reflect.TypeOf((*OutputsTcpServer)(nil))
 }
 
 func (o OutputsTcpServerOutput) ToOutputsTcpServerOutput() OutputsTcpServerOutput {

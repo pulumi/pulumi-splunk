@@ -39,6 +39,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/indexes:Indexes")]
     public partial class Indexes : Pulumi.CustomResource
     {
         /// <summary>

@@ -45,6 +45,7 @@ namespace Pulumi.Splunk
     ///  $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/adminSamlGroups:AdminSamlGroups")]
     public partial class AdminSamlGroups : Pulumi.CustomResource
     {
         /// <summary>

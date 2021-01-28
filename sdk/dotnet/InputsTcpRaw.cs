@@ -37,6 +37,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsTcpRaw:InputsTcpRaw")]
     public partial class InputsTcpRaw : Pulumi.CustomResource
     {
         /// <summary>

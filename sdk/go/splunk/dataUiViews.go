@@ -23,6 +23,7 @@ import (
 // 	"fmt"
 //
 // 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -136,15 +137,15 @@ type DataUiViewsInput interface {
 	ToDataUiViewsOutputWithContext(ctx context.Context) DataUiViewsOutput
 }
 
-func (DataUiViews) ElementType() reflect.Type {
-	return reflect.TypeOf((*DataUiViews)(nil)).Elem()
+func (*DataUiViews) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataUiViews)(nil))
 }
 
-func (i DataUiViews) ToDataUiViewsOutput() DataUiViewsOutput {
+func (i *DataUiViews) ToDataUiViewsOutput() DataUiViewsOutput {
 	return i.ToDataUiViewsOutputWithContext(context.Background())
 }
 
-func (i DataUiViews) ToDataUiViewsOutputWithContext(ctx context.Context) DataUiViewsOutput {
+func (i *DataUiViews) ToDataUiViewsOutputWithContext(ctx context.Context) DataUiViewsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsOutput)
 }
 
@@ -153,7 +154,7 @@ type DataUiViewsOutput struct {
 }
 
 func (DataUiViewsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*DataUiViewsOutput)(nil)).Elem()
+	return reflect.TypeOf((*DataUiViews)(nil))
 }
 
 func (o DataUiViewsOutput) ToDataUiViewsOutput() DataUiViewsOutput {

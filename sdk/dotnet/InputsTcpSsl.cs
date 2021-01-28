@@ -34,6 +34,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsTcpSsl:InputsTcpSsl")]
     public partial class InputsTcpSsl : Pulumi.CustomResource
     {
         /// <summary>

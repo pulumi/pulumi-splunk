@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -283,15 +283,15 @@ type AppsLocalInput interface {
 	ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalOutput
 }
 
-func (AppsLocal) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppsLocal)(nil)).Elem()
+func (*AppsLocal) ElementType() reflect.Type {
+	return reflect.TypeOf((*AppsLocal)(nil))
 }
 
-func (i AppsLocal) ToAppsLocalOutput() AppsLocalOutput {
+func (i *AppsLocal) ToAppsLocalOutput() AppsLocalOutput {
 	return i.ToAppsLocalOutputWithContext(context.Background())
 }
 
-func (i AppsLocal) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalOutput {
+func (i *AppsLocal) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalOutput)
 }
 
@@ -300,7 +300,7 @@ type AppsLocalOutput struct {
 }
 
 func (AppsLocalOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AppsLocalOutput)(nil)).Elem()
+	return reflect.TypeOf((*AppsLocal)(nil))
 }
 
 func (o AppsLocalOutput) ToAppsLocalOutput() AppsLocalOutput {

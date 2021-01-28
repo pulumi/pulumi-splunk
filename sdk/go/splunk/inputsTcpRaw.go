@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -271,15 +271,15 @@ type InputsTcpRawInput interface {
 	ToInputsTcpRawOutputWithContext(ctx context.Context) InputsTcpRawOutput
 }
 
-func (InputsTcpRaw) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpRaw)(nil)).Elem()
+func (*InputsTcpRaw) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsTcpRaw)(nil))
 }
 
-func (i InputsTcpRaw) ToInputsTcpRawOutput() InputsTcpRawOutput {
+func (i *InputsTcpRaw) ToInputsTcpRawOutput() InputsTcpRawOutput {
 	return i.ToInputsTcpRawOutputWithContext(context.Background())
 }
 
-func (i InputsTcpRaw) ToInputsTcpRawOutputWithContext(ctx context.Context) InputsTcpRawOutput {
+func (i *InputsTcpRaw) ToInputsTcpRawOutputWithContext(ctx context.Context) InputsTcpRawOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawOutput)
 }
 
@@ -288,7 +288,7 @@ type InputsTcpRawOutput struct {
 }
 
 func (InputsTcpRawOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpRawOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsTcpRaw)(nil))
 }
 
 func (o InputsTcpRawOutput) ToInputsTcpRawOutput() InputsTcpRawOutput {

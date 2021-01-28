@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -127,15 +127,15 @@ type InputsTcpSplunkTcpTokenInput interface {
 	ToInputsTcpSplunkTcpTokenOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenOutput
 }
 
-func (InputsTcpSplunkTcpToken) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpSplunkTcpToken)(nil)).Elem()
+func (*InputsTcpSplunkTcpToken) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsTcpSplunkTcpToken)(nil))
 }
 
-func (i InputsTcpSplunkTcpToken) ToInputsTcpSplunkTcpTokenOutput() InputsTcpSplunkTcpTokenOutput {
+func (i *InputsTcpSplunkTcpToken) ToInputsTcpSplunkTcpTokenOutput() InputsTcpSplunkTcpTokenOutput {
 	return i.ToInputsTcpSplunkTcpTokenOutputWithContext(context.Background())
 }
 
-func (i InputsTcpSplunkTcpToken) ToInputsTcpSplunkTcpTokenOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenOutput {
+func (i *InputsTcpSplunkTcpToken) ToInputsTcpSplunkTcpTokenOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenOutput)
 }
 
@@ -144,7 +144,7 @@ type InputsTcpSplunkTcpTokenOutput struct {
 }
 
 func (InputsTcpSplunkTcpTokenOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpSplunkTcpTokenOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsTcpSplunkTcpToken)(nil))
 }
 
 func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenOutput() InputsTcpSplunkTcpTokenOutput {

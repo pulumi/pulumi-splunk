@@ -33,6 +33,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/outputsTcpServer:OutputsTcpServer")]
     public partial class OutputsTcpServer : Pulumi.CustomResource
     {
         /// <summary>

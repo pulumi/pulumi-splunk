@@ -36,6 +36,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsUdp:InputsUdp")]
     public partial class InputsUdp : Pulumi.CustomResource
     {
         /// <summary>

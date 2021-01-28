@@ -24,6 +24,7 @@ import (
 // 	"fmt"
 //
 // 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -1469,15 +1470,15 @@ type SavedSearchesInput interface {
 	ToSavedSearchesOutputWithContext(ctx context.Context) SavedSearchesOutput
 }
 
-func (SavedSearches) ElementType() reflect.Type {
-	return reflect.TypeOf((*SavedSearches)(nil)).Elem()
+func (*SavedSearches) ElementType() reflect.Type {
+	return reflect.TypeOf((*SavedSearches)(nil))
 }
 
-func (i SavedSearches) ToSavedSearchesOutput() SavedSearchesOutput {
+func (i *SavedSearches) ToSavedSearchesOutput() SavedSearchesOutput {
 	return i.ToSavedSearchesOutputWithContext(context.Background())
 }
 
-func (i SavedSearches) ToSavedSearchesOutputWithContext(ctx context.Context) SavedSearchesOutput {
+func (i *SavedSearches) ToSavedSearchesOutputWithContext(ctx context.Context) SavedSearchesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesOutput)
 }
 
@@ -1486,7 +1487,7 @@ type SavedSearchesOutput struct {
 }
 
 func (SavedSearchesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*SavedSearchesOutput)(nil)).Elem()
+	return reflect.TypeOf((*SavedSearches)(nil))
 }
 
 func (o SavedSearchesOutput) ToSavedSearchesOutput() SavedSearchesOutput {

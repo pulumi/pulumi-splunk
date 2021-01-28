@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -192,15 +192,15 @@ type AuthenticationUsersInput interface {
 	ToAuthenticationUsersOutputWithContext(ctx context.Context) AuthenticationUsersOutput
 }
 
-func (AuthenticationUsers) ElementType() reflect.Type {
-	return reflect.TypeOf((*AuthenticationUsers)(nil)).Elem()
+func (*AuthenticationUsers) ElementType() reflect.Type {
+	return reflect.TypeOf((*AuthenticationUsers)(nil))
 }
 
-func (i AuthenticationUsers) ToAuthenticationUsersOutput() AuthenticationUsersOutput {
+func (i *AuthenticationUsers) ToAuthenticationUsersOutput() AuthenticationUsersOutput {
 	return i.ToAuthenticationUsersOutputWithContext(context.Background())
 }
 
-func (i AuthenticationUsers) ToAuthenticationUsersOutputWithContext(ctx context.Context) AuthenticationUsersOutput {
+func (i *AuthenticationUsers) ToAuthenticationUsersOutputWithContext(ctx context.Context) AuthenticationUsersOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersOutput)
 }
 
@@ -209,7 +209,7 @@ type AuthenticationUsersOutput struct {
 }
 
 func (AuthenticationUsersOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AuthenticationUsersOutput)(nil)).Elem()
+	return reflect.TypeOf((*AuthenticationUsers)(nil))
 }
 
 func (o AuthenticationUsersOutput) ToAuthenticationUsersOutput() AuthenticationUsersOutput {

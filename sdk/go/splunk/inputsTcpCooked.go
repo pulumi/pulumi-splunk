@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -184,15 +184,15 @@ type InputsTcpCookedInput interface {
 	ToInputsTcpCookedOutputWithContext(ctx context.Context) InputsTcpCookedOutput
 }
 
-func (InputsTcpCooked) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpCooked)(nil)).Elem()
+func (*InputsTcpCooked) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsTcpCooked)(nil))
 }
 
-func (i InputsTcpCooked) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
+func (i *InputsTcpCooked) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
 	return i.ToInputsTcpCookedOutputWithContext(context.Background())
 }
 
-func (i InputsTcpCooked) ToInputsTcpCookedOutputWithContext(ctx context.Context) InputsTcpCookedOutput {
+func (i *InputsTcpCooked) ToInputsTcpCookedOutputWithContext(ctx context.Context) InputsTcpCookedOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedOutput)
 }
 
@@ -201,7 +201,7 @@ type InputsTcpCookedOutput struct {
 }
 
 func (InputsTcpCookedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpCookedOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsTcpCooked)(nil))
 }
 
 func (o InputsTcpCookedOutput) ToInputsTcpCookedOutput() InputsTcpCookedOutput {

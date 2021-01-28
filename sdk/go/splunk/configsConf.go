@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -130,15 +130,15 @@ type ConfigsConfInput interface {
 	ToConfigsConfOutputWithContext(ctx context.Context) ConfigsConfOutput
 }
 
-func (ConfigsConf) ElementType() reflect.Type {
-	return reflect.TypeOf((*ConfigsConf)(nil)).Elem()
+func (*ConfigsConf) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigsConf)(nil))
 }
 
-func (i ConfigsConf) ToConfigsConfOutput() ConfigsConfOutput {
+func (i *ConfigsConf) ToConfigsConfOutput() ConfigsConfOutput {
 	return i.ToConfigsConfOutputWithContext(context.Background())
 }
 
-func (i ConfigsConf) ToConfigsConfOutputWithContext(ctx context.Context) ConfigsConfOutput {
+func (i *ConfigsConf) ToConfigsConfOutputWithContext(ctx context.Context) ConfigsConfOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfOutput)
 }
 
@@ -147,7 +147,7 @@ type ConfigsConfOutput struct {
 }
 
 func (ConfigsConfOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ConfigsConfOutput)(nil)).Elem()
+	return reflect.TypeOf((*ConfigsConf)(nil))
 }
 
 func (o ConfigsConfOutput) ToConfigsConfOutput() ConfigsConfOutput {

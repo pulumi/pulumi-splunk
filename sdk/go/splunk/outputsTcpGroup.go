@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -268,15 +268,15 @@ type OutputsTcpGroupInput interface {
 	ToOutputsTcpGroupOutputWithContext(ctx context.Context) OutputsTcpGroupOutput
 }
 
-func (OutputsTcpGroup) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpGroup)(nil)).Elem()
+func (*OutputsTcpGroup) ElementType() reflect.Type {
+	return reflect.TypeOf((*OutputsTcpGroup)(nil))
 }
 
-func (i OutputsTcpGroup) ToOutputsTcpGroupOutput() OutputsTcpGroupOutput {
+func (i *OutputsTcpGroup) ToOutputsTcpGroupOutput() OutputsTcpGroupOutput {
 	return i.ToOutputsTcpGroupOutputWithContext(context.Background())
 }
 
-func (i OutputsTcpGroup) ToOutputsTcpGroupOutputWithContext(ctx context.Context) OutputsTcpGroupOutput {
+func (i *OutputsTcpGroup) ToOutputsTcpGroupOutputWithContext(ctx context.Context) OutputsTcpGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupOutput)
 }
 
@@ -285,7 +285,7 @@ type OutputsTcpGroupOutput struct {
 }
 
 func (OutputsTcpGroupOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpGroupOutput)(nil)).Elem()
+	return reflect.TypeOf((*OutputsTcpGroup)(nil))
 }
 
 func (o OutputsTcpGroupOutput) ToOutputsTcpGroupOutput() OutputsTcpGroupOutput {

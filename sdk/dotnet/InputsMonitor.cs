@@ -34,6 +34,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsMonitor:InputsMonitor")]
     public partial class InputsMonitor : Pulumi.CustomResource
     {
         /// <summary>

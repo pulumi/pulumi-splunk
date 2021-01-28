@@ -38,6 +38,7 @@ namespace Pulumi.Splunk
     /// }
     /// ```
     /// </summary>
+    [SplunkResourceType("splunk:index/outputsTcpDefault:OutputsTcpDefault")]
     public partial class OutputsTcpDefault : Pulumi.CustomResource
     {
         /// <summary>

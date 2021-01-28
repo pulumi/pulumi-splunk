@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -128,15 +128,15 @@ type AdminSamlGroupsInput interface {
 	ToAdminSamlGroupsOutputWithContext(ctx context.Context) AdminSamlGroupsOutput
 }
 
-func (AdminSamlGroups) ElementType() reflect.Type {
-	return reflect.TypeOf((*AdminSamlGroups)(nil)).Elem()
+func (*AdminSamlGroups) ElementType() reflect.Type {
+	return reflect.TypeOf((*AdminSamlGroups)(nil))
 }
 
-func (i AdminSamlGroups) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
+func (i *AdminSamlGroups) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
 	return i.ToAdminSamlGroupsOutputWithContext(context.Background())
 }
 
-func (i AdminSamlGroups) ToAdminSamlGroupsOutputWithContext(ctx context.Context) AdminSamlGroupsOutput {
+func (i *AdminSamlGroups) ToAdminSamlGroupsOutputWithContext(ctx context.Context) AdminSamlGroupsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsOutput)
 }
 
@@ -145,7 +145,7 @@ type AdminSamlGroupsOutput struct {
 }
 
 func (AdminSamlGroupsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AdminSamlGroupsOutput)(nil)).Elem()
+	return reflect.TypeOf((*AdminSamlGroups)(nil))
 }
 
 func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {

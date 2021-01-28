@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -258,15 +258,15 @@ type InputsMonitorInput interface {
 	ToInputsMonitorOutputWithContext(ctx context.Context) InputsMonitorOutput
 }
 
-func (InputsMonitor) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsMonitor)(nil)).Elem()
+func (*InputsMonitor) ElementType() reflect.Type {
+	return reflect.TypeOf((*InputsMonitor)(nil))
 }
 
-func (i InputsMonitor) ToInputsMonitorOutput() InputsMonitorOutput {
+func (i *InputsMonitor) ToInputsMonitorOutput() InputsMonitorOutput {
 	return i.ToInputsMonitorOutputWithContext(context.Background())
 }
 
-func (i InputsMonitor) ToInputsMonitorOutputWithContext(ctx context.Context) InputsMonitorOutput {
+func (i *InputsMonitor) ToInputsMonitorOutputWithContext(ctx context.Context) InputsMonitorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorOutput)
 }
 
@@ -275,7 +275,7 @@ type InputsMonitorOutput struct {
 }
 
 func (InputsMonitorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsMonitorOutput)(nil)).Elem()
+	return reflect.TypeOf((*InputsMonitor)(nil))
 }
 
 func (o InputsMonitorOutput) ToInputsMonitorOutput() InputsMonitorOutput {

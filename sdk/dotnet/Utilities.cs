@@ -77,4 +77,11 @@ namespace Pulumi.Splunk
             }
         }
     }
+
+    internal sealed class SplunkResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    {
+        public SplunkResourceTypeAttribute(string type) : base(type, Utilities.Version)
+        {
+        }
+    }
 }

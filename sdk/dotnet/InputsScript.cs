@@ -14,6 +14,7 @@ namespace Pulumi.Splunk
     /// 
     /// Create or update scripted inputs.
     /// </summary>
+    [SplunkResourceType("splunk:index/inputsScript:InputsScript")]
     public partial class InputsScript : Pulumi.CustomResource
     {
         /// <summary>
