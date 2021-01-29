@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrading pulumi-terraform-bridge to v2.18.1
+_(none)_
 
 ---
+
+## 0.2.0 (2021-01-29)
+* Upgrading pulumi-terraform-bridge to v2.18.1
 
 ## 0.1.1 (2021-01-08)
 * Upgrade to v1.3.9 of the Splunk Terraform Provider
