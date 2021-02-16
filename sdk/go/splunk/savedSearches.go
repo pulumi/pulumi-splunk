@@ -24,7 +24,6 @@ import (
 // 	"fmt"
 //
 // 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -1482,6 +1481,85 @@ func (i *SavedSearches) ToSavedSearchesOutputWithContext(ctx context.Context) Sa
 	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesOutput)
 }
 
+func (i *SavedSearches) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
+	return i.ToSavedSearchesPtrOutputWithContext(context.Background())
+}
+
+func (i *SavedSearches) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesPtrOutput)
+}
+
+type SavedSearchesPtrInput interface {
+	pulumi.Input
+
+	ToSavedSearchesPtrOutput() SavedSearchesPtrOutput
+	ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput
+}
+
+type savedSearchesPtrType SavedSearchesArgs
+
+func (*savedSearchesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SavedSearches)(nil))
+}
+
+func (i *savedSearchesPtrType) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
+	return i.ToSavedSearchesPtrOutputWithContext(context.Background())
+}
+
+func (i *savedSearchesPtrType) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesPtrOutput)
+}
+
+// SavedSearchesArrayInput is an input type that accepts SavedSearchesArray and SavedSearchesArrayOutput values.
+// You can construct a concrete instance of `SavedSearchesArrayInput` via:
+//
+//          SavedSearchesArray{ SavedSearchesArgs{...} }
+type SavedSearchesArrayInput interface {
+	pulumi.Input
+
+	ToSavedSearchesArrayOutput() SavedSearchesArrayOutput
+	ToSavedSearchesArrayOutputWithContext(context.Context) SavedSearchesArrayOutput
+}
+
+type SavedSearchesArray []SavedSearchesInput
+
+func (SavedSearchesArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*SavedSearches)(nil))
+}
+
+func (i SavedSearchesArray) ToSavedSearchesArrayOutput() SavedSearchesArrayOutput {
+	return i.ToSavedSearchesArrayOutputWithContext(context.Background())
+}
+
+func (i SavedSearchesArray) ToSavedSearchesArrayOutputWithContext(ctx context.Context) SavedSearchesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesArrayOutput)
+}
+
+// SavedSearchesMapInput is an input type that accepts SavedSearchesMap and SavedSearchesMapOutput values.
+// You can construct a concrete instance of `SavedSearchesMapInput` via:
+//
+//          SavedSearchesMap{ "key": SavedSearchesArgs{...} }
+type SavedSearchesMapInput interface {
+	pulumi.Input
+
+	ToSavedSearchesMapOutput() SavedSearchesMapOutput
+	ToSavedSearchesMapOutputWithContext(context.Context) SavedSearchesMapOutput
+}
+
+type SavedSearchesMap map[string]SavedSearchesInput
+
+func (SavedSearchesMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*SavedSearches)(nil))
+}
+
+func (i SavedSearchesMap) ToSavedSearchesMapOutput() SavedSearchesMapOutput {
+	return i.ToSavedSearchesMapOutputWithContext(context.Background())
+}
+
+func (i SavedSearchesMap) ToSavedSearchesMapOutputWithContext(ctx context.Context) SavedSearchesMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesMapOutput)
+}
+
 type SavedSearchesOutput struct {
 	*pulumi.OutputState
 }
@@ -1498,6 +1576,75 @@ func (o SavedSearchesOutput) ToSavedSearchesOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o SavedSearchesOutput) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
+	return o.ToSavedSearchesPtrOutputWithContext(context.Background())
+}
+
+func (o SavedSearchesOutput) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
+	return o.ApplyT(func(v SavedSearches) *SavedSearches {
+		return &v
+	}).(SavedSearchesPtrOutput)
+}
+
+type SavedSearchesPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (SavedSearchesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SavedSearches)(nil))
+}
+
+func (o SavedSearchesPtrOutput) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
+	return o
+}
+
+func (o SavedSearchesPtrOutput) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
+	return o
+}
+
+type SavedSearchesArrayOutput struct{ *pulumi.OutputState }
+
+func (SavedSearchesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SavedSearches)(nil))
+}
+
+func (o SavedSearchesArrayOutput) ToSavedSearchesArrayOutput() SavedSearchesArrayOutput {
+	return o
+}
+
+func (o SavedSearchesArrayOutput) ToSavedSearchesArrayOutputWithContext(ctx context.Context) SavedSearchesArrayOutput {
+	return o
+}
+
+func (o SavedSearchesArrayOutput) Index(i pulumi.IntInput) SavedSearchesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SavedSearches {
+		return vs[0].([]SavedSearches)[vs[1].(int)]
+	}).(SavedSearchesOutput)
+}
+
+type SavedSearchesMapOutput struct{ *pulumi.OutputState }
+
+func (SavedSearchesMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]SavedSearches)(nil))
+}
+
+func (o SavedSearchesMapOutput) ToSavedSearchesMapOutput() SavedSearchesMapOutput {
+	return o
+}
+
+func (o SavedSearchesMapOutput) ToSavedSearchesMapOutputWithContext(ctx context.Context) SavedSearchesMapOutput {
+	return o
+}
+
+func (o SavedSearchesMapOutput) MapIndex(k pulumi.StringInput) SavedSearchesOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) SavedSearches {
+		return vs[0].(map[string]SavedSearches)[vs[1].(string)]
+	}).(SavedSearchesOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(SavedSearchesOutput{})
+	pulumi.RegisterOutputType(SavedSearchesPtrOutput{})
+	pulumi.RegisterOutputType(SavedSearchesArrayOutput{})
+	pulumi.RegisterOutputType(SavedSearchesMapOutput{})
 }

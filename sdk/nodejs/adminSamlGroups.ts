@@ -78,7 +78,8 @@ export class AdminSamlGroups extends pulumi.CustomResource {
     constructor(name: string, args?: AdminSamlGroupsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AdminSamlGroupsArgs | AdminSamlGroupsState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AdminSamlGroupsState | undefined;
             inputs["name"] = state ? state.name : undefined;
             inputs["roles"] = state ? state.roles : undefined;
@@ -87,12 +88,8 @@ export class AdminSamlGroups extends pulumi.CustomResource {
             inputs["name"] = args ? args.name : undefined;
             inputs["roles"] = args ? args.roles : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AdminSamlGroups.__pulumiType, name, inputs, opts);
     }

@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -262,6 +262,85 @@ func (i *InputsUdp) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpO
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpOutput)
 }
 
+func (i *InputsUdp) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
+	return i.ToInputsUdpPtrOutputWithContext(context.Background())
+}
+
+func (i *InputsUdp) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpPtrOutput)
+}
+
+type InputsUdpPtrInput interface {
+	pulumi.Input
+
+	ToInputsUdpPtrOutput() InputsUdpPtrOutput
+	ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput
+}
+
+type inputsUdpPtrType InputsUdpArgs
+
+func (*inputsUdpPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsUdp)(nil))
+}
+
+func (i *inputsUdpPtrType) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
+	return i.ToInputsUdpPtrOutputWithContext(context.Background())
+}
+
+func (i *inputsUdpPtrType) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpPtrOutput)
+}
+
+// InputsUdpArrayInput is an input type that accepts InputsUdpArray and InputsUdpArrayOutput values.
+// You can construct a concrete instance of `InputsUdpArrayInput` via:
+//
+//          InputsUdpArray{ InputsUdpArgs{...} }
+type InputsUdpArrayInput interface {
+	pulumi.Input
+
+	ToInputsUdpArrayOutput() InputsUdpArrayOutput
+	ToInputsUdpArrayOutputWithContext(context.Context) InputsUdpArrayOutput
+}
+
+type InputsUdpArray []InputsUdpInput
+
+func (InputsUdpArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*InputsUdp)(nil))
+}
+
+func (i InputsUdpArray) ToInputsUdpArrayOutput() InputsUdpArrayOutput {
+	return i.ToInputsUdpArrayOutputWithContext(context.Background())
+}
+
+func (i InputsUdpArray) ToInputsUdpArrayOutputWithContext(ctx context.Context) InputsUdpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpArrayOutput)
+}
+
+// InputsUdpMapInput is an input type that accepts InputsUdpMap and InputsUdpMapOutput values.
+// You can construct a concrete instance of `InputsUdpMapInput` via:
+//
+//          InputsUdpMap{ "key": InputsUdpArgs{...} }
+type InputsUdpMapInput interface {
+	pulumi.Input
+
+	ToInputsUdpMapOutput() InputsUdpMapOutput
+	ToInputsUdpMapOutputWithContext(context.Context) InputsUdpMapOutput
+}
+
+type InputsUdpMap map[string]InputsUdpInput
+
+func (InputsUdpMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*InputsUdp)(nil))
+}
+
+func (i InputsUdpMap) ToInputsUdpMapOutput() InputsUdpMapOutput {
+	return i.ToInputsUdpMapOutputWithContext(context.Background())
+}
+
+func (i InputsUdpMap) ToInputsUdpMapOutputWithContext(ctx context.Context) InputsUdpMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpMapOutput)
+}
+
 type InputsUdpOutput struct {
 	*pulumi.OutputState
 }
@@ -278,6 +357,75 @@ func (o InputsUdpOutput) ToInputsUdpOutputWithContext(ctx context.Context) Input
 	return o
 }
 
+func (o InputsUdpOutput) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
+	return o.ToInputsUdpPtrOutputWithContext(context.Background())
+}
+
+func (o InputsUdpOutput) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
+	return o.ApplyT(func(v InputsUdp) *InputsUdp {
+		return &v
+	}).(InputsUdpPtrOutput)
+}
+
+type InputsUdpPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (InputsUdpPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsUdp)(nil))
+}
+
+func (o InputsUdpPtrOutput) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
+	return o
+}
+
+func (o InputsUdpPtrOutput) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
+	return o
+}
+
+type InputsUdpArrayOutput struct{ *pulumi.OutputState }
+
+func (InputsUdpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InputsUdp)(nil))
+}
+
+func (o InputsUdpArrayOutput) ToInputsUdpArrayOutput() InputsUdpArrayOutput {
+	return o
+}
+
+func (o InputsUdpArrayOutput) ToInputsUdpArrayOutputWithContext(ctx context.Context) InputsUdpArrayOutput {
+	return o
+}
+
+func (o InputsUdpArrayOutput) Index(i pulumi.IntInput) InputsUdpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsUdp {
+		return vs[0].([]InputsUdp)[vs[1].(int)]
+	}).(InputsUdpOutput)
+}
+
+type InputsUdpMapOutput struct{ *pulumi.OutputState }
+
+func (InputsUdpMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]InputsUdp)(nil))
+}
+
+func (o InputsUdpMapOutput) ToInputsUdpMapOutput() InputsUdpMapOutput {
+	return o
+}
+
+func (o InputsUdpMapOutput) ToInputsUdpMapOutputWithContext(ctx context.Context) InputsUdpMapOutput {
+	return o
+}
+
+func (o InputsUdpMapOutput) MapIndex(k pulumi.StringInput) InputsUdpOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsUdp {
+		return vs[0].(map[string]InputsUdp)[vs[1].(string)]
+	}).(InputsUdpOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(InputsUdpOutput{})
+	pulumi.RegisterOutputType(InputsUdpPtrOutput{})
+	pulumi.RegisterOutputType(InputsUdpArrayOutput{})
+	pulumi.RegisterOutputType(InputsUdpMapOutput{})
 }

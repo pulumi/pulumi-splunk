@@ -200,6 +200,85 @@ func (i *InputsScript) ToInputsScriptOutputWithContext(ctx context.Context) Inpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptOutput)
 }
 
+func (i *InputsScript) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
+	return i.ToInputsScriptPtrOutputWithContext(context.Background())
+}
+
+func (i *InputsScript) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptPtrOutput)
+}
+
+type InputsScriptPtrInput interface {
+	pulumi.Input
+
+	ToInputsScriptPtrOutput() InputsScriptPtrOutput
+	ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput
+}
+
+type inputsScriptPtrType InputsScriptArgs
+
+func (*inputsScriptPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsScript)(nil))
+}
+
+func (i *inputsScriptPtrType) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
+	return i.ToInputsScriptPtrOutputWithContext(context.Background())
+}
+
+func (i *inputsScriptPtrType) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptPtrOutput)
+}
+
+// InputsScriptArrayInput is an input type that accepts InputsScriptArray and InputsScriptArrayOutput values.
+// You can construct a concrete instance of `InputsScriptArrayInput` via:
+//
+//          InputsScriptArray{ InputsScriptArgs{...} }
+type InputsScriptArrayInput interface {
+	pulumi.Input
+
+	ToInputsScriptArrayOutput() InputsScriptArrayOutput
+	ToInputsScriptArrayOutputWithContext(context.Context) InputsScriptArrayOutput
+}
+
+type InputsScriptArray []InputsScriptInput
+
+func (InputsScriptArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*InputsScript)(nil))
+}
+
+func (i InputsScriptArray) ToInputsScriptArrayOutput() InputsScriptArrayOutput {
+	return i.ToInputsScriptArrayOutputWithContext(context.Background())
+}
+
+func (i InputsScriptArray) ToInputsScriptArrayOutputWithContext(ctx context.Context) InputsScriptArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptArrayOutput)
+}
+
+// InputsScriptMapInput is an input type that accepts InputsScriptMap and InputsScriptMapOutput values.
+// You can construct a concrete instance of `InputsScriptMapInput` via:
+//
+//          InputsScriptMap{ "key": InputsScriptArgs{...} }
+type InputsScriptMapInput interface {
+	pulumi.Input
+
+	ToInputsScriptMapOutput() InputsScriptMapOutput
+	ToInputsScriptMapOutputWithContext(context.Context) InputsScriptMapOutput
+}
+
+type InputsScriptMap map[string]InputsScriptInput
+
+func (InputsScriptMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*InputsScript)(nil))
+}
+
+func (i InputsScriptMap) ToInputsScriptMapOutput() InputsScriptMapOutput {
+	return i.ToInputsScriptMapOutputWithContext(context.Background())
+}
+
+func (i InputsScriptMap) ToInputsScriptMapOutputWithContext(ctx context.Context) InputsScriptMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptMapOutput)
+}
+
 type InputsScriptOutput struct {
 	*pulumi.OutputState
 }
@@ -216,6 +295,75 @@ func (o InputsScriptOutput) ToInputsScriptOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o InputsScriptOutput) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
+	return o.ToInputsScriptPtrOutputWithContext(context.Background())
+}
+
+func (o InputsScriptOutput) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
+	return o.ApplyT(func(v InputsScript) *InputsScript {
+		return &v
+	}).(InputsScriptPtrOutput)
+}
+
+type InputsScriptPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (InputsScriptPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsScript)(nil))
+}
+
+func (o InputsScriptPtrOutput) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
+	return o
+}
+
+func (o InputsScriptPtrOutput) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
+	return o
+}
+
+type InputsScriptArrayOutput struct{ *pulumi.OutputState }
+
+func (InputsScriptArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InputsScript)(nil))
+}
+
+func (o InputsScriptArrayOutput) ToInputsScriptArrayOutput() InputsScriptArrayOutput {
+	return o
+}
+
+func (o InputsScriptArrayOutput) ToInputsScriptArrayOutputWithContext(ctx context.Context) InputsScriptArrayOutput {
+	return o
+}
+
+func (o InputsScriptArrayOutput) Index(i pulumi.IntInput) InputsScriptOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsScript {
+		return vs[0].([]InputsScript)[vs[1].(int)]
+	}).(InputsScriptOutput)
+}
+
+type InputsScriptMapOutput struct{ *pulumi.OutputState }
+
+func (InputsScriptMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]InputsScript)(nil))
+}
+
+func (o InputsScriptMapOutput) ToInputsScriptMapOutput() InputsScriptMapOutput {
+	return o
+}
+
+func (o InputsScriptMapOutput) ToInputsScriptMapOutputWithContext(ctx context.Context) InputsScriptMapOutput {
+	return o
+}
+
+func (o InputsScriptMapOutput) MapIndex(k pulumi.StringInput) InputsScriptOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsScript {
+		return vs[0].(map[string]InputsScript)[vs[1].(string)]
+	}).(InputsScriptOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(InputsScriptOutput{})
+	pulumi.RegisterOutputType(InputsScriptPtrOutput{})
+	pulumi.RegisterOutputType(InputsScriptArrayOutput{})
+	pulumi.RegisterOutputType(InputsScriptMapOutput{})
 }

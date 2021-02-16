@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -160,6 +160,85 @@ func (i *InputsTcpSsl) ToInputsTcpSslOutputWithContext(ctx context.Context) Inpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslOutput)
 }
 
+func (i *InputsTcpSsl) ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput {
+	return i.ToInputsTcpSslPtrOutputWithContext(context.Background())
+}
+
+func (i *InputsTcpSsl) ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslPtrOutput)
+}
+
+type InputsTcpSslPtrInput interface {
+	pulumi.Input
+
+	ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput
+	ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput
+}
+
+type inputsTcpSslPtrType InputsTcpSslArgs
+
+func (*inputsTcpSslPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsTcpSsl)(nil))
+}
+
+func (i *inputsTcpSslPtrType) ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput {
+	return i.ToInputsTcpSslPtrOutputWithContext(context.Background())
+}
+
+func (i *inputsTcpSslPtrType) ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslPtrOutput)
+}
+
+// InputsTcpSslArrayInput is an input type that accepts InputsTcpSslArray and InputsTcpSslArrayOutput values.
+// You can construct a concrete instance of `InputsTcpSslArrayInput` via:
+//
+//          InputsTcpSslArray{ InputsTcpSslArgs{...} }
+type InputsTcpSslArrayInput interface {
+	pulumi.Input
+
+	ToInputsTcpSslArrayOutput() InputsTcpSslArrayOutput
+	ToInputsTcpSslArrayOutputWithContext(context.Context) InputsTcpSslArrayOutput
+}
+
+type InputsTcpSslArray []InputsTcpSslInput
+
+func (InputsTcpSslArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*InputsTcpSsl)(nil))
+}
+
+func (i InputsTcpSslArray) ToInputsTcpSslArrayOutput() InputsTcpSslArrayOutput {
+	return i.ToInputsTcpSslArrayOutputWithContext(context.Background())
+}
+
+func (i InputsTcpSslArray) ToInputsTcpSslArrayOutputWithContext(ctx context.Context) InputsTcpSslArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslArrayOutput)
+}
+
+// InputsTcpSslMapInput is an input type that accepts InputsTcpSslMap and InputsTcpSslMapOutput values.
+// You can construct a concrete instance of `InputsTcpSslMapInput` via:
+//
+//          InputsTcpSslMap{ "key": InputsTcpSslArgs{...} }
+type InputsTcpSslMapInput interface {
+	pulumi.Input
+
+	ToInputsTcpSslMapOutput() InputsTcpSslMapOutput
+	ToInputsTcpSslMapOutputWithContext(context.Context) InputsTcpSslMapOutput
+}
+
+type InputsTcpSslMap map[string]InputsTcpSslInput
+
+func (InputsTcpSslMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*InputsTcpSsl)(nil))
+}
+
+func (i InputsTcpSslMap) ToInputsTcpSslMapOutput() InputsTcpSslMapOutput {
+	return i.ToInputsTcpSslMapOutputWithContext(context.Background())
+}
+
+func (i InputsTcpSslMap) ToInputsTcpSslMapOutputWithContext(ctx context.Context) InputsTcpSslMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslMapOutput)
+}
+
 type InputsTcpSslOutput struct {
 	*pulumi.OutputState
 }
@@ -176,6 +255,75 @@ func (o InputsTcpSslOutput) ToInputsTcpSslOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o InputsTcpSslOutput) ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput {
+	return o.ToInputsTcpSslPtrOutputWithContext(context.Background())
+}
+
+func (o InputsTcpSslOutput) ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput {
+	return o.ApplyT(func(v InputsTcpSsl) *InputsTcpSsl {
+		return &v
+	}).(InputsTcpSslPtrOutput)
+}
+
+type InputsTcpSslPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (InputsTcpSslPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsTcpSsl)(nil))
+}
+
+func (o InputsTcpSslPtrOutput) ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput {
+	return o
+}
+
+func (o InputsTcpSslPtrOutput) ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput {
+	return o
+}
+
+type InputsTcpSslArrayOutput struct{ *pulumi.OutputState }
+
+func (InputsTcpSslArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InputsTcpSsl)(nil))
+}
+
+func (o InputsTcpSslArrayOutput) ToInputsTcpSslArrayOutput() InputsTcpSslArrayOutput {
+	return o
+}
+
+func (o InputsTcpSslArrayOutput) ToInputsTcpSslArrayOutputWithContext(ctx context.Context) InputsTcpSslArrayOutput {
+	return o
+}
+
+func (o InputsTcpSslArrayOutput) Index(i pulumi.IntInput) InputsTcpSslOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsTcpSsl {
+		return vs[0].([]InputsTcpSsl)[vs[1].(int)]
+	}).(InputsTcpSslOutput)
+}
+
+type InputsTcpSslMapOutput struct{ *pulumi.OutputState }
+
+func (InputsTcpSslMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]InputsTcpSsl)(nil))
+}
+
+func (o InputsTcpSslMapOutput) ToInputsTcpSslMapOutput() InputsTcpSslMapOutput {
+	return o
+}
+
+func (o InputsTcpSslMapOutput) ToInputsTcpSslMapOutputWithContext(ctx context.Context) InputsTcpSslMapOutput {
+	return o
+}
+
+func (o InputsTcpSslMapOutput) MapIndex(k pulumi.StringInput) InputsTcpSslOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsTcpSsl {
+		return vs[0].(map[string]InputsTcpSsl)[vs[1].(string)]
+	}).(InputsTcpSslOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(InputsTcpSslOutput{})
+	pulumi.RegisterOutputType(InputsTcpSslPtrOutput{})
+	pulumi.RegisterOutputType(InputsTcpSslArrayOutput{})
+	pulumi.RegisterOutputType(InputsTcpSslMapOutput{})
 }

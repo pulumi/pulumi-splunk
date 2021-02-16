@@ -90,7 +90,8 @@ export class GlobalHttpEventCollector extends pulumi.CustomResource {
     constructor(name: string, args?: GlobalHttpEventCollectorArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GlobalHttpEventCollectorArgs | GlobalHttpEventCollectorState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as GlobalHttpEventCollectorState | undefined;
             inputs["dedicatedIoThreads"] = state ? state.dedicatedIoThreads : undefined;
             inputs["disabled"] = state ? state.disabled : undefined;
@@ -109,12 +110,8 @@ export class GlobalHttpEventCollector extends pulumi.CustomResource {
             inputs["port"] = args ? args.port : undefined;
             inputs["useDeploymentServer"] = args ? args.useDeploymentServer : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(GlobalHttpEventCollector.__pulumiType, name, inputs, opts);
     }

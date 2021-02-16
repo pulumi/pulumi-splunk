@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -234,6 +234,85 @@ func (i *OutputsTcpServer) ToOutputsTcpServerOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerOutput)
 }
 
+func (i *OutputsTcpServer) ToOutputsTcpServerPtrOutput() OutputsTcpServerPtrOutput {
+	return i.ToOutputsTcpServerPtrOutputWithContext(context.Background())
+}
+
+func (i *OutputsTcpServer) ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerPtrOutput)
+}
+
+type OutputsTcpServerPtrInput interface {
+	pulumi.Input
+
+	ToOutputsTcpServerPtrOutput() OutputsTcpServerPtrOutput
+	ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput
+}
+
+type outputsTcpServerPtrType OutputsTcpServerArgs
+
+func (*outputsTcpServerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpServer)(nil))
+}
+
+func (i *outputsTcpServerPtrType) ToOutputsTcpServerPtrOutput() OutputsTcpServerPtrOutput {
+	return i.ToOutputsTcpServerPtrOutputWithContext(context.Background())
+}
+
+func (i *outputsTcpServerPtrType) ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerPtrOutput)
+}
+
+// OutputsTcpServerArrayInput is an input type that accepts OutputsTcpServerArray and OutputsTcpServerArrayOutput values.
+// You can construct a concrete instance of `OutputsTcpServerArrayInput` via:
+//
+//          OutputsTcpServerArray{ OutputsTcpServerArgs{...} }
+type OutputsTcpServerArrayInput interface {
+	pulumi.Input
+
+	ToOutputsTcpServerArrayOutput() OutputsTcpServerArrayOutput
+	ToOutputsTcpServerArrayOutputWithContext(context.Context) OutputsTcpServerArrayOutput
+}
+
+type OutputsTcpServerArray []OutputsTcpServerInput
+
+func (OutputsTcpServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*OutputsTcpServer)(nil))
+}
+
+func (i OutputsTcpServerArray) ToOutputsTcpServerArrayOutput() OutputsTcpServerArrayOutput {
+	return i.ToOutputsTcpServerArrayOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpServerArray) ToOutputsTcpServerArrayOutputWithContext(ctx context.Context) OutputsTcpServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerArrayOutput)
+}
+
+// OutputsTcpServerMapInput is an input type that accepts OutputsTcpServerMap and OutputsTcpServerMapOutput values.
+// You can construct a concrete instance of `OutputsTcpServerMapInput` via:
+//
+//          OutputsTcpServerMap{ "key": OutputsTcpServerArgs{...} }
+type OutputsTcpServerMapInput interface {
+	pulumi.Input
+
+	ToOutputsTcpServerMapOutput() OutputsTcpServerMapOutput
+	ToOutputsTcpServerMapOutputWithContext(context.Context) OutputsTcpServerMapOutput
+}
+
+type OutputsTcpServerMap map[string]OutputsTcpServerInput
+
+func (OutputsTcpServerMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*OutputsTcpServer)(nil))
+}
+
+func (i OutputsTcpServerMap) ToOutputsTcpServerMapOutput() OutputsTcpServerMapOutput {
+	return i.ToOutputsTcpServerMapOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpServerMap) ToOutputsTcpServerMapOutputWithContext(ctx context.Context) OutputsTcpServerMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerMapOutput)
+}
+
 type OutputsTcpServerOutput struct {
 	*pulumi.OutputState
 }
@@ -250,6 +329,75 @@ func (o OutputsTcpServerOutput) ToOutputsTcpServerOutputWithContext(ctx context.
 	return o
 }
 
+func (o OutputsTcpServerOutput) ToOutputsTcpServerPtrOutput() OutputsTcpServerPtrOutput {
+	return o.ToOutputsTcpServerPtrOutputWithContext(context.Background())
+}
+
+func (o OutputsTcpServerOutput) ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput {
+	return o.ApplyT(func(v OutputsTcpServer) *OutputsTcpServer {
+		return &v
+	}).(OutputsTcpServerPtrOutput)
+}
+
+type OutputsTcpServerPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (OutputsTcpServerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpServer)(nil))
+}
+
+func (o OutputsTcpServerPtrOutput) ToOutputsTcpServerPtrOutput() OutputsTcpServerPtrOutput {
+	return o
+}
+
+func (o OutputsTcpServerPtrOutput) ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput {
+	return o
+}
+
+type OutputsTcpServerArrayOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutputsTcpServer)(nil))
+}
+
+func (o OutputsTcpServerArrayOutput) ToOutputsTcpServerArrayOutput() OutputsTcpServerArrayOutput {
+	return o
+}
+
+func (o OutputsTcpServerArrayOutput) ToOutputsTcpServerArrayOutputWithContext(ctx context.Context) OutputsTcpServerArrayOutput {
+	return o
+}
+
+func (o OutputsTcpServerArrayOutput) Index(i pulumi.IntInput) OutputsTcpServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutputsTcpServer {
+		return vs[0].([]OutputsTcpServer)[vs[1].(int)]
+	}).(OutputsTcpServerOutput)
+}
+
+type OutputsTcpServerMapOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpServerMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]OutputsTcpServer)(nil))
+}
+
+func (o OutputsTcpServerMapOutput) ToOutputsTcpServerMapOutput() OutputsTcpServerMapOutput {
+	return o
+}
+
+func (o OutputsTcpServerMapOutput) ToOutputsTcpServerMapOutputWithContext(ctx context.Context) OutputsTcpServerMapOutput {
+	return o
+}
+
+func (o OutputsTcpServerMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpServerOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) OutputsTcpServer {
+		return vs[0].(map[string]OutputsTcpServer)[vs[1].(string)]
+	}).(OutputsTcpServerOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(OutputsTcpServerOutput{})
+	pulumi.RegisterOutputType(OutputsTcpServerPtrOutput{})
+	pulumi.RegisterOutputType(OutputsTcpServerArrayOutput{})
+	pulumi.RegisterOutputType(OutputsTcpServerMapOutput{})
 }

@@ -35,8 +35,9 @@ export class Provider extends pulumi.ProviderResource {
      */
     constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let inputs: pulumi.Inputs = {};
+        opts = opts || {};
         {
-            if ((!args || args.url === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.url === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
             inputs["authToken"] = args ? args.authToken : undefined;
@@ -46,12 +47,8 @@ export class Provider extends pulumi.ProviderResource {
             inputs["url"] = args ? args.url : undefined;
             inputs["username"] = args ? args.username : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(Provider.__pulumiType, name, inputs, opts);
     }

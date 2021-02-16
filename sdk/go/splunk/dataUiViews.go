@@ -23,7 +23,6 @@ import (
 // 	"fmt"
 //
 // 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -149,6 +148,85 @@ func (i *DataUiViews) ToDataUiViewsOutputWithContext(ctx context.Context) DataUi
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsOutput)
 }
 
+func (i *DataUiViews) ToDataUiViewsPtrOutput() DataUiViewsPtrOutput {
+	return i.ToDataUiViewsPtrOutputWithContext(context.Background())
+}
+
+func (i *DataUiViews) ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsPtrOutput)
+}
+
+type DataUiViewsPtrInput interface {
+	pulumi.Input
+
+	ToDataUiViewsPtrOutput() DataUiViewsPtrOutput
+	ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput
+}
+
+type dataUiViewsPtrType DataUiViewsArgs
+
+func (*dataUiViewsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataUiViews)(nil))
+}
+
+func (i *dataUiViewsPtrType) ToDataUiViewsPtrOutput() DataUiViewsPtrOutput {
+	return i.ToDataUiViewsPtrOutputWithContext(context.Background())
+}
+
+func (i *dataUiViewsPtrType) ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsPtrOutput)
+}
+
+// DataUiViewsArrayInput is an input type that accepts DataUiViewsArray and DataUiViewsArrayOutput values.
+// You can construct a concrete instance of `DataUiViewsArrayInput` via:
+//
+//          DataUiViewsArray{ DataUiViewsArgs{...} }
+type DataUiViewsArrayInput interface {
+	pulumi.Input
+
+	ToDataUiViewsArrayOutput() DataUiViewsArrayOutput
+	ToDataUiViewsArrayOutputWithContext(context.Context) DataUiViewsArrayOutput
+}
+
+type DataUiViewsArray []DataUiViewsInput
+
+func (DataUiViewsArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*DataUiViews)(nil))
+}
+
+func (i DataUiViewsArray) ToDataUiViewsArrayOutput() DataUiViewsArrayOutput {
+	return i.ToDataUiViewsArrayOutputWithContext(context.Background())
+}
+
+func (i DataUiViewsArray) ToDataUiViewsArrayOutputWithContext(ctx context.Context) DataUiViewsArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsArrayOutput)
+}
+
+// DataUiViewsMapInput is an input type that accepts DataUiViewsMap and DataUiViewsMapOutput values.
+// You can construct a concrete instance of `DataUiViewsMapInput` via:
+//
+//          DataUiViewsMap{ "key": DataUiViewsArgs{...} }
+type DataUiViewsMapInput interface {
+	pulumi.Input
+
+	ToDataUiViewsMapOutput() DataUiViewsMapOutput
+	ToDataUiViewsMapOutputWithContext(context.Context) DataUiViewsMapOutput
+}
+
+type DataUiViewsMap map[string]DataUiViewsInput
+
+func (DataUiViewsMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*DataUiViews)(nil))
+}
+
+func (i DataUiViewsMap) ToDataUiViewsMapOutput() DataUiViewsMapOutput {
+	return i.ToDataUiViewsMapOutputWithContext(context.Background())
+}
+
+func (i DataUiViewsMap) ToDataUiViewsMapOutputWithContext(ctx context.Context) DataUiViewsMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsMapOutput)
+}
+
 type DataUiViewsOutput struct {
 	*pulumi.OutputState
 }
@@ -165,6 +243,75 @@ func (o DataUiViewsOutput) ToDataUiViewsOutputWithContext(ctx context.Context) D
 	return o
 }
 
+func (o DataUiViewsOutput) ToDataUiViewsPtrOutput() DataUiViewsPtrOutput {
+	return o.ToDataUiViewsPtrOutputWithContext(context.Background())
+}
+
+func (o DataUiViewsOutput) ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput {
+	return o.ApplyT(func(v DataUiViews) *DataUiViews {
+		return &v
+	}).(DataUiViewsPtrOutput)
+}
+
+type DataUiViewsPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (DataUiViewsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataUiViews)(nil))
+}
+
+func (o DataUiViewsPtrOutput) ToDataUiViewsPtrOutput() DataUiViewsPtrOutput {
+	return o
+}
+
+func (o DataUiViewsPtrOutput) ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput {
+	return o
+}
+
+type DataUiViewsArrayOutput struct{ *pulumi.OutputState }
+
+func (DataUiViewsArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DataUiViews)(nil))
+}
+
+func (o DataUiViewsArrayOutput) ToDataUiViewsArrayOutput() DataUiViewsArrayOutput {
+	return o
+}
+
+func (o DataUiViewsArrayOutput) ToDataUiViewsArrayOutputWithContext(ctx context.Context) DataUiViewsArrayOutput {
+	return o
+}
+
+func (o DataUiViewsArrayOutput) Index(i pulumi.IntInput) DataUiViewsOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DataUiViews {
+		return vs[0].([]DataUiViews)[vs[1].(int)]
+	}).(DataUiViewsOutput)
+}
+
+type DataUiViewsMapOutput struct{ *pulumi.OutputState }
+
+func (DataUiViewsMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]DataUiViews)(nil))
+}
+
+func (o DataUiViewsMapOutput) ToDataUiViewsMapOutput() DataUiViewsMapOutput {
+	return o
+}
+
+func (o DataUiViewsMapOutput) ToDataUiViewsMapOutputWithContext(ctx context.Context) DataUiViewsMapOutput {
+	return o
+}
+
+func (o DataUiViewsMapOutput) MapIndex(k pulumi.StringInput) DataUiViewsOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) DataUiViews {
+		return vs[0].(map[string]DataUiViews)[vs[1].(string)]
+	}).(DataUiViewsOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(DataUiViewsOutput{})
+	pulumi.RegisterOutputType(DataUiViewsPtrOutput{})
+	pulumi.RegisterOutputType(DataUiViewsArrayOutput{})
+	pulumi.RegisterOutputType(DataUiViewsMapOutput{})
 }

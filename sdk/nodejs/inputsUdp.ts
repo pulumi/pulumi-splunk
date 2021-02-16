@@ -117,7 +117,8 @@ export class InputsUdp extends pulumi.CustomResource {
     constructor(name: string, args?: InputsUdpArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsUdpArgs | InputsUdpState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsUdpState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["connectionHost"] = state ? state.connectionHost : undefined;
@@ -146,12 +147,8 @@ export class InputsUdp extends pulumi.CustomResource {
             inputs["source"] = args ? args.source : undefined;
             inputs["sourcetype"] = args ? args.sourcetype : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsUdp.__pulumiType, name, inputs, opts);
     }

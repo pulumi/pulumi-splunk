@@ -125,7 +125,8 @@ export class InputsMonitor extends pulumi.CustomResource {
     constructor(name: string, args?: InputsMonitorArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsMonitorArgs | InputsMonitorState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsMonitorState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["blacklist"] = state ? state.blacklist : undefined;
@@ -162,12 +163,8 @@ export class InputsMonitor extends pulumi.CustomResource {
             inputs["timeBeforeClose"] = args ? args.timeBeforeClose : undefined;
             inputs["whitelist"] = args ? args.whitelist : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsMonitor.__pulumiType, name, inputs, opts);
     }

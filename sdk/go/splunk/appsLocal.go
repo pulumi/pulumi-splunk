@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -295,6 +295,85 @@ func (i *AppsLocal) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalO
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalOutput)
 }
 
+func (i *AppsLocal) ToAppsLocalPtrOutput() AppsLocalPtrOutput {
+	return i.ToAppsLocalPtrOutputWithContext(context.Background())
+}
+
+func (i *AppsLocal) ToAppsLocalPtrOutputWithContext(ctx context.Context) AppsLocalPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalPtrOutput)
+}
+
+type AppsLocalPtrInput interface {
+	pulumi.Input
+
+	ToAppsLocalPtrOutput() AppsLocalPtrOutput
+	ToAppsLocalPtrOutputWithContext(ctx context.Context) AppsLocalPtrOutput
+}
+
+type appsLocalPtrType AppsLocalArgs
+
+func (*appsLocalPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppsLocal)(nil))
+}
+
+func (i *appsLocalPtrType) ToAppsLocalPtrOutput() AppsLocalPtrOutput {
+	return i.ToAppsLocalPtrOutputWithContext(context.Background())
+}
+
+func (i *appsLocalPtrType) ToAppsLocalPtrOutputWithContext(ctx context.Context) AppsLocalPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalPtrOutput)
+}
+
+// AppsLocalArrayInput is an input type that accepts AppsLocalArray and AppsLocalArrayOutput values.
+// You can construct a concrete instance of `AppsLocalArrayInput` via:
+//
+//          AppsLocalArray{ AppsLocalArgs{...} }
+type AppsLocalArrayInput interface {
+	pulumi.Input
+
+	ToAppsLocalArrayOutput() AppsLocalArrayOutput
+	ToAppsLocalArrayOutputWithContext(context.Context) AppsLocalArrayOutput
+}
+
+type AppsLocalArray []AppsLocalInput
+
+func (AppsLocalArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AppsLocal)(nil))
+}
+
+func (i AppsLocalArray) ToAppsLocalArrayOutput() AppsLocalArrayOutput {
+	return i.ToAppsLocalArrayOutputWithContext(context.Background())
+}
+
+func (i AppsLocalArray) ToAppsLocalArrayOutputWithContext(ctx context.Context) AppsLocalArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalArrayOutput)
+}
+
+// AppsLocalMapInput is an input type that accepts AppsLocalMap and AppsLocalMapOutput values.
+// You can construct a concrete instance of `AppsLocalMapInput` via:
+//
+//          AppsLocalMap{ "key": AppsLocalArgs{...} }
+type AppsLocalMapInput interface {
+	pulumi.Input
+
+	ToAppsLocalMapOutput() AppsLocalMapOutput
+	ToAppsLocalMapOutputWithContext(context.Context) AppsLocalMapOutput
+}
+
+type AppsLocalMap map[string]AppsLocalInput
+
+func (AppsLocalMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AppsLocal)(nil))
+}
+
+func (i AppsLocalMap) ToAppsLocalMapOutput() AppsLocalMapOutput {
+	return i.ToAppsLocalMapOutputWithContext(context.Background())
+}
+
+func (i AppsLocalMap) ToAppsLocalMapOutputWithContext(ctx context.Context) AppsLocalMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalMapOutput)
+}
+
 type AppsLocalOutput struct {
 	*pulumi.OutputState
 }
@@ -311,6 +390,75 @@ func (o AppsLocalOutput) ToAppsLocalOutputWithContext(ctx context.Context) AppsL
 	return o
 }
 
+func (o AppsLocalOutput) ToAppsLocalPtrOutput() AppsLocalPtrOutput {
+	return o.ToAppsLocalPtrOutputWithContext(context.Background())
+}
+
+func (o AppsLocalOutput) ToAppsLocalPtrOutputWithContext(ctx context.Context) AppsLocalPtrOutput {
+	return o.ApplyT(func(v AppsLocal) *AppsLocal {
+		return &v
+	}).(AppsLocalPtrOutput)
+}
+
+type AppsLocalPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AppsLocalPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AppsLocal)(nil))
+}
+
+func (o AppsLocalPtrOutput) ToAppsLocalPtrOutput() AppsLocalPtrOutput {
+	return o
+}
+
+func (o AppsLocalPtrOutput) ToAppsLocalPtrOutputWithContext(ctx context.Context) AppsLocalPtrOutput {
+	return o
+}
+
+type AppsLocalArrayOutput struct{ *pulumi.OutputState }
+
+func (AppsLocalArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AppsLocal)(nil))
+}
+
+func (o AppsLocalArrayOutput) ToAppsLocalArrayOutput() AppsLocalArrayOutput {
+	return o
+}
+
+func (o AppsLocalArrayOutput) ToAppsLocalArrayOutputWithContext(ctx context.Context) AppsLocalArrayOutput {
+	return o
+}
+
+func (o AppsLocalArrayOutput) Index(i pulumi.IntInput) AppsLocalOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AppsLocal {
+		return vs[0].([]AppsLocal)[vs[1].(int)]
+	}).(AppsLocalOutput)
+}
+
+type AppsLocalMapOutput struct{ *pulumi.OutputState }
+
+func (AppsLocalMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AppsLocal)(nil))
+}
+
+func (o AppsLocalMapOutput) ToAppsLocalMapOutput() AppsLocalMapOutput {
+	return o
+}
+
+func (o AppsLocalMapOutput) ToAppsLocalMapOutputWithContext(ctx context.Context) AppsLocalMapOutput {
+	return o
+}
+
+func (o AppsLocalMapOutput) MapIndex(k pulumi.StringInput) AppsLocalOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AppsLocal {
+		return vs[0].(map[string]AppsLocal)[vs[1].(string)]
+	}).(AppsLocalOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppsLocalOutput{})
+	pulumi.RegisterOutputType(AppsLocalPtrOutput{})
+	pulumi.RegisterOutputType(AppsLocalArrayOutput{})
+	pulumi.RegisterOutputType(AppsLocalMapOutput{})
 }

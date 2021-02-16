@@ -72,7 +72,8 @@ export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
     constructor(name: string, args?: InputsTcpSplunkTcpTokenArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpSplunkTcpTokenArgs | InputsTcpSplunkTcpTokenState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsTcpSplunkTcpTokenState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["name"] = state ? state.name : undefined;
@@ -83,12 +84,8 @@ export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
             inputs["name"] = args ? args.name : undefined;
             inputs["token"] = args ? args.token : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsTcpSplunkTcpToken.__pulumiType, name, inputs, opts);
     }

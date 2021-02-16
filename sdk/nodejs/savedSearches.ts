@@ -624,7 +624,8 @@ export class SavedSearches extends pulumi.CustomResource {
     constructor(name: string, args: SavedSearchesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: SavedSearchesArgs | SavedSearchesState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as SavedSearchesState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["actionEmail"] = state ? state.actionEmail : undefined;
@@ -765,7 +766,7 @@ export class SavedSearches extends pulumi.CustomResource {
             inputs["workloadPool"] = state ? state.workloadPool : undefined;
         } else {
             const args = argsOrState as SavedSearchesArgs | undefined;
-            if ((!args || args.search === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.search === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'search'");
             }
             inputs["acl"] = args ? args.acl : undefined;
@@ -906,12 +907,8 @@ export class SavedSearches extends pulumi.CustomResource {
             inputs["actionScript"] = undefined /*out*/;
             inputs["actionSummaryIndex"] = undefined /*out*/;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(SavedSearches.__pulumiType, name, inputs, opts);
     }

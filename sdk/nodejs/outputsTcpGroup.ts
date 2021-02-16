@@ -121,7 +121,8 @@ export class OutputsTcpGroup extends pulumi.CustomResource {
     constructor(name: string, args: OutputsTcpGroupArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: OutputsTcpGroupArgs | OutputsTcpGroupState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as OutputsTcpGroupState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["compressed"] = state ? state.compressed : undefined;
@@ -136,7 +137,7 @@ export class OutputsTcpGroup extends pulumi.CustomResource {
             inputs["token"] = state ? state.token : undefined;
         } else {
             const args = argsOrState as OutputsTcpGroupArgs | undefined;
-            if ((!args || args.servers === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.servers === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'servers'");
             }
             inputs["acl"] = args ? args.acl : undefined;
@@ -151,12 +152,8 @@ export class OutputsTcpGroup extends pulumi.CustomResource {
             inputs["servers"] = args ? args.servers : undefined;
             inputs["token"] = args ? args.token : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(OutputsTcpGroup.__pulumiType, name, inputs, opts);
     }
