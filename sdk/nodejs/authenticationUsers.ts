@@ -98,7 +98,8 @@ export class AuthenticationUsers extends pulumi.CustomResource {
     constructor(name: string, args?: AuthenticationUsersArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AuthenticationUsersArgs | AuthenticationUsersState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AuthenticationUsersState | undefined;
             inputs["defaultApp"] = state ? state.defaultApp : undefined;
             inputs["email"] = state ? state.email : undefined;
@@ -121,12 +122,8 @@ export class AuthenticationUsers extends pulumi.CustomResource {
             inputs["roles"] = args ? args.roles : undefined;
             inputs["tz"] = args ? args.tz : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AuthenticationUsers.__pulumiType, name, inputs, opts);
     }

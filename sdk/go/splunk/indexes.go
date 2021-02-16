@@ -25,7 +25,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -725,6 +725,85 @@ func (i *Indexes) ToIndexesOutputWithContext(ctx context.Context) IndexesOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesOutput)
 }
 
+func (i *Indexes) ToIndexesPtrOutput() IndexesPtrOutput {
+	return i.ToIndexesPtrOutputWithContext(context.Background())
+}
+
+func (i *Indexes) ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexesPtrOutput)
+}
+
+type IndexesPtrInput interface {
+	pulumi.Input
+
+	ToIndexesPtrOutput() IndexesPtrOutput
+	ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput
+}
+
+type indexesPtrType IndexesArgs
+
+func (*indexesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**Indexes)(nil))
+}
+
+func (i *indexesPtrType) ToIndexesPtrOutput() IndexesPtrOutput {
+	return i.ToIndexesPtrOutputWithContext(context.Background())
+}
+
+func (i *indexesPtrType) ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexesPtrOutput)
+}
+
+// IndexesArrayInput is an input type that accepts IndexesArray and IndexesArrayOutput values.
+// You can construct a concrete instance of `IndexesArrayInput` via:
+//
+//          IndexesArray{ IndexesArgs{...} }
+type IndexesArrayInput interface {
+	pulumi.Input
+
+	ToIndexesArrayOutput() IndexesArrayOutput
+	ToIndexesArrayOutputWithContext(context.Context) IndexesArrayOutput
+}
+
+type IndexesArray []IndexesInput
+
+func (IndexesArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*Indexes)(nil))
+}
+
+func (i IndexesArray) ToIndexesArrayOutput() IndexesArrayOutput {
+	return i.ToIndexesArrayOutputWithContext(context.Background())
+}
+
+func (i IndexesArray) ToIndexesArrayOutputWithContext(ctx context.Context) IndexesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexesArrayOutput)
+}
+
+// IndexesMapInput is an input type that accepts IndexesMap and IndexesMapOutput values.
+// You can construct a concrete instance of `IndexesMapInput` via:
+//
+//          IndexesMap{ "key": IndexesArgs{...} }
+type IndexesMapInput interface {
+	pulumi.Input
+
+	ToIndexesMapOutput() IndexesMapOutput
+	ToIndexesMapOutputWithContext(context.Context) IndexesMapOutput
+}
+
+type IndexesMap map[string]IndexesInput
+
+func (IndexesMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*Indexes)(nil))
+}
+
+func (i IndexesMap) ToIndexesMapOutput() IndexesMapOutput {
+	return i.ToIndexesMapOutputWithContext(context.Background())
+}
+
+func (i IndexesMap) ToIndexesMapOutputWithContext(ctx context.Context) IndexesMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexesMapOutput)
+}
+
 type IndexesOutput struct {
 	*pulumi.OutputState
 }
@@ -741,6 +820,75 @@ func (o IndexesOutput) ToIndexesOutputWithContext(ctx context.Context) IndexesOu
 	return o
 }
 
+func (o IndexesOutput) ToIndexesPtrOutput() IndexesPtrOutput {
+	return o.ToIndexesPtrOutputWithContext(context.Background())
+}
+
+func (o IndexesOutput) ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput {
+	return o.ApplyT(func(v Indexes) *Indexes {
+		return &v
+	}).(IndexesPtrOutput)
+}
+
+type IndexesPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (IndexesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**Indexes)(nil))
+}
+
+func (o IndexesPtrOutput) ToIndexesPtrOutput() IndexesPtrOutput {
+	return o
+}
+
+func (o IndexesPtrOutput) ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput {
+	return o
+}
+
+type IndexesArrayOutput struct{ *pulumi.OutputState }
+
+func (IndexesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Indexes)(nil))
+}
+
+func (o IndexesArrayOutput) ToIndexesArrayOutput() IndexesArrayOutput {
+	return o
+}
+
+func (o IndexesArrayOutput) ToIndexesArrayOutputWithContext(ctx context.Context) IndexesArrayOutput {
+	return o
+}
+
+func (o IndexesArrayOutput) Index(i pulumi.IntInput) IndexesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Indexes {
+		return vs[0].([]Indexes)[vs[1].(int)]
+	}).(IndexesOutput)
+}
+
+type IndexesMapOutput struct{ *pulumi.OutputState }
+
+func (IndexesMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]Indexes)(nil))
+}
+
+func (o IndexesMapOutput) ToIndexesMapOutput() IndexesMapOutput {
+	return o
+}
+
+func (o IndexesMapOutput) ToIndexesMapOutputWithContext(ctx context.Context) IndexesMapOutput {
+	return o
+}
+
+func (o IndexesMapOutput) MapIndex(k pulumi.StringInput) IndexesOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) Indexes {
+		return vs[0].(map[string]Indexes)[vs[1].(string)]
+	}).(IndexesOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(IndexesOutput{})
+	pulumi.RegisterOutputType(IndexesPtrOutput{})
+	pulumi.RegisterOutputType(IndexesArrayOutput{})
+	pulumi.RegisterOutputType(IndexesMapOutput{})
 }

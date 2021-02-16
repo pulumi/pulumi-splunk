@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -258,6 +258,85 @@ func (i *AuthorizationRoles) ToAuthorizationRolesOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesOutput)
 }
 
+func (i *AuthorizationRoles) ToAuthorizationRolesPtrOutput() AuthorizationRolesPtrOutput {
+	return i.ToAuthorizationRolesPtrOutputWithContext(context.Background())
+}
+
+func (i *AuthorizationRoles) ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesPtrOutput)
+}
+
+type AuthorizationRolesPtrInput interface {
+	pulumi.Input
+
+	ToAuthorizationRolesPtrOutput() AuthorizationRolesPtrOutput
+	ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput
+}
+
+type authorizationRolesPtrType AuthorizationRolesArgs
+
+func (*authorizationRolesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AuthorizationRoles)(nil))
+}
+
+func (i *authorizationRolesPtrType) ToAuthorizationRolesPtrOutput() AuthorizationRolesPtrOutput {
+	return i.ToAuthorizationRolesPtrOutputWithContext(context.Background())
+}
+
+func (i *authorizationRolesPtrType) ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesPtrOutput)
+}
+
+// AuthorizationRolesArrayInput is an input type that accepts AuthorizationRolesArray and AuthorizationRolesArrayOutput values.
+// You can construct a concrete instance of `AuthorizationRolesArrayInput` via:
+//
+//          AuthorizationRolesArray{ AuthorizationRolesArgs{...} }
+type AuthorizationRolesArrayInput interface {
+	pulumi.Input
+
+	ToAuthorizationRolesArrayOutput() AuthorizationRolesArrayOutput
+	ToAuthorizationRolesArrayOutputWithContext(context.Context) AuthorizationRolesArrayOutput
+}
+
+type AuthorizationRolesArray []AuthorizationRolesInput
+
+func (AuthorizationRolesArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*AuthorizationRoles)(nil))
+}
+
+func (i AuthorizationRolesArray) ToAuthorizationRolesArrayOutput() AuthorizationRolesArrayOutput {
+	return i.ToAuthorizationRolesArrayOutputWithContext(context.Background())
+}
+
+func (i AuthorizationRolesArray) ToAuthorizationRolesArrayOutputWithContext(ctx context.Context) AuthorizationRolesArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesArrayOutput)
+}
+
+// AuthorizationRolesMapInput is an input type that accepts AuthorizationRolesMap and AuthorizationRolesMapOutput values.
+// You can construct a concrete instance of `AuthorizationRolesMapInput` via:
+//
+//          AuthorizationRolesMap{ "key": AuthorizationRolesArgs{...} }
+type AuthorizationRolesMapInput interface {
+	pulumi.Input
+
+	ToAuthorizationRolesMapOutput() AuthorizationRolesMapOutput
+	ToAuthorizationRolesMapOutputWithContext(context.Context) AuthorizationRolesMapOutput
+}
+
+type AuthorizationRolesMap map[string]AuthorizationRolesInput
+
+func (AuthorizationRolesMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*AuthorizationRoles)(nil))
+}
+
+func (i AuthorizationRolesMap) ToAuthorizationRolesMapOutput() AuthorizationRolesMapOutput {
+	return i.ToAuthorizationRolesMapOutputWithContext(context.Background())
+}
+
+func (i AuthorizationRolesMap) ToAuthorizationRolesMapOutputWithContext(ctx context.Context) AuthorizationRolesMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesMapOutput)
+}
+
 type AuthorizationRolesOutput struct {
 	*pulumi.OutputState
 }
@@ -274,6 +353,75 @@ func (o AuthorizationRolesOutput) ToAuthorizationRolesOutputWithContext(ctx cont
 	return o
 }
 
+func (o AuthorizationRolesOutput) ToAuthorizationRolesPtrOutput() AuthorizationRolesPtrOutput {
+	return o.ToAuthorizationRolesPtrOutputWithContext(context.Background())
+}
+
+func (o AuthorizationRolesOutput) ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput {
+	return o.ApplyT(func(v AuthorizationRoles) *AuthorizationRoles {
+		return &v
+	}).(AuthorizationRolesPtrOutput)
+}
+
+type AuthorizationRolesPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (AuthorizationRolesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AuthorizationRoles)(nil))
+}
+
+func (o AuthorizationRolesPtrOutput) ToAuthorizationRolesPtrOutput() AuthorizationRolesPtrOutput {
+	return o
+}
+
+func (o AuthorizationRolesPtrOutput) ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput {
+	return o
+}
+
+type AuthorizationRolesArrayOutput struct{ *pulumi.OutputState }
+
+func (AuthorizationRolesArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AuthorizationRoles)(nil))
+}
+
+func (o AuthorizationRolesArrayOutput) ToAuthorizationRolesArrayOutput() AuthorizationRolesArrayOutput {
+	return o
+}
+
+func (o AuthorizationRolesArrayOutput) ToAuthorizationRolesArrayOutputWithContext(ctx context.Context) AuthorizationRolesArrayOutput {
+	return o
+}
+
+func (o AuthorizationRolesArrayOutput) Index(i pulumi.IntInput) AuthorizationRolesOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AuthorizationRoles {
+		return vs[0].([]AuthorizationRoles)[vs[1].(int)]
+	}).(AuthorizationRolesOutput)
+}
+
+type AuthorizationRolesMapOutput struct{ *pulumi.OutputState }
+
+func (AuthorizationRolesMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]AuthorizationRoles)(nil))
+}
+
+func (o AuthorizationRolesMapOutput) ToAuthorizationRolesMapOutput() AuthorizationRolesMapOutput {
+	return o
+}
+
+func (o AuthorizationRolesMapOutput) ToAuthorizationRolesMapOutputWithContext(ctx context.Context) AuthorizationRolesMapOutput {
+	return o
+}
+
+func (o AuthorizationRolesMapOutput) MapIndex(k pulumi.StringInput) AuthorizationRolesOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AuthorizationRoles {
+		return vs[0].(map[string]AuthorizationRoles)[vs[1].(string)]
+	}).(AuthorizationRolesOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AuthorizationRolesOutput{})
+	pulumi.RegisterOutputType(AuthorizationRolesPtrOutput{})
+	pulumi.RegisterOutputType(AuthorizationRolesArrayOutput{})
+	pulumi.RegisterOutputType(AuthorizationRolesMapOutput{})
 }

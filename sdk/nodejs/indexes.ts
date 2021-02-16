@@ -266,7 +266,8 @@ export class Indexes extends pulumi.CustomResource {
     constructor(name: string, args?: IndexesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: IndexesArgs | IndexesState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as IndexesState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["blockSignSize"] = state ? state.blockSignSize : undefined;
@@ -349,12 +350,8 @@ export class Indexes extends pulumi.CustomResource {
             inputs["tstatsHomePath"] = args ? args.tstatsHomePath : undefined;
             inputs["warmToColdScript"] = args ? args.warmToColdScript : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(Indexes.__pulumiType, name, inputs, opts);
     }

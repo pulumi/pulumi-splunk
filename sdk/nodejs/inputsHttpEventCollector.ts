@@ -89,7 +89,8 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
     constructor(name: string, args?: InputsHttpEventCollectorArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsHttpEventCollectorArgs | InputsHttpEventCollectorState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsHttpEventCollectorState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["disabled"] = state ? state.disabled : undefined;
@@ -114,12 +115,8 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
             inputs["token"] = args ? args.token : undefined;
             inputs["useAck"] = args ? args.useAck : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsHttpEventCollector.__pulumiType, name, inputs, opts);
     }

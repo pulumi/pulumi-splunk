@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -186,6 +186,85 @@ func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorOutput)
 }
 
+func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorPtrOutput() GlobalHttpEventCollectorPtrOutput {
+	return i.ToGlobalHttpEventCollectorPtrOutputWithContext(context.Background())
+}
+
+func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorPtrOutputWithContext(ctx context.Context) GlobalHttpEventCollectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorPtrOutput)
+}
+
+type GlobalHttpEventCollectorPtrInput interface {
+	pulumi.Input
+
+	ToGlobalHttpEventCollectorPtrOutput() GlobalHttpEventCollectorPtrOutput
+	ToGlobalHttpEventCollectorPtrOutputWithContext(ctx context.Context) GlobalHttpEventCollectorPtrOutput
+}
+
+type globalHttpEventCollectorPtrType GlobalHttpEventCollectorArgs
+
+func (*globalHttpEventCollectorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GlobalHttpEventCollector)(nil))
+}
+
+func (i *globalHttpEventCollectorPtrType) ToGlobalHttpEventCollectorPtrOutput() GlobalHttpEventCollectorPtrOutput {
+	return i.ToGlobalHttpEventCollectorPtrOutputWithContext(context.Background())
+}
+
+func (i *globalHttpEventCollectorPtrType) ToGlobalHttpEventCollectorPtrOutputWithContext(ctx context.Context) GlobalHttpEventCollectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorPtrOutput)
+}
+
+// GlobalHttpEventCollectorArrayInput is an input type that accepts GlobalHttpEventCollectorArray and GlobalHttpEventCollectorArrayOutput values.
+// You can construct a concrete instance of `GlobalHttpEventCollectorArrayInput` via:
+//
+//          GlobalHttpEventCollectorArray{ GlobalHttpEventCollectorArgs{...} }
+type GlobalHttpEventCollectorArrayInput interface {
+	pulumi.Input
+
+	ToGlobalHttpEventCollectorArrayOutput() GlobalHttpEventCollectorArrayOutput
+	ToGlobalHttpEventCollectorArrayOutputWithContext(context.Context) GlobalHttpEventCollectorArrayOutput
+}
+
+type GlobalHttpEventCollectorArray []GlobalHttpEventCollectorInput
+
+func (GlobalHttpEventCollectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*GlobalHttpEventCollector)(nil))
+}
+
+func (i GlobalHttpEventCollectorArray) ToGlobalHttpEventCollectorArrayOutput() GlobalHttpEventCollectorArrayOutput {
+	return i.ToGlobalHttpEventCollectorArrayOutputWithContext(context.Background())
+}
+
+func (i GlobalHttpEventCollectorArray) ToGlobalHttpEventCollectorArrayOutputWithContext(ctx context.Context) GlobalHttpEventCollectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorArrayOutput)
+}
+
+// GlobalHttpEventCollectorMapInput is an input type that accepts GlobalHttpEventCollectorMap and GlobalHttpEventCollectorMapOutput values.
+// You can construct a concrete instance of `GlobalHttpEventCollectorMapInput` via:
+//
+//          GlobalHttpEventCollectorMap{ "key": GlobalHttpEventCollectorArgs{...} }
+type GlobalHttpEventCollectorMapInput interface {
+	pulumi.Input
+
+	ToGlobalHttpEventCollectorMapOutput() GlobalHttpEventCollectorMapOutput
+	ToGlobalHttpEventCollectorMapOutputWithContext(context.Context) GlobalHttpEventCollectorMapOutput
+}
+
+type GlobalHttpEventCollectorMap map[string]GlobalHttpEventCollectorInput
+
+func (GlobalHttpEventCollectorMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*GlobalHttpEventCollector)(nil))
+}
+
+func (i GlobalHttpEventCollectorMap) ToGlobalHttpEventCollectorMapOutput() GlobalHttpEventCollectorMapOutput {
+	return i.ToGlobalHttpEventCollectorMapOutputWithContext(context.Background())
+}
+
+func (i GlobalHttpEventCollectorMap) ToGlobalHttpEventCollectorMapOutputWithContext(ctx context.Context) GlobalHttpEventCollectorMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorMapOutput)
+}
+
 type GlobalHttpEventCollectorOutput struct {
 	*pulumi.OutputState
 }
@@ -202,6 +281,75 @@ func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorOutputWithCont
 	return o
 }
 
+func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorPtrOutput() GlobalHttpEventCollectorPtrOutput {
+	return o.ToGlobalHttpEventCollectorPtrOutputWithContext(context.Background())
+}
+
+func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorPtrOutputWithContext(ctx context.Context) GlobalHttpEventCollectorPtrOutput {
+	return o.ApplyT(func(v GlobalHttpEventCollector) *GlobalHttpEventCollector {
+		return &v
+	}).(GlobalHttpEventCollectorPtrOutput)
+}
+
+type GlobalHttpEventCollectorPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (GlobalHttpEventCollectorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GlobalHttpEventCollector)(nil))
+}
+
+func (o GlobalHttpEventCollectorPtrOutput) ToGlobalHttpEventCollectorPtrOutput() GlobalHttpEventCollectorPtrOutput {
+	return o
+}
+
+func (o GlobalHttpEventCollectorPtrOutput) ToGlobalHttpEventCollectorPtrOutputWithContext(ctx context.Context) GlobalHttpEventCollectorPtrOutput {
+	return o
+}
+
+type GlobalHttpEventCollectorArrayOutput struct{ *pulumi.OutputState }
+
+func (GlobalHttpEventCollectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GlobalHttpEventCollector)(nil))
+}
+
+func (o GlobalHttpEventCollectorArrayOutput) ToGlobalHttpEventCollectorArrayOutput() GlobalHttpEventCollectorArrayOutput {
+	return o
+}
+
+func (o GlobalHttpEventCollectorArrayOutput) ToGlobalHttpEventCollectorArrayOutputWithContext(ctx context.Context) GlobalHttpEventCollectorArrayOutput {
+	return o
+}
+
+func (o GlobalHttpEventCollectorArrayOutput) Index(i pulumi.IntInput) GlobalHttpEventCollectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GlobalHttpEventCollector {
+		return vs[0].([]GlobalHttpEventCollector)[vs[1].(int)]
+	}).(GlobalHttpEventCollectorOutput)
+}
+
+type GlobalHttpEventCollectorMapOutput struct{ *pulumi.OutputState }
+
+func (GlobalHttpEventCollectorMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]GlobalHttpEventCollector)(nil))
+}
+
+func (o GlobalHttpEventCollectorMapOutput) ToGlobalHttpEventCollectorMapOutput() GlobalHttpEventCollectorMapOutput {
+	return o
+}
+
+func (o GlobalHttpEventCollectorMapOutput) ToGlobalHttpEventCollectorMapOutputWithContext(ctx context.Context) GlobalHttpEventCollectorMapOutput {
+	return o
+}
+
+func (o GlobalHttpEventCollectorMapOutput) MapIndex(k pulumi.StringInput) GlobalHttpEventCollectorOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) GlobalHttpEventCollector {
+		return vs[0].(map[string]GlobalHttpEventCollector)[vs[1].(string)]
+	}).(GlobalHttpEventCollectorOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(GlobalHttpEventCollectorOutput{})
+	pulumi.RegisterOutputType(GlobalHttpEventCollectorPtrOutput{})
+	pulumi.RegisterOutputType(GlobalHttpEventCollectorArrayOutput{})
+	pulumi.RegisterOutputType(GlobalHttpEventCollectorMapOutput{})
 }

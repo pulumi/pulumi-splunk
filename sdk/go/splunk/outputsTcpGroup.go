@@ -21,7 +21,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -280,6 +280,85 @@ func (i *OutputsTcpGroup) ToOutputsTcpGroupOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupOutput)
 }
 
+func (i *OutputsTcpGroup) ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPtrOutput {
+	return i.ToOutputsTcpGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *OutputsTcpGroup) ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupPtrOutput)
+}
+
+type OutputsTcpGroupPtrInput interface {
+	pulumi.Input
+
+	ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPtrOutput
+	ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput
+}
+
+type outputsTcpGroupPtrType OutputsTcpGroupArgs
+
+func (*outputsTcpGroupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpGroup)(nil))
+}
+
+func (i *outputsTcpGroupPtrType) ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPtrOutput {
+	return i.ToOutputsTcpGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *outputsTcpGroupPtrType) ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupPtrOutput)
+}
+
+// OutputsTcpGroupArrayInput is an input type that accepts OutputsTcpGroupArray and OutputsTcpGroupArrayOutput values.
+// You can construct a concrete instance of `OutputsTcpGroupArrayInput` via:
+//
+//          OutputsTcpGroupArray{ OutputsTcpGroupArgs{...} }
+type OutputsTcpGroupArrayInput interface {
+	pulumi.Input
+
+	ToOutputsTcpGroupArrayOutput() OutputsTcpGroupArrayOutput
+	ToOutputsTcpGroupArrayOutputWithContext(context.Context) OutputsTcpGroupArrayOutput
+}
+
+type OutputsTcpGroupArray []OutputsTcpGroupInput
+
+func (OutputsTcpGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*OutputsTcpGroup)(nil))
+}
+
+func (i OutputsTcpGroupArray) ToOutputsTcpGroupArrayOutput() OutputsTcpGroupArrayOutput {
+	return i.ToOutputsTcpGroupArrayOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpGroupArray) ToOutputsTcpGroupArrayOutputWithContext(ctx context.Context) OutputsTcpGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupArrayOutput)
+}
+
+// OutputsTcpGroupMapInput is an input type that accepts OutputsTcpGroupMap and OutputsTcpGroupMapOutput values.
+// You can construct a concrete instance of `OutputsTcpGroupMapInput` via:
+//
+//          OutputsTcpGroupMap{ "key": OutputsTcpGroupArgs{...} }
+type OutputsTcpGroupMapInput interface {
+	pulumi.Input
+
+	ToOutputsTcpGroupMapOutput() OutputsTcpGroupMapOutput
+	ToOutputsTcpGroupMapOutputWithContext(context.Context) OutputsTcpGroupMapOutput
+}
+
+type OutputsTcpGroupMap map[string]OutputsTcpGroupInput
+
+func (OutputsTcpGroupMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*OutputsTcpGroup)(nil))
+}
+
+func (i OutputsTcpGroupMap) ToOutputsTcpGroupMapOutput() OutputsTcpGroupMapOutput {
+	return i.ToOutputsTcpGroupMapOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpGroupMap) ToOutputsTcpGroupMapOutputWithContext(ctx context.Context) OutputsTcpGroupMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupMapOutput)
+}
+
 type OutputsTcpGroupOutput struct {
 	*pulumi.OutputState
 }
@@ -296,6 +375,75 @@ func (o OutputsTcpGroupOutput) ToOutputsTcpGroupOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o OutputsTcpGroupOutput) ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPtrOutput {
+	return o.ToOutputsTcpGroupPtrOutputWithContext(context.Background())
+}
+
+func (o OutputsTcpGroupOutput) ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput {
+	return o.ApplyT(func(v OutputsTcpGroup) *OutputsTcpGroup {
+		return &v
+	}).(OutputsTcpGroupPtrOutput)
+}
+
+type OutputsTcpGroupPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (OutputsTcpGroupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpGroup)(nil))
+}
+
+func (o OutputsTcpGroupPtrOutput) ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPtrOutput {
+	return o
+}
+
+func (o OutputsTcpGroupPtrOutput) ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput {
+	return o
+}
+
+type OutputsTcpGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutputsTcpGroup)(nil))
+}
+
+func (o OutputsTcpGroupArrayOutput) ToOutputsTcpGroupArrayOutput() OutputsTcpGroupArrayOutput {
+	return o
+}
+
+func (o OutputsTcpGroupArrayOutput) ToOutputsTcpGroupArrayOutputWithContext(ctx context.Context) OutputsTcpGroupArrayOutput {
+	return o
+}
+
+func (o OutputsTcpGroupArrayOutput) Index(i pulumi.IntInput) OutputsTcpGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutputsTcpGroup {
+		return vs[0].([]OutputsTcpGroup)[vs[1].(int)]
+	}).(OutputsTcpGroupOutput)
+}
+
+type OutputsTcpGroupMapOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpGroupMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]OutputsTcpGroup)(nil))
+}
+
+func (o OutputsTcpGroupMapOutput) ToOutputsTcpGroupMapOutput() OutputsTcpGroupMapOutput {
+	return o
+}
+
+func (o OutputsTcpGroupMapOutput) ToOutputsTcpGroupMapOutputWithContext(ctx context.Context) OutputsTcpGroupMapOutput {
+	return o
+}
+
+func (o OutputsTcpGroupMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpGroupOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) OutputsTcpGroup {
+		return vs[0].(map[string]OutputsTcpGroup)[vs[1].(string)]
+	}).(OutputsTcpGroupOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(OutputsTcpGroupOutput{})
+	pulumi.RegisterOutputType(OutputsTcpGroupPtrOutput{})
+	pulumi.RegisterOutputType(OutputsTcpGroupArrayOutput{})
+	pulumi.RegisterOutputType(OutputsTcpGroupMapOutput{})
 }

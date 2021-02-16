@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -220,6 +220,85 @@ func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogOutput)
 }
 
+func (i *OutputsTcpSyslog) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
+	return i.ToOutputsTcpSyslogPtrOutputWithContext(context.Background())
+}
+
+func (i *OutputsTcpSyslog) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogPtrOutput)
+}
+
+type OutputsTcpSyslogPtrInput interface {
+	pulumi.Input
+
+	ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput
+	ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput
+}
+
+type outputsTcpSyslogPtrType OutputsTcpSyslogArgs
+
+func (*outputsTcpSyslogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpSyslog)(nil))
+}
+
+func (i *outputsTcpSyslogPtrType) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
+	return i.ToOutputsTcpSyslogPtrOutputWithContext(context.Background())
+}
+
+func (i *outputsTcpSyslogPtrType) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogPtrOutput)
+}
+
+// OutputsTcpSyslogArrayInput is an input type that accepts OutputsTcpSyslogArray and OutputsTcpSyslogArrayOutput values.
+// You can construct a concrete instance of `OutputsTcpSyslogArrayInput` via:
+//
+//          OutputsTcpSyslogArray{ OutputsTcpSyslogArgs{...} }
+type OutputsTcpSyslogArrayInput interface {
+	pulumi.Input
+
+	ToOutputsTcpSyslogArrayOutput() OutputsTcpSyslogArrayOutput
+	ToOutputsTcpSyslogArrayOutputWithContext(context.Context) OutputsTcpSyslogArrayOutput
+}
+
+type OutputsTcpSyslogArray []OutputsTcpSyslogInput
+
+func (OutputsTcpSyslogArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*OutputsTcpSyslog)(nil))
+}
+
+func (i OutputsTcpSyslogArray) ToOutputsTcpSyslogArrayOutput() OutputsTcpSyslogArrayOutput {
+	return i.ToOutputsTcpSyslogArrayOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpSyslogArray) ToOutputsTcpSyslogArrayOutputWithContext(ctx context.Context) OutputsTcpSyslogArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogArrayOutput)
+}
+
+// OutputsTcpSyslogMapInput is an input type that accepts OutputsTcpSyslogMap and OutputsTcpSyslogMapOutput values.
+// You can construct a concrete instance of `OutputsTcpSyslogMapInput` via:
+//
+//          OutputsTcpSyslogMap{ "key": OutputsTcpSyslogArgs{...} }
+type OutputsTcpSyslogMapInput interface {
+	pulumi.Input
+
+	ToOutputsTcpSyslogMapOutput() OutputsTcpSyslogMapOutput
+	ToOutputsTcpSyslogMapOutputWithContext(context.Context) OutputsTcpSyslogMapOutput
+}
+
+type OutputsTcpSyslogMap map[string]OutputsTcpSyslogInput
+
+func (OutputsTcpSyslogMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*OutputsTcpSyslog)(nil))
+}
+
+func (i OutputsTcpSyslogMap) ToOutputsTcpSyslogMapOutput() OutputsTcpSyslogMapOutput {
+	return i.ToOutputsTcpSyslogMapOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpSyslogMap) ToOutputsTcpSyslogMapOutputWithContext(ctx context.Context) OutputsTcpSyslogMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogMapOutput)
+}
+
 type OutputsTcpSyslogOutput struct {
 	*pulumi.OutputState
 }
@@ -236,6 +315,75 @@ func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutputWithContext(ctx context.
 	return o
 }
 
+func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
+	return o.ToOutputsTcpSyslogPtrOutputWithContext(context.Background())
+}
+
+func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
+	return o.ApplyT(func(v OutputsTcpSyslog) *OutputsTcpSyslog {
+		return &v
+	}).(OutputsTcpSyslogPtrOutput)
+}
+
+type OutputsTcpSyslogPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (OutputsTcpSyslogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpSyslog)(nil))
+}
+
+func (o OutputsTcpSyslogPtrOutput) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
+	return o
+}
+
+func (o OutputsTcpSyslogPtrOutput) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
+	return o
+}
+
+type OutputsTcpSyslogArrayOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpSyslogArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutputsTcpSyslog)(nil))
+}
+
+func (o OutputsTcpSyslogArrayOutput) ToOutputsTcpSyslogArrayOutput() OutputsTcpSyslogArrayOutput {
+	return o
+}
+
+func (o OutputsTcpSyslogArrayOutput) ToOutputsTcpSyslogArrayOutputWithContext(ctx context.Context) OutputsTcpSyslogArrayOutput {
+	return o
+}
+
+func (o OutputsTcpSyslogArrayOutput) Index(i pulumi.IntInput) OutputsTcpSyslogOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutputsTcpSyslog {
+		return vs[0].([]OutputsTcpSyslog)[vs[1].(int)]
+	}).(OutputsTcpSyslogOutput)
+}
+
+type OutputsTcpSyslogMapOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpSyslogMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]OutputsTcpSyslog)(nil))
+}
+
+func (o OutputsTcpSyslogMapOutput) ToOutputsTcpSyslogMapOutput() OutputsTcpSyslogMapOutput {
+	return o
+}
+
+func (o OutputsTcpSyslogMapOutput) ToOutputsTcpSyslogMapOutputWithContext(ctx context.Context) OutputsTcpSyslogMapOutput {
+	return o
+}
+
+func (o OutputsTcpSyslogMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpSyslogOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) OutputsTcpSyslog {
+		return vs[0].(map[string]OutputsTcpSyslog)[vs[1].(string)]
+	}).(OutputsTcpSyslogOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(OutputsTcpSyslogOutput{})
+	pulumi.RegisterOutputType(OutputsTcpSyslogPtrOutput{})
+	pulumi.RegisterOutputType(OutputsTcpSyslogArrayOutput{})
+	pulumi.RegisterOutputType(OutputsTcpSyslogMapOutput{})
 }

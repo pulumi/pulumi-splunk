@@ -107,7 +107,8 @@ export class OutputsTcpServer extends pulumi.CustomResource {
     constructor(name: string, args?: OutputsTcpServerArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: OutputsTcpServerArgs | OutputsTcpServerState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as OutputsTcpServerState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["disabled"] = state ? state.disabled : undefined;
@@ -134,12 +135,8 @@ export class OutputsTcpServer extends pulumi.CustomResource {
             inputs["sslRootCaPath"] = args ? args.sslRootCaPath : undefined;
             inputs["sslVerifyServerCert"] = args ? args.sslVerifyServerCert : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(OutputsTcpServer.__pulumiType, name, inputs, opts);
     }

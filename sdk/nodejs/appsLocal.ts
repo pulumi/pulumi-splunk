@@ -124,7 +124,8 @@ export class AppsLocal extends pulumi.CustomResource {
     constructor(name: string, args?: AppsLocalArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppsLocalArgs | AppsLocalState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AppsLocalState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["auth"] = state ? state.auth : undefined;
@@ -155,12 +156,8 @@ export class AppsLocal extends pulumi.CustomResource {
             inputs["version"] = args ? args.version : undefined;
             inputs["visible"] = args ? args.visible : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AppsLocal.__pulumiType, name, inputs, opts);
     }

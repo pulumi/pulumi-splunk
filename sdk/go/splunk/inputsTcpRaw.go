@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -283,6 +283,85 @@ func (i *InputsTcpRaw) ToInputsTcpRawOutputWithContext(ctx context.Context) Inpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawOutput)
 }
 
+func (i *InputsTcpRaw) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
+	return i.ToInputsTcpRawPtrOutputWithContext(context.Background())
+}
+
+func (i *InputsTcpRaw) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawPtrOutput)
+}
+
+type InputsTcpRawPtrInput interface {
+	pulumi.Input
+
+	ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput
+	ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput
+}
+
+type inputsTcpRawPtrType InputsTcpRawArgs
+
+func (*inputsTcpRawPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsTcpRaw)(nil))
+}
+
+func (i *inputsTcpRawPtrType) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
+	return i.ToInputsTcpRawPtrOutputWithContext(context.Background())
+}
+
+func (i *inputsTcpRawPtrType) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawPtrOutput)
+}
+
+// InputsTcpRawArrayInput is an input type that accepts InputsTcpRawArray and InputsTcpRawArrayOutput values.
+// You can construct a concrete instance of `InputsTcpRawArrayInput` via:
+//
+//          InputsTcpRawArray{ InputsTcpRawArgs{...} }
+type InputsTcpRawArrayInput interface {
+	pulumi.Input
+
+	ToInputsTcpRawArrayOutput() InputsTcpRawArrayOutput
+	ToInputsTcpRawArrayOutputWithContext(context.Context) InputsTcpRawArrayOutput
+}
+
+type InputsTcpRawArray []InputsTcpRawInput
+
+func (InputsTcpRawArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*InputsTcpRaw)(nil))
+}
+
+func (i InputsTcpRawArray) ToInputsTcpRawArrayOutput() InputsTcpRawArrayOutput {
+	return i.ToInputsTcpRawArrayOutputWithContext(context.Background())
+}
+
+func (i InputsTcpRawArray) ToInputsTcpRawArrayOutputWithContext(ctx context.Context) InputsTcpRawArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawArrayOutput)
+}
+
+// InputsTcpRawMapInput is an input type that accepts InputsTcpRawMap and InputsTcpRawMapOutput values.
+// You can construct a concrete instance of `InputsTcpRawMapInput` via:
+//
+//          InputsTcpRawMap{ "key": InputsTcpRawArgs{...} }
+type InputsTcpRawMapInput interface {
+	pulumi.Input
+
+	ToInputsTcpRawMapOutput() InputsTcpRawMapOutput
+	ToInputsTcpRawMapOutputWithContext(context.Context) InputsTcpRawMapOutput
+}
+
+type InputsTcpRawMap map[string]InputsTcpRawInput
+
+func (InputsTcpRawMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*InputsTcpRaw)(nil))
+}
+
+func (i InputsTcpRawMap) ToInputsTcpRawMapOutput() InputsTcpRawMapOutput {
+	return i.ToInputsTcpRawMapOutputWithContext(context.Background())
+}
+
+func (i InputsTcpRawMap) ToInputsTcpRawMapOutputWithContext(ctx context.Context) InputsTcpRawMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawMapOutput)
+}
+
 type InputsTcpRawOutput struct {
 	*pulumi.OutputState
 }
@@ -299,6 +378,75 @@ func (o InputsTcpRawOutput) ToInputsTcpRawOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o InputsTcpRawOutput) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
+	return o.ToInputsTcpRawPtrOutputWithContext(context.Background())
+}
+
+func (o InputsTcpRawOutput) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
+	return o.ApplyT(func(v InputsTcpRaw) *InputsTcpRaw {
+		return &v
+	}).(InputsTcpRawPtrOutput)
+}
+
+type InputsTcpRawPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (InputsTcpRawPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsTcpRaw)(nil))
+}
+
+func (o InputsTcpRawPtrOutput) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
+	return o
+}
+
+func (o InputsTcpRawPtrOutput) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
+	return o
+}
+
+type InputsTcpRawArrayOutput struct{ *pulumi.OutputState }
+
+func (InputsTcpRawArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InputsTcpRaw)(nil))
+}
+
+func (o InputsTcpRawArrayOutput) ToInputsTcpRawArrayOutput() InputsTcpRawArrayOutput {
+	return o
+}
+
+func (o InputsTcpRawArrayOutput) ToInputsTcpRawArrayOutputWithContext(ctx context.Context) InputsTcpRawArrayOutput {
+	return o
+}
+
+func (o InputsTcpRawArrayOutput) Index(i pulumi.IntInput) InputsTcpRawOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsTcpRaw {
+		return vs[0].([]InputsTcpRaw)[vs[1].(int)]
+	}).(InputsTcpRawOutput)
+}
+
+type InputsTcpRawMapOutput struct{ *pulumi.OutputState }
+
+func (InputsTcpRawMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]InputsTcpRaw)(nil))
+}
+
+func (o InputsTcpRawMapOutput) ToInputsTcpRawMapOutput() InputsTcpRawMapOutput {
+	return o
+}
+
+func (o InputsTcpRawMapOutput) ToInputsTcpRawMapOutputWithContext(ctx context.Context) InputsTcpRawMapOutput {
+	return o
+}
+
+func (o InputsTcpRawMapOutput) MapIndex(k pulumi.StringInput) InputsTcpRawOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsTcpRaw {
+		return vs[0].(map[string]InputsTcpRaw)[vs[1].(string)]
+	}).(InputsTcpRawOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(InputsTcpRawOutput{})
+	pulumi.RegisterOutputType(InputsTcpRawPtrOutput{})
+	pulumi.RegisterOutputType(InputsTcpRawArrayOutput{})
+	pulumi.RegisterOutputType(InputsTcpRawMapOutput{})
 }

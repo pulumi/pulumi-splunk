@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -270,6 +270,85 @@ func (i *InputsMonitor) ToInputsMonitorOutputWithContext(ctx context.Context) In
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorOutput)
 }
 
+func (i *InputsMonitor) ToInputsMonitorPtrOutput() InputsMonitorPtrOutput {
+	return i.ToInputsMonitorPtrOutputWithContext(context.Background())
+}
+
+func (i *InputsMonitor) ToInputsMonitorPtrOutputWithContext(ctx context.Context) InputsMonitorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorPtrOutput)
+}
+
+type InputsMonitorPtrInput interface {
+	pulumi.Input
+
+	ToInputsMonitorPtrOutput() InputsMonitorPtrOutput
+	ToInputsMonitorPtrOutputWithContext(ctx context.Context) InputsMonitorPtrOutput
+}
+
+type inputsMonitorPtrType InputsMonitorArgs
+
+func (*inputsMonitorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsMonitor)(nil))
+}
+
+func (i *inputsMonitorPtrType) ToInputsMonitorPtrOutput() InputsMonitorPtrOutput {
+	return i.ToInputsMonitorPtrOutputWithContext(context.Background())
+}
+
+func (i *inputsMonitorPtrType) ToInputsMonitorPtrOutputWithContext(ctx context.Context) InputsMonitorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorPtrOutput)
+}
+
+// InputsMonitorArrayInput is an input type that accepts InputsMonitorArray and InputsMonitorArrayOutput values.
+// You can construct a concrete instance of `InputsMonitorArrayInput` via:
+//
+//          InputsMonitorArray{ InputsMonitorArgs{...} }
+type InputsMonitorArrayInput interface {
+	pulumi.Input
+
+	ToInputsMonitorArrayOutput() InputsMonitorArrayOutput
+	ToInputsMonitorArrayOutputWithContext(context.Context) InputsMonitorArrayOutput
+}
+
+type InputsMonitorArray []InputsMonitorInput
+
+func (InputsMonitorArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*InputsMonitor)(nil))
+}
+
+func (i InputsMonitorArray) ToInputsMonitorArrayOutput() InputsMonitorArrayOutput {
+	return i.ToInputsMonitorArrayOutputWithContext(context.Background())
+}
+
+func (i InputsMonitorArray) ToInputsMonitorArrayOutputWithContext(ctx context.Context) InputsMonitorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorArrayOutput)
+}
+
+// InputsMonitorMapInput is an input type that accepts InputsMonitorMap and InputsMonitorMapOutput values.
+// You can construct a concrete instance of `InputsMonitorMapInput` via:
+//
+//          InputsMonitorMap{ "key": InputsMonitorArgs{...} }
+type InputsMonitorMapInput interface {
+	pulumi.Input
+
+	ToInputsMonitorMapOutput() InputsMonitorMapOutput
+	ToInputsMonitorMapOutputWithContext(context.Context) InputsMonitorMapOutput
+}
+
+type InputsMonitorMap map[string]InputsMonitorInput
+
+func (InputsMonitorMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*InputsMonitor)(nil))
+}
+
+func (i InputsMonitorMap) ToInputsMonitorMapOutput() InputsMonitorMapOutput {
+	return i.ToInputsMonitorMapOutputWithContext(context.Background())
+}
+
+func (i InputsMonitorMap) ToInputsMonitorMapOutputWithContext(ctx context.Context) InputsMonitorMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorMapOutput)
+}
+
 type InputsMonitorOutput struct {
 	*pulumi.OutputState
 }
@@ -286,6 +365,75 @@ func (o InputsMonitorOutput) ToInputsMonitorOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o InputsMonitorOutput) ToInputsMonitorPtrOutput() InputsMonitorPtrOutput {
+	return o.ToInputsMonitorPtrOutputWithContext(context.Background())
+}
+
+func (o InputsMonitorOutput) ToInputsMonitorPtrOutputWithContext(ctx context.Context) InputsMonitorPtrOutput {
+	return o.ApplyT(func(v InputsMonitor) *InputsMonitor {
+		return &v
+	}).(InputsMonitorPtrOutput)
+}
+
+type InputsMonitorPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (InputsMonitorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsMonitor)(nil))
+}
+
+func (o InputsMonitorPtrOutput) ToInputsMonitorPtrOutput() InputsMonitorPtrOutput {
+	return o
+}
+
+func (o InputsMonitorPtrOutput) ToInputsMonitorPtrOutputWithContext(ctx context.Context) InputsMonitorPtrOutput {
+	return o
+}
+
+type InputsMonitorArrayOutput struct{ *pulumi.OutputState }
+
+func (InputsMonitorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InputsMonitor)(nil))
+}
+
+func (o InputsMonitorArrayOutput) ToInputsMonitorArrayOutput() InputsMonitorArrayOutput {
+	return o
+}
+
+func (o InputsMonitorArrayOutput) ToInputsMonitorArrayOutputWithContext(ctx context.Context) InputsMonitorArrayOutput {
+	return o
+}
+
+func (o InputsMonitorArrayOutput) Index(i pulumi.IntInput) InputsMonitorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsMonitor {
+		return vs[0].([]InputsMonitor)[vs[1].(int)]
+	}).(InputsMonitorOutput)
+}
+
+type InputsMonitorMapOutput struct{ *pulumi.OutputState }
+
+func (InputsMonitorMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]InputsMonitor)(nil))
+}
+
+func (o InputsMonitorMapOutput) ToInputsMonitorMapOutput() InputsMonitorMapOutput {
+	return o
+}
+
+func (o InputsMonitorMapOutput) ToInputsMonitorMapOutputWithContext(ctx context.Context) InputsMonitorMapOutput {
+	return o
+}
+
+func (o InputsMonitorMapOutput) MapIndex(k pulumi.StringInput) InputsMonitorOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsMonitor {
+		return vs[0].(map[string]InputsMonitor)[vs[1].(string)]
+	}).(InputsMonitorOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(InputsMonitorOutput{})
+	pulumi.RegisterOutputType(InputsMonitorPtrOutput{})
+	pulumi.RegisterOutputType(InputsMonitorArrayOutput{})
+	pulumi.RegisterOutputType(InputsMonitorMapOutput{})
 }

@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -264,6 +264,85 @@ func (i *OutputsTcpDefault) ToOutputsTcpDefaultOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultOutput)
 }
 
+func (i *OutputsTcpDefault) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
+	return i.ToOutputsTcpDefaultPtrOutputWithContext(context.Background())
+}
+
+func (i *OutputsTcpDefault) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultPtrOutput)
+}
+
+type OutputsTcpDefaultPtrInput interface {
+	pulumi.Input
+
+	ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput
+	ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput
+}
+
+type outputsTcpDefaultPtrType OutputsTcpDefaultArgs
+
+func (*outputsTcpDefaultPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpDefault)(nil))
+}
+
+func (i *outputsTcpDefaultPtrType) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
+	return i.ToOutputsTcpDefaultPtrOutputWithContext(context.Background())
+}
+
+func (i *outputsTcpDefaultPtrType) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultPtrOutput)
+}
+
+// OutputsTcpDefaultArrayInput is an input type that accepts OutputsTcpDefaultArray and OutputsTcpDefaultArrayOutput values.
+// You can construct a concrete instance of `OutputsTcpDefaultArrayInput` via:
+//
+//          OutputsTcpDefaultArray{ OutputsTcpDefaultArgs{...} }
+type OutputsTcpDefaultArrayInput interface {
+	pulumi.Input
+
+	ToOutputsTcpDefaultArrayOutput() OutputsTcpDefaultArrayOutput
+	ToOutputsTcpDefaultArrayOutputWithContext(context.Context) OutputsTcpDefaultArrayOutput
+}
+
+type OutputsTcpDefaultArray []OutputsTcpDefaultInput
+
+func (OutputsTcpDefaultArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*OutputsTcpDefault)(nil))
+}
+
+func (i OutputsTcpDefaultArray) ToOutputsTcpDefaultArrayOutput() OutputsTcpDefaultArrayOutput {
+	return i.ToOutputsTcpDefaultArrayOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpDefaultArray) ToOutputsTcpDefaultArrayOutputWithContext(ctx context.Context) OutputsTcpDefaultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultArrayOutput)
+}
+
+// OutputsTcpDefaultMapInput is an input type that accepts OutputsTcpDefaultMap and OutputsTcpDefaultMapOutput values.
+// You can construct a concrete instance of `OutputsTcpDefaultMapInput` via:
+//
+//          OutputsTcpDefaultMap{ "key": OutputsTcpDefaultArgs{...} }
+type OutputsTcpDefaultMapInput interface {
+	pulumi.Input
+
+	ToOutputsTcpDefaultMapOutput() OutputsTcpDefaultMapOutput
+	ToOutputsTcpDefaultMapOutputWithContext(context.Context) OutputsTcpDefaultMapOutput
+}
+
+type OutputsTcpDefaultMap map[string]OutputsTcpDefaultInput
+
+func (OutputsTcpDefaultMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*OutputsTcpDefault)(nil))
+}
+
+func (i OutputsTcpDefaultMap) ToOutputsTcpDefaultMapOutput() OutputsTcpDefaultMapOutput {
+	return i.ToOutputsTcpDefaultMapOutputWithContext(context.Background())
+}
+
+func (i OutputsTcpDefaultMap) ToOutputsTcpDefaultMapOutputWithContext(ctx context.Context) OutputsTcpDefaultMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultMapOutput)
+}
+
 type OutputsTcpDefaultOutput struct {
 	*pulumi.OutputState
 }
@@ -280,6 +359,75 @@ func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutputWithContext(ctx contex
 	return o
 }
 
+func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
+	return o.ToOutputsTcpDefaultPtrOutputWithContext(context.Background())
+}
+
+func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
+	return o.ApplyT(func(v OutputsTcpDefault) *OutputsTcpDefault {
+		return &v
+	}).(OutputsTcpDefaultPtrOutput)
+}
+
+type OutputsTcpDefaultPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (OutputsTcpDefaultPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OutputsTcpDefault)(nil))
+}
+
+func (o OutputsTcpDefaultPtrOutput) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
+	return o
+}
+
+func (o OutputsTcpDefaultPtrOutput) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
+	return o
+}
+
+type OutputsTcpDefaultArrayOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpDefaultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OutputsTcpDefault)(nil))
+}
+
+func (o OutputsTcpDefaultArrayOutput) ToOutputsTcpDefaultArrayOutput() OutputsTcpDefaultArrayOutput {
+	return o
+}
+
+func (o OutputsTcpDefaultArrayOutput) ToOutputsTcpDefaultArrayOutputWithContext(ctx context.Context) OutputsTcpDefaultArrayOutput {
+	return o
+}
+
+func (o OutputsTcpDefaultArrayOutput) Index(i pulumi.IntInput) OutputsTcpDefaultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutputsTcpDefault {
+		return vs[0].([]OutputsTcpDefault)[vs[1].(int)]
+	}).(OutputsTcpDefaultOutput)
+}
+
+type OutputsTcpDefaultMapOutput struct{ *pulumi.OutputState }
+
+func (OutputsTcpDefaultMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]OutputsTcpDefault)(nil))
+}
+
+func (o OutputsTcpDefaultMapOutput) ToOutputsTcpDefaultMapOutput() OutputsTcpDefaultMapOutput {
+	return o
+}
+
+func (o OutputsTcpDefaultMapOutput) ToOutputsTcpDefaultMapOutputWithContext(ctx context.Context) OutputsTcpDefaultMapOutput {
+	return o
+}
+
+func (o OutputsTcpDefaultMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpDefaultOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) OutputsTcpDefault {
+		return vs[0].(map[string]OutputsTcpDefault)[vs[1].(string)]
+	}).(OutputsTcpDefaultOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(OutputsTcpDefaultOutput{})
+	pulumi.RegisterOutputType(OutputsTcpDefaultPtrOutput{})
+	pulumi.RegisterOutputType(OutputsTcpDefaultArrayOutput{})
+	pulumi.RegisterOutputType(OutputsTcpDefaultMapOutput{})
 }

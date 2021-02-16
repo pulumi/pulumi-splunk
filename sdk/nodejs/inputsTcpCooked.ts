@@ -91,7 +91,8 @@ export class InputsTcpCooked extends pulumi.CustomResource {
     constructor(name: string, args?: InputsTcpCookedArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpCookedArgs | InputsTcpCookedState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsTcpCookedState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["connectionHost"] = state ? state.connectionHost : undefined;
@@ -108,12 +109,8 @@ export class InputsTcpCooked extends pulumi.CustomResource {
             inputs["name"] = args ? args.name : undefined;
             inputs["restrictToHost"] = args ? args.restrictToHost : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsTcpCooked.__pulumiType, name, inputs, opts);
     }

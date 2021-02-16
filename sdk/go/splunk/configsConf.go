@@ -20,7 +20,7 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/"
+// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 // 	"github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 // )
 //
@@ -142,6 +142,85 @@ func (i *ConfigsConf) ToConfigsConfOutputWithContext(ctx context.Context) Config
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfOutput)
 }
 
+func (i *ConfigsConf) ToConfigsConfPtrOutput() ConfigsConfPtrOutput {
+	return i.ToConfigsConfPtrOutputWithContext(context.Background())
+}
+
+func (i *ConfigsConf) ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfPtrOutput)
+}
+
+type ConfigsConfPtrInput interface {
+	pulumi.Input
+
+	ToConfigsConfPtrOutput() ConfigsConfPtrOutput
+	ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput
+}
+
+type configsConfPtrType ConfigsConfArgs
+
+func (*configsConfPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigsConf)(nil))
+}
+
+func (i *configsConfPtrType) ToConfigsConfPtrOutput() ConfigsConfPtrOutput {
+	return i.ToConfigsConfPtrOutputWithContext(context.Background())
+}
+
+func (i *configsConfPtrType) ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfPtrOutput)
+}
+
+// ConfigsConfArrayInput is an input type that accepts ConfigsConfArray and ConfigsConfArrayOutput values.
+// You can construct a concrete instance of `ConfigsConfArrayInput` via:
+//
+//          ConfigsConfArray{ ConfigsConfArgs{...} }
+type ConfigsConfArrayInput interface {
+	pulumi.Input
+
+	ToConfigsConfArrayOutput() ConfigsConfArrayOutput
+	ToConfigsConfArrayOutputWithContext(context.Context) ConfigsConfArrayOutput
+}
+
+type ConfigsConfArray []ConfigsConfInput
+
+func (ConfigsConfArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*ConfigsConf)(nil))
+}
+
+func (i ConfigsConfArray) ToConfigsConfArrayOutput() ConfigsConfArrayOutput {
+	return i.ToConfigsConfArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigsConfArray) ToConfigsConfArrayOutputWithContext(ctx context.Context) ConfigsConfArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfArrayOutput)
+}
+
+// ConfigsConfMapInput is an input type that accepts ConfigsConfMap and ConfigsConfMapOutput values.
+// You can construct a concrete instance of `ConfigsConfMapInput` via:
+//
+//          ConfigsConfMap{ "key": ConfigsConfArgs{...} }
+type ConfigsConfMapInput interface {
+	pulumi.Input
+
+	ToConfigsConfMapOutput() ConfigsConfMapOutput
+	ToConfigsConfMapOutputWithContext(context.Context) ConfigsConfMapOutput
+}
+
+type ConfigsConfMap map[string]ConfigsConfInput
+
+func (ConfigsConfMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*ConfigsConf)(nil))
+}
+
+func (i ConfigsConfMap) ToConfigsConfMapOutput() ConfigsConfMapOutput {
+	return i.ToConfigsConfMapOutputWithContext(context.Background())
+}
+
+func (i ConfigsConfMap) ToConfigsConfMapOutputWithContext(ctx context.Context) ConfigsConfMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfMapOutput)
+}
+
 type ConfigsConfOutput struct {
 	*pulumi.OutputState
 }
@@ -158,6 +237,75 @@ func (o ConfigsConfOutput) ToConfigsConfOutputWithContext(ctx context.Context) C
 	return o
 }
 
+func (o ConfigsConfOutput) ToConfigsConfPtrOutput() ConfigsConfPtrOutput {
+	return o.ToConfigsConfPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigsConfOutput) ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput {
+	return o.ApplyT(func(v ConfigsConf) *ConfigsConf {
+		return &v
+	}).(ConfigsConfPtrOutput)
+}
+
+type ConfigsConfPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (ConfigsConfPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigsConf)(nil))
+}
+
+func (o ConfigsConfPtrOutput) ToConfigsConfPtrOutput() ConfigsConfPtrOutput {
+	return o
+}
+
+func (o ConfigsConfPtrOutput) ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput {
+	return o
+}
+
+type ConfigsConfArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigsConfArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigsConf)(nil))
+}
+
+func (o ConfigsConfArrayOutput) ToConfigsConfArrayOutput() ConfigsConfArrayOutput {
+	return o
+}
+
+func (o ConfigsConfArrayOutput) ToConfigsConfArrayOutputWithContext(ctx context.Context) ConfigsConfArrayOutput {
+	return o
+}
+
+func (o ConfigsConfArrayOutput) Index(i pulumi.IntInput) ConfigsConfOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigsConf {
+		return vs[0].([]ConfigsConf)[vs[1].(int)]
+	}).(ConfigsConfOutput)
+}
+
+type ConfigsConfMapOutput struct{ *pulumi.OutputState }
+
+func (ConfigsConfMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]ConfigsConf)(nil))
+}
+
+func (o ConfigsConfMapOutput) ToConfigsConfMapOutput() ConfigsConfMapOutput {
+	return o
+}
+
+func (o ConfigsConfMapOutput) ToConfigsConfMapOutputWithContext(ctx context.Context) ConfigsConfMapOutput {
+	return o
+}
+
+func (o ConfigsConfMapOutput) MapIndex(k pulumi.StringInput) ConfigsConfOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) ConfigsConf {
+		return vs[0].(map[string]ConfigsConf)[vs[1].(string)]
+	}).(ConfigsConfOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(ConfigsConfOutput{})
+	pulumi.RegisterOutputType(ConfigsConfPtrOutput{})
+	pulumi.RegisterOutputType(ConfigsConfArrayOutput{})
+	pulumi.RegisterOutputType(ConfigsConfMapOutput{})
 }

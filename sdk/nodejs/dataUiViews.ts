@@ -78,26 +78,23 @@ export class DataUiViews extends pulumi.CustomResource {
     constructor(name: string, args: DataUiViewsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DataUiViewsArgs | DataUiViewsState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as DataUiViewsState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["eaiData"] = state ? state.eaiData : undefined;
             inputs["name"] = state ? state.name : undefined;
         } else {
             const args = argsOrState as DataUiViewsArgs | undefined;
-            if ((!args || args.eaiData === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.eaiData === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'eaiData'");
             }
             inputs["acl"] = args ? args.acl : undefined;
             inputs["eaiData"] = args ? args.eaiData : undefined;
             inputs["name"] = args ? args.name : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(DataUiViews.__pulumiType, name, inputs, opts);
     }

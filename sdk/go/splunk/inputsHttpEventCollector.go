@@ -186,6 +186,85 @@ func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorOutput)
 }
 
+func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
+	return i.ToInputsHttpEventCollectorPtrOutputWithContext(context.Background())
+}
+
+func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorPtrOutput)
+}
+
+type InputsHttpEventCollectorPtrInput interface {
+	pulumi.Input
+
+	ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput
+	ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput
+}
+
+type inputsHttpEventCollectorPtrType InputsHttpEventCollectorArgs
+
+func (*inputsHttpEventCollectorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsHttpEventCollector)(nil))
+}
+
+func (i *inputsHttpEventCollectorPtrType) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
+	return i.ToInputsHttpEventCollectorPtrOutputWithContext(context.Background())
+}
+
+func (i *inputsHttpEventCollectorPtrType) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorPtrOutput)
+}
+
+// InputsHttpEventCollectorArrayInput is an input type that accepts InputsHttpEventCollectorArray and InputsHttpEventCollectorArrayOutput values.
+// You can construct a concrete instance of `InputsHttpEventCollectorArrayInput` via:
+//
+//          InputsHttpEventCollectorArray{ InputsHttpEventCollectorArgs{...} }
+type InputsHttpEventCollectorArrayInput interface {
+	pulumi.Input
+
+	ToInputsHttpEventCollectorArrayOutput() InputsHttpEventCollectorArrayOutput
+	ToInputsHttpEventCollectorArrayOutputWithContext(context.Context) InputsHttpEventCollectorArrayOutput
+}
+
+type InputsHttpEventCollectorArray []InputsHttpEventCollectorInput
+
+func (InputsHttpEventCollectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf(([]*InputsHttpEventCollector)(nil))
+}
+
+func (i InputsHttpEventCollectorArray) ToInputsHttpEventCollectorArrayOutput() InputsHttpEventCollectorArrayOutput {
+	return i.ToInputsHttpEventCollectorArrayOutputWithContext(context.Background())
+}
+
+func (i InputsHttpEventCollectorArray) ToInputsHttpEventCollectorArrayOutputWithContext(ctx context.Context) InputsHttpEventCollectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorArrayOutput)
+}
+
+// InputsHttpEventCollectorMapInput is an input type that accepts InputsHttpEventCollectorMap and InputsHttpEventCollectorMapOutput values.
+// You can construct a concrete instance of `InputsHttpEventCollectorMapInput` via:
+//
+//          InputsHttpEventCollectorMap{ "key": InputsHttpEventCollectorArgs{...} }
+type InputsHttpEventCollectorMapInput interface {
+	pulumi.Input
+
+	ToInputsHttpEventCollectorMapOutput() InputsHttpEventCollectorMapOutput
+	ToInputsHttpEventCollectorMapOutputWithContext(context.Context) InputsHttpEventCollectorMapOutput
+}
+
+type InputsHttpEventCollectorMap map[string]InputsHttpEventCollectorInput
+
+func (InputsHttpEventCollectorMap) ElementType() reflect.Type {
+	return reflect.TypeOf((map[string]*InputsHttpEventCollector)(nil))
+}
+
+func (i InputsHttpEventCollectorMap) ToInputsHttpEventCollectorMapOutput() InputsHttpEventCollectorMapOutput {
+	return i.ToInputsHttpEventCollectorMapOutputWithContext(context.Background())
+}
+
+func (i InputsHttpEventCollectorMap) ToInputsHttpEventCollectorMapOutputWithContext(ctx context.Context) InputsHttpEventCollectorMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorMapOutput)
+}
+
 type InputsHttpEventCollectorOutput struct {
 	*pulumi.OutputState
 }
@@ -202,6 +281,75 @@ func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutputWithCont
 	return o
 }
 
+func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
+	return o.ToInputsHttpEventCollectorPtrOutputWithContext(context.Background())
+}
+
+func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
+	return o.ApplyT(func(v InputsHttpEventCollector) *InputsHttpEventCollector {
+		return &v
+	}).(InputsHttpEventCollectorPtrOutput)
+}
+
+type InputsHttpEventCollectorPtrOutput struct {
+	*pulumi.OutputState
+}
+
+func (InputsHttpEventCollectorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InputsHttpEventCollector)(nil))
+}
+
+func (o InputsHttpEventCollectorPtrOutput) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
+	return o
+}
+
+func (o InputsHttpEventCollectorPtrOutput) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
+	return o
+}
+
+type InputsHttpEventCollectorArrayOutput struct{ *pulumi.OutputState }
+
+func (InputsHttpEventCollectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InputsHttpEventCollector)(nil))
+}
+
+func (o InputsHttpEventCollectorArrayOutput) ToInputsHttpEventCollectorArrayOutput() InputsHttpEventCollectorArrayOutput {
+	return o
+}
+
+func (o InputsHttpEventCollectorArrayOutput) ToInputsHttpEventCollectorArrayOutputWithContext(ctx context.Context) InputsHttpEventCollectorArrayOutput {
+	return o
+}
+
+func (o InputsHttpEventCollectorArrayOutput) Index(i pulumi.IntInput) InputsHttpEventCollectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsHttpEventCollector {
+		return vs[0].([]InputsHttpEventCollector)[vs[1].(int)]
+	}).(InputsHttpEventCollectorOutput)
+}
+
+type InputsHttpEventCollectorMapOutput struct{ *pulumi.OutputState }
+
+func (InputsHttpEventCollectorMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]InputsHttpEventCollector)(nil))
+}
+
+func (o InputsHttpEventCollectorMapOutput) ToInputsHttpEventCollectorMapOutput() InputsHttpEventCollectorMapOutput {
+	return o
+}
+
+func (o InputsHttpEventCollectorMapOutput) ToInputsHttpEventCollectorMapOutputWithContext(ctx context.Context) InputsHttpEventCollectorMapOutput {
+	return o
+}
+
+func (o InputsHttpEventCollectorMapOutput) MapIndex(k pulumi.StringInput) InputsHttpEventCollectorOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsHttpEventCollector {
+		return vs[0].(map[string]InputsHttpEventCollector)[vs[1].(string)]
+	}).(InputsHttpEventCollectorOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(InputsHttpEventCollectorOutput{})
+	pulumi.RegisterOutputType(InputsHttpEventCollectorPtrOutput{})
+	pulumi.RegisterOutputType(InputsHttpEventCollectorArrayOutput{})
+	pulumi.RegisterOutputType(InputsHttpEventCollectorMapOutput{})
 }

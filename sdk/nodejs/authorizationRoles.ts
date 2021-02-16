@@ -130,7 +130,8 @@ export class AuthorizationRoles extends pulumi.CustomResource {
     constructor(name: string, args?: AuthorizationRolesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AuthorizationRolesArgs | AuthorizationRolesState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as AuthorizationRolesState | undefined;
             inputs["capabilities"] = state ? state.capabilities : undefined;
             inputs["cumulativeRealtimeSearchJobsQuota"] = state ? state.cumulativeRealtimeSearchJobsQuota : undefined;
@@ -161,12 +162,8 @@ export class AuthorizationRoles extends pulumi.CustomResource {
             inputs["searchJobsQuota"] = args ? args.searchJobsQuota : undefined;
             inputs["searchTimeWin"] = args ? args.searchTimeWin : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(AuthorizationRoles.__pulumiType, name, inputs, opts);
     }

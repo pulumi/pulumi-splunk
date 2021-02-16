@@ -80,7 +80,8 @@ export class InputsTcpSsl extends pulumi.CustomResource {
     constructor(name: string, args?: InputsTcpSslArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpSslArgs | InputsTcpSslState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsTcpSslState | undefined;
             inputs["disabled"] = state ? state.disabled : undefined;
             inputs["password"] = state ? state.password : undefined;
@@ -95,12 +96,8 @@ export class InputsTcpSsl extends pulumi.CustomResource {
             inputs["rootCa"] = args ? args.rootCa : undefined;
             inputs["serverCert"] = args ? args.serverCert : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsTcpSsl.__pulumiType, name, inputs, opts);
     }

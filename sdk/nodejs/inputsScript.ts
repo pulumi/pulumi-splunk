@@ -91,7 +91,8 @@ export class InputsScript extends pulumi.CustomResource {
     constructor(name: string, args: InputsScriptArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsScriptArgs | InputsScriptState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
-        if (opts && opts.id) {
+        opts = opts || {};
+        if (opts.id) {
             const state = argsOrState as InputsScriptState | undefined;
             inputs["acl"] = state ? state.acl : undefined;
             inputs["disabled"] = state ? state.disabled : undefined;
@@ -105,7 +106,7 @@ export class InputsScript extends pulumi.CustomResource {
             inputs["sourcetype"] = state ? state.sourcetype : undefined;
         } else {
             const args = argsOrState as InputsScriptArgs | undefined;
-            if ((!args || args.interval === undefined) && !(opts && opts.urn)) {
+            if ((!args || args.interval === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'interval'");
             }
             inputs["acl"] = args ? args.acl : undefined;
@@ -119,12 +120,8 @@ export class InputsScript extends pulumi.CustomResource {
             inputs["source"] = args ? args.source : undefined;
             inputs["sourcetype"] = args ? args.sourcetype : undefined;
         }
-        if (!opts) {
-            opts = {}
-        }
-
         if (!opts.version) {
-            opts.version = utilities.getVersion();
+            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
         super(InputsScript.__pulumiType, name, inputs, opts);
     }
