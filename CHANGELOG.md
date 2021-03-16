@@ -2,11 +2,14 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
+_(none)_
+
+---
+
+## 0.3.0 (2021-03-16)
 * Upgrade to v1.4.0 of the Splunk Terraform Provider
 * Upgrade to pulumi-terraform-bridge v2.21.0
 * Release macOS arm64 binary
-
----
 
 ## 0.2.1 (2021-02-16)
 * Upgrade to pulumi-terraform-bridge v2.19.0  
