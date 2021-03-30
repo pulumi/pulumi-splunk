@@ -231,7 +231,7 @@ type SavedSearches struct {
 	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold pulumi.StringOutput `pulumi:"alertThreshold"`
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
-	AlertTrack pulumi.StringOutput `pulumi:"alertTrack"`
+	AlertTrack pulumi.BoolOutput `pulumi:"alertTrack"`
 	// What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
 	AlertType pulumi.StringOutput `pulumi:"alertType"`
 	// Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -539,7 +539,7 @@ type savedSearchesState struct {
 	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold *string `pulumi:"alertThreshold"`
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
-	AlertTrack *string `pulumi:"alertTrack"`
+	AlertTrack *bool `pulumi:"alertTrack"`
 	// What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
 	AlertType *string `pulumi:"alertType"`
 	// Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -816,7 +816,7 @@ type SavedSearchesState struct {
 	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold pulumi.StringPtrInput
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
-	AlertTrack pulumi.StringPtrInput
+	AlertTrack pulumi.BoolPtrInput
 	// What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
 	AlertType pulumi.StringPtrInput
 	// Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -1087,7 +1087,7 @@ type savedSearchesArgs struct {
 	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold *string `pulumi:"alertThreshold"`
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
-	AlertTrack *string `pulumi:"alertTrack"`
+	AlertTrack *bool `pulumi:"alertTrack"`
 	// What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
 	AlertType *string `pulumi:"alertType"`
 	// Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -1355,7 +1355,7 @@ type SavedSearchesArgs struct {
 	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold pulumi.StringPtrInput
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
-	AlertTrack pulumi.StringPtrInput
+	AlertTrack pulumi.BoolPtrInput
 	// What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
 	AlertType pulumi.StringPtrInput
 	// Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.

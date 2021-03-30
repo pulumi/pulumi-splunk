@@ -98,7 +98,7 @@ class SavedSearches(pulumi.CustomResource):
                  alert_suppress_fields: Optional[pulumi.Input[str]] = None,
                  alert_suppress_period: Optional[pulumi.Input[str]] = None,
                  alert_threshold: Optional[pulumi.Input[str]] = None,
-                 alert_track: Optional[pulumi.Input[str]] = None,
+                 alert_track: Optional[pulumi.Input[bool]] = None,
                  alert_type: Optional[pulumi.Input[str]] = None,
                  allow_skew: Optional[pulumi.Input[str]] = None,
                  auto_summarize: Optional[pulumi.Input[bool]] = None,
@@ -266,7 +266,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
         :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
-        :param pulumi.Input[str] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
+        :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         :param pulumi.Input[bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
@@ -570,7 +570,7 @@ class SavedSearches(pulumi.CustomResource):
             alert_suppress_fields: Optional[pulumi.Input[str]] = None,
             alert_suppress_period: Optional[pulumi.Input[str]] = None,
             alert_threshold: Optional[pulumi.Input[str]] = None,
-            alert_track: Optional[pulumi.Input[str]] = None,
+            alert_track: Optional[pulumi.Input[bool]] = None,
             alert_type: Optional[pulumi.Input[str]] = None,
             allow_skew: Optional[pulumi.Input[str]] = None,
             auto_summarize: Optional[pulumi.Input[bool]] = None,
@@ -714,7 +714,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
         :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
-        :param pulumi.Input[str] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
+        :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         :param pulumi.Input[bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
@@ -1599,7 +1599,7 @@ class SavedSearches(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="alertTrack")
-    def alert_track(self) -> pulumi.Output[str]:
+    def alert_track(self) -> pulumi.Output[bool]:
         """
         Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         """

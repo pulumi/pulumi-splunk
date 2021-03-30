@@ -412,7 +412,7 @@ export class SavedSearches extends pulumi.CustomResource {
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    public readonly alertTrack!: pulumi.Output<string>;
+    public readonly alertTrack!: pulumi.Output<boolean>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
@@ -1265,7 +1265,7 @@ export interface SavedSearchesState {
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    readonly alertTrack?: pulumi.Input<string>;
+    readonly alertTrack?: pulumi.Input<boolean>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
@@ -1799,7 +1799,7 @@ export interface SavedSearchesArgs {
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    readonly alertTrack?: pulumi.Input<string>;
+    readonly alertTrack?: pulumi.Input<boolean>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
