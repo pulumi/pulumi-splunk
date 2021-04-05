@@ -573,7 +573,7 @@ namespace Pulumi.Splunk
         /// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         /// </summary>
         [Output("alertTrack")]
-        public Output<string> AlertTrack { get; private set; } = null!;
+        public Output<bool> AlertTrack { get; private set; } = null!;
 
         /// <summary>
         /// What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
@@ -1411,7 +1411,7 @@ namespace Pulumi.Splunk
         /// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         /// </summary>
         [Input("alertTrack")]
-        public Input<string>? AlertTrack { get; set; }
+        public Input<bool>? AlertTrack { get; set; }
 
         /// <summary>
         /// What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
@@ -2240,7 +2240,7 @@ namespace Pulumi.Splunk
         /// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         /// </summary>
         [Input("alertTrack")]
-        public Input<string>? AlertTrack { get; set; }
+        public Input<bool>? AlertTrack { get; set; }
 
         /// <summary>
         /// What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.

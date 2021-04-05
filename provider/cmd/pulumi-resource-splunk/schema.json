@@ -5275,7 +5275,7 @@
                     "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
                 },
                 "alertTrack": {
-                    "type": "string",
+                    "type": "boolean",
                     "description": "Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.\n"
                 },
                 "alertType": {
@@ -5938,7 +5938,7 @@
                     "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
                 },
                 "alertTrack": {
-                    "type": "string",
+                    "type": "boolean",
                     "description": "Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.\n"
                 },
                 "alertType": {
@@ -6493,7 +6493,7 @@
                         "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
                     },
                     "alertTrack": {
-                        "type": "string",
+                        "type": "boolean",
                         "description": "Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.\n"
                     },
                     "alertType": {
