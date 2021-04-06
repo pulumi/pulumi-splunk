@@ -227,3 +227,17 @@ export interface SavedSearchesAcl {
     sharing?: pulumi.Input<string>;
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
+
+export interface ShIndexesManagerAcl {
+    app?: pulumi.Input<string>;
+    canChangePerms?: pulumi.Input<boolean>;
+    canShareApp?: pulumi.Input<boolean>;
+    canShareGlobal?: pulumi.Input<boolean>;
+    canShareUser?: pulumi.Input<boolean>;
+    canWrite?: pulumi.Input<boolean>;
+    owner?: pulumi.Input<string>;
+    reads?: pulumi.Input<pulumi.Input<string>[]>;
+    removable?: pulumi.Input<boolean>;
+    sharing?: pulumi.Input<string>;
+    writes?: pulumi.Input<pulumi.Input<string>[]>;
+}

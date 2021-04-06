@@ -25,6 +25,7 @@ from .outputs_tcp_server import *
 from .outputs_tcp_syslog import *
 from .provider import *
 from .saved_searches import *
+from .sh_indexes_manager import *
 from ._inputs import *
 from . import outputs
 
@@ -87,6 +88,8 @@ def _register_module():
                 return OutputsTcpSyslog(name, pulumi.ResourceOptions(urn=urn))
             elif typ == "splunk:index/savedSearches:SavedSearches":
                 return SavedSearches(name, pulumi.ResourceOptions(urn=urn))
+            elif typ == "splunk:index/shIndexesManager:ShIndexesManager":
+                return ShIndexesManager(name, pulumi.ResourceOptions(urn=urn))
             else:
                 raise Exception(f"unknown resource type {typ}")
 
@@ -113,6 +116,7 @@ def _register_module():
     pulumi.runtime.register_resource_module("splunk", "index/outputsTcpServer", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/outputsTcpSyslog", _module_instance)
     pulumi.runtime.register_resource_module("splunk", "index/savedSearches", _module_instance)
+    pulumi.runtime.register_resource_module("splunk", "index/shIndexesManager", _module_instance)
 
 
     class Package(pulumi.runtime.ResourcePackage):

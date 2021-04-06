@@ -4426,6 +4426,282 @@ func (o SavedSearchesAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+type ShIndexesManagerAcl struct {
+	App            *string  `pulumi:"app"`
+	CanChangePerms *bool    `pulumi:"canChangePerms"`
+	CanShareApp    *bool    `pulumi:"canShareApp"`
+	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
+	CanShareUser   *bool    `pulumi:"canShareUser"`
+	CanWrite       *bool    `pulumi:"canWrite"`
+	Owner          *string  `pulumi:"owner"`
+	Reads          []string `pulumi:"reads"`
+	Removable      *bool    `pulumi:"removable"`
+	Sharing        *string  `pulumi:"sharing"`
+	Writes         []string `pulumi:"writes"`
+}
+
+// ShIndexesManagerAclInput is an input type that accepts ShIndexesManagerAclArgs and ShIndexesManagerAclOutput values.
+// You can construct a concrete instance of `ShIndexesManagerAclInput` via:
+//
+//          ShIndexesManagerAclArgs{...}
+type ShIndexesManagerAclInput interface {
+	pulumi.Input
+
+	ToShIndexesManagerAclOutput() ShIndexesManagerAclOutput
+	ToShIndexesManagerAclOutputWithContext(context.Context) ShIndexesManagerAclOutput
+}
+
+type ShIndexesManagerAclArgs struct {
+	App            pulumi.StringPtrInput   `pulumi:"app"`
+	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
+	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
+	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
+	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
+	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
+	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
+	Reads          pulumi.StringArrayInput `pulumi:"reads"`
+	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
+	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
+	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+}
+
+func (ShIndexesManagerAclArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ShIndexesManagerAcl)(nil)).Elem()
+}
+
+func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclOutput() ShIndexesManagerAclOutput {
+	return i.ToShIndexesManagerAclOutputWithContext(context.Background())
+}
+
+func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclOutputWithContext(ctx context.Context) ShIndexesManagerAclOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerAclOutput)
+}
+
+func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclPtrOutput() ShIndexesManagerAclPtrOutput {
+	return i.ToShIndexesManagerAclPtrOutputWithContext(context.Background())
+}
+
+func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclPtrOutputWithContext(ctx context.Context) ShIndexesManagerAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerAclOutput).ToShIndexesManagerAclPtrOutputWithContext(ctx)
+}
+
+// ShIndexesManagerAclPtrInput is an input type that accepts ShIndexesManagerAclArgs, ShIndexesManagerAclPtr and ShIndexesManagerAclPtrOutput values.
+// You can construct a concrete instance of `ShIndexesManagerAclPtrInput` via:
+//
+//          ShIndexesManagerAclArgs{...}
+//
+//  or:
+//
+//          nil
+type ShIndexesManagerAclPtrInput interface {
+	pulumi.Input
+
+	ToShIndexesManagerAclPtrOutput() ShIndexesManagerAclPtrOutput
+	ToShIndexesManagerAclPtrOutputWithContext(context.Context) ShIndexesManagerAclPtrOutput
+}
+
+type shIndexesManagerAclPtrType ShIndexesManagerAclArgs
+
+func ShIndexesManagerAclPtr(v *ShIndexesManagerAclArgs) ShIndexesManagerAclPtrInput {
+	return (*shIndexesManagerAclPtrType)(v)
+}
+
+func (*shIndexesManagerAclPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ShIndexesManagerAcl)(nil)).Elem()
+}
+
+func (i *shIndexesManagerAclPtrType) ToShIndexesManagerAclPtrOutput() ShIndexesManagerAclPtrOutput {
+	return i.ToShIndexesManagerAclPtrOutputWithContext(context.Background())
+}
+
+func (i *shIndexesManagerAclPtrType) ToShIndexesManagerAclPtrOutputWithContext(ctx context.Context) ShIndexesManagerAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerAclPtrOutput)
+}
+
+type ShIndexesManagerAclOutput struct{ *pulumi.OutputState }
+
+func (ShIndexesManagerAclOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ShIndexesManagerAcl)(nil)).Elem()
+}
+
+func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclOutput() ShIndexesManagerAclOutput {
+	return o
+}
+
+func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclOutputWithContext(ctx context.Context) ShIndexesManagerAclOutput {
+	return o
+}
+
+func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclPtrOutput() ShIndexesManagerAclPtrOutput {
+	return o.ToShIndexesManagerAclPtrOutputWithContext(context.Background())
+}
+
+func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclPtrOutputWithContext(ctx context.Context) ShIndexesManagerAclPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *ShIndexesManagerAcl {
+		return &v
+	}).(ShIndexesManagerAclPtrOutput)
+}
+func (o ShIndexesManagerAclOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.App }).(pulumi.StringPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
+}
+
+func (o ShIndexesManagerAclOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ShIndexesManagerAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
+}
+
+type ShIndexesManagerAclPtrOutput struct{ *pulumi.OutputState }
+
+func (ShIndexesManagerAclPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ShIndexesManagerAcl)(nil)).Elem()
+}
+
+func (o ShIndexesManagerAclPtrOutput) ToShIndexesManagerAclPtrOutput() ShIndexesManagerAclPtrOutput {
+	return o
+}
+
+func (o ShIndexesManagerAclPtrOutput) ToShIndexesManagerAclPtrOutputWithContext(ctx context.Context) ShIndexesManagerAclPtrOutput {
+	return o
+}
+
+func (o ShIndexesManagerAclPtrOutput) Elem() ShIndexesManagerAclOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) ShIndexesManagerAcl { return *v }).(ShIndexesManagerAclOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.App
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanChangePerms
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareApp
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareGlobal
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareUser
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanWrite
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Owner
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Reads
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Removable
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Sharing
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ShIndexesManagerAclPtrOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ShIndexesManagerAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Writes
+	}).(pulumi.StringArrayOutput)
+}
+
 func init() {
 	pulumi.RegisterOutputType(AppsLocalAclOutput{})
 	pulumi.RegisterOutputType(AppsLocalAclPtrOutput{})
@@ -4459,4 +4735,6 @@ func init() {
 	pulumi.RegisterOutputType(OutputsTcpSyslogAclPtrOutput{})
 	pulumi.RegisterOutputType(SavedSearchesAclOutput{})
 	pulumi.RegisterOutputType(SavedSearchesAclPtrOutput{})
+	pulumi.RegisterOutputType(ShIndexesManagerAclOutput{})
+	pulumi.RegisterOutputType(ShIndexesManagerAclPtrOutput{})
 }

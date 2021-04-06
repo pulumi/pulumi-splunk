@@ -27,6 +27,7 @@ export * from "./outputsTcpServer";
 export * from "./outputsTcpSyslog";
 export * from "./provider";
 export * from "./savedSearches";
+export * from "./shIndexesManager";
 
 // Export sub-modules:
 import * as config from "./config";
@@ -59,6 +60,7 @@ import { OutputsTcpGroup } from "./outputsTcpGroup";
 import { OutputsTcpServer } from "./outputsTcpServer";
 import { OutputsTcpSyslog } from "./outputsTcpSyslog";
 import { SavedSearches } from "./savedSearches";
+import { ShIndexesManager } from "./shIndexesManager";
 
 const _module = {
     version: utilities.getVersion(),
@@ -106,6 +108,8 @@ const _module = {
                 return new OutputsTcpSyslog(name, <any>undefined, { urn })
             case "splunk:index/savedSearches:SavedSearches":
                 return new SavedSearches(name, <any>undefined, { urn })
+            case "splunk:index/shIndexesManager:ShIndexesManager":
+                return new ShIndexesManager(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -132,6 +136,7 @@ pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpGroup", _module
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpServer", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpSyslog", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/savedSearches", _module)
+pulumi.runtime.registerResourceModule("splunk", "index/shIndexesManager", _module)
 
 import { Provider } from "./provider";
 

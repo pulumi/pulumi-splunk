@@ -38,6 +38,7 @@
         "outputsTcpSyslog.ts",
         "provider.ts",
         "savedSearches.ts",
+        "shIndexesManager.ts",
         "types/index.ts",
         "types/input.ts",
         "types/output.ts",
