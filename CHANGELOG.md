@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to v1.4.2 of the Splunk Terraform Provider
+* Upgrade to v1.4.3 of the Splunk Terraform Provider
 
 ---
 
