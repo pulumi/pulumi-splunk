@@ -1899,6 +1899,122 @@
                     ]
                 }
             }
+        },
+        "splunk:index/ShIndexesManagerAcl:ShIndexesManagerAcl": {
+            "properties": {
+                "app": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canChangePerms": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareApp": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareGlobal": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareUser": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canWrite": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "owner": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "reads": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "removable": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "sharing": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "writes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "app",
+                        "canChangePerms",
+                        "canShareApp",
+                        "canShareGlobal",
+                        "canShareUser",
+                        "canWrite",
+                        "owner",
+                        "reads",
+                        "removable",
+                        "sharing",
+                        "writes"
+                    ]
+                }
+            }
         }
     },
     "provider": {
@@ -6695,6 +6811,81 @@
                     "workloadPool": {
                         "type": "string",
                         "description": "Specifies the new workload pool where the existing running search will be placed.`\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "splunk:index/shIndexesManager:ShIndexesManager": {
+            "description": "## # Resource: splunk.ShIndexesManager\n\nCreate indexes on Splunk Cloud instances. [BETA]\n\n## Authorization and authentication\n\nAs of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst tf_index = new splunk.ShIndexesManager(\"tf-index\", {\n    datatype: \"event\",\n    frozenTimePeriodInSecs: \"94608000\",\n    maxGlobalRawDataSizeMb: \"100\",\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\ntf_index = splunk.ShIndexesManager(\"tf-index\",\n    datatype=\"event\",\n    frozen_time_period_in_secs=\"94608000\",\n    max_global_raw_data_size_mb=\"100\")\n```\n```csharp\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var tf_index = new Splunk.ShIndexesManager(\"tf-index\", new Splunk.ShIndexesManagerArgs\n        {\n            Datatype = \"event\",\n            FrozenTimePeriodInSecs = \"94608000\",\n            MaxGlobalRawDataSizeMb = \"100\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v2/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewShIndexesManager(ctx, \"tf_index\", \u0026splunk.ShIndexesManagerArgs{\n\t\t\tDatatype:               pulumi.String(\"event\"),\n\t\t\tFrozenTimePeriodInSecs: pulumi.String(\"94608000\"),\n\t\t\tMaxGlobalRawDataSizeMb: pulumi.String(\"100\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/ShIndexesManagerAcl:ShIndexesManagerAcl"
+                },
+                "datatype": {
+                    "type": "string",
+                    "description": "Valid values: (event | metric). Specifies the type of index.\n"
+                },
+                "frozenTimePeriodInSecs": {
+                    "type": "string",
+                    "description": "Number of seconds after which indexed data rolls to frozen.\nDefaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.\n"
+                },
+                "maxGlobalRawDataSizeMb": {
+                    "type": "string",
+                    "description": "The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.\nDefaults to 100 MB.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the index to create.\n"
+                }
+            },
+            "required": [
+                "acl",
+                "datatype",
+                "name"
+            ],
+            "inputProperties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/ShIndexesManagerAcl:ShIndexesManagerAcl"
+                },
+                "datatype": {
+                    "type": "string",
+                    "description": "Valid values: (event | metric). Specifies the type of index.\n"
+                },
+                "frozenTimePeriodInSecs": {
+                    "type": "string",
+                    "description": "Number of seconds after which indexed data rolls to frozen.\nDefaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.\n"
+                },
+                "maxGlobalRawDataSizeMb": {
+                    "type": "string",
+                    "description": "The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.\nDefaults to 100 MB.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the index to create.\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ShIndexesManager resources.\n",
+                "properties": {
+                    "acl": {
+                        "$ref": "#/types/splunk:index/ShIndexesManagerAcl:ShIndexesManagerAcl"
+                    },
+                    "datatype": {
+                        "type": "string",
+                        "description": "Valid values: (event | metric). Specifies the type of index.\n"
+                    },
+                    "frozenTimePeriodInSecs": {
+                        "type": "string",
+                        "description": "Number of seconds after which indexed data rolls to frozen.\nDefaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.\n"
+                    },
+                    "maxGlobalRawDataSizeMb": {
+                        "type": "string",
+                        "description": "The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.\nDefaults to 100 MB.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the index to create.\n"
                     }
                 },
                 "type": "object"

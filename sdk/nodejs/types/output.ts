@@ -227,3 +227,17 @@ export interface SavedSearchesAcl {
     sharing: string;
     writes: string[];
 }
+
+export interface ShIndexesManagerAcl {
+    app: string;
+    canChangePerms: boolean;
+    canShareApp: boolean;
+    canShareGlobal: boolean;
+    canShareUser: boolean;
+    canWrite: boolean;
+    owner: string;
+    reads: string[];
+    removable: boolean;
+    sharing: string;
+    writes: string[];
+}

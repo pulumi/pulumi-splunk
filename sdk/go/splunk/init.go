@@ -62,6 +62,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r, err = NewOutputsTcpSyslog(ctx, name, nil, pulumi.URN_(urn))
 	case "splunk:index/savedSearches:SavedSearches":
 		r, err = NewSavedSearches(ctx, name, nil, pulumi.URN_(urn))
+	case "splunk:index/shIndexesManager:ShIndexesManager":
+		r, err = NewShIndexesManager(ctx, name, nil, pulumi.URN_(urn))
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -193,6 +195,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"splunk",
 		"index/savedSearches",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"splunk",
+		"index/shIndexesManager",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(
