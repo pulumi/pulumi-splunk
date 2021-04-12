@@ -5,15 +5,279 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['InputsMonitor']
+__all__ = ['InputsMonitorArgs', 'InputsMonitor']
+
+@pulumi.input_type
+class InputsMonitorArgs:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['InputsMonitorAclArgs']] = None,
+                 blacklist: Optional[pulumi.Input[str]] = None,
+                 crc_salt: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 follow_tail: Optional[pulumi.Input[bool]] = None,
+                 host: Optional[pulumi.Input[str]] = None,
+                 host_regex: Optional[pulumi.Input[str]] = None,
+                 host_segment: Optional[pulumi.Input[int]] = None,
+                 ignore_older_than: Optional[pulumi.Input[str]] = None,
+                 index: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 recursive: Optional[pulumi.Input[bool]] = None,
+                 rename_source: Optional[pulumi.Input[str]] = None,
+                 sourcetype: Optional[pulumi.Input[str]] = None,
+                 time_before_close: Optional[pulumi.Input[int]] = None,
+                 whitelist: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a InputsMonitor resource.
+        :param pulumi.Input['InputsMonitorAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] blacklist: Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
+        :param pulumi.Input[str] crc_salt: A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
+        :param pulumi.Input[bool] disabled: Indicates if input monitoring is disabled.
+        :param pulumi.Input[bool] follow_tail: If set to true, files that are seen for the first time is read from the end.
+        :param pulumi.Input[str] host: The value to populate in the host field for events from this data input.
+        :param pulumi.Input[str] host_regex: Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
+        :param pulumi.Input[int] host_segment: Use the specified slash-separate segment of the filepath as the host field value.
+        :param pulumi.Input[str] ignore_older_than: Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
+        :param pulumi.Input[str] index: Which index events from this input should be stored in. Defaults to default.
+        :param pulumi.Input[str] name: The file or directory path to monitor on the system.
+        :param pulumi.Input[bool] recursive: Setting this to false prevents monitoring of any subdirectories encountered within this data input.
+        :param pulumi.Input[str] rename_source: The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
+        :param pulumi.Input[str] sourcetype: The value to populate in the sourcetype field for incoming events.
+        :param pulumi.Input[int] time_before_close: When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
+        :param pulumi.Input[str] whitelist: Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if blacklist is not None:
+            pulumi.set(__self__, "blacklist", blacklist)
+        if crc_salt is not None:
+            pulumi.set(__self__, "crc_salt", crc_salt)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if follow_tail is not None:
+            pulumi.set(__self__, "follow_tail", follow_tail)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if host_regex is not None:
+            pulumi.set(__self__, "host_regex", host_regex)
+        if host_segment is not None:
+            pulumi.set(__self__, "host_segment", host_segment)
+        if ignore_older_than is not None:
+            pulumi.set(__self__, "ignore_older_than", ignore_older_than)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if recursive is not None:
+            pulumi.set(__self__, "recursive", recursive)
+        if rename_source is not None:
+            pulumi.set(__self__, "rename_source", rename_source)
+        if sourcetype is not None:
+            pulumi.set(__self__, "sourcetype", sourcetype)
+        if time_before_close is not None:
+            pulumi.set(__self__, "time_before_close", time_before_close)
+        if whitelist is not None:
+            pulumi.set(__self__, "whitelist", whitelist)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['InputsMonitorAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['InputsMonitorAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter
+    def blacklist(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
+        """
+        return pulumi.get(self, "blacklist")
+
+    @blacklist.setter
+    def blacklist(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "blacklist", value)
+
+    @property
+    @pulumi.getter(name="crcSalt")
+    def crc_salt(self) -> Optional[pulumi.Input[str]]:
+        """
+        A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
+        """
+        return pulumi.get(self, "crc_salt")
+
+    @crc_salt.setter
+    def crc_salt(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "crc_salt", value)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if input monitoring is disabled.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter(name="followTail")
+    def follow_tail(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If set to true, files that are seen for the first time is read from the end.
+        """
+        return pulumi.get(self, "follow_tail")
+
+    @follow_tail.setter
+    def follow_tail(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "follow_tail", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value to populate in the host field for events from this data input.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter(name="hostRegex")
+    def host_regex(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
+        """
+        return pulumi.get(self, "host_regex")
+
+    @host_regex.setter
+    def host_regex(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_regex", value)
+
+    @property
+    @pulumi.getter(name="hostSegment")
+    def host_segment(self) -> Optional[pulumi.Input[int]]:
+        """
+        Use the specified slash-separate segment of the filepath as the host field value.
+        """
+        return pulumi.get(self, "host_segment")
+
+    @host_segment.setter
+    def host_segment(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "host_segment", value)
+
+    @property
+    @pulumi.getter(name="ignoreOlderThan")
+    def ignore_older_than(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
+        """
+        return pulumi.get(self, "ignore_older_than")
+
+    @ignore_older_than.setter
+    def ignore_older_than(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ignore_older_than", value)
+
+    @property
+    @pulumi.getter
+    def index(self) -> Optional[pulumi.Input[str]]:
+        """
+        Which index events from this input should be stored in. Defaults to default.
+        """
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "index", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The file or directory path to monitor on the system.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def recursive(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Setting this to false prevents monitoring of any subdirectories encountered within this data input.
+        """
+        return pulumi.get(self, "recursive")
+
+    @recursive.setter
+    def recursive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "recursive", value)
+
+    @property
+    @pulumi.getter(name="renameSource")
+    def rename_source(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
+        """
+        return pulumi.get(self, "rename_source")
+
+    @rename_source.setter
+    def rename_source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rename_source", value)
+
+    @property
+    @pulumi.getter
+    def sourcetype(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value to populate in the sourcetype field for incoming events.
+        """
+        return pulumi.get(self, "sourcetype")
+
+    @sourcetype.setter
+    def sourcetype(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sourcetype", value)
+
+    @property
+    @pulumi.getter(name="timeBeforeClose")
+    def time_before_close(self) -> Optional[pulumi.Input[int]]:
+        """
+        When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
+        """
+        return pulumi.get(self, "time_before_close")
+
+    @time_before_close.setter
+    def time_before_close(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "time_before_close", value)
+
+    @property
+    @pulumi.getter
+    def whitelist(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
+        """
+        return pulumi.get(self, "whitelist")
+
+    @whitelist.setter
+    def whitelist(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "whitelist", value)
 
 
 class InputsMonitor(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -71,6 +335,62 @@ class InputsMonitor(pulumi.CustomResource):
         :param pulumi.Input[int] time_before_close: When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
         :param pulumi.Input[str] whitelist: Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[InputsMonitorArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        ## # Resource: InputsMonitor
+
+        Create or update a new file or directory monitor input.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        monitor = splunk.InputsMonitor("monitor",
+            recursive=True,
+            sourcetype="text")
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param InputsMonitorArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(InputsMonitorArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 acl: Optional[pulumi.Input[pulumi.InputType['InputsMonitorAclArgs']]] = None,
+                 blacklist: Optional[pulumi.Input[str]] = None,
+                 crc_salt: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 follow_tail: Optional[pulumi.Input[bool]] = None,
+                 host: Optional[pulumi.Input[str]] = None,
+                 host_regex: Optional[pulumi.Input[str]] = None,
+                 host_segment: Optional[pulumi.Input[int]] = None,
+                 ignore_older_than: Optional[pulumi.Input[str]] = None,
+                 index: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 recursive: Optional[pulumi.Input[bool]] = None,
+                 rename_source: Optional[pulumi.Input[str]] = None,
+                 sourcetype: Optional[pulumi.Input[str]] = None,
+                 time_before_close: Optional[pulumi.Input[int]] = None,
+                 whitelist: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

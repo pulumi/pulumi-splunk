@@ -5,13 +5,165 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 
-__all__ = ['AuthenticationUsers']
+__all__ = ['AuthenticationUsersArgs', 'AuthenticationUsers']
+
+@pulumi.input_type
+class AuthenticationUsersArgs:
+    def __init__(__self__, *,
+                 default_app: Optional[pulumi.Input[str]] = None,
+                 email: Optional[pulumi.Input[str]] = None,
+                 force_change_pass: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 realname: Optional[pulumi.Input[str]] = None,
+                 restart_background_jobs: Optional[pulumi.Input[bool]] = None,
+                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tz: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a AuthenticationUsers resource.
+        :param pulumi.Input[str] default_app: User default app. Overrides the default app inherited from the user roles.
+        :param pulumi.Input[str] email: User email address.
+        :param pulumi.Input[bool] force_change_pass: Force user to change password indication
+        :param pulumi.Input[str] name: Unique user login name.
+        :param pulumi.Input[str] password: User login password.
+        :param pulumi.Input[str] realname: Full user name.
+        :param pulumi.Input[bool] restart_background_jobs: Restart background search job that has not completed when Splunk restarts indication.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: Role to assign to this user. At least one existing role is required.
+        :param pulumi.Input[str] tz: User timezone.
+        """
+        if default_app is not None:
+            pulumi.set(__self__, "default_app", default_app)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if force_change_pass is not None:
+            pulumi.set(__self__, "force_change_pass", force_change_pass)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if realname is not None:
+            pulumi.set(__self__, "realname", realname)
+        if restart_background_jobs is not None:
+            pulumi.set(__self__, "restart_background_jobs", restart_background_jobs)
+        if roles is not None:
+            pulumi.set(__self__, "roles", roles)
+        if tz is not None:
+            pulumi.set(__self__, "tz", tz)
+
+    @property
+    @pulumi.getter(name="defaultApp")
+    def default_app(self) -> Optional[pulumi.Input[str]]:
+        """
+        User default app. Overrides the default app inherited from the user roles.
+        """
+        return pulumi.get(self, "default_app")
+
+    @default_app.setter
+    def default_app(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "default_app", value)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[str]]:
+        """
+        User email address.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter(name="forceChangePass")
+    def force_change_pass(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Force user to change password indication
+        """
+        return pulumi.get(self, "force_change_pass")
+
+    @force_change_pass.setter
+    def force_change_pass(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "force_change_pass", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Unique user login name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        User login password.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def realname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Full user name.
+        """
+        return pulumi.get(self, "realname")
+
+    @realname.setter
+    def realname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "realname", value)
+
+    @property
+    @pulumi.getter(name="restartBackgroundJobs")
+    def restart_background_jobs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Restart background search job that has not completed when Splunk restarts indication.
+        """
+        return pulumi.get(self, "restart_background_jobs")
+
+    @restart_background_jobs.setter
+    def restart_background_jobs(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "restart_background_jobs", value)
+
+    @property
+    @pulumi.getter
+    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Role to assign to this user. At least one existing role is required.
+        """
+        return pulumi.get(self, "roles")
+
+    @roles.setter
+    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "roles", value)
+
+    @property
+    @pulumi.getter
+    def tz(self) -> Optional[pulumi.Input[str]]:
+        """
+        User timezone.
+        """
+        return pulumi.get(self, "tz")
+
+    @tz.setter
+    def tz(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tz", value)
 
 
 class AuthenticationUsers(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -57,6 +209,57 @@ class AuthenticationUsers(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: Role to assign to this user. At least one existing role is required.
         :param pulumi.Input[str] tz: User timezone.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[AuthenticationUsersArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        ## # Resource: AuthenticationUsers
+
+        Create and update user information or delete the user.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        user01 = splunk.AuthenticationUsers("user01",
+            email="user01@example.com",
+            force_change_pass=False,
+            password="password01",
+            roles=["terraform-user01-role"])
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param AuthenticationUsersArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(AuthenticationUsersArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 default_app: Optional[pulumi.Input[str]] = None,
+                 email: Optional[pulumi.Input[str]] = None,
+                 force_change_pass: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 realname: Optional[pulumi.Input[str]] = None,
+                 restart_background_jobs: Optional[pulumi.Input[bool]] = None,
+                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tz: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

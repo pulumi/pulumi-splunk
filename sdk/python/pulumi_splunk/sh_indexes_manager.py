@@ -5,15 +5,103 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['ShIndexesManager']
+__all__ = ['ShIndexesManagerArgs', 'ShIndexesManager']
+
+@pulumi.input_type
+class ShIndexesManagerArgs:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['ShIndexesManagerAclArgs']] = None,
+                 datatype: Optional[pulumi.Input[str]] = None,
+                 frozen_time_period_in_secs: Optional[pulumi.Input[str]] = None,
+                 max_global_raw_data_size_mb: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a ShIndexesManager resource.
+        :param pulumi.Input[str] datatype: Valid values: (event | metric). Specifies the type of index.
+        :param pulumi.Input[str] frozen_time_period_in_secs: Number of seconds after which indexed data rolls to frozen.
+               Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
+        :param pulumi.Input[str] max_global_raw_data_size_mb: The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
+               Defaults to 100 MB.
+        :param pulumi.Input[str] name: The name of the index to create.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if datatype is not None:
+            pulumi.set(__self__, "datatype", datatype)
+        if frozen_time_period_in_secs is not None:
+            pulumi.set(__self__, "frozen_time_period_in_secs", frozen_time_period_in_secs)
+        if max_global_raw_data_size_mb is not None:
+            pulumi.set(__self__, "max_global_raw_data_size_mb", max_global_raw_data_size_mb)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['ShIndexesManagerAclArgs']]:
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['ShIndexesManagerAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter
+    def datatype(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: (event | metric). Specifies the type of index.
+        """
+        return pulumi.get(self, "datatype")
+
+    @datatype.setter
+    def datatype(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "datatype", value)
+
+    @property
+    @pulumi.getter(name="frozenTimePeriodInSecs")
+    def frozen_time_period_in_secs(self) -> Optional[pulumi.Input[str]]:
+        """
+        Number of seconds after which indexed data rolls to frozen.
+        Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
+        """
+        return pulumi.get(self, "frozen_time_period_in_secs")
+
+    @frozen_time_period_in_secs.setter
+    def frozen_time_period_in_secs(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "frozen_time_period_in_secs", value)
+
+    @property
+    @pulumi.getter(name="maxGlobalRawDataSizeMb")
+    def max_global_raw_data_size_mb(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
+        Defaults to 100 MB.
+        """
+        return pulumi.get(self, "max_global_raw_data_size_mb")
+
+    @max_global_raw_data_size_mb.setter
+    def max_global_raw_data_size_mb(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_global_raw_data_size_mb", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the index to create.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 class ShIndexesManager(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -55,6 +143,56 @@ class ShIndexesManager(pulumi.CustomResource):
                Defaults to 100 MB.
         :param pulumi.Input[str] name: The name of the index to create.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[ShIndexesManagerArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        ## # Resource: ShIndexesManager
+
+        Create indexes on Splunk Cloud instances. [BETA]
+
+        ## Authorization and authentication
+
+        As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tf_index = splunk.ShIndexesManager("tf-index",
+            datatype="event",
+            frozen_time_period_in_secs="94608000",
+            max_global_raw_data_size_mb="100")
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param ShIndexesManagerArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(ShIndexesManagerArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 acl: Optional[pulumi.Input[pulumi.InputType['ShIndexesManagerAclArgs']]] = None,
+                 datatype: Optional[pulumi.Input[str]] = None,
+                 frozen_time_period_in_secs: Optional[pulumi.Input[str]] = None,
+                 max_global_raw_data_size_mb: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
