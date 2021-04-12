@@ -5,15 +5,227 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['InputsUdp']
+__all__ = ['InputsUdpArgs', 'InputsUdp']
+
+@pulumi.input_type
+class InputsUdpArgs:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['InputsUdpAclArgs']] = None,
+                 connection_host: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 host: Optional[pulumi.Input[str]] = None,
+                 index: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 no_appending_timestamp: Optional[pulumi.Input[bool]] = None,
+                 no_priority_stripping: Optional[pulumi.Input[bool]] = None,
+                 queue: Optional[pulumi.Input[str]] = None,
+                 restrict_to_host: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None,
+                 sourcetype: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a InputsUdp resource.
+        :param pulumi.Input['InputsUdpAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] connection_host: Valid values: (ip | dns | none)
+               Set the host for the remote server that is sending data.
+               ip sets the host to the IP address of the remote server sending data.
+               dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+               none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+               Default value is dns.
+        :param pulumi.Input[bool] disabled: Indicates if input is disabled.
+        :param pulumi.Input[str] host: The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
+        :param pulumi.Input[str] index: Which index events from this input should be stored in. Defaults to default.
+        :param pulumi.Input[str] name: The UDP port that this input should listen on.
+        :param pulumi.Input[bool] no_appending_timestamp: If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
+        :param pulumi.Input[bool] no_priority_stripping: If set to true, Splunk software does not remove the priority field from incoming syslog events.
+        :param pulumi.Input[str] queue: Which queue events from this input should be sent to. Generally this does not need to be changed.
+        :param pulumi.Input[str] restrict_to_host: Restrict incoming connections on this port to the host specified here.
+               If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
+        :param pulumi.Input[str] source: The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
+        :param pulumi.Input[str] sourcetype: The value to populate in the sourcetype field for incoming events.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if connection_host is not None:
+            pulumi.set(__self__, "connection_host", connection_host)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if no_appending_timestamp is not None:
+            pulumi.set(__self__, "no_appending_timestamp", no_appending_timestamp)
+        if no_priority_stripping is not None:
+            pulumi.set(__self__, "no_priority_stripping", no_priority_stripping)
+        if queue is not None:
+            pulumi.set(__self__, "queue", queue)
+        if restrict_to_host is not None:
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if sourcetype is not None:
+            pulumi.set(__self__, "sourcetype", sourcetype)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['InputsUdpAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['InputsUdpAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter(name="connectionHost")
+    def connection_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: (ip | dns | none)
+        Set the host for the remote server that is sending data.
+        ip sets the host to the IP address of the remote server sending data.
+        dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+        none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+        Default value is dns.
+        """
+        return pulumi.get(self, "connection_host")
+
+    @connection_host.setter
+    def connection_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_host", value)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if input is disabled.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter
+    def index(self) -> Optional[pulumi.Input[str]]:
+        """
+        Which index events from this input should be stored in. Defaults to default.
+        """
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "index", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The UDP port that this input should listen on.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="noAppendingTimestamp")
+    def no_appending_timestamp(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
+        """
+        return pulumi.get(self, "no_appending_timestamp")
+
+    @no_appending_timestamp.setter
+    def no_appending_timestamp(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "no_appending_timestamp", value)
+
+    @property
+    @pulumi.getter(name="noPriorityStripping")
+    def no_priority_stripping(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If set to true, Splunk software does not remove the priority field from incoming syslog events.
+        """
+        return pulumi.get(self, "no_priority_stripping")
+
+    @no_priority_stripping.setter
+    def no_priority_stripping(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "no_priority_stripping", value)
+
+    @property
+    @pulumi.getter
+    def queue(self) -> Optional[pulumi.Input[str]]:
+        """
+        Which queue events from this input should be sent to. Generally this does not need to be changed.
+        """
+        return pulumi.get(self, "queue")
+
+    @queue.setter
+    def queue(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "queue", value)
+
+    @property
+    @pulumi.getter(name="restrictToHost")
+    def restrict_to_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Restrict incoming connections on this port to the host specified here.
+        If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
+        """
+        return pulumi.get(self, "restrict_to_host")
+
+    @restrict_to_host.setter
+    def restrict_to_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "restrict_to_host", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+    @property
+    @pulumi.getter
+    def sourcetype(self) -> Optional[pulumi.Input[str]]:
+        """
+        The value to populate in the sourcetype field for incoming events.
+        """
+        return pulumi.get(self, "sourcetype")
+
+    @sourcetype.setter
+    def sourcetype(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sourcetype", value)
 
 
 class InputsUdp(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -71,6 +283,60 @@ class InputsUdp(pulumi.CustomResource):
         :param pulumi.Input[str] source: The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
         :param pulumi.Input[str] sourcetype: The value to populate in the sourcetype field for incoming events.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: Optional[InputsUdpArgs] = None,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        ## # Resource: InputsTcpRaw
+
+        Create and manage UDP data inputs.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        udp = splunk.InputsUdp("udp",
+            disabled=False,
+            index="main",
+            source="new",
+            sourcetype="new")
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param InputsUdpArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(InputsUdpArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 acl: Optional[pulumi.Input[pulumi.InputType['InputsUdpAclArgs']]] = None,
+                 connection_host: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 host: Optional[pulumi.Input[str]] = None,
+                 index: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 no_appending_timestamp: Optional[pulumi.Input[bool]] = None,
+                 no_priority_stripping: Optional[pulumi.Input[bool]] = None,
+                 queue: Optional[pulumi.Input[str]] = None,
+                 restrict_to_host: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None,
+                 sourcetype: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__

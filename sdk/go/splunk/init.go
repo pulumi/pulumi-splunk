@@ -21,53 +21,54 @@ func (m *module) Version() semver.Version {
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
 	case "splunk:index/adminSamlGroups:AdminSamlGroups":
-		r, err = NewAdminSamlGroups(ctx, name, nil, pulumi.URN_(urn))
+		r = &AdminSamlGroups{}
 	case "splunk:index/appsLocal:AppsLocal":
-		r, err = NewAppsLocal(ctx, name, nil, pulumi.URN_(urn))
+		r = &AppsLocal{}
 	case "splunk:index/authenticationUsers:AuthenticationUsers":
-		r, err = NewAuthenticationUsers(ctx, name, nil, pulumi.URN_(urn))
+		r = &AuthenticationUsers{}
 	case "splunk:index/authorizationRoles:AuthorizationRoles":
-		r, err = NewAuthorizationRoles(ctx, name, nil, pulumi.URN_(urn))
+		r = &AuthorizationRoles{}
 	case "splunk:index/configsConf:ConfigsConf":
-		r, err = NewConfigsConf(ctx, name, nil, pulumi.URN_(urn))
+		r = &ConfigsConf{}
 	case "splunk:index/dataUiViews:DataUiViews":
-		r, err = NewDataUiViews(ctx, name, nil, pulumi.URN_(urn))
+		r = &DataUiViews{}
 	case "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector":
-		r, err = NewGlobalHttpEventCollector(ctx, name, nil, pulumi.URN_(urn))
+		r = &GlobalHttpEventCollector{}
 	case "splunk:index/indexes:Indexes":
-		r, err = NewIndexes(ctx, name, nil, pulumi.URN_(urn))
+		r = &Indexes{}
 	case "splunk:index/inputsHttpEventCollector:InputsHttpEventCollector":
-		r, err = NewInputsHttpEventCollector(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsHttpEventCollector{}
 	case "splunk:index/inputsMonitor:InputsMonitor":
-		r, err = NewInputsMonitor(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsMonitor{}
 	case "splunk:index/inputsScript:InputsScript":
-		r, err = NewInputsScript(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsScript{}
 	case "splunk:index/inputsTcpCooked:InputsTcpCooked":
-		r, err = NewInputsTcpCooked(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsTcpCooked{}
 	case "splunk:index/inputsTcpRaw:InputsTcpRaw":
-		r, err = NewInputsTcpRaw(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsTcpRaw{}
 	case "splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken":
-		r, err = NewInputsTcpSplunkTcpToken(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsTcpSplunkTcpToken{}
 	case "splunk:index/inputsTcpSsl:InputsTcpSsl":
-		r, err = NewInputsTcpSsl(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsTcpSsl{}
 	case "splunk:index/inputsUdp:InputsUdp":
-		r, err = NewInputsUdp(ctx, name, nil, pulumi.URN_(urn))
+		r = &InputsUdp{}
 	case "splunk:index/outputsTcpDefault:OutputsTcpDefault":
-		r, err = NewOutputsTcpDefault(ctx, name, nil, pulumi.URN_(urn))
+		r = &OutputsTcpDefault{}
 	case "splunk:index/outputsTcpGroup:OutputsTcpGroup":
-		r, err = NewOutputsTcpGroup(ctx, name, nil, pulumi.URN_(urn))
+		r = &OutputsTcpGroup{}
 	case "splunk:index/outputsTcpServer:OutputsTcpServer":
-		r, err = NewOutputsTcpServer(ctx, name, nil, pulumi.URN_(urn))
+		r = &OutputsTcpServer{}
 	case "splunk:index/outputsTcpSyslog:OutputsTcpSyslog":
-		r, err = NewOutputsTcpSyslog(ctx, name, nil, pulumi.URN_(urn))
+		r = &OutputsTcpSyslog{}
 	case "splunk:index/savedSearches:SavedSearches":
-		r, err = NewSavedSearches(ctx, name, nil, pulumi.URN_(urn))
+		r = &SavedSearches{}
 	case "splunk:index/shIndexesManager:ShIndexesManager":
-		r, err = NewShIndexesManager(ctx, name, nil, pulumi.URN_(urn))
+		r = &ShIndexesManager{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
 
+	err = ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
 	return
 }
 
@@ -84,7 +85,9 @@ func (p *pkg) ConstructProvider(ctx *pulumi.Context, name, typ, urn string) (pul
 		return nil, fmt.Errorf("unknown provider type: %s", typ)
 	}
 
-	return NewProvider(ctx, name, nil, pulumi.URN_(urn))
+	r := &Provider{}
+	err := ctx.RegisterResource(typ, name, nil, r, pulumi.URN_(urn))
+	return r, err
 }
 
 func init() {

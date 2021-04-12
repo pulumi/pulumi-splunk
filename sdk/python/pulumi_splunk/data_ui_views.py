@@ -5,15 +5,68 @@
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities, _tables
 from . import outputs
 from ._inputs import *
 
-__all__ = ['DataUiViews']
+__all__ = ['DataUiViewsArgs', 'DataUiViews']
+
+@pulumi.input_type
+class DataUiViewsArgs:
+    def __init__(__self__, *,
+                 eai_data: pulumi.Input[str],
+                 acl: Optional[pulumi.Input['DataUiViewsAclArgs']] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        The set of arguments for constructing a DataUiViews resource.
+        :param pulumi.Input[str] eai_data: Dashboard XML definition.
+        :param pulumi.Input[str] name: Dashboard name.
+               * `eai:data` - (Required) Dashboard XML definition.
+        """
+        pulumi.set(__self__, "eai_data", eai_data)
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="eaiData")
+    def eai_data(self) -> pulumi.Input[str]:
+        """
+        Dashboard XML definition.
+        """
+        return pulumi.get(self, "eai_data")
+
+    @eai_data.setter
+    def eai_data(self, value: pulumi.Input[str]):
+        pulumi.set(self, "eai_data", value)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['DataUiViewsAclArgs']]:
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['DataUiViewsAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Dashboard name.
+        * `eai:data` - (Required) Dashboard XML definition.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 class DataUiViews(pulumi.CustomResource):
+    @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
@@ -53,6 +106,57 @@ class DataUiViews(pulumi.CustomResource):
         :param pulumi.Input[str] name: Dashboard name.
                * `eai:data` - (Required) Dashboard XML definition.
         """
+        ...
+    @overload
+    def __init__(__self__,
+                 resource_name: str,
+                 args: DataUiViewsArgs,
+                 opts: Optional[pulumi.ResourceOptions] = None):
+        """
+        ## # Resource: DataUiViews
+
+        Create and manage splunk dashboards/views.
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        dashboard = splunk.DataUiViews("dashboard",
+            acl=splunk.DataUiViewsAclArgs(
+                app="search",
+                owner="admin",
+            ),
+            eai_data=\"\"\"  <dashboard>
+            <label> 
+              Terraform Test Dashboard
+            </label>
+          </dashboard>
+          
+        \"\"\")
+        ```
+
+        :param str resource_name: The name of the resource.
+        :param DataUiViewsArgs args: The arguments to use to populate this resource's properties.
+        :param pulumi.ResourceOptions opts: Options for the resource.
+        """
+        ...
+    def __init__(__self__, resource_name: str, *args, **kwargs):
+        resource_args, opts = _utilities.get_resource_args_opts(DataUiViewsArgs, pulumi.ResourceOptions, *args, **kwargs)
+        if resource_args is not None:
+            __self__._internal_init(resource_name, opts, **resource_args.__dict__)
+        else:
+            __self__._internal_init(resource_name, *args, **kwargs)
+
+    def _internal_init(__self__,
+                 resource_name: str,
+                 opts: Optional[pulumi.ResourceOptions] = None,
+                 acl: Optional[pulumi.Input[pulumi.InputType['DataUiViewsAclArgs']]] = None,
+                 eai_data: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 __props__=None,
+                 __name__=None,
+                 __opts__=None):
         if __name__ is not None:
             warnings.warn("explicit use of __name__ is deprecated", DeprecationWarning)
             resource_name = __name__
