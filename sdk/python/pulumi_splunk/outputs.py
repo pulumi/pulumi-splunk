@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 
 __all__ = [
     'AppsLocalAcl',
@@ -30,6 +30,31 @@ __all__ = [
 
 @pulumi.output_type
 class AppsLocalAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppsLocalAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppsLocalAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppsLocalAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -119,13 +144,35 @@ class AppsLocalAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class ConfigsConfAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigsConfAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigsConfAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigsConfAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -215,13 +262,35 @@ class ConfigsConfAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class DataUiViewsAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DataUiViewsAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DataUiViewsAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DataUiViewsAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -311,13 +380,35 @@ class DataUiViewsAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class IndexesAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IndexesAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IndexesAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IndexesAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -407,13 +498,35 @@ class IndexesAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsHttpEventCollectorAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsHttpEventCollectorAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsHttpEventCollectorAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsHttpEventCollectorAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -503,13 +616,35 @@ class InputsHttpEventCollectorAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsMonitorAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsMonitorAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsMonitorAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsMonitorAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -599,13 +734,35 @@ class InputsMonitorAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsScriptAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsScriptAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsScriptAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsScriptAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -695,13 +852,35 @@ class InputsScriptAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsTcpCookedAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsTcpCookedAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsTcpCookedAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsTcpCookedAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -791,13 +970,35 @@ class InputsTcpCookedAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsTcpRawAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsTcpRawAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsTcpRawAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsTcpRawAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -887,13 +1088,35 @@ class InputsTcpRawAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsTcpSplunkTcpTokenAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsTcpSplunkTcpTokenAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsTcpSplunkTcpTokenAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsTcpSplunkTcpTokenAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -983,13 +1206,35 @@ class InputsTcpSplunkTcpTokenAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class InputsUdpAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InputsUdpAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InputsUdpAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InputsUdpAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1079,13 +1324,35 @@ class InputsUdpAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class OutputsTcpDefaultAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OutputsTcpDefaultAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OutputsTcpDefaultAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OutputsTcpDefaultAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1175,13 +1442,35 @@ class OutputsTcpDefaultAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class OutputsTcpGroupAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OutputsTcpGroupAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OutputsTcpGroupAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OutputsTcpGroupAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1271,13 +1560,35 @@ class OutputsTcpGroupAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class OutputsTcpServerAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OutputsTcpServerAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OutputsTcpServerAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OutputsTcpServerAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1367,13 +1678,35 @@ class OutputsTcpServerAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class OutputsTcpSyslogAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OutputsTcpSyslogAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OutputsTcpSyslogAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OutputsTcpSyslogAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1463,13 +1796,35 @@ class OutputsTcpSyslogAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class SavedSearchesAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SavedSearchesAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SavedSearchesAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SavedSearchesAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1559,13 +1914,35 @@ class SavedSearchesAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 
 @pulumi.output_type
 class ShIndexesManagerAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ShIndexesManagerAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ShIndexesManagerAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ShIndexesManagerAcl.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  app: Optional[str] = None,
                  can_change_perms: Optional[bool] = None,
@@ -1655,8 +2032,5 @@ class ShIndexesManagerAcl(dict):
     @pulumi.getter
     def writes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "writes")
-
-    def _translate_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
 
 

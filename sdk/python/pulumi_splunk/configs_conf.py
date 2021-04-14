@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -20,6 +20,62 @@ class ConfigsConfArgs:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a ConfigsConf resource.
+        :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if variables is not None:
+            pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['ConfigsConfAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        A map of key value pairs for a stanza.
+        """
+        return pulumi.get(self, "variables")
+
+    @variables.setter
+    def variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "variables", value)
+
+
+@pulumi.input_type
+class _ConfigsConfState:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        Input properties used for looking up and filtering ConfigsConf resources.
         :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
@@ -161,11 +217,11 @@ class ConfigsConf(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = ConfigsConfArgs.__new__(ConfigsConfArgs)
 
-            __props__['acl'] = acl
-            __props__['name'] = name
-            __props__['variables'] = variables
+            __props__.__dict__["acl"] = acl
+            __props__.__dict__["name"] = name
+            __props__.__dict__["variables"] = variables
         super(ConfigsConf, __self__).__init__(
             'splunk:index/configsConf:ConfigsConf',
             resource_name,
@@ -192,11 +248,11 @@ class ConfigsConf(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _ConfigsConfState.__new__(_ConfigsConfState)
 
-        __props__["acl"] = acl
-        __props__["name"] = name
-        __props__["variables"] = variables
+        __props__.__dict__["acl"] = acl
+        __props__.__dict__["name"] = name
+        __props__.__dict__["variables"] = variables
         return ConfigsConf(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -222,10 +278,4 @@ class ConfigsConf(pulumi.CustomResource):
         A map of key value pairs for a stanza.
         """
         return pulumi.get(self, "variables")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 
