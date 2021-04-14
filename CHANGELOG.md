@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Upgrade to v1.4.4 of the Splunk Terraform Provider
+_(none)_
 
 ---
+
+## 0.4.1 (2021-04-14)
+* Upgrade to v1.4.4 of the Splunk Terraform Provider
 
 ## 0.4.0 (2021-04-12)
 * Upgrade to v1.4.3 of the Splunk Terraform Provider
