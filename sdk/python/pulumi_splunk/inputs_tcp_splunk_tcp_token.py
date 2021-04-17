@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -20,6 +20,62 @@ class InputsTcpSplunkTcpTokenArgs:
                  token: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InputsTcpSplunkTcpToken resource.
+        :param pulumi.Input['InputsTcpSplunkTcpTokenAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] name: Required. Name for the token to create.
+        :param pulumi.Input[str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if token is not None:
+            pulumi.set(__self__, "token", token)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required. Name for the token to create.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def token(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional. Token value to use. If unspecified, a token is generated automatically.
+        """
+        return pulumi.get(self, "token")
+
+    @token.setter
+    def token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "token", value)
+
+
+@pulumi.input_type
+class _InputsTcpSplunkTcpTokenState:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 token: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering InputsTcpSplunkTcpToken resources.
         :param pulumi.Input['InputsTcpSplunkTcpTokenAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: Required. Name for the token to create.
         :param pulumi.Input[str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
@@ -155,11 +211,11 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = InputsTcpSplunkTcpTokenArgs.__new__(InputsTcpSplunkTcpTokenArgs)
 
-            __props__['acl'] = acl
-            __props__['name'] = name
-            __props__['token'] = token
+            __props__.__dict__["acl"] = acl
+            __props__.__dict__["name"] = name
+            __props__.__dict__["token"] = token
         super(InputsTcpSplunkTcpToken, __self__).__init__(
             'splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken',
             resource_name,
@@ -186,11 +242,11 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _InputsTcpSplunkTcpTokenState.__new__(_InputsTcpSplunkTcpTokenState)
 
-        __props__["acl"] = acl
-        __props__["name"] = name
-        __props__["token"] = token
+        __props__.__dict__["acl"] = acl
+        __props__.__dict__["name"] = name
+        __props__.__dict__["token"] = token
         return InputsTcpSplunkTcpToken(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -216,10 +272,4 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         Optional. Token value to use. If unspecified, a token is generated automatically.
         """
         return pulumi.get(self, "token")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

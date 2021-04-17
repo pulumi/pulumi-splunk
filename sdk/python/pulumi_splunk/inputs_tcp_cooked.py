@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -23,6 +23,120 @@ class InputsTcpCookedArgs:
                  restrict_to_host: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InputsTcpCooked resource.
+        :param pulumi.Input['InputsTcpCookedAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] connection_host: Valid values: (ip | dns | none)
+               Set the host for the remote server that is sending data.
+               ip sets the host to the IP address of the remote server sending data.
+               dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+               none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+               Default value is dns.
+        :param pulumi.Input[bool] disabled: Indicates if input is disabled.
+        :param pulumi.Input[str] host: Host from which the indexer gets data.
+        :param pulumi.Input[str] name: The port number of this input.
+        :param pulumi.Input[str] restrict_to_host: Restrict incoming connections on this port to the host specified here.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if connection_host is not None:
+            pulumi.set(__self__, "connection_host", connection_host)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if restrict_to_host is not None:
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['InputsTcpCookedAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['InputsTcpCookedAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter(name="connectionHost")
+    def connection_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: (ip | dns | none)
+        Set the host for the remote server that is sending data.
+        ip sets the host to the IP address of the remote server sending data.
+        dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+        none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+        Default value is dns.
+        """
+        return pulumi.get(self, "connection_host")
+
+    @connection_host.setter
+    def connection_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_host", value)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if input is disabled.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Host from which the indexer gets data.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The port number of this input.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="restrictToHost")
+    def restrict_to_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        Restrict incoming connections on this port to the host specified here.
+        """
+        return pulumi.get(self, "restrict_to_host")
+
+    @restrict_to_host.setter
+    def restrict_to_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "restrict_to_host", value)
+
+
+@pulumi.input_type
+class _InputsTcpCookedState:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['InputsTcpCookedAclArgs']] = None,
+                 connection_host: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 host: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 restrict_to_host: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering InputsTcpCooked resources.
         :param pulumi.Input['InputsTcpCookedAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -233,14 +347,14 @@ class InputsTcpCooked(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = InputsTcpCookedArgs.__new__(InputsTcpCookedArgs)
 
-            __props__['acl'] = acl
-            __props__['connection_host'] = connection_host
-            __props__['disabled'] = disabled
-            __props__['host'] = host
-            __props__['name'] = name
-            __props__['restrict_to_host'] = restrict_to_host
+            __props__.__dict__["acl"] = acl
+            __props__.__dict__["connection_host"] = connection_host
+            __props__.__dict__["disabled"] = disabled
+            __props__.__dict__["host"] = host
+            __props__.__dict__["name"] = name
+            __props__.__dict__["restrict_to_host"] = restrict_to_host
         super(InputsTcpCooked, __self__).__init__(
             'splunk:index/inputsTcpCooked:InputsTcpCooked',
             resource_name,
@@ -278,14 +392,14 @@ class InputsTcpCooked(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _InputsTcpCookedState.__new__(_InputsTcpCookedState)
 
-        __props__["acl"] = acl
-        __props__["connection_host"] = connection_host
-        __props__["disabled"] = disabled
-        __props__["host"] = host
-        __props__["name"] = name
-        __props__["restrict_to_host"] = restrict_to_host
+        __props__.__dict__["acl"] = acl
+        __props__.__dict__["connection_host"] = connection_host
+        __props__.__dict__["disabled"] = disabled
+        __props__.__dict__["host"] = host
+        __props__.__dict__["name"] = name
+        __props__.__dict__["restrict_to_host"] = restrict_to_host
         return InputsTcpCooked(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -340,10 +454,4 @@ class InputsTcpCooked(pulumi.CustomResource):
         Restrict incoming connections on this port to the host specified here.
         """
         return pulumi.get(self, "restrict_to_host")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

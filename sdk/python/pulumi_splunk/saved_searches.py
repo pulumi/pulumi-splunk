@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -2131,6 +2131,2206 @@ class SavedSearchesArgs:
         pulumi.set(self, "workload_pool", value)
 
 
+@pulumi.input_type
+class _SavedSearchesState:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+                 action_email: Optional[pulumi.Input[bool]] = None,
+                 action_email_auth_password: Optional[pulumi.Input[str]] = None,
+                 action_email_auth_username: Optional[pulumi.Input[str]] = None,
+                 action_email_bcc: Optional[pulumi.Input[str]] = None,
+                 action_email_cc: Optional[pulumi.Input[str]] = None,
+                 action_email_command: Optional[pulumi.Input[str]] = None,
+                 action_email_format: Optional[pulumi.Input[str]] = None,
+                 action_email_from: Optional[pulumi.Input[str]] = None,
+                 action_email_hostname: Optional[pulumi.Input[str]] = None,
+                 action_email_include_results_link: Optional[pulumi.Input[int]] = None,
+                 action_email_include_search: Optional[pulumi.Input[int]] = None,
+                 action_email_include_trigger: Optional[pulumi.Input[int]] = None,
+                 action_email_include_trigger_time: Optional[pulumi.Input[int]] = None,
+                 action_email_include_view_link: Optional[pulumi.Input[int]] = None,
+                 action_email_inline: Optional[pulumi.Input[bool]] = None,
+                 action_email_mailserver: Optional[pulumi.Input[str]] = None,
+                 action_email_max_results: Optional[pulumi.Input[int]] = None,
+                 action_email_max_time: Optional[pulumi.Input[str]] = None,
+                 action_email_message_alert: Optional[pulumi.Input[str]] = None,
+                 action_email_message_report: Optional[pulumi.Input[str]] = None,
+                 action_email_pdfview: Optional[pulumi.Input[str]] = None,
+                 action_email_preprocess_results: Optional[pulumi.Input[str]] = None,
+                 action_email_report_cid_font_list: Optional[pulumi.Input[str]] = None,
+                 action_email_report_include_splunk_logo: Optional[pulumi.Input[bool]] = None,
+                 action_email_report_paper_orientation: Optional[pulumi.Input[str]] = None,
+                 action_email_report_paper_size: Optional[pulumi.Input[str]] = None,
+                 action_email_report_server_enabled: Optional[pulumi.Input[bool]] = None,
+                 action_email_report_server_url: Optional[pulumi.Input[str]] = None,
+                 action_email_send_csv: Optional[pulumi.Input[int]] = None,
+                 action_email_send_pdf: Optional[pulumi.Input[bool]] = None,
+                 action_email_send_results: Optional[pulumi.Input[bool]] = None,
+                 action_email_subject: Optional[pulumi.Input[str]] = None,
+                 action_email_to: Optional[pulumi.Input[str]] = None,
+                 action_email_track_alert: Optional[pulumi.Input[bool]] = None,
+                 action_email_ttl: Optional[pulumi.Input[str]] = None,
+                 action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
+                 action_email_use_tls: Optional[pulumi.Input[bool]] = None,
+                 action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+                 action_populate_lookup: Optional[pulumi.Input[bool]] = None,
+                 action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
+                 action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
+                 action_populate_lookup_hostname: Optional[pulumi.Input[str]] = None,
+                 action_populate_lookup_max_results: Optional[pulumi.Input[int]] = None,
+                 action_populate_lookup_max_time: Optional[pulumi.Input[int]] = None,
+                 action_populate_lookup_track_alert: Optional[pulumi.Input[bool]] = None,
+                 action_populate_lookup_ttl: Optional[pulumi.Input[str]] = None,
+                 action_rss: Optional[pulumi.Input[bool]] = None,
+                 action_rss_command: Optional[pulumi.Input[str]] = None,
+                 action_rss_hostname: Optional[pulumi.Input[str]] = None,
+                 action_rss_max_results: Optional[pulumi.Input[int]] = None,
+                 action_rss_max_time: Optional[pulumi.Input[int]] = None,
+                 action_rss_track_alert: Optional[pulumi.Input[bool]] = None,
+                 action_rss_ttl: Optional[pulumi.Input[str]] = None,
+                 action_script: Optional[pulumi.Input[bool]] = None,
+                 action_script_command: Optional[pulumi.Input[str]] = None,
+                 action_script_filename: Optional[pulumi.Input[str]] = None,
+                 action_script_hostname: Optional[pulumi.Input[str]] = None,
+                 action_script_max_results: Optional[pulumi.Input[int]] = None,
+                 action_script_max_time: Optional[pulumi.Input[int]] = None,
+                 action_script_track_alert: Optional[pulumi.Input[bool]] = None,
+                 action_script_ttl: Optional[pulumi.Input[str]] = None,
+                 action_slack_param_attachment: Optional[pulumi.Input[str]] = None,
+                 action_slack_param_channel: Optional[pulumi.Input[str]] = None,
+                 action_slack_param_fields: Optional[pulumi.Input[str]] = None,
+                 action_slack_param_message: Optional[pulumi.Input[str]] = None,
+                 action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+                 action_summary_index: Optional[pulumi.Input[bool]] = None,
+                 action_summary_index_command: Optional[pulumi.Input[str]] = None,
+                 action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
+                 action_summary_index_inline: Optional[pulumi.Input[bool]] = None,
+                 action_summary_index_max_results: Optional[pulumi.Input[int]] = None,
+                 action_summary_index_max_time: Optional[pulumi.Input[int]] = None,
+                 action_summary_index_name: Optional[pulumi.Input[str]] = None,
+                 action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
+                 action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+                 actions: Optional[pulumi.Input[str]] = None,
+                 alert_comparator: Optional[pulumi.Input[str]] = None,
+                 alert_condition: Optional[pulumi.Input[str]] = None,
+                 alert_digest_mode: Optional[pulumi.Input[bool]] = None,
+                 alert_expires: Optional[pulumi.Input[str]] = None,
+                 alert_severity: Optional[pulumi.Input[int]] = None,
+                 alert_suppress: Optional[pulumi.Input[bool]] = None,
+                 alert_suppress_fields: Optional[pulumi.Input[str]] = None,
+                 alert_suppress_period: Optional[pulumi.Input[str]] = None,
+                 alert_threshold: Optional[pulumi.Input[str]] = None,
+                 alert_track: Optional[pulumi.Input[bool]] = None,
+                 alert_type: Optional[pulumi.Input[str]] = None,
+                 allow_skew: Optional[pulumi.Input[str]] = None,
+                 auto_summarize: Optional[pulumi.Input[bool]] = None,
+                 auto_summarize_command: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_cron_schedule: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_dispatch_latest_time: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_dispatch_time_format: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_dispatch_ttl: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_max_disabled_buckets: Optional[pulumi.Input[int]] = None,
+                 auto_summarize_max_summary_ratio: Optional[pulumi.Input[float]] = None,
+                 auto_summarize_max_summary_size: Optional[pulumi.Input[int]] = None,
+                 auto_summarize_max_time: Optional[pulumi.Input[int]] = None,
+                 auto_summarize_suspend_period: Optional[pulumi.Input[str]] = None,
+                 auto_summarize_timespan: Optional[pulumi.Input[str]] = None,
+                 cron_schedule: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 dispatch_buckets: Optional[pulumi.Input[int]] = None,
+                 dispatch_earliest_time: Optional[pulumi.Input[str]] = None,
+                 dispatch_index_earliest: Optional[pulumi.Input[str]] = None,
+                 dispatch_index_latest: Optional[pulumi.Input[str]] = None,
+                 dispatch_indexed_realtime: Optional[pulumi.Input[bool]] = None,
+                 dispatch_indexed_realtime_minspan: Optional[pulumi.Input[int]] = None,
+                 dispatch_indexed_realtime_offset: Optional[pulumi.Input[int]] = None,
+                 dispatch_latest_time: Optional[pulumi.Input[str]] = None,
+                 dispatch_lookups: Optional[pulumi.Input[bool]] = None,
+                 dispatch_max_count: Optional[pulumi.Input[int]] = None,
+                 dispatch_max_time: Optional[pulumi.Input[int]] = None,
+                 dispatch_reduce_freq: Optional[pulumi.Input[int]] = None,
+                 dispatch_rt_backfill: Optional[pulumi.Input[bool]] = None,
+                 dispatch_rt_maximum_span: Optional[pulumi.Input[int]] = None,
+                 dispatch_spawn_process: Optional[pulumi.Input[bool]] = None,
+                 dispatch_time_format: Optional[pulumi.Input[str]] = None,
+                 dispatch_ttl: Optional[pulumi.Input[str]] = None,
+                 display_view: Optional[pulumi.Input[str]] = None,
+                 is_scheduled: Optional[pulumi.Input[bool]] = None,
+                 is_visible: Optional[pulumi.Input[bool]] = None,
+                 max_concurrent: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 realtime_schedule: Optional[pulumi.Input[bool]] = None,
+                 request_ui_dispatch_app: Optional[pulumi.Input[str]] = None,
+                 request_ui_dispatch_view: Optional[pulumi.Input[str]] = None,
+                 restart_on_searchpeer_add: Optional[pulumi.Input[bool]] = None,
+                 run_on_startup: Optional[pulumi.Input[bool]] = None,
+                 schedule_priority: Optional[pulumi.Input[str]] = None,
+                 schedule_window: Optional[pulumi.Input[str]] = None,
+                 search: Optional[pulumi.Input[str]] = None,
+                 vsid: Optional[pulumi.Input[str]] = None,
+                 workload_pool: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering SavedSearches resources.
+        :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[bool] action_email: The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        :param pulumi.Input[str] action_email_auth_password: The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
+        :param pulumi.Input[str] action_email_auth_username: The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
+        :param pulumi.Input[str] action_email_bcc: BCC email address to use if action.email is enabled.
+        :param pulumi.Input[str] action_email_cc: CC email address to use if action.email is enabled.
+        :param pulumi.Input[str] action_email_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        :param pulumi.Input[str] action_email_format: Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
+        :param pulumi.Input[str] action_email_from: Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+        :param pulumi.Input[str] action_email_hostname: Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
+        :param pulumi.Input[int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 0.
+        :param pulumi.Input[int] action_email_include_search: Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        :param pulumi.Input[int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        :param pulumi.Input[int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. Defaults to 0.
+        :param pulumi.Input[int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        :param pulumi.Input[bool] action_email_inline: Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
+        :param pulumi.Input[str] action_email_mailserver: Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
+        :param pulumi.Input[int] action_email_max_results: Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
+        :param pulumi.Input[str] action_email_max_time: Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
+        :param pulumi.Input[str] action_email_message_alert: Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
+        :param pulumi.Input[str] action_email_message_report: Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
+        :param pulumi.Input[str] action_email_pdfview: The name of the view to deliver if sendpdf is enabled
+        :param pulumi.Input[str] action_email_preprocess_results: Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
+        :param pulumi.Input[str] action_email_report_cid_font_list: Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
+        :param pulumi.Input[bool] action_email_report_include_splunk_logo: Indicates whether to include the Splunk logo with the report.
+        :param pulumi.Input[str] action_email_report_paper_orientation: Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
+        :param pulumi.Input[str] action_email_report_paper_size: Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
+        :param pulumi.Input[bool] action_email_report_server_enabled: No Supported
+        :param pulumi.Input[str] action_email_report_server_url: Not supported.For a default locally installed report server, the URL is http://localhost:8091/
+        :param pulumi.Input[int] action_email_send_csv: Specify whether to send results as a CSV file. Defaults to 0.
+        :param pulumi.Input[bool] action_email_send_pdf: Indicates whether to create and send the results as a PDF. Defaults to false.
+        :param pulumi.Input[bool] action_email_send_results: Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
+        :param pulumi.Input[str] action_email_subject: Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
+        :param pulumi.Input[str] action_email_to: A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
+        :param pulumi.Input[bool] action_email_track_alert: Indicates whether the execution of this action signifies a trackable alert.
+        :param pulumi.Input[str] action_email_ttl: Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
+        :param pulumi.Input[bool] action_email_use_ssl: Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
+        :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
+        :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+        :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
+        :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
+        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[int] action_populate_lookup_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
+        :param pulumi.Input[int] action_populate_lookup_max_time: Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
+        :param pulumi.Input[bool] action_populate_lookup_track_alert: Indicates whether the execution of this action signifies a trackable alert.
+        :param pulumi.Input[str] action_populate_lookup_ttl: Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
+        :param pulumi.Input[bool] action_rss: The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
+        :param pulumi.Input[str] action_rss_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[int] action_rss_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
+        :param pulumi.Input[int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+        :param pulumi.Input[bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
+        :param pulumi.Input[str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[bool] action_script: The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        :param pulumi.Input[str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        :param pulumi.Input[str] action_script_filename: File name of the script to call. Required if script action is enabled
+        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[int] action_script_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
+        :param pulumi.Input[int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+        :param pulumi.Input[bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
+        :param pulumi.Input[str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
+        :param pulumi.Input[str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
+        :param pulumi.Input[str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        :param pulumi.Input[str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
+        :param pulumi.Input[str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+        :param pulumi.Input[bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
+        :param pulumi.Input[int] action_summary_index_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
+        :param pulumi.Input[int] action_summary_index_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+        :param pulumi.Input[str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
+        :param pulumi.Input[bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
+        :param pulumi.Input[str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[str] actions: A comma-separated list of actions to enable. For example: rss,email
+        :param pulumi.Input[str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+        :param pulumi.Input[str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
+        :param pulumi.Input[bool] alert_digest_mode: Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
+        :param pulumi.Input[str] alert_expires: Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
+        :param pulumi.Input[int] alert_severity: Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
+        :param pulumi.Input[bool] alert_suppress: Indicates whether alert suppression is enabled for this scheduled search.
+        :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
+        :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
+        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
+        :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+        :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
+        :param pulumi.Input[bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
+        :param pulumi.Input[str] auto_summarize_command: An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
+        :param pulumi.Input[str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+        :param pulumi.Input[str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] auto_summarize_dispatch_ttl: Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
+        :param pulumi.Input[int] auto_summarize_max_disabled_buckets: The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
+        :param pulumi.Input[float] auto_summarize_max_summary_ratio: The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
+        :param pulumi.Input[int] auto_summarize_max_summary_size: The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
+        :param pulumi.Input[int] auto_summarize_max_time: Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
+        :param pulumi.Input[str] auto_summarize_suspend_period: Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
+        :param pulumi.Input[str] auto_summarize_timespan: The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
+        :param pulumi.Input[str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        :param pulumi.Input[str] description: Human-readable description of this saved search. Defaults to empty string.
+        :param pulumi.Input[bool] disabled: Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
+        :param pulumi.Input[int] dispatch_buckets: The maximum number of timeline buckets. Defaults to 0.
+        :param pulumi.Input[str] dispatch_earliest_time: A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[str] dispatch_index_earliest: A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[str] dispatch_index_latest: A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[bool] dispatch_indexed_realtime: A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[int] dispatch_indexed_realtime_minspan: Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        :param pulumi.Input[int] dispatch_indexed_realtime_offset: Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        :param pulumi.Input[str] dispatch_latest_time: A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+        :param pulumi.Input[bool] dispatch_lookups: Enables or disables the lookups for this search. Defaults to 1.
+        :param pulumi.Input[int] dispatch_max_count: The maximum number of results before finalizing the search. Defaults to 500000.
+        :param pulumi.Input[int] dispatch_max_time: Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
+        :param pulumi.Input[int] dispatch_reduce_freq: Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
+        :param pulumi.Input[bool] dispatch_rt_backfill: Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
+        :param pulumi.Input[int] dispatch_rt_maximum_span: Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+        :param pulumi.Input[bool] dispatch_spawn_process: Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
+        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
+        :param pulumi.Input[str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+        :param pulumi.Input[bool] is_scheduled: Whether this search is to be run on a schedule
+        :param pulumi.Input[bool] is_visible: Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
+        :param pulumi.Input[int] max_concurrent: The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
+        :param pulumi.Input[str] name: A name for the search.
+        :param pulumi.Input[bool] realtime_schedule: Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
+        :param pulumi.Input[str] request_ui_dispatch_app: Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
+        :param pulumi.Input[str] request_ui_dispatch_view: Specifies a field used by Splunk Web to denote the view this search should be displayed in.
+        :param pulumi.Input[bool] restart_on_searchpeer_add: Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
+        :param pulumi.Input[bool] run_on_startup: Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
+        :param pulumi.Input[str] schedule_priority: Raises the scheduling priority of the named search. Defaults to Default
+        :param pulumi.Input[str] schedule_window: Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+        :param pulumi.Input[str] search: Required when creating a new search.
+        :param pulumi.Input[str] vsid: Defines the viewstate id associated with the UI view listed in 'displayview'.
+        :param pulumi.Input[str] workload_pool: Specifies the new workload pool where the existing running search will be placed.`
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if action_email is not None:
+            pulumi.set(__self__, "action_email", action_email)
+        if action_email_auth_password is not None:
+            pulumi.set(__self__, "action_email_auth_password", action_email_auth_password)
+        if action_email_auth_username is not None:
+            pulumi.set(__self__, "action_email_auth_username", action_email_auth_username)
+        if action_email_bcc is not None:
+            pulumi.set(__self__, "action_email_bcc", action_email_bcc)
+        if action_email_cc is not None:
+            pulumi.set(__self__, "action_email_cc", action_email_cc)
+        if action_email_command is not None:
+            pulumi.set(__self__, "action_email_command", action_email_command)
+        if action_email_format is not None:
+            pulumi.set(__self__, "action_email_format", action_email_format)
+        if action_email_from is not None:
+            pulumi.set(__self__, "action_email_from", action_email_from)
+        if action_email_hostname is not None:
+            pulumi.set(__self__, "action_email_hostname", action_email_hostname)
+        if action_email_include_results_link is not None:
+            pulumi.set(__self__, "action_email_include_results_link", action_email_include_results_link)
+        if action_email_include_search is not None:
+            pulumi.set(__self__, "action_email_include_search", action_email_include_search)
+        if action_email_include_trigger is not None:
+            pulumi.set(__self__, "action_email_include_trigger", action_email_include_trigger)
+        if action_email_include_trigger_time is not None:
+            pulumi.set(__self__, "action_email_include_trigger_time", action_email_include_trigger_time)
+        if action_email_include_view_link is not None:
+            pulumi.set(__self__, "action_email_include_view_link", action_email_include_view_link)
+        if action_email_inline is not None:
+            pulumi.set(__self__, "action_email_inline", action_email_inline)
+        if action_email_mailserver is not None:
+            pulumi.set(__self__, "action_email_mailserver", action_email_mailserver)
+        if action_email_max_results is not None:
+            pulumi.set(__self__, "action_email_max_results", action_email_max_results)
+        if action_email_max_time is not None:
+            pulumi.set(__self__, "action_email_max_time", action_email_max_time)
+        if action_email_message_alert is not None:
+            pulumi.set(__self__, "action_email_message_alert", action_email_message_alert)
+        if action_email_message_report is not None:
+            pulumi.set(__self__, "action_email_message_report", action_email_message_report)
+        if action_email_pdfview is not None:
+            pulumi.set(__self__, "action_email_pdfview", action_email_pdfview)
+        if action_email_preprocess_results is not None:
+            pulumi.set(__self__, "action_email_preprocess_results", action_email_preprocess_results)
+        if action_email_report_cid_font_list is not None:
+            pulumi.set(__self__, "action_email_report_cid_font_list", action_email_report_cid_font_list)
+        if action_email_report_include_splunk_logo is not None:
+            pulumi.set(__self__, "action_email_report_include_splunk_logo", action_email_report_include_splunk_logo)
+        if action_email_report_paper_orientation is not None:
+            pulumi.set(__self__, "action_email_report_paper_orientation", action_email_report_paper_orientation)
+        if action_email_report_paper_size is not None:
+            pulumi.set(__self__, "action_email_report_paper_size", action_email_report_paper_size)
+        if action_email_report_server_enabled is not None:
+            pulumi.set(__self__, "action_email_report_server_enabled", action_email_report_server_enabled)
+        if action_email_report_server_url is not None:
+            pulumi.set(__self__, "action_email_report_server_url", action_email_report_server_url)
+        if action_email_send_csv is not None:
+            pulumi.set(__self__, "action_email_send_csv", action_email_send_csv)
+        if action_email_send_pdf is not None:
+            pulumi.set(__self__, "action_email_send_pdf", action_email_send_pdf)
+        if action_email_send_results is not None:
+            pulumi.set(__self__, "action_email_send_results", action_email_send_results)
+        if action_email_subject is not None:
+            pulumi.set(__self__, "action_email_subject", action_email_subject)
+        if action_email_to is not None:
+            pulumi.set(__self__, "action_email_to", action_email_to)
+        if action_email_track_alert is not None:
+            pulumi.set(__self__, "action_email_track_alert", action_email_track_alert)
+        if action_email_ttl is not None:
+            pulumi.set(__self__, "action_email_ttl", action_email_ttl)
+        if action_email_use_ssl is not None:
+            pulumi.set(__self__, "action_email_use_ssl", action_email_use_ssl)
+        if action_email_use_tls is not None:
+            pulumi.set(__self__, "action_email_use_tls", action_email_use_tls)
+        if action_email_width_sort_columns is not None:
+            pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
+        if action_populate_lookup is not None:
+            pulumi.set(__self__, "action_populate_lookup", action_populate_lookup)
+        if action_populate_lookup_command is not None:
+            pulumi.set(__self__, "action_populate_lookup_command", action_populate_lookup_command)
+        if action_populate_lookup_dest is not None:
+            pulumi.set(__self__, "action_populate_lookup_dest", action_populate_lookup_dest)
+        if action_populate_lookup_hostname is not None:
+            pulumi.set(__self__, "action_populate_lookup_hostname", action_populate_lookup_hostname)
+        if action_populate_lookup_max_results is not None:
+            pulumi.set(__self__, "action_populate_lookup_max_results", action_populate_lookup_max_results)
+        if action_populate_lookup_max_time is not None:
+            pulumi.set(__self__, "action_populate_lookup_max_time", action_populate_lookup_max_time)
+        if action_populate_lookup_track_alert is not None:
+            pulumi.set(__self__, "action_populate_lookup_track_alert", action_populate_lookup_track_alert)
+        if action_populate_lookup_ttl is not None:
+            pulumi.set(__self__, "action_populate_lookup_ttl", action_populate_lookup_ttl)
+        if action_rss is not None:
+            pulumi.set(__self__, "action_rss", action_rss)
+        if action_rss_command is not None:
+            pulumi.set(__self__, "action_rss_command", action_rss_command)
+        if action_rss_hostname is not None:
+            pulumi.set(__self__, "action_rss_hostname", action_rss_hostname)
+        if action_rss_max_results is not None:
+            pulumi.set(__self__, "action_rss_max_results", action_rss_max_results)
+        if action_rss_max_time is not None:
+            pulumi.set(__self__, "action_rss_max_time", action_rss_max_time)
+        if action_rss_track_alert is not None:
+            pulumi.set(__self__, "action_rss_track_alert", action_rss_track_alert)
+        if action_rss_ttl is not None:
+            pulumi.set(__self__, "action_rss_ttl", action_rss_ttl)
+        if action_script is not None:
+            pulumi.set(__self__, "action_script", action_script)
+        if action_script_command is not None:
+            pulumi.set(__self__, "action_script_command", action_script_command)
+        if action_script_filename is not None:
+            pulumi.set(__self__, "action_script_filename", action_script_filename)
+        if action_script_hostname is not None:
+            pulumi.set(__self__, "action_script_hostname", action_script_hostname)
+        if action_script_max_results is not None:
+            pulumi.set(__self__, "action_script_max_results", action_script_max_results)
+        if action_script_max_time is not None:
+            pulumi.set(__self__, "action_script_max_time", action_script_max_time)
+        if action_script_track_alert is not None:
+            pulumi.set(__self__, "action_script_track_alert", action_script_track_alert)
+        if action_script_ttl is not None:
+            pulumi.set(__self__, "action_script_ttl", action_script_ttl)
+        if action_slack_param_attachment is not None:
+            pulumi.set(__self__, "action_slack_param_attachment", action_slack_param_attachment)
+        if action_slack_param_channel is not None:
+            pulumi.set(__self__, "action_slack_param_channel", action_slack_param_channel)
+        if action_slack_param_fields is not None:
+            pulumi.set(__self__, "action_slack_param_fields", action_slack_param_fields)
+        if action_slack_param_message is not None:
+            pulumi.set(__self__, "action_slack_param_message", action_slack_param_message)
+        if action_slack_param_webhook_url_override is not None:
+            pulumi.set(__self__, "action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
+        if action_summary_index is not None:
+            pulumi.set(__self__, "action_summary_index", action_summary_index)
+        if action_summary_index_command is not None:
+            pulumi.set(__self__, "action_summary_index_command", action_summary_index_command)
+        if action_summary_index_hostname is not None:
+            pulumi.set(__self__, "action_summary_index_hostname", action_summary_index_hostname)
+        if action_summary_index_inline is not None:
+            pulumi.set(__self__, "action_summary_index_inline", action_summary_index_inline)
+        if action_summary_index_max_results is not None:
+            pulumi.set(__self__, "action_summary_index_max_results", action_summary_index_max_results)
+        if action_summary_index_max_time is not None:
+            pulumi.set(__self__, "action_summary_index_max_time", action_summary_index_max_time)
+        if action_summary_index_name is not None:
+            pulumi.set(__self__, "action_summary_index_name", action_summary_index_name)
+        if action_summary_index_track_alert is not None:
+            pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
+        if action_summary_index_ttl is not None:
+            pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if alert_comparator is not None:
+            pulumi.set(__self__, "alert_comparator", alert_comparator)
+        if alert_condition is not None:
+            pulumi.set(__self__, "alert_condition", alert_condition)
+        if alert_digest_mode is not None:
+            pulumi.set(__self__, "alert_digest_mode", alert_digest_mode)
+        if alert_expires is not None:
+            pulumi.set(__self__, "alert_expires", alert_expires)
+        if alert_severity is not None:
+            pulumi.set(__self__, "alert_severity", alert_severity)
+        if alert_suppress is not None:
+            pulumi.set(__self__, "alert_suppress", alert_suppress)
+        if alert_suppress_fields is not None:
+            pulumi.set(__self__, "alert_suppress_fields", alert_suppress_fields)
+        if alert_suppress_period is not None:
+            pulumi.set(__self__, "alert_suppress_period", alert_suppress_period)
+        if alert_threshold is not None:
+            pulumi.set(__self__, "alert_threshold", alert_threshold)
+        if alert_track is not None:
+            pulumi.set(__self__, "alert_track", alert_track)
+        if alert_type is not None:
+            pulumi.set(__self__, "alert_type", alert_type)
+        if allow_skew is not None:
+            pulumi.set(__self__, "allow_skew", allow_skew)
+        if auto_summarize is not None:
+            pulumi.set(__self__, "auto_summarize", auto_summarize)
+        if auto_summarize_command is not None:
+            pulumi.set(__self__, "auto_summarize_command", auto_summarize_command)
+        if auto_summarize_cron_schedule is not None:
+            pulumi.set(__self__, "auto_summarize_cron_schedule", auto_summarize_cron_schedule)
+        if auto_summarize_dispatch_earliest_time is not None:
+            pulumi.set(__self__, "auto_summarize_dispatch_earliest_time", auto_summarize_dispatch_earliest_time)
+        if auto_summarize_dispatch_latest_time is not None:
+            pulumi.set(__self__, "auto_summarize_dispatch_latest_time", auto_summarize_dispatch_latest_time)
+        if auto_summarize_dispatch_time_format is not None:
+            pulumi.set(__self__, "auto_summarize_dispatch_time_format", auto_summarize_dispatch_time_format)
+        if auto_summarize_dispatch_ttl is not None:
+            pulumi.set(__self__, "auto_summarize_dispatch_ttl", auto_summarize_dispatch_ttl)
+        if auto_summarize_max_disabled_buckets is not None:
+            pulumi.set(__self__, "auto_summarize_max_disabled_buckets", auto_summarize_max_disabled_buckets)
+        if auto_summarize_max_summary_ratio is not None:
+            pulumi.set(__self__, "auto_summarize_max_summary_ratio", auto_summarize_max_summary_ratio)
+        if auto_summarize_max_summary_size is not None:
+            pulumi.set(__self__, "auto_summarize_max_summary_size", auto_summarize_max_summary_size)
+        if auto_summarize_max_time is not None:
+            pulumi.set(__self__, "auto_summarize_max_time", auto_summarize_max_time)
+        if auto_summarize_suspend_period is not None:
+            pulumi.set(__self__, "auto_summarize_suspend_period", auto_summarize_suspend_period)
+        if auto_summarize_timespan is not None:
+            pulumi.set(__self__, "auto_summarize_timespan", auto_summarize_timespan)
+        if cron_schedule is not None:
+            pulumi.set(__self__, "cron_schedule", cron_schedule)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if dispatch_buckets is not None:
+            pulumi.set(__self__, "dispatch_buckets", dispatch_buckets)
+        if dispatch_earliest_time is not None:
+            pulumi.set(__self__, "dispatch_earliest_time", dispatch_earliest_time)
+        if dispatch_index_earliest is not None:
+            pulumi.set(__self__, "dispatch_index_earliest", dispatch_index_earliest)
+        if dispatch_index_latest is not None:
+            pulumi.set(__self__, "dispatch_index_latest", dispatch_index_latest)
+        if dispatch_indexed_realtime is not None:
+            pulumi.set(__self__, "dispatch_indexed_realtime", dispatch_indexed_realtime)
+        if dispatch_indexed_realtime_minspan is not None:
+            pulumi.set(__self__, "dispatch_indexed_realtime_minspan", dispatch_indexed_realtime_minspan)
+        if dispatch_indexed_realtime_offset is not None:
+            pulumi.set(__self__, "dispatch_indexed_realtime_offset", dispatch_indexed_realtime_offset)
+        if dispatch_latest_time is not None:
+            pulumi.set(__self__, "dispatch_latest_time", dispatch_latest_time)
+        if dispatch_lookups is not None:
+            pulumi.set(__self__, "dispatch_lookups", dispatch_lookups)
+        if dispatch_max_count is not None:
+            pulumi.set(__self__, "dispatch_max_count", dispatch_max_count)
+        if dispatch_max_time is not None:
+            pulumi.set(__self__, "dispatch_max_time", dispatch_max_time)
+        if dispatch_reduce_freq is not None:
+            pulumi.set(__self__, "dispatch_reduce_freq", dispatch_reduce_freq)
+        if dispatch_rt_backfill is not None:
+            pulumi.set(__self__, "dispatch_rt_backfill", dispatch_rt_backfill)
+        if dispatch_rt_maximum_span is not None:
+            pulumi.set(__self__, "dispatch_rt_maximum_span", dispatch_rt_maximum_span)
+        if dispatch_spawn_process is not None:
+            pulumi.set(__self__, "dispatch_spawn_process", dispatch_spawn_process)
+        if dispatch_time_format is not None:
+            pulumi.set(__self__, "dispatch_time_format", dispatch_time_format)
+        if dispatch_ttl is not None:
+            pulumi.set(__self__, "dispatch_ttl", dispatch_ttl)
+        if display_view is not None:
+            pulumi.set(__self__, "display_view", display_view)
+        if is_scheduled is not None:
+            pulumi.set(__self__, "is_scheduled", is_scheduled)
+        if is_visible is not None:
+            pulumi.set(__self__, "is_visible", is_visible)
+        if max_concurrent is not None:
+            pulumi.set(__self__, "max_concurrent", max_concurrent)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if realtime_schedule is not None:
+            pulumi.set(__self__, "realtime_schedule", realtime_schedule)
+        if request_ui_dispatch_app is not None:
+            pulumi.set(__self__, "request_ui_dispatch_app", request_ui_dispatch_app)
+        if request_ui_dispatch_view is not None:
+            pulumi.set(__self__, "request_ui_dispatch_view", request_ui_dispatch_view)
+        if restart_on_searchpeer_add is not None:
+            pulumi.set(__self__, "restart_on_searchpeer_add", restart_on_searchpeer_add)
+        if run_on_startup is not None:
+            pulumi.set(__self__, "run_on_startup", run_on_startup)
+        if schedule_priority is not None:
+            pulumi.set(__self__, "schedule_priority", schedule_priority)
+        if schedule_window is not None:
+            pulumi.set(__self__, "schedule_window", schedule_window)
+        if search is not None:
+            pulumi.set(__self__, "search", search)
+        if vsid is not None:
+            pulumi.set(__self__, "vsid", vsid)
+        if workload_pool is not None:
+            pulumi.set(__self__, "workload_pool", workload_pool)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['SavedSearchesAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter(name="actionEmail")
+    def action_email(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email")
+
+    @action_email.setter
+    def action_email(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email", value)
+
+    @property
+    @pulumi.getter(name="actionEmailAuthPassword")
+    def action_email_auth_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
+        """
+        return pulumi.get(self, "action_email_auth_password")
+
+    @action_email_auth_password.setter
+    def action_email_auth_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_auth_password", value)
+
+    @property
+    @pulumi.getter(name="actionEmailAuthUsername")
+    def action_email_auth_username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
+        """
+        return pulumi.get(self, "action_email_auth_username")
+
+    @action_email_auth_username.setter
+    def action_email_auth_username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_auth_username", value)
+
+    @property
+    @pulumi.getter(name="actionEmailBcc")
+    def action_email_bcc(self) -> Optional[pulumi.Input[str]]:
+        """
+        BCC email address to use if action.email is enabled.
+        """
+        return pulumi.get(self, "action_email_bcc")
+
+    @action_email_bcc.setter
+    def action_email_bcc(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_bcc", value)
+
+    @property
+    @pulumi.getter(name="actionEmailCc")
+    def action_email_cc(self) -> Optional[pulumi.Input[str]]:
+        """
+        CC email address to use if action.email is enabled.
+        """
+        return pulumi.get(self, "action_email_cc")
+
+    @action_email_cc.setter
+    def action_email_cc(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_cc", value)
+
+    @property
+    @pulumi.getter(name="actionEmailCommand")
+    def action_email_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        """
+        return pulumi.get(self, "action_email_command")
+
+    @action_email_command.setter
+    def action_email_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_command", value)
+
+    @property
+    @pulumi.getter(name="actionEmailFormat")
+    def action_email_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
+        """
+        return pulumi.get(self, "action_email_format")
+
+    @action_email_format.setter
+    def action_email_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_format", value)
+
+    @property
+    @pulumi.getter(name="actionEmailFrom")
+    def action_email_from(self) -> Optional[pulumi.Input[str]]:
+        """
+        Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+        """
+        return pulumi.get(self, "action_email_from")
+
+    @action_email_from.setter
+    def action_email_from(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_from", value)
+
+    @property
+    @pulumi.getter(name="actionEmailHostname")
+    def action_email_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
+        """
+        return pulumi.get(self, "action_email_hostname")
+
+    @action_email_hostname.setter
+    def action_email_hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_hostname", value)
+
+    @property
+    @pulumi.getter(name="actionEmailIncludeResultsLink")
+    def action_email_include_results_link(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify whether to include a link to the results. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email_include_results_link")
+
+    @action_email_include_results_link.setter
+    def action_email_include_results_link(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_include_results_link", value)
+
+    @property
+    @pulumi.getter(name="actionEmailIncludeSearch")
+    def action_email_include_search(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email_include_search")
+
+    @action_email_include_search.setter
+    def action_email_include_search(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_include_search", value)
+
+    @property
+    @pulumi.getter(name="actionEmailIncludeTrigger")
+    def action_email_include_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email_include_trigger")
+
+    @action_email_include_trigger.setter
+    def action_email_include_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_include_trigger", value)
+
+    @property
+    @pulumi.getter(name="actionEmailIncludeTriggerTime")
+    def action_email_include_trigger_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify whether to show the time that the alert was fired. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email_include_trigger_time")
+
+    @action_email_include_trigger_time.setter
+    def action_email_include_trigger_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_include_trigger_time", value)
+
+    @property
+    @pulumi.getter(name="actionEmailIncludeViewLink")
+    def action_email_include_view_link(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email_include_view_link")
+
+    @action_email_include_view_link.setter
+    def action_email_include_view_link(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_include_view_link", value)
+
+    @property
+    @pulumi.getter(name="actionEmailInline")
+    def action_email_inline(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
+        """
+        return pulumi.get(self, "action_email_inline")
+
+    @action_email_inline.setter
+    def action_email_inline(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_inline", value)
+
+    @property
+    @pulumi.getter(name="actionEmailMailserver")
+    def action_email_mailserver(self) -> Optional[pulumi.Input[str]]:
+        """
+        Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
+        """
+        return pulumi.get(self, "action_email_mailserver")
+
+    @action_email_mailserver.setter
+    def action_email_mailserver(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_mailserver", value)
+
+    @property
+    @pulumi.getter(name="actionEmailMaxResults")
+    def action_email_max_results(self) -> Optional[pulumi.Input[int]]:
+        """
+        Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
+        """
+        return pulumi.get(self, "action_email_max_results")
+
+    @action_email_max_results.setter
+    def action_email_max_results(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_max_results", value)
+
+    @property
+    @pulumi.getter(name="actionEmailMaxTime")
+    def action_email_max_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
+        """
+        return pulumi.get(self, "action_email_max_time")
+
+    @action_email_max_time.setter
+    def action_email_max_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_max_time", value)
+
+    @property
+    @pulumi.getter(name="actionEmailMessageAlert")
+    def action_email_message_alert(self) -> Optional[pulumi.Input[str]]:
+        """
+        Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
+        """
+        return pulumi.get(self, "action_email_message_alert")
+
+    @action_email_message_alert.setter
+    def action_email_message_alert(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_message_alert", value)
+
+    @property
+    @pulumi.getter(name="actionEmailMessageReport")
+    def action_email_message_report(self) -> Optional[pulumi.Input[str]]:
+        """
+        Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
+        """
+        return pulumi.get(self, "action_email_message_report")
+
+    @action_email_message_report.setter
+    def action_email_message_report(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_message_report", value)
+
+    @property
+    @pulumi.getter(name="actionEmailPdfview")
+    def action_email_pdfview(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the view to deliver if sendpdf is enabled
+        """
+        return pulumi.get(self, "action_email_pdfview")
+
+    @action_email_pdfview.setter
+    def action_email_pdfview(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_pdfview", value)
+
+    @property
+    @pulumi.getter(name="actionEmailPreprocessResults")
+    def action_email_preprocess_results(self) -> Optional[pulumi.Input[str]]:
+        """
+        Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
+        """
+        return pulumi.get(self, "action_email_preprocess_results")
+
+    @action_email_preprocess_results.setter
+    def action_email_preprocess_results(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_preprocess_results", value)
+
+    @property
+    @pulumi.getter(name="actionEmailReportCidFontList")
+    def action_email_report_cid_font_list(self) -> Optional[pulumi.Input[str]]:
+        """
+        Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
+        """
+        return pulumi.get(self, "action_email_report_cid_font_list")
+
+    @action_email_report_cid_font_list.setter
+    def action_email_report_cid_font_list(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_report_cid_font_list", value)
+
+    @property
+    @pulumi.getter(name="actionEmailReportIncludeSplunkLogo")
+    def action_email_report_include_splunk_logo(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether to include the Splunk logo with the report.
+        """
+        return pulumi.get(self, "action_email_report_include_splunk_logo")
+
+    @action_email_report_include_splunk_logo.setter
+    def action_email_report_include_splunk_logo(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_report_include_splunk_logo", value)
+
+    @property
+    @pulumi.getter(name="actionEmailReportPaperOrientation")
+    def action_email_report_paper_orientation(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
+        """
+        return pulumi.get(self, "action_email_report_paper_orientation")
+
+    @action_email_report_paper_orientation.setter
+    def action_email_report_paper_orientation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_report_paper_orientation", value)
+
+    @property
+    @pulumi.getter(name="actionEmailReportPaperSize")
+    def action_email_report_paper_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
+        """
+        return pulumi.get(self, "action_email_report_paper_size")
+
+    @action_email_report_paper_size.setter
+    def action_email_report_paper_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_report_paper_size", value)
+
+    @property
+    @pulumi.getter(name="actionEmailReportServerEnabled")
+    def action_email_report_server_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        No Supported
+        """
+        return pulumi.get(self, "action_email_report_server_enabled")
+
+    @action_email_report_server_enabled.setter
+    def action_email_report_server_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_report_server_enabled", value)
+
+    @property
+    @pulumi.getter(name="actionEmailReportServerUrl")
+    def action_email_report_server_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Not supported.For a default locally installed report server, the URL is http://localhost:8091/
+        """
+        return pulumi.get(self, "action_email_report_server_url")
+
+    @action_email_report_server_url.setter
+    def action_email_report_server_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_report_server_url", value)
+
+    @property
+    @pulumi.getter(name="actionEmailSendCsv")
+    def action_email_send_csv(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify whether to send results as a CSV file. Defaults to 0.
+        """
+        return pulumi.get(self, "action_email_send_csv")
+
+    @action_email_send_csv.setter
+    def action_email_send_csv(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_email_send_csv", value)
+
+    @property
+    @pulumi.getter(name="actionEmailSendPdf")
+    def action_email_send_pdf(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether to create and send the results as a PDF. Defaults to false.
+        """
+        return pulumi.get(self, "action_email_send_pdf")
+
+    @action_email_send_pdf.setter
+    def action_email_send_pdf(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_send_pdf", value)
+
+    @property
+    @pulumi.getter(name="actionEmailSendResults")
+    def action_email_send_results(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
+        """
+        return pulumi.get(self, "action_email_send_results")
+
+    @action_email_send_results.setter
+    def action_email_send_results(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_send_results", value)
+
+    @property
+    @pulumi.getter(name="actionEmailSubject")
+    def action_email_subject(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
+        """
+        return pulumi.get(self, "action_email_subject")
+
+    @action_email_subject.setter
+    def action_email_subject(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_subject", value)
+
+    @property
+    @pulumi.getter(name="actionEmailTo")
+    def action_email_to(self) -> Optional[pulumi.Input[str]]:
+        """
+        A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
+        """
+        return pulumi.get(self, "action_email_to")
+
+    @action_email_to.setter
+    def action_email_to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_to", value)
+
+    @property
+    @pulumi.getter(name="actionEmailTrackAlert")
+    def action_email_track_alert(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the execution of this action signifies a trackable alert.
+        """
+        return pulumi.get(self, "action_email_track_alert")
+
+    @action_email_track_alert.setter
+    def action_email_track_alert(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_track_alert", value)
+
+    @property
+    @pulumi.getter(name="actionEmailTtl")
+    def action_email_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
+        """
+        return pulumi.get(self, "action_email_ttl")
+
+    @action_email_ttl.setter
+    def action_email_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_email_ttl", value)
+
+    @property
+    @pulumi.getter(name="actionEmailUseSsl")
+    def action_email_use_ssl(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
+        """
+        return pulumi.get(self, "action_email_use_ssl")
+
+    @action_email_use_ssl.setter
+    def action_email_use_ssl(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_use_ssl", value)
+
+    @property
+    @pulumi.getter(name="actionEmailUseTls")
+    def action_email_use_tls(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
+        """
+        return pulumi.get(self, "action_email_use_tls")
+
+    @action_email_use_tls.setter
+    def action_email_use_tls(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_use_tls", value)
+
+    @property
+    @pulumi.getter(name="actionEmailWidthSortColumns")
+    def action_email_width_sort_columns(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+        """
+        return pulumi.get(self, "action_email_width_sort_columns")
+
+    @action_email_width_sort_columns.setter
+    def action_email_width_sort_columns(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_email_width_sort_columns", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookup")
+    def action_populate_lookup(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        """
+        return pulumi.get(self, "action_populate_lookup")
+
+    @action_populate_lookup.setter
+    def action_populate_lookup(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_populate_lookup", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupCommand")
+    def action_populate_lookup_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        The search command (or pipeline) which is responsible for executing the action.
+        """
+        return pulumi.get(self, "action_populate_lookup_command")
+
+    @action_populate_lookup_command.setter
+    def action_populate_lookup_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_populate_lookup_command", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupDest")
+    def action_populate_lookup_dest(self) -> Optional[pulumi.Input[str]]:
+        """
+        Lookup name of path of the lookup to populate
+        """
+        return pulumi.get(self, "action_populate_lookup_dest")
+
+    @action_populate_lookup_dest.setter
+    def action_populate_lookup_dest(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_populate_lookup_dest", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupHostname")
+    def action_populate_lookup_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        """
+        return pulumi.get(self, "action_populate_lookup_hostname")
+
+    @action_populate_lookup_hostname.setter
+    def action_populate_lookup_hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_populate_lookup_hostname", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupMaxResults")
+    def action_populate_lookup_max_results(self) -> Optional[pulumi.Input[int]]:
+        """
+        Sets the maximum number of search results sent using alerts. Defaults to 100.
+        """
+        return pulumi.get(self, "action_populate_lookup_max_results")
+
+    @action_populate_lookup_max_results.setter
+    def action_populate_lookup_max_results(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_populate_lookup_max_results", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupMaxTime")
+    def action_populate_lookup_max_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
+        """
+        return pulumi.get(self, "action_populate_lookup_max_time")
+
+    @action_populate_lookup_max_time.setter
+    def action_populate_lookup_max_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_populate_lookup_max_time", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupTrackAlert")
+    def action_populate_lookup_track_alert(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the execution of this action signifies a trackable alert.
+        """
+        return pulumi.get(self, "action_populate_lookup_track_alert")
+
+    @action_populate_lookup_track_alert.setter
+    def action_populate_lookup_track_alert(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_populate_lookup_track_alert", value)
+
+    @property
+    @pulumi.getter(name="actionPopulateLookupTtl")
+    def action_populate_lookup_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
+        """
+        return pulumi.get(self, "action_populate_lookup_ttl")
+
+    @action_populate_lookup_ttl.setter
+    def action_populate_lookup_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_populate_lookup_ttl", value)
+
+    @property
+    @pulumi.getter(name="actionRss")
+    def action_rss(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
+        """
+        return pulumi.get(self, "action_rss")
+
+    @action_rss.setter
+    def action_rss(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_rss", value)
+
+    @property
+    @pulumi.getter(name="actionRssCommand")
+    def action_rss_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        """
+        return pulumi.get(self, "action_rss_command")
+
+    @action_rss_command.setter
+    def action_rss_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_rss_command", value)
+
+    @property
+    @pulumi.getter(name="actionRssHostname")
+    def action_rss_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        """
+        return pulumi.get(self, "action_rss_hostname")
+
+    @action_rss_hostname.setter
+    def action_rss_hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_rss_hostname", value)
+
+    @property
+    @pulumi.getter(name="actionRssMaxResults")
+    def action_rss_max_results(self) -> Optional[pulumi.Input[int]]:
+        """
+        Sets the maximum number of search results sent using alerts. Defaults to 100.
+        """
+        return pulumi.get(self, "action_rss_max_results")
+
+    @action_rss_max_results.setter
+    def action_rss_max_results(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_rss_max_results", value)
+
+    @property
+    @pulumi.getter(name="actionRssMaxTime")
+    def action_rss_max_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+        """
+        return pulumi.get(self, "action_rss_max_time")
+
+    @action_rss_max_time.setter
+    def action_rss_max_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_rss_max_time", value)
+
+    @property
+    @pulumi.getter(name="actionRssTrackAlert")
+    def action_rss_track_alert(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the execution of this action signifies a trackable alert.
+        """
+        return pulumi.get(self, "action_rss_track_alert")
+
+    @action_rss_track_alert.setter
+    def action_rss_track_alert(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_rss_track_alert", value)
+
+    @property
+    @pulumi.getter(name="actionRssTtl")
+    def action_rss_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        """
+        return pulumi.get(self, "action_rss_ttl")
+
+    @action_rss_ttl.setter
+    def action_rss_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_rss_ttl", value)
+
+    @property
+    @pulumi.getter(name="actionScript")
+    def action_script(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        """
+        return pulumi.get(self, "action_script")
+
+    @action_script.setter
+    def action_script(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_script", value)
+
+    @property
+    @pulumi.getter(name="actionScriptCommand")
+    def action_script_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        """
+        return pulumi.get(self, "action_script_command")
+
+    @action_script_command.setter
+    def action_script_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_script_command", value)
+
+    @property
+    @pulumi.getter(name="actionScriptFilename")
+    def action_script_filename(self) -> Optional[pulumi.Input[str]]:
+        """
+        File name of the script to call. Required if script action is enabled
+        """
+        return pulumi.get(self, "action_script_filename")
+
+    @action_script_filename.setter
+    def action_script_filename(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_script_filename", value)
+
+    @property
+    @pulumi.getter(name="actionScriptHostname")
+    def action_script_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        """
+        return pulumi.get(self, "action_script_hostname")
+
+    @action_script_hostname.setter
+    def action_script_hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_script_hostname", value)
+
+    @property
+    @pulumi.getter(name="actionScriptMaxResults")
+    def action_script_max_results(self) -> Optional[pulumi.Input[int]]:
+        """
+        Sets the maximum number of search results sent using alerts. Defaults to 100.
+        """
+        return pulumi.get(self, "action_script_max_results")
+
+    @action_script_max_results.setter
+    def action_script_max_results(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_script_max_results", value)
+
+    @property
+    @pulumi.getter(name="actionScriptMaxTime")
+    def action_script_max_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+        """
+        return pulumi.get(self, "action_script_max_time")
+
+    @action_script_max_time.setter
+    def action_script_max_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_script_max_time", value)
+
+    @property
+    @pulumi.getter(name="actionScriptTrackAlert")
+    def action_script_track_alert(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the execution of this action signifies a trackable alert.
+        """
+        return pulumi.get(self, "action_script_track_alert")
+
+    @action_script_track_alert.setter
+    def action_script_track_alert(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_script_track_alert", value)
+
+    @property
+    @pulumi.getter(name="actionScriptTtl")
+    def action_script_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        """
+        return pulumi.get(self, "action_script_ttl")
+
+    @action_script_ttl.setter
+    def action_script_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_script_ttl", value)
+
+    @property
+    @pulumi.getter(name="actionSlackParamAttachment")
+    def action_slack_param_attachment(self) -> Optional[pulumi.Input[str]]:
+        """
+        Include a message attachment. Valid values are message, none, or alert_link
+        """
+        return pulumi.get(self, "action_slack_param_attachment")
+
+    @action_slack_param_attachment.setter
+    def action_slack_param_attachment(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_slack_param_attachment", value)
+
+    @property
+    @pulumi.getter(name="actionSlackParamChannel")
+    def action_slack_param_channel(self) -> Optional[pulumi.Input[str]]:
+        """
+        Slack channel to send the message to (Should start with # or @)
+        """
+        return pulumi.get(self, "action_slack_param_channel")
+
+    @action_slack_param_channel.setter
+    def action_slack_param_channel(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_slack_param_channel", value)
+
+    @property
+    @pulumi.getter(name="actionSlackParamFields")
+    def action_slack_param_fields(self) -> Optional[pulumi.Input[str]]:
+        """
+        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        """
+        return pulumi.get(self, "action_slack_param_fields")
+
+    @action_slack_param_fields.setter
+    def action_slack_param_fields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_slack_param_fields", value)
+
+    @property
+    @pulumi.getter(name="actionSlackParamMessage")
+    def action_slack_param_message(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
+        """
+        return pulumi.get(self, "action_slack_param_message")
+
+    @action_slack_param_message.setter
+    def action_slack_param_message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_slack_param_message", value)
+
+    @property
+    @pulumi.getter(name="actionSlackParamWebhookUrlOverride")
+    def action_slack_param_webhook_url_override(self) -> Optional[pulumi.Input[str]]:
+        """
+        You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+        """
+        return pulumi.get(self, "action_slack_param_webhook_url_override")
+
+    @action_slack_param_webhook_url_override.setter
+    def action_slack_param_webhook_url_override(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_slack_param_webhook_url_override", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndex")
+    def action_summary_index(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+        """
+        return pulumi.get(self, "action_summary_index")
+
+    @action_summary_index.setter
+    def action_summary_index(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_summary_index", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexCommand")
+    def action_summary_index_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+        """
+        return pulumi.get(self, "action_summary_index_command")
+
+    @action_summary_index_command.setter
+    def action_summary_index_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_summary_index_command", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexHostname")
+    def action_summary_index_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        """
+        return pulumi.get(self, "action_summary_index_hostname")
+
+    @action_summary_index_hostname.setter
+    def action_summary_index_hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_summary_index_hostname", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexInline")
+    def action_summary_index_inline(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
+        """
+        return pulumi.get(self, "action_summary_index_inline")
+
+    @action_summary_index_inline.setter
+    def action_summary_index_inline(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_summary_index_inline", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexMaxResults")
+    def action_summary_index_max_results(self) -> Optional[pulumi.Input[int]]:
+        """
+        Sets the maximum number of search results sent using alerts. Defaults to 100.
+        """
+        return pulumi.get(self, "action_summary_index_max_results")
+
+    @action_summary_index_max_results.setter
+    def action_summary_index_max_results(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_summary_index_max_results", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexMaxTime")
+    def action_summary_index_max_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+        """
+        return pulumi.get(self, "action_summary_index_max_time")
+
+    @action_summary_index_max_time.setter
+    def action_summary_index_max_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_summary_index_max_time", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexName")
+    def action_summary_index_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
+        """
+        return pulumi.get(self, "action_summary_index_name")
+
+    @action_summary_index_name.setter
+    def action_summary_index_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_summary_index_name", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexTrackAlert")
+    def action_summary_index_track_alert(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the execution of this action signifies a trackable alert.
+        """
+        return pulumi.get(self, "action_summary_index_track_alert")
+
+    @action_summary_index_track_alert.setter
+    def action_summary_index_track_alert(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "action_summary_index_track_alert", value)
+
+    @property
+    @pulumi.getter(name="actionSummaryIndexTtl")
+    def action_summary_index_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        """
+        return pulumi.get(self, "action_summary_index_ttl")
+
+    @action_summary_index_ttl.setter
+    def action_summary_index_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_summary_index_ttl", value)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Optional[pulumi.Input[str]]:
+        """
+        A comma-separated list of actions to enable. For example: rss,email
+        """
+        return pulumi.get(self, "actions")
+
+    @actions.setter
+    def actions(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "actions", value)
+
+    @property
+    @pulumi.getter(name="alertComparator")
+    def alert_comparator(self) -> Optional[pulumi.Input[str]]:
+        """
+        One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+        """
+        return pulumi.get(self, "alert_comparator")
+
+    @alert_comparator.setter
+    def alert_comparator(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_comparator", value)
+
+    @property
+    @pulumi.getter(name="alertCondition")
+    def alert_condition(self) -> Optional[pulumi.Input[str]]:
+        """
+        Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
+        """
+        return pulumi.get(self, "alert_condition")
+
+    @alert_condition.setter
+    def alert_condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_condition", value)
+
+    @property
+    @pulumi.getter(name="alertDigestMode")
+    def alert_digest_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
+        """
+        return pulumi.get(self, "alert_digest_mode")
+
+    @alert_digest_mode.setter
+    def alert_digest_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "alert_digest_mode", value)
+
+    @property
+    @pulumi.getter(name="alertExpires")
+    def alert_expires(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
+        """
+        return pulumi.get(self, "alert_expires")
+
+    @alert_expires.setter
+    def alert_expires(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_expires", value)
+
+    @property
+    @pulumi.getter(name="alertSeverity")
+    def alert_severity(self) -> Optional[pulumi.Input[int]]:
+        """
+        Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
+        """
+        return pulumi.get(self, "alert_severity")
+
+    @alert_severity.setter
+    def alert_severity(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "alert_severity", value)
+
+    @property
+    @pulumi.getter(name="alertSuppress")
+    def alert_suppress(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether alert suppression is enabled for this scheduled search.
+        """
+        return pulumi.get(self, "alert_suppress")
+
+    @alert_suppress.setter
+    def alert_suppress(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "alert_suppress", value)
+
+    @property
+    @pulumi.getter(name="alertSuppressFields")
+    def alert_suppress_fields(self) -> Optional[pulumi.Input[str]]:
+        """
+        Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
+        """
+        return pulumi.get(self, "alert_suppress_fields")
+
+    @alert_suppress_fields.setter
+    def alert_suppress_fields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_suppress_fields", value)
+
+    @property
+    @pulumi.getter(name="alertSuppressPeriod")
+    def alert_suppress_period(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
+        """
+        return pulumi.get(self, "alert_suppress_period")
+
+    @alert_suppress_period.setter
+    def alert_suppress_period(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_suppress_period", value)
+
+    @property
+    @pulumi.getter(name="alertThreshold")
+    def alert_threshold(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        """
+        return pulumi.get(self, "alert_threshold")
+
+    @alert_threshold.setter
+    def alert_threshold(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_threshold", value)
+
+    @property
+    @pulumi.getter(name="alertTrack")
+    def alert_track(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
+        """
+        return pulumi.get(self, "alert_track")
+
+    @alert_track.setter
+    def alert_track(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "alert_track", value)
+
+    @property
+    @pulumi.getter(name="alertType")
+    def alert_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+        """
+        return pulumi.get(self, "alert_type")
+
+    @alert_type.setter
+    def alert_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "alert_type", value)
+
+    @property
+    @pulumi.getter(name="allowSkew")
+    def allow_skew(self) -> Optional[pulumi.Input[str]]:
+        """
+        Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
+        """
+        return pulumi.get(self, "allow_skew")
+
+    @allow_skew.setter
+    def allow_skew(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "allow_skew", value)
+
+    @property
+    @pulumi.getter(name="autoSummarize")
+    def auto_summarize(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
+        """
+        return pulumi.get(self, "auto_summarize")
+
+    @auto_summarize.setter
+    def auto_summarize(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_summarize", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeCommand")
+    def auto_summarize_command(self) -> Optional[pulumi.Input[str]]:
+        """
+        An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
+        """
+        return pulumi.get(self, "auto_summarize_command")
+
+    @auto_summarize_command.setter
+    def auto_summarize_command(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_command", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeCronSchedule")
+    def auto_summarize_cron_schedule(self) -> Optional[pulumi.Input[str]]:
+        """
+        Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+        """
+        return pulumi.get(self, "auto_summarize_cron_schedule")
+
+    @auto_summarize_cron_schedule.setter
+    def auto_summarize_cron_schedule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_cron_schedule", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeDispatchEarliestTime")
+    def auto_summarize_dispatch_earliest_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "auto_summarize_dispatch_earliest_time")
+
+    @auto_summarize_dispatch_earliest_time.setter
+    def auto_summarize_dispatch_earliest_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_dispatch_earliest_time", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeDispatchLatestTime")
+    def auto_summarize_dispatch_latest_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "auto_summarize_dispatch_latest_time")
+
+    @auto_summarize_dispatch_latest_time.setter
+    def auto_summarize_dispatch_latest_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_dispatch_latest_time", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeDispatchTimeFormat")
+    def auto_summarize_dispatch_time_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        """
+        return pulumi.get(self, "auto_summarize_dispatch_time_format")
+
+    @auto_summarize_dispatch_time_format.setter
+    def auto_summarize_dispatch_time_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_dispatch_time_format", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeDispatchTtl")
+    def auto_summarize_dispatch_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
+        """
+        return pulumi.get(self, "auto_summarize_dispatch_ttl")
+
+    @auto_summarize_dispatch_ttl.setter
+    def auto_summarize_dispatch_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_dispatch_ttl", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeMaxDisabledBuckets")
+    def auto_summarize_max_disabled_buckets(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
+        """
+        return pulumi.get(self, "auto_summarize_max_disabled_buckets")
+
+    @auto_summarize_max_disabled_buckets.setter
+    def auto_summarize_max_disabled_buckets(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "auto_summarize_max_disabled_buckets", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeMaxSummaryRatio")
+    def auto_summarize_max_summary_ratio(self) -> Optional[pulumi.Input[float]]:
+        """
+        The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
+        """
+        return pulumi.get(self, "auto_summarize_max_summary_ratio")
+
+    @auto_summarize_max_summary_ratio.setter
+    def auto_summarize_max_summary_ratio(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "auto_summarize_max_summary_ratio", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeMaxSummarySize")
+    def auto_summarize_max_summary_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
+        """
+        return pulumi.get(self, "auto_summarize_max_summary_size")
+
+    @auto_summarize_max_summary_size.setter
+    def auto_summarize_max_summary_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "auto_summarize_max_summary_size", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeMaxTime")
+    def auto_summarize_max_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
+        """
+        return pulumi.get(self, "auto_summarize_max_time")
+
+    @auto_summarize_max_time.setter
+    def auto_summarize_max_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "auto_summarize_max_time", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeSuspendPeriod")
+    def auto_summarize_suspend_period(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
+        """
+        return pulumi.get(self, "auto_summarize_suspend_period")
+
+    @auto_summarize_suspend_period.setter
+    def auto_summarize_suspend_period(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_suspend_period", value)
+
+    @property
+    @pulumi.getter(name="autoSummarizeTimespan")
+    def auto_summarize_timespan(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
+        """
+        return pulumi.get(self, "auto_summarize_timespan")
+
+    @auto_summarize_timespan.setter
+    def auto_summarize_timespan(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "auto_summarize_timespan", value)
+
+    @property
+    @pulumi.getter(name="cronSchedule")
+    def cron_schedule(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        """
+        return pulumi.get(self, "cron_schedule")
+
+    @cron_schedule.setter
+    def cron_schedule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cron_schedule", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Human-readable description of this saved search. Defaults to empty string.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter(name="dispatchBuckets")
+    def dispatch_buckets(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of timeline buckets. Defaults to 0.
+        """
+        return pulumi.get(self, "dispatch_buckets")
+
+    @dispatch_buckets.setter
+    def dispatch_buckets(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_buckets", value)
+
+    @property
+    @pulumi.getter(name="dispatchEarliestTime")
+    def dispatch_earliest_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "dispatch_earliest_time")
+
+    @dispatch_earliest_time.setter
+    def dispatch_earliest_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dispatch_earliest_time", value)
+
+    @property
+    @pulumi.getter(name="dispatchIndexEarliest")
+    def dispatch_index_earliest(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "dispatch_index_earliest")
+
+    @dispatch_index_earliest.setter
+    def dispatch_index_earliest(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dispatch_index_earliest", value)
+
+    @property
+    @pulumi.getter(name="dispatchIndexLatest")
+    def dispatch_index_latest(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "dispatch_index_latest")
+
+    @dispatch_index_latest.setter
+    def dispatch_index_latest(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dispatch_index_latest", value)
+
+    @property
+    @pulumi.getter(name="dispatchIndexedRealtime")
+    def dispatch_indexed_realtime(self) -> Optional[pulumi.Input[bool]]:
+        """
+        A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "dispatch_indexed_realtime")
+
+    @dispatch_indexed_realtime.setter
+    def dispatch_indexed_realtime(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "dispatch_indexed_realtime", value)
+
+    @property
+    @pulumi.getter(name="dispatchIndexedRealtimeMinspan")
+    def dispatch_indexed_realtime_minspan(self) -> Optional[pulumi.Input[int]]:
+        """
+        Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        """
+        return pulumi.get(self, "dispatch_indexed_realtime_minspan")
+
+    @dispatch_indexed_realtime_minspan.setter
+    def dispatch_indexed_realtime_minspan(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_indexed_realtime_minspan", value)
+
+    @property
+    @pulumi.getter(name="dispatchIndexedRealtimeOffset")
+    def dispatch_indexed_realtime_offset(self) -> Optional[pulumi.Input[int]]:
+        """
+        Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        """
+        return pulumi.get(self, "dispatch_indexed_realtime_offset")
+
+    @dispatch_indexed_realtime_offset.setter
+    def dispatch_indexed_realtime_offset(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_indexed_realtime_offset", value)
+
+    @property
+    @pulumi.getter(name="dispatchLatestTime")
+    def dispatch_latest_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+        """
+        return pulumi.get(self, "dispatch_latest_time")
+
+    @dispatch_latest_time.setter
+    def dispatch_latest_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dispatch_latest_time", value)
+
+    @property
+    @pulumi.getter(name="dispatchLookups")
+    def dispatch_lookups(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Enables or disables the lookups for this search. Defaults to 1.
+        """
+        return pulumi.get(self, "dispatch_lookups")
+
+    @dispatch_lookups.setter
+    def dispatch_lookups(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "dispatch_lookups", value)
+
+    @property
+    @pulumi.getter(name="dispatchMaxCount")
+    def dispatch_max_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of results before finalizing the search. Defaults to 500000.
+        """
+        return pulumi.get(self, "dispatch_max_count")
+
+    @dispatch_max_count.setter
+    def dispatch_max_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_max_count", value)
+
+    @property
+    @pulumi.getter(name="dispatchMaxTime")
+    def dispatch_max_time(self) -> Optional[pulumi.Input[int]]:
+        """
+        Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
+        """
+        return pulumi.get(self, "dispatch_max_time")
+
+    @dispatch_max_time.setter
+    def dispatch_max_time(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_max_time", value)
+
+    @property
+    @pulumi.getter(name="dispatchReduceFreq")
+    def dispatch_reduce_freq(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
+        """
+        return pulumi.get(self, "dispatch_reduce_freq")
+
+    @dispatch_reduce_freq.setter
+    def dispatch_reduce_freq(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_reduce_freq", value)
+
+    @property
+    @pulumi.getter(name="dispatchRtBackfill")
+    def dispatch_rt_backfill(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
+        """
+        return pulumi.get(self, "dispatch_rt_backfill")
+
+    @dispatch_rt_backfill.setter
+    def dispatch_rt_backfill(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "dispatch_rt_backfill", value)
+
+    @property
+    @pulumi.getter(name="dispatchRtMaximumSpan")
+    def dispatch_rt_maximum_span(self) -> Optional[pulumi.Input[int]]:
+        """
+        Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+        """
+        return pulumi.get(self, "dispatch_rt_maximum_span")
+
+    @dispatch_rt_maximum_span.setter
+    def dispatch_rt_maximum_span(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "dispatch_rt_maximum_span", value)
+
+    @property
+    @pulumi.getter(name="dispatchSpawnProcess")
+    def dispatch_spawn_process(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
+        """
+        return pulumi.get(self, "dispatch_spawn_process")
+
+    @dispatch_spawn_process.setter
+    def dispatch_spawn_process(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "dispatch_spawn_process", value)
+
+    @property
+    @pulumi.getter(name="dispatchTimeFormat")
+    def dispatch_time_format(self) -> Optional[pulumi.Input[str]]:
+        """
+        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        """
+        return pulumi.get(self, "dispatch_time_format")
+
+    @dispatch_time_format.setter
+    def dispatch_time_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dispatch_time_format", value)
+
+    @property
+    @pulumi.getter(name="dispatchTtl")
+    def dispatch_ttl(self) -> Optional[pulumi.Input[str]]:
+        """
+        Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
+        """
+        return pulumi.get(self, "dispatch_ttl")
+
+    @dispatch_ttl.setter
+    def dispatch_ttl(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dispatch_ttl", value)
+
+    @property
+    @pulumi.getter(name="displayView")
+    def display_view(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+        """
+        return pulumi.get(self, "display_view")
+
+    @display_view.setter
+    def display_view(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_view", value)
+
+    @property
+    @pulumi.getter(name="isScheduled")
+    def is_scheduled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether this search is to be run on a schedule
+        """
+        return pulumi.get(self, "is_scheduled")
+
+    @is_scheduled.setter
+    def is_scheduled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_scheduled", value)
+
+    @property
+    @pulumi.getter(name="isVisible")
+    def is_visible(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
+        """
+        return pulumi.get(self, "is_visible")
+
+    @is_visible.setter
+    def is_visible(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_visible", value)
+
+    @property
+    @pulumi.getter(name="maxConcurrent")
+    def max_concurrent(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
+        """
+        return pulumi.get(self, "max_concurrent")
+
+    @max_concurrent.setter
+    def max_concurrent(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_concurrent", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        A name for the search.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="realtimeSchedule")
+    def realtime_schedule(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
+        """
+        return pulumi.get(self, "realtime_schedule")
+
+    @realtime_schedule.setter
+    def realtime_schedule(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "realtime_schedule", value)
+
+    @property
+    @pulumi.getter(name="requestUiDispatchApp")
+    def request_ui_dispatch_app(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
+        """
+        return pulumi.get(self, "request_ui_dispatch_app")
+
+    @request_ui_dispatch_app.setter
+    def request_ui_dispatch_app(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "request_ui_dispatch_app", value)
+
+    @property
+    @pulumi.getter(name="requestUiDispatchView")
+    def request_ui_dispatch_view(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies a field used by Splunk Web to denote the view this search should be displayed in.
+        """
+        return pulumi.get(self, "request_ui_dispatch_view")
+
+    @request_ui_dispatch_view.setter
+    def request_ui_dispatch_view(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "request_ui_dispatch_view", value)
+
+    @property
+    @pulumi.getter(name="restartOnSearchpeerAdd")
+    def restart_on_searchpeer_add(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
+        """
+        return pulumi.get(self, "restart_on_searchpeer_add")
+
+    @restart_on_searchpeer_add.setter
+    def restart_on_searchpeer_add(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "restart_on_searchpeer_add", value)
+
+    @property
+    @pulumi.getter(name="runOnStartup")
+    def run_on_startup(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
+        """
+        return pulumi.get(self, "run_on_startup")
+
+    @run_on_startup.setter
+    def run_on_startup(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "run_on_startup", value)
+
+    @property
+    @pulumi.getter(name="schedulePriority")
+    def schedule_priority(self) -> Optional[pulumi.Input[str]]:
+        """
+        Raises the scheduling priority of the named search. Defaults to Default
+        """
+        return pulumi.get(self, "schedule_priority")
+
+    @schedule_priority.setter
+    def schedule_priority(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "schedule_priority", value)
+
+    @property
+    @pulumi.getter(name="scheduleWindow")
+    def schedule_window(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+        """
+        return pulumi.get(self, "schedule_window")
+
+    @schedule_window.setter
+    def schedule_window(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "schedule_window", value)
+
+    @property
+    @pulumi.getter
+    def search(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required when creating a new search.
+        """
+        return pulumi.get(self, "search")
+
+    @search.setter
+    def search(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "search", value)
+
+    @property
+    @pulumi.getter
+    def vsid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the viewstate id associated with the UI view listed in 'displayview'.
+        """
+        return pulumi.get(self, "vsid")
+
+    @vsid.setter
+    def vsid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vsid", value)
+
+    @property
+    @pulumi.getter(name="workloadPool")
+    def workload_pool(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specifies the new workload pool where the existing running search will be placed.`
+        """
+        return pulumi.get(self, "workload_pool")
+
+    @workload_pool.setter
+    def workload_pool(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "workload_pool", value)
+
+
 class SavedSearches(pulumi.CustomResource):
     @overload
     def __init__(__self__,
@@ -2639,147 +4839,147 @@ class SavedSearches(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = SavedSearchesArgs.__new__(SavedSearchesArgs)
 
-            __props__['acl'] = acl
-            __props__['action_email_auth_password'] = action_email_auth_password
-            __props__['action_email_auth_username'] = action_email_auth_username
-            __props__['action_email_bcc'] = action_email_bcc
-            __props__['action_email_cc'] = action_email_cc
-            __props__['action_email_command'] = action_email_command
-            __props__['action_email_format'] = action_email_format
-            __props__['action_email_from'] = action_email_from
-            __props__['action_email_hostname'] = action_email_hostname
-            __props__['action_email_include_results_link'] = action_email_include_results_link
-            __props__['action_email_include_search'] = action_email_include_search
-            __props__['action_email_include_trigger'] = action_email_include_trigger
-            __props__['action_email_include_trigger_time'] = action_email_include_trigger_time
-            __props__['action_email_include_view_link'] = action_email_include_view_link
-            __props__['action_email_inline'] = action_email_inline
-            __props__['action_email_mailserver'] = action_email_mailserver
-            __props__['action_email_max_results'] = action_email_max_results
-            __props__['action_email_max_time'] = action_email_max_time
-            __props__['action_email_message_alert'] = action_email_message_alert
-            __props__['action_email_message_report'] = action_email_message_report
-            __props__['action_email_pdfview'] = action_email_pdfview
-            __props__['action_email_preprocess_results'] = action_email_preprocess_results
-            __props__['action_email_report_cid_font_list'] = action_email_report_cid_font_list
-            __props__['action_email_report_include_splunk_logo'] = action_email_report_include_splunk_logo
-            __props__['action_email_report_paper_orientation'] = action_email_report_paper_orientation
-            __props__['action_email_report_paper_size'] = action_email_report_paper_size
-            __props__['action_email_report_server_enabled'] = action_email_report_server_enabled
-            __props__['action_email_report_server_url'] = action_email_report_server_url
-            __props__['action_email_send_csv'] = action_email_send_csv
-            __props__['action_email_send_pdf'] = action_email_send_pdf
-            __props__['action_email_send_results'] = action_email_send_results
-            __props__['action_email_subject'] = action_email_subject
-            __props__['action_email_to'] = action_email_to
-            __props__['action_email_track_alert'] = action_email_track_alert
-            __props__['action_email_ttl'] = action_email_ttl
-            __props__['action_email_use_ssl'] = action_email_use_ssl
-            __props__['action_email_use_tls'] = action_email_use_tls
-            __props__['action_email_width_sort_columns'] = action_email_width_sort_columns
-            __props__['action_populate_lookup_command'] = action_populate_lookup_command
-            __props__['action_populate_lookup_dest'] = action_populate_lookup_dest
-            __props__['action_populate_lookup_hostname'] = action_populate_lookup_hostname
-            __props__['action_populate_lookup_max_results'] = action_populate_lookup_max_results
-            __props__['action_populate_lookup_max_time'] = action_populate_lookup_max_time
-            __props__['action_populate_lookup_track_alert'] = action_populate_lookup_track_alert
-            __props__['action_populate_lookup_ttl'] = action_populate_lookup_ttl
-            __props__['action_rss_command'] = action_rss_command
-            __props__['action_rss_hostname'] = action_rss_hostname
-            __props__['action_rss_max_results'] = action_rss_max_results
-            __props__['action_rss_max_time'] = action_rss_max_time
-            __props__['action_rss_track_alert'] = action_rss_track_alert
-            __props__['action_rss_ttl'] = action_rss_ttl
-            __props__['action_script_command'] = action_script_command
-            __props__['action_script_filename'] = action_script_filename
-            __props__['action_script_hostname'] = action_script_hostname
-            __props__['action_script_max_results'] = action_script_max_results
-            __props__['action_script_max_time'] = action_script_max_time
-            __props__['action_script_track_alert'] = action_script_track_alert
-            __props__['action_script_ttl'] = action_script_ttl
-            __props__['action_slack_param_attachment'] = action_slack_param_attachment
-            __props__['action_slack_param_channel'] = action_slack_param_channel
-            __props__['action_slack_param_fields'] = action_slack_param_fields
-            __props__['action_slack_param_message'] = action_slack_param_message
-            __props__['action_slack_param_webhook_url_override'] = action_slack_param_webhook_url_override
-            __props__['action_summary_index_command'] = action_summary_index_command
-            __props__['action_summary_index_hostname'] = action_summary_index_hostname
-            __props__['action_summary_index_inline'] = action_summary_index_inline
-            __props__['action_summary_index_max_results'] = action_summary_index_max_results
-            __props__['action_summary_index_max_time'] = action_summary_index_max_time
-            __props__['action_summary_index_name'] = action_summary_index_name
-            __props__['action_summary_index_track_alert'] = action_summary_index_track_alert
-            __props__['action_summary_index_ttl'] = action_summary_index_ttl
-            __props__['actions'] = actions
-            __props__['alert_comparator'] = alert_comparator
-            __props__['alert_condition'] = alert_condition
-            __props__['alert_digest_mode'] = alert_digest_mode
-            __props__['alert_expires'] = alert_expires
-            __props__['alert_severity'] = alert_severity
-            __props__['alert_suppress'] = alert_suppress
-            __props__['alert_suppress_fields'] = alert_suppress_fields
-            __props__['alert_suppress_period'] = alert_suppress_period
-            __props__['alert_threshold'] = alert_threshold
-            __props__['alert_track'] = alert_track
-            __props__['alert_type'] = alert_type
-            __props__['allow_skew'] = allow_skew
-            __props__['auto_summarize'] = auto_summarize
-            __props__['auto_summarize_command'] = auto_summarize_command
-            __props__['auto_summarize_cron_schedule'] = auto_summarize_cron_schedule
-            __props__['auto_summarize_dispatch_earliest_time'] = auto_summarize_dispatch_earliest_time
-            __props__['auto_summarize_dispatch_latest_time'] = auto_summarize_dispatch_latest_time
-            __props__['auto_summarize_dispatch_time_format'] = auto_summarize_dispatch_time_format
-            __props__['auto_summarize_dispatch_ttl'] = auto_summarize_dispatch_ttl
-            __props__['auto_summarize_max_disabled_buckets'] = auto_summarize_max_disabled_buckets
-            __props__['auto_summarize_max_summary_ratio'] = auto_summarize_max_summary_ratio
-            __props__['auto_summarize_max_summary_size'] = auto_summarize_max_summary_size
-            __props__['auto_summarize_max_time'] = auto_summarize_max_time
-            __props__['auto_summarize_suspend_period'] = auto_summarize_suspend_period
-            __props__['auto_summarize_timespan'] = auto_summarize_timespan
-            __props__['cron_schedule'] = cron_schedule
-            __props__['description'] = description
-            __props__['disabled'] = disabled
-            __props__['dispatch_buckets'] = dispatch_buckets
-            __props__['dispatch_earliest_time'] = dispatch_earliest_time
-            __props__['dispatch_index_earliest'] = dispatch_index_earliest
-            __props__['dispatch_index_latest'] = dispatch_index_latest
-            __props__['dispatch_indexed_realtime'] = dispatch_indexed_realtime
-            __props__['dispatch_indexed_realtime_minspan'] = dispatch_indexed_realtime_minspan
-            __props__['dispatch_indexed_realtime_offset'] = dispatch_indexed_realtime_offset
-            __props__['dispatch_latest_time'] = dispatch_latest_time
-            __props__['dispatch_lookups'] = dispatch_lookups
-            __props__['dispatch_max_count'] = dispatch_max_count
-            __props__['dispatch_max_time'] = dispatch_max_time
-            __props__['dispatch_reduce_freq'] = dispatch_reduce_freq
-            __props__['dispatch_rt_backfill'] = dispatch_rt_backfill
-            __props__['dispatch_rt_maximum_span'] = dispatch_rt_maximum_span
-            __props__['dispatch_spawn_process'] = dispatch_spawn_process
-            __props__['dispatch_time_format'] = dispatch_time_format
-            __props__['dispatch_ttl'] = dispatch_ttl
-            __props__['display_view'] = display_view
-            __props__['is_scheduled'] = is_scheduled
-            __props__['is_visible'] = is_visible
-            __props__['max_concurrent'] = max_concurrent
-            __props__['name'] = name
-            __props__['realtime_schedule'] = realtime_schedule
-            __props__['request_ui_dispatch_app'] = request_ui_dispatch_app
-            __props__['request_ui_dispatch_view'] = request_ui_dispatch_view
-            __props__['restart_on_searchpeer_add'] = restart_on_searchpeer_add
-            __props__['run_on_startup'] = run_on_startup
-            __props__['schedule_priority'] = schedule_priority
-            __props__['schedule_window'] = schedule_window
+            __props__.__dict__["acl"] = acl
+            __props__.__dict__["action_email_auth_password"] = action_email_auth_password
+            __props__.__dict__["action_email_auth_username"] = action_email_auth_username
+            __props__.__dict__["action_email_bcc"] = action_email_bcc
+            __props__.__dict__["action_email_cc"] = action_email_cc
+            __props__.__dict__["action_email_command"] = action_email_command
+            __props__.__dict__["action_email_format"] = action_email_format
+            __props__.__dict__["action_email_from"] = action_email_from
+            __props__.__dict__["action_email_hostname"] = action_email_hostname
+            __props__.__dict__["action_email_include_results_link"] = action_email_include_results_link
+            __props__.__dict__["action_email_include_search"] = action_email_include_search
+            __props__.__dict__["action_email_include_trigger"] = action_email_include_trigger
+            __props__.__dict__["action_email_include_trigger_time"] = action_email_include_trigger_time
+            __props__.__dict__["action_email_include_view_link"] = action_email_include_view_link
+            __props__.__dict__["action_email_inline"] = action_email_inline
+            __props__.__dict__["action_email_mailserver"] = action_email_mailserver
+            __props__.__dict__["action_email_max_results"] = action_email_max_results
+            __props__.__dict__["action_email_max_time"] = action_email_max_time
+            __props__.__dict__["action_email_message_alert"] = action_email_message_alert
+            __props__.__dict__["action_email_message_report"] = action_email_message_report
+            __props__.__dict__["action_email_pdfview"] = action_email_pdfview
+            __props__.__dict__["action_email_preprocess_results"] = action_email_preprocess_results
+            __props__.__dict__["action_email_report_cid_font_list"] = action_email_report_cid_font_list
+            __props__.__dict__["action_email_report_include_splunk_logo"] = action_email_report_include_splunk_logo
+            __props__.__dict__["action_email_report_paper_orientation"] = action_email_report_paper_orientation
+            __props__.__dict__["action_email_report_paper_size"] = action_email_report_paper_size
+            __props__.__dict__["action_email_report_server_enabled"] = action_email_report_server_enabled
+            __props__.__dict__["action_email_report_server_url"] = action_email_report_server_url
+            __props__.__dict__["action_email_send_csv"] = action_email_send_csv
+            __props__.__dict__["action_email_send_pdf"] = action_email_send_pdf
+            __props__.__dict__["action_email_send_results"] = action_email_send_results
+            __props__.__dict__["action_email_subject"] = action_email_subject
+            __props__.__dict__["action_email_to"] = action_email_to
+            __props__.__dict__["action_email_track_alert"] = action_email_track_alert
+            __props__.__dict__["action_email_ttl"] = action_email_ttl
+            __props__.__dict__["action_email_use_ssl"] = action_email_use_ssl
+            __props__.__dict__["action_email_use_tls"] = action_email_use_tls
+            __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
+            __props__.__dict__["action_populate_lookup_command"] = action_populate_lookup_command
+            __props__.__dict__["action_populate_lookup_dest"] = action_populate_lookup_dest
+            __props__.__dict__["action_populate_lookup_hostname"] = action_populate_lookup_hostname
+            __props__.__dict__["action_populate_lookup_max_results"] = action_populate_lookup_max_results
+            __props__.__dict__["action_populate_lookup_max_time"] = action_populate_lookup_max_time
+            __props__.__dict__["action_populate_lookup_track_alert"] = action_populate_lookup_track_alert
+            __props__.__dict__["action_populate_lookup_ttl"] = action_populate_lookup_ttl
+            __props__.__dict__["action_rss_command"] = action_rss_command
+            __props__.__dict__["action_rss_hostname"] = action_rss_hostname
+            __props__.__dict__["action_rss_max_results"] = action_rss_max_results
+            __props__.__dict__["action_rss_max_time"] = action_rss_max_time
+            __props__.__dict__["action_rss_track_alert"] = action_rss_track_alert
+            __props__.__dict__["action_rss_ttl"] = action_rss_ttl
+            __props__.__dict__["action_script_command"] = action_script_command
+            __props__.__dict__["action_script_filename"] = action_script_filename
+            __props__.__dict__["action_script_hostname"] = action_script_hostname
+            __props__.__dict__["action_script_max_results"] = action_script_max_results
+            __props__.__dict__["action_script_max_time"] = action_script_max_time
+            __props__.__dict__["action_script_track_alert"] = action_script_track_alert
+            __props__.__dict__["action_script_ttl"] = action_script_ttl
+            __props__.__dict__["action_slack_param_attachment"] = action_slack_param_attachment
+            __props__.__dict__["action_slack_param_channel"] = action_slack_param_channel
+            __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
+            __props__.__dict__["action_slack_param_message"] = action_slack_param_message
+            __props__.__dict__["action_slack_param_webhook_url_override"] = action_slack_param_webhook_url_override
+            __props__.__dict__["action_summary_index_command"] = action_summary_index_command
+            __props__.__dict__["action_summary_index_hostname"] = action_summary_index_hostname
+            __props__.__dict__["action_summary_index_inline"] = action_summary_index_inline
+            __props__.__dict__["action_summary_index_max_results"] = action_summary_index_max_results
+            __props__.__dict__["action_summary_index_max_time"] = action_summary_index_max_time
+            __props__.__dict__["action_summary_index_name"] = action_summary_index_name
+            __props__.__dict__["action_summary_index_track_alert"] = action_summary_index_track_alert
+            __props__.__dict__["action_summary_index_ttl"] = action_summary_index_ttl
+            __props__.__dict__["actions"] = actions
+            __props__.__dict__["alert_comparator"] = alert_comparator
+            __props__.__dict__["alert_condition"] = alert_condition
+            __props__.__dict__["alert_digest_mode"] = alert_digest_mode
+            __props__.__dict__["alert_expires"] = alert_expires
+            __props__.__dict__["alert_severity"] = alert_severity
+            __props__.__dict__["alert_suppress"] = alert_suppress
+            __props__.__dict__["alert_suppress_fields"] = alert_suppress_fields
+            __props__.__dict__["alert_suppress_period"] = alert_suppress_period
+            __props__.__dict__["alert_threshold"] = alert_threshold
+            __props__.__dict__["alert_track"] = alert_track
+            __props__.__dict__["alert_type"] = alert_type
+            __props__.__dict__["allow_skew"] = allow_skew
+            __props__.__dict__["auto_summarize"] = auto_summarize
+            __props__.__dict__["auto_summarize_command"] = auto_summarize_command
+            __props__.__dict__["auto_summarize_cron_schedule"] = auto_summarize_cron_schedule
+            __props__.__dict__["auto_summarize_dispatch_earliest_time"] = auto_summarize_dispatch_earliest_time
+            __props__.__dict__["auto_summarize_dispatch_latest_time"] = auto_summarize_dispatch_latest_time
+            __props__.__dict__["auto_summarize_dispatch_time_format"] = auto_summarize_dispatch_time_format
+            __props__.__dict__["auto_summarize_dispatch_ttl"] = auto_summarize_dispatch_ttl
+            __props__.__dict__["auto_summarize_max_disabled_buckets"] = auto_summarize_max_disabled_buckets
+            __props__.__dict__["auto_summarize_max_summary_ratio"] = auto_summarize_max_summary_ratio
+            __props__.__dict__["auto_summarize_max_summary_size"] = auto_summarize_max_summary_size
+            __props__.__dict__["auto_summarize_max_time"] = auto_summarize_max_time
+            __props__.__dict__["auto_summarize_suspend_period"] = auto_summarize_suspend_period
+            __props__.__dict__["auto_summarize_timespan"] = auto_summarize_timespan
+            __props__.__dict__["cron_schedule"] = cron_schedule
+            __props__.__dict__["description"] = description
+            __props__.__dict__["disabled"] = disabled
+            __props__.__dict__["dispatch_buckets"] = dispatch_buckets
+            __props__.__dict__["dispatch_earliest_time"] = dispatch_earliest_time
+            __props__.__dict__["dispatch_index_earliest"] = dispatch_index_earliest
+            __props__.__dict__["dispatch_index_latest"] = dispatch_index_latest
+            __props__.__dict__["dispatch_indexed_realtime"] = dispatch_indexed_realtime
+            __props__.__dict__["dispatch_indexed_realtime_minspan"] = dispatch_indexed_realtime_minspan
+            __props__.__dict__["dispatch_indexed_realtime_offset"] = dispatch_indexed_realtime_offset
+            __props__.__dict__["dispatch_latest_time"] = dispatch_latest_time
+            __props__.__dict__["dispatch_lookups"] = dispatch_lookups
+            __props__.__dict__["dispatch_max_count"] = dispatch_max_count
+            __props__.__dict__["dispatch_max_time"] = dispatch_max_time
+            __props__.__dict__["dispatch_reduce_freq"] = dispatch_reduce_freq
+            __props__.__dict__["dispatch_rt_backfill"] = dispatch_rt_backfill
+            __props__.__dict__["dispatch_rt_maximum_span"] = dispatch_rt_maximum_span
+            __props__.__dict__["dispatch_spawn_process"] = dispatch_spawn_process
+            __props__.__dict__["dispatch_time_format"] = dispatch_time_format
+            __props__.__dict__["dispatch_ttl"] = dispatch_ttl
+            __props__.__dict__["display_view"] = display_view
+            __props__.__dict__["is_scheduled"] = is_scheduled
+            __props__.__dict__["is_visible"] = is_visible
+            __props__.__dict__["max_concurrent"] = max_concurrent
+            __props__.__dict__["name"] = name
+            __props__.__dict__["realtime_schedule"] = realtime_schedule
+            __props__.__dict__["request_ui_dispatch_app"] = request_ui_dispatch_app
+            __props__.__dict__["request_ui_dispatch_view"] = request_ui_dispatch_view
+            __props__.__dict__["restart_on_searchpeer_add"] = restart_on_searchpeer_add
+            __props__.__dict__["run_on_startup"] = run_on_startup
+            __props__.__dict__["schedule_priority"] = schedule_priority
+            __props__.__dict__["schedule_window"] = schedule_window
             if search is None and not opts.urn:
                 raise TypeError("Missing required property 'search'")
-            __props__['search'] = search
-            __props__['vsid'] = vsid
-            __props__['workload_pool'] = workload_pool
-            __props__['action_email'] = None
-            __props__['action_populate_lookup'] = None
-            __props__['action_rss'] = None
-            __props__['action_script'] = None
-            __props__['action_summary_index'] = None
+            __props__.__dict__["search"] = search
+            __props__.__dict__["vsid"] = vsid
+            __props__.__dict__["workload_pool"] = workload_pool
+            __props__.__dict__["action_email"] = None
+            __props__.__dict__["action_populate_lookup"] = None
+            __props__.__dict__["action_rss"] = None
+            __props__.__dict__["action_script"] = None
+            __props__.__dict__["action_summary_index"] = None
         super(SavedSearches, __self__).__init__(
             'splunk:index/savedSearches:SavedSearches',
             resource_name,
@@ -3074,145 +5274,145 @@ class SavedSearches(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _SavedSearchesState.__new__(_SavedSearchesState)
 
-        __props__["acl"] = acl
-        __props__["action_email"] = action_email
-        __props__["action_email_auth_password"] = action_email_auth_password
-        __props__["action_email_auth_username"] = action_email_auth_username
-        __props__["action_email_bcc"] = action_email_bcc
-        __props__["action_email_cc"] = action_email_cc
-        __props__["action_email_command"] = action_email_command
-        __props__["action_email_format"] = action_email_format
-        __props__["action_email_from"] = action_email_from
-        __props__["action_email_hostname"] = action_email_hostname
-        __props__["action_email_include_results_link"] = action_email_include_results_link
-        __props__["action_email_include_search"] = action_email_include_search
-        __props__["action_email_include_trigger"] = action_email_include_trigger
-        __props__["action_email_include_trigger_time"] = action_email_include_trigger_time
-        __props__["action_email_include_view_link"] = action_email_include_view_link
-        __props__["action_email_inline"] = action_email_inline
-        __props__["action_email_mailserver"] = action_email_mailserver
-        __props__["action_email_max_results"] = action_email_max_results
-        __props__["action_email_max_time"] = action_email_max_time
-        __props__["action_email_message_alert"] = action_email_message_alert
-        __props__["action_email_message_report"] = action_email_message_report
-        __props__["action_email_pdfview"] = action_email_pdfview
-        __props__["action_email_preprocess_results"] = action_email_preprocess_results
-        __props__["action_email_report_cid_font_list"] = action_email_report_cid_font_list
-        __props__["action_email_report_include_splunk_logo"] = action_email_report_include_splunk_logo
-        __props__["action_email_report_paper_orientation"] = action_email_report_paper_orientation
-        __props__["action_email_report_paper_size"] = action_email_report_paper_size
-        __props__["action_email_report_server_enabled"] = action_email_report_server_enabled
-        __props__["action_email_report_server_url"] = action_email_report_server_url
-        __props__["action_email_send_csv"] = action_email_send_csv
-        __props__["action_email_send_pdf"] = action_email_send_pdf
-        __props__["action_email_send_results"] = action_email_send_results
-        __props__["action_email_subject"] = action_email_subject
-        __props__["action_email_to"] = action_email_to
-        __props__["action_email_track_alert"] = action_email_track_alert
-        __props__["action_email_ttl"] = action_email_ttl
-        __props__["action_email_use_ssl"] = action_email_use_ssl
-        __props__["action_email_use_tls"] = action_email_use_tls
-        __props__["action_email_width_sort_columns"] = action_email_width_sort_columns
-        __props__["action_populate_lookup"] = action_populate_lookup
-        __props__["action_populate_lookup_command"] = action_populate_lookup_command
-        __props__["action_populate_lookup_dest"] = action_populate_lookup_dest
-        __props__["action_populate_lookup_hostname"] = action_populate_lookup_hostname
-        __props__["action_populate_lookup_max_results"] = action_populate_lookup_max_results
-        __props__["action_populate_lookup_max_time"] = action_populate_lookup_max_time
-        __props__["action_populate_lookup_track_alert"] = action_populate_lookup_track_alert
-        __props__["action_populate_lookup_ttl"] = action_populate_lookup_ttl
-        __props__["action_rss"] = action_rss
-        __props__["action_rss_command"] = action_rss_command
-        __props__["action_rss_hostname"] = action_rss_hostname
-        __props__["action_rss_max_results"] = action_rss_max_results
-        __props__["action_rss_max_time"] = action_rss_max_time
-        __props__["action_rss_track_alert"] = action_rss_track_alert
-        __props__["action_rss_ttl"] = action_rss_ttl
-        __props__["action_script"] = action_script
-        __props__["action_script_command"] = action_script_command
-        __props__["action_script_filename"] = action_script_filename
-        __props__["action_script_hostname"] = action_script_hostname
-        __props__["action_script_max_results"] = action_script_max_results
-        __props__["action_script_max_time"] = action_script_max_time
-        __props__["action_script_track_alert"] = action_script_track_alert
-        __props__["action_script_ttl"] = action_script_ttl
-        __props__["action_slack_param_attachment"] = action_slack_param_attachment
-        __props__["action_slack_param_channel"] = action_slack_param_channel
-        __props__["action_slack_param_fields"] = action_slack_param_fields
-        __props__["action_slack_param_message"] = action_slack_param_message
-        __props__["action_slack_param_webhook_url_override"] = action_slack_param_webhook_url_override
-        __props__["action_summary_index"] = action_summary_index
-        __props__["action_summary_index_command"] = action_summary_index_command
-        __props__["action_summary_index_hostname"] = action_summary_index_hostname
-        __props__["action_summary_index_inline"] = action_summary_index_inline
-        __props__["action_summary_index_max_results"] = action_summary_index_max_results
-        __props__["action_summary_index_max_time"] = action_summary_index_max_time
-        __props__["action_summary_index_name"] = action_summary_index_name
-        __props__["action_summary_index_track_alert"] = action_summary_index_track_alert
-        __props__["action_summary_index_ttl"] = action_summary_index_ttl
-        __props__["actions"] = actions
-        __props__["alert_comparator"] = alert_comparator
-        __props__["alert_condition"] = alert_condition
-        __props__["alert_digest_mode"] = alert_digest_mode
-        __props__["alert_expires"] = alert_expires
-        __props__["alert_severity"] = alert_severity
-        __props__["alert_suppress"] = alert_suppress
-        __props__["alert_suppress_fields"] = alert_suppress_fields
-        __props__["alert_suppress_period"] = alert_suppress_period
-        __props__["alert_threshold"] = alert_threshold
-        __props__["alert_track"] = alert_track
-        __props__["alert_type"] = alert_type
-        __props__["allow_skew"] = allow_skew
-        __props__["auto_summarize"] = auto_summarize
-        __props__["auto_summarize_command"] = auto_summarize_command
-        __props__["auto_summarize_cron_schedule"] = auto_summarize_cron_schedule
-        __props__["auto_summarize_dispatch_earliest_time"] = auto_summarize_dispatch_earliest_time
-        __props__["auto_summarize_dispatch_latest_time"] = auto_summarize_dispatch_latest_time
-        __props__["auto_summarize_dispatch_time_format"] = auto_summarize_dispatch_time_format
-        __props__["auto_summarize_dispatch_ttl"] = auto_summarize_dispatch_ttl
-        __props__["auto_summarize_max_disabled_buckets"] = auto_summarize_max_disabled_buckets
-        __props__["auto_summarize_max_summary_ratio"] = auto_summarize_max_summary_ratio
-        __props__["auto_summarize_max_summary_size"] = auto_summarize_max_summary_size
-        __props__["auto_summarize_max_time"] = auto_summarize_max_time
-        __props__["auto_summarize_suspend_period"] = auto_summarize_suspend_period
-        __props__["auto_summarize_timespan"] = auto_summarize_timespan
-        __props__["cron_schedule"] = cron_schedule
-        __props__["description"] = description
-        __props__["disabled"] = disabled
-        __props__["dispatch_buckets"] = dispatch_buckets
-        __props__["dispatch_earliest_time"] = dispatch_earliest_time
-        __props__["dispatch_index_earliest"] = dispatch_index_earliest
-        __props__["dispatch_index_latest"] = dispatch_index_latest
-        __props__["dispatch_indexed_realtime"] = dispatch_indexed_realtime
-        __props__["dispatch_indexed_realtime_minspan"] = dispatch_indexed_realtime_minspan
-        __props__["dispatch_indexed_realtime_offset"] = dispatch_indexed_realtime_offset
-        __props__["dispatch_latest_time"] = dispatch_latest_time
-        __props__["dispatch_lookups"] = dispatch_lookups
-        __props__["dispatch_max_count"] = dispatch_max_count
-        __props__["dispatch_max_time"] = dispatch_max_time
-        __props__["dispatch_reduce_freq"] = dispatch_reduce_freq
-        __props__["dispatch_rt_backfill"] = dispatch_rt_backfill
-        __props__["dispatch_rt_maximum_span"] = dispatch_rt_maximum_span
-        __props__["dispatch_spawn_process"] = dispatch_spawn_process
-        __props__["dispatch_time_format"] = dispatch_time_format
-        __props__["dispatch_ttl"] = dispatch_ttl
-        __props__["display_view"] = display_view
-        __props__["is_scheduled"] = is_scheduled
-        __props__["is_visible"] = is_visible
-        __props__["max_concurrent"] = max_concurrent
-        __props__["name"] = name
-        __props__["realtime_schedule"] = realtime_schedule
-        __props__["request_ui_dispatch_app"] = request_ui_dispatch_app
-        __props__["request_ui_dispatch_view"] = request_ui_dispatch_view
-        __props__["restart_on_searchpeer_add"] = restart_on_searchpeer_add
-        __props__["run_on_startup"] = run_on_startup
-        __props__["schedule_priority"] = schedule_priority
-        __props__["schedule_window"] = schedule_window
-        __props__["search"] = search
-        __props__["vsid"] = vsid
-        __props__["workload_pool"] = workload_pool
+        __props__.__dict__["acl"] = acl
+        __props__.__dict__["action_email"] = action_email
+        __props__.__dict__["action_email_auth_password"] = action_email_auth_password
+        __props__.__dict__["action_email_auth_username"] = action_email_auth_username
+        __props__.__dict__["action_email_bcc"] = action_email_bcc
+        __props__.__dict__["action_email_cc"] = action_email_cc
+        __props__.__dict__["action_email_command"] = action_email_command
+        __props__.__dict__["action_email_format"] = action_email_format
+        __props__.__dict__["action_email_from"] = action_email_from
+        __props__.__dict__["action_email_hostname"] = action_email_hostname
+        __props__.__dict__["action_email_include_results_link"] = action_email_include_results_link
+        __props__.__dict__["action_email_include_search"] = action_email_include_search
+        __props__.__dict__["action_email_include_trigger"] = action_email_include_trigger
+        __props__.__dict__["action_email_include_trigger_time"] = action_email_include_trigger_time
+        __props__.__dict__["action_email_include_view_link"] = action_email_include_view_link
+        __props__.__dict__["action_email_inline"] = action_email_inline
+        __props__.__dict__["action_email_mailserver"] = action_email_mailserver
+        __props__.__dict__["action_email_max_results"] = action_email_max_results
+        __props__.__dict__["action_email_max_time"] = action_email_max_time
+        __props__.__dict__["action_email_message_alert"] = action_email_message_alert
+        __props__.__dict__["action_email_message_report"] = action_email_message_report
+        __props__.__dict__["action_email_pdfview"] = action_email_pdfview
+        __props__.__dict__["action_email_preprocess_results"] = action_email_preprocess_results
+        __props__.__dict__["action_email_report_cid_font_list"] = action_email_report_cid_font_list
+        __props__.__dict__["action_email_report_include_splunk_logo"] = action_email_report_include_splunk_logo
+        __props__.__dict__["action_email_report_paper_orientation"] = action_email_report_paper_orientation
+        __props__.__dict__["action_email_report_paper_size"] = action_email_report_paper_size
+        __props__.__dict__["action_email_report_server_enabled"] = action_email_report_server_enabled
+        __props__.__dict__["action_email_report_server_url"] = action_email_report_server_url
+        __props__.__dict__["action_email_send_csv"] = action_email_send_csv
+        __props__.__dict__["action_email_send_pdf"] = action_email_send_pdf
+        __props__.__dict__["action_email_send_results"] = action_email_send_results
+        __props__.__dict__["action_email_subject"] = action_email_subject
+        __props__.__dict__["action_email_to"] = action_email_to
+        __props__.__dict__["action_email_track_alert"] = action_email_track_alert
+        __props__.__dict__["action_email_ttl"] = action_email_ttl
+        __props__.__dict__["action_email_use_ssl"] = action_email_use_ssl
+        __props__.__dict__["action_email_use_tls"] = action_email_use_tls
+        __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
+        __props__.__dict__["action_populate_lookup"] = action_populate_lookup
+        __props__.__dict__["action_populate_lookup_command"] = action_populate_lookup_command
+        __props__.__dict__["action_populate_lookup_dest"] = action_populate_lookup_dest
+        __props__.__dict__["action_populate_lookup_hostname"] = action_populate_lookup_hostname
+        __props__.__dict__["action_populate_lookup_max_results"] = action_populate_lookup_max_results
+        __props__.__dict__["action_populate_lookup_max_time"] = action_populate_lookup_max_time
+        __props__.__dict__["action_populate_lookup_track_alert"] = action_populate_lookup_track_alert
+        __props__.__dict__["action_populate_lookup_ttl"] = action_populate_lookup_ttl
+        __props__.__dict__["action_rss"] = action_rss
+        __props__.__dict__["action_rss_command"] = action_rss_command
+        __props__.__dict__["action_rss_hostname"] = action_rss_hostname
+        __props__.__dict__["action_rss_max_results"] = action_rss_max_results
+        __props__.__dict__["action_rss_max_time"] = action_rss_max_time
+        __props__.__dict__["action_rss_track_alert"] = action_rss_track_alert
+        __props__.__dict__["action_rss_ttl"] = action_rss_ttl
+        __props__.__dict__["action_script"] = action_script
+        __props__.__dict__["action_script_command"] = action_script_command
+        __props__.__dict__["action_script_filename"] = action_script_filename
+        __props__.__dict__["action_script_hostname"] = action_script_hostname
+        __props__.__dict__["action_script_max_results"] = action_script_max_results
+        __props__.__dict__["action_script_max_time"] = action_script_max_time
+        __props__.__dict__["action_script_track_alert"] = action_script_track_alert
+        __props__.__dict__["action_script_ttl"] = action_script_ttl
+        __props__.__dict__["action_slack_param_attachment"] = action_slack_param_attachment
+        __props__.__dict__["action_slack_param_channel"] = action_slack_param_channel
+        __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
+        __props__.__dict__["action_slack_param_message"] = action_slack_param_message
+        __props__.__dict__["action_slack_param_webhook_url_override"] = action_slack_param_webhook_url_override
+        __props__.__dict__["action_summary_index"] = action_summary_index
+        __props__.__dict__["action_summary_index_command"] = action_summary_index_command
+        __props__.__dict__["action_summary_index_hostname"] = action_summary_index_hostname
+        __props__.__dict__["action_summary_index_inline"] = action_summary_index_inline
+        __props__.__dict__["action_summary_index_max_results"] = action_summary_index_max_results
+        __props__.__dict__["action_summary_index_max_time"] = action_summary_index_max_time
+        __props__.__dict__["action_summary_index_name"] = action_summary_index_name
+        __props__.__dict__["action_summary_index_track_alert"] = action_summary_index_track_alert
+        __props__.__dict__["action_summary_index_ttl"] = action_summary_index_ttl
+        __props__.__dict__["actions"] = actions
+        __props__.__dict__["alert_comparator"] = alert_comparator
+        __props__.__dict__["alert_condition"] = alert_condition
+        __props__.__dict__["alert_digest_mode"] = alert_digest_mode
+        __props__.__dict__["alert_expires"] = alert_expires
+        __props__.__dict__["alert_severity"] = alert_severity
+        __props__.__dict__["alert_suppress"] = alert_suppress
+        __props__.__dict__["alert_suppress_fields"] = alert_suppress_fields
+        __props__.__dict__["alert_suppress_period"] = alert_suppress_period
+        __props__.__dict__["alert_threshold"] = alert_threshold
+        __props__.__dict__["alert_track"] = alert_track
+        __props__.__dict__["alert_type"] = alert_type
+        __props__.__dict__["allow_skew"] = allow_skew
+        __props__.__dict__["auto_summarize"] = auto_summarize
+        __props__.__dict__["auto_summarize_command"] = auto_summarize_command
+        __props__.__dict__["auto_summarize_cron_schedule"] = auto_summarize_cron_schedule
+        __props__.__dict__["auto_summarize_dispatch_earliest_time"] = auto_summarize_dispatch_earliest_time
+        __props__.__dict__["auto_summarize_dispatch_latest_time"] = auto_summarize_dispatch_latest_time
+        __props__.__dict__["auto_summarize_dispatch_time_format"] = auto_summarize_dispatch_time_format
+        __props__.__dict__["auto_summarize_dispatch_ttl"] = auto_summarize_dispatch_ttl
+        __props__.__dict__["auto_summarize_max_disabled_buckets"] = auto_summarize_max_disabled_buckets
+        __props__.__dict__["auto_summarize_max_summary_ratio"] = auto_summarize_max_summary_ratio
+        __props__.__dict__["auto_summarize_max_summary_size"] = auto_summarize_max_summary_size
+        __props__.__dict__["auto_summarize_max_time"] = auto_summarize_max_time
+        __props__.__dict__["auto_summarize_suspend_period"] = auto_summarize_suspend_period
+        __props__.__dict__["auto_summarize_timespan"] = auto_summarize_timespan
+        __props__.__dict__["cron_schedule"] = cron_schedule
+        __props__.__dict__["description"] = description
+        __props__.__dict__["disabled"] = disabled
+        __props__.__dict__["dispatch_buckets"] = dispatch_buckets
+        __props__.__dict__["dispatch_earliest_time"] = dispatch_earliest_time
+        __props__.__dict__["dispatch_index_earliest"] = dispatch_index_earliest
+        __props__.__dict__["dispatch_index_latest"] = dispatch_index_latest
+        __props__.__dict__["dispatch_indexed_realtime"] = dispatch_indexed_realtime
+        __props__.__dict__["dispatch_indexed_realtime_minspan"] = dispatch_indexed_realtime_minspan
+        __props__.__dict__["dispatch_indexed_realtime_offset"] = dispatch_indexed_realtime_offset
+        __props__.__dict__["dispatch_latest_time"] = dispatch_latest_time
+        __props__.__dict__["dispatch_lookups"] = dispatch_lookups
+        __props__.__dict__["dispatch_max_count"] = dispatch_max_count
+        __props__.__dict__["dispatch_max_time"] = dispatch_max_time
+        __props__.__dict__["dispatch_reduce_freq"] = dispatch_reduce_freq
+        __props__.__dict__["dispatch_rt_backfill"] = dispatch_rt_backfill
+        __props__.__dict__["dispatch_rt_maximum_span"] = dispatch_rt_maximum_span
+        __props__.__dict__["dispatch_spawn_process"] = dispatch_spawn_process
+        __props__.__dict__["dispatch_time_format"] = dispatch_time_format
+        __props__.__dict__["dispatch_ttl"] = dispatch_ttl
+        __props__.__dict__["display_view"] = display_view
+        __props__.__dict__["is_scheduled"] = is_scheduled
+        __props__.__dict__["is_visible"] = is_visible
+        __props__.__dict__["max_concurrent"] = max_concurrent
+        __props__.__dict__["name"] = name
+        __props__.__dict__["realtime_schedule"] = realtime_schedule
+        __props__.__dict__["request_ui_dispatch_app"] = request_ui_dispatch_app
+        __props__.__dict__["request_ui_dispatch_view"] = request_ui_dispatch_view
+        __props__.__dict__["restart_on_searchpeer_add"] = restart_on_searchpeer_add
+        __props__.__dict__["run_on_startup"] = run_on_startup
+        __props__.__dict__["schedule_priority"] = schedule_priority
+        __props__.__dict__["schedule_window"] = schedule_window
+        __props__.__dict__["search"] = search
+        __props__.__dict__["vsid"] = vsid
+        __props__.__dict__["workload_pool"] = workload_pool
         return SavedSearches(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -4310,10 +6510,4 @@ class SavedSearches(pulumi.CustomResource):
         Specifies the new workload pool where the existing running search will be placed.`
         """
         return pulumi.get(self, "workload_pool")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 

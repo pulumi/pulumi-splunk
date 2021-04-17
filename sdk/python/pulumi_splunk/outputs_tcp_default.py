@@ -6,7 +6,7 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from . import _utilities, _tables
+from . import _utilities
 from . import outputs
 from ._inputs import *
 
@@ -26,6 +26,182 @@ class OutputsTcpDefaultArgs:
                  send_cooked_data: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a OutputsTcpDefault resource.
+        :param pulumi.Input['OutputsTcpDefaultAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] default_group: Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
+               The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
+        :param pulumi.Input[bool] disabled: Disables default tcpout settings
+        :param pulumi.Input[int] drop_events_on_queue_full: If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
+               <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
+               Setting this to -1 or 0 causes the output queue to block when it gets full, which causes further blocking up the processing chain. If any target group queue is blocked, no more data reaches any other target group.
+               Using auto load-balancing is the best way to minimize this condition, because, in that case, multiple receivers must be down (or jammed up) before queue blocking can occur.
+        :param pulumi.Input[int] heartbeat_frequency: How often (in seconds) to send a heartbeat packet to the receiving server.
+               Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
+        :param pulumi.Input[bool] index_and_forward: Specifies whether to index all data locally, in addition to forwarding it. Defaults to false.
+               This is known as an "index-and-forward" configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
+        :param pulumi.Input[str] max_queue_size: Specify an integer or integer[KB|MB|GB].
+               <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
+               Although the wait queue and the output queues are both configured by this attribute, they are separate queues. The setting determines the maximum size of the queue in-memory (RAM) buffer.
+               For heavy forwarders sending parsed data, maxQueueSize is the maximum number of events. Since events are typically much shorter than data blocks, the memory consumed by the queue on a parsing forwarder is likely to be much smaller than on a non-parsing forwarder, if you use this version of the setting.
+               If specified as a lone integer (for example, maxQueueSize=100), maxQueueSize indicates the maximum number of queued events (for parsed data) or blocks of data (for unparsed data). A block of data is approximately 64KB. For non-parsing forwarders, such as universal forwarders, that send unparsed data, maxQueueSize is the maximum number of data blocks.
+               If specified as an integer followed by KB, MB, or GB (for example, maxQueueSize=100MB), maxQueueSize indicates the maximum RAM allocated to the queue buffer. Defaults to 500KB (which means a maximum size of 500KB for the output queue and 1500KB for the wait queue, if any).
+        :param pulumi.Input[str] name: Configuration to be edited. The only valid value is "tcpout".
+        :param pulumi.Input[bool] send_cooked_data: If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
+               Set to false if you are sending to a third-party system.
+        """
+        if acl is not None:
+            pulumi.set(__self__, "acl", acl)
+        if default_group is not None:
+            pulumi.set(__self__, "default_group", default_group)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if drop_events_on_queue_full is not None:
+            pulumi.set(__self__, "drop_events_on_queue_full", drop_events_on_queue_full)
+        if heartbeat_frequency is not None:
+            pulumi.set(__self__, "heartbeat_frequency", heartbeat_frequency)
+        if index_and_forward is not None:
+            pulumi.set(__self__, "index_and_forward", index_and_forward)
+        if max_queue_size is not None:
+            pulumi.set(__self__, "max_queue_size", max_queue_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if send_cooked_data is not None:
+            pulumi.set(__self__, "send_cooked_data", send_cooked_data)
+
+    @property
+    @pulumi.getter
+    def acl(self) -> Optional[pulumi.Input['OutputsTcpDefaultAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+        """
+        return pulumi.get(self, "acl")
+
+    @acl.setter
+    def acl(self, value: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']]):
+        pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter(name="defaultGroup")
+    def default_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
+        The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
+        """
+        return pulumi.get(self, "default_group")
+
+    @default_group.setter
+    def default_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "default_group", value)
+
+    @property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Disables default tcpout settings
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "disabled", value)
+
+    @property
+    @pulumi.getter(name="dropEventsOnQueueFull")
+    def drop_events_on_queue_full(self) -> Optional[pulumi.Input[int]]:
+        """
+        If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
+        <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
+        Setting this to -1 or 0 causes the output queue to block when it gets full, which causes further blocking up the processing chain. If any target group queue is blocked, no more data reaches any other target group.
+        Using auto load-balancing is the best way to minimize this condition, because, in that case, multiple receivers must be down (or jammed up) before queue blocking can occur.
+        """
+        return pulumi.get(self, "drop_events_on_queue_full")
+
+    @drop_events_on_queue_full.setter
+    def drop_events_on_queue_full(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "drop_events_on_queue_full", value)
+
+    @property
+    @pulumi.getter(name="heartbeatFrequency")
+    def heartbeat_frequency(self) -> Optional[pulumi.Input[int]]:
+        """
+        How often (in seconds) to send a heartbeat packet to the receiving server.
+        Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
+        """
+        return pulumi.get(self, "heartbeat_frequency")
+
+    @heartbeat_frequency.setter
+    def heartbeat_frequency(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "heartbeat_frequency", value)
+
+    @property
+    @pulumi.getter(name="indexAndForward")
+    def index_and_forward(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether to index all data locally, in addition to forwarding it. Defaults to false.
+        This is known as an "index-and-forward" configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
+        """
+        return pulumi.get(self, "index_and_forward")
+
+    @index_and_forward.setter
+    def index_and_forward(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "index_and_forward", value)
+
+    @property
+    @pulumi.getter(name="maxQueueSize")
+    def max_queue_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Specify an integer or integer[KB|MB|GB].
+        <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
+        Although the wait queue and the output queues are both configured by this attribute, they are separate queues. The setting determines the maximum size of the queue in-memory (RAM) buffer.
+        For heavy forwarders sending parsed data, maxQueueSize is the maximum number of events. Since events are typically much shorter than data blocks, the memory consumed by the queue on a parsing forwarder is likely to be much smaller than on a non-parsing forwarder, if you use this version of the setting.
+        If specified as a lone integer (for example, maxQueueSize=100), maxQueueSize indicates the maximum number of queued events (for parsed data) or blocks of data (for unparsed data). A block of data is approximately 64KB. For non-parsing forwarders, such as universal forwarders, that send unparsed data, maxQueueSize is the maximum number of data blocks.
+        If specified as an integer followed by KB, MB, or GB (for example, maxQueueSize=100MB), maxQueueSize indicates the maximum RAM allocated to the queue buffer. Defaults to 500KB (which means a maximum size of 500KB for the output queue and 1500KB for the wait queue, if any).
+        """
+        return pulumi.get(self, "max_queue_size")
+
+    @max_queue_size.setter
+    def max_queue_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "max_queue_size", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Configuration to be edited. The only valid value is "tcpout".
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="sendCookedData")
+    def send_cooked_data(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
+        Set to false if you are sending to a third-party system.
+        """
+        return pulumi.get(self, "send_cooked_data")
+
+    @send_cooked_data.setter
+    def send_cooked_data(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "send_cooked_data", value)
+
+
+@pulumi.input_type
+class _OutputsTcpDefaultState:
+    def __init__(__self__, *,
+                 acl: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']] = None,
+                 default_group: Optional[pulumi.Input[str]] = None,
+                 disabled: Optional[pulumi.Input[bool]] = None,
+                 drop_events_on_queue_full: Optional[pulumi.Input[int]] = None,
+                 heartbeat_frequency: Optional[pulumi.Input[int]] = None,
+                 index_and_forward: Optional[pulumi.Input[bool]] = None,
+                 max_queue_size: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 send_cooked_data: Optional[pulumi.Input[bool]] = None):
+        """
+        Input properties used for looking up and filtering OutputsTcpDefault resources.
         :param pulumi.Input['OutputsTcpDefaultAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] default_group: Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
                The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
@@ -317,17 +493,17 @@ class OutputsTcpDefault(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = dict()
+            __props__ = OutputsTcpDefaultArgs.__new__(OutputsTcpDefaultArgs)
 
-            __props__['acl'] = acl
-            __props__['default_group'] = default_group
-            __props__['disabled'] = disabled
-            __props__['drop_events_on_queue_full'] = drop_events_on_queue_full
-            __props__['heartbeat_frequency'] = heartbeat_frequency
-            __props__['index_and_forward'] = index_and_forward
-            __props__['max_queue_size'] = max_queue_size
-            __props__['name'] = name
-            __props__['send_cooked_data'] = send_cooked_data
+            __props__.__dict__["acl"] = acl
+            __props__.__dict__["default_group"] = default_group
+            __props__.__dict__["disabled"] = disabled
+            __props__.__dict__["drop_events_on_queue_full"] = drop_events_on_queue_full
+            __props__.__dict__["heartbeat_frequency"] = heartbeat_frequency
+            __props__.__dict__["index_and_forward"] = index_and_forward
+            __props__.__dict__["max_queue_size"] = max_queue_size
+            __props__.__dict__["name"] = name
+            __props__.__dict__["send_cooked_data"] = send_cooked_data
         super(OutputsTcpDefault, __self__).__init__(
             'splunk:index/outputsTcpDefault:OutputsTcpDefault',
             resource_name,
@@ -378,17 +554,17 @@ class OutputsTcpDefault(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = dict()
+        __props__ = _OutputsTcpDefaultState.__new__(_OutputsTcpDefaultState)
 
-        __props__["acl"] = acl
-        __props__["default_group"] = default_group
-        __props__["disabled"] = disabled
-        __props__["drop_events_on_queue_full"] = drop_events_on_queue_full
-        __props__["heartbeat_frequency"] = heartbeat_frequency
-        __props__["index_and_forward"] = index_and_forward
-        __props__["max_queue_size"] = max_queue_size
-        __props__["name"] = name
-        __props__["send_cooked_data"] = send_cooked_data
+        __props__.__dict__["acl"] = acl
+        __props__.__dict__["default_group"] = default_group
+        __props__.__dict__["disabled"] = disabled
+        __props__.__dict__["drop_events_on_queue_full"] = drop_events_on_queue_full
+        __props__.__dict__["heartbeat_frequency"] = heartbeat_frequency
+        __props__.__dict__["index_and_forward"] = index_and_forward
+        __props__.__dict__["max_queue_size"] = max_queue_size
+        __props__.__dict__["name"] = name
+        __props__.__dict__["send_cooked_data"] = send_cooked_data
         return OutputsTcpDefault(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -474,10 +650,4 @@ class OutputsTcpDefault(pulumi.CustomResource):
         Set to false if you are sending to a third-party system.
         """
         return pulumi.get(self, "send_cooked_data")
-
-    def translate_output_property(self, prop):
-        return _tables.CAMEL_TO_SNAKE_CASE_TABLE.get(prop) or prop
-
-    def translate_input_property(self, prop):
-        return _tables.SNAKE_TO_CAMEL_CASE_TABLE.get(prop) or prop
 
