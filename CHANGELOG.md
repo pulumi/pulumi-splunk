@@ -6,6 +6,10 @@ _(none)_
 
 ---
 
+## 1.0.0 (2021-04-19)
+* Depend on Pulumi 3.0, which includes improvements to Python resource arguments and key translation, Go SDK performance,
+  Node SDK performance, general availability of Automation API, and more.
+
 ## 0.4.1 (2021-04-14)
 * Upgrade to v1.4.4 of the Splunk Terraform Provider
 
