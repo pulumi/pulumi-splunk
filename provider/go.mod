@@ -7,5 +7,5 @@ require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.0.0
 	github.com/pulumi/pulumi/pkg/v3 v3.0.0
 	github.com/pulumi/pulumi/sdk/v3 v3.0.0
-	github.com/splunk/terraform-provider-splunk v1.4.4
+	github.com/splunk/terraform-provider-splunk v1.4.6
 )

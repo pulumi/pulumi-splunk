@@ -69,13 +69,13 @@ namespace Pulumi.Splunk
         /// Maximum number of concurrently running real-time searches that all members of this role can have.
         /// </summary>
         [Output("cumulativeRealtimeSearchJobsQuota")]
-        public Output<int> CumulativeRealtimeSearchJobsQuota { get; private set; } = null!;
+        public Output<int?> CumulativeRealtimeSearchJobsQuota { get; private set; } = null!;
 
         /// <summary>
         /// Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
         /// </summary>
         [Output("cumulativeSearchJobsQuota")]
-        public Output<int> CumulativeSearchJobsQuota { get; private set; } = null!;
+        public Output<int?> CumulativeSearchJobsQuota { get; private set; } = null!;
 
         /// <summary>
         /// Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
@@ -99,13 +99,13 @@ namespace Pulumi.Splunk
         /// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
         /// </summary>
         [Output("realtimeSearchJobsQuota")]
-        public Output<int> RealtimeSearchJobsQuota { get; private set; } = null!;
+        public Output<int?> RealtimeSearchJobsQuota { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         /// </summary>
         [Output("searchDiskQuota")]
-        public Output<int> SearchDiskQuota { get; private set; } = null!;
+        public Output<int?> SearchDiskQuota { get; private set; } = null!;
 
         /// <summary>
         /// Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
@@ -129,13 +129,13 @@ namespace Pulumi.Splunk
         /// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         /// </summary>
         [Output("searchJobsQuota")]
-        public Output<int> SearchJobsQuota { get; private set; } = null!;
+        public Output<int?> SearchJobsQuota { get; private set; } = null!;
 
         /// <summary>
         /// Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         /// </summary>
         [Output("searchTimeWin")]
-        public Output<int> SearchTimeWin { get; private set; } = null!;
+        public Output<int?> SearchTimeWin { get; private set; } = null!;
 
 
         /// <summary>

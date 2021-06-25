@@ -677,7 +677,7 @@ class AuthorizationRoles(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cumulativeRealtimeSearchJobsQuota")
-    def cumulative_realtime_search_jobs_quota(self) -> pulumi.Output[int]:
+    def cumulative_realtime_search_jobs_quota(self) -> pulumi.Output[Optional[int]]:
         """
         Maximum number of concurrently running real-time searches that all members of this role can have.
         """
@@ -685,7 +685,7 @@ class AuthorizationRoles(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cumulativeSearchJobsQuota")
-    def cumulative_search_jobs_quota(self) -> pulumi.Output[int]:
+    def cumulative_search_jobs_quota(self) -> pulumi.Output[Optional[int]]:
         """
         Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
         """
@@ -717,7 +717,7 @@ class AuthorizationRoles(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="realtimeSearchJobsQuota")
-    def realtime_search_jobs_quota(self) -> pulumi.Output[int]:
+    def realtime_search_jobs_quota(self) -> pulumi.Output[Optional[int]]:
         """
         Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
         """
@@ -725,7 +725,7 @@ class AuthorizationRoles(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="searchDiskQuota")
-    def search_disk_quota(self) -> pulumi.Output[int]:
+    def search_disk_quota(self) -> pulumi.Output[Optional[int]]:
         """
         Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         """
@@ -757,7 +757,7 @@ class AuthorizationRoles(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="searchJobsQuota")
-    def search_jobs_quota(self) -> pulumi.Output[int]:
+    def search_jobs_quota(self) -> pulumi.Output[Optional[int]]:
         """
         The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         """
@@ -765,7 +765,7 @@ class AuthorizationRoles(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="searchTimeWin")
-    def search_time_win(self) -> pulumi.Output[int]:
+    def search_time_win(self) -> pulumi.Output[Optional[int]]:
         """
         Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """

@@ -61,9 +61,9 @@ type AuthorizationRoles struct {
 	// List of capabilities assigned to role.
 	Capabilities pulumi.StringArrayOutput `pulumi:"capabilities"`
 	// Maximum number of concurrently running real-time searches that all members of this role can have.
-	CumulativeRealtimeSearchJobsQuota pulumi.IntOutput `pulumi:"cumulativeRealtimeSearchJobsQuota"`
+	CumulativeRealtimeSearchJobsQuota pulumi.IntPtrOutput `pulumi:"cumulativeRealtimeSearchJobsQuota"`
 	// Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
-	CumulativeSearchJobsQuota pulumi.IntOutput `pulumi:"cumulativeSearchJobsQuota"`
+	CumulativeSearchJobsQuota pulumi.IntPtrOutput `pulumi:"cumulativeSearchJobsQuota"`
 	// Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
 	DefaultApp pulumi.StringOutput `pulumi:"defaultApp"`
 	// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
@@ -71,9 +71,9 @@ type AuthorizationRoles struct {
 	// The name of the user role to create.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
-	RealtimeSearchJobsQuota pulumi.IntOutput `pulumi:"realtimeSearchJobsQuota"`
+	RealtimeSearchJobsQuota pulumi.IntPtrOutput `pulumi:"realtimeSearchJobsQuota"`
 	// Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
-	SearchDiskQuota pulumi.IntOutput `pulumi:"searchDiskQuota"`
+	SearchDiskQuota pulumi.IntPtrOutput `pulumi:"searchDiskQuota"`
 	// Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
 	SearchFilter pulumi.StringOutput `pulumi:"searchFilter"`
 	// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
@@ -81,9 +81,9 @@ type AuthorizationRoles struct {
 	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
 	SearchIndexesDefaults pulumi.StringArrayOutput `pulumi:"searchIndexesDefaults"`
 	// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
-	SearchJobsQuota pulumi.IntOutput `pulumi:"searchJobsQuota"`
+	SearchJobsQuota pulumi.IntPtrOutput `pulumi:"searchJobsQuota"`
 	// Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
-	SearchTimeWin pulumi.IntOutput `pulumi:"searchTimeWin"`
+	SearchTimeWin pulumi.IntPtrOutput `pulumi:"searchTimeWin"`
 }
 
 // NewAuthorizationRoles registers a new resource with the given unique name, arguments, and options.
