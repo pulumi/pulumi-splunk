@@ -74,11 +74,11 @@ export class AuthorizationRoles extends pulumi.CustomResource {
     /**
      * Maximum number of concurrently running real-time searches that all members of this role can have.
      */
-    public readonly cumulativeRealtimeSearchJobsQuota!: pulumi.Output<number>;
+    public readonly cumulativeRealtimeSearchJobsQuota!: pulumi.Output<number | undefined>;
     /**
      * Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
      */
-    public readonly cumulativeSearchJobsQuota!: pulumi.Output<number>;
+    public readonly cumulativeSearchJobsQuota!: pulumi.Output<number | undefined>;
     /**
      * Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
      */
@@ -94,11 +94,11 @@ export class AuthorizationRoles extends pulumi.CustomResource {
     /**
      * Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
      */
-    public readonly realtimeSearchJobsQuota!: pulumi.Output<number>;
+    public readonly realtimeSearchJobsQuota!: pulumi.Output<number | undefined>;
     /**
      * Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
      */
-    public readonly searchDiskQuota!: pulumi.Output<number>;
+    public readonly searchDiskQuota!: pulumi.Output<number | undefined>;
     /**
      * Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
      */
@@ -114,11 +114,11 @@ export class AuthorizationRoles extends pulumi.CustomResource {
     /**
      * The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
      */
-    public readonly searchJobsQuota!: pulumi.Output<number>;
+    public readonly searchJobsQuota!: pulumi.Output<number | undefined>;
     /**
      * Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
      */
-    public readonly searchTimeWin!: pulumi.Output<number>;
+    public readonly searchTimeWin!: pulumi.Output<number | undefined>;
 
     /**
      * Create a AuthorizationRoles resource with the given unique name, arguments, and options.

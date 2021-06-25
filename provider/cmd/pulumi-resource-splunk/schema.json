@@ -2488,18 +2488,12 @@
             },
             "required": [
                 "capabilities",
-                "cumulativeRealtimeSearchJobsQuota",
-                "cumulativeSearchJobsQuota",
                 "defaultApp",
                 "importedRoles",
                 "name",
-                "realtimeSearchJobsQuota",
-                "searchDiskQuota",
                 "searchFilter",
                 "searchIndexesAlloweds",
-                "searchIndexesDefaults",
-                "searchJobsQuota",
-                "searchTimeWin"
+                "searchIndexesDefaults"
             ],
             "inputProperties": {
                 "capabilities": {
@@ -6897,8 +6891,7 @@
             "compatibility": "tfbridge20",
             "namespaces": null,
             "packageReferences": {
-                "Pulumi": "3.*-*",
-                "System.Collections.Immutable": "1.6.0"
+                "Pulumi": "3.*"
             }
         },
         "go": {
@@ -6908,7 +6901,7 @@
         "nodejs": {
             "compatibility": "tfbridge20",
             "dependencies": {
-                "@pulumi/pulumi": "^3.0.0-alpha.0"
+                "@pulumi/pulumi": "^3.0.0"
             },
             "devDependencies": {
                 "@types/mime": "^2.0.0",
@@ -6924,7 +6917,7 @@
             "compatibility": "tfbridge20",
             "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/splunk/terraform-provider-splunk)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-splunk` repo](https://github.com/pulumi/pulumi-splunk/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`splunk/terraform-provider-splunk` repo](https://github.com/splunk/terraform-provider-splunk/issues).",
             "requires": {
-                "pulumi": "\u003e=3.0.0a1,\u003c4.0.0"
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
             }
         }
     }
