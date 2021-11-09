@@ -121,10 +121,11 @@ func (o AppsLocalAclOutput) ToAppsLocalAclPtrOutput() AppsLocalAclPtrOutput {
 }
 
 func (o AppsLocalAclOutput) ToAppsLocalAclPtrOutputWithContext(ctx context.Context) AppsLocalAclPtrOutput {
-	return o.ApplyT(func(v AppsLocalAcl) *AppsLocalAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppsLocalAcl) *AppsLocalAcl {
 		return &v
 	}).(AppsLocalAclPtrOutput)
 }
+
 func (o AppsLocalAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -184,7 +185,13 @@ func (o AppsLocalAclPtrOutput) ToAppsLocalAclPtrOutputWithContext(ctx context.Co
 }
 
 func (o AppsLocalAclPtrOutput) Elem() AppsLocalAclOutput {
-	return o.ApplyT(func(v *AppsLocalAcl) AppsLocalAcl { return *v }).(AppsLocalAclOutput)
+	return o.ApplyT(func(v *AppsLocalAcl) AppsLocalAcl {
+		if v != nil {
+			return *v
+		}
+		var ret AppsLocalAcl
+		return ret
+	}).(AppsLocalAclOutput)
 }
 
 func (o AppsLocalAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -397,10 +404,11 @@ func (o ConfigsConfAclOutput) ToConfigsConfAclPtrOutput() ConfigsConfAclPtrOutpu
 }
 
 func (o ConfigsConfAclOutput) ToConfigsConfAclPtrOutputWithContext(ctx context.Context) ConfigsConfAclPtrOutput {
-	return o.ApplyT(func(v ConfigsConfAcl) *ConfigsConfAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigsConfAcl) *ConfigsConfAcl {
 		return &v
 	}).(ConfigsConfAclPtrOutput)
 }
+
 func (o ConfigsConfAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -460,7 +468,13 @@ func (o ConfigsConfAclPtrOutput) ToConfigsConfAclPtrOutputWithContext(ctx contex
 }
 
 func (o ConfigsConfAclPtrOutput) Elem() ConfigsConfAclOutput {
-	return o.ApplyT(func(v *ConfigsConfAcl) ConfigsConfAcl { return *v }).(ConfigsConfAclOutput)
+	return o.ApplyT(func(v *ConfigsConfAcl) ConfigsConfAcl {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigsConfAcl
+		return ret
+	}).(ConfigsConfAclOutput)
 }
 
 func (o ConfigsConfAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -673,10 +687,11 @@ func (o DataUiViewsAclOutput) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutpu
 }
 
 func (o DataUiViewsAclOutput) ToDataUiViewsAclPtrOutputWithContext(ctx context.Context) DataUiViewsAclPtrOutput {
-	return o.ApplyT(func(v DataUiViewsAcl) *DataUiViewsAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataUiViewsAcl) *DataUiViewsAcl {
 		return &v
 	}).(DataUiViewsAclPtrOutput)
 }
+
 func (o DataUiViewsAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -736,7 +751,13 @@ func (o DataUiViewsAclPtrOutput) ToDataUiViewsAclPtrOutputWithContext(ctx contex
 }
 
 func (o DataUiViewsAclPtrOutput) Elem() DataUiViewsAclOutput {
-	return o.ApplyT(func(v *DataUiViewsAcl) DataUiViewsAcl { return *v }).(DataUiViewsAclOutput)
+	return o.ApplyT(func(v *DataUiViewsAcl) DataUiViewsAcl {
+		if v != nil {
+			return *v
+		}
+		var ret DataUiViewsAcl
+		return ret
+	}).(DataUiViewsAclOutput)
 }
 
 func (o DataUiViewsAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -949,10 +970,11 @@ func (o IndexesAclOutput) ToIndexesAclPtrOutput() IndexesAclPtrOutput {
 }
 
 func (o IndexesAclOutput) ToIndexesAclPtrOutputWithContext(ctx context.Context) IndexesAclPtrOutput {
-	return o.ApplyT(func(v IndexesAcl) *IndexesAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexesAcl) *IndexesAcl {
 		return &v
 	}).(IndexesAclPtrOutput)
 }
+
 func (o IndexesAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -1012,7 +1034,13 @@ func (o IndexesAclPtrOutput) ToIndexesAclPtrOutputWithContext(ctx context.Contex
 }
 
 func (o IndexesAclPtrOutput) Elem() IndexesAclOutput {
-	return o.ApplyT(func(v *IndexesAcl) IndexesAcl { return *v }).(IndexesAclOutput)
+	return o.ApplyT(func(v *IndexesAcl) IndexesAcl {
+		if v != nil {
+			return *v
+		}
+		var ret IndexesAcl
+		return ret
+	}).(IndexesAclOutput)
 }
 
 func (o IndexesAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -1225,10 +1253,11 @@ func (o InputsHttpEventCollectorAclOutput) ToInputsHttpEventCollectorAclPtrOutpu
 }
 
 func (o InputsHttpEventCollectorAclOutput) ToInputsHttpEventCollectorAclPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorAclPtrOutput {
-	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *InputsHttpEventCollectorAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsHttpEventCollectorAcl) *InputsHttpEventCollectorAcl {
 		return &v
 	}).(InputsHttpEventCollectorAclPtrOutput)
 }
+
 func (o InputsHttpEventCollectorAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -1288,7 +1317,13 @@ func (o InputsHttpEventCollectorAclPtrOutput) ToInputsHttpEventCollectorAclPtrOu
 }
 
 func (o InputsHttpEventCollectorAclPtrOutput) Elem() InputsHttpEventCollectorAclOutput {
-	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) InputsHttpEventCollectorAcl { return *v }).(InputsHttpEventCollectorAclOutput)
+	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) InputsHttpEventCollectorAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsHttpEventCollectorAcl
+		return ret
+	}).(InputsHttpEventCollectorAclOutput)
 }
 
 func (o InputsHttpEventCollectorAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -1501,10 +1536,11 @@ func (o InputsMonitorAclOutput) ToInputsMonitorAclPtrOutput() InputsMonitorAclPt
 }
 
 func (o InputsMonitorAclOutput) ToInputsMonitorAclPtrOutputWithContext(ctx context.Context) InputsMonitorAclPtrOutput {
-	return o.ApplyT(func(v InputsMonitorAcl) *InputsMonitorAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsMonitorAcl) *InputsMonitorAcl {
 		return &v
 	}).(InputsMonitorAclPtrOutput)
 }
+
 func (o InputsMonitorAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -1564,7 +1600,13 @@ func (o InputsMonitorAclPtrOutput) ToInputsMonitorAclPtrOutputWithContext(ctx co
 }
 
 func (o InputsMonitorAclPtrOutput) Elem() InputsMonitorAclOutput {
-	return o.ApplyT(func(v *InputsMonitorAcl) InputsMonitorAcl { return *v }).(InputsMonitorAclOutput)
+	return o.ApplyT(func(v *InputsMonitorAcl) InputsMonitorAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsMonitorAcl
+		return ret
+	}).(InputsMonitorAclOutput)
 }
 
 func (o InputsMonitorAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -1777,10 +1819,11 @@ func (o InputsScriptAclOutput) ToInputsScriptAclPtrOutput() InputsScriptAclPtrOu
 }
 
 func (o InputsScriptAclOutput) ToInputsScriptAclPtrOutputWithContext(ctx context.Context) InputsScriptAclPtrOutput {
-	return o.ApplyT(func(v InputsScriptAcl) *InputsScriptAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsScriptAcl) *InputsScriptAcl {
 		return &v
 	}).(InputsScriptAclPtrOutput)
 }
+
 func (o InputsScriptAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -1840,7 +1883,13 @@ func (o InputsScriptAclPtrOutput) ToInputsScriptAclPtrOutputWithContext(ctx cont
 }
 
 func (o InputsScriptAclPtrOutput) Elem() InputsScriptAclOutput {
-	return o.ApplyT(func(v *InputsScriptAcl) InputsScriptAcl { return *v }).(InputsScriptAclOutput)
+	return o.ApplyT(func(v *InputsScriptAcl) InputsScriptAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsScriptAcl
+		return ret
+	}).(InputsScriptAclOutput)
 }
 
 func (o InputsScriptAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -2053,10 +2102,11 @@ func (o InputsTcpCookedAclOutput) ToInputsTcpCookedAclPtrOutput() InputsTcpCooke
 }
 
 func (o InputsTcpCookedAclOutput) ToInputsTcpCookedAclPtrOutputWithContext(ctx context.Context) InputsTcpCookedAclPtrOutput {
-	return o.ApplyT(func(v InputsTcpCookedAcl) *InputsTcpCookedAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpCookedAcl) *InputsTcpCookedAcl {
 		return &v
 	}).(InputsTcpCookedAclPtrOutput)
 }
+
 func (o InputsTcpCookedAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -2116,7 +2166,13 @@ func (o InputsTcpCookedAclPtrOutput) ToInputsTcpCookedAclPtrOutputWithContext(ct
 }
 
 func (o InputsTcpCookedAclPtrOutput) Elem() InputsTcpCookedAclOutput {
-	return o.ApplyT(func(v *InputsTcpCookedAcl) InputsTcpCookedAcl { return *v }).(InputsTcpCookedAclOutput)
+	return o.ApplyT(func(v *InputsTcpCookedAcl) InputsTcpCookedAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsTcpCookedAcl
+		return ret
+	}).(InputsTcpCookedAclOutput)
 }
 
 func (o InputsTcpCookedAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -2329,10 +2385,11 @@ func (o InputsTcpRawAclOutput) ToInputsTcpRawAclPtrOutput() InputsTcpRawAclPtrOu
 }
 
 func (o InputsTcpRawAclOutput) ToInputsTcpRawAclPtrOutputWithContext(ctx context.Context) InputsTcpRawAclPtrOutput {
-	return o.ApplyT(func(v InputsTcpRawAcl) *InputsTcpRawAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpRawAcl) *InputsTcpRawAcl {
 		return &v
 	}).(InputsTcpRawAclPtrOutput)
 }
+
 func (o InputsTcpRawAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -2392,7 +2449,13 @@ func (o InputsTcpRawAclPtrOutput) ToInputsTcpRawAclPtrOutputWithContext(ctx cont
 }
 
 func (o InputsTcpRawAclPtrOutput) Elem() InputsTcpRawAclOutput {
-	return o.ApplyT(func(v *InputsTcpRawAcl) InputsTcpRawAcl { return *v }).(InputsTcpRawAclOutput)
+	return o.ApplyT(func(v *InputsTcpRawAcl) InputsTcpRawAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsTcpRawAcl
+		return ret
+	}).(InputsTcpRawAclOutput)
 }
 
 func (o InputsTcpRawAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -2605,10 +2668,11 @@ func (o InputsTcpSplunkTcpTokenAclOutput) ToInputsTcpSplunkTcpTokenAclPtrOutput(
 }
 
 func (o InputsTcpSplunkTcpTokenAclOutput) ToInputsTcpSplunkTcpTokenAclPtrOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenAclPtrOutput {
-	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *InputsTcpSplunkTcpTokenAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpSplunkTcpTokenAcl) *InputsTcpSplunkTcpTokenAcl {
 		return &v
 	}).(InputsTcpSplunkTcpTokenAclPtrOutput)
 }
+
 func (o InputsTcpSplunkTcpTokenAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -2668,7 +2732,13 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) ToInputsTcpSplunkTcpTokenAclPtrOutp
 }
 
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Elem() InputsTcpSplunkTcpTokenAclOutput {
-	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) InputsTcpSplunkTcpTokenAcl { return *v }).(InputsTcpSplunkTcpTokenAclOutput)
+	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) InputsTcpSplunkTcpTokenAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsTcpSplunkTcpTokenAcl
+		return ret
+	}).(InputsTcpSplunkTcpTokenAclOutput)
 }
 
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -2881,10 +2951,11 @@ func (o InputsUdpAclOutput) ToInputsUdpAclPtrOutput() InputsUdpAclPtrOutput {
 }
 
 func (o InputsUdpAclOutput) ToInputsUdpAclPtrOutputWithContext(ctx context.Context) InputsUdpAclPtrOutput {
-	return o.ApplyT(func(v InputsUdpAcl) *InputsUdpAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsUdpAcl) *InputsUdpAcl {
 		return &v
 	}).(InputsUdpAclPtrOutput)
 }
+
 func (o InputsUdpAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -2944,7 +3015,13 @@ func (o InputsUdpAclPtrOutput) ToInputsUdpAclPtrOutputWithContext(ctx context.Co
 }
 
 func (o InputsUdpAclPtrOutput) Elem() InputsUdpAclOutput {
-	return o.ApplyT(func(v *InputsUdpAcl) InputsUdpAcl { return *v }).(InputsUdpAclOutput)
+	return o.ApplyT(func(v *InputsUdpAcl) InputsUdpAcl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsUdpAcl
+		return ret
+	}).(InputsUdpAclOutput)
 }
 
 func (o InputsUdpAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -3157,10 +3234,11 @@ func (o OutputsTcpDefaultAclOutput) ToOutputsTcpDefaultAclPtrOutput() OutputsTcp
 }
 
 func (o OutputsTcpDefaultAclOutput) ToOutputsTcpDefaultAclPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultAclPtrOutput {
-	return o.ApplyT(func(v OutputsTcpDefaultAcl) *OutputsTcpDefaultAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpDefaultAcl) *OutputsTcpDefaultAcl {
 		return &v
 	}).(OutputsTcpDefaultAclPtrOutput)
 }
+
 func (o OutputsTcpDefaultAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -3220,7 +3298,13 @@ func (o OutputsTcpDefaultAclPtrOutput) ToOutputsTcpDefaultAclPtrOutputWithContex
 }
 
 func (o OutputsTcpDefaultAclPtrOutput) Elem() OutputsTcpDefaultAclOutput {
-	return o.ApplyT(func(v *OutputsTcpDefaultAcl) OutputsTcpDefaultAcl { return *v }).(OutputsTcpDefaultAclOutput)
+	return o.ApplyT(func(v *OutputsTcpDefaultAcl) OutputsTcpDefaultAcl {
+		if v != nil {
+			return *v
+		}
+		var ret OutputsTcpDefaultAcl
+		return ret
+	}).(OutputsTcpDefaultAclOutput)
 }
 
 func (o OutputsTcpDefaultAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -3433,10 +3517,11 @@ func (o OutputsTcpGroupAclOutput) ToOutputsTcpGroupAclPtrOutput() OutputsTcpGrou
 }
 
 func (o OutputsTcpGroupAclOutput) ToOutputsTcpGroupAclPtrOutputWithContext(ctx context.Context) OutputsTcpGroupAclPtrOutput {
-	return o.ApplyT(func(v OutputsTcpGroupAcl) *OutputsTcpGroupAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpGroupAcl) *OutputsTcpGroupAcl {
 		return &v
 	}).(OutputsTcpGroupAclPtrOutput)
 }
+
 func (o OutputsTcpGroupAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -3496,7 +3581,13 @@ func (o OutputsTcpGroupAclPtrOutput) ToOutputsTcpGroupAclPtrOutputWithContext(ct
 }
 
 func (o OutputsTcpGroupAclPtrOutput) Elem() OutputsTcpGroupAclOutput {
-	return o.ApplyT(func(v *OutputsTcpGroupAcl) OutputsTcpGroupAcl { return *v }).(OutputsTcpGroupAclOutput)
+	return o.ApplyT(func(v *OutputsTcpGroupAcl) OutputsTcpGroupAcl {
+		if v != nil {
+			return *v
+		}
+		var ret OutputsTcpGroupAcl
+		return ret
+	}).(OutputsTcpGroupAclOutput)
 }
 
 func (o OutputsTcpGroupAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -3709,10 +3800,11 @@ func (o OutputsTcpServerAclOutput) ToOutputsTcpServerAclPtrOutput() OutputsTcpSe
 }
 
 func (o OutputsTcpServerAclOutput) ToOutputsTcpServerAclPtrOutputWithContext(ctx context.Context) OutputsTcpServerAclPtrOutput {
-	return o.ApplyT(func(v OutputsTcpServerAcl) *OutputsTcpServerAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpServerAcl) *OutputsTcpServerAcl {
 		return &v
 	}).(OutputsTcpServerAclPtrOutput)
 }
+
 func (o OutputsTcpServerAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -3772,7 +3864,13 @@ func (o OutputsTcpServerAclPtrOutput) ToOutputsTcpServerAclPtrOutputWithContext(
 }
 
 func (o OutputsTcpServerAclPtrOutput) Elem() OutputsTcpServerAclOutput {
-	return o.ApplyT(func(v *OutputsTcpServerAcl) OutputsTcpServerAcl { return *v }).(OutputsTcpServerAclOutput)
+	return o.ApplyT(func(v *OutputsTcpServerAcl) OutputsTcpServerAcl {
+		if v != nil {
+			return *v
+		}
+		var ret OutputsTcpServerAcl
+		return ret
+	}).(OutputsTcpServerAclOutput)
 }
 
 func (o OutputsTcpServerAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -3985,10 +4083,11 @@ func (o OutputsTcpSyslogAclOutput) ToOutputsTcpSyslogAclPtrOutput() OutputsTcpSy
 }
 
 func (o OutputsTcpSyslogAclOutput) ToOutputsTcpSyslogAclPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogAclPtrOutput {
-	return o.ApplyT(func(v OutputsTcpSyslogAcl) *OutputsTcpSyslogAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpSyslogAcl) *OutputsTcpSyslogAcl {
 		return &v
 	}).(OutputsTcpSyslogAclPtrOutput)
 }
+
 func (o OutputsTcpSyslogAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -4048,7 +4147,13 @@ func (o OutputsTcpSyslogAclPtrOutput) ToOutputsTcpSyslogAclPtrOutputWithContext(
 }
 
 func (o OutputsTcpSyslogAclPtrOutput) Elem() OutputsTcpSyslogAclOutput {
-	return o.ApplyT(func(v *OutputsTcpSyslogAcl) OutputsTcpSyslogAcl { return *v }).(OutputsTcpSyslogAclOutput)
+	return o.ApplyT(func(v *OutputsTcpSyslogAcl) OutputsTcpSyslogAcl {
+		if v != nil {
+			return *v
+		}
+		var ret OutputsTcpSyslogAcl
+		return ret
+	}).(OutputsTcpSyslogAclOutput)
 }
 
 func (o OutputsTcpSyslogAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -4261,10 +4366,11 @@ func (o SavedSearchesAclOutput) ToSavedSearchesAclPtrOutput() SavedSearchesAclPt
 }
 
 func (o SavedSearchesAclOutput) ToSavedSearchesAclPtrOutputWithContext(ctx context.Context) SavedSearchesAclPtrOutput {
-	return o.ApplyT(func(v SavedSearchesAcl) *SavedSearchesAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SavedSearchesAcl) *SavedSearchesAcl {
 		return &v
 	}).(SavedSearchesAclPtrOutput)
 }
+
 func (o SavedSearchesAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -4324,7 +4430,13 @@ func (o SavedSearchesAclPtrOutput) ToSavedSearchesAclPtrOutputWithContext(ctx co
 }
 
 func (o SavedSearchesAclPtrOutput) Elem() SavedSearchesAclOutput {
-	return o.ApplyT(func(v *SavedSearchesAcl) SavedSearchesAcl { return *v }).(SavedSearchesAclOutput)
+	return o.ApplyT(func(v *SavedSearchesAcl) SavedSearchesAcl {
+		if v != nil {
+			return *v
+		}
+		var ret SavedSearchesAcl
+		return ret
+	}).(SavedSearchesAclOutput)
 }
 
 func (o SavedSearchesAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -4537,10 +4649,11 @@ func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclPtrOutput() ShIndexesMan
 }
 
 func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclPtrOutputWithContext(ctx context.Context) ShIndexesManagerAclPtrOutput {
-	return o.ApplyT(func(v ShIndexesManagerAcl) *ShIndexesManagerAcl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShIndexesManagerAcl) *ShIndexesManagerAcl {
 		return &v
 	}).(ShIndexesManagerAclPtrOutput)
 }
+
 func (o ShIndexesManagerAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
@@ -4600,7 +4713,13 @@ func (o ShIndexesManagerAclPtrOutput) ToShIndexesManagerAclPtrOutputWithContext(
 }
 
 func (o ShIndexesManagerAclPtrOutput) Elem() ShIndexesManagerAclOutput {
-	return o.ApplyT(func(v *ShIndexesManagerAcl) ShIndexesManagerAcl { return *v }).(ShIndexesManagerAclOutput)
+	return o.ApplyT(func(v *ShIndexesManagerAcl) ShIndexesManagerAcl {
+		if v != nil {
+			return *v
+		}
+		var ret ShIndexesManagerAcl
+		return ret
+	}).(ShIndexesManagerAclOutput)
 }
 
 func (o ShIndexesManagerAclPtrOutput) App() pulumi.StringPtrOutput {
@@ -4703,6 +4822,40 @@ func (o ShIndexesManagerAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsLocalAclInput)(nil)).Elem(), AppsLocalAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AppsLocalAclPtrInput)(nil)).Elem(), AppsLocalAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfAclInput)(nil)).Elem(), ConfigsConfAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfAclPtrInput)(nil)).Elem(), ConfigsConfAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsAclInput)(nil)).Elem(), DataUiViewsAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsAclPtrInput)(nil)).Elem(), DataUiViewsAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexesAclInput)(nil)).Elem(), IndexesAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexesAclPtrInput)(nil)).Elem(), IndexesAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorAclInput)(nil)).Elem(), InputsHttpEventCollectorAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorAclPtrInput)(nil)).Elem(), InputsHttpEventCollectorAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsMonitorAclInput)(nil)).Elem(), InputsMonitorAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsMonitorAclPtrInput)(nil)).Elem(), InputsMonitorAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptAclInput)(nil)).Elem(), InputsScriptAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptAclPtrInput)(nil)).Elem(), InputsScriptAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpCookedAclInput)(nil)).Elem(), InputsTcpCookedAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpCookedAclPtrInput)(nil)).Elem(), InputsTcpCookedAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpRawAclInput)(nil)).Elem(), InputsTcpRawAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpRawAclPtrInput)(nil)).Elem(), InputsTcpRawAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSplunkTcpTokenAclInput)(nil)).Elem(), InputsTcpSplunkTcpTokenAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSplunkTcpTokenAclPtrInput)(nil)).Elem(), InputsTcpSplunkTcpTokenAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpAclInput)(nil)).Elem(), InputsUdpAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpAclPtrInput)(nil)).Elem(), InputsUdpAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpDefaultAclInput)(nil)).Elem(), OutputsTcpDefaultAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpDefaultAclPtrInput)(nil)).Elem(), OutputsTcpDefaultAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpGroupAclInput)(nil)).Elem(), OutputsTcpGroupAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpGroupAclPtrInput)(nil)).Elem(), OutputsTcpGroupAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerAclInput)(nil)).Elem(), OutputsTcpServerAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerAclPtrInput)(nil)).Elem(), OutputsTcpServerAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogAclInput)(nil)).Elem(), OutputsTcpSyslogAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogAclPtrInput)(nil)).Elem(), OutputsTcpSyslogAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesAclInput)(nil)).Elem(), SavedSearchesAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesAclPtrInput)(nil)).Elem(), SavedSearchesAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerAclInput)(nil)).Elem(), ShIndexesManagerAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerAclPtrInput)(nil)).Elem(), ShIndexesManagerAclArgs{})
 	pulumi.RegisterOutputType(AppsLocalAclOutput{})
 	pulumi.RegisterOutputType(AppsLocalAclPtrOutput{})
 	pulumi.RegisterOutputType(ConfigsConfAclOutput{})

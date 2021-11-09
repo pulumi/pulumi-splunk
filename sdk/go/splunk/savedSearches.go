@@ -30,7 +30,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := splunk.NewSavedSearches(ctx, "savedSearch", &splunk.SavedSearchesArgs{
-// 			Acl: &splunk.SavedSearchesAclArgs{
+// 			Acl: &SavedSearchesAclArgs{
 // 				App:     pulumi.String("launcher"),
 // 				Owner:   pulumi.String("admin"),
 // 				Sharing: pulumi.String("app"),
@@ -1524,7 +1524,7 @@ type SavedSearchesArrayInput interface {
 type SavedSearchesArray []SavedSearchesInput
 
 func (SavedSearchesArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*SavedSearches)(nil))
+	return reflect.TypeOf((*[]*SavedSearches)(nil)).Elem()
 }
 
 func (i SavedSearchesArray) ToSavedSearchesArrayOutput() SavedSearchesArrayOutput {
@@ -1549,7 +1549,7 @@ type SavedSearchesMapInput interface {
 type SavedSearchesMap map[string]SavedSearchesInput
 
 func (SavedSearchesMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*SavedSearches)(nil))
+	return reflect.TypeOf((*map[string]*SavedSearches)(nil)).Elem()
 }
 
 func (i SavedSearchesMap) ToSavedSearchesMapOutput() SavedSearchesMapOutput {
@@ -1560,9 +1560,7 @@ func (i SavedSearchesMap) ToSavedSearchesMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesMapOutput)
 }
 
-type SavedSearchesOutput struct {
-	*pulumi.OutputState
-}
+type SavedSearchesOutput struct{ *pulumi.OutputState }
 
 func (SavedSearchesOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*SavedSearches)(nil))
@@ -1581,14 +1579,12 @@ func (o SavedSearchesOutput) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
 }
 
 func (o SavedSearchesOutput) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
-	return o.ApplyT(func(v SavedSearches) *SavedSearches {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SavedSearches) *SavedSearches {
 		return &v
 	}).(SavedSearchesPtrOutput)
 }
 
-type SavedSearchesPtrOutput struct {
-	*pulumi.OutputState
-}
+type SavedSearchesPtrOutput struct{ *pulumi.OutputState }
 
 func (SavedSearchesPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**SavedSearches)(nil))
@@ -1600,6 +1596,16 @@ func (o SavedSearchesPtrOutput) ToSavedSearchesPtrOutput() SavedSearchesPtrOutpu
 
 func (o SavedSearchesPtrOutput) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
 	return o
+}
+
+func (o SavedSearchesPtrOutput) Elem() SavedSearchesOutput {
+	return o.ApplyT(func(v *SavedSearches) SavedSearches {
+		if v != nil {
+			return *v
+		}
+		var ret SavedSearches
+		return ret
+	}).(SavedSearchesOutput)
 }
 
 type SavedSearchesArrayOutput struct{ *pulumi.OutputState }
@@ -1643,6 +1649,10 @@ func (o SavedSearchesMapOutput) MapIndex(k pulumi.StringInput) SavedSearchesOutp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesInput)(nil)).Elem(), &SavedSearches{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesPtrInput)(nil)).Elem(), &SavedSearches{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesArrayInput)(nil)).Elem(), SavedSearchesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesMapInput)(nil)).Elem(), SavedSearchesMap{})
 	pulumi.RegisterOutputType(SavedSearchesOutput{})
 	pulumi.RegisterOutputType(SavedSearchesPtrOutput{})
 	pulumi.RegisterOutputType(SavedSearchesArrayOutput{})

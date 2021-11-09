@@ -277,7 +277,7 @@ type OutputsTcpServerArrayInput interface {
 type OutputsTcpServerArray []OutputsTcpServerInput
 
 func (OutputsTcpServerArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*OutputsTcpServer)(nil))
+	return reflect.TypeOf((*[]*OutputsTcpServer)(nil)).Elem()
 }
 
 func (i OutputsTcpServerArray) ToOutputsTcpServerArrayOutput() OutputsTcpServerArrayOutput {
@@ -302,7 +302,7 @@ type OutputsTcpServerMapInput interface {
 type OutputsTcpServerMap map[string]OutputsTcpServerInput
 
 func (OutputsTcpServerMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*OutputsTcpServer)(nil))
+	return reflect.TypeOf((*map[string]*OutputsTcpServer)(nil)).Elem()
 }
 
 func (i OutputsTcpServerMap) ToOutputsTcpServerMapOutput() OutputsTcpServerMapOutput {
@@ -313,9 +313,7 @@ func (i OutputsTcpServerMap) ToOutputsTcpServerMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerMapOutput)
 }
 
-type OutputsTcpServerOutput struct {
-	*pulumi.OutputState
-}
+type OutputsTcpServerOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpServerOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*OutputsTcpServer)(nil))
@@ -334,14 +332,12 @@ func (o OutputsTcpServerOutput) ToOutputsTcpServerPtrOutput() OutputsTcpServerPt
 }
 
 func (o OutputsTcpServerOutput) ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput {
-	return o.ApplyT(func(v OutputsTcpServer) *OutputsTcpServer {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpServer) *OutputsTcpServer {
 		return &v
 	}).(OutputsTcpServerPtrOutput)
 }
 
-type OutputsTcpServerPtrOutput struct {
-	*pulumi.OutputState
-}
+type OutputsTcpServerPtrOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpServerPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**OutputsTcpServer)(nil))
@@ -353,6 +349,16 @@ func (o OutputsTcpServerPtrOutput) ToOutputsTcpServerPtrOutput() OutputsTcpServe
 
 func (o OutputsTcpServerPtrOutput) ToOutputsTcpServerPtrOutputWithContext(ctx context.Context) OutputsTcpServerPtrOutput {
 	return o
+}
+
+func (o OutputsTcpServerPtrOutput) Elem() OutputsTcpServerOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) OutputsTcpServer {
+		if v != nil {
+			return *v
+		}
+		var ret OutputsTcpServer
+		return ret
+	}).(OutputsTcpServerOutput)
 }
 
 type OutputsTcpServerArrayOutput struct{ *pulumi.OutputState }
@@ -396,6 +402,10 @@ func (o OutputsTcpServerMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpServ
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerInput)(nil)).Elem(), &OutputsTcpServer{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerPtrInput)(nil)).Elem(), &OutputsTcpServer{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerArrayInput)(nil)).Elem(), OutputsTcpServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerMapInput)(nil)).Elem(), OutputsTcpServerMap{})
 	pulumi.RegisterOutputType(OutputsTcpServerOutput{})
 	pulumi.RegisterOutputType(OutputsTcpServerPtrOutput{})
 	pulumi.RegisterOutputType(OutputsTcpServerArrayOutput{})

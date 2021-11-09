@@ -185,7 +185,7 @@ type ConfigsConfArrayInput interface {
 type ConfigsConfArray []ConfigsConfInput
 
 func (ConfigsConfArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*ConfigsConf)(nil))
+	return reflect.TypeOf((*[]*ConfigsConf)(nil)).Elem()
 }
 
 func (i ConfigsConfArray) ToConfigsConfArrayOutput() ConfigsConfArrayOutput {
@@ -210,7 +210,7 @@ type ConfigsConfMapInput interface {
 type ConfigsConfMap map[string]ConfigsConfInput
 
 func (ConfigsConfMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*ConfigsConf)(nil))
+	return reflect.TypeOf((*map[string]*ConfigsConf)(nil)).Elem()
 }
 
 func (i ConfigsConfMap) ToConfigsConfMapOutput() ConfigsConfMapOutput {
@@ -221,9 +221,7 @@ func (i ConfigsConfMap) ToConfigsConfMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfMapOutput)
 }
 
-type ConfigsConfOutput struct {
-	*pulumi.OutputState
-}
+type ConfigsConfOutput struct{ *pulumi.OutputState }
 
 func (ConfigsConfOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*ConfigsConf)(nil))
@@ -242,14 +240,12 @@ func (o ConfigsConfOutput) ToConfigsConfPtrOutput() ConfigsConfPtrOutput {
 }
 
 func (o ConfigsConfOutput) ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput {
-	return o.ApplyT(func(v ConfigsConf) *ConfigsConf {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigsConf) *ConfigsConf {
 		return &v
 	}).(ConfigsConfPtrOutput)
 }
 
-type ConfigsConfPtrOutput struct {
-	*pulumi.OutputState
-}
+type ConfigsConfPtrOutput struct{ *pulumi.OutputState }
 
 func (ConfigsConfPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**ConfigsConf)(nil))
@@ -261,6 +257,16 @@ func (o ConfigsConfPtrOutput) ToConfigsConfPtrOutput() ConfigsConfPtrOutput {
 
 func (o ConfigsConfPtrOutput) ToConfigsConfPtrOutputWithContext(ctx context.Context) ConfigsConfPtrOutput {
 	return o
+}
+
+func (o ConfigsConfPtrOutput) Elem() ConfigsConfOutput {
+	return o.ApplyT(func(v *ConfigsConf) ConfigsConf {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigsConf
+		return ret
+	}).(ConfigsConfOutput)
 }
 
 type ConfigsConfArrayOutput struct{ *pulumi.OutputState }
@@ -304,6 +310,10 @@ func (o ConfigsConfMapOutput) MapIndex(k pulumi.StringInput) ConfigsConfOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfInput)(nil)).Elem(), &ConfigsConf{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfPtrInput)(nil)).Elem(), &ConfigsConf{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfArrayInput)(nil)).Elem(), ConfigsConfArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfMapInput)(nil)).Elem(), ConfigsConfMap{})
 	pulumi.RegisterOutputType(ConfigsConfOutput{})
 	pulumi.RegisterOutputType(ConfigsConfPtrOutput{})
 	pulumi.RegisterOutputType(ConfigsConfArrayOutput{})

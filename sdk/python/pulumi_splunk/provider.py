@@ -202,3 +202,36 @@ class Provider(pulumi.ProviderResource):
             __props__,
             opts)
 
+    @property
+    @pulumi.getter(name="authToken")
+    def auth_token(self) -> pulumi.Output[Optional[str]]:
+        """
+        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
+        the Splunk platform
+        """
+        return pulumi.get(self, "auth_token")
+
+    @property
+    @pulumi.getter
+    def password(self) -> pulumi.Output[Optional[str]]:
+        """
+        Splunk instance password
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def url(self) -> pulumi.Output[str]:
+        """
+        Splunk instance URL
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter
+    def username(self) -> pulumi.Output[Optional[str]]:
+        """
+        Splunk instance admin username
+        """
+        return pulumi.get(self, "username")
+

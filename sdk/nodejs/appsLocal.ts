@@ -170,66 +170,66 @@ export interface AppsLocalState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.AppsLocalAcl>;
+    acl?: pulumi.Input<inputs.AppsLocalAcl>;
     /**
      * Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
      */
-    readonly auth?: pulumi.Input<string>;
+    auth?: pulumi.Input<string>;
     /**
      * For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
      */
-    readonly author?: pulumi.Input<string>;
+    author?: pulumi.Input<string>;
     /**
      * Custom setup complete indication:
      * <br>true = Custom app setup complete.
      * <br>false = Custom app setup not complete.
      */
-    readonly configured?: pulumi.Input<boolean>;
+    configured?: pulumi.Input<boolean>;
     /**
      * Short app description also displayed below the app title in Splunk Web Launcher.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
      */
-    readonly explicitAppname?: pulumi.Input<string>;
+    explicitAppname?: pulumi.Input<string>;
     /**
      * Indicates whether to use the name value as the app source location.
      * <br>true indicates that name is a path to a file to install.
      * <br>false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      */
-    readonly filename?: pulumi.Input<boolean>;
+    filename?: pulumi.Input<boolean>;
     /**
      * App name displayed in Splunk Web, from five to eighty characters excluding the prefix "Splunk for".
      */
-    readonly label?: pulumi.Input<string>;
+    label?: pulumi.Input<string>;
     /**
      * Literal app name or path for the file to install, depending on the value of filename.
      * <br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      * <br>filename = true indicates that name is the URL or path to the local .tar, .tgz or .spl file. If name is the Splunkbase URL, set auth or session to authenticate the request.
      * The app folder name cannot include spaces or special characters.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
      */
-    readonly session?: pulumi.Input<string>;
+    session?: pulumi.Input<string>;
     /**
      * File-based update indication:
      * <br>true specifies that filename should be used to update an existing app. If not specified, update defaults to
      * <br>false, which indicates that filename should not be used to update an existing app.
      */
-    readonly update?: pulumi.Input<boolean>;
+    update?: pulumi.Input<boolean>;
     /**
      * App version.
      */
-    readonly version?: pulumi.Input<string>;
+    version?: pulumi.Input<string>;
     /**
      * Indicates whether the app is visible and navigable from Splunk Web.
      * <br>true = App is visible and navigable.
      * <br>false = App is not visible or navigable.
      */
-    readonly visible?: pulumi.Input<boolean>;
+    visible?: pulumi.Input<boolean>;
 }
 
 /**
@@ -239,64 +239,64 @@ export interface AppsLocalArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.AppsLocalAcl>;
+    acl?: pulumi.Input<inputs.AppsLocalAcl>;
     /**
      * Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
      */
-    readonly auth?: pulumi.Input<string>;
+    auth?: pulumi.Input<string>;
     /**
      * For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
      */
-    readonly author?: pulumi.Input<string>;
+    author?: pulumi.Input<string>;
     /**
      * Custom setup complete indication:
      * <br>true = Custom app setup complete.
      * <br>false = Custom app setup not complete.
      */
-    readonly configured?: pulumi.Input<boolean>;
+    configured?: pulumi.Input<boolean>;
     /**
      * Short app description also displayed below the app title in Splunk Web Launcher.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
      */
-    readonly explicitAppname?: pulumi.Input<string>;
+    explicitAppname?: pulumi.Input<string>;
     /**
      * Indicates whether to use the name value as the app source location.
      * <br>true indicates that name is a path to a file to install.
      * <br>false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      */
-    readonly filename?: pulumi.Input<boolean>;
+    filename?: pulumi.Input<boolean>;
     /**
      * App name displayed in Splunk Web, from five to eighty characters excluding the prefix "Splunk for".
      */
-    readonly label?: pulumi.Input<string>;
+    label?: pulumi.Input<string>;
     /**
      * Literal app name or path for the file to install, depending on the value of filename.
      * <br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      * <br>filename = true indicates that name is the URL or path to the local .tar, .tgz or .spl file. If name is the Splunkbase URL, set auth or session to authenticate the request.
      * The app folder name cannot include spaces or special characters.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
      */
-    readonly session?: pulumi.Input<string>;
+    session?: pulumi.Input<string>;
     /**
      * File-based update indication:
      * <br>true specifies that filename should be used to update an existing app. If not specified, update defaults to
      * <br>false, which indicates that filename should not be used to update an existing app.
      */
-    readonly update?: pulumi.Input<boolean>;
+    update?: pulumi.Input<boolean>;
     /**
      * App version.
      */
-    readonly version?: pulumi.Input<string>;
+    version?: pulumi.Input<string>;
     /**
      * Indicates whether the app is visible and navigable from Splunk Web.
      * <br>true = App is visible and navigable.
      * <br>false = App is not visible or navigable.
      */
-    readonly visible?: pulumi.Input<boolean>;
+    visible?: pulumi.Input<boolean>;
 }

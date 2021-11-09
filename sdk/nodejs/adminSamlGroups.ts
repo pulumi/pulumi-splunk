@@ -102,11 +102,11 @@ export interface AdminSamlGroupsState {
     /**
      * The name of the external group.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * List of internal roles assigned to the group.
      */
-    readonly roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -116,9 +116,9 @@ export interface AdminSamlGroupsArgs {
     /**
      * The name of the external group.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * List of internal roles assigned to the group.
      */
-    readonly roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[]>;
 }

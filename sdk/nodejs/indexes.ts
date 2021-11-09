@@ -364,11 +364,11 @@ export interface IndexesState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.IndexesAcl>;
+    acl?: pulumi.Input<inputs.IndexesAcl>;
     /**
      * Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
      */
-    readonly blockSignSize?: pulumi.Input<number>;
+    blockSignSize?: pulumi.Input<number>;
     /**
      * Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
      * <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.
@@ -378,11 +378,11 @@ export interface IndexesState {
      * more than 8GB RAM = 268435456 (256MB) tsidx<br>
      * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
      */
-    readonly bucketRebuildMemoryHint?: pulumi.Input<string>;
+    bucketRebuildMemoryHint?: pulumi.Input<string>;
     /**
      * An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
      */
-    readonly coldPath?: pulumi.Input<string>;
+    coldPath?: pulumi.Input<string>;
     /**
      * Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
      * <br>
@@ -393,174 +393,174 @@ export interface IndexesState {
      * To thaw, gunzip the zipped files and move the bucket into the thawed directory<br>
      * If both coldToFrozenDir and coldToFrozenScript are specified, coldToFrozenDir takes precedence
      */
-    readonly coldToFrozenDir?: pulumi.Input<string>;
+    coldToFrozenDir?: pulumi.Input<string>;
     /**
      * Path to the archiving script.
      * <br>If your script requires a program to run it (for example, python), specify the program followed by the path. The script must be in $SPLUNK_HOME/bin or one of its subdirectories.
      * <br>Splunk software ships with an example archiving script in $SPLUNK_HOME/bin called coldToFrozenExample.py. DO NOT use this example script directly. It uses a default path, and if modified in place any changes are overwritten on upgrade.
      * <br>It is best to copy the example script to a new file in bin and modify it for your system. Most importantly, change the default archive path to an existing directory that fits your needs.
      */
-    readonly coldToFrozenScript?: pulumi.Input<string>;
+    coldToFrozenScript?: pulumi.Input<string>;
     /**
      * This parameter is ignored. The splunkd process always compresses raw data.
      */
-    readonly compressRawdata?: pulumi.Input<boolean>;
+    compressRawdata?: pulumi.Input<boolean>;
     /**
      * Valid values: (event | metric). Specifies the type of index.
      */
-    readonly datatype?: pulumi.Input<string>;
+    datatype?: pulumi.Input<string>;
     /**
      * Enables asynchronous "online fsck" bucket repair, which runs concurrently with Splunk software.
      * When enabled, you do not have to wait until buckets are repaired to start the Splunk platform. However, you might observe a slight performance degratation.
      */
-    readonly enableOnlineBucketRepair?: pulumi.Input<boolean>;
+    enableOnlineBucketRepair?: pulumi.Input<boolean>;
     /**
      * Number of seconds after which indexed data rolls to frozen.
      * Defaults to 188697600 (6 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      */
-    readonly frozenTimePeriodInSecs?: pulumi.Input<number>;
+    frozenTimePeriodInSecs?: pulumi.Input<number>;
     /**
      * An absolute path that contains the hot and warm buckets for the index.
      * Required. Splunk software does not start if an index lacks a valid homePath.
      * <br>Caution: The path must be readable and writable.
      */
-    readonly homePath?: pulumi.Input<string>;
+    homePath?: pulumi.Input<string>;
     /**
      * Valid values are: Integer[m|s|h|d].
      * <br>If a warm or cold bucket is older than the specified age, do not create or rebuild its bloomfilter. Specify 0 to never rebuild bloomfilters.
      */
-    readonly maxBloomBackfillBucketAge?: pulumi.Input<string>;
+    maxBloomBackfillBucketAge?: pulumi.Input<string>;
     /**
      * The number of concurrent optimize processes that can run against a hot bucket.
      * This number should be increased if instructed by Splunk Support. Typically the default value should suffice.
      */
-    readonly maxConcurrentOptimizes?: pulumi.Input<number>;
+    maxConcurrentOptimizes?: pulumi.Input<number>;
     /**
      * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "autoHighVolume" causes Splunk software to autotune this parameter (recommended).
      * Use "autoHighVolume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
      */
-    readonly maxDataSize?: pulumi.Input<string>;
+    maxDataSize?: pulumi.Input<string>;
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
      */
-    readonly maxHotBuckets?: pulumi.Input<number>;
+    maxHotBuckets?: pulumi.Input<number>;
     /**
      * Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
      */
-    readonly maxHotIdleSecs?: pulumi.Input<number>;
+    maxHotIdleSecs?: pulumi.Input<number>;
     /**
      * Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
      */
-    readonly maxHotSpanSecs?: pulumi.Input<number>;
+    maxHotSpanSecs?: pulumi.Input<number>;
     /**
      * The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
      */
-    readonly maxMemMb?: pulumi.Input<number>;
+    maxMemMb?: pulumi.Input<number>;
     /**
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored. If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies. Highest legal value is 2147483647. To disable this parameter, set to 0.
      */
-    readonly maxMetaEntries?: pulumi.Input<number>;
+    maxMetaEntries?: pulumi.Input<number>;
     /**
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored.
      * If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies.
      * Highest legal value is 2147483647. To disable this parameter, set to 0.
      */
-    readonly maxTimeUnreplicatedNoAcks?: pulumi.Input<number>;
+    maxTimeUnreplicatedNoAcks?: pulumi.Input<number>;
     /**
      * Upper limit, in seconds, on how long events can sit unacknowledged in a raw slice. Applies only if you have enabled acks on forwarders and have replication enabled (with clustering).
      * Note: This is an advanced parameter. Make sure you understand the settings on all forwarders before changing this. This number should not exceed ack timeout configured on any forwarder, and should actually be set to at most half of the minimum value of that timeout. You can find this setting in outputs.conf readTimeout setting under the tcpout stanza.
      * To disable, set to 0, but this is NOT recommended. Highest legal value is 2147483647.
      */
-    readonly maxTimeUnreplicatedWithAcks?: pulumi.Input<number>;
+    maxTimeUnreplicatedWithAcks?: pulumi.Input<number>;
     /**
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      */
-    readonly maxTotalDataSizeMb?: pulumi.Input<number>;
+    maxTotalDataSizeMb?: pulumi.Input<number>;
     /**
      * The maximum number of warm buckets. If this number is exceeded, the warm bucket/s with the lowest value for their latest times is moved to cold.
      */
-    readonly maxWarmDbCount?: pulumi.Input<number>;
+    maxWarmDbCount?: pulumi.Input<number>;
     /**
      * Specify an integer (or "disable") for this parameter.
      * This parameter sets how frequently splunkd forces a filesystem sync while compressing journal slices.
      * During this period, uncompressed slices are left on disk even after they are compressed. Then splunkd forces a filesystem sync of the compressed journal and removes the accumulated uncompressed files.
      * If 0 is specified, splunkd forces a filesystem sync after every slice completes compressing. Specifying "disable" disables syncing entirely: uncompressed slices are removed as soon as compression is complete.
      */
-    readonly minRawFileSyncSecs?: pulumi.Input<string>;
+    minRawFileSyncSecs?: pulumi.Input<string>;
     /**
      * Minimum size of the queue that stores events in memory before committing them to a tsidx file.
      */
-    readonly minStreamGroupQueueSize?: pulumi.Input<number>;
+    minStreamGroupQueueSize?: pulumi.Input<number>;
     /**
      * The name of the index to create.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Related to serviceMetaPeriod. If set, it enables metadata sync every <integer> seconds, but only for records where the sync can be done efficiently in-place, without requiring a full re-write of the metadata file. Records that require full re-write are be sync'ed at serviceMetaPeriod.
      * partialServiceMetaPeriod specifies, in seconds, how frequently it should sync. Zero means that this feature is turned off and serviceMetaPeriod is the only time when metadata sync happens.
      * If the value of partialServiceMetaPeriod is greater than serviceMetaPeriod, this setting has no effect.
      * By default it is turned off (zero).
      */
-    readonly partialServiceMetaPeriod?: pulumi.Input<number>;
+    partialServiceMetaPeriod?: pulumi.Input<number>;
     /**
      * Specifies, in seconds, how often the indexer checks the status of the child OS processes it launched to see if it can launch new processes for queued requests. Defaults to 15.
      * If set to 0, the indexer checks child process status every second.
      * Highest legal value is 4294967295.
      */
-    readonly processTrackerServiceInterval?: pulumi.Input<number>;
+    processTrackerServiceInterval?: pulumi.Input<number>;
     /**
      * Events with timestamp of quarantineFutureSecs newer than "now" are dropped into quarantine bucket. Defaults to 2592000 (30 days).
      * This is a mechanism to prevent main hot buckets from being polluted with fringe events.
      */
-    readonly quarantineFutureSecs?: pulumi.Input<number>;
+    quarantineFutureSecs?: pulumi.Input<number>;
     /**
      * Events with timestamp of quarantinePastSecs older than "now" are dropped into quarantine bucket. Defaults to 77760000 (900 days). This is a mechanism to prevent the main hot buckets from being polluted with fringe events.
      */
-    readonly quarantinePastSecs?: pulumi.Input<number>;
+    quarantinePastSecs?: pulumi.Input<number>;
     /**
      * Target uncompressed size in bytes for individual raw slice in the rawdata journal of the index. Defaults to 131072 (128KB). 0 is not a valid value. If 0 is specified, rawChunkSizeBytes is set to the default value.
      */
-    readonly rawChunkSizeBytes?: pulumi.Input<number>;
+    rawChunkSizeBytes?: pulumi.Input<number>;
     /**
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
      */
-    readonly repFactor?: pulumi.Input<string>;
+    repFactor?: pulumi.Input<string>;
     /**
      * How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
      */
-    readonly rotatePeriodInSecs?: pulumi.Input<number>;
+    rotatePeriodInSecs?: pulumi.Input<number>;
     /**
      * Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
      * You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
      */
-    readonly serviceMetaPeriod?: pulumi.Input<number>;
+    serviceMetaPeriod?: pulumi.Input<number>;
     /**
      * When true, a sync operation is called before file descriptor is closed on metadata file updates. This functionality improves integrity of metadata files, especially in regards to operating system crashes/machine failures.
      */
-    readonly syncMeta?: pulumi.Input<boolean>;
+    syncMeta?: pulumi.Input<boolean>;
     /**
      * An absolute path that contains the thawed (resurrected) databases for the index.
      * Cannot be defined in terms of a volume definition.
      * Required. Splunk software does not start if an index lacks a valid thawedPath.
      */
-    readonly thawedPath?: pulumi.Input<string>;
+    thawedPath?: pulumi.Input<string>;
     /**
      * Defines how frequently Splunk software checks for index throttling condition, in seconds. Defaults to 15 (seconds).
      */
-    readonly throttleCheckPeriod?: pulumi.Input<number>;
+    throttleCheckPeriod?: pulumi.Input<number>;
     /**
      * Location to store datamodel acceleration TSIDX data for this index. Restart splunkd after changing this parameter.
      * If specified, it must be defined in terms of a volume definition.
      */
-    readonly tstatsHomePath?: pulumi.Input<string>;
+    tstatsHomePath?: pulumi.Input<string>;
     /**
      * Path to a script to run when moving data from warm to cold.
      * This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
      */
-    readonly warmToColdScript?: pulumi.Input<string>;
+    warmToColdScript?: pulumi.Input<string>;
 }
 
 /**
@@ -570,11 +570,11 @@ export interface IndexesArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.IndexesAcl>;
+    acl?: pulumi.Input<inputs.IndexesAcl>;
     /**
      * Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
      */
-    readonly blockSignSize?: pulumi.Input<number>;
+    blockSignSize?: pulumi.Input<number>;
     /**
      * Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
      * <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.
@@ -584,11 +584,11 @@ export interface IndexesArgs {
      * more than 8GB RAM = 268435456 (256MB) tsidx<br>
      * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
      */
-    readonly bucketRebuildMemoryHint?: pulumi.Input<string>;
+    bucketRebuildMemoryHint?: pulumi.Input<string>;
     /**
      * An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
      */
-    readonly coldPath?: pulumi.Input<string>;
+    coldPath?: pulumi.Input<string>;
     /**
      * Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
      * <br>
@@ -599,172 +599,172 @@ export interface IndexesArgs {
      * To thaw, gunzip the zipped files and move the bucket into the thawed directory<br>
      * If both coldToFrozenDir and coldToFrozenScript are specified, coldToFrozenDir takes precedence
      */
-    readonly coldToFrozenDir?: pulumi.Input<string>;
+    coldToFrozenDir?: pulumi.Input<string>;
     /**
      * Path to the archiving script.
      * <br>If your script requires a program to run it (for example, python), specify the program followed by the path. The script must be in $SPLUNK_HOME/bin or one of its subdirectories.
      * <br>Splunk software ships with an example archiving script in $SPLUNK_HOME/bin called coldToFrozenExample.py. DO NOT use this example script directly. It uses a default path, and if modified in place any changes are overwritten on upgrade.
      * <br>It is best to copy the example script to a new file in bin and modify it for your system. Most importantly, change the default archive path to an existing directory that fits your needs.
      */
-    readonly coldToFrozenScript?: pulumi.Input<string>;
+    coldToFrozenScript?: pulumi.Input<string>;
     /**
      * This parameter is ignored. The splunkd process always compresses raw data.
      */
-    readonly compressRawdata?: pulumi.Input<boolean>;
+    compressRawdata?: pulumi.Input<boolean>;
     /**
      * Valid values: (event | metric). Specifies the type of index.
      */
-    readonly datatype?: pulumi.Input<string>;
+    datatype?: pulumi.Input<string>;
     /**
      * Enables asynchronous "online fsck" bucket repair, which runs concurrently with Splunk software.
      * When enabled, you do not have to wait until buckets are repaired to start the Splunk platform. However, you might observe a slight performance degratation.
      */
-    readonly enableOnlineBucketRepair?: pulumi.Input<boolean>;
+    enableOnlineBucketRepair?: pulumi.Input<boolean>;
     /**
      * Number of seconds after which indexed data rolls to frozen.
      * Defaults to 188697600 (6 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      */
-    readonly frozenTimePeriodInSecs?: pulumi.Input<number>;
+    frozenTimePeriodInSecs?: pulumi.Input<number>;
     /**
      * An absolute path that contains the hot and warm buckets for the index.
      * Required. Splunk software does not start if an index lacks a valid homePath.
      * <br>Caution: The path must be readable and writable.
      */
-    readonly homePath?: pulumi.Input<string>;
+    homePath?: pulumi.Input<string>;
     /**
      * Valid values are: Integer[m|s|h|d].
      * <br>If a warm or cold bucket is older than the specified age, do not create or rebuild its bloomfilter. Specify 0 to never rebuild bloomfilters.
      */
-    readonly maxBloomBackfillBucketAge?: pulumi.Input<string>;
+    maxBloomBackfillBucketAge?: pulumi.Input<string>;
     /**
      * The number of concurrent optimize processes that can run against a hot bucket.
      * This number should be increased if instructed by Splunk Support. Typically the default value should suffice.
      */
-    readonly maxConcurrentOptimizes?: pulumi.Input<number>;
+    maxConcurrentOptimizes?: pulumi.Input<number>;
     /**
      * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "autoHighVolume" causes Splunk software to autotune this parameter (recommended).
      * Use "autoHighVolume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
      */
-    readonly maxDataSize?: pulumi.Input<string>;
+    maxDataSize?: pulumi.Input<string>;
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
      */
-    readonly maxHotBuckets?: pulumi.Input<number>;
+    maxHotBuckets?: pulumi.Input<number>;
     /**
      * Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
      */
-    readonly maxHotIdleSecs?: pulumi.Input<number>;
+    maxHotIdleSecs?: pulumi.Input<number>;
     /**
      * Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
      */
-    readonly maxHotSpanSecs?: pulumi.Input<number>;
+    maxHotSpanSecs?: pulumi.Input<number>;
     /**
      * The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
      */
-    readonly maxMemMb?: pulumi.Input<number>;
+    maxMemMb?: pulumi.Input<number>;
     /**
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored. If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies. Highest legal value is 2147483647. To disable this parameter, set to 0.
      */
-    readonly maxMetaEntries?: pulumi.Input<number>;
+    maxMetaEntries?: pulumi.Input<number>;
     /**
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored.
      * If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies.
      * Highest legal value is 2147483647. To disable this parameter, set to 0.
      */
-    readonly maxTimeUnreplicatedNoAcks?: pulumi.Input<number>;
+    maxTimeUnreplicatedNoAcks?: pulumi.Input<number>;
     /**
      * Upper limit, in seconds, on how long events can sit unacknowledged in a raw slice. Applies only if you have enabled acks on forwarders and have replication enabled (with clustering).
      * Note: This is an advanced parameter. Make sure you understand the settings on all forwarders before changing this. This number should not exceed ack timeout configured on any forwarder, and should actually be set to at most half of the minimum value of that timeout. You can find this setting in outputs.conf readTimeout setting under the tcpout stanza.
      * To disable, set to 0, but this is NOT recommended. Highest legal value is 2147483647.
      */
-    readonly maxTimeUnreplicatedWithAcks?: pulumi.Input<number>;
+    maxTimeUnreplicatedWithAcks?: pulumi.Input<number>;
     /**
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      */
-    readonly maxTotalDataSizeMb?: pulumi.Input<number>;
+    maxTotalDataSizeMb?: pulumi.Input<number>;
     /**
      * The maximum number of warm buckets. If this number is exceeded, the warm bucket/s with the lowest value for their latest times is moved to cold.
      */
-    readonly maxWarmDbCount?: pulumi.Input<number>;
+    maxWarmDbCount?: pulumi.Input<number>;
     /**
      * Specify an integer (or "disable") for this parameter.
      * This parameter sets how frequently splunkd forces a filesystem sync while compressing journal slices.
      * During this period, uncompressed slices are left on disk even after they are compressed. Then splunkd forces a filesystem sync of the compressed journal and removes the accumulated uncompressed files.
      * If 0 is specified, splunkd forces a filesystem sync after every slice completes compressing. Specifying "disable" disables syncing entirely: uncompressed slices are removed as soon as compression is complete.
      */
-    readonly minRawFileSyncSecs?: pulumi.Input<string>;
+    minRawFileSyncSecs?: pulumi.Input<string>;
     /**
      * Minimum size of the queue that stores events in memory before committing them to a tsidx file.
      */
-    readonly minStreamGroupQueueSize?: pulumi.Input<number>;
+    minStreamGroupQueueSize?: pulumi.Input<number>;
     /**
      * The name of the index to create.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Related to serviceMetaPeriod. If set, it enables metadata sync every <integer> seconds, but only for records where the sync can be done efficiently in-place, without requiring a full re-write of the metadata file. Records that require full re-write are be sync'ed at serviceMetaPeriod.
      * partialServiceMetaPeriod specifies, in seconds, how frequently it should sync. Zero means that this feature is turned off and serviceMetaPeriod is the only time when metadata sync happens.
      * If the value of partialServiceMetaPeriod is greater than serviceMetaPeriod, this setting has no effect.
      * By default it is turned off (zero).
      */
-    readonly partialServiceMetaPeriod?: pulumi.Input<number>;
+    partialServiceMetaPeriod?: pulumi.Input<number>;
     /**
      * Specifies, in seconds, how often the indexer checks the status of the child OS processes it launched to see if it can launch new processes for queued requests. Defaults to 15.
      * If set to 0, the indexer checks child process status every second.
      * Highest legal value is 4294967295.
      */
-    readonly processTrackerServiceInterval?: pulumi.Input<number>;
+    processTrackerServiceInterval?: pulumi.Input<number>;
     /**
      * Events with timestamp of quarantineFutureSecs newer than "now" are dropped into quarantine bucket. Defaults to 2592000 (30 days).
      * This is a mechanism to prevent main hot buckets from being polluted with fringe events.
      */
-    readonly quarantineFutureSecs?: pulumi.Input<number>;
+    quarantineFutureSecs?: pulumi.Input<number>;
     /**
      * Events with timestamp of quarantinePastSecs older than "now" are dropped into quarantine bucket. Defaults to 77760000 (900 days). This is a mechanism to prevent the main hot buckets from being polluted with fringe events.
      */
-    readonly quarantinePastSecs?: pulumi.Input<number>;
+    quarantinePastSecs?: pulumi.Input<number>;
     /**
      * Target uncompressed size in bytes for individual raw slice in the rawdata journal of the index. Defaults to 131072 (128KB). 0 is not a valid value. If 0 is specified, rawChunkSizeBytes is set to the default value.
      */
-    readonly rawChunkSizeBytes?: pulumi.Input<number>;
+    rawChunkSizeBytes?: pulumi.Input<number>;
     /**
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
      */
-    readonly repFactor?: pulumi.Input<string>;
+    repFactor?: pulumi.Input<string>;
     /**
      * How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
      */
-    readonly rotatePeriodInSecs?: pulumi.Input<number>;
+    rotatePeriodInSecs?: pulumi.Input<number>;
     /**
      * Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
      * You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
      */
-    readonly serviceMetaPeriod?: pulumi.Input<number>;
+    serviceMetaPeriod?: pulumi.Input<number>;
     /**
      * When true, a sync operation is called before file descriptor is closed on metadata file updates. This functionality improves integrity of metadata files, especially in regards to operating system crashes/machine failures.
      */
-    readonly syncMeta?: pulumi.Input<boolean>;
+    syncMeta?: pulumi.Input<boolean>;
     /**
      * An absolute path that contains the thawed (resurrected) databases for the index.
      * Cannot be defined in terms of a volume definition.
      * Required. Splunk software does not start if an index lacks a valid thawedPath.
      */
-    readonly thawedPath?: pulumi.Input<string>;
+    thawedPath?: pulumi.Input<string>;
     /**
      * Defines how frequently Splunk software checks for index throttling condition, in seconds. Defaults to 15 (seconds).
      */
-    readonly throttleCheckPeriod?: pulumi.Input<number>;
+    throttleCheckPeriod?: pulumi.Input<number>;
     /**
      * Location to store datamodel acceleration TSIDX data for this index. Restart splunkd after changing this parameter.
      * If specified, it must be defined in terms of a volume definition.
      */
-    readonly tstatsHomePath?: pulumi.Input<string>;
+    tstatsHomePath?: pulumi.Input<string>;
     /**
      * Path to a script to run when moving data from warm to cold.
      * This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
      */
-    readonly warmToColdScript?: pulumi.Input<string>;
+    warmToColdScript?: pulumi.Input<string>;
 }

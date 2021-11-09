@@ -247,7 +247,7 @@ type AuthenticationUsersArrayInput interface {
 type AuthenticationUsersArray []AuthenticationUsersInput
 
 func (AuthenticationUsersArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AuthenticationUsers)(nil))
+	return reflect.TypeOf((*[]*AuthenticationUsers)(nil)).Elem()
 }
 
 func (i AuthenticationUsersArray) ToAuthenticationUsersArrayOutput() AuthenticationUsersArrayOutput {
@@ -272,7 +272,7 @@ type AuthenticationUsersMapInput interface {
 type AuthenticationUsersMap map[string]AuthenticationUsersInput
 
 func (AuthenticationUsersMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AuthenticationUsers)(nil))
+	return reflect.TypeOf((*map[string]*AuthenticationUsers)(nil)).Elem()
 }
 
 func (i AuthenticationUsersMap) ToAuthenticationUsersMapOutput() AuthenticationUsersMapOutput {
@@ -283,9 +283,7 @@ func (i AuthenticationUsersMap) ToAuthenticationUsersMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersMapOutput)
 }
 
-type AuthenticationUsersOutput struct {
-	*pulumi.OutputState
-}
+type AuthenticationUsersOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationUsersOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AuthenticationUsers)(nil))
@@ -304,14 +302,12 @@ func (o AuthenticationUsersOutput) ToAuthenticationUsersPtrOutput() Authenticati
 }
 
 func (o AuthenticationUsersOutput) ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput {
-	return o.ApplyT(func(v AuthenticationUsers) *AuthenticationUsers {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AuthenticationUsers) *AuthenticationUsers {
 		return &v
 	}).(AuthenticationUsersPtrOutput)
 }
 
-type AuthenticationUsersPtrOutput struct {
-	*pulumi.OutputState
-}
+type AuthenticationUsersPtrOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationUsersPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AuthenticationUsers)(nil))
@@ -323,6 +319,16 @@ func (o AuthenticationUsersPtrOutput) ToAuthenticationUsersPtrOutput() Authentic
 
 func (o AuthenticationUsersPtrOutput) ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput {
 	return o
+}
+
+func (o AuthenticationUsersPtrOutput) Elem() AuthenticationUsersOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) AuthenticationUsers {
+		if v != nil {
+			return *v
+		}
+		var ret AuthenticationUsers
+		return ret
+	}).(AuthenticationUsersOutput)
 }
 
 type AuthenticationUsersArrayOutput struct{ *pulumi.OutputState }
@@ -366,6 +372,10 @@ func (o AuthenticationUsersMapOutput) MapIndex(k pulumi.StringInput) Authenticat
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersInput)(nil)).Elem(), &AuthenticationUsers{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersPtrInput)(nil)).Elem(), &AuthenticationUsers{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersArrayInput)(nil)).Elem(), AuthenticationUsersArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersMapInput)(nil)).Elem(), AuthenticationUsersMap{})
 	pulumi.RegisterOutputType(AuthenticationUsersOutput{})
 	pulumi.RegisterOutputType(AuthenticationUsersPtrOutput{})
 	pulumi.RegisterOutputType(AuthenticationUsersArrayOutput{})

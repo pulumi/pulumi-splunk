@@ -136,39 +136,39 @@ export interface AuthenticationUsersState {
     /**
      * User default app. Overrides the default app inherited from the user roles.
      */
-    readonly defaultApp?: pulumi.Input<string>;
+    defaultApp?: pulumi.Input<string>;
     /**
      * User email address.
      */
-    readonly email?: pulumi.Input<string>;
+    email?: pulumi.Input<string>;
     /**
      * Force user to change password indication
      */
-    readonly forceChangePass?: pulumi.Input<boolean>;
+    forceChangePass?: pulumi.Input<boolean>;
     /**
      * Unique user login name.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * User login password.
      */
-    readonly password?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * Full user name.
      */
-    readonly realname?: pulumi.Input<string>;
+    realname?: pulumi.Input<string>;
     /**
      * Restart background search job that has not completed when Splunk restarts indication.
      */
-    readonly restartBackgroundJobs?: pulumi.Input<boolean>;
+    restartBackgroundJobs?: pulumi.Input<boolean>;
     /**
      * Role to assign to this user. At least one existing role is required.
      */
-    readonly roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * User timezone.
      */
-    readonly tz?: pulumi.Input<string>;
+    tz?: pulumi.Input<string>;
 }
 
 /**
@@ -178,37 +178,37 @@ export interface AuthenticationUsersArgs {
     /**
      * User default app. Overrides the default app inherited from the user roles.
      */
-    readonly defaultApp?: pulumi.Input<string>;
+    defaultApp?: pulumi.Input<string>;
     /**
      * User email address.
      */
-    readonly email?: pulumi.Input<string>;
+    email?: pulumi.Input<string>;
     /**
      * Force user to change password indication
      */
-    readonly forceChangePass?: pulumi.Input<boolean>;
+    forceChangePass?: pulumi.Input<boolean>;
     /**
      * Unique user login name.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * User login password.
      */
-    readonly password?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * Full user name.
      */
-    readonly realname?: pulumi.Input<string>;
+    realname?: pulumi.Input<string>;
     /**
      * Restart background search job that has not completed when Splunk restarts indication.
      */
-    readonly restartBackgroundJobs?: pulumi.Input<boolean>;
+    restartBackgroundJobs?: pulumi.Input<boolean>;
     /**
      * Role to assign to this user. At least one existing role is required.
      */
-    readonly roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * User timezone.
      */
-    readonly tz?: pulumi.Input<string>;
+    tz?: pulumi.Input<string>;
 }

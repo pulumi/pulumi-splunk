@@ -203,7 +203,7 @@ type InputsTcpSslArrayInput interface {
 type InputsTcpSslArray []InputsTcpSslInput
 
 func (InputsTcpSslArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*InputsTcpSsl)(nil))
+	return reflect.TypeOf((*[]*InputsTcpSsl)(nil)).Elem()
 }
 
 func (i InputsTcpSslArray) ToInputsTcpSslArrayOutput() InputsTcpSslArrayOutput {
@@ -228,7 +228,7 @@ type InputsTcpSslMapInput interface {
 type InputsTcpSslMap map[string]InputsTcpSslInput
 
 func (InputsTcpSslMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*InputsTcpSsl)(nil))
+	return reflect.TypeOf((*map[string]*InputsTcpSsl)(nil)).Elem()
 }
 
 func (i InputsTcpSslMap) ToInputsTcpSslMapOutput() InputsTcpSslMapOutput {
@@ -239,9 +239,7 @@ func (i InputsTcpSslMap) ToInputsTcpSslMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslMapOutput)
 }
 
-type InputsTcpSslOutput struct {
-	*pulumi.OutputState
-}
+type InputsTcpSslOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSslOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*InputsTcpSsl)(nil))
@@ -260,14 +258,12 @@ func (o InputsTcpSslOutput) ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput {
 }
 
 func (o InputsTcpSslOutput) ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput {
-	return o.ApplyT(func(v InputsTcpSsl) *InputsTcpSsl {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpSsl) *InputsTcpSsl {
 		return &v
 	}).(InputsTcpSslPtrOutput)
 }
 
-type InputsTcpSslPtrOutput struct {
-	*pulumi.OutputState
-}
+type InputsTcpSslPtrOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSslPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**InputsTcpSsl)(nil))
@@ -279,6 +275,16 @@ func (o InputsTcpSslPtrOutput) ToInputsTcpSslPtrOutput() InputsTcpSslPtrOutput {
 
 func (o InputsTcpSslPtrOutput) ToInputsTcpSslPtrOutputWithContext(ctx context.Context) InputsTcpSslPtrOutput {
 	return o
+}
+
+func (o InputsTcpSslPtrOutput) Elem() InputsTcpSslOutput {
+	return o.ApplyT(func(v *InputsTcpSsl) InputsTcpSsl {
+		if v != nil {
+			return *v
+		}
+		var ret InputsTcpSsl
+		return ret
+	}).(InputsTcpSslOutput)
 }
 
 type InputsTcpSslArrayOutput struct{ *pulumi.OutputState }
@@ -322,6 +328,10 @@ func (o InputsTcpSslMapOutput) MapIndex(k pulumi.StringInput) InputsTcpSslOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSslInput)(nil)).Elem(), &InputsTcpSsl{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSslPtrInput)(nil)).Elem(), &InputsTcpSsl{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSslArrayInput)(nil)).Elem(), InputsTcpSslArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSslMapInput)(nil)).Elem(), InputsTcpSslMap{})
 	pulumi.RegisterOutputType(InputsTcpSslOutput{})
 	pulumi.RegisterOutputType(InputsTcpSslPtrOutput{})
 	pulumi.RegisterOutputType(InputsTcpSslArrayOutput{})

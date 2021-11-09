@@ -305,7 +305,7 @@ type InputsUdpArrayInput interface {
 type InputsUdpArray []InputsUdpInput
 
 func (InputsUdpArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*InputsUdp)(nil))
+	return reflect.TypeOf((*[]*InputsUdp)(nil)).Elem()
 }
 
 func (i InputsUdpArray) ToInputsUdpArrayOutput() InputsUdpArrayOutput {
@@ -330,7 +330,7 @@ type InputsUdpMapInput interface {
 type InputsUdpMap map[string]InputsUdpInput
 
 func (InputsUdpMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*InputsUdp)(nil))
+	return reflect.TypeOf((*map[string]*InputsUdp)(nil)).Elem()
 }
 
 func (i InputsUdpMap) ToInputsUdpMapOutput() InputsUdpMapOutput {
@@ -341,9 +341,7 @@ func (i InputsUdpMap) ToInputsUdpMapOutputWithContext(ctx context.Context) Input
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpMapOutput)
 }
 
-type InputsUdpOutput struct {
-	*pulumi.OutputState
-}
+type InputsUdpOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*InputsUdp)(nil))
@@ -362,14 +360,12 @@ func (o InputsUdpOutput) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
 }
 
 func (o InputsUdpOutput) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
-	return o.ApplyT(func(v InputsUdp) *InputsUdp {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsUdp) *InputsUdp {
 		return &v
 	}).(InputsUdpPtrOutput)
 }
 
-type InputsUdpPtrOutput struct {
-	*pulumi.OutputState
-}
+type InputsUdpPtrOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**InputsUdp)(nil))
@@ -381,6 +377,16 @@ func (o InputsUdpPtrOutput) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
 
 func (o InputsUdpPtrOutput) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
 	return o
+}
+
+func (o InputsUdpPtrOutput) Elem() InputsUdpOutput {
+	return o.ApplyT(func(v *InputsUdp) InputsUdp {
+		if v != nil {
+			return *v
+		}
+		var ret InputsUdp
+		return ret
+	}).(InputsUdpOutput)
 }
 
 type InputsUdpArrayOutput struct{ *pulumi.OutputState }
@@ -424,6 +430,10 @@ func (o InputsUdpMapOutput) MapIndex(k pulumi.StringInput) InputsUdpOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpInput)(nil)).Elem(), &InputsUdp{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpPtrInput)(nil)).Elem(), &InputsUdp{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpArrayInput)(nil)).Elem(), InputsUdpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpMapInput)(nil)).Elem(), InputsUdpMap{})
 	pulumi.RegisterOutputType(InputsUdpOutput{})
 	pulumi.RegisterOutputType(InputsUdpPtrOutput{})
 	pulumi.RegisterOutputType(InputsUdpArrayOutput{})

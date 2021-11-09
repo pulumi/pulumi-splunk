@@ -301,7 +301,7 @@ type AuthorizationRolesArrayInput interface {
 type AuthorizationRolesArray []AuthorizationRolesInput
 
 func (AuthorizationRolesArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*AuthorizationRoles)(nil))
+	return reflect.TypeOf((*[]*AuthorizationRoles)(nil)).Elem()
 }
 
 func (i AuthorizationRolesArray) ToAuthorizationRolesArrayOutput() AuthorizationRolesArrayOutput {
@@ -326,7 +326,7 @@ type AuthorizationRolesMapInput interface {
 type AuthorizationRolesMap map[string]AuthorizationRolesInput
 
 func (AuthorizationRolesMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*AuthorizationRoles)(nil))
+	return reflect.TypeOf((*map[string]*AuthorizationRoles)(nil)).Elem()
 }
 
 func (i AuthorizationRolesMap) ToAuthorizationRolesMapOutput() AuthorizationRolesMapOutput {
@@ -337,9 +337,7 @@ func (i AuthorizationRolesMap) ToAuthorizationRolesMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesMapOutput)
 }
 
-type AuthorizationRolesOutput struct {
-	*pulumi.OutputState
-}
+type AuthorizationRolesOutput struct{ *pulumi.OutputState }
 
 func (AuthorizationRolesOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*AuthorizationRoles)(nil))
@@ -358,14 +356,12 @@ func (o AuthorizationRolesOutput) ToAuthorizationRolesPtrOutput() AuthorizationR
 }
 
 func (o AuthorizationRolesOutput) ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput {
-	return o.ApplyT(func(v AuthorizationRoles) *AuthorizationRoles {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AuthorizationRoles) *AuthorizationRoles {
 		return &v
 	}).(AuthorizationRolesPtrOutput)
 }
 
-type AuthorizationRolesPtrOutput struct {
-	*pulumi.OutputState
-}
+type AuthorizationRolesPtrOutput struct{ *pulumi.OutputState }
 
 func (AuthorizationRolesPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**AuthorizationRoles)(nil))
@@ -377,6 +373,16 @@ func (o AuthorizationRolesPtrOutput) ToAuthorizationRolesPtrOutput() Authorizati
 
 func (o AuthorizationRolesPtrOutput) ToAuthorizationRolesPtrOutputWithContext(ctx context.Context) AuthorizationRolesPtrOutput {
 	return o
+}
+
+func (o AuthorizationRolesPtrOutput) Elem() AuthorizationRolesOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) AuthorizationRoles {
+		if v != nil {
+			return *v
+		}
+		var ret AuthorizationRoles
+		return ret
+	}).(AuthorizationRolesOutput)
 }
 
 type AuthorizationRolesArrayOutput struct{ *pulumi.OutputState }
@@ -420,6 +426,10 @@ func (o AuthorizationRolesMapOutput) MapIndex(k pulumi.StringInput) Authorizatio
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationRolesInput)(nil)).Elem(), &AuthorizationRoles{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationRolesPtrInput)(nil)).Elem(), &AuthorizationRoles{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationRolesArrayInput)(nil)).Elem(), AuthorizationRolesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationRolesMapInput)(nil)).Elem(), AuthorizationRolesMap{})
 	pulumi.RegisterOutputType(AuthorizationRolesOutput{})
 	pulumi.RegisterOutputType(AuthorizationRolesPtrOutput{})
 	pulumi.RegisterOutputType(AuthorizationRolesArrayOutput{})
