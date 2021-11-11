@@ -19,6 +19,32 @@ namespace Pulumi.Splunk
     public partial class Provider : Pulumi.ProviderResource
     {
         /// <summary>
+        /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
+        /// the Splunk platform
+        /// </summary>
+        [Output("authToken")]
+        public Output<string?> AuthToken { get; private set; } = null!;
+
+        /// <summary>
+        /// Splunk instance password
+        /// </summary>
+        [Output("password")]
+        public Output<string?> Password { get; private set; } = null!;
+
+        /// <summary>
+        /// Splunk instance URL
+        /// </summary>
+        [Output("url")]
+        public Output<string> Url { get; private set; } = null!;
+
+        /// <summary>
+        /// Splunk instance admin username
+        /// </summary>
+        [Output("username")]
+        public Output<string?> Username { get; private set; } = null!;
+
+
+        /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
         /// </summary>
         ///

@@ -921,551 +921,551 @@ export interface SavedSearchesState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    acl?: pulumi.Input<inputs.SavedSearchesAcl>;
     /**
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    readonly actionEmail?: pulumi.Input<boolean>;
+    actionEmail?: pulumi.Input<boolean>;
     /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      */
-    readonly actionEmailAuthPassword?: pulumi.Input<string>;
+    actionEmailAuthPassword?: pulumi.Input<string>;
     /**
      * The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
      */
-    readonly actionEmailAuthUsername?: pulumi.Input<string>;
+    actionEmailAuthUsername?: pulumi.Input<string>;
     /**
      * BCC email address to use if action.email is enabled.
      */
-    readonly actionEmailBcc?: pulumi.Input<string>;
+    actionEmailBcc?: pulumi.Input<string>;
     /**
      * CC email address to use if action.email is enabled.
      */
-    readonly actionEmailCc?: pulumi.Input<string>;
+    actionEmailCc?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionEmailCommand?: pulumi.Input<string>;
+    actionEmailCommand?: pulumi.Input<string>;
     /**
      * Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
      */
-    readonly actionEmailFormat?: pulumi.Input<string>;
+    actionEmailFormat?: pulumi.Input<string>;
     /**
      * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
      */
-    readonly actionEmailFrom?: pulumi.Input<string>;
+    actionEmailFrom?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
      */
-    readonly actionEmailHostname?: pulumi.Input<string>;
+    actionEmailHostname?: pulumi.Input<string>;
     /**
      * Specify whether to include a link to the results. Defaults to 0.
      */
-    readonly actionEmailIncludeResultsLink?: pulumi.Input<number>;
+    actionEmailIncludeResultsLink?: pulumi.Input<number>;
     /**
      * Specify whether to include the search that caused an email to be sent. Defaults to 0.
      */
-    readonly actionEmailIncludeSearch?: pulumi.Input<number>;
+    actionEmailIncludeSearch?: pulumi.Input<number>;
     /**
      * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
      */
-    readonly actionEmailIncludeTrigger?: pulumi.Input<number>;
+    actionEmailIncludeTrigger?: pulumi.Input<number>;
     /**
      * Specify whether to show the time that the alert was fired. Defaults to 0.
      */
-    readonly actionEmailIncludeTriggerTime?: pulumi.Input<number>;
+    actionEmailIncludeTriggerTime?: pulumi.Input<number>;
     /**
      * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
      */
-    readonly actionEmailIncludeViewLink?: pulumi.Input<number>;
+    actionEmailIncludeViewLink?: pulumi.Input<number>;
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      */
-    readonly actionEmailInline?: pulumi.Input<boolean>;
+    actionEmailInline?: pulumi.Input<boolean>;
     /**
      * Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
      */
-    readonly actionEmailMailserver?: pulumi.Input<string>;
+    actionEmailMailserver?: pulumi.Input<string>;
     /**
      * Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
      */
-    readonly actionEmailMaxResults?: pulumi.Input<number>;
+    actionEmailMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
      */
-    readonly actionEmailMaxTime?: pulumi.Input<string>;
+    actionEmailMaxTime?: pulumi.Input<string>;
     /**
      * Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
      */
-    readonly actionEmailMessageAlert?: pulumi.Input<string>;
+    actionEmailMessageAlert?: pulumi.Input<string>;
     /**
      * Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
      */
-    readonly actionEmailMessageReport?: pulumi.Input<string>;
+    actionEmailMessageReport?: pulumi.Input<string>;
     /**
      * The name of the view to deliver if sendpdf is enabled
      */
-    readonly actionEmailPdfview?: pulumi.Input<string>;
+    actionEmailPdfview?: pulumi.Input<string>;
     /**
      * Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
      */
-    readonly actionEmailPreprocessResults?: pulumi.Input<string>;
+    actionEmailPreprocessResults?: pulumi.Input<string>;
     /**
      * Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
      */
-    readonly actionEmailReportCidFontList?: pulumi.Input<string>;
+    actionEmailReportCidFontList?: pulumi.Input<string>;
     /**
      * Indicates whether to include the Splunk logo with the report.
      */
-    readonly actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean>;
+    actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean>;
     /**
      * Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
      */
-    readonly actionEmailReportPaperOrientation?: pulumi.Input<string>;
+    actionEmailReportPaperOrientation?: pulumi.Input<string>;
     /**
      * Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
      */
-    readonly actionEmailReportPaperSize?: pulumi.Input<string>;
+    actionEmailReportPaperSize?: pulumi.Input<string>;
     /**
      * No Supported
      */
-    readonly actionEmailReportServerEnabled?: pulumi.Input<boolean>;
+    actionEmailReportServerEnabled?: pulumi.Input<boolean>;
     /**
      * Not supported.For a default locally installed report server, the URL is http://localhost:8091/
      */
-    readonly actionEmailReportServerUrl?: pulumi.Input<string>;
+    actionEmailReportServerUrl?: pulumi.Input<string>;
     /**
      * Specify whether to send results as a CSV file. Defaults to 0.
      */
-    readonly actionEmailSendCsv?: pulumi.Input<number>;
+    actionEmailSendCsv?: pulumi.Input<number>;
     /**
      * Indicates whether to create and send the results as a PDF. Defaults to false.
      */
-    readonly actionEmailSendPdf?: pulumi.Input<boolean>;
+    actionEmailSendPdf?: pulumi.Input<boolean>;
     /**
      * Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
      */
-    readonly actionEmailSendResults?: pulumi.Input<boolean>;
+    actionEmailSendResults?: pulumi.Input<boolean>;
     /**
      * Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
      */
-    readonly actionEmailSubject?: pulumi.Input<string>;
+    actionEmailSubject?: pulumi.Input<string>;
     /**
      * A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
      */
-    readonly actionEmailTo?: pulumi.Input<string>;
+    actionEmailTo?: pulumi.Input<string>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionEmailTrackAlert?: pulumi.Input<boolean>;
+    actionEmailTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
      */
-    readonly actionEmailTtl?: pulumi.Input<string>;
+    actionEmailTtl?: pulumi.Input<string>;
     /**
      * Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
      */
-    readonly actionEmailUseSsl?: pulumi.Input<boolean>;
+    actionEmailUseSsl?: pulumi.Input<boolean>;
     /**
      * Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
      */
-    readonly actionEmailUseTls?: pulumi.Input<boolean>;
+    actionEmailUseTls?: pulumi.Input<boolean>;
     /**
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
-    readonly actionEmailWidthSortColumns?: pulumi.Input<boolean>;
+    actionEmailWidthSortColumns?: pulumi.Input<boolean>;
     /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    readonly actionPopulateLookup?: pulumi.Input<boolean>;
+    actionPopulateLookup?: pulumi.Input<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */
-    readonly actionPopulateLookupCommand?: pulumi.Input<string>;
+    actionPopulateLookupCommand?: pulumi.Input<string>;
     /**
      * Lookup name of path of the lookup to populate
      */
-    readonly actionPopulateLookupDest?: pulumi.Input<string>;
+    actionPopulateLookupDest?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionPopulateLookupHostname?: pulumi.Input<string>;
+    actionPopulateLookupHostname?: pulumi.Input<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionPopulateLookupMaxResults?: pulumi.Input<number>;
+    actionPopulateLookupMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
      */
-    readonly actionPopulateLookupMaxTime?: pulumi.Input<number>;
+    actionPopulateLookupMaxTime?: pulumi.Input<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionPopulateLookupTrackAlert?: pulumi.Input<boolean>;
+    actionPopulateLookupTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
      */
-    readonly actionPopulateLookupTtl?: pulumi.Input<string>;
+    actionPopulateLookupTtl?: pulumi.Input<string>;
     /**
      * The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    readonly actionRss?: pulumi.Input<boolean>;
+    actionRss?: pulumi.Input<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionRssCommand?: pulumi.Input<string>;
+    actionRssCommand?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionRssHostname?: pulumi.Input<string>;
+    actionRssHostname?: pulumi.Input<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionRssMaxResults?: pulumi.Input<number>;
+    actionRssMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    readonly actionRssMaxTime?: pulumi.Input<number>;
+    actionRssMaxTime?: pulumi.Input<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionRssTrackAlert?: pulumi.Input<boolean>;
+    actionRssTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    readonly actionRssTtl?: pulumi.Input<string>;
+    actionRssTtl?: pulumi.Input<string>;
     /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    readonly actionScript?: pulumi.Input<boolean>;
+    actionScript?: pulumi.Input<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionScriptCommand?: pulumi.Input<string>;
+    actionScriptCommand?: pulumi.Input<string>;
     /**
      * File name of the script to call. Required if script action is enabled
      */
-    readonly actionScriptFilename?: pulumi.Input<string>;
+    actionScriptFilename?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionScriptHostname?: pulumi.Input<string>;
+    actionScriptHostname?: pulumi.Input<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionScriptMaxResults?: pulumi.Input<number>;
+    actionScriptMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    readonly actionScriptMaxTime?: pulumi.Input<number>;
+    actionScriptMaxTime?: pulumi.Input<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionScriptTrackAlert?: pulumi.Input<boolean>;
+    actionScriptTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    readonly actionScriptTtl?: pulumi.Input<string>;
+    actionScriptTtl?: pulumi.Input<string>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
-    readonly actionSlackParamAttachment?: pulumi.Input<string>;
+    actionSlackParamAttachment?: pulumi.Input<string>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    readonly actionSlackParamChannel?: pulumi.Input<string>;
+    actionSlackParamChannel?: pulumi.Input<string>;
     /**
      * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
      */
-    readonly actionSlackParamFields?: pulumi.Input<string>;
+    actionSlackParamFields?: pulumi.Input<string>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
      */
-    readonly actionSlackParamMessage?: pulumi.Input<string>;
+    actionSlackParamMessage?: pulumi.Input<string>;
     /**
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
-    readonly actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
+    actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
     /**
      * The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    readonly actionSummaryIndex?: pulumi.Input<boolean>;
+    actionSummaryIndex?: pulumi.Input<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionSummaryIndexCommand?: pulumi.Input<string>;
+    actionSummaryIndexCommand?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionSummaryIndexHostname?: pulumi.Input<string>;
+    actionSummaryIndexHostname?: pulumi.Input<string>;
     /**
      * Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
      */
-    readonly actionSummaryIndexInline?: pulumi.Input<boolean>;
+    actionSummaryIndexInline?: pulumi.Input<boolean>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionSummaryIndexMaxResults?: pulumi.Input<number>;
+    actionSummaryIndexMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    readonly actionSummaryIndexMaxTime?: pulumi.Input<number>;
+    actionSummaryIndexMaxTime?: pulumi.Input<number>;
     /**
      * Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
      */
-    readonly actionSummaryIndexName?: pulumi.Input<string>;
+    actionSummaryIndexName?: pulumi.Input<string>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionSummaryIndexTrackAlert?: pulumi.Input<boolean>;
+    actionSummaryIndexTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    readonly actionSummaryIndexTtl?: pulumi.Input<string>;
+    actionSummaryIndexTtl?: pulumi.Input<string>;
     /**
      * A comma-separated list of actions to enable. For example: rss,email
      */
-    readonly actions?: pulumi.Input<string>;
+    actions?: pulumi.Input<string>;
     /**
      * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      */
-    readonly alertComparator?: pulumi.Input<string>;
+    alertComparator?: pulumi.Input<string>;
     /**
      * Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
      */
-    readonly alertCondition?: pulumi.Input<string>;
+    alertCondition?: pulumi.Input<string>;
     /**
      * Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
      */
-    readonly alertDigestMode?: pulumi.Input<boolean>;
+    alertDigestMode?: pulumi.Input<boolean>;
     /**
      * Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    readonly alertExpires?: pulumi.Input<string>;
+    alertExpires?: pulumi.Input<string>;
     /**
      * Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
      */
-    readonly alertSeverity?: pulumi.Input<number>;
+    alertSeverity?: pulumi.Input<number>;
     /**
      * Indicates whether alert suppression is enabled for this scheduled search.
      */
-    readonly alertSuppress?: pulumi.Input<boolean>;
+    alertSuppress?: pulumi.Input<boolean>;
     /**
      * Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
      */
-    readonly alertSuppressFields?: pulumi.Input<string>;
+    alertSuppressFields?: pulumi.Input<string>;
     /**
      * Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    readonly alertSuppressPeriod?: pulumi.Input<string>;
+    alertSuppressPeriod?: pulumi.Input<string>;
     /**
      * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
-    readonly alertThreshold?: pulumi.Input<string>;
+    alertThreshold?: pulumi.Input<string>;
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    readonly alertTrack?: pulumi.Input<boolean>;
+    alertTrack?: pulumi.Input<boolean>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
-    readonly alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string>;
     /**
      * Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
      */
-    readonly allowSkew?: pulumi.Input<string>;
+    allowSkew?: pulumi.Input<string>;
     /**
      * Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
      */
-    readonly autoSummarize?: pulumi.Input<boolean>;
+    autoSummarize?: pulumi.Input<boolean>;
     /**
      * An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
      */
-    readonly autoSummarizeCommand?: pulumi.Input<string>;
+    autoSummarizeCommand?: pulumi.Input<string>;
     /**
      * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      */
-    readonly autoSummarizeCronSchedule?: pulumi.Input<string>;
+    autoSummarizeCronSchedule?: pulumi.Input<string>;
     /**
      * A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly autoSummarizeDispatchEarliestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchEarliestTime?: pulumi.Input<string>;
     /**
      * A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
     /**
      * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    readonly autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
+    autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
     /**
      * Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
      */
-    readonly autoSummarizeDispatchTtl?: pulumi.Input<string>;
+    autoSummarizeDispatchTtl?: pulumi.Input<string>;
     /**
      * The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
      */
-    readonly autoSummarizeMaxDisabledBuckets?: pulumi.Input<number>;
+    autoSummarizeMaxDisabledBuckets?: pulumi.Input<number>;
     /**
      * The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
      */
-    readonly autoSummarizeMaxSummaryRatio?: pulumi.Input<number>;
+    autoSummarizeMaxSummaryRatio?: pulumi.Input<number>;
     /**
      * The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
      */
-    readonly autoSummarizeMaxSummarySize?: pulumi.Input<number>;
+    autoSummarizeMaxSummarySize?: pulumi.Input<number>;
     /**
      * Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
      */
-    readonly autoSummarizeMaxTime?: pulumi.Input<number>;
+    autoSummarizeMaxTime?: pulumi.Input<number>;
     /**
      * Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
      */
-    readonly autoSummarizeSuspendPeriod?: pulumi.Input<string>;
+    autoSummarizeSuspendPeriod?: pulumi.Input<string>;
     /**
      * The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
      */
-    readonly autoSummarizeTimespan?: pulumi.Input<string>;
+    autoSummarizeTimespan?: pulumi.Input<string>;
     /**
      * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      */
-    readonly cronSchedule?: pulumi.Input<string>;
+    cronSchedule?: pulumi.Input<string>;
     /**
      * Human-readable description of this saved search. Defaults to empty string.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
      */
-    readonly disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
     /**
      * The maximum number of timeline buckets. Defaults to 0.
      */
-    readonly dispatchBuckets?: pulumi.Input<number>;
+    dispatchBuckets?: pulumi.Input<number>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchEarliestTime?: pulumi.Input<string>;
+    dispatchEarliestTime?: pulumi.Input<string>;
     /**
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchIndexEarliest?: pulumi.Input<string>;
+    dispatchIndexEarliest?: pulumi.Input<string>;
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchIndexLatest?: pulumi.Input<string>;
+    dispatchIndexLatest?: pulumi.Input<string>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchIndexedRealtime?: pulumi.Input<boolean>;
+    dispatchIndexedRealtime?: pulumi.Input<boolean>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    readonly dispatchIndexedRealtimeMinspan?: pulumi.Input<number>;
+    dispatchIndexedRealtimeMinspan?: pulumi.Input<number>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    readonly dispatchIndexedRealtimeOffset?: pulumi.Input<number>;
+    dispatchIndexedRealtimeOffset?: pulumi.Input<number>;
     /**
      * A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchLatestTime?: pulumi.Input<string>;
+    dispatchLatestTime?: pulumi.Input<string>;
     /**
      * Enables or disables the lookups for this search. Defaults to 1.
      */
-    readonly dispatchLookups?: pulumi.Input<boolean>;
+    dispatchLookups?: pulumi.Input<boolean>;
     /**
      * The maximum number of results before finalizing the search. Defaults to 500000.
      */
-    readonly dispatchMaxCount?: pulumi.Input<number>;
+    dispatchMaxCount?: pulumi.Input<number>;
     /**
      * Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
      */
-    readonly dispatchMaxTime?: pulumi.Input<number>;
+    dispatchMaxTime?: pulumi.Input<number>;
     /**
      * Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
      */
-    readonly dispatchReduceFreq?: pulumi.Input<number>;
+    dispatchReduceFreq?: pulumi.Input<number>;
     /**
      * Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
      */
-    readonly dispatchRtBackfill?: pulumi.Input<boolean>;
+    dispatchRtBackfill?: pulumi.Input<boolean>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      */
-    readonly dispatchRtMaximumSpan?: pulumi.Input<number>;
+    dispatchRtMaximumSpan?: pulumi.Input<number>;
     /**
      * Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
      */
-    readonly dispatchSpawnProcess?: pulumi.Input<boolean>;
+    dispatchSpawnProcess?: pulumi.Input<boolean>;
     /**
      * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    readonly dispatchTimeFormat?: pulumi.Input<string>;
+    dispatchTimeFormat?: pulumi.Input<string>;
     /**
      * Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
      */
-    readonly dispatchTtl?: pulumi.Input<string>;
+    dispatchTtl?: pulumi.Input<string>;
     /**
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
-    readonly displayView?: pulumi.Input<string>;
+    displayView?: pulumi.Input<string>;
     /**
      * Whether this search is to be run on a schedule
      */
-    readonly isScheduled?: pulumi.Input<boolean>;
+    isScheduled?: pulumi.Input<boolean>;
     /**
      * Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
      */
-    readonly isVisible?: pulumi.Input<boolean>;
+    isVisible?: pulumi.Input<boolean>;
     /**
      * The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
      */
-    readonly maxConcurrent?: pulumi.Input<number>;
+    maxConcurrent?: pulumi.Input<number>;
     /**
      * A name for the search.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
      */
-    readonly realtimeSchedule?: pulumi.Input<boolean>;
+    realtimeSchedule?: pulumi.Input<boolean>;
     /**
      * Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
      */
-    readonly requestUiDispatchApp?: pulumi.Input<string>;
+    requestUiDispatchApp?: pulumi.Input<string>;
     /**
      * Specifies a field used by Splunk Web to denote the view this search should be displayed in.
      */
-    readonly requestUiDispatchView?: pulumi.Input<string>;
+    requestUiDispatchView?: pulumi.Input<string>;
     /**
      * Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
      */
-    readonly restartOnSearchpeerAdd?: pulumi.Input<boolean>;
+    restartOnSearchpeerAdd?: pulumi.Input<boolean>;
     /**
      * Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
      */
-    readonly runOnStartup?: pulumi.Input<boolean>;
+    runOnStartup?: pulumi.Input<boolean>;
     /**
      * Raises the scheduling priority of the named search. Defaults to Default
      */
-    readonly schedulePriority?: pulumi.Input<string>;
+    schedulePriority?: pulumi.Input<string>;
     /**
      * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      */
-    readonly scheduleWindow?: pulumi.Input<string>;
+    scheduleWindow?: pulumi.Input<string>;
     /**
      * Required when creating a new search.
      */
-    readonly search?: pulumi.Input<string>;
+    search?: pulumi.Input<string>;
     /**
      * Defines the viewstate id associated with the UI view listed in 'displayview'.
      */
-    readonly vsid?: pulumi.Input<string>;
+    vsid?: pulumi.Input<string>;
     /**
      * Specifies the new workload pool where the existing running search will be placed.`
      */
-    readonly workloadPool?: pulumi.Input<string>;
+    workloadPool?: pulumi.Input<string>;
 }
 
 /**
@@ -1475,529 +1475,529 @@ export interface SavedSearchesArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    acl?: pulumi.Input<inputs.SavedSearchesAcl>;
     /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      */
-    readonly actionEmailAuthPassword?: pulumi.Input<string>;
+    actionEmailAuthPassword?: pulumi.Input<string>;
     /**
      * The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
      */
-    readonly actionEmailAuthUsername?: pulumi.Input<string>;
+    actionEmailAuthUsername?: pulumi.Input<string>;
     /**
      * BCC email address to use if action.email is enabled.
      */
-    readonly actionEmailBcc?: pulumi.Input<string>;
+    actionEmailBcc?: pulumi.Input<string>;
     /**
      * CC email address to use if action.email is enabled.
      */
-    readonly actionEmailCc?: pulumi.Input<string>;
+    actionEmailCc?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionEmailCommand?: pulumi.Input<string>;
+    actionEmailCommand?: pulumi.Input<string>;
     /**
      * Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
      */
-    readonly actionEmailFormat?: pulumi.Input<string>;
+    actionEmailFormat?: pulumi.Input<string>;
     /**
      * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
      */
-    readonly actionEmailFrom?: pulumi.Input<string>;
+    actionEmailFrom?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
      */
-    readonly actionEmailHostname?: pulumi.Input<string>;
+    actionEmailHostname?: pulumi.Input<string>;
     /**
      * Specify whether to include a link to the results. Defaults to 0.
      */
-    readonly actionEmailIncludeResultsLink?: pulumi.Input<number>;
+    actionEmailIncludeResultsLink?: pulumi.Input<number>;
     /**
      * Specify whether to include the search that caused an email to be sent. Defaults to 0.
      */
-    readonly actionEmailIncludeSearch?: pulumi.Input<number>;
+    actionEmailIncludeSearch?: pulumi.Input<number>;
     /**
      * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
      */
-    readonly actionEmailIncludeTrigger?: pulumi.Input<number>;
+    actionEmailIncludeTrigger?: pulumi.Input<number>;
     /**
      * Specify whether to show the time that the alert was fired. Defaults to 0.
      */
-    readonly actionEmailIncludeTriggerTime?: pulumi.Input<number>;
+    actionEmailIncludeTriggerTime?: pulumi.Input<number>;
     /**
      * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
      */
-    readonly actionEmailIncludeViewLink?: pulumi.Input<number>;
+    actionEmailIncludeViewLink?: pulumi.Input<number>;
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      */
-    readonly actionEmailInline?: pulumi.Input<boolean>;
+    actionEmailInline?: pulumi.Input<boolean>;
     /**
      * Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
      */
-    readonly actionEmailMailserver?: pulumi.Input<string>;
+    actionEmailMailserver?: pulumi.Input<string>;
     /**
      * Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
      */
-    readonly actionEmailMaxResults?: pulumi.Input<number>;
+    actionEmailMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
      */
-    readonly actionEmailMaxTime?: pulumi.Input<string>;
+    actionEmailMaxTime?: pulumi.Input<string>;
     /**
      * Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
      */
-    readonly actionEmailMessageAlert?: pulumi.Input<string>;
+    actionEmailMessageAlert?: pulumi.Input<string>;
     /**
      * Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
      */
-    readonly actionEmailMessageReport?: pulumi.Input<string>;
+    actionEmailMessageReport?: pulumi.Input<string>;
     /**
      * The name of the view to deliver if sendpdf is enabled
      */
-    readonly actionEmailPdfview?: pulumi.Input<string>;
+    actionEmailPdfview?: pulumi.Input<string>;
     /**
      * Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
      */
-    readonly actionEmailPreprocessResults?: pulumi.Input<string>;
+    actionEmailPreprocessResults?: pulumi.Input<string>;
     /**
      * Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
      */
-    readonly actionEmailReportCidFontList?: pulumi.Input<string>;
+    actionEmailReportCidFontList?: pulumi.Input<string>;
     /**
      * Indicates whether to include the Splunk logo with the report.
      */
-    readonly actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean>;
+    actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean>;
     /**
      * Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
      */
-    readonly actionEmailReportPaperOrientation?: pulumi.Input<string>;
+    actionEmailReportPaperOrientation?: pulumi.Input<string>;
     /**
      * Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
      */
-    readonly actionEmailReportPaperSize?: pulumi.Input<string>;
+    actionEmailReportPaperSize?: pulumi.Input<string>;
     /**
      * No Supported
      */
-    readonly actionEmailReportServerEnabled?: pulumi.Input<boolean>;
+    actionEmailReportServerEnabled?: pulumi.Input<boolean>;
     /**
      * Not supported.For a default locally installed report server, the URL is http://localhost:8091/
      */
-    readonly actionEmailReportServerUrl?: pulumi.Input<string>;
+    actionEmailReportServerUrl?: pulumi.Input<string>;
     /**
      * Specify whether to send results as a CSV file. Defaults to 0.
      */
-    readonly actionEmailSendCsv?: pulumi.Input<number>;
+    actionEmailSendCsv?: pulumi.Input<number>;
     /**
      * Indicates whether to create and send the results as a PDF. Defaults to false.
      */
-    readonly actionEmailSendPdf?: pulumi.Input<boolean>;
+    actionEmailSendPdf?: pulumi.Input<boolean>;
     /**
      * Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
      */
-    readonly actionEmailSendResults?: pulumi.Input<boolean>;
+    actionEmailSendResults?: pulumi.Input<boolean>;
     /**
      * Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
      */
-    readonly actionEmailSubject?: pulumi.Input<string>;
+    actionEmailSubject?: pulumi.Input<string>;
     /**
      * A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
      */
-    readonly actionEmailTo?: pulumi.Input<string>;
+    actionEmailTo?: pulumi.Input<string>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionEmailTrackAlert?: pulumi.Input<boolean>;
+    actionEmailTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
      */
-    readonly actionEmailTtl?: pulumi.Input<string>;
+    actionEmailTtl?: pulumi.Input<string>;
     /**
      * Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
      */
-    readonly actionEmailUseSsl?: pulumi.Input<boolean>;
+    actionEmailUseSsl?: pulumi.Input<boolean>;
     /**
      * Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
      */
-    readonly actionEmailUseTls?: pulumi.Input<boolean>;
+    actionEmailUseTls?: pulumi.Input<boolean>;
     /**
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
-    readonly actionEmailWidthSortColumns?: pulumi.Input<boolean>;
+    actionEmailWidthSortColumns?: pulumi.Input<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */
-    readonly actionPopulateLookupCommand?: pulumi.Input<string>;
+    actionPopulateLookupCommand?: pulumi.Input<string>;
     /**
      * Lookup name of path of the lookup to populate
      */
-    readonly actionPopulateLookupDest?: pulumi.Input<string>;
+    actionPopulateLookupDest?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionPopulateLookupHostname?: pulumi.Input<string>;
+    actionPopulateLookupHostname?: pulumi.Input<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionPopulateLookupMaxResults?: pulumi.Input<number>;
+    actionPopulateLookupMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
      */
-    readonly actionPopulateLookupMaxTime?: pulumi.Input<number>;
+    actionPopulateLookupMaxTime?: pulumi.Input<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionPopulateLookupTrackAlert?: pulumi.Input<boolean>;
+    actionPopulateLookupTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
      */
-    readonly actionPopulateLookupTtl?: pulumi.Input<string>;
+    actionPopulateLookupTtl?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionRssCommand?: pulumi.Input<string>;
+    actionRssCommand?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionRssHostname?: pulumi.Input<string>;
+    actionRssHostname?: pulumi.Input<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionRssMaxResults?: pulumi.Input<number>;
+    actionRssMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    readonly actionRssMaxTime?: pulumi.Input<number>;
+    actionRssMaxTime?: pulumi.Input<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionRssTrackAlert?: pulumi.Input<boolean>;
+    actionRssTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    readonly actionRssTtl?: pulumi.Input<string>;
+    actionRssTtl?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionScriptCommand?: pulumi.Input<string>;
+    actionScriptCommand?: pulumi.Input<string>;
     /**
      * File name of the script to call. Required if script action is enabled
      */
-    readonly actionScriptFilename?: pulumi.Input<string>;
+    actionScriptFilename?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionScriptHostname?: pulumi.Input<string>;
+    actionScriptHostname?: pulumi.Input<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionScriptMaxResults?: pulumi.Input<number>;
+    actionScriptMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    readonly actionScriptMaxTime?: pulumi.Input<number>;
+    actionScriptMaxTime?: pulumi.Input<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionScriptTrackAlert?: pulumi.Input<boolean>;
+    actionScriptTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    readonly actionScriptTtl?: pulumi.Input<string>;
+    actionScriptTtl?: pulumi.Input<string>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
-    readonly actionSlackParamAttachment?: pulumi.Input<string>;
+    actionSlackParamAttachment?: pulumi.Input<string>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    readonly actionSlackParamChannel?: pulumi.Input<string>;
+    actionSlackParamChannel?: pulumi.Input<string>;
     /**
      * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
      */
-    readonly actionSlackParamFields?: pulumi.Input<string>;
+    actionSlackParamFields?: pulumi.Input<string>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
      */
-    readonly actionSlackParamMessage?: pulumi.Input<string>;
+    actionSlackParamMessage?: pulumi.Input<string>;
     /**
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
-    readonly actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
+    actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    readonly actionSummaryIndexCommand?: pulumi.Input<string>;
+    actionSummaryIndexCommand?: pulumi.Input<string>;
     /**
      * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    readonly actionSummaryIndexHostname?: pulumi.Input<string>;
+    actionSummaryIndexHostname?: pulumi.Input<string>;
     /**
      * Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
      */
-    readonly actionSummaryIndexInline?: pulumi.Input<boolean>;
+    actionSummaryIndexInline?: pulumi.Input<boolean>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    readonly actionSummaryIndexMaxResults?: pulumi.Input<number>;
+    actionSummaryIndexMaxResults?: pulumi.Input<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    readonly actionSummaryIndexMaxTime?: pulumi.Input<number>;
+    actionSummaryIndexMaxTime?: pulumi.Input<number>;
     /**
      * Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
      */
-    readonly actionSummaryIndexName?: pulumi.Input<string>;
+    actionSummaryIndexName?: pulumi.Input<string>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    readonly actionSummaryIndexTrackAlert?: pulumi.Input<boolean>;
+    actionSummaryIndexTrackAlert?: pulumi.Input<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    readonly actionSummaryIndexTtl?: pulumi.Input<string>;
+    actionSummaryIndexTtl?: pulumi.Input<string>;
     /**
      * A comma-separated list of actions to enable. For example: rss,email
      */
-    readonly actions?: pulumi.Input<string>;
+    actions?: pulumi.Input<string>;
     /**
      * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      */
-    readonly alertComparator?: pulumi.Input<string>;
+    alertComparator?: pulumi.Input<string>;
     /**
      * Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
      */
-    readonly alertCondition?: pulumi.Input<string>;
+    alertCondition?: pulumi.Input<string>;
     /**
      * Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
      */
-    readonly alertDigestMode?: pulumi.Input<boolean>;
+    alertDigestMode?: pulumi.Input<boolean>;
     /**
      * Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    readonly alertExpires?: pulumi.Input<string>;
+    alertExpires?: pulumi.Input<string>;
     /**
      * Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
      */
-    readonly alertSeverity?: pulumi.Input<number>;
+    alertSeverity?: pulumi.Input<number>;
     /**
      * Indicates whether alert suppression is enabled for this scheduled search.
      */
-    readonly alertSuppress?: pulumi.Input<boolean>;
+    alertSuppress?: pulumi.Input<boolean>;
     /**
      * Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
      */
-    readonly alertSuppressFields?: pulumi.Input<string>;
+    alertSuppressFields?: pulumi.Input<string>;
     /**
      * Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    readonly alertSuppressPeriod?: pulumi.Input<string>;
+    alertSuppressPeriod?: pulumi.Input<string>;
     /**
      * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
-    readonly alertThreshold?: pulumi.Input<string>;
+    alertThreshold?: pulumi.Input<string>;
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    readonly alertTrack?: pulumi.Input<boolean>;
+    alertTrack?: pulumi.Input<boolean>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
-    readonly alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string>;
     /**
      * Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
      */
-    readonly allowSkew?: pulumi.Input<string>;
+    allowSkew?: pulumi.Input<string>;
     /**
      * Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
      */
-    readonly autoSummarize?: pulumi.Input<boolean>;
+    autoSummarize?: pulumi.Input<boolean>;
     /**
      * An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
      */
-    readonly autoSummarizeCommand?: pulumi.Input<string>;
+    autoSummarizeCommand?: pulumi.Input<string>;
     /**
      * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      */
-    readonly autoSummarizeCronSchedule?: pulumi.Input<string>;
+    autoSummarizeCronSchedule?: pulumi.Input<string>;
     /**
      * A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly autoSummarizeDispatchEarliestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchEarliestTime?: pulumi.Input<string>;
     /**
      * A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
     /**
      * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    readonly autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
+    autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
     /**
      * Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
      */
-    readonly autoSummarizeDispatchTtl?: pulumi.Input<string>;
+    autoSummarizeDispatchTtl?: pulumi.Input<string>;
     /**
      * The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
      */
-    readonly autoSummarizeMaxDisabledBuckets?: pulumi.Input<number>;
+    autoSummarizeMaxDisabledBuckets?: pulumi.Input<number>;
     /**
      * The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
      */
-    readonly autoSummarizeMaxSummaryRatio?: pulumi.Input<number>;
+    autoSummarizeMaxSummaryRatio?: pulumi.Input<number>;
     /**
      * The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
      */
-    readonly autoSummarizeMaxSummarySize?: pulumi.Input<number>;
+    autoSummarizeMaxSummarySize?: pulumi.Input<number>;
     /**
      * Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
      */
-    readonly autoSummarizeMaxTime?: pulumi.Input<number>;
+    autoSummarizeMaxTime?: pulumi.Input<number>;
     /**
      * Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
      */
-    readonly autoSummarizeSuspendPeriod?: pulumi.Input<string>;
+    autoSummarizeSuspendPeriod?: pulumi.Input<string>;
     /**
      * The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
      */
-    readonly autoSummarizeTimespan?: pulumi.Input<string>;
+    autoSummarizeTimespan?: pulumi.Input<string>;
     /**
      * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      */
-    readonly cronSchedule?: pulumi.Input<string>;
+    cronSchedule?: pulumi.Input<string>;
     /**
      * Human-readable description of this saved search. Defaults to empty string.
      */
-    readonly description?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
     /**
      * Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
      */
-    readonly disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
     /**
      * The maximum number of timeline buckets. Defaults to 0.
      */
-    readonly dispatchBuckets?: pulumi.Input<number>;
+    dispatchBuckets?: pulumi.Input<number>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchEarliestTime?: pulumi.Input<string>;
+    dispatchEarliestTime?: pulumi.Input<string>;
     /**
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchIndexEarliest?: pulumi.Input<string>;
+    dispatchIndexEarliest?: pulumi.Input<string>;
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchIndexLatest?: pulumi.Input<string>;
+    dispatchIndexLatest?: pulumi.Input<string>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchIndexedRealtime?: pulumi.Input<boolean>;
+    dispatchIndexedRealtime?: pulumi.Input<boolean>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    readonly dispatchIndexedRealtimeMinspan?: pulumi.Input<number>;
+    dispatchIndexedRealtimeMinspan?: pulumi.Input<number>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    readonly dispatchIndexedRealtimeOffset?: pulumi.Input<number>;
+    dispatchIndexedRealtimeOffset?: pulumi.Input<number>;
     /**
      * A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    readonly dispatchLatestTime?: pulumi.Input<string>;
+    dispatchLatestTime?: pulumi.Input<string>;
     /**
      * Enables or disables the lookups for this search. Defaults to 1.
      */
-    readonly dispatchLookups?: pulumi.Input<boolean>;
+    dispatchLookups?: pulumi.Input<boolean>;
     /**
      * The maximum number of results before finalizing the search. Defaults to 500000.
      */
-    readonly dispatchMaxCount?: pulumi.Input<number>;
+    dispatchMaxCount?: pulumi.Input<number>;
     /**
      * Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
      */
-    readonly dispatchMaxTime?: pulumi.Input<number>;
+    dispatchMaxTime?: pulumi.Input<number>;
     /**
      * Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
      */
-    readonly dispatchReduceFreq?: pulumi.Input<number>;
+    dispatchReduceFreq?: pulumi.Input<number>;
     /**
      * Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
      */
-    readonly dispatchRtBackfill?: pulumi.Input<boolean>;
+    dispatchRtBackfill?: pulumi.Input<boolean>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      */
-    readonly dispatchRtMaximumSpan?: pulumi.Input<number>;
+    dispatchRtMaximumSpan?: pulumi.Input<number>;
     /**
      * Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
      */
-    readonly dispatchSpawnProcess?: pulumi.Input<boolean>;
+    dispatchSpawnProcess?: pulumi.Input<boolean>;
     /**
      * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    readonly dispatchTimeFormat?: pulumi.Input<string>;
+    dispatchTimeFormat?: pulumi.Input<string>;
     /**
      * Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
      */
-    readonly dispatchTtl?: pulumi.Input<string>;
+    dispatchTtl?: pulumi.Input<string>;
     /**
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
-    readonly displayView?: pulumi.Input<string>;
+    displayView?: pulumi.Input<string>;
     /**
      * Whether this search is to be run on a schedule
      */
-    readonly isScheduled?: pulumi.Input<boolean>;
+    isScheduled?: pulumi.Input<boolean>;
     /**
      * Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
      */
-    readonly isVisible?: pulumi.Input<boolean>;
+    isVisible?: pulumi.Input<boolean>;
     /**
      * The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
      */
-    readonly maxConcurrent?: pulumi.Input<number>;
+    maxConcurrent?: pulumi.Input<number>;
     /**
      * A name for the search.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
      */
-    readonly realtimeSchedule?: pulumi.Input<boolean>;
+    realtimeSchedule?: pulumi.Input<boolean>;
     /**
      * Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
      */
-    readonly requestUiDispatchApp?: pulumi.Input<string>;
+    requestUiDispatchApp?: pulumi.Input<string>;
     /**
      * Specifies a field used by Splunk Web to denote the view this search should be displayed in.
      */
-    readonly requestUiDispatchView?: pulumi.Input<string>;
+    requestUiDispatchView?: pulumi.Input<string>;
     /**
      * Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
      */
-    readonly restartOnSearchpeerAdd?: pulumi.Input<boolean>;
+    restartOnSearchpeerAdd?: pulumi.Input<boolean>;
     /**
      * Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
      */
-    readonly runOnStartup?: pulumi.Input<boolean>;
+    runOnStartup?: pulumi.Input<boolean>;
     /**
      * Raises the scheduling priority of the named search. Defaults to Default
      */
-    readonly schedulePriority?: pulumi.Input<string>;
+    schedulePriority?: pulumi.Input<string>;
     /**
      * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      */
-    readonly scheduleWindow?: pulumi.Input<string>;
+    scheduleWindow?: pulumi.Input<string>;
     /**
      * Required when creating a new search.
      */
-    readonly search: pulumi.Input<string>;
+    search: pulumi.Input<string>;
     /**
      * Defines the viewstate id associated with the UI view listed in 'displayview'.
      */
-    readonly vsid?: pulumi.Input<string>;
+    vsid?: pulumi.Input<string>;
     /**
      * Specifies the new workload pool where the existing running search will be placed.`
      */
-    readonly workloadPool?: pulumi.Input<string>;
+    workloadPool?: pulumi.Input<string>;
 }

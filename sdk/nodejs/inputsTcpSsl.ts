@@ -110,23 +110,23 @@ export interface InputsTcpSslState {
     /**
      * Indicates if input is disabled.
      */
-    readonly disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
     /**
      * Server certificate password, if any.
      */
-    readonly password?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * Determines whether a client must authenticate.
      */
-    readonly requireClientCert?: pulumi.Input<boolean>;
+    requireClientCert?: pulumi.Input<boolean>;
     /**
      * Certificate authority list (root file)
      */
-    readonly rootCa?: pulumi.Input<string>;
+    rootCa?: pulumi.Input<string>;
     /**
      * Full path to the server certificate.
      */
-    readonly serverCert?: pulumi.Input<string>;
+    serverCert?: pulumi.Input<string>;
 }
 
 /**
@@ -136,21 +136,21 @@ export interface InputsTcpSslArgs {
     /**
      * Indicates if input is disabled.
      */
-    readonly disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
     /**
      * Server certificate password, if any.
      */
-    readonly password?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * Determines whether a client must authenticate.
      */
-    readonly requireClientCert?: pulumi.Input<boolean>;
+    requireClientCert?: pulumi.Input<boolean>;
     /**
      * Certificate authority list (root file)
      */
-    readonly rootCa?: pulumi.Input<string>;
+    rootCa?: pulumi.Input<string>;
     /**
      * Full path to the server certificate.
      */
-    readonly serverCert?: pulumi.Input<string>;
+    serverCert?: pulumi.Input<string>;
 }

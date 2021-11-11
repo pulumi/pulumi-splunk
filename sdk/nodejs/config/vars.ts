@@ -4,30 +4,73 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-let __config = new pulumi.Config("splunk");
+declare var exports: any;
+const __config = new pulumi.Config("splunk");
 
 /**
  * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
  * the Splunk platform
  */
-export let authToken: string | undefined = __config.get("authToken");
+export declare const authToken: string | undefined;
+Object.defineProperty(exports, "authToken", {
+    get() {
+        return __config.get("authToken");
+    },
+    enumerable: true,
+});
+
 /**
  * insecure skip verification flag
  */
-export let insecureSkipVerify: boolean | undefined = __config.getObject<boolean>("insecureSkipVerify");
+export declare const insecureSkipVerify: boolean | undefined;
+Object.defineProperty(exports, "insecureSkipVerify", {
+    get() {
+        return __config.getObject<boolean>("insecureSkipVerify");
+    },
+    enumerable: true,
+});
+
 /**
  * Splunk instance password
  */
-export let password: string | undefined = __config.get("password");
+export declare const password: string | undefined;
+Object.defineProperty(exports, "password", {
+    get() {
+        return __config.get("password");
+    },
+    enumerable: true,
+});
+
 /**
  * Timeout when making calls to Splunk server. Defaults to 60 seconds
  */
-export let timeout: number | undefined = __config.getObject<number>("timeout");
+export declare const timeout: number | undefined;
+Object.defineProperty(exports, "timeout", {
+    get() {
+        return __config.getObject<number>("timeout");
+    },
+    enumerable: true,
+});
+
 /**
  * Splunk instance URL
  */
-export let url: string | undefined = __config.get("url");
+export declare const url: string | undefined;
+Object.defineProperty(exports, "url", {
+    get() {
+        return __config.get("url");
+    },
+    enumerable: true,
+});
+
 /**
  * Splunk instance admin username
  */
-export let username: string | undefined = __config.get("username");
+export declare const username: string | undefined;
+Object.defineProperty(exports, "username", {
+    get() {
+        return __config.get("username");
+    },
+    enumerable: true,
+});
+

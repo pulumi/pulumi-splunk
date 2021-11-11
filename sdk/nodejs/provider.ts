@@ -25,6 +25,23 @@ export class Provider extends pulumi.ProviderResource {
         return obj['__pulumiType'] === Provider.__pulumiType;
     }
 
+    /**
+     * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
+     * the Splunk platform
+     */
+    public readonly authToken!: pulumi.Output<string | undefined>;
+    /**
+     * Splunk instance password
+     */
+    public readonly password!: pulumi.Output<string | undefined>;
+    /**
+     * Splunk instance URL
+     */
+    public readonly url!: pulumi.Output<string>;
+    /**
+     * Splunk instance admin username
+     */
+    public readonly username!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -62,25 +79,25 @@ export interface ProviderArgs {
      * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
      * the Splunk platform
      */
-    readonly authToken?: pulumi.Input<string>;
+    authToken?: pulumi.Input<string>;
     /**
      * insecure skip verification flag
      */
-    readonly insecureSkipVerify?: pulumi.Input<boolean>;
+    insecureSkipVerify?: pulumi.Input<boolean>;
     /**
      * Splunk instance password
      */
-    readonly password?: pulumi.Input<string>;
+    password?: pulumi.Input<string>;
     /**
      * Timeout when making calls to Splunk server. Defaults to 60 seconds
      */
-    readonly timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number>;
     /**
      * Splunk instance URL
      */
-    readonly url: pulumi.Input<string>;
+    url: pulumi.Input<string>;
     /**
      * Splunk instance admin username
      */
-    readonly username?: pulumi.Input<string>;
+    username?: pulumi.Input<string>;
 }

@@ -149,50 +149,50 @@ export interface OutputsTcpServerState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.OutputsTcpServerAcl>;
+    acl?: pulumi.Input<inputs.OutputsTcpServerAcl>;
     /**
      * If true, disables the group.
      */
-    readonly disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
     /**
      * Valid values: (clone | balance | autobalance)
      * The data distribution method used when two or more servers exist in the same forwarder group.
      */
-    readonly method?: pulumi.Input<string>;
+    method?: pulumi.Input<string>;
     /**
      * <host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The alternate name to match in the remote server's SSL certificate.
      */
-    readonly sslAltNameToCheck?: pulumi.Input<string>;
+    sslAltNameToCheck?: pulumi.Input<string>;
     /**
      * Path to the client certificate. If specified, connection uses SSL.
      */
-    readonly sslCertPath?: pulumi.Input<string>;
+    sslCertPath?: pulumi.Input<string>;
     /**
      * SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
      */
-    readonly sslCipher?: pulumi.Input<string>;
+    sslCipher?: pulumi.Input<string>;
     /**
      * Check the common name of the server's certificate against this name.
      * If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
      */
-    readonly sslCommonNameToCheck?: pulumi.Input<string>;
+    sslCommonNameToCheck?: pulumi.Input<string>;
     /**
      * The password associated with the CAcert.
      * The default Splunk Enterprise CAcert uses the password "password."
      */
-    readonly sslPassword?: pulumi.Input<string>;
+    sslPassword?: pulumi.Input<string>;
     /**
      * The path to the root certificate authority file.
      */
-    readonly sslRootCaPath?: pulumi.Input<string>;
+    sslRootCaPath?: pulumi.Input<string>;
     /**
      * If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
      */
-    readonly sslVerifyServerCert?: pulumi.Input<boolean>;
+    sslVerifyServerCert?: pulumi.Input<boolean>;
 }
 
 /**
@@ -202,48 +202,48 @@ export interface OutputsTcpServerArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.OutputsTcpServerAcl>;
+    acl?: pulumi.Input<inputs.OutputsTcpServerAcl>;
     /**
      * If true, disables the group.
      */
-    readonly disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean>;
     /**
      * Valid values: (clone | balance | autobalance)
      * The data distribution method used when two or more servers exist in the same forwarder group.
      */
-    readonly method?: pulumi.Input<string>;
+    method?: pulumi.Input<string>;
     /**
      * <host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * The alternate name to match in the remote server's SSL certificate.
      */
-    readonly sslAltNameToCheck?: pulumi.Input<string>;
+    sslAltNameToCheck?: pulumi.Input<string>;
     /**
      * Path to the client certificate. If specified, connection uses SSL.
      */
-    readonly sslCertPath?: pulumi.Input<string>;
+    sslCertPath?: pulumi.Input<string>;
     /**
      * SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
      */
-    readonly sslCipher?: pulumi.Input<string>;
+    sslCipher?: pulumi.Input<string>;
     /**
      * Check the common name of the server's certificate against this name.
      * If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
      */
-    readonly sslCommonNameToCheck?: pulumi.Input<string>;
+    sslCommonNameToCheck?: pulumi.Input<string>;
     /**
      * The password associated with the CAcert.
      * The default Splunk Enterprise CAcert uses the password "password."
      */
-    readonly sslPassword?: pulumi.Input<string>;
+    sslPassword?: pulumi.Input<string>;
     /**
      * The path to the root certificate authority file.
      */
-    readonly sslRootCaPath?: pulumi.Input<string>;
+    sslRootCaPath?: pulumi.Input<string>;
     /**
      * If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
      */
-    readonly sslVerifyServerCert?: pulumi.Input<boolean>;
+    sslVerifyServerCert?: pulumi.Input<boolean>;
 }

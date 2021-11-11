@@ -323,7 +323,7 @@ type OutputsTcpGroupArrayInput interface {
 type OutputsTcpGroupArray []OutputsTcpGroupInput
 
 func (OutputsTcpGroupArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*OutputsTcpGroup)(nil))
+	return reflect.TypeOf((*[]*OutputsTcpGroup)(nil)).Elem()
 }
 
 func (i OutputsTcpGroupArray) ToOutputsTcpGroupArrayOutput() OutputsTcpGroupArrayOutput {
@@ -348,7 +348,7 @@ type OutputsTcpGroupMapInput interface {
 type OutputsTcpGroupMap map[string]OutputsTcpGroupInput
 
 func (OutputsTcpGroupMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*OutputsTcpGroup)(nil))
+	return reflect.TypeOf((*map[string]*OutputsTcpGroup)(nil)).Elem()
 }
 
 func (i OutputsTcpGroupMap) ToOutputsTcpGroupMapOutput() OutputsTcpGroupMapOutput {
@@ -359,9 +359,7 @@ func (i OutputsTcpGroupMap) ToOutputsTcpGroupMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupMapOutput)
 }
 
-type OutputsTcpGroupOutput struct {
-	*pulumi.OutputState
-}
+type OutputsTcpGroupOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpGroupOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*OutputsTcpGroup)(nil))
@@ -380,14 +378,12 @@ func (o OutputsTcpGroupOutput) ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPtrOu
 }
 
 func (o OutputsTcpGroupOutput) ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput {
-	return o.ApplyT(func(v OutputsTcpGroup) *OutputsTcpGroup {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpGroup) *OutputsTcpGroup {
 		return &v
 	}).(OutputsTcpGroupPtrOutput)
 }
 
-type OutputsTcpGroupPtrOutput struct {
-	*pulumi.OutputState
-}
+type OutputsTcpGroupPtrOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpGroupPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**OutputsTcpGroup)(nil))
@@ -399,6 +395,16 @@ func (o OutputsTcpGroupPtrOutput) ToOutputsTcpGroupPtrOutput() OutputsTcpGroupPt
 
 func (o OutputsTcpGroupPtrOutput) ToOutputsTcpGroupPtrOutputWithContext(ctx context.Context) OutputsTcpGroupPtrOutput {
 	return o
+}
+
+func (o OutputsTcpGroupPtrOutput) Elem() OutputsTcpGroupOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) OutputsTcpGroup {
+		if v != nil {
+			return *v
+		}
+		var ret OutputsTcpGroup
+		return ret
+	}).(OutputsTcpGroupOutput)
 }
 
 type OutputsTcpGroupArrayOutput struct{ *pulumi.OutputState }
@@ -442,6 +448,10 @@ func (o OutputsTcpGroupMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpGroup
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpGroupInput)(nil)).Elem(), &OutputsTcpGroup{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpGroupPtrInput)(nil)).Elem(), &OutputsTcpGroup{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpGroupArrayInput)(nil)).Elem(), OutputsTcpGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpGroupMapInput)(nil)).Elem(), OutputsTcpGroupMap{})
 	pulumi.RegisterOutputType(OutputsTcpGroupOutput{})
 	pulumi.RegisterOutputType(OutputsTcpGroupPtrOutput{})
 	pulumi.RegisterOutputType(OutputsTcpGroupArrayOutput{})

@@ -241,3 +241,4 @@ export interface ShIndexesManagerAcl {
     sharing: string;
     writes: string[];
 }
+

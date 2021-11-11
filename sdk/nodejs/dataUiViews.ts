@@ -104,30 +104,30 @@ export class DataUiViews extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DataUiViews resources.
  */
 export interface DataUiViewsState {
-    readonly acl?: pulumi.Input<inputs.DataUiViewsAcl>;
+    acl?: pulumi.Input<inputs.DataUiViewsAcl>;
     /**
      * Dashboard XML definition.
      */
-    readonly eaiData?: pulumi.Input<string>;
+    eaiData?: pulumi.Input<string>;
     /**
      * Dashboard name.
      * * `eai:data` - (Required) Dashboard XML definition.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a DataUiViews resource.
  */
 export interface DataUiViewsArgs {
-    readonly acl?: pulumi.Input<inputs.DataUiViewsAcl>;
+    acl?: pulumi.Input<inputs.DataUiViewsAcl>;
     /**
      * Dashboard XML definition.
      */
-    readonly eaiData: pulumi.Input<string>;
+    eaiData: pulumi.Input<string>;
     /**
      * Dashboard name.
      * * `eai:data` - (Required) Dashboard XML definition.
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

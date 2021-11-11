@@ -8,45 +8,52 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
-__all__ = [
-    'auth_token',
-    'insecure_skip_verify',
-    'password',
-    'timeout',
-    'url',
-    'username',
-]
+import types
 
 __config__ = pulumi.Config('splunk')
 
-auth_token = __config__.get('authToken')
-"""
-Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-the Splunk platform
-"""
 
-insecure_skip_verify = __config__.get('insecureSkipVerify')
-"""
-insecure skip verification flag
-"""
+class _ExportableConfig(types.ModuleType):
+    @property
+    def auth_token(self) -> Optional[str]:
+        """
+        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
+        the Splunk platform
+        """
+        return __config__.get('authToken')
 
-password = __config__.get('password')
-"""
-Splunk instance password
-"""
+    @property
+    def insecure_skip_verify(self) -> Optional[bool]:
+        """
+        insecure skip verification flag
+        """
+        return __config__.get_bool('insecureSkipVerify')
 
-timeout = __config__.get('timeout')
-"""
-Timeout when making calls to Splunk server. Defaults to 60 seconds
-"""
+    @property
+    def password(self) -> Optional[str]:
+        """
+        Splunk instance password
+        """
+        return __config__.get('password')
 
-url = __config__.get('url')
-"""
-Splunk instance URL
-"""
+    @property
+    def timeout(self) -> Optional[int]:
+        """
+        Timeout when making calls to Splunk server. Defaults to 60 seconds
+        """
+        return __config__.get_int('timeout')
 
-username = __config__.get('username')
-"""
-Splunk instance admin username
-"""
+    @property
+    def url(self) -> Optional[str]:
+        """
+        Splunk instance URL
+        """
+        return __config__.get('url')
+
+    @property
+    def username(self) -> Optional[str]:
+        """
+        Splunk instance admin username
+        """
+        return __config__.get('username')
 

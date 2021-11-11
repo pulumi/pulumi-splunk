@@ -29,7 +29,7 @@ import (
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
 // 		_, err := splunk.NewDataUiViews(ctx, "dashboard", &splunk.DataUiViewsArgs{
-// 			Acl: &splunk.DataUiViewsAclArgs{
+// 			Acl: &DataUiViewsAclArgs{
 // 				App:   pulumi.String("search"),
 // 				Owner: pulumi.String("admin"),
 // 			},
@@ -191,7 +191,7 @@ type DataUiViewsArrayInput interface {
 type DataUiViewsArray []DataUiViewsInput
 
 func (DataUiViewsArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*DataUiViews)(nil))
+	return reflect.TypeOf((*[]*DataUiViews)(nil)).Elem()
 }
 
 func (i DataUiViewsArray) ToDataUiViewsArrayOutput() DataUiViewsArrayOutput {
@@ -216,7 +216,7 @@ type DataUiViewsMapInput interface {
 type DataUiViewsMap map[string]DataUiViewsInput
 
 func (DataUiViewsMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*DataUiViews)(nil))
+	return reflect.TypeOf((*map[string]*DataUiViews)(nil)).Elem()
 }
 
 func (i DataUiViewsMap) ToDataUiViewsMapOutput() DataUiViewsMapOutput {
@@ -227,9 +227,7 @@ func (i DataUiViewsMap) ToDataUiViewsMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsMapOutput)
 }
 
-type DataUiViewsOutput struct {
-	*pulumi.OutputState
-}
+type DataUiViewsOutput struct{ *pulumi.OutputState }
 
 func (DataUiViewsOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*DataUiViews)(nil))
@@ -248,14 +246,12 @@ func (o DataUiViewsOutput) ToDataUiViewsPtrOutput() DataUiViewsPtrOutput {
 }
 
 func (o DataUiViewsOutput) ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput {
-	return o.ApplyT(func(v DataUiViews) *DataUiViews {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataUiViews) *DataUiViews {
 		return &v
 	}).(DataUiViewsPtrOutput)
 }
 
-type DataUiViewsPtrOutput struct {
-	*pulumi.OutputState
-}
+type DataUiViewsPtrOutput struct{ *pulumi.OutputState }
 
 func (DataUiViewsPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**DataUiViews)(nil))
@@ -267,6 +263,16 @@ func (o DataUiViewsPtrOutput) ToDataUiViewsPtrOutput() DataUiViewsPtrOutput {
 
 func (o DataUiViewsPtrOutput) ToDataUiViewsPtrOutputWithContext(ctx context.Context) DataUiViewsPtrOutput {
 	return o
+}
+
+func (o DataUiViewsPtrOutput) Elem() DataUiViewsOutput {
+	return o.ApplyT(func(v *DataUiViews) DataUiViews {
+		if v != nil {
+			return *v
+		}
+		var ret DataUiViews
+		return ret
+	}).(DataUiViewsOutput)
 }
 
 type DataUiViewsArrayOutput struct{ *pulumi.OutputState }
@@ -310,6 +316,10 @@ func (o DataUiViewsMapOutput) MapIndex(k pulumi.StringInput) DataUiViewsOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsInput)(nil)).Elem(), &DataUiViews{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsPtrInput)(nil)).Elem(), &DataUiViews{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsArrayInput)(nil)).Elem(), DataUiViewsArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsMapInput)(nil)).Elem(), DataUiViewsMap{})
 	pulumi.RegisterOutputType(DataUiViewsOutput{})
 	pulumi.RegisterOutputType(DataUiViewsPtrOutput{})
 	pulumi.RegisterOutputType(DataUiViewsArrayOutput{})

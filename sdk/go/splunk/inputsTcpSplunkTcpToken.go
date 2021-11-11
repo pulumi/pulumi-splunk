@@ -182,7 +182,7 @@ type InputsTcpSplunkTcpTokenArrayInput interface {
 type InputsTcpSplunkTcpTokenArray []InputsTcpSplunkTcpTokenInput
 
 func (InputsTcpSplunkTcpTokenArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*InputsTcpSplunkTcpToken)(nil))
+	return reflect.TypeOf((*[]*InputsTcpSplunkTcpToken)(nil)).Elem()
 }
 
 func (i InputsTcpSplunkTcpTokenArray) ToInputsTcpSplunkTcpTokenArrayOutput() InputsTcpSplunkTcpTokenArrayOutput {
@@ -207,7 +207,7 @@ type InputsTcpSplunkTcpTokenMapInput interface {
 type InputsTcpSplunkTcpTokenMap map[string]InputsTcpSplunkTcpTokenInput
 
 func (InputsTcpSplunkTcpTokenMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*InputsTcpSplunkTcpToken)(nil))
+	return reflect.TypeOf((*map[string]*InputsTcpSplunkTcpToken)(nil)).Elem()
 }
 
 func (i InputsTcpSplunkTcpTokenMap) ToInputsTcpSplunkTcpTokenMapOutput() InputsTcpSplunkTcpTokenMapOutput {
@@ -218,9 +218,7 @@ func (i InputsTcpSplunkTcpTokenMap) ToInputsTcpSplunkTcpTokenMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenMapOutput)
 }
 
-type InputsTcpSplunkTcpTokenOutput struct {
-	*pulumi.OutputState
-}
+type InputsTcpSplunkTcpTokenOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSplunkTcpTokenOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*InputsTcpSplunkTcpToken)(nil))
@@ -239,14 +237,12 @@ func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenPtrOutput() Inpu
 }
 
 func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenPtrOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenPtrOutput {
-	return o.ApplyT(func(v InputsTcpSplunkTcpToken) *InputsTcpSplunkTcpToken {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpSplunkTcpToken) *InputsTcpSplunkTcpToken {
 		return &v
 	}).(InputsTcpSplunkTcpTokenPtrOutput)
 }
 
-type InputsTcpSplunkTcpTokenPtrOutput struct {
-	*pulumi.OutputState
-}
+type InputsTcpSplunkTcpTokenPtrOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSplunkTcpTokenPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**InputsTcpSplunkTcpToken)(nil))
@@ -258,6 +254,16 @@ func (o InputsTcpSplunkTcpTokenPtrOutput) ToInputsTcpSplunkTcpTokenPtrOutput() I
 
 func (o InputsTcpSplunkTcpTokenPtrOutput) ToInputsTcpSplunkTcpTokenPtrOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenPtrOutput {
 	return o
+}
+
+func (o InputsTcpSplunkTcpTokenPtrOutput) Elem() InputsTcpSplunkTcpTokenOutput {
+	return o.ApplyT(func(v *InputsTcpSplunkTcpToken) InputsTcpSplunkTcpToken {
+		if v != nil {
+			return *v
+		}
+		var ret InputsTcpSplunkTcpToken
+		return ret
+	}).(InputsTcpSplunkTcpTokenOutput)
 }
 
 type InputsTcpSplunkTcpTokenArrayOutput struct{ *pulumi.OutputState }
@@ -301,6 +307,10 @@ func (o InputsTcpSplunkTcpTokenMapOutput) MapIndex(k pulumi.StringInput) InputsT
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSplunkTcpTokenInput)(nil)).Elem(), &InputsTcpSplunkTcpToken{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSplunkTcpTokenPtrInput)(nil)).Elem(), &InputsTcpSplunkTcpToken{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSplunkTcpTokenArrayInput)(nil)).Elem(), InputsTcpSplunkTcpTokenArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpSplunkTcpTokenMapInput)(nil)).Elem(), InputsTcpSplunkTcpTokenMap{})
 	pulumi.RegisterOutputType(InputsTcpSplunkTcpTokenOutput{})
 	pulumi.RegisterOutputType(InputsTcpSplunkTcpTokenPtrOutput{})
 	pulumi.RegisterOutputType(InputsTcpSplunkTcpTokenArrayOutput{})

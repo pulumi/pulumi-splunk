@@ -99,15 +99,15 @@ export interface ConfigsConfState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.ConfigsConfAcl>;
+    acl?: pulumi.Input<inputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A map of key value pairs for a stanza.
      */
-    readonly variables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    variables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 /**
@@ -117,13 +117,13 @@ export interface ConfigsConfArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    readonly acl?: pulumi.Input<inputs.ConfigsConfAcl>;
+    acl?: pulumi.Input<inputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
      */
-    readonly name?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
     /**
      * A map of key value pairs for a stanza.
      */
-    readonly variables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    variables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

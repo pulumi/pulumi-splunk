@@ -768,7 +768,7 @@ type IndexesArrayInput interface {
 type IndexesArray []IndexesInput
 
 func (IndexesArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*Indexes)(nil))
+	return reflect.TypeOf((*[]*Indexes)(nil)).Elem()
 }
 
 func (i IndexesArray) ToIndexesArrayOutput() IndexesArrayOutput {
@@ -793,7 +793,7 @@ type IndexesMapInput interface {
 type IndexesMap map[string]IndexesInput
 
 func (IndexesMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*Indexes)(nil))
+	return reflect.TypeOf((*map[string]*Indexes)(nil)).Elem()
 }
 
 func (i IndexesMap) ToIndexesMapOutput() IndexesMapOutput {
@@ -804,9 +804,7 @@ func (i IndexesMap) ToIndexesMapOutputWithContext(ctx context.Context) IndexesMa
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesMapOutput)
 }
 
-type IndexesOutput struct {
-	*pulumi.OutputState
-}
+type IndexesOutput struct{ *pulumi.OutputState }
 
 func (IndexesOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*Indexes)(nil))
@@ -825,14 +823,12 @@ func (o IndexesOutput) ToIndexesPtrOutput() IndexesPtrOutput {
 }
 
 func (o IndexesOutput) ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput {
-	return o.ApplyT(func(v Indexes) *Indexes {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v Indexes) *Indexes {
 		return &v
 	}).(IndexesPtrOutput)
 }
 
-type IndexesPtrOutput struct {
-	*pulumi.OutputState
-}
+type IndexesPtrOutput struct{ *pulumi.OutputState }
 
 func (IndexesPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**Indexes)(nil))
@@ -844,6 +840,16 @@ func (o IndexesPtrOutput) ToIndexesPtrOutput() IndexesPtrOutput {
 
 func (o IndexesPtrOutput) ToIndexesPtrOutputWithContext(ctx context.Context) IndexesPtrOutput {
 	return o
+}
+
+func (o IndexesPtrOutput) Elem() IndexesOutput {
+	return o.ApplyT(func(v *Indexes) Indexes {
+		if v != nil {
+			return *v
+		}
+		var ret Indexes
+		return ret
+	}).(IndexesOutput)
 }
 
 type IndexesArrayOutput struct{ *pulumi.OutputState }
@@ -887,6 +893,10 @@ func (o IndexesMapOutput) MapIndex(k pulumi.StringInput) IndexesOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexesInput)(nil)).Elem(), &Indexes{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexesPtrInput)(nil)).Elem(), &Indexes{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexesArrayInput)(nil)).Elem(), IndexesArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexesMapInput)(nil)).Elem(), IndexesMap{})
 	pulumi.RegisterOutputType(IndexesOutput{})
 	pulumi.RegisterOutputType(IndexesPtrOutput{})
 	pulumi.RegisterOutputType(IndexesArrayOutput{})

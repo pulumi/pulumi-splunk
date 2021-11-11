@@ -213,7 +213,7 @@ type ShIndexesManagerArrayInput interface {
 type ShIndexesManagerArray []ShIndexesManagerInput
 
 func (ShIndexesManagerArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*ShIndexesManager)(nil))
+	return reflect.TypeOf((*[]*ShIndexesManager)(nil)).Elem()
 }
 
 func (i ShIndexesManagerArray) ToShIndexesManagerArrayOutput() ShIndexesManagerArrayOutput {
@@ -238,7 +238,7 @@ type ShIndexesManagerMapInput interface {
 type ShIndexesManagerMap map[string]ShIndexesManagerInput
 
 func (ShIndexesManagerMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*ShIndexesManager)(nil))
+	return reflect.TypeOf((*map[string]*ShIndexesManager)(nil)).Elem()
 }
 
 func (i ShIndexesManagerMap) ToShIndexesManagerMapOutput() ShIndexesManagerMapOutput {
@@ -249,9 +249,7 @@ func (i ShIndexesManagerMap) ToShIndexesManagerMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerMapOutput)
 }
 
-type ShIndexesManagerOutput struct {
-	*pulumi.OutputState
-}
+type ShIndexesManagerOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*ShIndexesManager)(nil))
@@ -270,14 +268,12 @@ func (o ShIndexesManagerOutput) ToShIndexesManagerPtrOutput() ShIndexesManagerPt
 }
 
 func (o ShIndexesManagerOutput) ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput {
-	return o.ApplyT(func(v ShIndexesManager) *ShIndexesManager {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShIndexesManager) *ShIndexesManager {
 		return &v
 	}).(ShIndexesManagerPtrOutput)
 }
 
-type ShIndexesManagerPtrOutput struct {
-	*pulumi.OutputState
-}
+type ShIndexesManagerPtrOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**ShIndexesManager)(nil))
@@ -289,6 +285,16 @@ func (o ShIndexesManagerPtrOutput) ToShIndexesManagerPtrOutput() ShIndexesManage
 
 func (o ShIndexesManagerPtrOutput) ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput {
 	return o
+}
+
+func (o ShIndexesManagerPtrOutput) Elem() ShIndexesManagerOutput {
+	return o.ApplyT(func(v *ShIndexesManager) ShIndexesManager {
+		if v != nil {
+			return *v
+		}
+		var ret ShIndexesManager
+		return ret
+	}).(ShIndexesManagerOutput)
 }
 
 type ShIndexesManagerArrayOutput struct{ *pulumi.OutputState }
@@ -332,6 +338,10 @@ func (o ShIndexesManagerMapOutput) MapIndex(k pulumi.StringInput) ShIndexesManag
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerInput)(nil)).Elem(), &ShIndexesManager{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerPtrInput)(nil)).Elem(), &ShIndexesManager{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerArrayInput)(nil)).Elem(), ShIndexesManagerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerMapInput)(nil)).Elem(), ShIndexesManagerMap{})
 	pulumi.RegisterOutputType(ShIndexesManagerOutput{})
 	pulumi.RegisterOutputType(ShIndexesManagerPtrOutput{})
 	pulumi.RegisterOutputType(ShIndexesManagerArrayOutput{})

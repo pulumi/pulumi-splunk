@@ -243,7 +243,7 @@ type InputsScriptArrayInput interface {
 type InputsScriptArray []InputsScriptInput
 
 func (InputsScriptArray) ElementType() reflect.Type {
-	return reflect.TypeOf(([]*InputsScript)(nil))
+	return reflect.TypeOf((*[]*InputsScript)(nil)).Elem()
 }
 
 func (i InputsScriptArray) ToInputsScriptArrayOutput() InputsScriptArrayOutput {
@@ -268,7 +268,7 @@ type InputsScriptMapInput interface {
 type InputsScriptMap map[string]InputsScriptInput
 
 func (InputsScriptMap) ElementType() reflect.Type {
-	return reflect.TypeOf((map[string]*InputsScript)(nil))
+	return reflect.TypeOf((*map[string]*InputsScript)(nil)).Elem()
 }
 
 func (i InputsScriptMap) ToInputsScriptMapOutput() InputsScriptMapOutput {
@@ -279,9 +279,7 @@ func (i InputsScriptMap) ToInputsScriptMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptMapOutput)
 }
 
-type InputsScriptOutput struct {
-	*pulumi.OutputState
-}
+type InputsScriptOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*InputsScript)(nil))
@@ -300,14 +298,12 @@ func (o InputsScriptOutput) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
 }
 
 func (o InputsScriptOutput) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
-	return o.ApplyT(func(v InputsScript) *InputsScript {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsScript) *InputsScript {
 		return &v
 	}).(InputsScriptPtrOutput)
 }
 
-type InputsScriptPtrOutput struct {
-	*pulumi.OutputState
-}
+type InputsScriptPtrOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptPtrOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((**InputsScript)(nil))
@@ -319,6 +315,16 @@ func (o InputsScriptPtrOutput) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
 
 func (o InputsScriptPtrOutput) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
 	return o
+}
+
+func (o InputsScriptPtrOutput) Elem() InputsScriptOutput {
+	return o.ApplyT(func(v *InputsScript) InputsScript {
+		if v != nil {
+			return *v
+		}
+		var ret InputsScript
+		return ret
+	}).(InputsScriptOutput)
 }
 
 type InputsScriptArrayOutput struct{ *pulumi.OutputState }
@@ -362,6 +368,10 @@ func (o InputsScriptMapOutput) MapIndex(k pulumi.StringInput) InputsScriptOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptInput)(nil)).Elem(), &InputsScript{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptPtrInput)(nil)).Elem(), &InputsScript{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptArrayInput)(nil)).Elem(), InputsScriptArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptMapInput)(nil)).Elem(), InputsScriptMap{})
 	pulumi.RegisterOutputType(InputsScriptOutput{})
 	pulumi.RegisterOutputType(InputsScriptPtrOutput{})
 	pulumi.RegisterOutputType(InputsScriptArrayOutput{})
