@@ -87,6 +87,7 @@ class SavedSearchesArgs:
                  action_summary_index_name: Optional[pulumi.Input[str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+                 action_webhook_param_url: Optional[pulumi.Input[str]] = None,
                  actions: Optional[pulumi.Input[str]] = None,
                  alert_comparator: Optional[pulumi.Input[str]] = None,
                  alert_condition: Optional[pulumi.Input[str]] = None,
@@ -221,6 +222,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
@@ -425,6 +427,8 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
         if action_summary_index_ttl is not None:
             pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+        if action_webhook_param_url is not None:
+            pulumi.set(__self__, "action_webhook_param_url", action_webhook_param_url)
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
         if alert_comparator is not None:
@@ -1411,6 +1415,18 @@ class SavedSearchesArgs:
         pulumi.set(self, "action_summary_index_ttl", value)
 
     @property
+    @pulumi.getter(name="actionWebhookParamUrl")
+    def action_webhook_param_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        """
+        return pulumi.get(self, "action_webhook_param_url")
+
+    @action_webhook_param_url.setter
+    def action_webhook_param_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_webhook_param_url", value)
+
+    @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2210,6 +2226,7 @@ class _SavedSearchesState:
                  action_summary_index_name: Optional[pulumi.Input[str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+                 action_webhook_param_url: Optional[pulumi.Input[str]] = None,
                  actions: Optional[pulumi.Input[str]] = None,
                  alert_comparator: Optional[pulumi.Input[str]] = None,
                  alert_condition: Optional[pulumi.Input[str]] = None,
@@ -2349,6 +2366,7 @@ class _SavedSearchesState:
         :param pulumi.Input[str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
@@ -2563,6 +2581,8 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
         if action_summary_index_ttl is not None:
             pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+        if action_webhook_param_url is not None:
+            pulumi.set(__self__, "action_webhook_param_url", action_webhook_param_url)
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
         if alert_comparator is not None:
@@ -3599,6 +3619,18 @@ class _SavedSearchesState:
         pulumi.set(self, "action_summary_index_ttl", value)
 
     @property
+    @pulumi.getter(name="actionWebhookParamUrl")
+    def action_webhook_param_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        """
+        return pulumi.get(self, "action_webhook_param_url")
+
+    @action_webhook_param_url.setter
+    def action_webhook_param_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_webhook_param_url", value)
+
+    @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input[str]]:
         """
@@ -4407,6 +4439,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_summary_index_name: Optional[pulumi.Input[str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+                 action_webhook_param_url: Optional[pulumi.Input[str]] = None,
                  actions: Optional[pulumi.Input[str]] = None,
                  alert_comparator: Optional[pulumi.Input[str]] = None,
                  alert_condition: Optional[pulumi.Input[str]] = None,
@@ -4573,6 +4606,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
@@ -4758,6 +4792,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_summary_index_name: Optional[pulumi.Input[str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+                 action_webhook_param_url: Optional[pulumi.Input[str]] = None,
                  actions: Optional[pulumi.Input[str]] = None,
                  alert_comparator: Optional[pulumi.Input[str]] = None,
                  alert_condition: Optional[pulumi.Input[str]] = None,
@@ -4902,6 +4937,7 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_summary_index_name"] = action_summary_index_name
             __props__.__dict__["action_summary_index_track_alert"] = action_summary_index_track_alert
             __props__.__dict__["action_summary_index_ttl"] = action_summary_index_ttl
+            __props__.__dict__["action_webhook_param_url"] = action_webhook_param_url
             __props__.__dict__["actions"] = actions
             __props__.__dict__["alert_comparator"] = alert_comparator
             __props__.__dict__["alert_condition"] = alert_condition
@@ -5056,6 +5092,7 @@ class SavedSearches(pulumi.CustomResource):
             action_summary_index_name: Optional[pulumi.Input[str]] = None,
             action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
             action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+            action_webhook_param_url: Optional[pulumi.Input[str]] = None,
             actions: Optional[pulumi.Input[str]] = None,
             alert_comparator: Optional[pulumi.Input[str]] = None,
             alert_condition: Optional[pulumi.Input[str]] = None,
@@ -5200,6 +5237,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
@@ -5342,6 +5380,7 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_summary_index_name"] = action_summary_index_name
         __props__.__dict__["action_summary_index_track_alert"] = action_summary_index_track_alert
         __props__.__dict__["action_summary_index_ttl"] = action_summary_index_ttl
+        __props__.__dict__["action_webhook_param_url"] = action_webhook_param_url
         __props__.__dict__["actions"] = actions
         __props__.__dict__["alert_comparator"] = alert_comparator
         __props__.__dict__["alert_condition"] = alert_condition
@@ -6012,6 +6051,14 @@ class SavedSearches(pulumi.CustomResource):
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_summary_index_ttl")
+
+    @property
+    @pulumi.getter(name="actionWebhookParamUrl")
+    def action_webhook_param_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        """
+        return pulumi.get(self, "action_webhook_param_url")
 
     @property
     @pulumi.getter

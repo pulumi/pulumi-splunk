@@ -90,29 +90,29 @@ export class InputsTcpCooked extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsTcpCookedArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpCookedArgs | InputsTcpCookedState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpCookedState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["connectionHost"] = state ? state.connectionHost : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["host"] = state ? state.host : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["restrictToHost"] = state ? state.restrictToHost : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["connectionHost"] = state ? state.connectionHost : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["host"] = state ? state.host : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["restrictToHost"] = state ? state.restrictToHost : undefined;
         } else {
             const args = argsOrState as InputsTcpCookedArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["connectionHost"] = args ? args.connectionHost : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["host"] = args ? args.host : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["restrictToHost"] = args ? args.restrictToHost : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["connectionHost"] = args ? args.connectionHost : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["restrictToHost"] = args ? args.restrictToHost : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsTcpCooked.__pulumiType, name, inputs, opts);
+        super(InputsTcpCooked.__pulumiType, name, resourceInputs, opts);
     }
 }
 

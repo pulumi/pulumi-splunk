@@ -124,49 +124,49 @@ export class InputsMonitor extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsMonitorArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsMonitorArgs | InputsMonitorState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsMonitorState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["blacklist"] = state ? state.blacklist : undefined;
-            inputs["crcSalt"] = state ? state.crcSalt : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["followTail"] = state ? state.followTail : undefined;
-            inputs["host"] = state ? state.host : undefined;
-            inputs["hostRegex"] = state ? state.hostRegex : undefined;
-            inputs["hostSegment"] = state ? state.hostSegment : undefined;
-            inputs["ignoreOlderThan"] = state ? state.ignoreOlderThan : undefined;
-            inputs["index"] = state ? state.index : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["recursive"] = state ? state.recursive : undefined;
-            inputs["renameSource"] = state ? state.renameSource : undefined;
-            inputs["sourcetype"] = state ? state.sourcetype : undefined;
-            inputs["timeBeforeClose"] = state ? state.timeBeforeClose : undefined;
-            inputs["whitelist"] = state ? state.whitelist : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["blacklist"] = state ? state.blacklist : undefined;
+            resourceInputs["crcSalt"] = state ? state.crcSalt : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["followTail"] = state ? state.followTail : undefined;
+            resourceInputs["host"] = state ? state.host : undefined;
+            resourceInputs["hostRegex"] = state ? state.hostRegex : undefined;
+            resourceInputs["hostSegment"] = state ? state.hostSegment : undefined;
+            resourceInputs["ignoreOlderThan"] = state ? state.ignoreOlderThan : undefined;
+            resourceInputs["index"] = state ? state.index : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["recursive"] = state ? state.recursive : undefined;
+            resourceInputs["renameSource"] = state ? state.renameSource : undefined;
+            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["timeBeforeClose"] = state ? state.timeBeforeClose : undefined;
+            resourceInputs["whitelist"] = state ? state.whitelist : undefined;
         } else {
             const args = argsOrState as InputsMonitorArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["blacklist"] = args ? args.blacklist : undefined;
-            inputs["crcSalt"] = args ? args.crcSalt : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["followTail"] = args ? args.followTail : undefined;
-            inputs["host"] = args ? args.host : undefined;
-            inputs["hostRegex"] = args ? args.hostRegex : undefined;
-            inputs["hostSegment"] = args ? args.hostSegment : undefined;
-            inputs["ignoreOlderThan"] = args ? args.ignoreOlderThan : undefined;
-            inputs["index"] = args ? args.index : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["recursive"] = args ? args.recursive : undefined;
-            inputs["renameSource"] = args ? args.renameSource : undefined;
-            inputs["sourcetype"] = args ? args.sourcetype : undefined;
-            inputs["timeBeforeClose"] = args ? args.timeBeforeClose : undefined;
-            inputs["whitelist"] = args ? args.whitelist : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["blacklist"] = args ? args.blacklist : undefined;
+            resourceInputs["crcSalt"] = args ? args.crcSalt : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["followTail"] = args ? args.followTail : undefined;
+            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["hostRegex"] = args ? args.hostRegex : undefined;
+            resourceInputs["hostSegment"] = args ? args.hostSegment : undefined;
+            resourceInputs["ignoreOlderThan"] = args ? args.ignoreOlderThan : undefined;
+            resourceInputs["index"] = args ? args.index : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["recursive"] = args ? args.recursive : undefined;
+            resourceInputs["renameSource"] = args ? args.renameSource : undefined;
+            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["timeBeforeClose"] = args ? args.timeBeforeClose : undefined;
+            resourceInputs["whitelist"] = args ? args.whitelist : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsMonitor.__pulumiType, name, inputs, opts);
+        super(InputsMonitor.__pulumiType, name, resourceInputs, opts);
     }
 }
 

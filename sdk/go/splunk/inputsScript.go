@@ -189,7 +189,7 @@ type InputsScriptInput interface {
 }
 
 func (*InputsScript) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsScript)(nil))
+	return reflect.TypeOf((**InputsScript)(nil)).Elem()
 }
 
 func (i *InputsScript) ToInputsScriptOutput() InputsScriptOutput {
@@ -198,35 +198,6 @@ func (i *InputsScript) ToInputsScriptOutput() InputsScriptOutput {
 
 func (i *InputsScript) ToInputsScriptOutputWithContext(ctx context.Context) InputsScriptOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptOutput)
-}
-
-func (i *InputsScript) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
-	return i.ToInputsScriptPtrOutputWithContext(context.Background())
-}
-
-func (i *InputsScript) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptPtrOutput)
-}
-
-type InputsScriptPtrInput interface {
-	pulumi.Input
-
-	ToInputsScriptPtrOutput() InputsScriptPtrOutput
-	ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput
-}
-
-type inputsScriptPtrType InputsScriptArgs
-
-func (*inputsScriptPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsScript)(nil))
-}
-
-func (i *inputsScriptPtrType) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
-	return i.ToInputsScriptPtrOutputWithContext(context.Background())
-}
-
-func (i *inputsScriptPtrType) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptPtrOutput)
 }
 
 // InputsScriptArrayInput is an input type that accepts InputsScriptArray and InputsScriptArrayOutput values.
@@ -282,7 +253,7 @@ func (i InputsScriptMap) ToInputsScriptMapOutputWithContext(ctx context.Context)
 type InputsScriptOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsScript)(nil))
+	return reflect.TypeOf((**InputsScript)(nil)).Elem()
 }
 
 func (o InputsScriptOutput) ToInputsScriptOutput() InputsScriptOutput {
@@ -293,44 +264,10 @@ func (o InputsScriptOutput) ToInputsScriptOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o InputsScriptOutput) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
-	return o.ToInputsScriptPtrOutputWithContext(context.Background())
-}
-
-func (o InputsScriptOutput) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsScript) *InputsScript {
-		return &v
-	}).(InputsScriptPtrOutput)
-}
-
-type InputsScriptPtrOutput struct{ *pulumi.OutputState }
-
-func (InputsScriptPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsScript)(nil))
-}
-
-func (o InputsScriptPtrOutput) ToInputsScriptPtrOutput() InputsScriptPtrOutput {
-	return o
-}
-
-func (o InputsScriptPtrOutput) ToInputsScriptPtrOutputWithContext(ctx context.Context) InputsScriptPtrOutput {
-	return o
-}
-
-func (o InputsScriptPtrOutput) Elem() InputsScriptOutput {
-	return o.ApplyT(func(v *InputsScript) InputsScript {
-		if v != nil {
-			return *v
-		}
-		var ret InputsScript
-		return ret
-	}).(InputsScriptOutput)
-}
-
 type InputsScriptArrayOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]InputsScript)(nil))
+	return reflect.TypeOf((*[]*InputsScript)(nil)).Elem()
 }
 
 func (o InputsScriptArrayOutput) ToInputsScriptArrayOutput() InputsScriptArrayOutput {
@@ -342,15 +279,15 @@ func (o InputsScriptArrayOutput) ToInputsScriptArrayOutputWithContext(ctx contex
 }
 
 func (o InputsScriptArrayOutput) Index(i pulumi.IntInput) InputsScriptOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsScript {
-		return vs[0].([]InputsScript)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsScript {
+		return vs[0].([]*InputsScript)[vs[1].(int)]
 	}).(InputsScriptOutput)
 }
 
 type InputsScriptMapOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]InputsScript)(nil))
+	return reflect.TypeOf((*map[string]*InputsScript)(nil)).Elem()
 }
 
 func (o InputsScriptMapOutput) ToInputsScriptMapOutput() InputsScriptMapOutput {
@@ -362,18 +299,16 @@ func (o InputsScriptMapOutput) ToInputsScriptMapOutputWithContext(ctx context.Co
 }
 
 func (o InputsScriptMapOutput) MapIndex(k pulumi.StringInput) InputsScriptOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsScript {
-		return vs[0].(map[string]InputsScript)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *InputsScript {
+		return vs[0].(map[string]*InputsScript)[vs[1].(string)]
 	}).(InputsScriptOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptInput)(nil)).Elem(), &InputsScript{})
-	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptPtrInput)(nil)).Elem(), &InputsScript{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptArrayInput)(nil)).Elem(), InputsScriptArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsScriptMapInput)(nil)).Elem(), InputsScriptMap{})
 	pulumi.RegisterOutputType(InputsScriptOutput{})
-	pulumi.RegisterOutputType(InputsScriptPtrOutput{})
 	pulumi.RegisterOutputType(InputsScriptArrayOutput{})
 	pulumi.RegisterOutputType(InputsScriptMapOutput{})
 }

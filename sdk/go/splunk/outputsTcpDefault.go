@@ -253,7 +253,7 @@ type OutputsTcpDefaultInput interface {
 }
 
 func (*OutputsTcpDefault) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpDefault)(nil))
+	return reflect.TypeOf((**OutputsTcpDefault)(nil)).Elem()
 }
 
 func (i *OutputsTcpDefault) ToOutputsTcpDefaultOutput() OutputsTcpDefaultOutput {
@@ -262,35 +262,6 @@ func (i *OutputsTcpDefault) ToOutputsTcpDefaultOutput() OutputsTcpDefaultOutput 
 
 func (i *OutputsTcpDefault) ToOutputsTcpDefaultOutputWithContext(ctx context.Context) OutputsTcpDefaultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultOutput)
-}
-
-func (i *OutputsTcpDefault) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
-	return i.ToOutputsTcpDefaultPtrOutputWithContext(context.Background())
-}
-
-func (i *OutputsTcpDefault) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultPtrOutput)
-}
-
-type OutputsTcpDefaultPtrInput interface {
-	pulumi.Input
-
-	ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput
-	ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput
-}
-
-type outputsTcpDefaultPtrType OutputsTcpDefaultArgs
-
-func (*outputsTcpDefaultPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OutputsTcpDefault)(nil))
-}
-
-func (i *outputsTcpDefaultPtrType) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
-	return i.ToOutputsTcpDefaultPtrOutputWithContext(context.Background())
-}
-
-func (i *outputsTcpDefaultPtrType) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultPtrOutput)
 }
 
 // OutputsTcpDefaultArrayInput is an input type that accepts OutputsTcpDefaultArray and OutputsTcpDefaultArrayOutput values.
@@ -346,7 +317,7 @@ func (i OutputsTcpDefaultMap) ToOutputsTcpDefaultMapOutputWithContext(ctx contex
 type OutputsTcpDefaultOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpDefaultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpDefault)(nil))
+	return reflect.TypeOf((**OutputsTcpDefault)(nil)).Elem()
 }
 
 func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutput() OutputsTcpDefaultOutput {
@@ -357,44 +328,10 @@ func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutputWithContext(ctx contex
 	return o
 }
 
-func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
-	return o.ToOutputsTcpDefaultPtrOutputWithContext(context.Background())
-}
-
-func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpDefault) *OutputsTcpDefault {
-		return &v
-	}).(OutputsTcpDefaultPtrOutput)
-}
-
-type OutputsTcpDefaultPtrOutput struct{ *pulumi.OutputState }
-
-func (OutputsTcpDefaultPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OutputsTcpDefault)(nil))
-}
-
-func (o OutputsTcpDefaultPtrOutput) ToOutputsTcpDefaultPtrOutput() OutputsTcpDefaultPtrOutput {
-	return o
-}
-
-func (o OutputsTcpDefaultPtrOutput) ToOutputsTcpDefaultPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultPtrOutput {
-	return o
-}
-
-func (o OutputsTcpDefaultPtrOutput) Elem() OutputsTcpDefaultOutput {
-	return o.ApplyT(func(v *OutputsTcpDefault) OutputsTcpDefault {
-		if v != nil {
-			return *v
-		}
-		var ret OutputsTcpDefault
-		return ret
-	}).(OutputsTcpDefaultOutput)
-}
-
 type OutputsTcpDefaultArrayOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpDefaultArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OutputsTcpDefault)(nil))
+	return reflect.TypeOf((*[]*OutputsTcpDefault)(nil)).Elem()
 }
 
 func (o OutputsTcpDefaultArrayOutput) ToOutputsTcpDefaultArrayOutput() OutputsTcpDefaultArrayOutput {
@@ -406,15 +343,15 @@ func (o OutputsTcpDefaultArrayOutput) ToOutputsTcpDefaultArrayOutputWithContext(
 }
 
 func (o OutputsTcpDefaultArrayOutput) Index(i pulumi.IntInput) OutputsTcpDefaultOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutputsTcpDefault {
-		return vs[0].([]OutputsTcpDefault)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutputsTcpDefault {
+		return vs[0].([]*OutputsTcpDefault)[vs[1].(int)]
 	}).(OutputsTcpDefaultOutput)
 }
 
 type OutputsTcpDefaultMapOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpDefaultMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]OutputsTcpDefault)(nil))
+	return reflect.TypeOf((*map[string]*OutputsTcpDefault)(nil)).Elem()
 }
 
 func (o OutputsTcpDefaultMapOutput) ToOutputsTcpDefaultMapOutput() OutputsTcpDefaultMapOutput {
@@ -426,18 +363,16 @@ func (o OutputsTcpDefaultMapOutput) ToOutputsTcpDefaultMapOutputWithContext(ctx 
 }
 
 func (o OutputsTcpDefaultMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpDefaultOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) OutputsTcpDefault {
-		return vs[0].(map[string]OutputsTcpDefault)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *OutputsTcpDefault {
+		return vs[0].(map[string]*OutputsTcpDefault)[vs[1].(string)]
 	}).(OutputsTcpDefaultOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpDefaultInput)(nil)).Elem(), &OutputsTcpDefault{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpDefaultPtrInput)(nil)).Elem(), &OutputsTcpDefault{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpDefaultArrayInput)(nil)).Elem(), OutputsTcpDefaultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpDefaultMapInput)(nil)).Elem(), OutputsTcpDefaultMap{})
 	pulumi.RegisterOutputType(OutputsTcpDefaultOutput{})
-	pulumi.RegisterOutputType(OutputsTcpDefaultPtrOutput{})
 	pulumi.RegisterOutputType(OutputsTcpDefaultArrayOutput{})
 	pulumi.RegisterOutputType(OutputsTcpDefaultMapOutput{})
 }

@@ -97,35 +97,35 @@ export class AuthenticationUsers extends pulumi.CustomResource {
      */
     constructor(name: string, args?: AuthenticationUsersArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AuthenticationUsersArgs | AuthenticationUsersState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuthenticationUsersState | undefined;
-            inputs["defaultApp"] = state ? state.defaultApp : undefined;
-            inputs["email"] = state ? state.email : undefined;
-            inputs["forceChangePass"] = state ? state.forceChangePass : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["password"] = state ? state.password : undefined;
-            inputs["realname"] = state ? state.realname : undefined;
-            inputs["restartBackgroundJobs"] = state ? state.restartBackgroundJobs : undefined;
-            inputs["roles"] = state ? state.roles : undefined;
-            inputs["tz"] = state ? state.tz : undefined;
+            resourceInputs["defaultApp"] = state ? state.defaultApp : undefined;
+            resourceInputs["email"] = state ? state.email : undefined;
+            resourceInputs["forceChangePass"] = state ? state.forceChangePass : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["password"] = state ? state.password : undefined;
+            resourceInputs["realname"] = state ? state.realname : undefined;
+            resourceInputs["restartBackgroundJobs"] = state ? state.restartBackgroundJobs : undefined;
+            resourceInputs["roles"] = state ? state.roles : undefined;
+            resourceInputs["tz"] = state ? state.tz : undefined;
         } else {
             const args = argsOrState as AuthenticationUsersArgs | undefined;
-            inputs["defaultApp"] = args ? args.defaultApp : undefined;
-            inputs["email"] = args ? args.email : undefined;
-            inputs["forceChangePass"] = args ? args.forceChangePass : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["password"] = args ? args.password : undefined;
-            inputs["realname"] = args ? args.realname : undefined;
-            inputs["restartBackgroundJobs"] = args ? args.restartBackgroundJobs : undefined;
-            inputs["roles"] = args ? args.roles : undefined;
-            inputs["tz"] = args ? args.tz : undefined;
+            resourceInputs["defaultApp"] = args ? args.defaultApp : undefined;
+            resourceInputs["email"] = args ? args.email : undefined;
+            resourceInputs["forceChangePass"] = args ? args.forceChangePass : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["realname"] = args ? args.realname : undefined;
+            resourceInputs["restartBackgroundJobs"] = args ? args.restartBackgroundJobs : undefined;
+            resourceInputs["roles"] = args ? args.roles : undefined;
+            resourceInputs["tz"] = args ? args.tz : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(AuthenticationUsers.__pulumiType, name, inputs, opts);
+        super(AuthenticationUsers.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -123,43 +123,43 @@ export class AppsLocal extends pulumi.CustomResource {
      */
     constructor(name: string, args?: AppsLocalArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: AppsLocalArgs | AppsLocalState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsLocalState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["auth"] = state ? state.auth : undefined;
-            inputs["author"] = state ? state.author : undefined;
-            inputs["configured"] = state ? state.configured : undefined;
-            inputs["description"] = state ? state.description : undefined;
-            inputs["explicitAppname"] = state ? state.explicitAppname : undefined;
-            inputs["filename"] = state ? state.filename : undefined;
-            inputs["label"] = state ? state.label : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["session"] = state ? state.session : undefined;
-            inputs["update"] = state ? state.update : undefined;
-            inputs["version"] = state ? state.version : undefined;
-            inputs["visible"] = state ? state.visible : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["auth"] = state ? state.auth : undefined;
+            resourceInputs["author"] = state ? state.author : undefined;
+            resourceInputs["configured"] = state ? state.configured : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["explicitAppname"] = state ? state.explicitAppname : undefined;
+            resourceInputs["filename"] = state ? state.filename : undefined;
+            resourceInputs["label"] = state ? state.label : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["session"] = state ? state.session : undefined;
+            resourceInputs["update"] = state ? state.update : undefined;
+            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["visible"] = state ? state.visible : undefined;
         } else {
             const args = argsOrState as AppsLocalArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["auth"] = args ? args.auth : undefined;
-            inputs["author"] = args ? args.author : undefined;
-            inputs["configured"] = args ? args.configured : undefined;
-            inputs["description"] = args ? args.description : undefined;
-            inputs["explicitAppname"] = args ? args.explicitAppname : undefined;
-            inputs["filename"] = args ? args.filename : undefined;
-            inputs["label"] = args ? args.label : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["session"] = args ? args.session : undefined;
-            inputs["update"] = args ? args.update : undefined;
-            inputs["version"] = args ? args.version : undefined;
-            inputs["visible"] = args ? args.visible : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["auth"] = args ? args.auth : undefined;
+            resourceInputs["author"] = args ? args.author : undefined;
+            resourceInputs["configured"] = args ? args.configured : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["explicitAppname"] = args ? args.explicitAppname : undefined;
+            resourceInputs["filename"] = args ? args.filename : undefined;
+            resourceInputs["label"] = args ? args.label : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["session"] = args ? args.session : undefined;
+            resourceInputs["update"] = args ? args.update : undefined;
+            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["visible"] = args ? args.visible : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(AppsLocal.__pulumiType, name, inputs, opts);
+        super(AppsLocal.__pulumiType, name, resourceInputs, opts);
     }
 }
 

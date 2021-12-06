@@ -209,7 +209,7 @@ type OutputsTcpSyslogInput interface {
 }
 
 func (*OutputsTcpSyslog) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpSyslog)(nil))
+	return reflect.TypeOf((**OutputsTcpSyslog)(nil)).Elem()
 }
 
 func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutput {
@@ -218,35 +218,6 @@ func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutput {
 
 func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutputWithContext(ctx context.Context) OutputsTcpSyslogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogOutput)
-}
-
-func (i *OutputsTcpSyslog) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
-	return i.ToOutputsTcpSyslogPtrOutputWithContext(context.Background())
-}
-
-func (i *OutputsTcpSyslog) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogPtrOutput)
-}
-
-type OutputsTcpSyslogPtrInput interface {
-	pulumi.Input
-
-	ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput
-	ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput
-}
-
-type outputsTcpSyslogPtrType OutputsTcpSyslogArgs
-
-func (*outputsTcpSyslogPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OutputsTcpSyslog)(nil))
-}
-
-func (i *outputsTcpSyslogPtrType) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
-	return i.ToOutputsTcpSyslogPtrOutputWithContext(context.Background())
-}
-
-func (i *outputsTcpSyslogPtrType) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogPtrOutput)
 }
 
 // OutputsTcpSyslogArrayInput is an input type that accepts OutputsTcpSyslogArray and OutputsTcpSyslogArrayOutput values.
@@ -302,7 +273,7 @@ func (i OutputsTcpSyslogMap) ToOutputsTcpSyslogMapOutputWithContext(ctx context.
 type OutputsTcpSyslogOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpSyslogOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OutputsTcpSyslog)(nil))
+	return reflect.TypeOf((**OutputsTcpSyslog)(nil)).Elem()
 }
 
 func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutput {
@@ -313,44 +284,10 @@ func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutputWithContext(ctx context.
 	return o
 }
 
-func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
-	return o.ToOutputsTcpSyslogPtrOutputWithContext(context.Background())
-}
-
-func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpSyslog) *OutputsTcpSyslog {
-		return &v
-	}).(OutputsTcpSyslogPtrOutput)
-}
-
-type OutputsTcpSyslogPtrOutput struct{ *pulumi.OutputState }
-
-func (OutputsTcpSyslogPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OutputsTcpSyslog)(nil))
-}
-
-func (o OutputsTcpSyslogPtrOutput) ToOutputsTcpSyslogPtrOutput() OutputsTcpSyslogPtrOutput {
-	return o
-}
-
-func (o OutputsTcpSyslogPtrOutput) ToOutputsTcpSyslogPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogPtrOutput {
-	return o
-}
-
-func (o OutputsTcpSyslogPtrOutput) Elem() OutputsTcpSyslogOutput {
-	return o.ApplyT(func(v *OutputsTcpSyslog) OutputsTcpSyslog {
-		if v != nil {
-			return *v
-		}
-		var ret OutputsTcpSyslog
-		return ret
-	}).(OutputsTcpSyslogOutput)
-}
-
 type OutputsTcpSyslogArrayOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpSyslogArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OutputsTcpSyslog)(nil))
+	return reflect.TypeOf((*[]*OutputsTcpSyslog)(nil)).Elem()
 }
 
 func (o OutputsTcpSyslogArrayOutput) ToOutputsTcpSyslogArrayOutput() OutputsTcpSyslogArrayOutput {
@@ -362,15 +299,15 @@ func (o OutputsTcpSyslogArrayOutput) ToOutputsTcpSyslogArrayOutputWithContext(ct
 }
 
 func (o OutputsTcpSyslogArrayOutput) Index(i pulumi.IntInput) OutputsTcpSyslogOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutputsTcpSyslog {
-		return vs[0].([]OutputsTcpSyslog)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutputsTcpSyslog {
+		return vs[0].([]*OutputsTcpSyslog)[vs[1].(int)]
 	}).(OutputsTcpSyslogOutput)
 }
 
 type OutputsTcpSyslogMapOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpSyslogMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]OutputsTcpSyslog)(nil))
+	return reflect.TypeOf((*map[string]*OutputsTcpSyslog)(nil)).Elem()
 }
 
 func (o OutputsTcpSyslogMapOutput) ToOutputsTcpSyslogMapOutput() OutputsTcpSyslogMapOutput {
@@ -382,18 +319,16 @@ func (o OutputsTcpSyslogMapOutput) ToOutputsTcpSyslogMapOutputWithContext(ctx co
 }
 
 func (o OutputsTcpSyslogMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpSyslogOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) OutputsTcpSyslog {
-		return vs[0].(map[string]OutputsTcpSyslog)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *OutputsTcpSyslog {
+		return vs[0].(map[string]*OutputsTcpSyslog)[vs[1].(string)]
 	}).(OutputsTcpSyslogOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogInput)(nil)).Elem(), &OutputsTcpSyslog{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogPtrInput)(nil)).Elem(), &OutputsTcpSyslog{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogArrayInput)(nil)).Elem(), OutputsTcpSyslogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogMapInput)(nil)).Elem(), OutputsTcpSyslogMap{})
 	pulumi.RegisterOutputType(OutputsTcpSyslogOutput{})
-	pulumi.RegisterOutputType(OutputsTcpSyslogPtrOutput{})
 	pulumi.RegisterOutputType(OutputsTcpSyslogArrayOutput{})
 	pulumi.RegisterOutputType(OutputsTcpSyslogMapOutput{})
 }

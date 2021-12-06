@@ -77,26 +77,26 @@ export class DataUiViews extends pulumi.CustomResource {
      */
     constructor(name: string, args: DataUiViewsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DataUiViewsArgs | DataUiViewsState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DataUiViewsState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["eaiData"] = state ? state.eaiData : undefined;
-            inputs["name"] = state ? state.name : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["eaiData"] = state ? state.eaiData : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
         } else {
             const args = argsOrState as DataUiViewsArgs | undefined;
             if ((!args || args.eaiData === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'eaiData'");
             }
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["eaiData"] = args ? args.eaiData : undefined;
-            inputs["name"] = args ? args.name : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["eaiData"] = args ? args.eaiData : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(DataUiViews.__pulumiType, name, inputs, opts);
+        super(DataUiViews.__pulumiType, name, resourceInputs, opts);
     }
 }
 

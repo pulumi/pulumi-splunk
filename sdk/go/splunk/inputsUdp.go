@@ -251,7 +251,7 @@ type InputsUdpInput interface {
 }
 
 func (*InputsUdp) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsUdp)(nil))
+	return reflect.TypeOf((**InputsUdp)(nil)).Elem()
 }
 
 func (i *InputsUdp) ToInputsUdpOutput() InputsUdpOutput {
@@ -260,35 +260,6 @@ func (i *InputsUdp) ToInputsUdpOutput() InputsUdpOutput {
 
 func (i *InputsUdp) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpOutput)
-}
-
-func (i *InputsUdp) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
-	return i.ToInputsUdpPtrOutputWithContext(context.Background())
-}
-
-func (i *InputsUdp) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpPtrOutput)
-}
-
-type InputsUdpPtrInput interface {
-	pulumi.Input
-
-	ToInputsUdpPtrOutput() InputsUdpPtrOutput
-	ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput
-}
-
-type inputsUdpPtrType InputsUdpArgs
-
-func (*inputsUdpPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsUdp)(nil))
-}
-
-func (i *inputsUdpPtrType) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
-	return i.ToInputsUdpPtrOutputWithContext(context.Background())
-}
-
-func (i *inputsUdpPtrType) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpPtrOutput)
 }
 
 // InputsUdpArrayInput is an input type that accepts InputsUdpArray and InputsUdpArrayOutput values.
@@ -344,7 +315,7 @@ func (i InputsUdpMap) ToInputsUdpMapOutputWithContext(ctx context.Context) Input
 type InputsUdpOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsUdp)(nil))
+	return reflect.TypeOf((**InputsUdp)(nil)).Elem()
 }
 
 func (o InputsUdpOutput) ToInputsUdpOutput() InputsUdpOutput {
@@ -355,44 +326,10 @@ func (o InputsUdpOutput) ToInputsUdpOutputWithContext(ctx context.Context) Input
 	return o
 }
 
-func (o InputsUdpOutput) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
-	return o.ToInputsUdpPtrOutputWithContext(context.Background())
-}
-
-func (o InputsUdpOutput) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsUdp) *InputsUdp {
-		return &v
-	}).(InputsUdpPtrOutput)
-}
-
-type InputsUdpPtrOutput struct{ *pulumi.OutputState }
-
-func (InputsUdpPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsUdp)(nil))
-}
-
-func (o InputsUdpPtrOutput) ToInputsUdpPtrOutput() InputsUdpPtrOutput {
-	return o
-}
-
-func (o InputsUdpPtrOutput) ToInputsUdpPtrOutputWithContext(ctx context.Context) InputsUdpPtrOutput {
-	return o
-}
-
-func (o InputsUdpPtrOutput) Elem() InputsUdpOutput {
-	return o.ApplyT(func(v *InputsUdp) InputsUdp {
-		if v != nil {
-			return *v
-		}
-		var ret InputsUdp
-		return ret
-	}).(InputsUdpOutput)
-}
-
 type InputsUdpArrayOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]InputsUdp)(nil))
+	return reflect.TypeOf((*[]*InputsUdp)(nil)).Elem()
 }
 
 func (o InputsUdpArrayOutput) ToInputsUdpArrayOutput() InputsUdpArrayOutput {
@@ -404,15 +341,15 @@ func (o InputsUdpArrayOutput) ToInputsUdpArrayOutputWithContext(ctx context.Cont
 }
 
 func (o InputsUdpArrayOutput) Index(i pulumi.IntInput) InputsUdpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsUdp {
-		return vs[0].([]InputsUdp)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsUdp {
+		return vs[0].([]*InputsUdp)[vs[1].(int)]
 	}).(InputsUdpOutput)
 }
 
 type InputsUdpMapOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]InputsUdp)(nil))
+	return reflect.TypeOf((*map[string]*InputsUdp)(nil)).Elem()
 }
 
 func (o InputsUdpMapOutput) ToInputsUdpMapOutput() InputsUdpMapOutput {
@@ -424,18 +361,16 @@ func (o InputsUdpMapOutput) ToInputsUdpMapOutputWithContext(ctx context.Context)
 }
 
 func (o InputsUdpMapOutput) MapIndex(k pulumi.StringInput) InputsUdpOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsUdp {
-		return vs[0].(map[string]InputsUdp)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *InputsUdp {
+		return vs[0].(map[string]*InputsUdp)[vs[1].(string)]
 	}).(InputsUdpOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpInput)(nil)).Elem(), &InputsUdp{})
-	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpPtrInput)(nil)).Elem(), &InputsUdp{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpArrayInput)(nil)).Elem(), InputsUdpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsUdpMapInput)(nil)).Elem(), InputsUdpMap{})
 	pulumi.RegisterOutputType(InputsUdpOutput{})
-	pulumi.RegisterOutputType(InputsUdpPtrOutput{})
 	pulumi.RegisterOutputType(InputsUdpArrayOutput{})
 	pulumi.RegisterOutputType(InputsUdpMapOutput{})
 }

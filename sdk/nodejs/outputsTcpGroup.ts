@@ -120,42 +120,42 @@ export class OutputsTcpGroup extends pulumi.CustomResource {
      */
     constructor(name: string, args: OutputsTcpGroupArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: OutputsTcpGroupArgs | OutputsTcpGroupState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpGroupState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["compressed"] = state ? state.compressed : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["dropEventsOnQueueFull"] = state ? state.dropEventsOnQueueFull : undefined;
-            inputs["heartbeatFrequency"] = state ? state.heartbeatFrequency : undefined;
-            inputs["maxQueueSize"] = state ? state.maxQueueSize : undefined;
-            inputs["method"] = state ? state.method : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["sendCookedData"] = state ? state.sendCookedData : undefined;
-            inputs["servers"] = state ? state.servers : undefined;
-            inputs["token"] = state ? state.token : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["compressed"] = state ? state.compressed : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["dropEventsOnQueueFull"] = state ? state.dropEventsOnQueueFull : undefined;
+            resourceInputs["heartbeatFrequency"] = state ? state.heartbeatFrequency : undefined;
+            resourceInputs["maxQueueSize"] = state ? state.maxQueueSize : undefined;
+            resourceInputs["method"] = state ? state.method : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["sendCookedData"] = state ? state.sendCookedData : undefined;
+            resourceInputs["servers"] = state ? state.servers : undefined;
+            resourceInputs["token"] = state ? state.token : undefined;
         } else {
             const args = argsOrState as OutputsTcpGroupArgs | undefined;
             if ((!args || args.servers === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'servers'");
             }
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["compressed"] = args ? args.compressed : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["dropEventsOnQueueFull"] = args ? args.dropEventsOnQueueFull : undefined;
-            inputs["heartbeatFrequency"] = args ? args.heartbeatFrequency : undefined;
-            inputs["maxQueueSize"] = args ? args.maxQueueSize : undefined;
-            inputs["method"] = args ? args.method : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["sendCookedData"] = args ? args.sendCookedData : undefined;
-            inputs["servers"] = args ? args.servers : undefined;
-            inputs["token"] = args ? args.token : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["compressed"] = args ? args.compressed : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["dropEventsOnQueueFull"] = args ? args.dropEventsOnQueueFull : undefined;
+            resourceInputs["heartbeatFrequency"] = args ? args.heartbeatFrequency : undefined;
+            resourceInputs["maxQueueSize"] = args ? args.maxQueueSize : undefined;
+            resourceInputs["method"] = args ? args.method : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["sendCookedData"] = args ? args.sendCookedData : undefined;
+            resourceInputs["servers"] = args ? args.servers : undefined;
+            resourceInputs["token"] = args ? args.token : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(OutputsTcpGroup.__pulumiType, name, inputs, opts);
+        super(OutputsTcpGroup.__pulumiType, name, resourceInputs, opts);
     }
 }
 

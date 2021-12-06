@@ -88,37 +88,37 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsHttpEventCollectorArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsHttpEventCollectorArgs | InputsHttpEventCollectorState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsHttpEventCollectorState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["host"] = state ? state.host : undefined;
-            inputs["index"] = state ? state.index : undefined;
-            inputs["indexes"] = state ? state.indexes : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["source"] = state ? state.source : undefined;
-            inputs["sourcetype"] = state ? state.sourcetype : undefined;
-            inputs["token"] = state ? state.token : undefined;
-            inputs["useAck"] = state ? state.useAck : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["host"] = state ? state.host : undefined;
+            resourceInputs["index"] = state ? state.index : undefined;
+            resourceInputs["indexes"] = state ? state.indexes : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["source"] = state ? state.source : undefined;
+            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["token"] = state ? state.token : undefined;
+            resourceInputs["useAck"] = state ? state.useAck : undefined;
         } else {
             const args = argsOrState as InputsHttpEventCollectorArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["host"] = args ? args.host : undefined;
-            inputs["index"] = args ? args.index : undefined;
-            inputs["indexes"] = args ? args.indexes : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["source"] = args ? args.source : undefined;
-            inputs["sourcetype"] = args ? args.sourcetype : undefined;
-            inputs["token"] = args ? args.token : undefined;
-            inputs["useAck"] = args ? args.useAck : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["index"] = args ? args.index : undefined;
+            resourceInputs["indexes"] = args ? args.indexes : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["token"] = args ? args.token : undefined;
+            resourceInputs["useAck"] = args ? args.useAck : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsHttpEventCollector.__pulumiType, name, inputs, opts);
+        super(InputsHttpEventCollector.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -510,6 +510,12 @@ namespace Pulumi.Splunk
         public Output<string> ActionSummaryIndexTtl { get; private set; } = null!;
 
         /// <summary>
+        /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        /// </summary>
+        [Output("actionWebhookParamUrl")]
+        public Output<string?> ActionWebhookParamUrl { get; private set; } = null!;
+
+        /// <summary>
         /// A comma-separated list of actions to enable. For example: rss,email
         /// </summary>
         [Output("actions")]
@@ -1348,6 +1354,12 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSummaryIndexTtl { get; set; }
 
         /// <summary>
+        /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        /// </summary>
+        [Input("actionWebhookParamUrl")]
+        public Input<string>? ActionWebhookParamUrl { get; set; }
+
+        /// <summary>
         /// A comma-separated list of actions to enable. For example: rss,email
         /// </summary>
         [Input("actions")]
@@ -2175,6 +2187,12 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionSummaryIndexTtl")]
         public Input<string>? ActionSummaryIndexTtl { get; set; }
+
+        /// <summary>
+        /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        /// </summary>
+        [Input("actionWebhookParamUrl")]
+        public Input<string>? ActionWebhookParamUrl { get; set; }
 
         /// <summary>
         /// A comma-separated list of actions to enable. For example: rss,email

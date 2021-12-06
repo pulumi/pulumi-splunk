@@ -210,6 +210,8 @@ type SavedSearches struct {
 	ActionSummaryIndexTrackAlert pulumi.BoolOutput `pulumi:"actionSummaryIndexTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl pulumi.StringOutput `pulumi:"actionSummaryIndexTtl"`
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionWebhookParamUrl pulumi.StringPtrOutput `pulumi:"actionWebhookParamUrl"`
 	// A comma-separated list of actions to enable. For example: rss,email
 	Actions pulumi.StringOutput `pulumi:"actions"`
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
@@ -518,6 +520,8 @@ type savedSearchesState struct {
 	ActionSummaryIndexTrackAlert *bool `pulumi:"actionSummaryIndexTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl *string `pulumi:"actionSummaryIndexTtl"`
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionWebhookParamUrl *string `pulumi:"actionWebhookParamUrl"`
 	// A comma-separated list of actions to enable. For example: rss,email
 	Actions *string `pulumi:"actions"`
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
@@ -795,6 +799,8 @@ type SavedSearchesState struct {
 	ActionSummaryIndexTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl pulumi.StringPtrInput
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionWebhookParamUrl pulumi.StringPtrInput
 	// A comma-separated list of actions to enable. For example: rss,email
 	Actions pulumi.StringPtrInput
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
@@ -1066,6 +1072,8 @@ type savedSearchesArgs struct {
 	ActionSummaryIndexTrackAlert *bool `pulumi:"actionSummaryIndexTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl *string `pulumi:"actionSummaryIndexTtl"`
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionWebhookParamUrl *string `pulumi:"actionWebhookParamUrl"`
 	// A comma-separated list of actions to enable. For example: rss,email
 	Actions *string `pulumi:"actions"`
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
@@ -1334,6 +1342,8 @@ type SavedSearchesArgs struct {
 	ActionSummaryIndexTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl pulumi.StringPtrInput
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionWebhookParamUrl pulumi.StringPtrInput
 	// A comma-separated list of actions to enable. For example: rss,email
 	Actions pulumi.StringPtrInput
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
@@ -1470,7 +1480,7 @@ type SavedSearchesInput interface {
 }
 
 func (*SavedSearches) ElementType() reflect.Type {
-	return reflect.TypeOf((*SavedSearches)(nil))
+	return reflect.TypeOf((**SavedSearches)(nil)).Elem()
 }
 
 func (i *SavedSearches) ToSavedSearchesOutput() SavedSearchesOutput {
@@ -1479,35 +1489,6 @@ func (i *SavedSearches) ToSavedSearchesOutput() SavedSearchesOutput {
 
 func (i *SavedSearches) ToSavedSearchesOutputWithContext(ctx context.Context) SavedSearchesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesOutput)
-}
-
-func (i *SavedSearches) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
-	return i.ToSavedSearchesPtrOutputWithContext(context.Background())
-}
-
-func (i *SavedSearches) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesPtrOutput)
-}
-
-type SavedSearchesPtrInput interface {
-	pulumi.Input
-
-	ToSavedSearchesPtrOutput() SavedSearchesPtrOutput
-	ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput
-}
-
-type savedSearchesPtrType SavedSearchesArgs
-
-func (*savedSearchesPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**SavedSearches)(nil))
-}
-
-func (i *savedSearchesPtrType) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
-	return i.ToSavedSearchesPtrOutputWithContext(context.Background())
-}
-
-func (i *savedSearchesPtrType) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesPtrOutput)
 }
 
 // SavedSearchesArrayInput is an input type that accepts SavedSearchesArray and SavedSearchesArrayOutput values.
@@ -1563,7 +1544,7 @@ func (i SavedSearchesMap) ToSavedSearchesMapOutputWithContext(ctx context.Contex
 type SavedSearchesOutput struct{ *pulumi.OutputState }
 
 func (SavedSearchesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*SavedSearches)(nil))
+	return reflect.TypeOf((**SavedSearches)(nil)).Elem()
 }
 
 func (o SavedSearchesOutput) ToSavedSearchesOutput() SavedSearchesOutput {
@@ -1574,44 +1555,10 @@ func (o SavedSearchesOutput) ToSavedSearchesOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o SavedSearchesOutput) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
-	return o.ToSavedSearchesPtrOutputWithContext(context.Background())
-}
-
-func (o SavedSearchesOutput) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v SavedSearches) *SavedSearches {
-		return &v
-	}).(SavedSearchesPtrOutput)
-}
-
-type SavedSearchesPtrOutput struct{ *pulumi.OutputState }
-
-func (SavedSearchesPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**SavedSearches)(nil))
-}
-
-func (o SavedSearchesPtrOutput) ToSavedSearchesPtrOutput() SavedSearchesPtrOutput {
-	return o
-}
-
-func (o SavedSearchesPtrOutput) ToSavedSearchesPtrOutputWithContext(ctx context.Context) SavedSearchesPtrOutput {
-	return o
-}
-
-func (o SavedSearchesPtrOutput) Elem() SavedSearchesOutput {
-	return o.ApplyT(func(v *SavedSearches) SavedSearches {
-		if v != nil {
-			return *v
-		}
-		var ret SavedSearches
-		return ret
-	}).(SavedSearchesOutput)
-}
-
 type SavedSearchesArrayOutput struct{ *pulumi.OutputState }
 
 func (SavedSearchesArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]SavedSearches)(nil))
+	return reflect.TypeOf((*[]*SavedSearches)(nil)).Elem()
 }
 
 func (o SavedSearchesArrayOutput) ToSavedSearchesArrayOutput() SavedSearchesArrayOutput {
@@ -1623,15 +1570,15 @@ func (o SavedSearchesArrayOutput) ToSavedSearchesArrayOutputWithContext(ctx cont
 }
 
 func (o SavedSearchesArrayOutput) Index(i pulumi.IntInput) SavedSearchesOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SavedSearches {
-		return vs[0].([]SavedSearches)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SavedSearches {
+		return vs[0].([]*SavedSearches)[vs[1].(int)]
 	}).(SavedSearchesOutput)
 }
 
 type SavedSearchesMapOutput struct{ *pulumi.OutputState }
 
 func (SavedSearchesMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]SavedSearches)(nil))
+	return reflect.TypeOf((*map[string]*SavedSearches)(nil)).Elem()
 }
 
 func (o SavedSearchesMapOutput) ToSavedSearchesMapOutput() SavedSearchesMapOutput {
@@ -1643,18 +1590,16 @@ func (o SavedSearchesMapOutput) ToSavedSearchesMapOutputWithContext(ctx context.
 }
 
 func (o SavedSearchesMapOutput) MapIndex(k pulumi.StringInput) SavedSearchesOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) SavedSearches {
-		return vs[0].(map[string]SavedSearches)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *SavedSearches {
+		return vs[0].(map[string]*SavedSearches)[vs[1].(string)]
 	}).(SavedSearchesOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesInput)(nil)).Elem(), &SavedSearches{})
-	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesPtrInput)(nil)).Elem(), &SavedSearches{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesArrayInput)(nil)).Elem(), SavedSearchesArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesMapInput)(nil)).Elem(), SavedSearchesMap{})
 	pulumi.RegisterOutputType(SavedSearchesOutput{})
-	pulumi.RegisterOutputType(SavedSearchesPtrOutput{})
 	pulumi.RegisterOutputType(SavedSearchesArrayOutput{})
 	pulumi.RegisterOutputType(SavedSearchesMapOutput{})
 }

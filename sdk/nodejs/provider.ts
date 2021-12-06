@@ -51,23 +51,23 @@ export class Provider extends pulumi.ProviderResource {
      * @param opts A bag of options that control this resource's behavior.
      */
     constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
             if ((!args || args.url === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            inputs["authToken"] = args ? args.authToken : undefined;
-            inputs["insecureSkipVerify"] = pulumi.output(args ? args.insecureSkipVerify : undefined).apply(JSON.stringify);
-            inputs["password"] = args ? args.password : undefined;
-            inputs["timeout"] = pulumi.output(args ? args.timeout : undefined).apply(JSON.stringify);
-            inputs["url"] = args ? args.url : undefined;
-            inputs["username"] = args ? args.username : undefined;
+            resourceInputs["authToken"] = args ? args.authToken : undefined;
+            resourceInputs["insecureSkipVerify"] = pulumi.output(args ? args.insecureSkipVerify : undefined).apply(JSON.stringify);
+            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["timeout"] = pulumi.output(args ? args.timeout : undefined).apply(JSON.stringify);
+            resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["username"] = args ? args.username : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(Provider.__pulumiType, name, inputs, opts);
+        super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }
 

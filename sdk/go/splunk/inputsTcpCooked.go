@@ -185,7 +185,7 @@ type InputsTcpCookedInput interface {
 }
 
 func (*InputsTcpCooked) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpCooked)(nil))
+	return reflect.TypeOf((**InputsTcpCooked)(nil)).Elem()
 }
 
 func (i *InputsTcpCooked) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
@@ -194,35 +194,6 @@ func (i *InputsTcpCooked) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
 
 func (i *InputsTcpCooked) ToInputsTcpCookedOutputWithContext(ctx context.Context) InputsTcpCookedOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedOutput)
-}
-
-func (i *InputsTcpCooked) ToInputsTcpCookedPtrOutput() InputsTcpCookedPtrOutput {
-	return i.ToInputsTcpCookedPtrOutputWithContext(context.Background())
-}
-
-func (i *InputsTcpCooked) ToInputsTcpCookedPtrOutputWithContext(ctx context.Context) InputsTcpCookedPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedPtrOutput)
-}
-
-type InputsTcpCookedPtrInput interface {
-	pulumi.Input
-
-	ToInputsTcpCookedPtrOutput() InputsTcpCookedPtrOutput
-	ToInputsTcpCookedPtrOutputWithContext(ctx context.Context) InputsTcpCookedPtrOutput
-}
-
-type inputsTcpCookedPtrType InputsTcpCookedArgs
-
-func (*inputsTcpCookedPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsTcpCooked)(nil))
-}
-
-func (i *inputsTcpCookedPtrType) ToInputsTcpCookedPtrOutput() InputsTcpCookedPtrOutput {
-	return i.ToInputsTcpCookedPtrOutputWithContext(context.Background())
-}
-
-func (i *inputsTcpCookedPtrType) ToInputsTcpCookedPtrOutputWithContext(ctx context.Context) InputsTcpCookedPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedPtrOutput)
 }
 
 // InputsTcpCookedArrayInput is an input type that accepts InputsTcpCookedArray and InputsTcpCookedArrayOutput values.
@@ -278,7 +249,7 @@ func (i InputsTcpCookedMap) ToInputsTcpCookedMapOutputWithContext(ctx context.Co
 type InputsTcpCookedOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpCookedOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpCooked)(nil))
+	return reflect.TypeOf((**InputsTcpCooked)(nil)).Elem()
 }
 
 func (o InputsTcpCookedOutput) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
@@ -289,44 +260,10 @@ func (o InputsTcpCookedOutput) ToInputsTcpCookedOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o InputsTcpCookedOutput) ToInputsTcpCookedPtrOutput() InputsTcpCookedPtrOutput {
-	return o.ToInputsTcpCookedPtrOutputWithContext(context.Background())
-}
-
-func (o InputsTcpCookedOutput) ToInputsTcpCookedPtrOutputWithContext(ctx context.Context) InputsTcpCookedPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpCooked) *InputsTcpCooked {
-		return &v
-	}).(InputsTcpCookedPtrOutput)
-}
-
-type InputsTcpCookedPtrOutput struct{ *pulumi.OutputState }
-
-func (InputsTcpCookedPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsTcpCooked)(nil))
-}
-
-func (o InputsTcpCookedPtrOutput) ToInputsTcpCookedPtrOutput() InputsTcpCookedPtrOutput {
-	return o
-}
-
-func (o InputsTcpCookedPtrOutput) ToInputsTcpCookedPtrOutputWithContext(ctx context.Context) InputsTcpCookedPtrOutput {
-	return o
-}
-
-func (o InputsTcpCookedPtrOutput) Elem() InputsTcpCookedOutput {
-	return o.ApplyT(func(v *InputsTcpCooked) InputsTcpCooked {
-		if v != nil {
-			return *v
-		}
-		var ret InputsTcpCooked
-		return ret
-	}).(InputsTcpCookedOutput)
-}
-
 type InputsTcpCookedArrayOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpCookedArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]InputsTcpCooked)(nil))
+	return reflect.TypeOf((*[]*InputsTcpCooked)(nil)).Elem()
 }
 
 func (o InputsTcpCookedArrayOutput) ToInputsTcpCookedArrayOutput() InputsTcpCookedArrayOutput {
@@ -338,15 +275,15 @@ func (o InputsTcpCookedArrayOutput) ToInputsTcpCookedArrayOutputWithContext(ctx 
 }
 
 func (o InputsTcpCookedArrayOutput) Index(i pulumi.IntInput) InputsTcpCookedOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsTcpCooked {
-		return vs[0].([]InputsTcpCooked)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsTcpCooked {
+		return vs[0].([]*InputsTcpCooked)[vs[1].(int)]
 	}).(InputsTcpCookedOutput)
 }
 
 type InputsTcpCookedMapOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpCookedMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]InputsTcpCooked)(nil))
+	return reflect.TypeOf((*map[string]*InputsTcpCooked)(nil)).Elem()
 }
 
 func (o InputsTcpCookedMapOutput) ToInputsTcpCookedMapOutput() InputsTcpCookedMapOutput {
@@ -358,18 +295,16 @@ func (o InputsTcpCookedMapOutput) ToInputsTcpCookedMapOutputWithContext(ctx cont
 }
 
 func (o InputsTcpCookedMapOutput) MapIndex(k pulumi.StringInput) InputsTcpCookedOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsTcpCooked {
-		return vs[0].(map[string]InputsTcpCooked)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *InputsTcpCooked {
+		return vs[0].(map[string]*InputsTcpCooked)[vs[1].(string)]
 	}).(InputsTcpCookedOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpCookedInput)(nil)).Elem(), &InputsTcpCooked{})
-	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpCookedPtrInput)(nil)).Elem(), &InputsTcpCooked{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpCookedArrayInput)(nil)).Elem(), InputsTcpCookedArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpCookedMapInput)(nil)).Elem(), InputsTcpCookedMap{})
 	pulumi.RegisterOutputType(InputsTcpCookedOutput{})
-	pulumi.RegisterOutputType(InputsTcpCookedPtrOutput{})
 	pulumi.RegisterOutputType(InputsTcpCookedArrayOutput{})
 	pulumi.RegisterOutputType(InputsTcpCookedMapOutput{})
 }

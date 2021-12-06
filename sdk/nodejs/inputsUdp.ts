@@ -116,41 +116,41 @@ export class InputsUdp extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsUdpArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsUdpArgs | InputsUdpState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsUdpState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["connectionHost"] = state ? state.connectionHost : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["host"] = state ? state.host : undefined;
-            inputs["index"] = state ? state.index : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["noAppendingTimestamp"] = state ? state.noAppendingTimestamp : undefined;
-            inputs["noPriorityStripping"] = state ? state.noPriorityStripping : undefined;
-            inputs["queue"] = state ? state.queue : undefined;
-            inputs["restrictToHost"] = state ? state.restrictToHost : undefined;
-            inputs["source"] = state ? state.source : undefined;
-            inputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["connectionHost"] = state ? state.connectionHost : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["host"] = state ? state.host : undefined;
+            resourceInputs["index"] = state ? state.index : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["noAppendingTimestamp"] = state ? state.noAppendingTimestamp : undefined;
+            resourceInputs["noPriorityStripping"] = state ? state.noPriorityStripping : undefined;
+            resourceInputs["queue"] = state ? state.queue : undefined;
+            resourceInputs["restrictToHost"] = state ? state.restrictToHost : undefined;
+            resourceInputs["source"] = state ? state.source : undefined;
+            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
         } else {
             const args = argsOrState as InputsUdpArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["connectionHost"] = args ? args.connectionHost : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["host"] = args ? args.host : undefined;
-            inputs["index"] = args ? args.index : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["noAppendingTimestamp"] = args ? args.noAppendingTimestamp : undefined;
-            inputs["noPriorityStripping"] = args ? args.noPriorityStripping : undefined;
-            inputs["queue"] = args ? args.queue : undefined;
-            inputs["restrictToHost"] = args ? args.restrictToHost : undefined;
-            inputs["source"] = args ? args.source : undefined;
-            inputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["connectionHost"] = args ? args.connectionHost : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["index"] = args ? args.index : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["noAppendingTimestamp"] = args ? args.noAppendingTimestamp : undefined;
+            resourceInputs["noPriorityStripping"] = args ? args.noPriorityStripping : undefined;
+            resourceInputs["queue"] = args ? args.queue : undefined;
+            resourceInputs["restrictToHost"] = args ? args.restrictToHost : undefined;
+            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsUdp.__pulumiType, name, inputs, opts);
+        super(InputsUdp.__pulumiType, name, resourceInputs, opts);
     }
 }
 

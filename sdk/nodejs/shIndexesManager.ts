@@ -84,27 +84,27 @@ export class ShIndexesManager extends pulumi.CustomResource {
      */
     constructor(name: string, args?: ShIndexesManagerArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: ShIndexesManagerArgs | ShIndexesManagerState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ShIndexesManagerState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["datatype"] = state ? state.datatype : undefined;
-            inputs["frozenTimePeriodInSecs"] = state ? state.frozenTimePeriodInSecs : undefined;
-            inputs["maxGlobalRawDataSizeMb"] = state ? state.maxGlobalRawDataSizeMb : undefined;
-            inputs["name"] = state ? state.name : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["datatype"] = state ? state.datatype : undefined;
+            resourceInputs["frozenTimePeriodInSecs"] = state ? state.frozenTimePeriodInSecs : undefined;
+            resourceInputs["maxGlobalRawDataSizeMb"] = state ? state.maxGlobalRawDataSizeMb : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
         } else {
             const args = argsOrState as ShIndexesManagerArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["datatype"] = args ? args.datatype : undefined;
-            inputs["frozenTimePeriodInSecs"] = args ? args.frozenTimePeriodInSecs : undefined;
-            inputs["maxGlobalRawDataSizeMb"] = args ? args.maxGlobalRawDataSizeMb : undefined;
-            inputs["name"] = args ? args.name : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["datatype"] = args ? args.datatype : undefined;
+            resourceInputs["frozenTimePeriodInSecs"] = args ? args.frozenTimePeriodInSecs : undefined;
+            resourceInputs["maxGlobalRawDataSizeMb"] = args ? args.maxGlobalRawDataSizeMb : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(ShIndexesManager.__pulumiType, name, inputs, opts);
+        super(ShIndexesManager.__pulumiType, name, resourceInputs, opts);
     }
 }
 

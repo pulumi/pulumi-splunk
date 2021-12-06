@@ -272,7 +272,7 @@ type InputsTcpRawInput interface {
 }
 
 func (*InputsTcpRaw) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpRaw)(nil))
+	return reflect.TypeOf((**InputsTcpRaw)(nil)).Elem()
 }
 
 func (i *InputsTcpRaw) ToInputsTcpRawOutput() InputsTcpRawOutput {
@@ -281,35 +281,6 @@ func (i *InputsTcpRaw) ToInputsTcpRawOutput() InputsTcpRawOutput {
 
 func (i *InputsTcpRaw) ToInputsTcpRawOutputWithContext(ctx context.Context) InputsTcpRawOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawOutput)
-}
-
-func (i *InputsTcpRaw) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
-	return i.ToInputsTcpRawPtrOutputWithContext(context.Background())
-}
-
-func (i *InputsTcpRaw) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawPtrOutput)
-}
-
-type InputsTcpRawPtrInput interface {
-	pulumi.Input
-
-	ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput
-	ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput
-}
-
-type inputsTcpRawPtrType InputsTcpRawArgs
-
-func (*inputsTcpRawPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsTcpRaw)(nil))
-}
-
-func (i *inputsTcpRawPtrType) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
-	return i.ToInputsTcpRawPtrOutputWithContext(context.Background())
-}
-
-func (i *inputsTcpRawPtrType) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawPtrOutput)
 }
 
 // InputsTcpRawArrayInput is an input type that accepts InputsTcpRawArray and InputsTcpRawArrayOutput values.
@@ -365,7 +336,7 @@ func (i InputsTcpRawMap) ToInputsTcpRawMapOutputWithContext(ctx context.Context)
 type InputsTcpRawOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpRawOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsTcpRaw)(nil))
+	return reflect.TypeOf((**InputsTcpRaw)(nil)).Elem()
 }
 
 func (o InputsTcpRawOutput) ToInputsTcpRawOutput() InputsTcpRawOutput {
@@ -376,44 +347,10 @@ func (o InputsTcpRawOutput) ToInputsTcpRawOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o InputsTcpRawOutput) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
-	return o.ToInputsTcpRawPtrOutputWithContext(context.Background())
-}
-
-func (o InputsTcpRawOutput) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpRaw) *InputsTcpRaw {
-		return &v
-	}).(InputsTcpRawPtrOutput)
-}
-
-type InputsTcpRawPtrOutput struct{ *pulumi.OutputState }
-
-func (InputsTcpRawPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsTcpRaw)(nil))
-}
-
-func (o InputsTcpRawPtrOutput) ToInputsTcpRawPtrOutput() InputsTcpRawPtrOutput {
-	return o
-}
-
-func (o InputsTcpRawPtrOutput) ToInputsTcpRawPtrOutputWithContext(ctx context.Context) InputsTcpRawPtrOutput {
-	return o
-}
-
-func (o InputsTcpRawPtrOutput) Elem() InputsTcpRawOutput {
-	return o.ApplyT(func(v *InputsTcpRaw) InputsTcpRaw {
-		if v != nil {
-			return *v
-		}
-		var ret InputsTcpRaw
-		return ret
-	}).(InputsTcpRawOutput)
-}
-
 type InputsTcpRawArrayOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpRawArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]InputsTcpRaw)(nil))
+	return reflect.TypeOf((*[]*InputsTcpRaw)(nil)).Elem()
 }
 
 func (o InputsTcpRawArrayOutput) ToInputsTcpRawArrayOutput() InputsTcpRawArrayOutput {
@@ -425,15 +362,15 @@ func (o InputsTcpRawArrayOutput) ToInputsTcpRawArrayOutputWithContext(ctx contex
 }
 
 func (o InputsTcpRawArrayOutput) Index(i pulumi.IntInput) InputsTcpRawOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsTcpRaw {
-		return vs[0].([]InputsTcpRaw)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsTcpRaw {
+		return vs[0].([]*InputsTcpRaw)[vs[1].(int)]
 	}).(InputsTcpRawOutput)
 }
 
 type InputsTcpRawMapOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpRawMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]InputsTcpRaw)(nil))
+	return reflect.TypeOf((*map[string]*InputsTcpRaw)(nil)).Elem()
 }
 
 func (o InputsTcpRawMapOutput) ToInputsTcpRawMapOutput() InputsTcpRawMapOutput {
@@ -445,18 +382,16 @@ func (o InputsTcpRawMapOutput) ToInputsTcpRawMapOutputWithContext(ctx context.Co
 }
 
 func (o InputsTcpRawMapOutput) MapIndex(k pulumi.StringInput) InputsTcpRawOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsTcpRaw {
-		return vs[0].(map[string]InputsTcpRaw)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *InputsTcpRaw {
+		return vs[0].(map[string]*InputsTcpRaw)[vs[1].(string)]
 	}).(InputsTcpRawOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpRawInput)(nil)).Elem(), &InputsTcpRaw{})
-	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpRawPtrInput)(nil)).Elem(), &InputsTcpRaw{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpRawArrayInput)(nil)).Elem(), InputsTcpRawArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsTcpRawMapInput)(nil)).Elem(), InputsTcpRawMap{})
 	pulumi.RegisterOutputType(InputsTcpRawOutput{})
-	pulumi.RegisterOutputType(InputsTcpRawPtrOutput{})
 	pulumi.RegisterOutputType(InputsTcpRawArrayOutput{})
 	pulumi.RegisterOutputType(InputsTcpRawMapOutput{})
 }

@@ -193,7 +193,7 @@ type AuthenticationUsersInput interface {
 }
 
 func (*AuthenticationUsers) ElementType() reflect.Type {
-	return reflect.TypeOf((*AuthenticationUsers)(nil))
+	return reflect.TypeOf((**AuthenticationUsers)(nil)).Elem()
 }
 
 func (i *AuthenticationUsers) ToAuthenticationUsersOutput() AuthenticationUsersOutput {
@@ -202,35 +202,6 @@ func (i *AuthenticationUsers) ToAuthenticationUsersOutput() AuthenticationUsersO
 
 func (i *AuthenticationUsers) ToAuthenticationUsersOutputWithContext(ctx context.Context) AuthenticationUsersOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersOutput)
-}
-
-func (i *AuthenticationUsers) ToAuthenticationUsersPtrOutput() AuthenticationUsersPtrOutput {
-	return i.ToAuthenticationUsersPtrOutputWithContext(context.Background())
-}
-
-func (i *AuthenticationUsers) ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersPtrOutput)
-}
-
-type AuthenticationUsersPtrInput interface {
-	pulumi.Input
-
-	ToAuthenticationUsersPtrOutput() AuthenticationUsersPtrOutput
-	ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput
-}
-
-type authenticationUsersPtrType AuthenticationUsersArgs
-
-func (*authenticationUsersPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AuthenticationUsers)(nil))
-}
-
-func (i *authenticationUsersPtrType) ToAuthenticationUsersPtrOutput() AuthenticationUsersPtrOutput {
-	return i.ToAuthenticationUsersPtrOutputWithContext(context.Background())
-}
-
-func (i *authenticationUsersPtrType) ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersPtrOutput)
 }
 
 // AuthenticationUsersArrayInput is an input type that accepts AuthenticationUsersArray and AuthenticationUsersArrayOutput values.
@@ -286,7 +257,7 @@ func (i AuthenticationUsersMap) ToAuthenticationUsersMapOutputWithContext(ctx co
 type AuthenticationUsersOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationUsersOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AuthenticationUsers)(nil))
+	return reflect.TypeOf((**AuthenticationUsers)(nil)).Elem()
 }
 
 func (o AuthenticationUsersOutput) ToAuthenticationUsersOutput() AuthenticationUsersOutput {
@@ -297,44 +268,10 @@ func (o AuthenticationUsersOutput) ToAuthenticationUsersOutputWithContext(ctx co
 	return o
 }
 
-func (o AuthenticationUsersOutput) ToAuthenticationUsersPtrOutput() AuthenticationUsersPtrOutput {
-	return o.ToAuthenticationUsersPtrOutputWithContext(context.Background())
-}
-
-func (o AuthenticationUsersOutput) ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AuthenticationUsers) *AuthenticationUsers {
-		return &v
-	}).(AuthenticationUsersPtrOutput)
-}
-
-type AuthenticationUsersPtrOutput struct{ *pulumi.OutputState }
-
-func (AuthenticationUsersPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AuthenticationUsers)(nil))
-}
-
-func (o AuthenticationUsersPtrOutput) ToAuthenticationUsersPtrOutput() AuthenticationUsersPtrOutput {
-	return o
-}
-
-func (o AuthenticationUsersPtrOutput) ToAuthenticationUsersPtrOutputWithContext(ctx context.Context) AuthenticationUsersPtrOutput {
-	return o
-}
-
-func (o AuthenticationUsersPtrOutput) Elem() AuthenticationUsersOutput {
-	return o.ApplyT(func(v *AuthenticationUsers) AuthenticationUsers {
-		if v != nil {
-			return *v
-		}
-		var ret AuthenticationUsers
-		return ret
-	}).(AuthenticationUsersOutput)
-}
-
 type AuthenticationUsersArrayOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationUsersArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AuthenticationUsers)(nil))
+	return reflect.TypeOf((*[]*AuthenticationUsers)(nil)).Elem()
 }
 
 func (o AuthenticationUsersArrayOutput) ToAuthenticationUsersArrayOutput() AuthenticationUsersArrayOutput {
@@ -346,15 +283,15 @@ func (o AuthenticationUsersArrayOutput) ToAuthenticationUsersArrayOutputWithCont
 }
 
 func (o AuthenticationUsersArrayOutput) Index(i pulumi.IntInput) AuthenticationUsersOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AuthenticationUsers {
-		return vs[0].([]AuthenticationUsers)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuthenticationUsers {
+		return vs[0].([]*AuthenticationUsers)[vs[1].(int)]
 	}).(AuthenticationUsersOutput)
 }
 
 type AuthenticationUsersMapOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationUsersMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AuthenticationUsers)(nil))
+	return reflect.TypeOf((*map[string]*AuthenticationUsers)(nil)).Elem()
 }
 
 func (o AuthenticationUsersMapOutput) ToAuthenticationUsersMapOutput() AuthenticationUsersMapOutput {
@@ -366,18 +303,16 @@ func (o AuthenticationUsersMapOutput) ToAuthenticationUsersMapOutputWithContext(
 }
 
 func (o AuthenticationUsersMapOutput) MapIndex(k pulumi.StringInput) AuthenticationUsersOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AuthenticationUsers {
-		return vs[0].(map[string]AuthenticationUsers)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AuthenticationUsers {
+		return vs[0].(map[string]*AuthenticationUsers)[vs[1].(string)]
 	}).(AuthenticationUsersOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersInput)(nil)).Elem(), &AuthenticationUsers{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersPtrInput)(nil)).Elem(), &AuthenticationUsers{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersArrayInput)(nil)).Elem(), AuthenticationUsersArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuthenticationUsersMapInput)(nil)).Elem(), AuthenticationUsersMap{})
 	pulumi.RegisterOutputType(AuthenticationUsersOutput{})
-	pulumi.RegisterOutputType(AuthenticationUsersPtrOutput{})
 	pulumi.RegisterOutputType(AuthenticationUsersArrayOutput{})
 	pulumi.RegisterOutputType(AuthenticationUsersMapOutput{})
 }
