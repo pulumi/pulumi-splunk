@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+## Notice (2021-12-07)
+
+*As of this notice, using CHANGELOG.md is DEPRECATED. We will be using [GitHub Releases](https://github.com/pulumi/pulumi-splunk/releases) for this repository*
+
 ## HEAD (Unreleased)
 * Upgrade to v1.4.9 of terraform-provider-splunk
 

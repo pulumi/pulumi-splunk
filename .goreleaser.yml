@@ -29,6 +29,9 @@ builds:
   main: ./cmd/pulumi-resource-splunk/
 changelog:
   skip: true
+  use: git
+  sort: asc
+
 release:
   disable: false
 snapshot:
