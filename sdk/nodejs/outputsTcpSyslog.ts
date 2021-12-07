@@ -98,33 +98,33 @@ export class OutputsTcpSyslog extends pulumi.CustomResource {
      */
     constructor(name: string, args?: OutputsTcpSyslogArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: OutputsTcpSyslogArgs | OutputsTcpSyslogState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpSyslogState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["priority"] = state ? state.priority : undefined;
-            inputs["server"] = state ? state.server : undefined;
-            inputs["syslogSourcetype"] = state ? state.syslogSourcetype : undefined;
-            inputs["timestampFormat"] = state ? state.timestampFormat : undefined;
-            inputs["type"] = state ? state.type : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["priority"] = state ? state.priority : undefined;
+            resourceInputs["server"] = state ? state.server : undefined;
+            resourceInputs["syslogSourcetype"] = state ? state.syslogSourcetype : undefined;
+            resourceInputs["timestampFormat"] = state ? state.timestampFormat : undefined;
+            resourceInputs["type"] = state ? state.type : undefined;
         } else {
             const args = argsOrState as OutputsTcpSyslogArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["priority"] = args ? args.priority : undefined;
-            inputs["server"] = args ? args.server : undefined;
-            inputs["syslogSourcetype"] = args ? args.syslogSourcetype : undefined;
-            inputs["timestampFormat"] = args ? args.timestampFormat : undefined;
-            inputs["type"] = args ? args.type : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["priority"] = args ? args.priority : undefined;
+            resourceInputs["server"] = args ? args.server : undefined;
+            resourceInputs["syslogSourcetype"] = args ? args.syslogSourcetype : undefined;
+            resourceInputs["timestampFormat"] = args ? args.timestampFormat : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(OutputsTcpSyslog.__pulumiType, name, inputs, opts);
+        super(OutputsTcpSyslog.__pulumiType, name, resourceInputs, opts);
     }
 }
 

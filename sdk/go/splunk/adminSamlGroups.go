@@ -26,7 +26,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewAdminSamlGroups(ctx, "saml_group", &splunk.AdminSamlGroupsArgs{
+// 		_, err := splunk.NewAdminSamlGroups(ctx, "saml-group", &splunk.AdminSamlGroupsArgs{
 // 			Roles: pulumi.StringArray{
 // 				pulumi.String("admin"),
 // 				pulumi.String("power"),
@@ -129,7 +129,7 @@ type AdminSamlGroupsInput interface {
 }
 
 func (*AdminSamlGroups) ElementType() reflect.Type {
-	return reflect.TypeOf((*AdminSamlGroups)(nil))
+	return reflect.TypeOf((**AdminSamlGroups)(nil)).Elem()
 }
 
 func (i *AdminSamlGroups) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
@@ -138,35 +138,6 @@ func (i *AdminSamlGroups) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
 
 func (i *AdminSamlGroups) ToAdminSamlGroupsOutputWithContext(ctx context.Context) AdminSamlGroupsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsOutput)
-}
-
-func (i *AdminSamlGroups) ToAdminSamlGroupsPtrOutput() AdminSamlGroupsPtrOutput {
-	return i.ToAdminSamlGroupsPtrOutputWithContext(context.Background())
-}
-
-func (i *AdminSamlGroups) ToAdminSamlGroupsPtrOutputWithContext(ctx context.Context) AdminSamlGroupsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsPtrOutput)
-}
-
-type AdminSamlGroupsPtrInput interface {
-	pulumi.Input
-
-	ToAdminSamlGroupsPtrOutput() AdminSamlGroupsPtrOutput
-	ToAdminSamlGroupsPtrOutputWithContext(ctx context.Context) AdminSamlGroupsPtrOutput
-}
-
-type adminSamlGroupsPtrType AdminSamlGroupsArgs
-
-func (*adminSamlGroupsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**AdminSamlGroups)(nil))
-}
-
-func (i *adminSamlGroupsPtrType) ToAdminSamlGroupsPtrOutput() AdminSamlGroupsPtrOutput {
-	return i.ToAdminSamlGroupsPtrOutputWithContext(context.Background())
-}
-
-func (i *adminSamlGroupsPtrType) ToAdminSamlGroupsPtrOutputWithContext(ctx context.Context) AdminSamlGroupsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsPtrOutput)
 }
 
 // AdminSamlGroupsArrayInput is an input type that accepts AdminSamlGroupsArray and AdminSamlGroupsArrayOutput values.
@@ -222,7 +193,7 @@ func (i AdminSamlGroupsMap) ToAdminSamlGroupsMapOutputWithContext(ctx context.Co
 type AdminSamlGroupsOutput struct{ *pulumi.OutputState }
 
 func (AdminSamlGroupsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*AdminSamlGroups)(nil))
+	return reflect.TypeOf((**AdminSamlGroups)(nil)).Elem()
 }
 
 func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
@@ -233,44 +204,10 @@ func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o AdminSamlGroupsOutput) ToAdminSamlGroupsPtrOutput() AdminSamlGroupsPtrOutput {
-	return o.ToAdminSamlGroupsPtrOutputWithContext(context.Background())
-}
-
-func (o AdminSamlGroupsOutput) ToAdminSamlGroupsPtrOutputWithContext(ctx context.Context) AdminSamlGroupsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v AdminSamlGroups) *AdminSamlGroups {
-		return &v
-	}).(AdminSamlGroupsPtrOutput)
-}
-
-type AdminSamlGroupsPtrOutput struct{ *pulumi.OutputState }
-
-func (AdminSamlGroupsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**AdminSamlGroups)(nil))
-}
-
-func (o AdminSamlGroupsPtrOutput) ToAdminSamlGroupsPtrOutput() AdminSamlGroupsPtrOutput {
-	return o
-}
-
-func (o AdminSamlGroupsPtrOutput) ToAdminSamlGroupsPtrOutputWithContext(ctx context.Context) AdminSamlGroupsPtrOutput {
-	return o
-}
-
-func (o AdminSamlGroupsPtrOutput) Elem() AdminSamlGroupsOutput {
-	return o.ApplyT(func(v *AdminSamlGroups) AdminSamlGroups {
-		if v != nil {
-			return *v
-		}
-		var ret AdminSamlGroups
-		return ret
-	}).(AdminSamlGroupsOutput)
-}
-
 type AdminSamlGroupsArrayOutput struct{ *pulumi.OutputState }
 
 func (AdminSamlGroupsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]AdminSamlGroups)(nil))
+	return reflect.TypeOf((*[]*AdminSamlGroups)(nil)).Elem()
 }
 
 func (o AdminSamlGroupsArrayOutput) ToAdminSamlGroupsArrayOutput() AdminSamlGroupsArrayOutput {
@@ -282,15 +219,15 @@ func (o AdminSamlGroupsArrayOutput) ToAdminSamlGroupsArrayOutputWithContext(ctx 
 }
 
 func (o AdminSamlGroupsArrayOutput) Index(i pulumi.IntInput) AdminSamlGroupsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AdminSamlGroups {
-		return vs[0].([]AdminSamlGroups)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AdminSamlGroups {
+		return vs[0].([]*AdminSamlGroups)[vs[1].(int)]
 	}).(AdminSamlGroupsOutput)
 }
 
 type AdminSamlGroupsMapOutput struct{ *pulumi.OutputState }
 
 func (AdminSamlGroupsMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]AdminSamlGroups)(nil))
+	return reflect.TypeOf((*map[string]*AdminSamlGroups)(nil)).Elem()
 }
 
 func (o AdminSamlGroupsMapOutput) ToAdminSamlGroupsMapOutput() AdminSamlGroupsMapOutput {
@@ -302,18 +239,16 @@ func (o AdminSamlGroupsMapOutput) ToAdminSamlGroupsMapOutputWithContext(ctx cont
 }
 
 func (o AdminSamlGroupsMapOutput) MapIndex(k pulumi.StringInput) AdminSamlGroupsOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) AdminSamlGroups {
-		return vs[0].(map[string]AdminSamlGroups)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *AdminSamlGroups {
+		return vs[0].(map[string]*AdminSamlGroups)[vs[1].(string)]
 	}).(AdminSamlGroupsOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AdminSamlGroupsInput)(nil)).Elem(), &AdminSamlGroups{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AdminSamlGroupsPtrInput)(nil)).Elem(), &AdminSamlGroups{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AdminSamlGroupsArrayInput)(nil)).Elem(), AdminSamlGroupsArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AdminSamlGroupsMapInput)(nil)).Elem(), AdminSamlGroupsMap{})
 	pulumi.RegisterOutputType(AdminSamlGroupsOutput{})
-	pulumi.RegisterOutputType(AdminSamlGroupsPtrOutput{})
 	pulumi.RegisterOutputType(AdminSamlGroupsArrayOutput{})
 	pulumi.RegisterOutputType(AdminSamlGroupsMapOutput{})
 }

@@ -79,27 +79,27 @@ export class InputsTcpSsl extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsTcpSslArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpSslArgs | InputsTcpSslState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpSslState | undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["password"] = state ? state.password : undefined;
-            inputs["requireClientCert"] = state ? state.requireClientCert : undefined;
-            inputs["rootCa"] = state ? state.rootCa : undefined;
-            inputs["serverCert"] = state ? state.serverCert : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["password"] = state ? state.password : undefined;
+            resourceInputs["requireClientCert"] = state ? state.requireClientCert : undefined;
+            resourceInputs["rootCa"] = state ? state.rootCa : undefined;
+            resourceInputs["serverCert"] = state ? state.serverCert : undefined;
         } else {
             const args = argsOrState as InputsTcpSslArgs | undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["password"] = args ? args.password : undefined;
-            inputs["requireClientCert"] = args ? args.requireClientCert : undefined;
-            inputs["rootCa"] = args ? args.rootCa : undefined;
-            inputs["serverCert"] = args ? args.serverCert : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["requireClientCert"] = args ? args.requireClientCert : undefined;
+            resourceInputs["rootCa"] = args ? args.rootCa : undefined;
+            resourceInputs["serverCert"] = args ? args.serverCert : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsTcpSsl.__pulumiType, name, inputs, opts);
+        super(InputsTcpSsl.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -175,7 +175,7 @@ type InputsHttpEventCollectorInput interface {
 }
 
 func (*InputsHttpEventCollector) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsHttpEventCollector)(nil))
+	return reflect.TypeOf((**InputsHttpEventCollector)(nil)).Elem()
 }
 
 func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutput() InputsHttpEventCollectorOutput {
@@ -184,35 +184,6 @@ func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutput() InputsHttp
 
 func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutputWithContext(ctx context.Context) InputsHttpEventCollectorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorOutput)
-}
-
-func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
-	return i.ToInputsHttpEventCollectorPtrOutputWithContext(context.Background())
-}
-
-func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorPtrOutput)
-}
-
-type InputsHttpEventCollectorPtrInput interface {
-	pulumi.Input
-
-	ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput
-	ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput
-}
-
-type inputsHttpEventCollectorPtrType InputsHttpEventCollectorArgs
-
-func (*inputsHttpEventCollectorPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsHttpEventCollector)(nil))
-}
-
-func (i *inputsHttpEventCollectorPtrType) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
-	return i.ToInputsHttpEventCollectorPtrOutputWithContext(context.Background())
-}
-
-func (i *inputsHttpEventCollectorPtrType) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorPtrOutput)
 }
 
 // InputsHttpEventCollectorArrayInput is an input type that accepts InputsHttpEventCollectorArray and InputsHttpEventCollectorArrayOutput values.
@@ -268,7 +239,7 @@ func (i InputsHttpEventCollectorMap) ToInputsHttpEventCollectorMapOutputWithCont
 type InputsHttpEventCollectorOutput struct{ *pulumi.OutputState }
 
 func (InputsHttpEventCollectorOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*InputsHttpEventCollector)(nil))
+	return reflect.TypeOf((**InputsHttpEventCollector)(nil)).Elem()
 }
 
 func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutput() InputsHttpEventCollectorOutput {
@@ -279,44 +250,10 @@ func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutputWithCont
 	return o
 }
 
-func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
-	return o.ToInputsHttpEventCollectorPtrOutputWithContext(context.Background())
-}
-
-func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsHttpEventCollector) *InputsHttpEventCollector {
-		return &v
-	}).(InputsHttpEventCollectorPtrOutput)
-}
-
-type InputsHttpEventCollectorPtrOutput struct{ *pulumi.OutputState }
-
-func (InputsHttpEventCollectorPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**InputsHttpEventCollector)(nil))
-}
-
-func (o InputsHttpEventCollectorPtrOutput) ToInputsHttpEventCollectorPtrOutput() InputsHttpEventCollectorPtrOutput {
-	return o
-}
-
-func (o InputsHttpEventCollectorPtrOutput) ToInputsHttpEventCollectorPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorPtrOutput {
-	return o
-}
-
-func (o InputsHttpEventCollectorPtrOutput) Elem() InputsHttpEventCollectorOutput {
-	return o.ApplyT(func(v *InputsHttpEventCollector) InputsHttpEventCollector {
-		if v != nil {
-			return *v
-		}
-		var ret InputsHttpEventCollector
-		return ret
-	}).(InputsHttpEventCollectorOutput)
-}
-
 type InputsHttpEventCollectorArrayOutput struct{ *pulumi.OutputState }
 
 func (InputsHttpEventCollectorArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]InputsHttpEventCollector)(nil))
+	return reflect.TypeOf((*[]*InputsHttpEventCollector)(nil)).Elem()
 }
 
 func (o InputsHttpEventCollectorArrayOutput) ToInputsHttpEventCollectorArrayOutput() InputsHttpEventCollectorArrayOutput {
@@ -328,15 +265,15 @@ func (o InputsHttpEventCollectorArrayOutput) ToInputsHttpEventCollectorArrayOutp
 }
 
 func (o InputsHttpEventCollectorArrayOutput) Index(i pulumi.IntInput) InputsHttpEventCollectorOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InputsHttpEventCollector {
-		return vs[0].([]InputsHttpEventCollector)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsHttpEventCollector {
+		return vs[0].([]*InputsHttpEventCollector)[vs[1].(int)]
 	}).(InputsHttpEventCollectorOutput)
 }
 
 type InputsHttpEventCollectorMapOutput struct{ *pulumi.OutputState }
 
 func (InputsHttpEventCollectorMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]InputsHttpEventCollector)(nil))
+	return reflect.TypeOf((*map[string]*InputsHttpEventCollector)(nil)).Elem()
 }
 
 func (o InputsHttpEventCollectorMapOutput) ToInputsHttpEventCollectorMapOutput() InputsHttpEventCollectorMapOutput {
@@ -348,18 +285,16 @@ func (o InputsHttpEventCollectorMapOutput) ToInputsHttpEventCollectorMapOutputWi
 }
 
 func (o InputsHttpEventCollectorMapOutput) MapIndex(k pulumi.StringInput) InputsHttpEventCollectorOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) InputsHttpEventCollector {
-		return vs[0].(map[string]InputsHttpEventCollector)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *InputsHttpEventCollector {
+		return vs[0].(map[string]*InputsHttpEventCollector)[vs[1].(string)]
 	}).(InputsHttpEventCollectorOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorInput)(nil)).Elem(), &InputsHttpEventCollector{})
-	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorPtrInput)(nil)).Elem(), &InputsHttpEventCollector{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorArrayInput)(nil)).Elem(), InputsHttpEventCollectorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorMapInput)(nil)).Elem(), InputsHttpEventCollectorMap{})
 	pulumi.RegisterOutputType(InputsHttpEventCollectorOutput{})
-	pulumi.RegisterOutputType(InputsHttpEventCollectorPtrOutput{})
 	pulumi.RegisterOutputType(InputsHttpEventCollectorArrayOutput{})
 	pulumi.RegisterOutputType(InputsHttpEventCollectorMapOutput{})
 }

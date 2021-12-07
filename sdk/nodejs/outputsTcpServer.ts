@@ -106,39 +106,39 @@ export class OutputsTcpServer extends pulumi.CustomResource {
      */
     constructor(name: string, args?: OutputsTcpServerArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: OutputsTcpServerArgs | OutputsTcpServerState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpServerState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["method"] = state ? state.method : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["sslAltNameToCheck"] = state ? state.sslAltNameToCheck : undefined;
-            inputs["sslCertPath"] = state ? state.sslCertPath : undefined;
-            inputs["sslCipher"] = state ? state.sslCipher : undefined;
-            inputs["sslCommonNameToCheck"] = state ? state.sslCommonNameToCheck : undefined;
-            inputs["sslPassword"] = state ? state.sslPassword : undefined;
-            inputs["sslRootCaPath"] = state ? state.sslRootCaPath : undefined;
-            inputs["sslVerifyServerCert"] = state ? state.sslVerifyServerCert : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["method"] = state ? state.method : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["sslAltNameToCheck"] = state ? state.sslAltNameToCheck : undefined;
+            resourceInputs["sslCertPath"] = state ? state.sslCertPath : undefined;
+            resourceInputs["sslCipher"] = state ? state.sslCipher : undefined;
+            resourceInputs["sslCommonNameToCheck"] = state ? state.sslCommonNameToCheck : undefined;
+            resourceInputs["sslPassword"] = state ? state.sslPassword : undefined;
+            resourceInputs["sslRootCaPath"] = state ? state.sslRootCaPath : undefined;
+            resourceInputs["sslVerifyServerCert"] = state ? state.sslVerifyServerCert : undefined;
         } else {
             const args = argsOrState as OutputsTcpServerArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["method"] = args ? args.method : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["sslAltNameToCheck"] = args ? args.sslAltNameToCheck : undefined;
-            inputs["sslCertPath"] = args ? args.sslCertPath : undefined;
-            inputs["sslCipher"] = args ? args.sslCipher : undefined;
-            inputs["sslCommonNameToCheck"] = args ? args.sslCommonNameToCheck : undefined;
-            inputs["sslPassword"] = args ? args.sslPassword : undefined;
-            inputs["sslRootCaPath"] = args ? args.sslRootCaPath : undefined;
-            inputs["sslVerifyServerCert"] = args ? args.sslVerifyServerCert : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["method"] = args ? args.method : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["sslAltNameToCheck"] = args ? args.sslAltNameToCheck : undefined;
+            resourceInputs["sslCertPath"] = args ? args.sslCertPath : undefined;
+            resourceInputs["sslCipher"] = args ? args.sslCipher : undefined;
+            resourceInputs["sslCommonNameToCheck"] = args ? args.sslCommonNameToCheck : undefined;
+            resourceInputs["sslPassword"] = args ? args.sslPassword : undefined;
+            resourceInputs["sslRootCaPath"] = args ? args.sslRootCaPath : undefined;
+            resourceInputs["sslVerifyServerCert"] = args ? args.sslVerifyServerCert : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(OutputsTcpServer.__pulumiType, name, inputs, opts);
+        super(OutputsTcpServer.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -90,40 +90,40 @@ export class InputsScript extends pulumi.CustomResource {
      */
     constructor(name: string, args: InputsScriptArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsScriptArgs | InputsScriptState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsScriptState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["host"] = state ? state.host : undefined;
-            inputs["index"] = state ? state.index : undefined;
-            inputs["interval"] = state ? state.interval : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["passauth"] = state ? state.passauth : undefined;
-            inputs["renameSource"] = state ? state.renameSource : undefined;
-            inputs["source"] = state ? state.source : undefined;
-            inputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["host"] = state ? state.host : undefined;
+            resourceInputs["index"] = state ? state.index : undefined;
+            resourceInputs["interval"] = state ? state.interval : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["passauth"] = state ? state.passauth : undefined;
+            resourceInputs["renameSource"] = state ? state.renameSource : undefined;
+            resourceInputs["source"] = state ? state.source : undefined;
+            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
         } else {
             const args = argsOrState as InputsScriptArgs | undefined;
             if ((!args || args.interval === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'interval'");
             }
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["host"] = args ? args.host : undefined;
-            inputs["index"] = args ? args.index : undefined;
-            inputs["interval"] = args ? args.interval : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["passauth"] = args ? args.passauth : undefined;
-            inputs["renameSource"] = args ? args.renameSource : undefined;
-            inputs["source"] = args ? args.source : undefined;
-            inputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["index"] = args ? args.index : undefined;
+            resourceInputs["interval"] = args ? args.interval : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["passauth"] = args ? args.passauth : undefined;
+            resourceInputs["renameSource"] = args ? args.renameSource : undefined;
+            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsScript.__pulumiType, name, inputs, opts);
+        super(InputsScript.__pulumiType, name, resourceInputs, opts);
     }
 }
 

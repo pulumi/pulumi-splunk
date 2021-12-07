@@ -30,7 +30,7 @@ import (
 //
 // func main() {
 // 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewShIndexesManager(ctx, "tf_index", &splunk.ShIndexesManagerArgs{
+// 		_, err := splunk.NewShIndexesManager(ctx, "tf-index", &splunk.ShIndexesManagerArgs{
 // 			Datatype:               pulumi.String("event"),
 // 			FrozenTimePeriodInSecs: pulumi.String("94608000"),
 // 			MaxGlobalRawDataSizeMb: pulumi.String("100"),
@@ -159,7 +159,7 @@ type ShIndexesManagerInput interface {
 }
 
 func (*ShIndexesManager) ElementType() reflect.Type {
-	return reflect.TypeOf((*ShIndexesManager)(nil))
+	return reflect.TypeOf((**ShIndexesManager)(nil)).Elem()
 }
 
 func (i *ShIndexesManager) ToShIndexesManagerOutput() ShIndexesManagerOutput {
@@ -168,35 +168,6 @@ func (i *ShIndexesManager) ToShIndexesManagerOutput() ShIndexesManagerOutput {
 
 func (i *ShIndexesManager) ToShIndexesManagerOutputWithContext(ctx context.Context) ShIndexesManagerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerOutput)
-}
-
-func (i *ShIndexesManager) ToShIndexesManagerPtrOutput() ShIndexesManagerPtrOutput {
-	return i.ToShIndexesManagerPtrOutputWithContext(context.Background())
-}
-
-func (i *ShIndexesManager) ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerPtrOutput)
-}
-
-type ShIndexesManagerPtrInput interface {
-	pulumi.Input
-
-	ToShIndexesManagerPtrOutput() ShIndexesManagerPtrOutput
-	ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput
-}
-
-type shIndexesManagerPtrType ShIndexesManagerArgs
-
-func (*shIndexesManagerPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ShIndexesManager)(nil))
-}
-
-func (i *shIndexesManagerPtrType) ToShIndexesManagerPtrOutput() ShIndexesManagerPtrOutput {
-	return i.ToShIndexesManagerPtrOutputWithContext(context.Background())
-}
-
-func (i *shIndexesManagerPtrType) ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerPtrOutput)
 }
 
 // ShIndexesManagerArrayInput is an input type that accepts ShIndexesManagerArray and ShIndexesManagerArrayOutput values.
@@ -252,7 +223,7 @@ func (i ShIndexesManagerMap) ToShIndexesManagerMapOutputWithContext(ctx context.
 type ShIndexesManagerOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ShIndexesManager)(nil))
+	return reflect.TypeOf((**ShIndexesManager)(nil)).Elem()
 }
 
 func (o ShIndexesManagerOutput) ToShIndexesManagerOutput() ShIndexesManagerOutput {
@@ -263,44 +234,10 @@ func (o ShIndexesManagerOutput) ToShIndexesManagerOutputWithContext(ctx context.
 	return o
 }
 
-func (o ShIndexesManagerOutput) ToShIndexesManagerPtrOutput() ShIndexesManagerPtrOutput {
-	return o.ToShIndexesManagerPtrOutputWithContext(context.Background())
-}
-
-func (o ShIndexesManagerOutput) ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShIndexesManager) *ShIndexesManager {
-		return &v
-	}).(ShIndexesManagerPtrOutput)
-}
-
-type ShIndexesManagerPtrOutput struct{ *pulumi.OutputState }
-
-func (ShIndexesManagerPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ShIndexesManager)(nil))
-}
-
-func (o ShIndexesManagerPtrOutput) ToShIndexesManagerPtrOutput() ShIndexesManagerPtrOutput {
-	return o
-}
-
-func (o ShIndexesManagerPtrOutput) ToShIndexesManagerPtrOutputWithContext(ctx context.Context) ShIndexesManagerPtrOutput {
-	return o
-}
-
-func (o ShIndexesManagerPtrOutput) Elem() ShIndexesManagerOutput {
-	return o.ApplyT(func(v *ShIndexesManager) ShIndexesManager {
-		if v != nil {
-			return *v
-		}
-		var ret ShIndexesManager
-		return ret
-	}).(ShIndexesManagerOutput)
-}
-
 type ShIndexesManagerArrayOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ShIndexesManager)(nil))
+	return reflect.TypeOf((*[]*ShIndexesManager)(nil)).Elem()
 }
 
 func (o ShIndexesManagerArrayOutput) ToShIndexesManagerArrayOutput() ShIndexesManagerArrayOutput {
@@ -312,15 +249,15 @@ func (o ShIndexesManagerArrayOutput) ToShIndexesManagerArrayOutputWithContext(ct
 }
 
 func (o ShIndexesManagerArrayOutput) Index(i pulumi.IntInput) ShIndexesManagerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ShIndexesManager {
-		return vs[0].([]ShIndexesManager)[vs[1].(int)]
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ShIndexesManager {
+		return vs[0].([]*ShIndexesManager)[vs[1].(int)]
 	}).(ShIndexesManagerOutput)
 }
 
 type ShIndexesManagerMapOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]ShIndexesManager)(nil))
+	return reflect.TypeOf((*map[string]*ShIndexesManager)(nil)).Elem()
 }
 
 func (o ShIndexesManagerMapOutput) ToShIndexesManagerMapOutput() ShIndexesManagerMapOutput {
@@ -332,18 +269,16 @@ func (o ShIndexesManagerMapOutput) ToShIndexesManagerMapOutputWithContext(ctx co
 }
 
 func (o ShIndexesManagerMapOutput) MapIndex(k pulumi.StringInput) ShIndexesManagerOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) ShIndexesManager {
-		return vs[0].(map[string]ShIndexesManager)[vs[1].(string)]
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *ShIndexesManager {
+		return vs[0].(map[string]*ShIndexesManager)[vs[1].(string)]
 	}).(ShIndexesManagerOutput)
 }
 
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerInput)(nil)).Elem(), &ShIndexesManager{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerPtrInput)(nil)).Elem(), &ShIndexesManager{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerArrayInput)(nil)).Elem(), ShIndexesManagerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerMapInput)(nil)).Elem(), ShIndexesManagerMap{})
 	pulumi.RegisterOutputType(ShIndexesManagerOutput{})
-	pulumi.RegisterOutputType(ShIndexesManagerPtrOutput{})
 	pulumi.RegisterOutputType(ShIndexesManagerArrayOutput{})
 	pulumi.RegisterOutputType(ShIndexesManagerMapOutput{})
 }

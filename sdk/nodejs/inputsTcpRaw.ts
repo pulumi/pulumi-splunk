@@ -119,39 +119,39 @@ export class InputsTcpRaw extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsTcpRawArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpRawArgs | InputsTcpRawState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpRawState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["connectionHost"] = state ? state.connectionHost : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["host"] = state ? state.host : undefined;
-            inputs["index"] = state ? state.index : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["queue"] = state ? state.queue : undefined;
-            inputs["rawTcpDoneTimeout"] = state ? state.rawTcpDoneTimeout : undefined;
-            inputs["restrictToHost"] = state ? state.restrictToHost : undefined;
-            inputs["source"] = state ? state.source : undefined;
-            inputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["connectionHost"] = state ? state.connectionHost : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["host"] = state ? state.host : undefined;
+            resourceInputs["index"] = state ? state.index : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["queue"] = state ? state.queue : undefined;
+            resourceInputs["rawTcpDoneTimeout"] = state ? state.rawTcpDoneTimeout : undefined;
+            resourceInputs["restrictToHost"] = state ? state.restrictToHost : undefined;
+            resourceInputs["source"] = state ? state.source : undefined;
+            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
         } else {
             const args = argsOrState as InputsTcpRawArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["connectionHost"] = args ? args.connectionHost : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["host"] = args ? args.host : undefined;
-            inputs["index"] = args ? args.index : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["queue"] = args ? args.queue : undefined;
-            inputs["rawTcpDoneTimeout"] = args ? args.rawTcpDoneTimeout : undefined;
-            inputs["restrictToHost"] = args ? args.restrictToHost : undefined;
-            inputs["source"] = args ? args.source : undefined;
-            inputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["connectionHost"] = args ? args.connectionHost : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["index"] = args ? args.index : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["queue"] = args ? args.queue : undefined;
+            resourceInputs["rawTcpDoneTimeout"] = args ? args.rawTcpDoneTimeout : undefined;
+            resourceInputs["restrictToHost"] = args ? args.restrictToHost : undefined;
+            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsTcpRaw.__pulumiType, name, inputs, opts);
+        super(InputsTcpRaw.__pulumiType, name, resourceInputs, opts);
     }
 }
 

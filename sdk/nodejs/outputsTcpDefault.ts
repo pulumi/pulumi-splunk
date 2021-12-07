@@ -112,35 +112,35 @@ export class OutputsTcpDefault extends pulumi.CustomResource {
      */
     constructor(name: string, args?: OutputsTcpDefaultArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: OutputsTcpDefaultArgs | OutputsTcpDefaultState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpDefaultState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["defaultGroup"] = state ? state.defaultGroup : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["dropEventsOnQueueFull"] = state ? state.dropEventsOnQueueFull : undefined;
-            inputs["heartbeatFrequency"] = state ? state.heartbeatFrequency : undefined;
-            inputs["indexAndForward"] = state ? state.indexAndForward : undefined;
-            inputs["maxQueueSize"] = state ? state.maxQueueSize : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["sendCookedData"] = state ? state.sendCookedData : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["defaultGroup"] = state ? state.defaultGroup : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["dropEventsOnQueueFull"] = state ? state.dropEventsOnQueueFull : undefined;
+            resourceInputs["heartbeatFrequency"] = state ? state.heartbeatFrequency : undefined;
+            resourceInputs["indexAndForward"] = state ? state.indexAndForward : undefined;
+            resourceInputs["maxQueueSize"] = state ? state.maxQueueSize : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["sendCookedData"] = state ? state.sendCookedData : undefined;
         } else {
             const args = argsOrState as OutputsTcpDefaultArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["defaultGroup"] = args ? args.defaultGroup : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["dropEventsOnQueueFull"] = args ? args.dropEventsOnQueueFull : undefined;
-            inputs["heartbeatFrequency"] = args ? args.heartbeatFrequency : undefined;
-            inputs["indexAndForward"] = args ? args.indexAndForward : undefined;
-            inputs["maxQueueSize"] = args ? args.maxQueueSize : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["sendCookedData"] = args ? args.sendCookedData : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["defaultGroup"] = args ? args.defaultGroup : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["dropEventsOnQueueFull"] = args ? args.dropEventsOnQueueFull : undefined;
+            resourceInputs["heartbeatFrequency"] = args ? args.heartbeatFrequency : undefined;
+            resourceInputs["indexAndForward"] = args ? args.indexAndForward : undefined;
+            resourceInputs["maxQueueSize"] = args ? args.maxQueueSize : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["sendCookedData"] = args ? args.sendCookedData : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(OutputsTcpDefault.__pulumiType, name, inputs, opts);
+        super(OutputsTcpDefault.__pulumiType, name, resourceInputs, opts);
     }
 }
 

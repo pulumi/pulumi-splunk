@@ -71,23 +71,23 @@ export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
      */
     constructor(name: string, args?: InputsTcpSplunkTcpTokenArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: InputsTcpSplunkTcpTokenArgs | InputsTcpSplunkTcpTokenState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpSplunkTcpTokenState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["token"] = state ? state.token : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["token"] = state ? state.token : undefined;
         } else {
             const args = argsOrState as InputsTcpSplunkTcpTokenArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["token"] = args ? args.token : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["token"] = args ? args.token : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(InputsTcpSplunkTcpToken.__pulumiType, name, inputs, opts);
+        super(InputsTcpSplunkTcpToken.__pulumiType, name, resourceInputs, opts);
     }
 }
 

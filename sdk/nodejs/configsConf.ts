@@ -72,23 +72,23 @@ export class ConfigsConf extends pulumi.CustomResource {
      */
     constructor(name: string, args?: ConfigsConfArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: ConfigsConfArgs | ConfigsConfState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigsConfState | undefined;
-            inputs["acl"] = state ? state.acl : undefined;
-            inputs["name"] = state ? state.name : undefined;
-            inputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["variables"] = state ? state.variables : undefined;
         } else {
             const args = argsOrState as ConfigsConfArgs | undefined;
-            inputs["acl"] = args ? args.acl : undefined;
-            inputs["name"] = args ? args.name : undefined;
-            inputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["variables"] = args ? args.variables : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(ConfigsConf.__pulumiType, name, inputs, opts);
+        super(ConfigsConf.__pulumiType, name, resourceInputs, opts);
     }
 }
 

@@ -89,31 +89,31 @@ export class GlobalHttpEventCollector extends pulumi.CustomResource {
      */
     constructor(name: string, args?: GlobalHttpEventCollectorArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: GlobalHttpEventCollectorArgs | GlobalHttpEventCollectorState, opts?: pulumi.CustomResourceOptions) {
-        let inputs: pulumi.Inputs = {};
+        let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GlobalHttpEventCollectorState | undefined;
-            inputs["dedicatedIoThreads"] = state ? state.dedicatedIoThreads : undefined;
-            inputs["disabled"] = state ? state.disabled : undefined;
-            inputs["enableSsl"] = state ? state.enableSsl : undefined;
-            inputs["maxSockets"] = state ? state.maxSockets : undefined;
-            inputs["maxThreads"] = state ? state.maxThreads : undefined;
-            inputs["port"] = state ? state.port : undefined;
-            inputs["useDeploymentServer"] = state ? state.useDeploymentServer : undefined;
+            resourceInputs["dedicatedIoThreads"] = state ? state.dedicatedIoThreads : undefined;
+            resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["enableSsl"] = state ? state.enableSsl : undefined;
+            resourceInputs["maxSockets"] = state ? state.maxSockets : undefined;
+            resourceInputs["maxThreads"] = state ? state.maxThreads : undefined;
+            resourceInputs["port"] = state ? state.port : undefined;
+            resourceInputs["useDeploymentServer"] = state ? state.useDeploymentServer : undefined;
         } else {
             const args = argsOrState as GlobalHttpEventCollectorArgs | undefined;
-            inputs["dedicatedIoThreads"] = args ? args.dedicatedIoThreads : undefined;
-            inputs["disabled"] = args ? args.disabled : undefined;
-            inputs["enableSsl"] = args ? args.enableSsl : undefined;
-            inputs["maxSockets"] = args ? args.maxSockets : undefined;
-            inputs["maxThreads"] = args ? args.maxThreads : undefined;
-            inputs["port"] = args ? args.port : undefined;
-            inputs["useDeploymentServer"] = args ? args.useDeploymentServer : undefined;
+            resourceInputs["dedicatedIoThreads"] = args ? args.dedicatedIoThreads : undefined;
+            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["enableSsl"] = args ? args.enableSsl : undefined;
+            resourceInputs["maxSockets"] = args ? args.maxSockets : undefined;
+            resourceInputs["maxThreads"] = args ? args.maxThreads : undefined;
+            resourceInputs["port"] = args ? args.port : undefined;
+            resourceInputs["useDeploymentServer"] = args ? args.useDeploymentServer : undefined;
         }
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(GlobalHttpEventCollector.__pulumiType, name, inputs, opts);
+        super(GlobalHttpEventCollector.__pulumiType, name, resourceInputs, opts);
     }
 }
 
