@@ -913,9 +913,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionScript"] = undefined /*out*/;
             resourceInputs["actionSummaryIndex"] = undefined /*out*/;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SavedSearches.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -115,9 +115,7 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
             resourceInputs["token"] = args ? args.token : undefined;
             resourceInputs["useAck"] = args ? args.useAck : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsHttpEventCollector.__pulumiType, name, resourceInputs, opts);
     }
 }

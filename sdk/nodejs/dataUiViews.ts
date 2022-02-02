@@ -93,9 +93,7 @@ export class DataUiViews extends pulumi.CustomResource {
             resourceInputs["eaiData"] = args ? args.eaiData : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DataUiViews.__pulumiType, name, resourceInputs, opts);
     }
 }

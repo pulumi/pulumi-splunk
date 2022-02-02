@@ -110,9 +110,7 @@ export class GlobalHttpEventCollector extends pulumi.CustomResource {
             resourceInputs["port"] = args ? args.port : undefined;
             resourceInputs["useDeploymentServer"] = args ? args.useDeploymentServer : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GlobalHttpEventCollector.__pulumiType, name, resourceInputs, opts);
     }
 }

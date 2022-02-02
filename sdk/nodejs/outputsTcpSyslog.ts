@@ -121,9 +121,7 @@ export class OutputsTcpSyslog extends pulumi.CustomResource {
             resourceInputs["timestampFormat"] = args ? args.timestampFormat : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OutputsTcpSyslog.__pulumiType, name, resourceInputs, opts);
     }
 }

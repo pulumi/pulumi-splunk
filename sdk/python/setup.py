@@ -55,6 +55,7 @@ setup(name='pulumi_splunk',
       package_data={
           'pulumi_splunk': [
               'py.typed',
+              'pulumi-plugin.json',
           ]
       },
       install_requires=[
