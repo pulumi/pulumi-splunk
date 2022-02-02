@@ -96,9 +96,7 @@ export class InputsTcpSsl extends pulumi.CustomResource {
             resourceInputs["rootCa"] = args ? args.rootCa : undefined;
             resourceInputs["serverCert"] = args ? args.serverCert : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsTcpSsl.__pulumiType, name, resourceInputs, opts);
     }
 }

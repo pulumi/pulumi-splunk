@@ -162,9 +162,7 @@ export class AuthorizationRoles extends pulumi.CustomResource {
             resourceInputs["searchJobsQuota"] = args ? args.searchJobsQuota : undefined;
             resourceInputs["searchTimeWin"] = args ? args.searchTimeWin : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AuthorizationRoles.__pulumiType, name, resourceInputs, opts);
     }
 }

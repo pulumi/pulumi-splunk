@@ -88,9 +88,7 @@ export class AdminSamlGroups extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["roles"] = args ? args.roles : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AdminSamlGroups.__pulumiType, name, resourceInputs, opts);
     }
 }

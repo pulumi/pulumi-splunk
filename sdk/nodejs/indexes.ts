@@ -350,9 +350,7 @@ export class Indexes extends pulumi.CustomResource {
             resourceInputs["tstatsHomePath"] = args ? args.tstatsHomePath : undefined;
             resourceInputs["warmToColdScript"] = args ? args.warmToColdScript : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Indexes.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -135,9 +135,7 @@ export class OutputsTcpServer extends pulumi.CustomResource {
             resourceInputs["sslRootCaPath"] = args ? args.sslRootCaPath : undefined;
             resourceInputs["sslVerifyServerCert"] = args ? args.sslVerifyServerCert : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OutputsTcpServer.__pulumiType, name, resourceInputs, opts);
     }
 }

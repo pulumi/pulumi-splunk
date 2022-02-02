@@ -6936,6 +6936,7 @@
             }
         },
         "go": {
+            "generateExtraInputTypes": true,
             "generateResourceContainerTypes": true,
             "importBasePath": "github.com/pulumi/pulumi-splunk/sdk/go/splunk"
         },

@@ -137,9 +137,7 @@ export class OutputsTcpDefault extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["sendCookedData"] = args ? args.sendCookedData : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OutputsTcpDefault.__pulumiType, name, resourceInputs, opts);
     }
 }

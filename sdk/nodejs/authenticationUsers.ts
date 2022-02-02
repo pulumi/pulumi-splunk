@@ -122,9 +122,7 @@ export class AuthenticationUsers extends pulumi.CustomResource {
             resourceInputs["roles"] = args ? args.roles : undefined;
             resourceInputs["tz"] = args ? args.tz : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AuthenticationUsers.__pulumiType, name, resourceInputs, opts);
     }
 }
