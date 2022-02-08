@@ -156,9 +156,7 @@ export class AppsLocal extends pulumi.CustomResource {
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["visible"] = args ? args.visible : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsLocal.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -148,9 +148,7 @@ export class InputsTcpRaw extends pulumi.CustomResource {
             resourceInputs["source"] = args ? args.source : undefined;
             resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsTcpRaw.__pulumiType, name, resourceInputs, opts);
     }
 }

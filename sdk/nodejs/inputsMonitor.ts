@@ -163,9 +163,7 @@ export class InputsMonitor extends pulumi.CustomResource {
             resourceInputs["timeBeforeClose"] = args ? args.timeBeforeClose : undefined;
             resourceInputs["whitelist"] = args ? args.whitelist : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsMonitor.__pulumiType, name, resourceInputs, opts);
     }
 }

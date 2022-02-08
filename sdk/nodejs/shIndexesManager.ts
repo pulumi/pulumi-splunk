@@ -101,9 +101,7 @@ export class ShIndexesManager extends pulumi.CustomResource {
             resourceInputs["maxGlobalRawDataSizeMb"] = args ? args.maxGlobalRawDataSizeMb : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ShIndexesManager.__pulumiType, name, resourceInputs, opts);
     }
 }

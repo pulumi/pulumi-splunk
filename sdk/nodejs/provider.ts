@@ -64,9 +64,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["url"] = args ? args.url : undefined;
             resourceInputs["username"] = args ? args.username : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }

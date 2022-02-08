@@ -152,9 +152,7 @@ export class OutputsTcpGroup extends pulumi.CustomResource {
             resourceInputs["servers"] = args ? args.servers : undefined;
             resourceInputs["token"] = args ? args.token : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OutputsTcpGroup.__pulumiType, name, resourceInputs, opts);
     }
 }

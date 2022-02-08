@@ -85,9 +85,7 @@ export class ConfigsConf extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["variables"] = args ? args.variables : undefined;
         }
-        if (!opts.version) {
-            opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
-        }
+        opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ConfigsConf.__pulumiType, name, resourceInputs, opts);
     }
 }
