@@ -32,6 +32,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ConfigsConf{}
 	case "splunk:index/dataUiViews:DataUiViews":
 		r = &DataUiViews{}
+	case "splunk:index/genericAcl:GenericAcl":
+		r = &GenericAcl{}
 	case "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector":
 		r = &GlobalHttpEventCollector{}
 	case "splunk:index/indexes:Indexes":
@@ -123,6 +125,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"splunk",
 		"index/dataUiViews",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"splunk",
+		"index/genericAcl",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

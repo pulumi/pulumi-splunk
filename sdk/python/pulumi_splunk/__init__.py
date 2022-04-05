@@ -11,6 +11,7 @@ from .authentication_users import *
 from .authorization_roles import *
 from .configs_conf import *
 from .data_ui_views import *
+from .generic_acl import *
 from .global_http_event_collector import *
 from .indexes import *
 from .inputs_http_event_collector import *
@@ -87,6 +88,14 @@ _utilities.register(
   "fqn": "pulumi_splunk",
   "classes": {
    "splunk:index/dataUiViews:DataUiViews": "DataUiViews"
+  }
+ },
+ {
+  "pkg": "splunk",
+  "mod": "index/genericAcl",
+  "fqn": "pulumi_splunk",
+  "classes": {
+   "splunk:index/genericAcl:GenericAcl": "GenericAcl"
   }
  },
  {

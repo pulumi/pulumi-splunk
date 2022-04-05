@@ -198,6 +198,7 @@ func Provider() tfbridge.ProviderInfo {
 			},
 			"splunk_data_ui_views":      {Tok: makeResource(mainMod, "DataUiViews")},
 			"splunk_sh_indexes_manager": {Tok: makeResource(mainMod, "ShIndexesManager")},
+			"splunk_generic_acl":        {Tok: makeResource(mainMod, "GenericAcl")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{},
 		JavaScript: &tfbridge.JavaScriptInfo{

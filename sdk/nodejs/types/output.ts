@@ -46,6 +46,20 @@ export interface DataUiViewsAcl {
     writes: string[];
 }
 
+export interface GenericAclAcl {
+    app: string;
+    canChangePerms: boolean;
+    canShareApp: boolean;
+    canShareGlobal: boolean;
+    canShareUser: boolean;
+    canWrite: boolean;
+    owner: string;
+    reads: string[];
+    removable: boolean;
+    sharing: string;
+    writes: string[];
+}
+
 export interface IndexesAcl {
     app: string;
     canChangePerms: boolean;

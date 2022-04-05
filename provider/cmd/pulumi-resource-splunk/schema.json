@@ -392,6 +392,122 @@
                 }
             }
         },
+        "splunk:index/GenericAclAcl:GenericAclAcl": {
+            "properties": {
+                "app": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canChangePerms": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareApp": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareGlobal": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canShareUser": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "canWrite": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "owner": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "reads": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "removable": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "sharing": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "writes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "app",
+                        "canChangePerms",
+                        "canShareApp",
+                        "canShareGlobal",
+                        "canShareUser",
+                        "canWrite",
+                        "owner",
+                        "reads",
+                        "removable",
+                        "sharing",
+                        "writes"
+                    ]
+                }
+            }
+        },
         "splunk:index/IndexesAcl:IndexesAcl": {
             "properties": {
                 "app": {
@@ -2773,6 +2889,50 @@
                     "name": {
                         "type": "string",
                         "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "splunk:index/genericAcl:GenericAcl": {
+            "description": "{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst myApp = new splunk.GenericAcl(\"my_app\", {\n    acl: {\n        // use app=system, owner=nobody when managing apps, as they have no owner or app context\n        app: \"system\",\n        owner: \"nobody\",\n        reads: [\"*\"],\n        writes: [\n            \"admin\",\n            \"power\",\n        ],\n    },\n    // apps are managed via the apps/local/\u003capp\u003e endpoint\n    path: \"apps/local/my_app\",\n});\nconst myDashboard = new splunk.GenericAcl(\"my_dashboard\", {\n    acl: {\n        app: \"my_app\",\n        owner: \"joe_user\",\n        reads: [\"team_joe\"],\n        writes: [\"team_joe\"],\n    },\n    path: \"data/ui/views/my_dashboard\",\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nmy_app = splunk.GenericAcl(\"myApp\",\n    acl=splunk.GenericAclAclArgs(\n        app=\"system\",\n        owner=\"nobody\",\n        reads=[\"*\"],\n        writes=[\n            \"admin\",\n            \"power\",\n        ],\n    ),\n    path=\"apps/local/my_app\")\nmy_dashboard = splunk.GenericAcl(\"myDashboard\",\n    acl=splunk.GenericAclAclArgs(\n        app=\"my_app\",\n        owner=\"joe_user\",\n        reads=[\"team_joe\"],\n        writes=[\"team_joe\"],\n    ),\n    path=\"data/ui/views/my_dashboard\")\n```\n```csharp\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var myApp = new Splunk.GenericAcl(\"myApp\", new Splunk.GenericAclArgs\n        {\n            Acl = new Splunk.Inputs.GenericAclAclArgs\n            {\n                App = \"system\",\n                Owner = \"nobody\",\n                Reads = \n                {\n                    \"*\",\n                },\n                Writes = \n                {\n                    \"admin\",\n                    \"power\",\n                },\n            },\n            Path = \"apps/local/my_app\",\n        });\n        var myDashboard = new Splunk.GenericAcl(\"myDashboard\", new Splunk.GenericAclArgs\n        {\n            Acl = new Splunk.Inputs.GenericAclAclArgs\n            {\n                App = \"my_app\",\n                Owner = \"joe_user\",\n                Reads = \n                {\n                    \"team_joe\",\n                },\n                Writes = \n                {\n                    \"team_joe\",\n                },\n            },\n            Path = \"data/ui/views/my_dashboard\",\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewGenericAcl(ctx, \"myApp\", \u0026splunk.GenericAclArgs{\n\t\t\tAcl: \u0026GenericAclAclArgs{\n\t\t\t\tApp:   pulumi.String(\"system\"),\n\t\t\t\tOwner: pulumi.String(\"nobody\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"*\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"admin\"),\n\t\t\t\t\tpulumi.String(\"power\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tPath: pulumi.String(\"apps/local/my_app\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = splunk.NewGenericAcl(ctx, \"myDashboard\", \u0026splunk.GenericAclArgs{\n\t\t\tAcl: \u0026GenericAclAclArgs{\n\t\t\t\tApp:   pulumi.String(\"my_app\"),\n\t\t\t\tOwner: pulumi.String(\"joe_user\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"team_joe\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"team_joe\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tPath: pulumi.String(\"data/ui/views/my_dashboard\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\nGeneric ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID\n\n```sh\n $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl \u003cowner\u003e:\u003capp\u003e:\u003cpath\u003e\n```\n\n ",
+            "properties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/GenericAclAcl:GenericAclAcl",
+                    "description": "The ACL to apply to the object, including app/owner to properly identify the object.\nThough technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as\napps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for\napp and owner for objects that don't fit in the normal namespace.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "REST API Endpoint path to the object, relative to servicesNS/\u003cowner\u003e/\u003capp\u003e\n"
+                }
+            },
+            "required": [
+                "acl",
+                "path"
+            ],
+            "inputProperties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/GenericAclAcl:GenericAclAcl",
+                    "description": "The ACL to apply to the object, including app/owner to properly identify the object.\nThough technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as\napps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for\napp and owner for objects that don't fit in the normal namespace.\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "REST API Endpoint path to the object, relative to servicesNS/\u003cowner\u003e/\u003capp\u003e\n"
+                }
+            },
+            "requiredInputs": [
+                "path"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering GenericAcl resources.\n",
+                "properties": {
+                    "acl": {
+                        "$ref": "#/types/splunk:index/GenericAclAcl:GenericAclAcl",
+                        "description": "The ACL to apply to the object, including app/owner to properly identify the object.\nThough technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as\napps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for\napp and owner for objects that don't fit in the normal namespace.\n"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "REST API Endpoint path to the object, relative to servicesNS/\u003cowner\u003e/\u003capp\u003e\n"
                     }
                 },
                 "type": "object"
