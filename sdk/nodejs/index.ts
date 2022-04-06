@@ -11,6 +11,7 @@ export * from "./authenticationUsers";
 export * from "./authorizationRoles";
 export * from "./configsConf";
 export * from "./dataUiViews";
+export * from "./genericAcl";
 export * from "./globalHttpEventCollector";
 export * from "./indexes";
 export * from "./inputsHttpEventCollector";
@@ -45,6 +46,7 @@ import { AuthenticationUsers } from "./authenticationUsers";
 import { AuthorizationRoles } from "./authorizationRoles";
 import { ConfigsConf } from "./configsConf";
 import { DataUiViews } from "./dataUiViews";
+import { GenericAcl } from "./genericAcl";
 import { GlobalHttpEventCollector } from "./globalHttpEventCollector";
 import { Indexes } from "./indexes";
 import { InputsHttpEventCollector } from "./inputsHttpEventCollector";
@@ -78,6 +80,8 @@ const _module = {
                 return new ConfigsConf(name, <any>undefined, { urn })
             case "splunk:index/dataUiViews:DataUiViews":
                 return new DataUiViews(name, <any>undefined, { urn })
+            case "splunk:index/genericAcl:GenericAcl":
+                return new GenericAcl(name, <any>undefined, { urn })
             case "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector":
                 return new GlobalHttpEventCollector(name, <any>undefined, { urn })
             case "splunk:index/indexes:Indexes":
@@ -121,6 +125,7 @@ pulumi.runtime.registerResourceModule("splunk", "index/authenticationUsers", _mo
 pulumi.runtime.registerResourceModule("splunk", "index/authorizationRoles", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/configsConf", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/dataUiViews", _module)
+pulumi.runtime.registerResourceModule("splunk", "index/genericAcl", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/globalHttpEventCollector", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/indexes", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/inputsHttpEventCollector", _module)

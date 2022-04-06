@@ -12,6 +12,7 @@ __all__ = [
     'AppsLocalAcl',
     'ConfigsConfAcl',
     'DataUiViewsAcl',
+    'GenericAclAcl',
     'IndexesAcl',
     'InputsHttpEventCollectorAcl',
     'InputsMonitorAcl',
@@ -289,6 +290,124 @@ class DataUiViewsAcl(dict):
 
     def get(self, key: str, default = None) -> Any:
         DataUiViewsAcl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 app: Optional[str] = None,
+                 can_change_perms: Optional[bool] = None,
+                 can_share_app: Optional[bool] = None,
+                 can_share_global: Optional[bool] = None,
+                 can_share_user: Optional[bool] = None,
+                 can_write: Optional[bool] = None,
+                 owner: Optional[str] = None,
+                 reads: Optional[Sequence[str]] = None,
+                 removable: Optional[bool] = None,
+                 sharing: Optional[str] = None,
+                 writes: Optional[Sequence[str]] = None):
+        if app is not None:
+            pulumi.set(__self__, "app", app)
+        if can_change_perms is not None:
+            pulumi.set(__self__, "can_change_perms", can_change_perms)
+        if can_share_app is not None:
+            pulumi.set(__self__, "can_share_app", can_share_app)
+        if can_share_global is not None:
+            pulumi.set(__self__, "can_share_global", can_share_global)
+        if can_share_user is not None:
+            pulumi.set(__self__, "can_share_user", can_share_user)
+        if can_write is not None:
+            pulumi.set(__self__, "can_write", can_write)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if reads is not None:
+            pulumi.set(__self__, "reads", reads)
+        if removable is not None:
+            pulumi.set(__self__, "removable", removable)
+        if sharing is not None:
+            pulumi.set(__self__, "sharing", sharing)
+        if writes is not None:
+            pulumi.set(__self__, "writes", writes)
+
+    @property
+    @pulumi.getter
+    def app(self) -> Optional[str]:
+        return pulumi.get(self, "app")
+
+    @property
+    @pulumi.getter(name="canChangePerms")
+    def can_change_perms(self) -> Optional[bool]:
+        return pulumi.get(self, "can_change_perms")
+
+    @property
+    @pulumi.getter(name="canShareApp")
+    def can_share_app(self) -> Optional[bool]:
+        return pulumi.get(self, "can_share_app")
+
+    @property
+    @pulumi.getter(name="canShareGlobal")
+    def can_share_global(self) -> Optional[bool]:
+        return pulumi.get(self, "can_share_global")
+
+    @property
+    @pulumi.getter(name="canShareUser")
+    def can_share_user(self) -> Optional[bool]:
+        return pulumi.get(self, "can_share_user")
+
+    @property
+    @pulumi.getter(name="canWrite")
+    def can_write(self) -> Optional[bool]:
+        return pulumi.get(self, "can_write")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> Optional[str]:
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter
+    def reads(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "reads")
+
+    @property
+    @pulumi.getter
+    def removable(self) -> Optional[bool]:
+        return pulumi.get(self, "removable")
+
+    @property
+    @pulumi.getter
+    def sharing(self) -> Optional[str]:
+        return pulumi.get(self, "sharing")
+
+    @property
+    @pulumi.getter
+    def writes(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "writes")
+
+
+@pulumi.output_type
+class GenericAclAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericAclAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericAclAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericAclAcl.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,

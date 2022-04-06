@@ -21,6 +21,7 @@
         "config/vars.ts",
         "configsConf.ts",
         "dataUiViews.ts",
+        "genericAcl.ts",
         "globalHttpEventCollector.ts",
         "index.ts",
         "indexes.ts",

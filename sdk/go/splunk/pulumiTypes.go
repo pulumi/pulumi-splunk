@@ -859,6 +859,289 @@ func (o DataUiViewsAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+type GenericAclAcl struct {
+	App            *string  `pulumi:"app"`
+	CanChangePerms *bool    `pulumi:"canChangePerms"`
+	CanShareApp    *bool    `pulumi:"canShareApp"`
+	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
+	CanShareUser   *bool    `pulumi:"canShareUser"`
+	CanWrite       *bool    `pulumi:"canWrite"`
+	Owner          *string  `pulumi:"owner"`
+	Reads          []string `pulumi:"reads"`
+	Removable      *bool    `pulumi:"removable"`
+	Sharing        *string  `pulumi:"sharing"`
+	Writes         []string `pulumi:"writes"`
+}
+
+// GenericAclAclInput is an input type that accepts GenericAclAclArgs and GenericAclAclOutput values.
+// You can construct a concrete instance of `GenericAclAclInput` via:
+//
+//          GenericAclAclArgs{...}
+type GenericAclAclInput interface {
+	pulumi.Input
+
+	ToGenericAclAclOutput() GenericAclAclOutput
+	ToGenericAclAclOutputWithContext(context.Context) GenericAclAclOutput
+}
+
+type GenericAclAclArgs struct {
+	App            pulumi.StringPtrInput   `pulumi:"app"`
+	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
+	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
+	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
+	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
+	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
+	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
+	Reads          pulumi.StringArrayInput `pulumi:"reads"`
+	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
+	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
+	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+}
+
+func (GenericAclAclArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GenericAclAcl)(nil)).Elem()
+}
+
+func (i GenericAclAclArgs) ToGenericAclAclOutput() GenericAclAclOutput {
+	return i.ToGenericAclAclOutputWithContext(context.Background())
+}
+
+func (i GenericAclAclArgs) ToGenericAclAclOutputWithContext(ctx context.Context) GenericAclAclOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GenericAclAclOutput)
+}
+
+func (i GenericAclAclArgs) ToGenericAclAclPtrOutput() GenericAclAclPtrOutput {
+	return i.ToGenericAclAclPtrOutputWithContext(context.Background())
+}
+
+func (i GenericAclAclArgs) ToGenericAclAclPtrOutputWithContext(ctx context.Context) GenericAclAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GenericAclAclOutput).ToGenericAclAclPtrOutputWithContext(ctx)
+}
+
+// GenericAclAclPtrInput is an input type that accepts GenericAclAclArgs, GenericAclAclPtr and GenericAclAclPtrOutput values.
+// You can construct a concrete instance of `GenericAclAclPtrInput` via:
+//
+//          GenericAclAclArgs{...}
+//
+//  or:
+//
+//          nil
+type GenericAclAclPtrInput interface {
+	pulumi.Input
+
+	ToGenericAclAclPtrOutput() GenericAclAclPtrOutput
+	ToGenericAclAclPtrOutputWithContext(context.Context) GenericAclAclPtrOutput
+}
+
+type genericAclAclPtrType GenericAclAclArgs
+
+func GenericAclAclPtr(v *GenericAclAclArgs) GenericAclAclPtrInput {
+	return (*genericAclAclPtrType)(v)
+}
+
+func (*genericAclAclPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GenericAclAcl)(nil)).Elem()
+}
+
+func (i *genericAclAclPtrType) ToGenericAclAclPtrOutput() GenericAclAclPtrOutput {
+	return i.ToGenericAclAclPtrOutputWithContext(context.Background())
+}
+
+func (i *genericAclAclPtrType) ToGenericAclAclPtrOutputWithContext(ctx context.Context) GenericAclAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GenericAclAclPtrOutput)
+}
+
+type GenericAclAclOutput struct{ *pulumi.OutputState }
+
+func (GenericAclAclOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GenericAclAcl)(nil)).Elem()
+}
+
+func (o GenericAclAclOutput) ToGenericAclAclOutput() GenericAclAclOutput {
+	return o
+}
+
+func (o GenericAclAclOutput) ToGenericAclAclOutputWithContext(ctx context.Context) GenericAclAclOutput {
+	return o
+}
+
+func (o GenericAclAclOutput) ToGenericAclAclPtrOutput() GenericAclAclPtrOutput {
+	return o.ToGenericAclAclPtrOutputWithContext(context.Background())
+}
+
+func (o GenericAclAclOutput) ToGenericAclAclPtrOutputWithContext(ctx context.Context) GenericAclAclPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GenericAclAcl) *GenericAclAcl {
+		return &v
+	}).(GenericAclAclPtrOutput)
+}
+
+func (o GenericAclAclOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *string { return v.App }).(pulumi.StringPtrOutput)
+}
+
+func (o GenericAclAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+func (o GenericAclAclOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GenericAclAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
+}
+
+func (o GenericAclAclOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GenericAclAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
+}
+
+func (o GenericAclAclOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GenericAclAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
+}
+
+type GenericAclAclPtrOutput struct{ *pulumi.OutputState }
+
+func (GenericAclAclPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GenericAclAcl)(nil)).Elem()
+}
+
+func (o GenericAclAclPtrOutput) ToGenericAclAclPtrOutput() GenericAclAclPtrOutput {
+	return o
+}
+
+func (o GenericAclAclPtrOutput) ToGenericAclAclPtrOutputWithContext(ctx context.Context) GenericAclAclPtrOutput {
+	return o
+}
+
+func (o GenericAclAclPtrOutput) Elem() GenericAclAclOutput {
+	return o.ApplyT(func(v *GenericAclAcl) GenericAclAcl {
+		if v != nil {
+			return *v
+		}
+		var ret GenericAclAcl
+		return ret
+	}).(GenericAclAclOutput)
+}
+
+func (o GenericAclAclPtrOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.App
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanChangePerms
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareApp
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareGlobal
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareUser
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanWrite
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Owner
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GenericAclAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Reads
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o GenericAclAclPtrOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Removable
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GenericAclAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Sharing
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o GenericAclAclPtrOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GenericAclAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Writes
+	}).(pulumi.StringArrayOutput)
+}
+
 type IndexesAcl struct {
 	App            *string  `pulumi:"app"`
 	CanChangePerms *bool    `pulumi:"canChangePerms"`
@@ -4828,6 +5111,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigsConfAclPtrInput)(nil)).Elem(), ConfigsConfAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsAclInput)(nil)).Elem(), DataUiViewsAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DataUiViewsAclPtrInput)(nil)).Elem(), DataUiViewsAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GenericAclAclInput)(nil)).Elem(), GenericAclAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GenericAclAclPtrInput)(nil)).Elem(), GenericAclAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexesAclInput)(nil)).Elem(), IndexesAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexesAclPtrInput)(nil)).Elem(), IndexesAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InputsHttpEventCollectorAclInput)(nil)).Elem(), InputsHttpEventCollectorAclArgs{})
@@ -4862,6 +5147,8 @@ func init() {
 	pulumi.RegisterOutputType(ConfigsConfAclPtrOutput{})
 	pulumi.RegisterOutputType(DataUiViewsAclOutput{})
 	pulumi.RegisterOutputType(DataUiViewsAclPtrOutput{})
+	pulumi.RegisterOutputType(GenericAclAclOutput{})
+	pulumi.RegisterOutputType(GenericAclAclPtrOutput{})
 	pulumi.RegisterOutputType(IndexesAclOutput{})
 	pulumi.RegisterOutputType(IndexesAclPtrOutput{})
 	pulumi.RegisterOutputType(InputsHttpEventCollectorAclOutput{})
