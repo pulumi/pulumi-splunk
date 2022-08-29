@@ -136,6 +136,18 @@ type SavedSearches struct {
 	ActionEmailUseTls pulumi.BoolOutput `pulumi:"actionEmailUseTls"`
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns pulumi.BoolOutput `pulumi:"actionEmailWidthSortColumns"`
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraDescription"`
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraIssueType"`
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraPriority"`
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraProject"`
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraSummary"`
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup pulumi.BoolOutput `pulumi:"actionPopulateLookup"`
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -446,6 +458,18 @@ type savedSearchesState struct {
 	ActionEmailUseTls *bool `pulumi:"actionEmailUseTls"`
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns *bool `pulumi:"actionEmailWidthSortColumns"`
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType *string `pulumi:"actionJiraServiceDeskParamJiraIssueType"`
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority *string `pulumi:"actionJiraServiceDeskParamJiraPriority"`
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup *bool `pulumi:"actionPopulateLookup"`
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -725,6 +749,18 @@ type SavedSearchesState struct {
 	ActionEmailUseTls pulumi.BoolPtrInput
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns pulumi.BoolPtrInput
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType pulumi.StringPtrInput
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority pulumi.StringPtrInput
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup pulumi.BoolPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -1006,6 +1042,18 @@ type savedSearchesArgs struct {
 	ActionEmailUseTls *bool `pulumi:"actionEmailUseTls"`
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns *bool `pulumi:"actionEmailWidthSortColumns"`
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType *string `pulumi:"actionJiraServiceDeskParamJiraIssueType"`
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority *string `pulumi:"actionJiraServiceDeskParamJiraPriority"`
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
 	// The search command (or pipeline) which is responsible for executing the action.
 	ActionPopulateLookupCommand *string `pulumi:"actionPopulateLookupCommand"`
 	// Lookup name of path of the lookup to populate
@@ -1276,6 +1324,18 @@ type SavedSearchesArgs struct {
 	ActionEmailUseTls pulumi.BoolPtrInput
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns pulumi.BoolPtrInput
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType pulumi.StringPtrInput
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority pulumi.StringPtrInput
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.
 	ActionPopulateLookupCommand pulumi.StringPtrInput
 	// Lookup name of path of the lookup to populate

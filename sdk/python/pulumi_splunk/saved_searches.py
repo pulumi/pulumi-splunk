@@ -54,6 +54,12 @@ class SavedSearchesArgs:
                  action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+                 action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_hostname: Optional[pulumi.Input[str]] = None,
@@ -189,6 +195,12 @@ class SavedSearchesArgs:
         :param pulumi.Input[bool] action_email_use_ssl: Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+        :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
         :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -361,6 +373,18 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_email_use_tls", action_email_use_tls)
         if action_email_width_sort_columns is not None:
             pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
+        if action_jira_service_desk_param_account is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
+        if action_jira_service_desk_param_jira_description is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
+        if action_jira_service_desk_param_jira_issue_type is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_issue_type", action_jira_service_desk_param_jira_issue_type)
+        if action_jira_service_desk_param_jira_priority is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_priority", action_jira_service_desk_param_jira_priority)
+        if action_jira_service_desk_param_jira_project is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
+        if action_jira_service_desk_param_jira_summary is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
         if action_populate_lookup_command is not None:
             pulumi.set(__self__, "action_populate_lookup_command", action_populate_lookup_command)
         if action_populate_lookup_dest is not None:
@@ -1017,6 +1041,78 @@ class SavedSearchesArgs:
     @action_email_width_sort_columns.setter
     def action_email_width_sort_columns(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "action_email_width_sort_columns", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamAccount")
+    def action_jira_service_desk_param_account(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira Service Desk account name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_account")
+
+    @action_jira_service_desk_param_account.setter
+    def action_jira_service_desk_param_account(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_account", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
+    def action_jira_service_desk_param_jira_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira issue description
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_description")
+
+    @action_jira_service_desk_param_jira_description.setter
+    def action_jira_service_desk_param_jira_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_description", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraIssueType")
+    def action_jira_service_desk_param_jira_issue_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira issue type name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_issue_type")
+
+    @action_jira_service_desk_param_jira_issue_type.setter
+    def action_jira_service_desk_param_jira_issue_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_issue_type", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraPriority")
+    def action_jira_service_desk_param_jira_priority(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira priority of issue
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_priority")
+
+    @action_jira_service_desk_param_jira_priority.setter
+    def action_jira_service_desk_param_jira_priority(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_priority", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraProject")
+    def action_jira_service_desk_param_jira_project(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira Project name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_project")
+
+    @action_jira_service_desk_param_jira_project.setter
+    def action_jira_service_desk_param_jira_project(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_project", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraSummary")
+    def action_jira_service_desk_param_jira_summary(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira issue title/summary
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
+
+    @action_jira_service_desk_param_jira_summary.setter
+    def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
 
     @property
     @pulumi.getter(name="actionPopulateLookupCommand")
@@ -2189,6 +2285,12 @@ class _SavedSearchesState:
                  action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+                 action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup: Optional[pulumi.Input[bool]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
@@ -2329,6 +2431,12 @@ class _SavedSearchesState:
         :param pulumi.Input[bool] action_email_use_ssl: Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+        :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
         :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
@@ -2507,6 +2615,18 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_email_use_tls", action_email_use_tls)
         if action_email_width_sort_columns is not None:
             pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
+        if action_jira_service_desk_param_account is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
+        if action_jira_service_desk_param_jira_description is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
+        if action_jira_service_desk_param_jira_issue_type is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_issue_type", action_jira_service_desk_param_jira_issue_type)
+        if action_jira_service_desk_param_jira_priority is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_priority", action_jira_service_desk_param_jira_priority)
+        if action_jira_service_desk_param_jira_project is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
+        if action_jira_service_desk_param_jira_summary is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
         if action_populate_lookup is not None:
             pulumi.set(__self__, "action_populate_lookup", action_populate_lookup)
         if action_populate_lookup_command is not None:
@@ -3173,6 +3293,78 @@ class _SavedSearchesState:
     @action_email_width_sort_columns.setter
     def action_email_width_sort_columns(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "action_email_width_sort_columns", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamAccount")
+    def action_jira_service_desk_param_account(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira Service Desk account name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_account")
+
+    @action_jira_service_desk_param_account.setter
+    def action_jira_service_desk_param_account(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_account", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
+    def action_jira_service_desk_param_jira_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira issue description
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_description")
+
+    @action_jira_service_desk_param_jira_description.setter
+    def action_jira_service_desk_param_jira_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_description", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraIssueType")
+    def action_jira_service_desk_param_jira_issue_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira issue type name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_issue_type")
+
+    @action_jira_service_desk_param_jira_issue_type.setter
+    def action_jira_service_desk_param_jira_issue_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_issue_type", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraPriority")
+    def action_jira_service_desk_param_jira_priority(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira priority of issue
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_priority")
+
+    @action_jira_service_desk_param_jira_priority.setter
+    def action_jira_service_desk_param_jira_priority(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_priority", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraProject")
+    def action_jira_service_desk_param_jira_project(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira Project name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_project")
+
+    @action_jira_service_desk_param_jira_project.setter
+    def action_jira_service_desk_param_jira_project(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_project", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraSummary")
+    def action_jira_service_desk_param_jira_summary(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira issue title/summary
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
+
+    @action_jira_service_desk_param_jira_summary.setter
+    def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
 
     @property
     @pulumi.getter(name="actionPopulateLookup")
@@ -4406,6 +4598,12 @@ class SavedSearches(pulumi.CustomResource):
                  action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+                 action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_hostname: Optional[pulumi.Input[str]] = None,
@@ -4573,6 +4771,12 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] action_email_use_ssl: Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+        :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
         :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -4759,6 +4963,12 @@ class SavedSearches(pulumi.CustomResource):
                  action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+                 action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_hostname: Optional[pulumi.Input[str]] = None,
@@ -4904,6 +5114,12 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_email_use_ssl"] = action_email_use_ssl
             __props__.__dict__["action_email_use_tls"] = action_email_use_tls
             __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
+            __props__.__dict__["action_jira_service_desk_param_account"] = action_jira_service_desk_param_account
+            __props__.__dict__["action_jira_service_desk_param_jira_description"] = action_jira_service_desk_param_jira_description
+            __props__.__dict__["action_jira_service_desk_param_jira_issue_type"] = action_jira_service_desk_param_jira_issue_type
+            __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
+            __props__.__dict__["action_jira_service_desk_param_jira_project"] = action_jira_service_desk_param_jira_project
+            __props__.__dict__["action_jira_service_desk_param_jira_summary"] = action_jira_service_desk_param_jira_summary
             __props__.__dict__["action_populate_lookup_command"] = action_populate_lookup_command
             __props__.__dict__["action_populate_lookup_dest"] = action_populate_lookup_dest
             __props__.__dict__["action_populate_lookup_hostname"] = action_populate_lookup_hostname
@@ -5055,6 +5271,12 @@ class SavedSearches(pulumi.CustomResource):
             action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
             action_email_use_tls: Optional[pulumi.Input[bool]] = None,
             action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+            action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+            action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+            action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+            action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+            action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+            action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
             action_populate_lookup: Optional[pulumi.Input[bool]] = None,
             action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
             action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
@@ -5200,6 +5422,12 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] action_email_use_ssl: Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+        :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
         :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
@@ -5343,6 +5571,12 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_email_use_ssl"] = action_email_use_ssl
         __props__.__dict__["action_email_use_tls"] = action_email_use_tls
         __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
+        __props__.__dict__["action_jira_service_desk_param_account"] = action_jira_service_desk_param_account
+        __props__.__dict__["action_jira_service_desk_param_jira_description"] = action_jira_service_desk_param_jira_description
+        __props__.__dict__["action_jira_service_desk_param_jira_issue_type"] = action_jira_service_desk_param_jira_issue_type
+        __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
+        __props__.__dict__["action_jira_service_desk_param_jira_project"] = action_jira_service_desk_param_jira_project
+        __props__.__dict__["action_jira_service_desk_param_jira_summary"] = action_jira_service_desk_param_jira_summary
         __props__.__dict__["action_populate_lookup"] = action_populate_lookup
         __props__.__dict__["action_populate_lookup_command"] = action_populate_lookup_command
         __props__.__dict__["action_populate_lookup_dest"] = action_populate_lookup_dest
@@ -5755,6 +5989,54 @@ class SavedSearches(pulumi.CustomResource):
         Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         """
         return pulumi.get(self, "action_email_width_sort_columns")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamAccount")
+    def action_jira_service_desk_param_account(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira Service Desk account name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_account")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
+    def action_jira_service_desk_param_jira_description(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira issue description
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_description")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraIssueType")
+    def action_jira_service_desk_param_jira_issue_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira issue type name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_issue_type")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraPriority")
+    def action_jira_service_desk_param_jira_priority(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira priority of issue
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_priority")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraProject")
+    def action_jira_service_desk_param_jira_project(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira Project name
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_project")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraSummary")
+    def action_jira_service_desk_param_jira_summary(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira issue title/summary
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
 
     @property
     @pulumi.getter(name="actionPopulateLookup")

@@ -288,6 +288,42 @@ namespace Pulumi.Splunk
         public Output<bool> ActionEmailWidthSortColumns { get; private set; } = null!;
 
         /// <summary>
+        /// Jira Service Desk account name
+        /// </summary>
+        [Output("actionJiraServiceDeskParamAccount")]
+        public Output<string?> ActionJiraServiceDeskParamAccount { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira issue description
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraDescription")]
+        public Output<string?> ActionJiraServiceDeskParamJiraDescription { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira issue type name
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraIssueType")]
+        public Output<string?> ActionJiraServiceDeskParamJiraIssueType { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira priority of issue
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraPriority")]
+        public Output<string?> ActionJiraServiceDeskParamJiraPriority { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira Project name
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraProject")]
+        public Output<string?> ActionJiraServiceDeskParamJiraProject { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira issue title/summary
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraSummary")]
+        public Output<string?> ActionJiraServiceDeskParamJiraSummary { get; private set; } = null!;
+
+        /// <summary>
         /// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         /// </summary>
         [Output("actionPopulateLookup")]
@@ -1156,6 +1192,42 @@ namespace Pulumi.Splunk
         public Input<bool>? ActionEmailWidthSortColumns { get; set; }
 
         /// <summary>
+        /// Jira Service Desk account name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamAccount")]
+        public Input<string>? ActionJiraServiceDeskParamAccount { get; set; }
+
+        /// <summary>
+        /// Jira issue description
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraDescription")]
+        public Input<string>? ActionJiraServiceDeskParamJiraDescription { get; set; }
+
+        /// <summary>
+        /// Jira issue type name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraIssueType")]
+        public Input<string>? ActionJiraServiceDeskParamJiraIssueType { get; set; }
+
+        /// <summary>
+        /// Jira priority of issue
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraPriority")]
+        public Input<string>? ActionJiraServiceDeskParamJiraPriority { get; set; }
+
+        /// <summary>
+        /// Jira Project name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraProject")]
+        public Input<string>? ActionJiraServiceDeskParamJiraProject { get; set; }
+
+        /// <summary>
+        /// Jira issue title/summary
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraSummary")]
+        public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
+
+        /// <summary>
         /// The search command (or pipeline) which is responsible for executing the action.
         /// </summary>
         [Input("actionPopulateLookupCommand")]
@@ -1965,6 +2037,42 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionEmailWidthSortColumns")]
         public Input<bool>? ActionEmailWidthSortColumns { get; set; }
+
+        /// <summary>
+        /// Jira Service Desk account name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamAccount")]
+        public Input<string>? ActionJiraServiceDeskParamAccount { get; set; }
+
+        /// <summary>
+        /// Jira issue description
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraDescription")]
+        public Input<string>? ActionJiraServiceDeskParamJiraDescription { get; set; }
+
+        /// <summary>
+        /// Jira issue type name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraIssueType")]
+        public Input<string>? ActionJiraServiceDeskParamJiraIssueType { get; set; }
+
+        /// <summary>
+        /// Jira priority of issue
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraPriority")]
+        public Input<string>? ActionJiraServiceDeskParamJiraPriority { get; set; }
+
+        /// <summary>
+        /// Jira Project name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraProject")]
+        public Input<string>? ActionJiraServiceDeskParamJiraProject { get; set; }
+
+        /// <summary>
+        /// Jira issue title/summary
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraSummary")]
+        public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
 
         /// <summary>
         /// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
