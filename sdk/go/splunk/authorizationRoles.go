@@ -20,40 +20,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewAuthorizationRoles(ctx, "role01", &splunk.AuthorizationRolesArgs{
-// 			Capabilities: pulumi.StringArray{
-// 				pulumi.String("accelerate_datamodel"),
-// 				pulumi.String("change_authentication"),
-// 				pulumi.String("restart_splunkd"),
-// 			},
-// 			DefaultApp: pulumi.String("search"),
-// 			ImportedRoles: pulumi.StringArray{
-// 				pulumi.String("power"),
-// 				pulumi.String("user"),
-// 			},
-// 			SearchIndexesAlloweds: pulumi.StringArray{
-// 				pulumi.String("_audit"),
-// 				pulumi.String("_internal"),
-// 				pulumi.String("main"),
-// 			},
-// 			SearchIndexesDefaults: pulumi.StringArray{
-// 				pulumi.String("_audit"),
-// 				pulumi.String("_internal"),
-// 				pulumi.String("main"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewAuthorizationRoles(ctx, "role01", &splunk.AuthorizationRolesArgs{
+//				Capabilities: pulumi.StringArray{
+//					pulumi.String("accelerate_datamodel"),
+//					pulumi.String("change_authentication"),
+//					pulumi.String("restart_splunkd"),
+//				},
+//				DefaultApp: pulumi.String("search"),
+//				ImportedRoles: pulumi.StringArray{
+//					pulumi.String("power"),
+//					pulumi.String("user"),
+//				},
+//				SearchIndexesAlloweds: pulumi.StringArray{
+//					pulumi.String("_audit"),
+//					pulumi.String("_internal"),
+//					pulumi.String("main"),
+//				},
+//				SearchIndexesDefaults: pulumi.StringArray{
+//					pulumi.String("_audit"),
+//					pulumi.String("_internal"),
+//					pulumi.String("main"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AuthorizationRoles struct {
 	pulumi.CustomResourceState
@@ -261,7 +264,7 @@ func (i *AuthorizationRoles) ToAuthorizationRolesOutputWithContext(ctx context.C
 // AuthorizationRolesArrayInput is an input type that accepts AuthorizationRolesArray and AuthorizationRolesArrayOutput values.
 // You can construct a concrete instance of `AuthorizationRolesArrayInput` via:
 //
-//          AuthorizationRolesArray{ AuthorizationRolesArgs{...} }
+//	AuthorizationRolesArray{ AuthorizationRolesArgs{...} }
 type AuthorizationRolesArrayInput interface {
 	pulumi.Input
 
@@ -286,7 +289,7 @@ func (i AuthorizationRolesArray) ToAuthorizationRolesArrayOutputWithContext(ctx 
 // AuthorizationRolesMapInput is an input type that accepts AuthorizationRolesMap and AuthorizationRolesMapOutput values.
 // You can construct a concrete instance of `AuthorizationRolesMapInput` via:
 //
-//          AuthorizationRolesMap{ "key": AuthorizationRolesArgs{...} }
+//	AuthorizationRolesMap{ "key": AuthorizationRolesArgs{...} }
 type AuthorizationRolesMapInput interface {
 	pulumi.Input
 
@@ -320,6 +323,71 @@ func (o AuthorizationRolesOutput) ToAuthorizationRolesOutput() AuthorizationRole
 
 func (o AuthorizationRolesOutput) ToAuthorizationRolesOutputWithContext(ctx context.Context) AuthorizationRolesOutput {
 	return o
+}
+
+// List of capabilities assigned to role.
+func (o AuthorizationRolesOutput) Capabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.Capabilities }).(pulumi.StringArrayOutput)
+}
+
+// Maximum number of concurrently running real-time searches that all members of this role can have.
+func (o AuthorizationRolesOutput) CumulativeRealtimeSearchJobsQuota() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.IntPtrOutput { return v.CumulativeRealtimeSearchJobsQuota }).(pulumi.IntPtrOutput)
+}
+
+// Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
+func (o AuthorizationRolesOutput) CumulativeSearchJobsQuota() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.IntPtrOutput { return v.CumulativeSearchJobsQuota }).(pulumi.IntPtrOutput)
+}
+
+// Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
+func (o AuthorizationRolesOutput) DefaultApp() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringOutput { return v.DefaultApp }).(pulumi.StringOutput)
+}
+
+// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
+func (o AuthorizationRolesOutput) ImportedRoles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.ImportedRoles }).(pulumi.StringArrayOutput)
+}
+
+// The name of the user role to create.
+func (o AuthorizationRolesOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
+func (o AuthorizationRolesOutput) RealtimeSearchJobsQuota() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.IntPtrOutput { return v.RealtimeSearchJobsQuota }).(pulumi.IntPtrOutput)
+}
+
+// Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
+func (o AuthorizationRolesOutput) SearchDiskQuota() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.IntPtrOutput { return v.SearchDiskQuota }).(pulumi.IntPtrOutput)
+}
+
+// Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
+func (o AuthorizationRolesOutput) SearchFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringOutput { return v.SearchFilter }).(pulumi.StringOutput)
+}
+
+// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
+func (o AuthorizationRolesOutput) SearchIndexesAlloweds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.SearchIndexesAlloweds }).(pulumi.StringArrayOutput)
+}
+
+// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+func (o AuthorizationRolesOutput) SearchIndexesDefaults() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.SearchIndexesDefaults }).(pulumi.StringArrayOutput)
+}
+
+// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
+func (o AuthorizationRolesOutput) SearchJobsQuota() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.IntPtrOutput { return v.SearchJobsQuota }).(pulumi.IntPtrOutput)
+}
+
+// Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
+func (o AuthorizationRolesOutput) SearchTimeWin() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AuthorizationRoles) pulumi.IntPtrOutput { return v.SearchTimeWin }).(pulumi.IntPtrOutput)
 }
 
 type AuthorizationRolesArrayOutput struct{ *pulumi.OutputState }

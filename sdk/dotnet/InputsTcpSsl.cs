@@ -17,25 +17,23 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Splunk.InputsTcpSsl("test", new()
     ///     {
-    ///         var test = new Splunk.InputsTcpSsl("test", new Splunk.InputsTcpSslArgs
-    ///         {
-    ///             Disabled = false,
-    ///             RequireClientCert = true,
-    ///         });
-    ///     }
+    ///         Disabled = false,
+    ///         RequireClientCert = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpSsl:InputsTcpSsl")]
-    public partial class InputsTcpSsl : Pulumi.CustomResource
+    public partial class InputsTcpSsl : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Indicates if input is disabled.
@@ -111,7 +109,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsTcpSslArgs : Pulumi.ResourceArgs
+    public sealed class InputsTcpSslArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Indicates if input is disabled.
@@ -146,9 +144,10 @@ namespace Pulumi.Splunk
         public InputsTcpSslArgs()
         {
         }
+        public static new InputsTcpSslArgs Empty => new InputsTcpSslArgs();
     }
 
-    public sealed class InputsTcpSslState : Pulumi.ResourceArgs
+    public sealed class InputsTcpSslState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Indicates if input is disabled.
@@ -183,5 +182,6 @@ namespace Pulumi.Splunk
         public InputsTcpSslState()
         {
         }
+        public static new InputsTcpSslState Empty => new InputsTcpSslState();
     }
 }

@@ -17,26 +17,24 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var http = new Splunk.GlobalHttpEventCollector("http", new()
     ///     {
-    ///         var http = new Splunk.GlobalHttpEventCollector("http", new Splunk.GlobalHttpEventCollectorArgs
-    ///         {
-    ///             Disabled = false,
-    ///             EnableSsl = true,
-    ///             Port = 8088,
-    ///         });
-    ///     }
+    ///         Disabled = false,
+    ///         EnableSsl = true,
+    ///         Port = 8088,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector")]
-    public partial class GlobalHttpEventCollector : Pulumi.CustomResource
+    public partial class GlobalHttpEventCollector : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Number of threads used by HTTP Input server.
@@ -125,7 +123,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class GlobalHttpEventCollectorArgs : Pulumi.ResourceArgs
+    public sealed class GlobalHttpEventCollectorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Number of threads used by HTTP Input server.
@@ -173,9 +171,10 @@ namespace Pulumi.Splunk
         public GlobalHttpEventCollectorArgs()
         {
         }
+        public static new GlobalHttpEventCollectorArgs Empty => new GlobalHttpEventCollectorArgs();
     }
 
-    public sealed class GlobalHttpEventCollectorState : Pulumi.ResourceArgs
+    public sealed class GlobalHttpEventCollectorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Number of threads used by HTTP Input server.
@@ -223,5 +222,6 @@ namespace Pulumi.Splunk
         public GlobalHttpEventCollectorState()
         {
         }
+        public static new GlobalHttpEventCollectorState Empty => new GlobalHttpEventCollectorState();
     }
 }

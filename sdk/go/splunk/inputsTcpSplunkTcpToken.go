@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewInputsTcpSplunkTcpToken(ctx, "tcpSplunkTcpToken", &splunk.InputsTcpSplunkTcpTokenArgs{
-// 			Token: pulumi.String("D66C45B3-7C28-48A1-A13A-027914146501"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpSplunkTcpToken(ctx, "tcpSplunkTcpToken", &splunk.InputsTcpSplunkTcpTokenArgs{
+//				Token: pulumi.String("D66C45B3-7C28-48A1-A13A-027914146501"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type InputsTcpSplunkTcpToken struct {
 	pulumi.CustomResourceState
@@ -142,7 +145,7 @@ func (i *InputsTcpSplunkTcpToken) ToInputsTcpSplunkTcpTokenOutputWithContext(ctx
 // InputsTcpSplunkTcpTokenArrayInput is an input type that accepts InputsTcpSplunkTcpTokenArray and InputsTcpSplunkTcpTokenArrayOutput values.
 // You can construct a concrete instance of `InputsTcpSplunkTcpTokenArrayInput` via:
 //
-//          InputsTcpSplunkTcpTokenArray{ InputsTcpSplunkTcpTokenArgs{...} }
+//	InputsTcpSplunkTcpTokenArray{ InputsTcpSplunkTcpTokenArgs{...} }
 type InputsTcpSplunkTcpTokenArrayInput interface {
 	pulumi.Input
 
@@ -167,7 +170,7 @@ func (i InputsTcpSplunkTcpTokenArray) ToInputsTcpSplunkTcpTokenArrayOutputWithCo
 // InputsTcpSplunkTcpTokenMapInput is an input type that accepts InputsTcpSplunkTcpTokenMap and InputsTcpSplunkTcpTokenMapOutput values.
 // You can construct a concrete instance of `InputsTcpSplunkTcpTokenMapInput` via:
 //
-//          InputsTcpSplunkTcpTokenMap{ "key": InputsTcpSplunkTcpTokenArgs{...} }
+//	InputsTcpSplunkTcpTokenMap{ "key": InputsTcpSplunkTcpTokenArgs{...} }
 type InputsTcpSplunkTcpTokenMapInput interface {
 	pulumi.Input
 
@@ -201,6 +204,21 @@ func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenOutput() InputsT
 
 func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsTcpSplunkTcpTokenOutput) Acl() InputsTcpSplunkTcpTokenAclOutput {
+	return o.ApplyT(func(v *InputsTcpSplunkTcpToken) InputsTcpSplunkTcpTokenAclOutput { return v.Acl }).(InputsTcpSplunkTcpTokenAclOutput)
+}
+
+// Required. Name for the token to create.
+func (o InputsTcpSplunkTcpTokenOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpSplunkTcpToken) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Optional. Token value to use. If unspecified, a token is generated automatically.
+func (o InputsTcpSplunkTcpTokenOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpSplunkTcpToken) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
 }
 
 type InputsTcpSplunkTcpTokenArrayOutput struct{ *pulumi.OutputState }

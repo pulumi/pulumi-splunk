@@ -20,21 +20,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewOutputsTcpServer(ctx, "tcpServer", &splunk.OutputsTcpServerArgs{
-// 			SslAltNameToCheck: pulumi.String("old-host"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpServer(ctx, "tcpServer", &splunk.OutputsTcpServerArgs{
+//				SslAltNameToCheck: pulumi.String("old-host"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type OutputsTcpServer struct {
 	pulumi.CustomResourceState
@@ -237,7 +240,7 @@ func (i *OutputsTcpServer) ToOutputsTcpServerOutputWithContext(ctx context.Conte
 // OutputsTcpServerArrayInput is an input type that accepts OutputsTcpServerArray and OutputsTcpServerArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpServerArrayInput` via:
 //
-//          OutputsTcpServerArray{ OutputsTcpServerArgs{...} }
+//	OutputsTcpServerArray{ OutputsTcpServerArgs{...} }
 type OutputsTcpServerArrayInput interface {
 	pulumi.Input
 
@@ -262,7 +265,7 @@ func (i OutputsTcpServerArray) ToOutputsTcpServerArrayOutputWithContext(ctx cont
 // OutputsTcpServerMapInput is an input type that accepts OutputsTcpServerMap and OutputsTcpServerMapOutput values.
 // You can construct a concrete instance of `OutputsTcpServerMapInput` via:
 //
-//          OutputsTcpServerMap{ "key": OutputsTcpServerArgs{...} }
+//	OutputsTcpServerMap{ "key": OutputsTcpServerArgs{...} }
 type OutputsTcpServerMapInput interface {
 	pulumi.Input
 
@@ -296,6 +299,64 @@ func (o OutputsTcpServerOutput) ToOutputsTcpServerOutput() OutputsTcpServerOutpu
 
 func (o OutputsTcpServerOutput) ToOutputsTcpServerOutputWithContext(ctx context.Context) OutputsTcpServerOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o OutputsTcpServerOutput) Acl() OutputsTcpServerAclOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) OutputsTcpServerAclOutput { return v.Acl }).(OutputsTcpServerAclOutput)
+}
+
+// If true, disables the group.
+func (o OutputsTcpServerOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Valid values: (clone | balance | autobalance)
+// The data distribution method used when two or more servers exist in the same forwarder group.
+func (o OutputsTcpServerOutput) Method() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.Method }).(pulumi.StringOutput)
+}
+
+// <host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on.
+func (o OutputsTcpServerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// The alternate name to match in the remote server's SSL certificate.
+func (o OutputsTcpServerOutput) SslAltNameToCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.SslAltNameToCheck }).(pulumi.StringOutput)
+}
+
+// Path to the client certificate. If specified, connection uses SSL.
+func (o OutputsTcpServerOutput) SslCertPath() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.SslCertPath }).(pulumi.StringOutput)
+}
+
+// SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
+func (o OutputsTcpServerOutput) SslCipher() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.SslCipher }).(pulumi.StringOutput)
+}
+
+// Check the common name of the server's certificate against this name.
+// If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
+func (o OutputsTcpServerOutput) SslCommonNameToCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.SslCommonNameToCheck }).(pulumi.StringOutput)
+}
+
+// The password associated with the CAcert.
+// The default Splunk Enterprise CAcert uses the password "password."
+func (o OutputsTcpServerOutput) SslPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.SslPassword }).(pulumi.StringOutput)
+}
+
+// The path to the root certificate authority file.
+func (o OutputsTcpServerOutput) SslRootCaPath() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.StringOutput { return v.SslRootCaPath }).(pulumi.StringOutput)
+}
+
+// If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
+func (o OutputsTcpServerOutput) SslVerifyServerCert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpServer) pulumi.BoolOutput { return v.SslVerifyServerCert }).(pulumi.BoolOutput)
 }
 
 type OutputsTcpServerArrayOutput struct{ *pulumi.OutputState }

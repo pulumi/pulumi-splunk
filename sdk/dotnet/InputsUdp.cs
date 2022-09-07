@@ -17,27 +17,25 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var udp = new Splunk.InputsUdp("udp", new()
     ///     {
-    ///         var udp = new Splunk.InputsUdp("udp", new Splunk.InputsUdpArgs
-    ///         {
-    ///             Disabled = false,
-    ///             Index = "main",
-    ///             Source = "new",
-    ///             Sourcetype = "new",
-    ///         });
-    ///     }
+    ///         Disabled = false,
+    ///         Index = "main",
+    ///         Source = "new",
+    ///         Sourcetype = "new",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsUdp:InputsUdp")]
-    public partial class InputsUdp : Pulumi.CustomResource
+    public partial class InputsUdp : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -161,7 +159,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsUdpArgs : Pulumi.ResourceArgs
+    public sealed class InputsUdpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -244,9 +242,10 @@ namespace Pulumi.Splunk
         public InputsUdpArgs()
         {
         }
+        public static new InputsUdpArgs Empty => new InputsUdpArgs();
     }
 
-    public sealed class InputsUdpState : Pulumi.ResourceArgs
+    public sealed class InputsUdpState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -329,5 +328,6 @@ namespace Pulumi.Splunk
         public InputsUdpState()
         {
         }
+        public static new InputsUdpState Empty => new InputsUdpState();
     }
 }

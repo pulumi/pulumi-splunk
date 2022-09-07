@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewInputsTcpCooked(ctx, "tcpCooked", &splunk.InputsTcpCookedArgs{
-// 			ConnectionHost: pulumi.String("dns"),
-// 			Disabled:       pulumi.Bool(false),
-// 			RestrictToHost: pulumi.String("splunk"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpCooked(ctx, "tcpCooked", &splunk.InputsTcpCookedArgs{
+//				ConnectionHost: pulumi.String("dns"),
+//				Disabled:       pulumi.Bool(false),
+//				RestrictToHost: pulumi.String("splunk"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type InputsTcpCooked struct {
 	pulumi.CustomResourceState
@@ -199,7 +202,7 @@ func (i *InputsTcpCooked) ToInputsTcpCookedOutputWithContext(ctx context.Context
 // InputsTcpCookedArrayInput is an input type that accepts InputsTcpCookedArray and InputsTcpCookedArrayOutput values.
 // You can construct a concrete instance of `InputsTcpCookedArrayInput` via:
 //
-//          InputsTcpCookedArray{ InputsTcpCookedArgs{...} }
+//	InputsTcpCookedArray{ InputsTcpCookedArgs{...} }
 type InputsTcpCookedArrayInput interface {
 	pulumi.Input
 
@@ -224,7 +227,7 @@ func (i InputsTcpCookedArray) ToInputsTcpCookedArrayOutputWithContext(ctx contex
 // InputsTcpCookedMapInput is an input type that accepts InputsTcpCookedMap and InputsTcpCookedMapOutput values.
 // You can construct a concrete instance of `InputsTcpCookedMapInput` via:
 //
-//          InputsTcpCookedMap{ "key": InputsTcpCookedArgs{...} }
+//	InputsTcpCookedMap{ "key": InputsTcpCookedArgs{...} }
 type InputsTcpCookedMapInput interface {
 	pulumi.Input
 
@@ -258,6 +261,41 @@ func (o InputsTcpCookedOutput) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
 
 func (o InputsTcpCookedOutput) ToInputsTcpCookedOutputWithContext(ctx context.Context) InputsTcpCookedOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsTcpCookedOutput) Acl() InputsTcpCookedAclOutput {
+	return o.ApplyT(func(v *InputsTcpCooked) InputsTcpCookedAclOutput { return v.Acl }).(InputsTcpCookedAclOutput)
+}
+
+// Valid values: (ip | dns | none)
+// Set the host for the remote server that is sending data.
+// ip sets the host to the IP address of the remote server sending data.
+// dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+// none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+// Default value is dns.
+func (o InputsTcpCookedOutput) ConnectionHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpCooked) pulumi.StringOutput { return v.ConnectionHost }).(pulumi.StringOutput)
+}
+
+// Indicates if input is disabled.
+func (o InputsTcpCookedOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsTcpCooked) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Host from which the indexer gets data.
+func (o InputsTcpCookedOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpCooked) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+}
+
+// The port number of this input.
+func (o InputsTcpCookedOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpCooked) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Restrict incoming connections on this port to the host specified here.
+func (o InputsTcpCookedOutput) RestrictToHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpCooked) pulumi.StringOutput { return v.RestrictToHost }).(pulumi.StringOutput)
 }
 
 type InputsTcpCookedArrayOutput struct{ *pulumi.OutputState }

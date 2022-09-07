@@ -12,7 +12,7 @@ import (
 
 // ## # Resource: AppsLocal
 //
-// Create, install and manage apps on your Splunk instance
+// # Create, install and manage apps on your Splunk instance
 //
 // ## Example Usage
 //
@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewAppsLocal(ctx, "amazonConnectApp", &splunk.AppsLocalArgs{
-// 			ExplicitAppname: pulumi.String("amazon_connect_app_for_splunk"),
-// 			Filename:        pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewAppsLocal(ctx, "amazonConnectApp", &splunk.AppsLocalArgs{
+//				ExplicitAppname: pulumi.String("amazon_connect_app_for_splunk"),
+//				Filename:        pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AppsLocal struct {
 	pulumi.CustomResourceState
@@ -298,7 +301,7 @@ func (i *AppsLocal) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalO
 // AppsLocalArrayInput is an input type that accepts AppsLocalArray and AppsLocalArrayOutput values.
 // You can construct a concrete instance of `AppsLocalArrayInput` via:
 //
-//          AppsLocalArray{ AppsLocalArgs{...} }
+//	AppsLocalArray{ AppsLocalArgs{...} }
 type AppsLocalArrayInput interface {
 	pulumi.Input
 
@@ -323,7 +326,7 @@ func (i AppsLocalArray) ToAppsLocalArrayOutputWithContext(ctx context.Context) A
 // AppsLocalMapInput is an input type that accepts AppsLocalMap and AppsLocalMapOutput values.
 // You can construct a concrete instance of `AppsLocalMapInput` via:
 //
-//          AppsLocalMap{ "key": AppsLocalArgs{...} }
+//	AppsLocalMap{ "key": AppsLocalArgs{...} }
 type AppsLocalMapInput interface {
 	pulumi.Input
 
@@ -357,6 +360,82 @@ func (o AppsLocalOutput) ToAppsLocalOutput() AppsLocalOutput {
 
 func (o AppsLocalOutput) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o AppsLocalOutput) Acl() AppsLocalAclOutput {
+	return o.ApplyT(func(v *AppsLocal) AppsLocalAclOutput { return v.Acl }).(AppsLocalAclOutput)
+}
+
+// Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
+func (o AppsLocalOutput) Auth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringPtrOutput { return v.Auth }).(pulumi.StringPtrOutput)
+}
+
+// For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
+func (o AppsLocalOutput) Author() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringOutput { return v.Author }).(pulumi.StringOutput)
+}
+
+// Custom setup complete indication:
+// <br>true = Custom app setup complete.
+// <br>false = Custom app setup not complete.
+func (o AppsLocalOutput) Configured() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.BoolOutput { return v.Configured }).(pulumi.BoolOutput)
+}
+
+// Short app description also displayed below the app title in Splunk Web Launcher.
+func (o AppsLocalOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
+func (o AppsLocalOutput) ExplicitAppname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringPtrOutput { return v.ExplicitAppname }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether to use the name value as the app source location.
+// <br>true indicates that name is a path to a file to install.
+// <br>false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
+func (o AppsLocalOutput) Filename() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.BoolPtrOutput { return v.Filename }).(pulumi.BoolPtrOutput)
+}
+
+// App name displayed in Splunk Web, from five to eighty characters excluding the prefix "Splunk for".
+func (o AppsLocalOutput) Label() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringOutput { return v.Label }).(pulumi.StringOutput)
+}
+
+// Literal app name or path for the file to install, depending on the value of filename.
+// <br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
+// <br>filename = true indicates that name is the URL or path to the local .tar, .tgz or .spl file. If name is the Splunkbase URL, set auth or session to authenticate the request.
+// The app folder name cannot include spaces or special characters.
+func (o AppsLocalOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
+func (o AppsLocalOutput) Session() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringPtrOutput { return v.Session }).(pulumi.StringPtrOutput)
+}
+
+// File-based update indication:
+// <br>true specifies that filename should be used to update an existing app. If not specified, update defaults to
+// <br>false, which indicates that filename should not be used to update an existing app.
+func (o AppsLocalOutput) Update() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.BoolPtrOutput { return v.Update }).(pulumi.BoolPtrOutput)
+}
+
+// App version.
+func (o AppsLocalOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+}
+
+// Indicates whether the app is visible and navigable from Splunk Web.
+// <br>true = App is visible and navigable.
+// <br>false = App is not visible or navigable.
+func (o AppsLocalOutput) Visible() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AppsLocal) pulumi.BoolOutput { return v.Visible }).(pulumi.BoolOutput)
 }
 
 type AppsLocalArrayOutput struct{ *pulumi.OutputState }

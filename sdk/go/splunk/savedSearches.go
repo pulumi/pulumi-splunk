@@ -21,39 +21,42 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewSavedSearches(ctx, "savedSearch", &splunk.SavedSearchesArgs{
-// 			Acl: &SavedSearchesAclArgs{
-// 				App:     pulumi.String("launcher"),
-// 				Owner:   pulumi.String("admin"),
-// 				Sharing: pulumi.String("app"),
-// 			},
-// 			ActionEmailFormat:      pulumi.String("table"),
-// 			ActionEmailMaxResults:  pulumi.Int(10),
-// 			ActionEmailMaxTime:     pulumi.String("5m"),
-// 			ActionEmailSendResults: pulumi.Bool(false),
-// 			ActionEmailSubject:     pulumi.String(fmt.Sprintf("%v%v%v%v", "Splunk Alert: ", "$", "name", "$")),
-// 			ActionEmailTo:          pulumi.String("splunk@splunk.com"),
-// 			ActionEmailTrackAlert:  pulumi.Bool(true),
-// 			Actions:                pulumi.String("email"),
-// 			CronSchedule:           pulumi.String("*/5 * * * *"),
-// 			DispatchEarliestTime:   pulumi.String("rt-15m"),
-// 			DispatchLatestTime:     pulumi.String("rt-0m"),
-// 			Search:                 pulumi.String("index=main"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewSavedSearches(ctx, "savedSearch", &splunk.SavedSearchesArgs{
+//				Acl: &SavedSearchesAclArgs{
+//					App:     pulumi.String("launcher"),
+//					Owner:   pulumi.String("admin"),
+//					Sharing: pulumi.String("app"),
+//				},
+//				ActionEmailFormat:      pulumi.String("table"),
+//				ActionEmailMaxResults:  pulumi.Int(10),
+//				ActionEmailMaxTime:     pulumi.String("5m"),
+//				ActionEmailSendResults: pulumi.Bool(false),
+//				ActionEmailSubject:     pulumi.String(fmt.Sprintf("Splunk Alert: $name$")),
+//				ActionEmailTo:          pulumi.String("splunk@splunk.com"),
+//				ActionEmailTrackAlert:  pulumi.Bool(true),
+//				Actions:                pulumi.String("email"),
+//				CronSchedule:           pulumi.String("*/5 * * * *"),
+//				DispatchEarliestTime:   pulumi.String("rt-15m"),
+//				DispatchLatestTime:     pulumi.String("rt-0m"),
+//				Search:                 pulumi.String("index=main"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type SavedSearches struct {
 	pulumi.CustomResourceState
@@ -136,6 +139,18 @@ type SavedSearches struct {
 	ActionEmailUseTls pulumi.BoolOutput `pulumi:"actionEmailUseTls"`
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns pulumi.BoolOutput `pulumi:"actionEmailWidthSortColumns"`
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraDescription"`
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraIssueType"`
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraPriority"`
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraProject"`
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraSummary"`
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup pulumi.BoolOutput `pulumi:"actionPopulateLookup"`
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -446,6 +461,18 @@ type savedSearchesState struct {
 	ActionEmailUseTls *bool `pulumi:"actionEmailUseTls"`
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns *bool `pulumi:"actionEmailWidthSortColumns"`
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType *string `pulumi:"actionJiraServiceDeskParamJiraIssueType"`
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority *string `pulumi:"actionJiraServiceDeskParamJiraPriority"`
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup *bool `pulumi:"actionPopulateLookup"`
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -725,6 +752,18 @@ type SavedSearchesState struct {
 	ActionEmailUseTls pulumi.BoolPtrInput
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns pulumi.BoolPtrInput
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType pulumi.StringPtrInput
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority pulumi.StringPtrInput
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup pulumi.BoolPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -1006,6 +1045,18 @@ type savedSearchesArgs struct {
 	ActionEmailUseTls *bool `pulumi:"actionEmailUseTls"`
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns *bool `pulumi:"actionEmailWidthSortColumns"`
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType *string `pulumi:"actionJiraServiceDeskParamJiraIssueType"`
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority *string `pulumi:"actionJiraServiceDeskParamJiraPriority"`
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
 	// The search command (or pipeline) which is responsible for executing the action.
 	ActionPopulateLookupCommand *string `pulumi:"actionPopulateLookupCommand"`
 	// Lookup name of path of the lookup to populate
@@ -1276,6 +1327,18 @@ type SavedSearchesArgs struct {
 	ActionEmailUseTls pulumi.BoolPtrInput
 	// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
 	ActionEmailWidthSortColumns pulumi.BoolPtrInput
+	// Jira Service Desk account name
+	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
+	// Jira issue description
+	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
+	// Jira issue type name
+	ActionJiraServiceDeskParamJiraIssueType pulumi.StringPtrInput
+	// Jira priority of issue
+	ActionJiraServiceDeskParamJiraPriority pulumi.StringPtrInput
+	// Jira Project name
+	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
+	// Jira issue title/summary
+	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.
 	ActionPopulateLookupCommand pulumi.StringPtrInput
 	// Lookup name of path of the lookup to populate
@@ -1494,7 +1557,7 @@ func (i *SavedSearches) ToSavedSearchesOutputWithContext(ctx context.Context) Sa
 // SavedSearchesArrayInput is an input type that accepts SavedSearchesArray and SavedSearchesArrayOutput values.
 // You can construct a concrete instance of `SavedSearchesArrayInput` via:
 //
-//          SavedSearchesArray{ SavedSearchesArgs{...} }
+//	SavedSearchesArray{ SavedSearchesArgs{...} }
 type SavedSearchesArrayInput interface {
 	pulumi.Input
 
@@ -1519,7 +1582,7 @@ func (i SavedSearchesArray) ToSavedSearchesArrayOutputWithContext(ctx context.Co
 // SavedSearchesMapInput is an input type that accepts SavedSearchesMap and SavedSearchesMapOutput values.
 // You can construct a concrete instance of `SavedSearchesMapInput` via:
 //
-//          SavedSearchesMap{ "key": SavedSearchesArgs{...} }
+//	SavedSearchesMap{ "key": SavedSearchesArgs{...} }
 type SavedSearchesMapInput interface {
 	pulumi.Input
 
@@ -1553,6 +1616,726 @@ func (o SavedSearchesOutput) ToSavedSearchesOutput() SavedSearchesOutput {
 
 func (o SavedSearchesOutput) ToSavedSearchesOutputWithContext(ctx context.Context) SavedSearchesOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o SavedSearchesOutput) Acl() SavedSearchesAclOutput {
+	return o.ApplyT(func(v *SavedSearches) SavedSearchesAclOutput { return v.Acl }).(SavedSearchesAclOutput)
+}
+
+// The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmail() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmail }).(pulumi.BoolOutput)
+}
+
+// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
+func (o SavedSearchesOutput) ActionEmailAuthPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailAuthPassword }).(pulumi.StringOutput)
+}
+
+// The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
+func (o SavedSearchesOutput) ActionEmailAuthUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailAuthUsername }).(pulumi.StringOutput)
+}
+
+// BCC email address to use if action.email is enabled.
+func (o SavedSearchesOutput) ActionEmailBcc() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailBcc }).(pulumi.StringOutput)
+}
+
+// CC email address to use if action.email is enabled.
+func (o SavedSearchesOutput) ActionEmailCc() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailCc }).(pulumi.StringOutput)
+}
+
+// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+func (o SavedSearchesOutput) ActionEmailCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailCommand }).(pulumi.StringOutput)
+}
+
+// Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
+func (o SavedSearchesOutput) ActionEmailFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailFormat }).(pulumi.StringOutput)
+}
+
+// Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+func (o SavedSearchesOutput) ActionEmailFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailFrom }).(pulumi.StringOutput)
+}
+
+// Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
+func (o SavedSearchesOutput) ActionEmailHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailHostname }).(pulumi.StringOutput)
+}
+
+// Specify whether to include a link to the results. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmailIncludeResultsLink() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeResultsLink }).(pulumi.IntOutput)
+}
+
+// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmailIncludeSearch() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeSearch }).(pulumi.IntOutput)
+}
+
+// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmailIncludeTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeTrigger }).(pulumi.IntOutput)
+}
+
+// Specify whether to show the time that the alert was fired. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmailIncludeTriggerTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeTriggerTime }).(pulumi.IntOutput)
+}
+
+// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmailIncludeViewLink() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeViewLink }).(pulumi.IntOutput)
+}
+
+// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
+func (o SavedSearchesOutput) ActionEmailInline() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailInline }).(pulumi.BoolOutput)
+}
+
+// Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
+func (o SavedSearchesOutput) ActionEmailMailserver() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailMailserver }).(pulumi.StringOutput)
+}
+
+// Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
+func (o SavedSearchesOutput) ActionEmailMaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailMaxResults }).(pulumi.IntOutput)
+}
+
+// Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
+func (o SavedSearchesOutput) ActionEmailMaxTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailMaxTime }).(pulumi.StringOutput)
+}
+
+// Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
+func (o SavedSearchesOutput) ActionEmailMessageAlert() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailMessageAlert }).(pulumi.StringOutput)
+}
+
+// Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
+func (o SavedSearchesOutput) ActionEmailMessageReport() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailMessageReport }).(pulumi.StringOutput)
+}
+
+// The name of the view to deliver if sendpdf is enabled
+func (o SavedSearchesOutput) ActionEmailPdfview() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailPdfview }).(pulumi.StringOutput)
+}
+
+// Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
+func (o SavedSearchesOutput) ActionEmailPreprocessResults() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailPreprocessResults }).(pulumi.StringOutput)
+}
+
+// Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
+func (o SavedSearchesOutput) ActionEmailReportCidFontList() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailReportCidFontList }).(pulumi.StringOutput)
+}
+
+// Indicates whether to include the Splunk logo with the report.
+func (o SavedSearchesOutput) ActionEmailReportIncludeSplunkLogo() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailReportIncludeSplunkLogo }).(pulumi.BoolOutput)
+}
+
+// Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
+func (o SavedSearchesOutput) ActionEmailReportPaperOrientation() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailReportPaperOrientation }).(pulumi.StringOutput)
+}
+
+// Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
+func (o SavedSearchesOutput) ActionEmailReportPaperSize() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailReportPaperSize }).(pulumi.StringOutput)
+}
+
+// No Supported
+func (o SavedSearchesOutput) ActionEmailReportServerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailReportServerEnabled }).(pulumi.BoolOutput)
+}
+
+// Not supported.For a default locally installed report server, the URL is http://localhost:8091/
+func (o SavedSearchesOutput) ActionEmailReportServerUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailReportServerUrl }).(pulumi.StringOutput)
+}
+
+// Specify whether to send results as a CSV file. Defaults to 0.
+func (o SavedSearchesOutput) ActionEmailSendCsv() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailSendCsv }).(pulumi.IntOutput)
+}
+
+// Indicates whether to create and send the results as a PDF. Defaults to false.
+func (o SavedSearchesOutput) ActionEmailSendPdf() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailSendPdf }).(pulumi.BoolOutput)
+}
+
+// Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
+func (o SavedSearchesOutput) ActionEmailSendResults() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailSendResults }).(pulumi.BoolOutput)
+}
+
+// Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
+func (o SavedSearchesOutput) ActionEmailSubject() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailSubject }).(pulumi.StringOutput)
+}
+
+// A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
+func (o SavedSearchesOutput) ActionEmailTo() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailTo }).(pulumi.StringOutput)
+}
+
+// Indicates whether the execution of this action signifies a trackable alert.
+func (o SavedSearchesOutput) ActionEmailTrackAlert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailTrackAlert }).(pulumi.BoolOutput)
+}
+
+// Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
+func (o SavedSearchesOutput) ActionEmailTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailTtl }).(pulumi.StringOutput)
+}
+
+// Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
+func (o SavedSearchesOutput) ActionEmailUseSsl() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailUseSsl }).(pulumi.BoolOutput)
+}
+
+// Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
+func (o SavedSearchesOutput) ActionEmailUseTls() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailUseTls }).(pulumi.BoolOutput)
+}
+
+// Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
+func (o SavedSearchesOutput) ActionEmailWidthSortColumns() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionEmailWidthSortColumns }).(pulumi.BoolOutput)
+}
+
+// Jira Service Desk account name
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamAccount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamAccount }).(pulumi.StringPtrOutput)
+}
+
+// Jira issue description
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraDescription }).(pulumi.StringPtrOutput)
+}
+
+// Jira issue type name
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraIssueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraIssueType }).(pulumi.StringPtrOutput)
+}
+
+// Jira priority of issue
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraPriority() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraPriority }).(pulumi.StringPtrOutput)
+}
+
+// Jira Project name
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraProject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraProject }).(pulumi.StringPtrOutput)
+}
+
+// Jira issue title/summary
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraSummary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraSummary }).(pulumi.StringPtrOutput)
+}
+
+// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+func (o SavedSearchesOutput) ActionPopulateLookup() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionPopulateLookup }).(pulumi.BoolOutput)
+}
+
+// The search command (or pipeline) which is responsible for executing the action.
+func (o SavedSearchesOutput) ActionPopulateLookupCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPopulateLookupCommand }).(pulumi.StringOutput)
+}
+
+// Lookup name of path of the lookup to populate
+func (o SavedSearchesOutput) ActionPopulateLookupDest() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPopulateLookupDest }).(pulumi.StringOutput)
+}
+
+// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+func (o SavedSearchesOutput) ActionPopulateLookupHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPopulateLookupHostname }).(pulumi.StringOutput)
+}
+
+// Sets the maximum number of search results sent using alerts. Defaults to 100.
+func (o SavedSearchesOutput) ActionPopulateLookupMaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionPopulateLookupMaxResults }).(pulumi.IntOutput)
+}
+
+// Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
+func (o SavedSearchesOutput) ActionPopulateLookupMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionPopulateLookupMaxTime }).(pulumi.IntOutput)
+}
+
+// Indicates whether the execution of this action signifies a trackable alert.
+func (o SavedSearchesOutput) ActionPopulateLookupTrackAlert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionPopulateLookupTrackAlert }).(pulumi.BoolOutput)
+}
+
+// Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
+func (o SavedSearchesOutput) ActionPopulateLookupTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPopulateLookupTtl }).(pulumi.StringOutput)
+}
+
+// The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
+func (o SavedSearchesOutput) ActionRss() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionRss }).(pulumi.BoolOutput)
+}
+
+// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+func (o SavedSearchesOutput) ActionRssCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRssCommand }).(pulumi.StringOutput)
+}
+
+// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+func (o SavedSearchesOutput) ActionRssHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRssHostname }).(pulumi.StringOutput)
+}
+
+// Sets the maximum number of search results sent using alerts. Defaults to 100.
+func (o SavedSearchesOutput) ActionRssMaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionRssMaxResults }).(pulumi.IntOutput)
+}
+
+// Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+func (o SavedSearchesOutput) ActionRssMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionRssMaxTime }).(pulumi.IntOutput)
+}
+
+// Indicates whether the execution of this action signifies a trackable alert.
+func (o SavedSearchesOutput) ActionRssTrackAlert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionRssTrackAlert }).(pulumi.BoolOutput)
+}
+
+// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+func (o SavedSearchesOutput) ActionRssTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRssTtl }).(pulumi.StringOutput)
+}
+
+// The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+func (o SavedSearchesOutput) ActionScript() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionScript }).(pulumi.BoolOutput)
+}
+
+// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+func (o SavedSearchesOutput) ActionScriptCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptCommand }).(pulumi.StringOutput)
+}
+
+// File name of the script to call. Required if script action is enabled
+func (o SavedSearchesOutput) ActionScriptFilename() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptFilename }).(pulumi.StringOutput)
+}
+
+// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+func (o SavedSearchesOutput) ActionScriptHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptHostname }).(pulumi.StringOutput)
+}
+
+// Sets the maximum number of search results sent using alerts. Defaults to 100.
+func (o SavedSearchesOutput) ActionScriptMaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionScriptMaxResults }).(pulumi.IntOutput)
+}
+
+// Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+func (o SavedSearchesOutput) ActionScriptMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionScriptMaxTime }).(pulumi.IntOutput)
+}
+
+// Indicates whether the execution of this action signifies a trackable alert.
+func (o SavedSearchesOutput) ActionScriptTrackAlert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionScriptTrackAlert }).(pulumi.BoolOutput)
+}
+
+// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+func (o SavedSearchesOutput) ActionScriptTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptTtl }).(pulumi.StringOutput)
+}
+
+// Include a message attachment. Valid values are message, none, or alert_link
+func (o SavedSearchesOutput) ActionSlackParamAttachment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamAttachment }).(pulumi.StringPtrOutput)
+}
+
+// Slack channel to send the message to (Should start with # or @)
+func (o SavedSearchesOutput) ActionSlackParamChannel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamChannel }).(pulumi.StringPtrOutput)
+}
+
+// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+func (o SavedSearchesOutput) ActionSlackParamFields() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamFields }).(pulumi.StringPtrOutput)
+}
+
+// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
+func (o SavedSearchesOutput) ActionSlackParamMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamMessage }).(pulumi.StringPtrOutput)
+}
+
+// You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+func (o SavedSearchesOutput) ActionSlackParamWebhookUrlOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamWebhookUrlOverride }).(pulumi.StringPtrOutput)
+}
+
+// The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
+func (o SavedSearchesOutput) ActionSummaryIndex() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionSummaryIndex }).(pulumi.BoolOutput)
+}
+
+// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
+func (o SavedSearchesOutput) ActionSummaryIndexCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexCommand }).(pulumi.StringOutput)
+}
+
+// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+func (o SavedSearchesOutput) ActionSummaryIndexHostname() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexHostname }).(pulumi.StringOutput)
+}
+
+// Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
+func (o SavedSearchesOutput) ActionSummaryIndexInline() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionSummaryIndexInline }).(pulumi.BoolOutput)
+}
+
+// Sets the maximum number of search results sent using alerts. Defaults to 100.
+func (o SavedSearchesOutput) ActionSummaryIndexMaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionSummaryIndexMaxResults }).(pulumi.IntOutput)
+}
+
+// Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
+func (o SavedSearchesOutput) ActionSummaryIndexMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionSummaryIndexMaxTime }).(pulumi.IntOutput)
+}
+
+// Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
+func (o SavedSearchesOutput) ActionSummaryIndexName() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexName }).(pulumi.StringOutput)
+}
+
+// Indicates whether the execution of this action signifies a trackable alert.
+func (o SavedSearchesOutput) ActionSummaryIndexTrackAlert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.ActionSummaryIndexTrackAlert }).(pulumi.BoolOutput)
+}
+
+// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+func (o SavedSearchesOutput) ActionSummaryIndexTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexTtl }).(pulumi.StringOutput)
+}
+
+// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+func (o SavedSearchesOutput) ActionWebhookParamUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionWebhookParamUrl }).(pulumi.StringPtrOutput)
+}
+
+// A comma-separated list of actions to enable. For example: rss,email
+func (o SavedSearchesOutput) Actions() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.Actions }).(pulumi.StringOutput)
+}
+
+// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
+func (o SavedSearchesOutput) AlertComparator() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertComparator }).(pulumi.StringOutput)
+}
+
+// Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
+func (o SavedSearchesOutput) AlertCondition() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertCondition }).(pulumi.StringOutput)
+}
+
+// Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
+func (o SavedSearchesOutput) AlertDigestMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.AlertDigestMode }).(pulumi.BoolOutput)
+}
+
+// Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
+func (o SavedSearchesOutput) AlertExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertExpires }).(pulumi.StringOutput)
+}
+
+// Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
+func (o SavedSearchesOutput) AlertSeverity() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.AlertSeverity }).(pulumi.IntOutput)
+}
+
+// Indicates whether alert suppression is enabled for this scheduled search.
+func (o SavedSearchesOutput) AlertSuppress() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.AlertSuppress }).(pulumi.BoolOutput)
+}
+
+// Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
+func (o SavedSearchesOutput) AlertSuppressFields() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertSuppressFields }).(pulumi.StringOutput)
+}
+
+// Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
+func (o SavedSearchesOutput) AlertSuppressPeriod() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertSuppressPeriod }).(pulumi.StringOutput)
+}
+
+// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+func (o SavedSearchesOutput) AlertThreshold() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertThreshold }).(pulumi.StringOutput)
+}
+
+// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
+func (o SavedSearchesOutput) AlertTrack() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.AlertTrack }).(pulumi.BoolOutput)
+}
+
+// What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+func (o SavedSearchesOutput) AlertType() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertType }).(pulumi.StringOutput)
+}
+
+// Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
+func (o SavedSearchesOutput) AllowSkew() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AllowSkew }).(pulumi.StringOutput)
+}
+
+// Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
+func (o SavedSearchesOutput) AutoSummarize() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.AutoSummarize }).(pulumi.BoolOutput)
+}
+
+// An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
+func (o SavedSearchesOutput) AutoSummarizeCommand() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeCommand }).(pulumi.StringOutput)
+}
+
+// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+func (o SavedSearchesOutput) AutoSummarizeCronSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeCronSchedule }).(pulumi.StringOutput)
+}
+
+// A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) AutoSummarizeDispatchEarliestTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeDispatchEarliestTime }).(pulumi.StringOutput)
+}
+
+// A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) AutoSummarizeDispatchLatestTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeDispatchLatestTime }).(pulumi.StringOutput)
+}
+
+// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+func (o SavedSearchesOutput) AutoSummarizeDispatchTimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeDispatchTimeFormat }).(pulumi.StringOutput)
+}
+
+// Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
+func (o SavedSearchesOutput) AutoSummarizeDispatchTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeDispatchTtl }).(pulumi.StringOutput)
+}
+
+// The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
+func (o SavedSearchesOutput) AutoSummarizeMaxDisabledBuckets() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.AutoSummarizeMaxDisabledBuckets }).(pulumi.IntOutput)
+}
+
+// The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
+func (o SavedSearchesOutput) AutoSummarizeMaxSummaryRatio() pulumi.Float64Output {
+	return o.ApplyT(func(v *SavedSearches) pulumi.Float64Output { return v.AutoSummarizeMaxSummaryRatio }).(pulumi.Float64Output)
+}
+
+// The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
+func (o SavedSearchesOutput) AutoSummarizeMaxSummarySize() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.AutoSummarizeMaxSummarySize }).(pulumi.IntOutput)
+}
+
+// Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
+func (o SavedSearchesOutput) AutoSummarizeMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.AutoSummarizeMaxTime }).(pulumi.IntOutput)
+}
+
+// Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
+func (o SavedSearchesOutput) AutoSummarizeSuspendPeriod() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeSuspendPeriod }).(pulumi.StringOutput)
+}
+
+// The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
+func (o SavedSearchesOutput) AutoSummarizeTimespan() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeTimespan }).(pulumi.StringOutput)
+}
+
+// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+func (o SavedSearchesOutput) CronSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.CronSchedule }).(pulumi.StringOutput)
+}
+
+// Human-readable description of this saved search. Defaults to empty string.
+func (o SavedSearchesOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
+func (o SavedSearchesOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// The maximum number of timeline buckets. Defaults to 0.
+func (o SavedSearchesOutput) DispatchBuckets() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchBuckets }).(pulumi.IntOutput)
+}
+
+// A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) DispatchEarliestTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchEarliestTime }).(pulumi.StringOutput)
+}
+
+// A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) DispatchIndexEarliest() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchIndexEarliest }).(pulumi.StringOutput)
+}
+
+// A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) DispatchIndexLatest() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchIndexLatest }).(pulumi.StringOutput)
+}
+
+// A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) DispatchIndexedRealtime() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.DispatchIndexedRealtime }).(pulumi.BoolOutput)
+}
+
+// Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
+func (o SavedSearchesOutput) DispatchIndexedRealtimeMinspan() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchIndexedRealtimeMinspan }).(pulumi.IntOutput)
+}
+
+// Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
+func (o SavedSearchesOutput) DispatchIndexedRealtimeOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchIndexedRealtimeOffset }).(pulumi.IntOutput)
+}
+
+// A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
+func (o SavedSearchesOutput) DispatchLatestTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchLatestTime }).(pulumi.StringOutput)
+}
+
+// Enables or disables the lookups for this search. Defaults to 1.
+func (o SavedSearchesOutput) DispatchLookups() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.DispatchLookups }).(pulumi.BoolOutput)
+}
+
+// The maximum number of results before finalizing the search. Defaults to 500000.
+func (o SavedSearchesOutput) DispatchMaxCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchMaxCount }).(pulumi.IntOutput)
+}
+
+// Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
+func (o SavedSearchesOutput) DispatchMaxTime() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchMaxTime }).(pulumi.IntOutput)
+}
+
+// Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
+func (o SavedSearchesOutput) DispatchReduceFreq() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchReduceFreq }).(pulumi.IntOutput)
+}
+
+// Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
+func (o SavedSearchesOutput) DispatchRtBackfill() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.DispatchRtBackfill }).(pulumi.BoolOutput)
+}
+
+// Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
+func (o SavedSearchesOutput) DispatchRtMaximumSpan() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.DispatchRtMaximumSpan }).(pulumi.IntOutput)
+}
+
+// Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
+func (o SavedSearchesOutput) DispatchSpawnProcess() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.DispatchSpawnProcess }).(pulumi.BoolOutput)
+}
+
+// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+func (o SavedSearchesOutput) DispatchTimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchTimeFormat }).(pulumi.StringOutput)
+}
+
+// Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
+func (o SavedSearchesOutput) DispatchTtl() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchTtl }).(pulumi.StringOutput)
+}
+
+// Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+func (o SavedSearchesOutput) DisplayView() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DisplayView }).(pulumi.StringOutput)
+}
+
+// Whether this search is to be run on a schedule
+func (o SavedSearchesOutput) IsScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.IsScheduled }).(pulumi.BoolOutput)
+}
+
+// Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
+func (o SavedSearchesOutput) IsVisible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolPtrOutput { return v.IsVisible }).(pulumi.BoolPtrOutput)
+}
+
+// The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
+func (o SavedSearchesOutput) MaxConcurrent() pulumi.IntOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.MaxConcurrent }).(pulumi.IntOutput)
+}
+
+// A name for the search.
+func (o SavedSearchesOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
+func (o SavedSearchesOutput) RealtimeSchedule() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.RealtimeSchedule }).(pulumi.BoolOutput)
+}
+
+// Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
+func (o SavedSearchesOutput) RequestUiDispatchApp() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.RequestUiDispatchApp }).(pulumi.StringOutput)
+}
+
+// Specifies a field used by Splunk Web to denote the view this search should be displayed in.
+func (o SavedSearchesOutput) RequestUiDispatchView() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.RequestUiDispatchView }).(pulumi.StringOutput)
+}
+
+// Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
+func (o SavedSearchesOutput) RestartOnSearchpeerAdd() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.RestartOnSearchpeerAdd }).(pulumi.BoolOutput)
+}
+
+// Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
+func (o SavedSearchesOutput) RunOnStartup() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.RunOnStartup }).(pulumi.BoolOutput)
+}
+
+// Raises the scheduling priority of the named search. Defaults to Default
+func (o SavedSearchesOutput) SchedulePriority() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.SchedulePriority }).(pulumi.StringOutput)
+}
+
+// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
+func (o SavedSearchesOutput) ScheduleWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ScheduleWindow }).(pulumi.StringOutput)
+}
+
+// Required when creating a new search.
+func (o SavedSearchesOutput) Search() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.Search }).(pulumi.StringOutput)
+}
+
+// Defines the viewstate id associated with the UI view listed in 'displayview'.
+func (o SavedSearchesOutput) Vsid() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.Vsid }).(pulumi.StringOutput)
+}
+
+// Specifies the new workload pool where the existing running search will be placed.`
+func (o SavedSearchesOutput) WorkloadPool() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.WorkloadPool }).(pulumi.StringOutput)
 }
 
 type SavedSearchesArrayOutput struct{ *pulumi.OutputState }

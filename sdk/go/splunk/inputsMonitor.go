@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewInputsMonitor(ctx, "monitor", &splunk.InputsMonitorArgs{
-// 			Recursive:  pulumi.Bool(true),
-// 			Sourcetype: pulumi.String("text"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsMonitor(ctx, "monitor", &splunk.InputsMonitorArgs{
+//				Recursive:  pulumi.Bool(true),
+//				Sourcetype: pulumi.String("text"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type InputsMonitor struct {
 	pulumi.CustomResourceState
@@ -273,7 +276,7 @@ func (i *InputsMonitor) ToInputsMonitorOutputWithContext(ctx context.Context) In
 // InputsMonitorArrayInput is an input type that accepts InputsMonitorArray and InputsMonitorArrayOutput values.
 // You can construct a concrete instance of `InputsMonitorArrayInput` via:
 //
-//          InputsMonitorArray{ InputsMonitorArgs{...} }
+//	InputsMonitorArray{ InputsMonitorArgs{...} }
 type InputsMonitorArrayInput interface {
 	pulumi.Input
 
@@ -298,7 +301,7 @@ func (i InputsMonitorArray) ToInputsMonitorArrayOutputWithContext(ctx context.Co
 // InputsMonitorMapInput is an input type that accepts InputsMonitorMap and InputsMonitorMapOutput values.
 // You can construct a concrete instance of `InputsMonitorMapInput` via:
 //
-//          InputsMonitorMap{ "key": InputsMonitorArgs{...} }
+//	InputsMonitorMap{ "key": InputsMonitorArgs{...} }
 type InputsMonitorMapInput interface {
 	pulumi.Input
 
@@ -332,6 +335,86 @@ func (o InputsMonitorOutput) ToInputsMonitorOutput() InputsMonitorOutput {
 
 func (o InputsMonitorOutput) ToInputsMonitorOutputWithContext(ctx context.Context) InputsMonitorOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsMonitorOutput) Acl() InputsMonitorAclOutput {
+	return o.ApplyT(func(v *InputsMonitor) InputsMonitorAclOutput { return v.Acl }).(InputsMonitorAclOutput)
+}
+
+// Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
+func (o InputsMonitorOutput) Blacklist() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.Blacklist }).(pulumi.StringOutput)
+}
+
+// A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
+func (o InputsMonitorOutput) CrcSalt() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.CrcSalt }).(pulumi.StringOutput)
+}
+
+// Indicates if input monitoring is disabled.
+func (o InputsMonitorOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// If set to true, files that are seen for the first time is read from the end.
+func (o InputsMonitorOutput) FollowTail() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.BoolOutput { return v.FollowTail }).(pulumi.BoolOutput)
+}
+
+// The value to populate in the host field for events from this data input.
+func (o InputsMonitorOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+}
+
+// Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
+func (o InputsMonitorOutput) HostRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.HostRegex }).(pulumi.StringOutput)
+}
+
+// Use the specified slash-separate segment of the filepath as the host field value.
+func (o InputsMonitorOutput) HostSegment() pulumi.IntOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.IntOutput { return v.HostSegment }).(pulumi.IntOutput)
+}
+
+// Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
+func (o InputsMonitorOutput) IgnoreOlderThan() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.IgnoreOlderThan }).(pulumi.StringOutput)
+}
+
+// Which index events from this input should be stored in. Defaults to default.
+func (o InputsMonitorOutput) Index() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.Index }).(pulumi.StringOutput)
+}
+
+// The file or directory path to monitor on the system.
+func (o InputsMonitorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Setting this to false prevents monitoring of any subdirectories encountered within this data input.
+func (o InputsMonitorOutput) Recursive() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.BoolOutput { return v.Recursive }).(pulumi.BoolOutput)
+}
+
+// The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
+func (o InputsMonitorOutput) RenameSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.RenameSource }).(pulumi.StringOutput)
+}
+
+// The value to populate in the sourcetype field for incoming events.
+func (o InputsMonitorOutput) Sourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.Sourcetype }).(pulumi.StringOutput)
+}
+
+// When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
+func (o InputsMonitorOutput) TimeBeforeClose() pulumi.IntOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.IntOutput { return v.TimeBeforeClose }).(pulumi.IntOutput)
+}
+
+// Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
+func (o InputsMonitorOutput) Whitelist() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsMonitor) pulumi.StringOutput { return v.Whitelist }).(pulumi.StringOutput)
 }
 
 type InputsMonitorArrayOutput struct{ *pulumi.OutputState }

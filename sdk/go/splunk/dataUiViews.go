@@ -20,27 +20,37 @@ import (
 // package main
 //
 // import (
-// 	"fmt"
 //
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewDataUiViews(ctx, "dashboard", &splunk.DataUiViewsArgs{
-// 			Acl: &DataUiViewsAclArgs{
-// 				App:   pulumi.String("search"),
-// 				Owner: pulumi.String("admin"),
-// 			},
-// 			EaiData: pulumi.String(fmt.Sprintf("%v%v%v%v%v%v", "  <dashboard>\n", "    <label> \n", "      Terraform Test Dashboard\n", "    </label>\n", "  </dashboard>\n", "  \n")),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewDataUiViews(ctx, "dashboard", &splunk.DataUiViewsArgs{
+//				Acl: &DataUiViewsAclArgs{
+//					App:   pulumi.String("search"),
+//					Owner: pulumi.String("admin"),
+//				},
+//				EaiData: pulumi.String(fmt.Sprintf(`  <dashboard>
+//	    <label>
+//	      Terraform Test Dashboard
+//	    </label>
+//	  </dashboard>
+//
+// `)),
+//
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type DataUiViews struct {
 	pulumi.CustomResourceState
@@ -151,7 +161,7 @@ func (i *DataUiViews) ToDataUiViewsOutputWithContext(ctx context.Context) DataUi
 // DataUiViewsArrayInput is an input type that accepts DataUiViewsArray and DataUiViewsArrayOutput values.
 // You can construct a concrete instance of `DataUiViewsArrayInput` via:
 //
-//          DataUiViewsArray{ DataUiViewsArgs{...} }
+//	DataUiViewsArray{ DataUiViewsArgs{...} }
 type DataUiViewsArrayInput interface {
 	pulumi.Input
 
@@ -176,7 +186,7 @@ func (i DataUiViewsArray) ToDataUiViewsArrayOutputWithContext(ctx context.Contex
 // DataUiViewsMapInput is an input type that accepts DataUiViewsMap and DataUiViewsMapOutput values.
 // You can construct a concrete instance of `DataUiViewsMapInput` via:
 //
-//          DataUiViewsMap{ "key": DataUiViewsArgs{...} }
+//	DataUiViewsMap{ "key": DataUiViewsArgs{...} }
 type DataUiViewsMapInput interface {
 	pulumi.Input
 
@@ -210,6 +220,21 @@ func (o DataUiViewsOutput) ToDataUiViewsOutput() DataUiViewsOutput {
 
 func (o DataUiViewsOutput) ToDataUiViewsOutputWithContext(ctx context.Context) DataUiViewsOutput {
 	return o
+}
+
+func (o DataUiViewsOutput) Acl() DataUiViewsAclOutput {
+	return o.ApplyT(func(v *DataUiViews) DataUiViewsAclOutput { return v.Acl }).(DataUiViewsAclOutput)
+}
+
+// Dashboard XML definition.
+func (o DataUiViewsOutput) EaiData() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataUiViews) pulumi.StringOutput { return v.EaiData }).(pulumi.StringOutput)
+}
+
+// Dashboard name.
+// * `eai:data` - (Required) Dashboard XML definition.
+func (o DataUiViewsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataUiViews) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
 type DataUiViewsArrayOutput struct{ *pulumi.OutputState }

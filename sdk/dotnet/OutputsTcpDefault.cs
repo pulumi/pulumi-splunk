@@ -17,29 +17,27 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpDefault = new Splunk.OutputsTcpDefault("tcpDefault", new()
     ///     {
-    ///         var tcpDefault = new Splunk.OutputsTcpDefault("tcpDefault", new Splunk.OutputsTcpDefaultArgs
-    ///         {
-    ///             DefaultGroup = "test-indexers",
-    ///             Disabled = false,
-    ///             DropEventsOnQueueFull = 60,
-    ///             IndexAndForward = true,
-    ///             MaxQueueSize = "100KB",
-    ///             SendCookedData = true,
-    ///         });
-    ///     }
+    ///         DefaultGroup = "test-indexers",
+    ///         Disabled = false,
+    ///         DropEventsOnQueueFull = 60,
+    ///         IndexAndForward = true,
+    ///         MaxQueueSize = "100KB",
+    ///         SendCookedData = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpDefault:OutputsTcpDefault")]
-    public partial class OutputsTcpDefault : Pulumi.CustomResource
+    public partial class OutputsTcpDefault : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -151,7 +149,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class OutputsTcpDefaultArgs : Pulumi.ResourceArgs
+    public sealed class OutputsTcpDefaultArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -222,9 +220,10 @@ namespace Pulumi.Splunk
         public OutputsTcpDefaultArgs()
         {
         }
+        public static new OutputsTcpDefaultArgs Empty => new OutputsTcpDefaultArgs();
     }
 
-    public sealed class OutputsTcpDefaultState : Pulumi.ResourceArgs
+    public sealed class OutputsTcpDefaultState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -295,5 +294,6 @@ namespace Pulumi.Splunk
         public OutputsTcpDefaultState()
         {
         }
+        public static new OutputsTcpDefaultState Empty => new OutputsTcpDefaultState();
     }
 }

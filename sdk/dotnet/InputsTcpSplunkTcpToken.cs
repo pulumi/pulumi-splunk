@@ -17,24 +17,22 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpSplunkTcpToken = new Splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", new()
     ///     {
-    ///         var tcpSplunkTcpToken = new Splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", new Splunk.InputsTcpSplunkTcpTokenArgs
-    ///         {
-    ///             Token = "D66C45B3-7C28-48A1-A13A-027914146501",
-    ///         });
-    ///     }
+    ///         Token = "D66C45B3-7C28-48A1-A13A-027914146501",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken")]
-    public partial class InputsTcpSplunkTcpToken : Pulumi.CustomResource
+    public partial class InputsTcpSplunkTcpToken : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -98,7 +96,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsTcpSplunkTcpTokenArgs : Pulumi.ResourceArgs
+    public sealed class InputsTcpSplunkTcpTokenArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -121,9 +119,10 @@ namespace Pulumi.Splunk
         public InputsTcpSplunkTcpTokenArgs()
         {
         }
+        public static new InputsTcpSplunkTcpTokenArgs Empty => new InputsTcpSplunkTcpTokenArgs();
     }
 
-    public sealed class InputsTcpSplunkTcpTokenState : Pulumi.ResourceArgs
+    public sealed class InputsTcpSplunkTcpTokenState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -146,5 +145,6 @@ namespace Pulumi.Splunk
         public InputsTcpSplunkTcpTokenState()
         {
         }
+        public static new InputsTcpSplunkTcpTokenState Empty => new InputsTcpSplunkTcpTokenState();
     }
 }

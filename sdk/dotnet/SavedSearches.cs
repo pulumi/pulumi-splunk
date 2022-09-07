@@ -17,41 +17,39 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var savedSearch = new Splunk.SavedSearches("savedSearch", new()
     ///     {
-    ///         var savedSearch = new Splunk.SavedSearches("savedSearch", new Splunk.SavedSearchesArgs
+    ///         Acl = new Splunk.Inputs.SavedSearchesAclArgs
     ///         {
-    ///             Acl = new Splunk.Inputs.SavedSearchesAclArgs
-    ///             {
-    ///                 App = "launcher",
-    ///                 Owner = "admin",
-    ///                 Sharing = "app",
-    ///             },
-    ///             ActionEmailFormat = "table",
-    ///             ActionEmailMaxResults = 10,
-    ///             ActionEmailMaxTime = "5m",
-    ///             ActionEmailSendResults = false,
-    ///             ActionEmailSubject = "Splunk Alert: $name$",
-    ///             ActionEmailTo = "splunk@splunk.com",
-    ///             ActionEmailTrackAlert = true,
-    ///             Actions = "email",
-    ///             CronSchedule = "*/5 * * * *",
-    ///             DispatchEarliestTime = "rt-15m",
-    ///             DispatchLatestTime = "rt-0m",
-    ///             Search = "index=main",
-    ///         });
-    ///     }
+    ///             App = "launcher",
+    ///             Owner = "admin",
+    ///             Sharing = "app",
+    ///         },
+    ///         ActionEmailFormat = "table",
+    ///         ActionEmailMaxResults = 10,
+    ///         ActionEmailMaxTime = "5m",
+    ///         ActionEmailSendResults = false,
+    ///         ActionEmailSubject = "Splunk Alert: $name$",
+    ///         ActionEmailTo = "splunk@splunk.com",
+    ///         ActionEmailTrackAlert = true,
+    ///         Actions = "email",
+    ///         CronSchedule = "*/5 * * * *",
+    ///         DispatchEarliestTime = "rt-15m",
+    ///         DispatchLatestTime = "rt-0m",
+    ///         Search = "index=main",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/savedSearches:SavedSearches")]
-    public partial class SavedSearches : Pulumi.CustomResource
+    public partial class SavedSearches : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -286,6 +284,42 @@ namespace Pulumi.Splunk
         /// </summary>
         [Output("actionEmailWidthSortColumns")]
         public Output<bool> ActionEmailWidthSortColumns { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira Service Desk account name
+        /// </summary>
+        [Output("actionJiraServiceDeskParamAccount")]
+        public Output<string?> ActionJiraServiceDeskParamAccount { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira issue description
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraDescription")]
+        public Output<string?> ActionJiraServiceDeskParamJiraDescription { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira issue type name
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraIssueType")]
+        public Output<string?> ActionJiraServiceDeskParamJiraIssueType { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira priority of issue
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraPriority")]
+        public Output<string?> ActionJiraServiceDeskParamJiraPriority { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira Project name
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraProject")]
+        public Output<string?> ActionJiraServiceDeskParamJiraProject { get; private set; } = null!;
+
+        /// <summary>
+        /// Jira issue title/summary
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraSummary")]
+        public Output<string?> ActionJiraServiceDeskParamJiraSummary { get; private set; } = null!;
 
         /// <summary>
         /// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -925,7 +959,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class SavedSearchesArgs : Pulumi.ResourceArgs
+    public sealed class SavedSearchesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -1154,6 +1188,42 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionEmailWidthSortColumns")]
         public Input<bool>? ActionEmailWidthSortColumns { get; set; }
+
+        /// <summary>
+        /// Jira Service Desk account name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamAccount")]
+        public Input<string>? ActionJiraServiceDeskParamAccount { get; set; }
+
+        /// <summary>
+        /// Jira issue description
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraDescription")]
+        public Input<string>? ActionJiraServiceDeskParamJiraDescription { get; set; }
+
+        /// <summary>
+        /// Jira issue type name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraIssueType")]
+        public Input<string>? ActionJiraServiceDeskParamJiraIssueType { get; set; }
+
+        /// <summary>
+        /// Jira priority of issue
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraPriority")]
+        public Input<string>? ActionJiraServiceDeskParamJiraPriority { get; set; }
+
+        /// <summary>
+        /// Jira Project name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraProject")]
+        public Input<string>? ActionJiraServiceDeskParamJiraProject { get; set; }
+
+        /// <summary>
+        /// Jira issue title/summary
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraSummary")]
+        public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
 
         /// <summary>
         /// The search command (or pipeline) which is responsible for executing the action.
@@ -1728,9 +1798,10 @@ namespace Pulumi.Splunk
         public SavedSearchesArgs()
         {
         }
+        public static new SavedSearchesArgs Empty => new SavedSearchesArgs();
     }
 
-    public sealed class SavedSearchesState : Pulumi.ResourceArgs
+    public sealed class SavedSearchesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -1965,6 +2036,42 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionEmailWidthSortColumns")]
         public Input<bool>? ActionEmailWidthSortColumns { get; set; }
+
+        /// <summary>
+        /// Jira Service Desk account name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamAccount")]
+        public Input<string>? ActionJiraServiceDeskParamAccount { get; set; }
+
+        /// <summary>
+        /// Jira issue description
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraDescription")]
+        public Input<string>? ActionJiraServiceDeskParamJiraDescription { get; set; }
+
+        /// <summary>
+        /// Jira issue type name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraIssueType")]
+        public Input<string>? ActionJiraServiceDeskParamJiraIssueType { get; set; }
+
+        /// <summary>
+        /// Jira priority of issue
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraPriority")]
+        public Input<string>? ActionJiraServiceDeskParamJiraPriority { get; set; }
+
+        /// <summary>
+        /// Jira Project name
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraProject")]
+        public Input<string>? ActionJiraServiceDeskParamJiraProject { get; set; }
+
+        /// <summary>
+        /// Jira issue title/summary
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraSummary")]
+        public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
 
         /// <summary>
         /// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -2563,5 +2670,6 @@ namespace Pulumi.Splunk
         public SavedSearchesState()
         {
         }
+        public static new SavedSearchesState Empty => new SavedSearchesState();
     }
 }

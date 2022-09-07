@@ -27,7 +27,7 @@ type AppsLocalAcl struct {
 // AppsLocalAclInput is an input type that accepts AppsLocalAclArgs and AppsLocalAclOutput values.
 // You can construct a concrete instance of `AppsLocalAclInput` via:
 //
-//          AppsLocalAclArgs{...}
+//	AppsLocalAclArgs{...}
 type AppsLocalAclInput interface {
 	pulumi.Input
 
@@ -72,11 +72,11 @@ func (i AppsLocalAclArgs) ToAppsLocalAclPtrOutputWithContext(ctx context.Context
 // AppsLocalAclPtrInput is an input type that accepts AppsLocalAclArgs, AppsLocalAclPtr and AppsLocalAclPtrOutput values.
 // You can construct a concrete instance of `AppsLocalAclPtrInput` via:
 //
-//          AppsLocalAclArgs{...}
+//	        AppsLocalAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type AppsLocalAclPtrInput interface {
 	pulumi.Input
 
@@ -310,7 +310,7 @@ type ConfigsConfAcl struct {
 // ConfigsConfAclInput is an input type that accepts ConfigsConfAclArgs and ConfigsConfAclOutput values.
 // You can construct a concrete instance of `ConfigsConfAclInput` via:
 //
-//          ConfigsConfAclArgs{...}
+//	ConfigsConfAclArgs{...}
 type ConfigsConfAclInput interface {
 	pulumi.Input
 
@@ -355,11 +355,11 @@ func (i ConfigsConfAclArgs) ToConfigsConfAclPtrOutputWithContext(ctx context.Con
 // ConfigsConfAclPtrInput is an input type that accepts ConfigsConfAclArgs, ConfigsConfAclPtr and ConfigsConfAclPtrOutput values.
 // You can construct a concrete instance of `ConfigsConfAclPtrInput` via:
 //
-//          ConfigsConfAclArgs{...}
+//	        ConfigsConfAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ConfigsConfAclPtrInput interface {
 	pulumi.Input
 
@@ -593,7 +593,7 @@ type DataUiViewsAcl struct {
 // DataUiViewsAclInput is an input type that accepts DataUiViewsAclArgs and DataUiViewsAclOutput values.
 // You can construct a concrete instance of `DataUiViewsAclInput` via:
 //
-//          DataUiViewsAclArgs{...}
+//	DataUiViewsAclArgs{...}
 type DataUiViewsAclInput interface {
 	pulumi.Input
 
@@ -638,11 +638,11 @@ func (i DataUiViewsAclArgs) ToDataUiViewsAclPtrOutputWithContext(ctx context.Con
 // DataUiViewsAclPtrInput is an input type that accepts DataUiViewsAclArgs, DataUiViewsAclPtr and DataUiViewsAclPtrOutput values.
 // You can construct a concrete instance of `DataUiViewsAclPtrInput` via:
 //
-//          DataUiViewsAclArgs{...}
+//	        DataUiViewsAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type DataUiViewsAclPtrInput interface {
 	pulumi.Input
 
@@ -876,7 +876,7 @@ type GenericAclAcl struct {
 // GenericAclAclInput is an input type that accepts GenericAclAclArgs and GenericAclAclOutput values.
 // You can construct a concrete instance of `GenericAclAclInput` via:
 //
-//          GenericAclAclArgs{...}
+//	GenericAclAclArgs{...}
 type GenericAclAclInput interface {
 	pulumi.Input
 
@@ -921,11 +921,11 @@ func (i GenericAclAclArgs) ToGenericAclAclPtrOutputWithContext(ctx context.Conte
 // GenericAclAclPtrInput is an input type that accepts GenericAclAclArgs, GenericAclAclPtr and GenericAclAclPtrOutput values.
 // You can construct a concrete instance of `GenericAclAclPtrInput` via:
 //
-//          GenericAclAclArgs{...}
+//	        GenericAclAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type GenericAclAclPtrInput interface {
 	pulumi.Input
 
@@ -1159,7 +1159,7 @@ type IndexesAcl struct {
 // IndexesAclInput is an input type that accepts IndexesAclArgs and IndexesAclOutput values.
 // You can construct a concrete instance of `IndexesAclInput` via:
 //
-//          IndexesAclArgs{...}
+//	IndexesAclArgs{...}
 type IndexesAclInput interface {
 	pulumi.Input
 
@@ -1204,11 +1204,11 @@ func (i IndexesAclArgs) ToIndexesAclPtrOutputWithContext(ctx context.Context) In
 // IndexesAclPtrInput is an input type that accepts IndexesAclArgs, IndexesAclPtr and IndexesAclPtrOutput values.
 // You can construct a concrete instance of `IndexesAclPtrInput` via:
 //
-//          IndexesAclArgs{...}
+//	        IndexesAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type IndexesAclPtrInput interface {
 	pulumi.Input
 
@@ -1442,7 +1442,7 @@ type InputsHttpEventCollectorAcl struct {
 // InputsHttpEventCollectorAclInput is an input type that accepts InputsHttpEventCollectorAclArgs and InputsHttpEventCollectorAclOutput values.
 // You can construct a concrete instance of `InputsHttpEventCollectorAclInput` via:
 //
-//          InputsHttpEventCollectorAclArgs{...}
+//	InputsHttpEventCollectorAclArgs{...}
 type InputsHttpEventCollectorAclInput interface {
 	pulumi.Input
 
@@ -1487,11 +1487,11 @@ func (i InputsHttpEventCollectorAclArgs) ToInputsHttpEventCollectorAclPtrOutputW
 // InputsHttpEventCollectorAclPtrInput is an input type that accepts InputsHttpEventCollectorAclArgs, InputsHttpEventCollectorAclPtr and InputsHttpEventCollectorAclPtrOutput values.
 // You can construct a concrete instance of `InputsHttpEventCollectorAclPtrInput` via:
 //
-//          InputsHttpEventCollectorAclArgs{...}
+//	        InputsHttpEventCollectorAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsHttpEventCollectorAclPtrInput interface {
 	pulumi.Input
 
@@ -1725,7 +1725,7 @@ type InputsMonitorAcl struct {
 // InputsMonitorAclInput is an input type that accepts InputsMonitorAclArgs and InputsMonitorAclOutput values.
 // You can construct a concrete instance of `InputsMonitorAclInput` via:
 //
-//          InputsMonitorAclArgs{...}
+//	InputsMonitorAclArgs{...}
 type InputsMonitorAclInput interface {
 	pulumi.Input
 
@@ -1770,11 +1770,11 @@ func (i InputsMonitorAclArgs) ToInputsMonitorAclPtrOutputWithContext(ctx context
 // InputsMonitorAclPtrInput is an input type that accepts InputsMonitorAclArgs, InputsMonitorAclPtr and InputsMonitorAclPtrOutput values.
 // You can construct a concrete instance of `InputsMonitorAclPtrInput` via:
 //
-//          InputsMonitorAclArgs{...}
+//	        InputsMonitorAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsMonitorAclPtrInput interface {
 	pulumi.Input
 
@@ -2008,7 +2008,7 @@ type InputsScriptAcl struct {
 // InputsScriptAclInput is an input type that accepts InputsScriptAclArgs and InputsScriptAclOutput values.
 // You can construct a concrete instance of `InputsScriptAclInput` via:
 //
-//          InputsScriptAclArgs{...}
+//	InputsScriptAclArgs{...}
 type InputsScriptAclInput interface {
 	pulumi.Input
 
@@ -2053,11 +2053,11 @@ func (i InputsScriptAclArgs) ToInputsScriptAclPtrOutputWithContext(ctx context.C
 // InputsScriptAclPtrInput is an input type that accepts InputsScriptAclArgs, InputsScriptAclPtr and InputsScriptAclPtrOutput values.
 // You can construct a concrete instance of `InputsScriptAclPtrInput` via:
 //
-//          InputsScriptAclArgs{...}
+//	        InputsScriptAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsScriptAclPtrInput interface {
 	pulumi.Input
 
@@ -2291,7 +2291,7 @@ type InputsTcpCookedAcl struct {
 // InputsTcpCookedAclInput is an input type that accepts InputsTcpCookedAclArgs and InputsTcpCookedAclOutput values.
 // You can construct a concrete instance of `InputsTcpCookedAclInput` via:
 //
-//          InputsTcpCookedAclArgs{...}
+//	InputsTcpCookedAclArgs{...}
 type InputsTcpCookedAclInput interface {
 	pulumi.Input
 
@@ -2336,11 +2336,11 @@ func (i InputsTcpCookedAclArgs) ToInputsTcpCookedAclPtrOutputWithContext(ctx con
 // InputsTcpCookedAclPtrInput is an input type that accepts InputsTcpCookedAclArgs, InputsTcpCookedAclPtr and InputsTcpCookedAclPtrOutput values.
 // You can construct a concrete instance of `InputsTcpCookedAclPtrInput` via:
 //
-//          InputsTcpCookedAclArgs{...}
+//	        InputsTcpCookedAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsTcpCookedAclPtrInput interface {
 	pulumi.Input
 
@@ -2574,7 +2574,7 @@ type InputsTcpRawAcl struct {
 // InputsTcpRawAclInput is an input type that accepts InputsTcpRawAclArgs and InputsTcpRawAclOutput values.
 // You can construct a concrete instance of `InputsTcpRawAclInput` via:
 //
-//          InputsTcpRawAclArgs{...}
+//	InputsTcpRawAclArgs{...}
 type InputsTcpRawAclInput interface {
 	pulumi.Input
 
@@ -2619,11 +2619,11 @@ func (i InputsTcpRawAclArgs) ToInputsTcpRawAclPtrOutputWithContext(ctx context.C
 // InputsTcpRawAclPtrInput is an input type that accepts InputsTcpRawAclArgs, InputsTcpRawAclPtr and InputsTcpRawAclPtrOutput values.
 // You can construct a concrete instance of `InputsTcpRawAclPtrInput` via:
 //
-//          InputsTcpRawAclArgs{...}
+//	        InputsTcpRawAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsTcpRawAclPtrInput interface {
 	pulumi.Input
 
@@ -2857,7 +2857,7 @@ type InputsTcpSplunkTcpTokenAcl struct {
 // InputsTcpSplunkTcpTokenAclInput is an input type that accepts InputsTcpSplunkTcpTokenAclArgs and InputsTcpSplunkTcpTokenAclOutput values.
 // You can construct a concrete instance of `InputsTcpSplunkTcpTokenAclInput` via:
 //
-//          InputsTcpSplunkTcpTokenAclArgs{...}
+//	InputsTcpSplunkTcpTokenAclArgs{...}
 type InputsTcpSplunkTcpTokenAclInput interface {
 	pulumi.Input
 
@@ -2902,11 +2902,11 @@ func (i InputsTcpSplunkTcpTokenAclArgs) ToInputsTcpSplunkTcpTokenAclPtrOutputWit
 // InputsTcpSplunkTcpTokenAclPtrInput is an input type that accepts InputsTcpSplunkTcpTokenAclArgs, InputsTcpSplunkTcpTokenAclPtr and InputsTcpSplunkTcpTokenAclPtrOutput values.
 // You can construct a concrete instance of `InputsTcpSplunkTcpTokenAclPtrInput` via:
 //
-//          InputsTcpSplunkTcpTokenAclArgs{...}
+//	        InputsTcpSplunkTcpTokenAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsTcpSplunkTcpTokenAclPtrInput interface {
 	pulumi.Input
 
@@ -3140,7 +3140,7 @@ type InputsUdpAcl struct {
 // InputsUdpAclInput is an input type that accepts InputsUdpAclArgs and InputsUdpAclOutput values.
 // You can construct a concrete instance of `InputsUdpAclInput` via:
 //
-//          InputsUdpAclArgs{...}
+//	InputsUdpAclArgs{...}
 type InputsUdpAclInput interface {
 	pulumi.Input
 
@@ -3185,11 +3185,11 @@ func (i InputsUdpAclArgs) ToInputsUdpAclPtrOutputWithContext(ctx context.Context
 // InputsUdpAclPtrInput is an input type that accepts InputsUdpAclArgs, InputsUdpAclPtr and InputsUdpAclPtrOutput values.
 // You can construct a concrete instance of `InputsUdpAclPtrInput` via:
 //
-//          InputsUdpAclArgs{...}
+//	        InputsUdpAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type InputsUdpAclPtrInput interface {
 	pulumi.Input
 
@@ -3423,7 +3423,7 @@ type OutputsTcpDefaultAcl struct {
 // OutputsTcpDefaultAclInput is an input type that accepts OutputsTcpDefaultAclArgs and OutputsTcpDefaultAclOutput values.
 // You can construct a concrete instance of `OutputsTcpDefaultAclInput` via:
 //
-//          OutputsTcpDefaultAclArgs{...}
+//	OutputsTcpDefaultAclArgs{...}
 type OutputsTcpDefaultAclInput interface {
 	pulumi.Input
 
@@ -3468,11 +3468,11 @@ func (i OutputsTcpDefaultAclArgs) ToOutputsTcpDefaultAclPtrOutputWithContext(ctx
 // OutputsTcpDefaultAclPtrInput is an input type that accepts OutputsTcpDefaultAclArgs, OutputsTcpDefaultAclPtr and OutputsTcpDefaultAclPtrOutput values.
 // You can construct a concrete instance of `OutputsTcpDefaultAclPtrInput` via:
 //
-//          OutputsTcpDefaultAclArgs{...}
+//	        OutputsTcpDefaultAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type OutputsTcpDefaultAclPtrInput interface {
 	pulumi.Input
 
@@ -3706,7 +3706,7 @@ type OutputsTcpGroupAcl struct {
 // OutputsTcpGroupAclInput is an input type that accepts OutputsTcpGroupAclArgs and OutputsTcpGroupAclOutput values.
 // You can construct a concrete instance of `OutputsTcpGroupAclInput` via:
 //
-//          OutputsTcpGroupAclArgs{...}
+//	OutputsTcpGroupAclArgs{...}
 type OutputsTcpGroupAclInput interface {
 	pulumi.Input
 
@@ -3751,11 +3751,11 @@ func (i OutputsTcpGroupAclArgs) ToOutputsTcpGroupAclPtrOutputWithContext(ctx con
 // OutputsTcpGroupAclPtrInput is an input type that accepts OutputsTcpGroupAclArgs, OutputsTcpGroupAclPtr and OutputsTcpGroupAclPtrOutput values.
 // You can construct a concrete instance of `OutputsTcpGroupAclPtrInput` via:
 //
-//          OutputsTcpGroupAclArgs{...}
+//	        OutputsTcpGroupAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type OutputsTcpGroupAclPtrInput interface {
 	pulumi.Input
 
@@ -3989,7 +3989,7 @@ type OutputsTcpServerAcl struct {
 // OutputsTcpServerAclInput is an input type that accepts OutputsTcpServerAclArgs and OutputsTcpServerAclOutput values.
 // You can construct a concrete instance of `OutputsTcpServerAclInput` via:
 //
-//          OutputsTcpServerAclArgs{...}
+//	OutputsTcpServerAclArgs{...}
 type OutputsTcpServerAclInput interface {
 	pulumi.Input
 
@@ -4034,11 +4034,11 @@ func (i OutputsTcpServerAclArgs) ToOutputsTcpServerAclPtrOutputWithContext(ctx c
 // OutputsTcpServerAclPtrInput is an input type that accepts OutputsTcpServerAclArgs, OutputsTcpServerAclPtr and OutputsTcpServerAclPtrOutput values.
 // You can construct a concrete instance of `OutputsTcpServerAclPtrInput` via:
 //
-//          OutputsTcpServerAclArgs{...}
+//	        OutputsTcpServerAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type OutputsTcpServerAclPtrInput interface {
 	pulumi.Input
 
@@ -4272,7 +4272,7 @@ type OutputsTcpSyslogAcl struct {
 // OutputsTcpSyslogAclInput is an input type that accepts OutputsTcpSyslogAclArgs and OutputsTcpSyslogAclOutput values.
 // You can construct a concrete instance of `OutputsTcpSyslogAclInput` via:
 //
-//          OutputsTcpSyslogAclArgs{...}
+//	OutputsTcpSyslogAclArgs{...}
 type OutputsTcpSyslogAclInput interface {
 	pulumi.Input
 
@@ -4317,11 +4317,11 @@ func (i OutputsTcpSyslogAclArgs) ToOutputsTcpSyslogAclPtrOutputWithContext(ctx c
 // OutputsTcpSyslogAclPtrInput is an input type that accepts OutputsTcpSyslogAclArgs, OutputsTcpSyslogAclPtr and OutputsTcpSyslogAclPtrOutput values.
 // You can construct a concrete instance of `OutputsTcpSyslogAclPtrInput` via:
 //
-//          OutputsTcpSyslogAclArgs{...}
+//	        OutputsTcpSyslogAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type OutputsTcpSyslogAclPtrInput interface {
 	pulumi.Input
 
@@ -4555,7 +4555,7 @@ type SavedSearchesAcl struct {
 // SavedSearchesAclInput is an input type that accepts SavedSearchesAclArgs and SavedSearchesAclOutput values.
 // You can construct a concrete instance of `SavedSearchesAclInput` via:
 //
-//          SavedSearchesAclArgs{...}
+//	SavedSearchesAclArgs{...}
 type SavedSearchesAclInput interface {
 	pulumi.Input
 
@@ -4600,11 +4600,11 @@ func (i SavedSearchesAclArgs) ToSavedSearchesAclPtrOutputWithContext(ctx context
 // SavedSearchesAclPtrInput is an input type that accepts SavedSearchesAclArgs, SavedSearchesAclPtr and SavedSearchesAclPtrOutput values.
 // You can construct a concrete instance of `SavedSearchesAclPtrInput` via:
 //
-//          SavedSearchesAclArgs{...}
+//	        SavedSearchesAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type SavedSearchesAclPtrInput interface {
 	pulumi.Input
 
@@ -4838,7 +4838,7 @@ type ShIndexesManagerAcl struct {
 // ShIndexesManagerAclInput is an input type that accepts ShIndexesManagerAclArgs and ShIndexesManagerAclOutput values.
 // You can construct a concrete instance of `ShIndexesManagerAclInput` via:
 //
-//          ShIndexesManagerAclArgs{...}
+//	ShIndexesManagerAclArgs{...}
 type ShIndexesManagerAclInput interface {
 	pulumi.Input
 
@@ -4883,11 +4883,11 @@ func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclPtrOutputWithContext(ctx c
 // ShIndexesManagerAclPtrInput is an input type that accepts ShIndexesManagerAclArgs, ShIndexesManagerAclPtr and ShIndexesManagerAclPtrOutput values.
 // You can construct a concrete instance of `ShIndexesManagerAclPtrInput` via:
 //
-//          ShIndexesManagerAclArgs{...}
+//	        ShIndexesManagerAclArgs{...}
 //
-//  or:
+//	or:
 //
-//          nil
+//	        nil
 type ShIndexesManagerAclPtrInput interface {
 	pulumi.Input
 

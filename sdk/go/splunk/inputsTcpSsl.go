@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewInputsTcpSsl(ctx, "test", &splunk.InputsTcpSslArgs{
-// 			Disabled:          pulumi.Bool(false),
-// 			RequireClientCert: pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpSsl(ctx, "test", &splunk.InputsTcpSslArgs{
+//				Disabled:          pulumi.Bool(false),
+//				RequireClientCert: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type InputsTcpSsl struct {
 	pulumi.CustomResourceState
@@ -163,7 +166,7 @@ func (i *InputsTcpSsl) ToInputsTcpSslOutputWithContext(ctx context.Context) Inpu
 // InputsTcpSslArrayInput is an input type that accepts InputsTcpSslArray and InputsTcpSslArrayOutput values.
 // You can construct a concrete instance of `InputsTcpSslArrayInput` via:
 //
-//          InputsTcpSslArray{ InputsTcpSslArgs{...} }
+//	InputsTcpSslArray{ InputsTcpSslArgs{...} }
 type InputsTcpSslArrayInput interface {
 	pulumi.Input
 
@@ -188,7 +191,7 @@ func (i InputsTcpSslArray) ToInputsTcpSslArrayOutputWithContext(ctx context.Cont
 // InputsTcpSslMapInput is an input type that accepts InputsTcpSslMap and InputsTcpSslMapOutput values.
 // You can construct a concrete instance of `InputsTcpSslMapInput` via:
 //
-//          InputsTcpSslMap{ "key": InputsTcpSslArgs{...} }
+//	InputsTcpSslMap{ "key": InputsTcpSslArgs{...} }
 type InputsTcpSslMapInput interface {
 	pulumi.Input
 
@@ -222,6 +225,31 @@ func (o InputsTcpSslOutput) ToInputsTcpSslOutput() InputsTcpSslOutput {
 
 func (o InputsTcpSslOutput) ToInputsTcpSslOutputWithContext(ctx context.Context) InputsTcpSslOutput {
 	return o
+}
+
+// Indicates if input is disabled.
+func (o InputsTcpSslOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsTcpSsl) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Server certificate password, if any.
+func (o InputsTcpSslOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpSsl) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+}
+
+// Determines whether a client must authenticate.
+func (o InputsTcpSslOutput) RequireClientCert() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsTcpSsl) pulumi.BoolOutput { return v.RequireClientCert }).(pulumi.BoolOutput)
+}
+
+// Certificate authority list (root file)
+func (o InputsTcpSslOutput) RootCa() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpSsl) pulumi.StringOutput { return v.RootCa }).(pulumi.StringOutput)
+}
+
+// Full path to the server certificate.
+func (o InputsTcpSslOutput) ServerCert() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpSsl) pulumi.StringOutput { return v.ServerCert }).(pulumi.StringOutput)
 }
 
 type InputsTcpSslArrayOutput struct{ *pulumi.OutputState }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk.Inputs
 {
 
-    public sealed class ConfigsConfAclArgs : Pulumi.ResourceArgs
+    public sealed class ConfigsConfAclArgs : global::Pulumi.ResourceArgs
     {
         [Input("app")]
         public Input<string>? App { get; set; }
@@ -58,5 +58,6 @@ namespace Pulumi.Splunk.Inputs
         public ConfigsConfAclArgs()
         {
         }
+        public static new ConfigsConfAclArgs Empty => new ConfigsConfAclArgs();
     }
 }

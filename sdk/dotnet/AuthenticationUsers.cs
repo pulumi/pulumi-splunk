@@ -17,30 +17,28 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var user01 = new Splunk.AuthenticationUsers("user01", new()
     ///     {
-    ///         var user01 = new Splunk.AuthenticationUsers("user01", new Splunk.AuthenticationUsersArgs
+    ///         Email = "user01@example.com",
+    ///         ForceChangePass = false,
+    ///         Password = "password01",
+    ///         Roles = new[]
     ///         {
-    ///             Email = "user01@example.com",
-    ///             ForceChangePass = false,
-    ///             Password = "password01",
-    ///             Roles = 
-    ///             {
-    ///                 "terraform-user01-role",
-    ///             },
-    ///         });
-    ///     }
+    ///             "terraform-user01-role",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/authenticationUsers:AuthenticationUsers")]
-    public partial class AuthenticationUsers : Pulumi.CustomResource
+    public partial class AuthenticationUsers : global::Pulumi.CustomResource
     {
         /// <summary>
         /// User default app. Overrides the default app inherited from the user roles.
@@ -140,7 +138,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class AuthenticationUsersArgs : Pulumi.ResourceArgs
+    public sealed class AuthenticationUsersArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User default app. Overrides the default app inherited from the user roles.
@@ -205,9 +203,10 @@ namespace Pulumi.Splunk
         public AuthenticationUsersArgs()
         {
         }
+        public static new AuthenticationUsersArgs Empty => new AuthenticationUsersArgs();
     }
 
-    public sealed class AuthenticationUsersState : Pulumi.ResourceArgs
+    public sealed class AuthenticationUsersState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User default app. Overrides the default app inherited from the user roles.
@@ -272,5 +271,6 @@ namespace Pulumi.Splunk
         public AuthenticationUsersState()
         {
         }
+        public static new AuthenticationUsersState Empty => new AuthenticationUsersState();
     }
 }

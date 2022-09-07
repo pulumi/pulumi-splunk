@@ -16,7 +16,7 @@ namespace Pulumi.Splunk
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
     [SplunkResourceType("pulumi:providers:splunk")]
-    public partial class Provider : Pulumi.ProviderResource
+    public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
         /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
@@ -69,7 +69,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class ProviderArgs : Pulumi.ResourceArgs
+    public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
@@ -111,5 +111,6 @@ namespace Pulumi.Splunk
         public ProviderArgs()
         {
         }
+        public static new ProviderArgs Empty => new ProviderArgs();
     }
 }

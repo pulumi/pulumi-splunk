@@ -17,24 +17,22 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpServer = new Splunk.OutputsTcpServer("tcpServer", new()
     ///     {
-    ///         var tcpServer = new Splunk.OutputsTcpServer("tcpServer", new Splunk.OutputsTcpServerArgs
-    ///         {
-    ///             SslAltNameToCheck = "old-host",
-    ///         });
-    ///     }
+    ///         SslAltNameToCheck = "old-host",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpServer:OutputsTcpServer")]
-    public partial class OutputsTcpServer : Pulumi.CustomResource
+    public partial class OutputsTcpServer : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -149,7 +147,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class OutputsTcpServerArgs : Pulumi.ResourceArgs
+    public sealed class OutputsTcpServerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -223,9 +221,10 @@ namespace Pulumi.Splunk
         public OutputsTcpServerArgs()
         {
         }
+        public static new OutputsTcpServerArgs Empty => new OutputsTcpServerArgs();
     }
 
-    public sealed class OutputsTcpServerState : Pulumi.ResourceArgs
+    public sealed class OutputsTcpServerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -299,5 +298,6 @@ namespace Pulumi.Splunk
         public OutputsTcpServerState()
         {
         }
+        public static new OutputsTcpServerState Empty => new OutputsTcpServerState();
     }
 }

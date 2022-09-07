@@ -22,25 +22,23 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var user01_index = new Splunk.Indexes("user01-index", new()
     ///     {
-    ///         var user01_index = new Splunk.Indexes("user01-index", new Splunk.IndexesArgs
-    ///         {
-    ///             MaxHotBuckets = 6,
-    ///             MaxTotalDataSizeMb = 1000000,
-    ///         });
-    ///     }
+    ///         MaxHotBuckets = 6,
+    ///         MaxTotalDataSizeMb = 1000000,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/indexes:Indexes")]
-    public partial class Indexes : Pulumi.CustomResource
+    public partial class Indexes : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -364,7 +362,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class IndexesArgs : Pulumi.ResourceArgs
+    public sealed class IndexesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -647,9 +645,10 @@ namespace Pulumi.Splunk
         public IndexesArgs()
         {
         }
+        public static new IndexesArgs Empty => new IndexesArgs();
     }
 
-    public sealed class IndexesState : Pulumi.ResourceArgs
+    public sealed class IndexesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -932,5 +931,6 @@ namespace Pulumi.Splunk
         public IndexesState()
         {
         }
+        public static new IndexesState Empty => new IndexesState();
     }
 }

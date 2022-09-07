@@ -17,28 +17,26 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var new_conf_stanza = new Splunk.ConfigsConf("new-conf-stanza", new()
     ///     {
-    ///         var new_conf_stanza = new Splunk.ConfigsConf("new-conf-stanza", new Splunk.ConfigsConfArgs
+    ///         Variables = 
     ///         {
-    ///             Variables = 
-    ///             {
-    ///                 { "disabled", "false" },
-    ///                 { "custom_key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "disabled", "false" },
+    ///             { "custom_key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/configsConf:ConfigsConf")]
-    public partial class ConfigsConf : Pulumi.CustomResource
+    public partial class ConfigsConf : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -102,7 +100,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class ConfigsConfArgs : Pulumi.ResourceArgs
+    public sealed class ConfigsConfArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -131,9 +129,10 @@ namespace Pulumi.Splunk
         public ConfigsConfArgs()
         {
         }
+        public static new ConfigsConfArgs Empty => new ConfigsConfArgs();
     }
 
-    public sealed class ConfigsConfState : Pulumi.ResourceArgs
+    public sealed class ConfigsConfState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -162,5 +161,6 @@ namespace Pulumi.Splunk
         public ConfigsConfState()
         {
         }
+        public static new ConfigsConfState Empty => new ConfigsConfState();
     }
 }

@@ -13,51 +13,50 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var myApp = new Splunk.GenericAcl("myApp", new()
     ///     {
-    ///         var myApp = new Splunk.GenericAcl("myApp", new Splunk.GenericAclArgs
+    ///         Acl = new Splunk.Inputs.GenericAclAclArgs
     ///         {
-    ///             Acl = new Splunk.Inputs.GenericAclAclArgs
+    ///             App = "system",
+    ///             Owner = "nobody",
+    ///             Reads = new[]
     ///             {
-    ///                 App = "system",
-    ///                 Owner = "nobody",
-    ///                 Reads = 
-    ///                 {
-    ///                     "*",
-    ///                 },
-    ///                 Writes = 
-    ///                 {
-    ///                     "admin",
-    ///                     "power",
-    ///                 },
+    ///                 "*",
     ///             },
-    ///             Path = "apps/local/my_app",
-    ///         });
-    ///         var myDashboard = new Splunk.GenericAcl("myDashboard", new Splunk.GenericAclArgs
-    ///         {
-    ///             Acl = new Splunk.Inputs.GenericAclAclArgs
+    ///             Writes = new[]
     ///             {
-    ///                 App = "my_app",
-    ///                 Owner = "joe_user",
-    ///                 Reads = 
-    ///                 {
-    ///                     "team_joe",
-    ///                 },
-    ///                 Writes = 
-    ///                 {
-    ///                     "team_joe",
-    ///                 },
+    ///                 "admin",
+    ///                 "power",
     ///             },
-    ///             Path = "data/ui/views/my_dashboard",
-    ///         });
-    ///     }
+    ///         },
+    ///         Path = "apps/local/my_app",
+    ///     });
     /// 
-    /// }
+    ///     var myDashboard = new Splunk.GenericAcl("myDashboard", new()
+    ///     {
+    ///         Acl = new Splunk.Inputs.GenericAclAclArgs
+    ///         {
+    ///             App = "my_app",
+    ///             Owner = "joe_user",
+    ///             Reads = new[]
+    ///             {
+    ///                 "team_joe",
+    ///             },
+    ///             Writes = new[]
+    ///             {
+    ///                 "team_joe",
+    ///             },
+    ///         },
+    ///         Path = "data/ui/views/my_dashboard",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -69,7 +68,7 @@ namespace Pulumi.Splunk
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/genericAcl:GenericAcl")]
-    public partial class GenericAcl : Pulumi.CustomResource
+    public partial class GenericAcl : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The ACL to apply to the object, including app/owner to properly identify the object.
@@ -130,7 +129,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class GenericAclArgs : Pulumi.ResourceArgs
+    public sealed class GenericAclArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The ACL to apply to the object, including app/owner to properly identify the object.
@@ -150,9 +149,10 @@ namespace Pulumi.Splunk
         public GenericAclArgs()
         {
         }
+        public static new GenericAclArgs Empty => new GenericAclArgs();
     }
 
-    public sealed class GenericAclState : Pulumi.ResourceArgs
+    public sealed class GenericAclState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The ACL to apply to the object, including app/owner to properly identify the object.
@@ -172,5 +172,6 @@ namespace Pulumi.Splunk
         public GenericAclState()
         {
         }
+        public static new GenericAclState Empty => new GenericAclState();
     }
 }

@@ -189,7 +189,7 @@ func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutputWithContext(c
 // InputsHttpEventCollectorArrayInput is an input type that accepts InputsHttpEventCollectorArray and InputsHttpEventCollectorArrayOutput values.
 // You can construct a concrete instance of `InputsHttpEventCollectorArrayInput` via:
 //
-//          InputsHttpEventCollectorArray{ InputsHttpEventCollectorArgs{...} }
+//	InputsHttpEventCollectorArray{ InputsHttpEventCollectorArgs{...} }
 type InputsHttpEventCollectorArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +214,7 @@ func (i InputsHttpEventCollectorArray) ToInputsHttpEventCollectorArrayOutputWith
 // InputsHttpEventCollectorMapInput is an input type that accepts InputsHttpEventCollectorMap and InputsHttpEventCollectorMapOutput values.
 // You can construct a concrete instance of `InputsHttpEventCollectorMapInput` via:
 //
-//          InputsHttpEventCollectorMap{ "key": InputsHttpEventCollectorArgs{...} }
+//	InputsHttpEventCollectorMap{ "key": InputsHttpEventCollectorArgs{...} }
 type InputsHttpEventCollectorMapInput interface {
 	pulumi.Input
 
@@ -248,6 +248,56 @@ func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutput() Input
 
 func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutputWithContext(ctx context.Context) InputsHttpEventCollectorOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsHttpEventCollectorOutput) Acl() InputsHttpEventCollectorAclOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) InputsHttpEventCollectorAclOutput { return v.Acl }).(InputsHttpEventCollectorAclOutput)
+}
+
+// Input disabled indicator
+func (o InputsHttpEventCollectorOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Default host value for events with this token
+func (o InputsHttpEventCollectorOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+}
+
+// Index to store generated events
+func (o InputsHttpEventCollectorOutput) Index() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Index }).(pulumi.StringOutput)
+}
+
+// Set of indexes allowed for events with this token
+func (o InputsHttpEventCollectorOutput) Indexes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringArrayOutput { return v.Indexes }).(pulumi.StringArrayOutput)
+}
+
+// Token name (inputs.conf key)
+func (o InputsHttpEventCollectorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Default source for events with this token
+func (o InputsHttpEventCollectorOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+}
+
+// Default source type for events with this token
+func (o InputsHttpEventCollectorOutput) Sourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Sourcetype }).(pulumi.StringOutput)
+}
+
+// Token value for sending data to collector/event endpoint
+func (o InputsHttpEventCollectorOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
+}
+
+// Indexer acknowledgement for this token
+func (o InputsHttpEventCollectorOutput) UseAck() pulumi.IntOutput {
+	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.IntOutput { return v.UseAck }).(pulumi.IntOutput)
 }
 
 type InputsHttpEventCollectorArrayOutput struct{ *pulumi.OutputState }

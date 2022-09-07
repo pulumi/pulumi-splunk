@@ -17,47 +17,45 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var role01 = new Splunk.AuthorizationRoles("role01", new()
     ///     {
-    ///         var role01 = new Splunk.AuthorizationRoles("role01", new Splunk.AuthorizationRolesArgs
+    ///         Capabilities = new[]
     ///         {
-    ///             Capabilities = 
-    ///             {
-    ///                 "accelerate_datamodel",
-    ///                 "change_authentication",
-    ///                 "restart_splunkd",
-    ///             },
-    ///             DefaultApp = "search",
-    ///             ImportedRoles = 
-    ///             {
-    ///                 "power",
-    ///                 "user",
-    ///             },
-    ///             SearchIndexesAlloweds = 
-    ///             {
-    ///                 "_audit",
-    ///                 "_internal",
-    ///                 "main",
-    ///             },
-    ///             SearchIndexesDefaults = 
-    ///             {
-    ///                 "_audit",
-    ///                 "_internal",
-    ///                 "main",
-    ///             },
-    ///         });
-    ///     }
+    ///             "accelerate_datamodel",
+    ///             "change_authentication",
+    ///             "restart_splunkd",
+    ///         },
+    ///         DefaultApp = "search",
+    ///         ImportedRoles = new[]
+    ///         {
+    ///             "power",
+    ///             "user",
+    ///         },
+    ///         SearchIndexesAlloweds = new[]
+    ///         {
+    ///             "_audit",
+    ///             "_internal",
+    ///             "main",
+    ///         },
+    ///         SearchIndexesDefaults = new[]
+    ///         {
+    ///             "_audit",
+    ///             "_internal",
+    ///             "main",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/authorizationRoles:AuthorizationRoles")]
-    public partial class AuthorizationRoles : Pulumi.CustomResource
+    public partial class AuthorizationRoles : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of capabilities assigned to role.
@@ -181,7 +179,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class AuthorizationRolesArgs : Pulumi.ResourceArgs
+    public sealed class AuthorizationRolesArgs : global::Pulumi.ResourceArgs
     {
         [Input("capabilities")]
         private InputList<string>? _capabilities;
@@ -288,9 +286,10 @@ namespace Pulumi.Splunk
         public AuthorizationRolesArgs()
         {
         }
+        public static new AuthorizationRolesArgs Empty => new AuthorizationRolesArgs();
     }
 
-    public sealed class AuthorizationRolesState : Pulumi.ResourceArgs
+    public sealed class AuthorizationRolesState : global::Pulumi.ResourceArgs
     {
         [Input("capabilities")]
         private InputList<string>? _capabilities;
@@ -397,5 +396,6 @@ namespace Pulumi.Splunk
         public AuthorizationRolesState()
         {
         }
+        public static new AuthorizationRolesState Empty => new AuthorizationRolesState();
     }
 }

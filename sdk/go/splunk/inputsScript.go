@@ -203,7 +203,7 @@ func (i *InputsScript) ToInputsScriptOutputWithContext(ctx context.Context) Inpu
 // InputsScriptArrayInput is an input type that accepts InputsScriptArray and InputsScriptArrayOutput values.
 // You can construct a concrete instance of `InputsScriptArrayInput` via:
 //
-//          InputsScriptArray{ InputsScriptArgs{...} }
+//	InputsScriptArray{ InputsScriptArgs{...} }
 type InputsScriptArrayInput interface {
 	pulumi.Input
 
@@ -228,7 +228,7 @@ func (i InputsScriptArray) ToInputsScriptArrayOutputWithContext(ctx context.Cont
 // InputsScriptMapInput is an input type that accepts InputsScriptMap and InputsScriptMapOutput values.
 // You can construct a concrete instance of `InputsScriptMapInput` via:
 //
-//          InputsScriptMap{ "key": InputsScriptArgs{...} }
+//	InputsScriptMap{ "key": InputsScriptArgs{...} }
 type InputsScriptMapInput interface {
 	pulumi.Input
 
@@ -262,6 +262,58 @@ func (o InputsScriptOutput) ToInputsScriptOutput() InputsScriptOutput {
 
 func (o InputsScriptOutput) ToInputsScriptOutputWithContext(ctx context.Context) InputsScriptOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsScriptOutput) Acl() InputsScriptAclOutput {
+	return o.ApplyT(func(v *InputsScript) InputsScriptAclOutput { return v.Acl }).(InputsScriptAclOutput)
+}
+
+// Specifies whether the input script is disabled.
+func (o InputsScriptOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Sets the host for events from this input. Defaults to whatever host sent the event.
+func (o InputsScriptOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+}
+
+// Sets the index for events from this input. Defaults to the main index.
+func (o InputsScriptOutput) Index() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.Index }).(pulumi.StringOutput)
+}
+
+// Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
+func (o InputsScriptOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.IntOutput { return v.Interval }).(pulumi.IntOutput)
+}
+
+// Specify the name of the scripted input.
+func (o InputsScriptOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
+func (o InputsScriptOutput) Passauth() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.Passauth }).(pulumi.StringOutput)
+}
+
+// Specify a new name for the source field for the script.
+func (o InputsScriptOutput) RenameSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.RenameSource }).(pulumi.StringOutput)
+}
+
+// Sets the source key/field for events from this input. Defaults to the input file path.
+// Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
+func (o InputsScriptOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+}
+
+// Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
+// Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
+func (o InputsScriptOutput) Sourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsScript) pulumi.StringOutput { return v.Sourcetype }).(pulumi.StringOutput)
 }
 
 type InputsScriptArrayOutput struct{ *pulumi.OutputState }
