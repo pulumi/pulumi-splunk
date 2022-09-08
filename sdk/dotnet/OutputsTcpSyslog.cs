@@ -17,25 +17,23 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpSyslog = new Splunk.OutputsTcpSyslog("tcpSyslog", new()
     ///     {
-    ///         var tcpSyslog = new Splunk.OutputsTcpSyslog("tcpSyslog", new Splunk.OutputsTcpSyslogArgs
-    ///         {
-    ///             Priority = 5,
-    ///             Server = "new-host-1:1234",
-    ///         });
-    ///     }
+    ///         Priority = 5,
+    ///         Server = "new-host-1:1234",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpSyslog:OutputsTcpSyslog")]
-    public partial class OutputsTcpSyslog : Pulumi.CustomResource
+    public partial class OutputsTcpSyslog : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -135,7 +133,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class OutputsTcpSyslogArgs : Pulumi.ResourceArgs
+    public sealed class OutputsTcpSyslogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -194,9 +192,10 @@ namespace Pulumi.Splunk
         public OutputsTcpSyslogArgs()
         {
         }
+        public static new OutputsTcpSyslogArgs Empty => new OutputsTcpSyslogArgs();
     }
 
-    public sealed class OutputsTcpSyslogState : Pulumi.ResourceArgs
+    public sealed class OutputsTcpSyslogState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -255,5 +254,6 @@ namespace Pulumi.Splunk
         public OutputsTcpSyslogState()
         {
         }
+        public static new OutputsTcpSyslogState Empty => new OutputsTcpSyslogState();
     }
 }

@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewAuthenticationUsers(ctx, "user01", &splunk.AuthenticationUsersArgs{
-// 			Email:           pulumi.String("user01@example.com"),
-// 			ForceChangePass: pulumi.Bool(false),
-// 			Password:        pulumi.String("password01"),
-// 			Roles: pulumi.StringArray{
-// 				pulumi.String("terraform-user01-role"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewAuthenticationUsers(ctx, "user01", &splunk.AuthenticationUsersArgs{
+//				Email:           pulumi.String("user01@example.com"),
+//				ForceChangePass: pulumi.Bool(false),
+//				Password:        pulumi.String("password01"),
+//				Roles: pulumi.StringArray{
+//					pulumi.String("terraform-user01-role"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AuthenticationUsers struct {
 	pulumi.CustomResourceState
@@ -207,7 +210,7 @@ func (i *AuthenticationUsers) ToAuthenticationUsersOutputWithContext(ctx context
 // AuthenticationUsersArrayInput is an input type that accepts AuthenticationUsersArray and AuthenticationUsersArrayOutput values.
 // You can construct a concrete instance of `AuthenticationUsersArrayInput` via:
 //
-//          AuthenticationUsersArray{ AuthenticationUsersArgs{...} }
+//	AuthenticationUsersArray{ AuthenticationUsersArgs{...} }
 type AuthenticationUsersArrayInput interface {
 	pulumi.Input
 
@@ -232,7 +235,7 @@ func (i AuthenticationUsersArray) ToAuthenticationUsersArrayOutputWithContext(ct
 // AuthenticationUsersMapInput is an input type that accepts AuthenticationUsersMap and AuthenticationUsersMapOutput values.
 // You can construct a concrete instance of `AuthenticationUsersMapInput` via:
 //
-//          AuthenticationUsersMap{ "key": AuthenticationUsersArgs{...} }
+//	AuthenticationUsersMap{ "key": AuthenticationUsersArgs{...} }
 type AuthenticationUsersMapInput interface {
 	pulumi.Input
 
@@ -266,6 +269,51 @@ func (o AuthenticationUsersOutput) ToAuthenticationUsersOutput() AuthenticationU
 
 func (o AuthenticationUsersOutput) ToAuthenticationUsersOutputWithContext(ctx context.Context) AuthenticationUsersOutput {
 	return o
+}
+
+// User default app. Overrides the default app inherited from the user roles.
+func (o AuthenticationUsersOutput) DefaultApp() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringOutput { return v.DefaultApp }).(pulumi.StringOutput)
+}
+
+// User email address.
+func (o AuthenticationUsersOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
+}
+
+// Force user to change password indication
+func (o AuthenticationUsersOutput) ForceChangePass() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.BoolPtrOutput { return v.ForceChangePass }).(pulumi.BoolPtrOutput)
+}
+
+// Unique user login name.
+func (o AuthenticationUsersOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// User login password.
+func (o AuthenticationUsersOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// Full user name.
+func (o AuthenticationUsersOutput) Realname() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringOutput { return v.Realname }).(pulumi.StringOutput)
+}
+
+// Restart background search job that has not completed when Splunk restarts indication.
+func (o AuthenticationUsersOutput) RestartBackgroundJobs() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.BoolOutput { return v.RestartBackgroundJobs }).(pulumi.BoolOutput)
+}
+
+// Role to assign to this user. At least one existing role is required.
+func (o AuthenticationUsersOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringArrayOutput { return v.Roles }).(pulumi.StringArrayOutput)
+}
+
+// User timezone.
+func (o AuthenticationUsersOutput) Tz() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthenticationUsers) pulumi.StringOutput { return v.Tz }).(pulumi.StringOutput)
 }
 
 type AuthenticationUsersArrayOutput struct{ *pulumi.OutputState }

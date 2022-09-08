@@ -17,28 +17,26 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpRaw = new Splunk.InputsTcpRaw("tcpRaw", new()
     ///     {
-    ///         var tcpRaw = new Splunk.InputsTcpRaw("tcpRaw", new Splunk.InputsTcpRawArgs
-    ///         {
-    ///             Disabled = false,
-    ///             Index = "main",
-    ///             Queue = "indexQueue",
-    ///             Source = "new",
-    ///             Sourcetype = "new",
-    ///         });
-    ///     }
+    ///         Disabled = false,
+    ///         Index = "main",
+    ///         Queue = "indexQueue",
+    ///         Source = "new",
+    ///         Sourcetype = "new",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpRaw:InputsTcpRaw")]
-    public partial class InputsTcpRaw : Pulumi.CustomResource
+    public partial class InputsTcpRaw : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -162,7 +160,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsTcpRawArgs : Pulumi.ResourceArgs
+    public sealed class InputsTcpRawArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -245,9 +243,10 @@ namespace Pulumi.Splunk
         public InputsTcpRawArgs()
         {
         }
+        public static new InputsTcpRawArgs Empty => new InputsTcpRawArgs();
     }
 
-    public sealed class InputsTcpRawState : Pulumi.ResourceArgs
+    public sealed class InputsTcpRawState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -330,5 +329,6 @@ namespace Pulumi.Splunk
         public InputsTcpRawState()
         {
         }
+        public static new InputsTcpRawState Empty => new InputsTcpRawState();
     }
 }

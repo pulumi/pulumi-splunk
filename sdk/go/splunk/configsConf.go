@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewConfigsConf(ctx, "new-conf-stanza", &splunk.ConfigsConfArgs{
-// 			Variables: pulumi.StringMap{
-// 				"disabled":   pulumi.String("false"),
-// 				"custom_key": pulumi.String("value"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewConfigsConf(ctx, "new-conf-stanza", &splunk.ConfigsConfArgs{
+//				Variables: pulumi.StringMap{
+//					"disabled":   pulumi.String("false"),
+//					"custom_key": pulumi.String("value"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type ConfigsConf struct {
 	pulumi.CustomResourceState
@@ -145,7 +148,7 @@ func (i *ConfigsConf) ToConfigsConfOutputWithContext(ctx context.Context) Config
 // ConfigsConfArrayInput is an input type that accepts ConfigsConfArray and ConfigsConfArrayOutput values.
 // You can construct a concrete instance of `ConfigsConfArrayInput` via:
 //
-//          ConfigsConfArray{ ConfigsConfArgs{...} }
+//	ConfigsConfArray{ ConfigsConfArgs{...} }
 type ConfigsConfArrayInput interface {
 	pulumi.Input
 
@@ -170,7 +173,7 @@ func (i ConfigsConfArray) ToConfigsConfArrayOutputWithContext(ctx context.Contex
 // ConfigsConfMapInput is an input type that accepts ConfigsConfMap and ConfigsConfMapOutput values.
 // You can construct a concrete instance of `ConfigsConfMapInput` via:
 //
-//          ConfigsConfMap{ "key": ConfigsConfArgs{...} }
+//	ConfigsConfMap{ "key": ConfigsConfArgs{...} }
 type ConfigsConfMapInput interface {
 	pulumi.Input
 
@@ -204,6 +207,21 @@ func (o ConfigsConfOutput) ToConfigsConfOutput() ConfigsConfOutput {
 
 func (o ConfigsConfOutput) ToConfigsConfOutputWithContext(ctx context.Context) ConfigsConfOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o ConfigsConfOutput) Acl() ConfigsConfAclOutput {
+	return o.ApplyT(func(v *ConfigsConf) ConfigsConfAclOutput { return v.Acl }).(ConfigsConfAclOutput)
+}
+
+// A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
+func (o ConfigsConfOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *ConfigsConf) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// A map of key value pairs for a stanza.
+func (o ConfigsConfOutput) Variables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ConfigsConf) pulumi.StringMapOutput { return v.Variables }).(pulumi.StringMapOutput)
 }
 
 type ConfigsConfArrayOutput struct{ *pulumi.OutputState }

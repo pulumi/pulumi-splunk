@@ -15,7 +15,7 @@ namespace Pulumi.Splunk
     /// Create or update scripted inputs.
     /// </summary>
     [SplunkResourceType("splunk:index/inputsScript:InputsScript")]
-    public partial class InputsScript : Pulumi.CustomResource
+    public partial class InputsScript : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -123,7 +123,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsScriptArgs : Pulumi.ResourceArgs
+    public sealed class InputsScriptArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -190,9 +190,10 @@ namespace Pulumi.Splunk
         public InputsScriptArgs()
         {
         }
+        public static new InputsScriptArgs Empty => new InputsScriptArgs();
     }
 
-    public sealed class InputsScriptState : Pulumi.ResourceArgs
+    public sealed class InputsScriptState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -259,5 +260,6 @@ namespace Pulumi.Splunk
         public InputsScriptState()
         {
         }
+        public static new InputsScriptState Empty => new InputsScriptState();
     }
 }

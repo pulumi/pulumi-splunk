@@ -24,23 +24,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewShIndexesManager(ctx, "tf-index", &splunk.ShIndexesManagerArgs{
-// 			Datatype:               pulumi.String("event"),
-// 			FrozenTimePeriodInSecs: pulumi.String("94608000"),
-// 			MaxGlobalRawDataSizeMb: pulumi.String("100"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewShIndexesManager(ctx, "tf-index", &splunk.ShIndexesManagerArgs{
+//				Datatype:               pulumi.String("event"),
+//				FrozenTimePeriodInSecs: pulumi.String("94608000"),
+//				MaxGlobalRawDataSizeMb: pulumi.String("100"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type ShIndexesManager struct {
 	pulumi.CustomResourceState
@@ -173,7 +176,7 @@ func (i *ShIndexesManager) ToShIndexesManagerOutputWithContext(ctx context.Conte
 // ShIndexesManagerArrayInput is an input type that accepts ShIndexesManagerArray and ShIndexesManagerArrayOutput values.
 // You can construct a concrete instance of `ShIndexesManagerArrayInput` via:
 //
-//          ShIndexesManagerArray{ ShIndexesManagerArgs{...} }
+//	ShIndexesManagerArray{ ShIndexesManagerArgs{...} }
 type ShIndexesManagerArrayInput interface {
 	pulumi.Input
 
@@ -198,7 +201,7 @@ func (i ShIndexesManagerArray) ToShIndexesManagerArrayOutputWithContext(ctx cont
 // ShIndexesManagerMapInput is an input type that accepts ShIndexesManagerMap and ShIndexesManagerMapOutput values.
 // You can construct a concrete instance of `ShIndexesManagerMapInput` via:
 //
-//          ShIndexesManagerMap{ "key": ShIndexesManagerArgs{...} }
+//	ShIndexesManagerMap{ "key": ShIndexesManagerArgs{...} }
 type ShIndexesManagerMapInput interface {
 	pulumi.Input
 
@@ -232,6 +235,32 @@ func (o ShIndexesManagerOutput) ToShIndexesManagerOutput() ShIndexesManagerOutpu
 
 func (o ShIndexesManagerOutput) ToShIndexesManagerOutputWithContext(ctx context.Context) ShIndexesManagerOutput {
 	return o
+}
+
+func (o ShIndexesManagerOutput) Acl() ShIndexesManagerAclOutput {
+	return o.ApplyT(func(v *ShIndexesManager) ShIndexesManagerAclOutput { return v.Acl }).(ShIndexesManagerAclOutput)
+}
+
+// Valid values: (event | metric). Specifies the type of index.
+func (o ShIndexesManagerOutput) Datatype() pulumi.StringOutput {
+	return o.ApplyT(func(v *ShIndexesManager) pulumi.StringOutput { return v.Datatype }).(pulumi.StringOutput)
+}
+
+// Number of seconds after which indexed data rolls to frozen.
+// Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
+func (o ShIndexesManagerOutput) FrozenTimePeriodInSecs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManager) pulumi.StringPtrOutput { return v.FrozenTimePeriodInSecs }).(pulumi.StringPtrOutput)
+}
+
+// The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
+// Defaults to 100 MB.
+func (o ShIndexesManagerOutput) MaxGlobalRawDataSizeMb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ShIndexesManager) pulumi.StringPtrOutput { return v.MaxGlobalRawDataSizeMb }).(pulumi.StringPtrOutput)
+}
+
+// The name of the index to create.
+func (o ShIndexesManagerOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *ShIndexesManager) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
 type ShIndexesManagerArrayOutput struct{ *pulumi.OutputState }

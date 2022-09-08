@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk.Inputs
 {
 
-    public sealed class OutputsTcpGroupAclArgs : Pulumi.ResourceArgs
+    public sealed class OutputsTcpGroupAclArgs : global::Pulumi.ResourceArgs
     {
         [Input("app")]
         public Input<string>? App { get; set; }
@@ -58,5 +58,6 @@ namespace Pulumi.Splunk.Inputs
         public OutputsTcpGroupAclArgs()
         {
         }
+        public static new OutputsTcpGroupAclArgs Empty => new OutputsTcpGroupAclArgs();
     }
 }

@@ -21,26 +21,24 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tf_index = new Splunk.ShIndexesManager("tf-index", new()
     ///     {
-    ///         var tf_index = new Splunk.ShIndexesManager("tf-index", new Splunk.ShIndexesManagerArgs
-    ///         {
-    ///             Datatype = "event",
-    ///             FrozenTimePeriodInSecs = "94608000",
-    ///             MaxGlobalRawDataSizeMb = "100",
-    ///         });
-    ///     }
+    ///         Datatype = "event",
+    ///         FrozenTimePeriodInSecs = "94608000",
+    ///         MaxGlobalRawDataSizeMb = "100",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/shIndexesManager:ShIndexesManager")]
-    public partial class ShIndexesManager : Pulumi.CustomResource
+    public partial class ShIndexesManager : global::Pulumi.CustomResource
     {
         [Output("acl")]
         public Output<Outputs.ShIndexesManagerAcl> Acl { get; private set; } = null!;
@@ -115,7 +113,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class ShIndexesManagerArgs : Pulumi.ResourceArgs
+    public sealed class ShIndexesManagerArgs : global::Pulumi.ResourceArgs
     {
         [Input("acl")]
         public Input<Inputs.ShIndexesManagerAclArgs>? Acl { get; set; }
@@ -149,9 +147,10 @@ namespace Pulumi.Splunk
         public ShIndexesManagerArgs()
         {
         }
+        public static new ShIndexesManagerArgs Empty => new ShIndexesManagerArgs();
     }
 
-    public sealed class ShIndexesManagerState : Pulumi.ResourceArgs
+    public sealed class ShIndexesManagerState : global::Pulumi.ResourceArgs
     {
         [Input("acl")]
         public Input<Inputs.ShIndexesManagerAclGetArgs>? Acl { get; set; }
@@ -185,5 +184,6 @@ namespace Pulumi.Splunk
         public ShIndexesManagerState()
         {
         }
+        public static new ShIndexesManagerState Empty => new ShIndexesManagerState();
     }
 }

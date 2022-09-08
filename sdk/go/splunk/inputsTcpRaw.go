@@ -20,25 +20,28 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewInputsTcpRaw(ctx, "tcpRaw", &splunk.InputsTcpRawArgs{
-// 			Disabled:   pulumi.Bool(false),
-// 			Index:      pulumi.String("main"),
-// 			Queue:      pulumi.String("indexQueue"),
-// 			Source:     pulumi.String("new"),
-// 			Sourcetype: pulumi.String("new"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpRaw(ctx, "tcpRaw", &splunk.InputsTcpRawArgs{
+//				Disabled:   pulumi.Bool(false),
+//				Index:      pulumi.String("main"),
+//				Queue:      pulumi.String("indexQueue"),
+//				Source:     pulumi.String("new"),
+//				Sourcetype: pulumi.String("new"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type InputsTcpRaw struct {
 	pulumi.CustomResourceState
@@ -286,7 +289,7 @@ func (i *InputsTcpRaw) ToInputsTcpRawOutputWithContext(ctx context.Context) Inpu
 // InputsTcpRawArrayInput is an input type that accepts InputsTcpRawArray and InputsTcpRawArrayOutput values.
 // You can construct a concrete instance of `InputsTcpRawArrayInput` via:
 //
-//          InputsTcpRawArray{ InputsTcpRawArgs{...} }
+//	InputsTcpRawArray{ InputsTcpRawArgs{...} }
 type InputsTcpRawArrayInput interface {
 	pulumi.Input
 
@@ -311,7 +314,7 @@ func (i InputsTcpRawArray) ToInputsTcpRawArrayOutputWithContext(ctx context.Cont
 // InputsTcpRawMapInput is an input type that accepts InputsTcpRawMap and InputsTcpRawMapOutput values.
 // You can construct a concrete instance of `InputsTcpRawMapInput` via:
 //
-//          InputsTcpRawMap{ "key": InputsTcpRawArgs{...} }
+//	InputsTcpRawMap{ "key": InputsTcpRawArgs{...} }
 type InputsTcpRawMapInput interface {
 	pulumi.Input
 
@@ -345,6 +348,73 @@ func (o InputsTcpRawOutput) ToInputsTcpRawOutput() InputsTcpRawOutput {
 
 func (o InputsTcpRawOutput) ToInputsTcpRawOutputWithContext(ctx context.Context) InputsTcpRawOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsTcpRawOutput) Acl() InputsTcpRawAclOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) InputsTcpRawAclOutput { return v.Acl }).(InputsTcpRawAclOutput)
+}
+
+// Valid values: (ip | dns | none)
+// Set the host for the remote server that is sending data.
+// ip sets the host to the IP address of the remote server sending data.
+// dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+// none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+// Default value is dns.
+func (o InputsTcpRawOutput) ConnectionHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.ConnectionHost }).(pulumi.StringOutput)
+}
+
+// Indicates if input is disabled.
+func (o InputsTcpRawOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Host from which the indexer gets data.
+func (o InputsTcpRawOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+}
+
+// Index to store generated events. Defaults to default.
+func (o InputsTcpRawOutput) Index() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.Index }).(pulumi.StringOutput)
+}
+
+// The input port which receives raw data.
+func (o InputsTcpRawOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Valid values: (parsingQueue | indexQueue)
+// Specifies where the input processor should deposit the events it reads. Defaults to parsingQueue.
+// Set queue to parsingQueue to apply props.conf and other parsing rules to your data. For more information about props.conf and rules for timestamping and linebreaking, refer to props.conf and the online documentation at "Monitor files and directories with inputs.conf"
+// Set queue to indexQueue to send your data directly into the index.
+func (o InputsTcpRawOutput) Queue() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.Queue }).(pulumi.StringOutput)
+}
+
+// Specifies in seconds the timeout value for adding a Done-key. Default value is 10 seconds.
+// If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
+func (o InputsTcpRawOutput) RawTcpDoneTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.IntOutput { return v.RawTcpDoneTimeout }).(pulumi.IntOutput)
+}
+
+// Allows for restricting this input to only accept data from the host specified here.
+func (o InputsTcpRawOutput) RestrictToHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.RestrictToHost }).(pulumi.StringOutput)
+}
+
+// Sets the source key/field for events from this input. Defaults to the input file path.
+// Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
+func (o InputsTcpRawOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+}
+
+// Set the source type for events from this input.
+// "sourcetype=" is automatically prepended to <string>.
+// Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
+func (o InputsTcpRawOutput) Sourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsTcpRaw) pulumi.StringOutput { return v.Sourcetype }).(pulumi.StringOutput)
 }
 
 type InputsTcpRawArrayOutput struct{ *pulumi.OutputState }

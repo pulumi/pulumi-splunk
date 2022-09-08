@@ -20,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewOutputsTcpSyslog(ctx, "tcpSyslog", &splunk.OutputsTcpSyslogArgs{
-// 			Priority: pulumi.Int(5),
-// 			Server:   pulumi.String("new-host-1:1234"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpSyslog(ctx, "tcpSyslog", &splunk.OutputsTcpSyslogArgs{
+//				Priority: pulumi.Int(5),
+//				Server:   pulumi.String("new-host-1:1234"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type OutputsTcpSyslog struct {
 	pulumi.CustomResourceState
@@ -223,7 +226,7 @@ func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutputWithContext(ctx context.Conte
 // OutputsTcpSyslogArrayInput is an input type that accepts OutputsTcpSyslogArray and OutputsTcpSyslogArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpSyslogArrayInput` via:
 //
-//          OutputsTcpSyslogArray{ OutputsTcpSyslogArgs{...} }
+//	OutputsTcpSyslogArray{ OutputsTcpSyslogArgs{...} }
 type OutputsTcpSyslogArrayInput interface {
 	pulumi.Input
 
@@ -248,7 +251,7 @@ func (i OutputsTcpSyslogArray) ToOutputsTcpSyslogArrayOutputWithContext(ctx cont
 // OutputsTcpSyslogMapInput is an input type that accepts OutputsTcpSyslogMap and OutputsTcpSyslogMapOutput values.
 // You can construct a concrete instance of `OutputsTcpSyslogMapInput` via:
 //
-//          OutputsTcpSyslogMap{ "key": OutputsTcpSyslogArgs{...} }
+//	OutputsTcpSyslogMap{ "key": OutputsTcpSyslogArgs{...} }
 type OutputsTcpSyslogMapInput interface {
 	pulumi.Input
 
@@ -282,6 +285,52 @@ func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutpu
 
 func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutputWithContext(ctx context.Context) OutputsTcpSyslogOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o OutputsTcpSyslogOutput) Acl() OutputsTcpSyslogAclOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) OutputsTcpSyslogAclOutput { return v.Acl }).(OutputsTcpSyslogAclOutput)
+}
+
+// If true, disables global syslog settings.
+func (o OutputsTcpSyslogOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
+func (o OutputsTcpSyslogOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
+func (o OutputsTcpSyslogOutput) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
+}
+
+// host:port of the server where syslog data should be sent
+func (o OutputsTcpSyslogOutput) Server() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.StringOutput { return v.Server }).(pulumi.StringOutput)
+}
+
+// Specifies a rule for handling data in addition to that provided by the "syslog" sourcetype. By default, there is no value for syslogSourceType.
+// <br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string "syslog" receives this special treatment.
+// To match a source type explicitly, use the pattern "sourcetype::sourcetype_name." For example
+// syslogSourcetype = sourcetype::apache_common
+// Data that is "syslog" or matches this setting is assumed to already be in syslog format.
+// Data that does not match the rules has a header, potentially a timestamp, and a hostname added to the front of the event. This is how Splunk software causes arbitrary log data to match syslog expectations.
+func (o OutputsTcpSyslogOutput) SyslogSourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.StringOutput { return v.SyslogSourcetype }).(pulumi.StringOutput)
+}
+
+// Format of timestamp to add at start of the events to be forwarded.
+// The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
+func (o OutputsTcpSyslogOutput) TimestampFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.StringOutput { return v.TimestampFormat }).(pulumi.StringOutput)
+}
+
+// Protocol to use to send syslog data. Valid values: (tcp | udp ).
+func (o OutputsTcpSyslogOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpSyslog) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
 type OutputsTcpSyslogArrayOutput struct{ *pulumi.OutputState }

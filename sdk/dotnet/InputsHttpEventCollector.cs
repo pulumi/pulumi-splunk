@@ -15,7 +15,7 @@ namespace Pulumi.Splunk
     /// Create or update HTTP Event Collector input configuration tokens.
     /// </summary>
     [SplunkResourceType("splunk:index/inputsHttpEventCollector:InputsHttpEventCollector")]
-    public partial class InputsHttpEventCollector : Pulumi.CustomResource
+    public partial class InputsHttpEventCollector : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -121,7 +121,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsHttpEventCollectorArgs : Pulumi.ResourceArgs
+    public sealed class InputsHttpEventCollectorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -192,9 +192,10 @@ namespace Pulumi.Splunk
         public InputsHttpEventCollectorArgs()
         {
         }
+        public static new InputsHttpEventCollectorArgs Empty => new InputsHttpEventCollectorArgs();
     }
 
-    public sealed class InputsHttpEventCollectorState : Pulumi.ResourceArgs
+    public sealed class InputsHttpEventCollectorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -265,5 +266,6 @@ namespace Pulumi.Splunk
         public InputsHttpEventCollectorState()
         {
         }
+        public static new InputsHttpEventCollectorState Empty => new InputsHttpEventCollectorState();
     }
 }

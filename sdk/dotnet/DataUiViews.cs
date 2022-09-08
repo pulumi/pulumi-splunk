@@ -16,35 +16,33 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var dashboard = new Splunk.DataUiViews("dashboard", new()
     ///     {
-    ///         var dashboard = new Splunk.DataUiViews("dashboard", new Splunk.DataUiViewsArgs
+    ///         Acl = new Splunk.Inputs.DataUiViewsAclArgs
     ///         {
-    ///             Acl = new Splunk.Inputs.DataUiViewsAclArgs
-    ///             {
-    ///                 App = "search",
-    ///                 Owner = "admin",
-    ///             },
-    ///             EaiData = @"  &lt;dashboard&gt;
+    ///             App = "search",
+    ///             Owner = "admin",
+    ///         },
+    ///         EaiData = @"  &lt;dashboard&gt;
     ///     &lt;label&gt; 
     ///       Terraform Test Dashboard
     ///     &lt;/label&gt;
     ///   &lt;/dashboard&gt;
     ///   
     /// ",
-    ///         });
-    ///     }
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/dataUiViews:DataUiViews")]
-    public partial class DataUiViews : Pulumi.CustomResource
+    public partial class DataUiViews : global::Pulumi.CustomResource
     {
         [Output("acl")]
         public Output<Outputs.DataUiViewsAcl> Acl { get; private set; } = null!;
@@ -106,7 +104,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class DataUiViewsArgs : Pulumi.ResourceArgs
+    public sealed class DataUiViewsArgs : global::Pulumi.ResourceArgs
     {
         [Input("acl")]
         public Input<Inputs.DataUiViewsAclArgs>? Acl { get; set; }
@@ -127,9 +125,10 @@ namespace Pulumi.Splunk
         public DataUiViewsArgs()
         {
         }
+        public static new DataUiViewsArgs Empty => new DataUiViewsArgs();
     }
 
-    public sealed class DataUiViewsState : Pulumi.ResourceArgs
+    public sealed class DataUiViewsState : global::Pulumi.ResourceArgs
     {
         [Input("acl")]
         public Input<Inputs.DataUiViewsAclGetArgs>? Acl { get; set; }
@@ -150,5 +149,6 @@ namespace Pulumi.Splunk
         public DataUiViewsState()
         {
         }
+        public static new DataUiViewsState Empty => new DataUiViewsState();
     }
 }

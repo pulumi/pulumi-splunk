@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewAdminSamlGroups(ctx, "saml-group", &splunk.AdminSamlGroupsArgs{
-// 			Roles: pulumi.StringArray{
-// 				pulumi.String("admin"),
-// 				pulumi.String("power"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewAdminSamlGroups(ctx, "saml-group", &splunk.AdminSamlGroupsArgs{
+//				Roles: pulumi.StringArray{
+//					pulumi.String("admin"),
+//					pulumi.String("power"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -45,7 +48,9 @@ import (
 // SAML groups can be imported using the id, e.g.
 //
 // ```sh
-//  $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
+//
+//	$ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
+//
 // ```
 type AdminSamlGroups struct {
 	pulumi.CustomResourceState
@@ -143,7 +148,7 @@ func (i *AdminSamlGroups) ToAdminSamlGroupsOutputWithContext(ctx context.Context
 // AdminSamlGroupsArrayInput is an input type that accepts AdminSamlGroupsArray and AdminSamlGroupsArrayOutput values.
 // You can construct a concrete instance of `AdminSamlGroupsArrayInput` via:
 //
-//          AdminSamlGroupsArray{ AdminSamlGroupsArgs{...} }
+//	AdminSamlGroupsArray{ AdminSamlGroupsArgs{...} }
 type AdminSamlGroupsArrayInput interface {
 	pulumi.Input
 
@@ -168,7 +173,7 @@ func (i AdminSamlGroupsArray) ToAdminSamlGroupsArrayOutputWithContext(ctx contex
 // AdminSamlGroupsMapInput is an input type that accepts AdminSamlGroupsMap and AdminSamlGroupsMapOutput values.
 // You can construct a concrete instance of `AdminSamlGroupsMapInput` via:
 //
-//          AdminSamlGroupsMap{ "key": AdminSamlGroupsArgs{...} }
+//	AdminSamlGroupsMap{ "key": AdminSamlGroupsArgs{...} }
 type AdminSamlGroupsMapInput interface {
 	pulumi.Input
 
@@ -202,6 +207,16 @@ func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
 
 func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutputWithContext(ctx context.Context) AdminSamlGroupsOutput {
 	return o
+}
+
+// The name of the external group.
+func (o AdminSamlGroupsOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *AdminSamlGroups) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of internal roles assigned to the group.
+func (o AdminSamlGroupsOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AdminSamlGroups) pulumi.StringArrayOutput { return v.Roles }).(pulumi.StringArrayOutput)
 }
 
 type AdminSamlGroupsArrayOutput struct{ *pulumi.OutputState }

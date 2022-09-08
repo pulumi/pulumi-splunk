@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk.Inputs
 {
 
-    public sealed class InputsHttpEventCollectorAclArgs : Pulumi.ResourceArgs
+    public sealed class InputsHttpEventCollectorAclArgs : global::Pulumi.ResourceArgs
     {
         [Input("app")]
         public Input<string>? App { get; set; }
@@ -58,5 +58,6 @@ namespace Pulumi.Splunk.Inputs
         public InputsHttpEventCollectorAclArgs()
         {
         }
+        public static new InputsHttpEventCollectorAclArgs Empty => new InputsHttpEventCollectorAclArgs();
     }
 }

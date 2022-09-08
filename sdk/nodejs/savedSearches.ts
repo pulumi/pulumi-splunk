@@ -222,6 +222,30 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     public readonly actionEmailWidthSortColumns!: pulumi.Output<boolean>;
     /**
+     * Jira Service Desk account name
+     */
+    public readonly actionJiraServiceDeskParamAccount!: pulumi.Output<string | undefined>;
+    /**
+     * Jira issue description
+     */
+    public readonly actionJiraServiceDeskParamJiraDescription!: pulumi.Output<string | undefined>;
+    /**
+     * Jira issue type name
+     */
+    public readonly actionJiraServiceDeskParamJiraIssueType!: pulumi.Output<string | undefined>;
+    /**
+     * Jira priority of issue
+     */
+    public readonly actionJiraServiceDeskParamJiraPriority!: pulumi.Output<string | undefined>;
+    /**
+     * Jira Project name
+     */
+    public readonly actionJiraServiceDeskParamJiraProject!: pulumi.Output<string | undefined>;
+    /**
+     * Jira issue title/summary
+     */
+    public readonly actionJiraServiceDeskParamJiraSummary!: pulumi.Output<string | undefined>;
+    /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
     public /*out*/ readonly actionPopulateLookup!: pulumi.Output<boolean>;
@@ -670,6 +694,12 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionEmailUseSsl"] = state ? state.actionEmailUseSsl : undefined;
             resourceInputs["actionEmailUseTls"] = state ? state.actionEmailUseTls : undefined;
             resourceInputs["actionEmailWidthSortColumns"] = state ? state.actionEmailWidthSortColumns : undefined;
+            resourceInputs["actionJiraServiceDeskParamAccount"] = state ? state.actionJiraServiceDeskParamAccount : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraDescription"] = state ? state.actionJiraServiceDeskParamJiraDescription : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = state ? state.actionJiraServiceDeskParamJiraIssueType : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state ? state.actionJiraServiceDeskParamJiraPriority : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraProject"] = state ? state.actionJiraServiceDeskParamJiraProject : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraSummary"] = state ? state.actionJiraServiceDeskParamJiraSummary : undefined;
             resourceInputs["actionPopulateLookup"] = state ? state.actionPopulateLookup : undefined;
             resourceInputs["actionPopulateLookupCommand"] = state ? state.actionPopulateLookupCommand : undefined;
             resourceInputs["actionPopulateLookupDest"] = state ? state.actionPopulateLookupDest : undefined;
@@ -812,6 +842,12 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionEmailUseSsl"] = args ? args.actionEmailUseSsl : undefined;
             resourceInputs["actionEmailUseTls"] = args ? args.actionEmailUseTls : undefined;
             resourceInputs["actionEmailWidthSortColumns"] = args ? args.actionEmailWidthSortColumns : undefined;
+            resourceInputs["actionJiraServiceDeskParamAccount"] = args ? args.actionJiraServiceDeskParamAccount : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraDescription"] = args ? args.actionJiraServiceDeskParamJiraDescription : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = args ? args.actionJiraServiceDeskParamJiraIssueType : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args ? args.actionJiraServiceDeskParamJiraPriority : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraProject"] = args ? args.actionJiraServiceDeskParamJiraProject : undefined;
+            resourceInputs["actionJiraServiceDeskParamJiraSummary"] = args ? args.actionJiraServiceDeskParamJiraSummary : undefined;
             resourceInputs["actionPopulateLookupCommand"] = args ? args.actionPopulateLookupCommand : undefined;
             resourceInputs["actionPopulateLookupDest"] = args ? args.actionPopulateLookupDest : undefined;
             resourceInputs["actionPopulateLookupHostname"] = args ? args.actionPopulateLookupHostname : undefined;
@@ -1078,6 +1114,30 @@ export interface SavedSearchesState {
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
     actionEmailWidthSortColumns?: pulumi.Input<boolean>;
+    /**
+     * Jira Service Desk account name
+     */
+    actionJiraServiceDeskParamAccount?: pulumi.Input<string>;
+    /**
+     * Jira issue description
+     */
+    actionJiraServiceDeskParamJiraDescription?: pulumi.Input<string>;
+    /**
+     * Jira issue type name
+     */
+    actionJiraServiceDeskParamJiraIssueType?: pulumi.Input<string>;
+    /**
+     * Jira priority of issue
+     */
+    actionJiraServiceDeskParamJiraPriority?: pulumi.Input<string>;
+    /**
+     * Jira Project name
+     */
+    actionJiraServiceDeskParamJiraProject?: pulumi.Input<string>;
+    /**
+     * Jira issue title/summary
+     */
+    actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
     /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -1632,6 +1692,30 @@ export interface SavedSearchesArgs {
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
     actionEmailWidthSortColumns?: pulumi.Input<boolean>;
+    /**
+     * Jira Service Desk account name
+     */
+    actionJiraServiceDeskParamAccount?: pulumi.Input<string>;
+    /**
+     * Jira issue description
+     */
+    actionJiraServiceDeskParamJiraDescription?: pulumi.Input<string>;
+    /**
+     * Jira issue type name
+     */
+    actionJiraServiceDeskParamJiraIssueType?: pulumi.Input<string>;
+    /**
+     * Jira priority of issue
+     */
+    actionJiraServiceDeskParamJiraPriority?: pulumi.Input<string>;
+    /**
+     * Jira Project name
+     */
+    actionJiraServiceDeskParamJiraProject?: pulumi.Input<string>;
+    /**
+     * Jira issue title/summary
+     */
+    actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */

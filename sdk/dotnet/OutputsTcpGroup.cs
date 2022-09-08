@@ -17,32 +17,30 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpGroup = new Splunk.OutputsTcpGroup("tcpGroup", new()
     ///     {
-    ///         var tcpGroup = new Splunk.OutputsTcpGroup("tcpGroup", new Splunk.OutputsTcpGroupArgs
+    ///         Disabled = false,
+    ///         DropEventsOnQueueFull = 60,
+    ///         MaxQueueSize = "100KB",
+    ///         SendCookedData = true,
+    ///         Servers = new[]
     ///         {
-    ///             Disabled = false,
-    ///             DropEventsOnQueueFull = 60,
-    ///             MaxQueueSize = "100KB",
-    ///             SendCookedData = true,
-    ///             Servers = 
-    ///             {
-    ///                 "1.1.1.1:1234",
-    ///                 "2.2.2.2:1234",
-    ///             },
-    ///         });
-    ///     }
+    ///             "1.1.1.1:1234",
+    ///             "2.2.2.2:1234",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpGroup:OutputsTcpGroup")]
-    public partial class OutputsTcpGroup : Pulumi.CustomResource
+    public partial class OutputsTcpGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -164,7 +162,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class OutputsTcpGroupArgs : Pulumi.ResourceArgs
+    public sealed class OutputsTcpGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -251,9 +249,10 @@ namespace Pulumi.Splunk
         public OutputsTcpGroupArgs()
         {
         }
+        public static new OutputsTcpGroupArgs Empty => new OutputsTcpGroupArgs();
     }
 
-    public sealed class OutputsTcpGroupState : Pulumi.ResourceArgs
+    public sealed class OutputsTcpGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -340,5 +339,6 @@ namespace Pulumi.Splunk
         public OutputsTcpGroupState()
         {
         }
+        public static new OutputsTcpGroupState Empty => new OutputsTcpGroupState();
     }
 }

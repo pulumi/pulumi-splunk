@@ -17,26 +17,24 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var tcpCooked = new Splunk.InputsTcpCooked("tcpCooked", new()
     ///     {
-    ///         var tcpCooked = new Splunk.InputsTcpCooked("tcpCooked", new Splunk.InputsTcpCookedArgs
-    ///         {
-    ///             ConnectionHost = "dns",
-    ///             Disabled = false,
-    ///             RestrictToHost = "splunk",
-    ///         });
-    ///     }
+    ///         ConnectionHost = "dns",
+    ///         Disabled = false,
+    ///         RestrictToHost = "splunk",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpCooked:InputsTcpCooked")]
-    public partial class InputsTcpCooked : Pulumi.CustomResource
+    public partial class InputsTcpCooked : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -123,7 +121,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsTcpCookedArgs : Pulumi.ResourceArgs
+    public sealed class InputsTcpCookedArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -169,9 +167,10 @@ namespace Pulumi.Splunk
         public InputsTcpCookedArgs()
         {
         }
+        public static new InputsTcpCookedArgs Empty => new InputsTcpCookedArgs();
     }
 
-    public sealed class InputsTcpCookedState : Pulumi.ResourceArgs
+    public sealed class InputsTcpCookedState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -217,5 +216,6 @@ namespace Pulumi.Splunk
         public InputsTcpCookedState()
         {
         }
+        public static new InputsTcpCookedState Empty => new InputsTcpCookedState();
     }
 }

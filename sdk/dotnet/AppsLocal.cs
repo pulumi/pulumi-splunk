@@ -17,25 +17,23 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var amazonConnectApp = new Splunk.AppsLocal("amazonConnectApp", new()
     ///     {
-    ///         var amazonConnectApp = new Splunk.AppsLocal("amazonConnectApp", new Splunk.AppsLocalArgs
-    ///         {
-    ///             ExplicitAppname = "amazon_connect_app_for_splunk",
-    ///             Filename = true,
-    ///         });
-    ///     }
+    ///         ExplicitAppname = "amazon_connect_app_for_splunk",
+    ///         Filename = true,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/appsLocal:AppsLocal")]
-    public partial class AppsLocal : Pulumi.CustomResource
+    public partial class AppsLocal : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -170,7 +168,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class AppsLocalArgs : Pulumi.ResourceArgs
+    public sealed class AppsLocalArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -264,9 +262,10 @@ namespace Pulumi.Splunk
         public AppsLocalArgs()
         {
         }
+        public static new AppsLocalArgs Empty => new AppsLocalArgs();
     }
 
-    public sealed class AppsLocalState : Pulumi.ResourceArgs
+    public sealed class AppsLocalState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -360,5 +359,6 @@ namespace Pulumi.Splunk
         public AppsLocalState()
         {
         }
+        public static new AppsLocalState Empty => new AppsLocalState();
     }
 }

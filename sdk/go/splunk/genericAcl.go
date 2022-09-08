@@ -17,56 +17,61 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewGenericAcl(ctx, "myApp", &splunk.GenericAclArgs{
-// 			Acl: &GenericAclAclArgs{
-// 				App:   pulumi.String("system"),
-// 				Owner: pulumi.String("nobody"),
-// 				Reads: pulumi.StringArray{
-// 					pulumi.String("*"),
-// 				},
-// 				Writes: pulumi.StringArray{
-// 					pulumi.String("admin"),
-// 					pulumi.String("power"),
-// 				},
-// 			},
-// 			Path: pulumi.String("apps/local/my_app"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = splunk.NewGenericAcl(ctx, "myDashboard", &splunk.GenericAclArgs{
-// 			Acl: &GenericAclAclArgs{
-// 				App:   pulumi.String("my_app"),
-// 				Owner: pulumi.String("joe_user"),
-// 				Reads: pulumi.StringArray{
-// 					pulumi.String("team_joe"),
-// 				},
-// 				Writes: pulumi.StringArray{
-// 					pulumi.String("team_joe"),
-// 				},
-// 			},
-// 			Path: pulumi.String("data/ui/views/my_dashboard"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewGenericAcl(ctx, "myApp", &splunk.GenericAclArgs{
+//				Acl: &GenericAclAclArgs{
+//					App:   pulumi.String("system"),
+//					Owner: pulumi.String("nobody"),
+//					Reads: pulumi.StringArray{
+//						pulumi.String("*"),
+//					},
+//					Writes: pulumi.StringArray{
+//						pulumi.String("admin"),
+//						pulumi.String("power"),
+//					},
+//				},
+//				Path: pulumi.String("apps/local/my_app"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = splunk.NewGenericAcl(ctx, "myDashboard", &splunk.GenericAclArgs{
+//				Acl: &GenericAclAclArgs{
+//					App:   pulumi.String("my_app"),
+//					Owner: pulumi.String("joe_user"),
+//					Reads: pulumi.StringArray{
+//						pulumi.String("team_joe"),
+//					},
+//					Writes: pulumi.StringArray{
+//						pulumi.String("team_joe"),
+//					},
+//				},
+//				Path: pulumi.String("data/ui/views/my_dashboard"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
 //
-// Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
+// # Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
 //
 // ```sh
-//  $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl <owner>:<app>:<path>
+//
+//	$ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl <owner>:<app>:<path>
+//
 // ```
 type GenericAcl struct {
 	pulumi.CustomResourceState
@@ -182,7 +187,7 @@ func (i *GenericAcl) ToGenericAclOutputWithContext(ctx context.Context) GenericA
 // GenericAclArrayInput is an input type that accepts GenericAclArray and GenericAclArrayOutput values.
 // You can construct a concrete instance of `GenericAclArrayInput` via:
 //
-//          GenericAclArray{ GenericAclArgs{...} }
+//	GenericAclArray{ GenericAclArgs{...} }
 type GenericAclArrayInput interface {
 	pulumi.Input
 
@@ -207,7 +212,7 @@ func (i GenericAclArray) ToGenericAclArrayOutputWithContext(ctx context.Context)
 // GenericAclMapInput is an input type that accepts GenericAclMap and GenericAclMapOutput values.
 // You can construct a concrete instance of `GenericAclMapInput` via:
 //
-//          GenericAclMap{ "key": GenericAclArgs{...} }
+//	GenericAclMap{ "key": GenericAclArgs{...} }
 type GenericAclMapInput interface {
 	pulumi.Input
 
@@ -241,6 +246,19 @@ func (o GenericAclOutput) ToGenericAclOutput() GenericAclOutput {
 
 func (o GenericAclOutput) ToGenericAclOutputWithContext(ctx context.Context) GenericAclOutput {
 	return o
+}
+
+// The ACL to apply to the object, including app/owner to properly identify the object.
+// Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
+// apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
+// app and owner for objects that don't fit in the normal namespace.
+func (o GenericAclOutput) Acl() GenericAclAclOutput {
+	return o.ApplyT(func(v *GenericAcl) GenericAclAclOutput { return v.Acl }).(GenericAclAclOutput)
+}
+
+// REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
+func (o GenericAclOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v *GenericAcl) pulumi.StringOutput { return v.Path }).(pulumi.StringOutput)
 }
 
 type GenericAclArrayOutput struct{ *pulumi.OutputState }

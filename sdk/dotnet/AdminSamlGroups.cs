@@ -17,24 +17,22 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var saml_group = new Splunk.AdminSamlGroups("saml-group", new()
     ///     {
-    ///         var saml_group = new Splunk.AdminSamlGroups("saml-group", new Splunk.AdminSamlGroupsArgs
+    ///         Roles = new[]
     ///         {
-    ///             Roles = 
-    ///             {
-    ///                 "admin",
-    ///                 "power",
-    ///             },
-    ///         });
-    ///     }
+    ///             "admin",
+    ///             "power",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Splunk
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/adminSamlGroups:AdminSamlGroups")]
-    public partial class AdminSamlGroups : Pulumi.CustomResource
+    public partial class AdminSamlGroups : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the external group.
@@ -104,7 +102,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class AdminSamlGroupsArgs : Pulumi.ResourceArgs
+    public sealed class AdminSamlGroupsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the external group.
@@ -127,9 +125,10 @@ namespace Pulumi.Splunk
         public AdminSamlGroupsArgs()
         {
         }
+        public static new AdminSamlGroupsArgs Empty => new AdminSamlGroupsArgs();
     }
 
-    public sealed class AdminSamlGroupsState : Pulumi.ResourceArgs
+    public sealed class AdminSamlGroupsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the external group.
@@ -152,5 +151,6 @@ namespace Pulumi.Splunk
         public AdminSamlGroupsState()
         {
         }
+        public static new AdminSamlGroupsState Empty => new AdminSamlGroupsState();
     }
 }

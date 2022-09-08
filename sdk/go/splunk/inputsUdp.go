@@ -20,24 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewInputsUdp(ctx, "udp", &splunk.InputsUdpArgs{
-// 			Disabled:   pulumi.Bool(false),
-// 			Index:      pulumi.String("main"),
-// 			Source:     pulumi.String("new"),
-// 			Sourcetype: pulumi.String("new"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsUdp(ctx, "udp", &splunk.InputsUdpArgs{
+//				Disabled:   pulumi.Bool(false),
+//				Index:      pulumi.String("main"),
+//				Source:     pulumi.String("new"),
+//				Sourcetype: pulumi.String("new"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type InputsUdp struct {
 	pulumi.CustomResourceState
@@ -265,7 +268,7 @@ func (i *InputsUdp) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpO
 // InputsUdpArrayInput is an input type that accepts InputsUdpArray and InputsUdpArrayOutput values.
 // You can construct a concrete instance of `InputsUdpArrayInput` via:
 //
-//          InputsUdpArray{ InputsUdpArgs{...} }
+//	InputsUdpArray{ InputsUdpArgs{...} }
 type InputsUdpArrayInput interface {
 	pulumi.Input
 
@@ -290,7 +293,7 @@ func (i InputsUdpArray) ToInputsUdpArrayOutputWithContext(ctx context.Context) I
 // InputsUdpMapInput is an input type that accepts InputsUdpMap and InputsUdpMapOutput values.
 // You can construct a concrete instance of `InputsUdpMapInput` via:
 //
-//          InputsUdpMap{ "key": InputsUdpArgs{...} }
+//	InputsUdpMap{ "key": InputsUdpArgs{...} }
 type InputsUdpMapInput interface {
 	pulumi.Input
 
@@ -324,6 +327,72 @@ func (o InputsUdpOutput) ToInputsUdpOutput() InputsUdpOutput {
 
 func (o InputsUdpOutput) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o InputsUdpOutput) Acl() InputsUdpAclOutput {
+	return o.ApplyT(func(v *InputsUdp) InputsUdpAclOutput { return v.Acl }).(InputsUdpAclOutput)
+}
+
+// Valid values: (ip | dns | none)
+// Set the host for the remote server that is sending data.
+// ip sets the host to the IP address of the remote server sending data.
+// dns sets the host to the reverse DNS entry for the IP address of the remote server sending data.
+// none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
+// Default value is dns.
+func (o InputsUdpOutput) ConnectionHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.ConnectionHost }).(pulumi.StringOutput)
+}
+
+// Indicates if input is disabled.
+func (o InputsUdpOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
+func (o InputsUdpOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+}
+
+// Which index events from this input should be stored in. Defaults to default.
+func (o InputsUdpOutput) Index() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.Index }).(pulumi.StringOutput)
+}
+
+// The UDP port that this input should listen on.
+func (o InputsUdpOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
+func (o InputsUdpOutput) NoAppendingTimestamp() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.BoolOutput { return v.NoAppendingTimestamp }).(pulumi.BoolOutput)
+}
+
+// If set to true, Splunk software does not remove the priority field from incoming syslog events.
+func (o InputsUdpOutput) NoPriorityStripping() pulumi.BoolOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.BoolOutput { return v.NoPriorityStripping }).(pulumi.BoolOutput)
+}
+
+// Which queue events from this input should be sent to. Generally this does not need to be changed.
+func (o InputsUdpOutput) Queue() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.Queue }).(pulumi.StringOutput)
+}
+
+// Restrict incoming connections on this port to the host specified here.
+// If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
+func (o InputsUdpOutput) RestrictToHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.RestrictToHost }).(pulumi.StringOutput)
+}
+
+// The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
+func (o InputsUdpOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+}
+
+// The value to populate in the sourcetype field for incoming events.
+func (o InputsUdpOutput) Sourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *InputsUdp) pulumi.StringOutput { return v.Sourcetype }).(pulumi.StringOutput)
 }
 
 type InputsUdpArrayOutput struct{ *pulumi.OutputState }

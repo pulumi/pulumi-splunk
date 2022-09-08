@@ -20,23 +20,26 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewGlobalHttpEventCollector(ctx, "http", &splunk.GlobalHttpEventCollectorArgs{
-// 			Disabled:  pulumi.Bool(false),
-// 			EnableSsl: pulumi.Bool(true),
-// 			Port:      pulumi.Int(8088),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewGlobalHttpEventCollector(ctx, "http", &splunk.GlobalHttpEventCollectorArgs{
+//				Disabled:  pulumi.Bool(false),
+//				EnableSsl: pulumi.Bool(true),
+//				Port:      pulumi.Int(8088),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type GlobalHttpEventCollector struct {
 	pulumi.CustomResourceState
@@ -189,7 +192,7 @@ func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutputWithContext(c
 // GlobalHttpEventCollectorArrayInput is an input type that accepts GlobalHttpEventCollectorArray and GlobalHttpEventCollectorArrayOutput values.
 // You can construct a concrete instance of `GlobalHttpEventCollectorArrayInput` via:
 //
-//          GlobalHttpEventCollectorArray{ GlobalHttpEventCollectorArgs{...} }
+//	GlobalHttpEventCollectorArray{ GlobalHttpEventCollectorArgs{...} }
 type GlobalHttpEventCollectorArrayInput interface {
 	pulumi.Input
 
@@ -214,7 +217,7 @@ func (i GlobalHttpEventCollectorArray) ToGlobalHttpEventCollectorArrayOutputWith
 // GlobalHttpEventCollectorMapInput is an input type that accepts GlobalHttpEventCollectorMap and GlobalHttpEventCollectorMapOutput values.
 // You can construct a concrete instance of `GlobalHttpEventCollectorMapInput` via:
 //
-//          GlobalHttpEventCollectorMap{ "key": GlobalHttpEventCollectorArgs{...} }
+//	GlobalHttpEventCollectorMap{ "key": GlobalHttpEventCollectorArgs{...} }
 type GlobalHttpEventCollectorMapInput interface {
 	pulumi.Input
 
@@ -248,6 +251,42 @@ func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorOutput() Globa
 
 func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorOutputWithContext(ctx context.Context) GlobalHttpEventCollectorOutput {
 	return o
+}
+
+// Number of threads used by HTTP Input server.
+func (o GlobalHttpEventCollectorOutput) DedicatedIoThreads() pulumi.IntOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.IntOutput { return v.DedicatedIoThreads }).(pulumi.IntOutput)
+}
+
+// Input disabled indicator.
+func (o GlobalHttpEventCollectorOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
+func (o GlobalHttpEventCollectorOutput) EnableSsl() pulumi.BoolOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.BoolOutput { return v.EnableSsl }).(pulumi.BoolOutput)
+}
+
+// Maximum number of simultaneous HTTP connections accepted. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
+func (o GlobalHttpEventCollectorOutput) MaxSockets() pulumi.IntOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.IntOutput { return v.MaxSockets }).(pulumi.IntOutput)
+}
+
+// Maximum number of threads that can be used by active HTTP transactions. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
+func (o GlobalHttpEventCollectorOutput) MaxThreads() pulumi.IntOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.IntOutput { return v.MaxThreads }).(pulumi.IntOutput)
+}
+
+// HTTP data input IP port.
+func (o GlobalHttpEventCollectorOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+}
+
+// Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
+// Copy the full contents of the splunkHttpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunkHttpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
+func (o GlobalHttpEventCollectorOutput) UseDeploymentServer() pulumi.IntOutput {
+	return o.ApplyT(func(v *GlobalHttpEventCollector) pulumi.IntOutput { return v.UseDeploymentServer }).(pulumi.IntOutput)
 }
 
 type GlobalHttpEventCollectorArrayOutput struct{ *pulumi.OutputState }

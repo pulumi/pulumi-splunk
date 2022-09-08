@@ -17,25 +17,23 @@ namespace Pulumi.Splunk
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var monitor = new Splunk.InputsMonitor("monitor", new()
     ///     {
-    ///         var monitor = new Splunk.InputsMonitor("monitor", new Splunk.InputsMonitorArgs
-    ///         {
-    ///             Recursive = true,
-    ///             Sourcetype = "text",
-    ///         });
-    ///     }
+    ///         Recursive = true,
+    ///         Sourcetype = "text",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsMonitor:InputsMonitor")]
-    public partial class InputsMonitor : Pulumi.CustomResource
+    public partial class InputsMonitor : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -177,7 +175,7 @@ namespace Pulumi.Splunk
         }
     }
 
-    public sealed class InputsMonitorArgs : Pulumi.ResourceArgs
+    public sealed class InputsMonitorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -278,9 +276,10 @@ namespace Pulumi.Splunk
         public InputsMonitorArgs()
         {
         }
+        public static new InputsMonitorArgs Empty => new InputsMonitorArgs();
     }
 
-    public sealed class InputsMonitorState : Pulumi.ResourceArgs
+    public sealed class InputsMonitorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
@@ -381,5 +380,6 @@ namespace Pulumi.Splunk
         public InputsMonitorState()
         {
         }
+        public static new InputsMonitorState Empty => new InputsMonitorState();
     }
 }

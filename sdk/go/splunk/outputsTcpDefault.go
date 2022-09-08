@@ -20,26 +20,29 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewOutputsTcpDefault(ctx, "tcpDefault", &splunk.OutputsTcpDefaultArgs{
-// 			DefaultGroup:          pulumi.String("test-indexers"),
-// 			Disabled:              pulumi.Bool(false),
-// 			DropEventsOnQueueFull: pulumi.Int(60),
-// 			IndexAndForward:       pulumi.Bool(true),
-// 			MaxQueueSize:          pulumi.String("100KB"),
-// 			SendCookedData:        pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpDefault(ctx, "tcpDefault", &splunk.OutputsTcpDefaultArgs{
+//				DefaultGroup:          pulumi.String("test-indexers"),
+//				Disabled:              pulumi.Bool(false),
+//				DropEventsOnQueueFull: pulumi.Int(60),
+//				IndexAndForward:       pulumi.Bool(true),
+//				MaxQueueSize:          pulumi.String("100KB"),
+//				SendCookedData:        pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type OutputsTcpDefault struct {
 	pulumi.CustomResourceState
@@ -267,7 +270,7 @@ func (i *OutputsTcpDefault) ToOutputsTcpDefaultOutputWithContext(ctx context.Con
 // OutputsTcpDefaultArrayInput is an input type that accepts OutputsTcpDefaultArray and OutputsTcpDefaultArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpDefaultArrayInput` via:
 //
-//          OutputsTcpDefaultArray{ OutputsTcpDefaultArgs{...} }
+//	OutputsTcpDefaultArray{ OutputsTcpDefaultArgs{...} }
 type OutputsTcpDefaultArrayInput interface {
 	pulumi.Input
 
@@ -292,7 +295,7 @@ func (i OutputsTcpDefaultArray) ToOutputsTcpDefaultArrayOutputWithContext(ctx co
 // OutputsTcpDefaultMapInput is an input type that accepts OutputsTcpDefaultMap and OutputsTcpDefaultMapOutput values.
 // You can construct a concrete instance of `OutputsTcpDefaultMapInput` via:
 //
-//          OutputsTcpDefaultMap{ "key": OutputsTcpDefaultArgs{...} }
+//	OutputsTcpDefaultMap{ "key": OutputsTcpDefaultArgs{...} }
 type OutputsTcpDefaultMapInput interface {
 	pulumi.Input
 
@@ -326,6 +329,63 @@ func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutput() OutputsTcpDefaultOu
 
 func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutputWithContext(ctx context.Context) OutputsTcpDefaultOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o OutputsTcpDefaultOutput) Acl() OutputsTcpDefaultAclOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) OutputsTcpDefaultAclOutput { return v.Acl }).(OutputsTcpDefaultAclOutput)
+}
+
+// Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
+// The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
+func (o OutputsTcpDefaultOutput) DefaultGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.StringOutput { return v.DefaultGroup }).(pulumi.StringOutput)
+}
+
+// Disables default tcpout settings
+func (o OutputsTcpDefaultOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
+// <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
+// Setting this to -1 or 0 causes the output queue to block when it gets full, which causes further blocking up the processing chain. If any target group queue is blocked, no more data reaches any other target group.
+// Using auto load-balancing is the best way to minimize this condition, because, in that case, multiple receivers must be down (or jammed up) before queue blocking can occur.
+func (o OutputsTcpDefaultOutput) DropEventsOnQueueFull() pulumi.IntOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.IntOutput { return v.DropEventsOnQueueFull }).(pulumi.IntOutput)
+}
+
+// How often (in seconds) to send a heartbeat packet to the receiving server.
+// Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
+func (o OutputsTcpDefaultOutput) HeartbeatFrequency() pulumi.IntOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.IntOutput { return v.HeartbeatFrequency }).(pulumi.IntOutput)
+}
+
+// Specifies whether to index all data locally, in addition to forwarding it. Defaults to false.
+// This is known as an "index-and-forward" configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
+func (o OutputsTcpDefaultOutput) IndexAndForward() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.BoolOutput { return v.IndexAndForward }).(pulumi.BoolOutput)
+}
+
+// Specify an integer or integer[KB|MB|GB].
+// <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
+// Although the wait queue and the output queues are both configured by this attribute, they are separate queues. The setting determines the maximum size of the queue in-memory (RAM) buffer.
+// For heavy forwarders sending parsed data, maxQueueSize is the maximum number of events. Since events are typically much shorter than data blocks, the memory consumed by the queue on a parsing forwarder is likely to be much smaller than on a non-parsing forwarder, if you use this version of the setting.
+// If specified as a lone integer (for example, maxQueueSize=100), maxQueueSize indicates the maximum number of queued events (for parsed data) or blocks of data (for unparsed data). A block of data is approximately 64KB. For non-parsing forwarders, such as universal forwarders, that send unparsed data, maxQueueSize is the maximum number of data blocks.
+// If specified as an integer followed by KB, MB, or GB (for example, maxQueueSize=100MB), maxQueueSize indicates the maximum RAM allocated to the queue buffer. Defaults to 500KB (which means a maximum size of 500KB for the output queue and 1500KB for the wait queue, if any).
+func (o OutputsTcpDefaultOutput) MaxQueueSize() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.StringOutput { return v.MaxQueueSize }).(pulumi.StringOutput)
+}
+
+// Configuration to be edited. The only valid value is "tcpout".
+func (o OutputsTcpDefaultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
+// Set to false if you are sending to a third-party system.
+func (o OutputsTcpDefaultOutput) SendCookedData() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpDefault) pulumi.BoolOutput { return v.SendCookedData }).(pulumi.BoolOutput)
 }
 
 type OutputsTcpDefaultArrayOutput struct{ *pulumi.OutputState }

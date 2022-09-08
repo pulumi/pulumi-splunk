@@ -21,28 +21,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := splunk.NewOutputsTcpGroup(ctx, "tcpGroup", &splunk.OutputsTcpGroupArgs{
-// 			Disabled:              pulumi.Bool(false),
-// 			DropEventsOnQueueFull: pulumi.Int(60),
-// 			MaxQueueSize:          pulumi.String("100KB"),
-// 			SendCookedData:        pulumi.Bool(true),
-// 			Servers: pulumi.StringArray{
-// 				pulumi.String("1.1.1.1:1234"),
-// 				pulumi.String("2.2.2.2:1234"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpGroup(ctx, "tcpGroup", &splunk.OutputsTcpGroupArgs{
+//				Disabled:              pulumi.Bool(false),
+//				DropEventsOnQueueFull: pulumi.Int(60),
+//				MaxQueueSize:          pulumi.String("100KB"),
+//				SendCookedData:        pulumi.Bool(true),
+//				Servers: pulumi.StringArray{
+//					pulumi.String("1.1.1.1:1234"),
+//					pulumi.String("2.2.2.2:1234"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type OutputsTcpGroup struct {
 	pulumi.CustomResourceState
@@ -283,7 +286,7 @@ func (i *OutputsTcpGroup) ToOutputsTcpGroupOutputWithContext(ctx context.Context
 // OutputsTcpGroupArrayInput is an input type that accepts OutputsTcpGroupArray and OutputsTcpGroupArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpGroupArrayInput` via:
 //
-//          OutputsTcpGroupArray{ OutputsTcpGroupArgs{...} }
+//	OutputsTcpGroupArray{ OutputsTcpGroupArgs{...} }
 type OutputsTcpGroupArrayInput interface {
 	pulumi.Input
 
@@ -308,7 +311,7 @@ func (i OutputsTcpGroupArray) ToOutputsTcpGroupArrayOutputWithContext(ctx contex
 // OutputsTcpGroupMapInput is an input type that accepts OutputsTcpGroupMap and OutputsTcpGroupMapOutput values.
 // You can construct a concrete instance of `OutputsTcpGroupMapInput` via:
 //
-//          OutputsTcpGroupMap{ "key": OutputsTcpGroupArgs{...} }
+//	OutputsTcpGroupMap{ "key": OutputsTcpGroupArgs{...} }
 type OutputsTcpGroupMapInput interface {
 	pulumi.Input
 
@@ -342,6 +345,71 @@ func (o OutputsTcpGroupOutput) ToOutputsTcpGroupOutput() OutputsTcpGroupOutput {
 
 func (o OutputsTcpGroupOutput) ToOutputsTcpGroupOutputWithContext(ctx context.Context) OutputsTcpGroupOutput {
 	return o
+}
+
+// The app/user context that is the namespace for the resource
+func (o OutputsTcpGroupOutput) Acl() OutputsTcpGroupAclOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) OutputsTcpGroupAclOutput { return v.Acl }).(OutputsTcpGroupAclOutput)
+}
+
+// If true, forwarder sends compressed data. If set to true, the receiver port must also have compression turned on.
+func (o OutputsTcpGroupOutput) Compressed() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.BoolOutput { return v.Compressed }).(pulumi.BoolOutput)
+}
+
+// If true, disables the group.
+func (o OutputsTcpGroupOutput) Disabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.BoolOutput { return v.Disabled }).(pulumi.BoolOutput)
+}
+
+// If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
+// <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
+// Setting this to -1 or 0 causes the output queue to block when it gets full, which causes further blocking up the processing chain. If any target group queue is blocked, no more data reaches any other target group.
+// Using auto load-balancing is the best way to minimize this condition, because, in that case, multiple receivers must be down (or jammed up) before queue blocking can occur.
+func (o OutputsTcpGroupOutput) DropEventsOnQueueFull() pulumi.IntOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.IntOutput { return v.DropEventsOnQueueFull }).(pulumi.IntOutput)
+}
+
+// How often (in seconds) to send a heartbeat packet to the receiving server.
+// Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
+func (o OutputsTcpGroupOutput) HeartbeatFrequency() pulumi.IntOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.IntOutput { return v.HeartbeatFrequency }).(pulumi.IntOutput)
+}
+
+// Specify an integer or integer[KB|MB|GB].
+// <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
+// Although the wait queue and the output queues are both configured by this attribute, they are separate queues. The setting determines the maximum size of the queue in-memory (RAM) buffer.
+// For heavy forwarders sending parsed data, maxQueueSize is the maximum number of events. Since events are typically much shorter than data blocks, the memory consumed by the queue on a parsing forwarder is likely to be much smaller than on a non-parsing forwarder, if you use this version of the setting.
+// If specified as a lone integer (for example, maxQueueSize=100), maxQueueSize indicates the maximum number of queued events (for parsed data) or blocks of data (for unparsed data). A block of data is approximately 64KB. For non-parsing forwarders, such as universal forwarders, that send unparsed data, maxQueueSize is the maximum number of data blocks.
+// If specified as an integer followed by KB, MB, or GB (for example, maxQueueSize=100MB), maxQueueSize indicates the maximum RAM allocated to the queue buffer. Defaults to 500KB (which means a maximum size of 500KB for the output queue and 1500KB for the wait queue, if any).
+func (o OutputsTcpGroupOutput) MaxQueueSize() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.StringOutput { return v.MaxQueueSize }).(pulumi.StringOutput)
+}
+
+// Valid values: (tcpout | syslog). Specifies the type of output processor.
+func (o OutputsTcpGroupOutput) Method() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.StringOutput { return v.Method }).(pulumi.StringOutput)
+}
+
+// The name of the group of receivers.
+func (o OutputsTcpGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
+// Set to false if you are sending to a third-party system.
+func (o OutputsTcpGroupOutput) SendCookedData() pulumi.BoolOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.BoolOutput { return v.SendCookedData }).(pulumi.BoolOutput)
+}
+
+// Comma-separated list of servers to include in the group.
+func (o OutputsTcpGroupOutput) Servers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.StringArrayOutput { return v.Servers }).(pulumi.StringArrayOutput)
+}
+
+// Token value generated by the indexer after configuration.
+func (o OutputsTcpGroupOutput) Token() pulumi.StringOutput {
+	return o.ApplyT(func(v *OutputsTcpGroup) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
 }
 
 type OutputsTcpGroupArrayOutput struct{ *pulumi.OutputState }
