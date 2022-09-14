@@ -35,6 +35,141 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Import(name="actionCreateXsoarIncident")
+    private @Nullable Output<String> actionCreateXsoarIncident;
+
+    /**
+     * @return Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncident() {
+        return Optional.ofNullable(this.actionCreateXsoarIncident);
+    }
+
+    /**
+     * XSOAR custom incident fields (should be a comma separated list)
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamCustomFields")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamCustomFields;
+
+    /**
+     * @return XSOAR custom incident fields (should be a comma separated list)
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamCustomFields() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamCustomFields);
+    }
+
+    /**
+     * XSOAR incident description
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamDetails")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamDetails;
+
+    /**
+     * @return XSOAR incident description
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamDetails() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamDetails);
+    }
+
+    /**
+     * XSOAR incident name
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamIncidentName")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamIncidentName;
+
+    /**
+     * @return XSOAR incident name
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamIncidentName() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamIncidentName);
+    }
+
+    /**
+     * XSOAR incident time
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamOccurred")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamOccurred;
+
+    /**
+     * @return XSOAR incident time
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamOccurred() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamOccurred);
+    }
+
+    /**
+     * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamSendAllServers")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamSendAllServers;
+
+    /**
+     * @return Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamSendAllServers() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamSendAllServers);
+    }
+
+    /**
+     * XSOAR Server instance URL (Should start with https:// || http://)
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamServerUrl")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamServerUrl;
+
+    /**
+     * @return XSOAR Server instance URL (Should start with https:// || http://)
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamServerUrl() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamServerUrl);
+    }
+
+    /**
+     * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamSeverity")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamSeverity;
+
+    /**
+     * @return XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamSeverity() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamSeverity);
+    }
+
+    /**
+     * XSOAR incident type
+     * 
+     */
+    @Import(name="actionCreateXsoarIncidentParamType")
+    private @Nullable Output<String> actionCreateXsoarIncidentParamType;
+
+    /**
+     * @return XSOAR incident type
+     * 
+     */
+    public Optional<Output<String>> actionCreateXsoarIncidentParamType() {
+        return Optional.ofNullable(this.actionCreateXsoarIncidentParamType);
+    }
+
+    /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      * 
      */
@@ -2108,6 +2243,15 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
 
     private SavedSearchesArgs(SavedSearchesArgs $) {
         this.acl = $.acl;
+        this.actionCreateXsoarIncident = $.actionCreateXsoarIncident;
+        this.actionCreateXsoarIncidentParamCustomFields = $.actionCreateXsoarIncidentParamCustomFields;
+        this.actionCreateXsoarIncidentParamDetails = $.actionCreateXsoarIncidentParamDetails;
+        this.actionCreateXsoarIncidentParamIncidentName = $.actionCreateXsoarIncidentParamIncidentName;
+        this.actionCreateXsoarIncidentParamOccurred = $.actionCreateXsoarIncidentParamOccurred;
+        this.actionCreateXsoarIncidentParamSendAllServers = $.actionCreateXsoarIncidentParamSendAllServers;
+        this.actionCreateXsoarIncidentParamServerUrl = $.actionCreateXsoarIncidentParamServerUrl;
+        this.actionCreateXsoarIncidentParamSeverity = $.actionCreateXsoarIncidentParamSeverity;
+        this.actionCreateXsoarIncidentParamType = $.actionCreateXsoarIncidentParamType;
         this.actionEmailAuthPassword = $.actionEmailAuthPassword;
         this.actionEmailAuthUsername = $.actionEmailAuthUsername;
         this.actionEmailBcc = $.actionEmailBcc;
@@ -2285,6 +2429,195 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder acl(SavedSearchesAclArgs acl) {
             return acl(Output.of(acl));
+        }
+
+        /**
+         * @param actionCreateXsoarIncident Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncident(@Nullable Output<String> actionCreateXsoarIncident) {
+            $.actionCreateXsoarIncident = actionCreateXsoarIncident;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncident Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncident(String actionCreateXsoarIncident) {
+            return actionCreateXsoarIncident(Output.of(actionCreateXsoarIncident));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamCustomFields XSOAR custom incident fields (should be a comma separated list)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamCustomFields(@Nullable Output<String> actionCreateXsoarIncidentParamCustomFields) {
+            $.actionCreateXsoarIncidentParamCustomFields = actionCreateXsoarIncidentParamCustomFields;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamCustomFields XSOAR custom incident fields (should be a comma separated list)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamCustomFields(String actionCreateXsoarIncidentParamCustomFields) {
+            return actionCreateXsoarIncidentParamCustomFields(Output.of(actionCreateXsoarIncidentParamCustomFields));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamDetails XSOAR incident description
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamDetails(@Nullable Output<String> actionCreateXsoarIncidentParamDetails) {
+            $.actionCreateXsoarIncidentParamDetails = actionCreateXsoarIncidentParamDetails;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamDetails XSOAR incident description
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamDetails(String actionCreateXsoarIncidentParamDetails) {
+            return actionCreateXsoarIncidentParamDetails(Output.of(actionCreateXsoarIncidentParamDetails));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamIncidentName XSOAR incident name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamIncidentName(@Nullable Output<String> actionCreateXsoarIncidentParamIncidentName) {
+            $.actionCreateXsoarIncidentParamIncidentName = actionCreateXsoarIncidentParamIncidentName;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamIncidentName XSOAR incident name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamIncidentName(String actionCreateXsoarIncidentParamIncidentName) {
+            return actionCreateXsoarIncidentParamIncidentName(Output.of(actionCreateXsoarIncidentParamIncidentName));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamOccurred XSOAR incident time
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamOccurred(@Nullable Output<String> actionCreateXsoarIncidentParamOccurred) {
+            $.actionCreateXsoarIncidentParamOccurred = actionCreateXsoarIncidentParamOccurred;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamOccurred XSOAR incident time
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamOccurred(String actionCreateXsoarIncidentParamOccurred) {
+            return actionCreateXsoarIncidentParamOccurred(Output.of(actionCreateXsoarIncidentParamOccurred));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamSendAllServers Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamSendAllServers(@Nullable Output<String> actionCreateXsoarIncidentParamSendAllServers) {
+            $.actionCreateXsoarIncidentParamSendAllServers = actionCreateXsoarIncidentParamSendAllServers;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamSendAllServers Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamSendAllServers(String actionCreateXsoarIncidentParamSendAllServers) {
+            return actionCreateXsoarIncidentParamSendAllServers(Output.of(actionCreateXsoarIncidentParamSendAllServers));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamServerUrl XSOAR Server instance URL (Should start with https:// || http://)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamServerUrl(@Nullable Output<String> actionCreateXsoarIncidentParamServerUrl) {
+            $.actionCreateXsoarIncidentParamServerUrl = actionCreateXsoarIncidentParamServerUrl;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamServerUrl XSOAR Server instance URL (Should start with https:// || http://)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamServerUrl(String actionCreateXsoarIncidentParamServerUrl) {
+            return actionCreateXsoarIncidentParamServerUrl(Output.of(actionCreateXsoarIncidentParamServerUrl));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamSeverity XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamSeverity(@Nullable Output<String> actionCreateXsoarIncidentParamSeverity) {
+            $.actionCreateXsoarIncidentParamSeverity = actionCreateXsoarIncidentParamSeverity;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamSeverity XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamSeverity(String actionCreateXsoarIncidentParamSeverity) {
+            return actionCreateXsoarIncidentParamSeverity(Output.of(actionCreateXsoarIncidentParamSeverity));
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamType XSOAR incident type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamType(@Nullable Output<String> actionCreateXsoarIncidentParamType) {
+            $.actionCreateXsoarIncidentParamType = actionCreateXsoarIncidentParamType;
+            return this;
+        }
+
+        /**
+         * @param actionCreateXsoarIncidentParamType XSOAR incident type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionCreateXsoarIncidentParamType(String actionCreateXsoarIncidentParamType) {
+            return actionCreateXsoarIncidentParamType(Output.of(actionCreateXsoarIncidentParamType));
         }
 
         /**

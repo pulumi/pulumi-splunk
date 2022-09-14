@@ -70,6 +70,42 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     public readonly acl!: pulumi.Output<outputs.SavedSearchesAcl>;
     /**
+     * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     */
+    public readonly actionCreateXsoarIncident!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR custom incident fields (should be a comma separated list)
+     */
+    public readonly actionCreateXsoarIncidentParamCustomFields!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR incident description
+     */
+    public readonly actionCreateXsoarIncidentParamDetails!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR incident name
+     */
+    public readonly actionCreateXsoarIncidentParamIncidentName!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR incident time
+     */
+    public readonly actionCreateXsoarIncidentParamOccurred!: pulumi.Output<string | undefined>;
+    /**
+     * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     */
+    public readonly actionCreateXsoarIncidentParamSendAllServers!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR Server instance URL (Should start with https:// || http://)
+     */
+    public readonly actionCreateXsoarIncidentParamServerUrl!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     */
+    public readonly actionCreateXsoarIncidentParamSeverity!: pulumi.Output<string | undefined>;
+    /**
+     * XSOAR incident type
+     */
+    public readonly actionCreateXsoarIncidentParamType!: pulumi.Output<string | undefined>;
+    /**
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
     public /*out*/ readonly actionEmail!: pulumi.Output<boolean>;
@@ -656,6 +692,15 @@ export class SavedSearches extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SavedSearchesState | undefined;
             resourceInputs["acl"] = state ? state.acl : undefined;
+            resourceInputs["actionCreateXsoarIncident"] = state ? state.actionCreateXsoarIncident : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = state ? state.actionCreateXsoarIncidentParamCustomFields : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamDetails"] = state ? state.actionCreateXsoarIncidentParamDetails : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamIncidentName"] = state ? state.actionCreateXsoarIncidentParamIncidentName : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamOccurred"] = state ? state.actionCreateXsoarIncidentParamOccurred : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamSendAllServers"] = state ? state.actionCreateXsoarIncidentParamSendAllServers : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = state ? state.actionCreateXsoarIncidentParamServerUrl : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamSeverity"] = state ? state.actionCreateXsoarIncidentParamSeverity : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamType"] = state ? state.actionCreateXsoarIncidentParamType : undefined;
             resourceInputs["actionEmail"] = state ? state.actionEmail : undefined;
             resourceInputs["actionEmailAuthPassword"] = state ? state.actionEmailAuthPassword : undefined;
             resourceInputs["actionEmailAuthUsername"] = state ? state.actionEmailAuthUsername : undefined;
@@ -805,6 +850,15 @@ export class SavedSearches extends pulumi.CustomResource {
                 throw new Error("Missing required property 'search'");
             }
             resourceInputs["acl"] = args ? args.acl : undefined;
+            resourceInputs["actionCreateXsoarIncident"] = args ? args.actionCreateXsoarIncident : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = args ? args.actionCreateXsoarIncidentParamCustomFields : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamDetails"] = args ? args.actionCreateXsoarIncidentParamDetails : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamIncidentName"] = args ? args.actionCreateXsoarIncidentParamIncidentName : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamOccurred"] = args ? args.actionCreateXsoarIncidentParamOccurred : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamSendAllServers"] = args ? args.actionCreateXsoarIncidentParamSendAllServers : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = args ? args.actionCreateXsoarIncidentParamServerUrl : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamSeverity"] = args ? args.actionCreateXsoarIncidentParamSeverity : undefined;
+            resourceInputs["actionCreateXsoarIncidentParamType"] = args ? args.actionCreateXsoarIncidentParamType : undefined;
             resourceInputs["actionEmailAuthPassword"] = args ? args.actionEmailAuthPassword : undefined;
             resourceInputs["actionEmailAuthUsername"] = args ? args.actionEmailAuthUsername : undefined;
             resourceInputs["actionEmailBcc"] = args ? args.actionEmailBcc : undefined;
@@ -962,6 +1016,42 @@ export interface SavedSearchesState {
      * The app/user context that is the namespace for the resource
      */
     acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    /**
+     * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     */
+    actionCreateXsoarIncident?: pulumi.Input<string>;
+    /**
+     * XSOAR custom incident fields (should be a comma separated list)
+     */
+    actionCreateXsoarIncidentParamCustomFields?: pulumi.Input<string>;
+    /**
+     * XSOAR incident description
+     */
+    actionCreateXsoarIncidentParamDetails?: pulumi.Input<string>;
+    /**
+     * XSOAR incident name
+     */
+    actionCreateXsoarIncidentParamIncidentName?: pulumi.Input<string>;
+    /**
+     * XSOAR incident time
+     */
+    actionCreateXsoarIncidentParamOccurred?: pulumi.Input<string>;
+    /**
+     * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     */
+    actionCreateXsoarIncidentParamSendAllServers?: pulumi.Input<string>;
+    /**
+     * XSOAR Server instance URL (Should start with https:// || http://)
+     */
+    actionCreateXsoarIncidentParamServerUrl?: pulumi.Input<string>;
+    /**
+     * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     */
+    actionCreateXsoarIncidentParamSeverity?: pulumi.Input<string>;
+    /**
+     * XSOAR incident type
+     */
+    actionCreateXsoarIncidentParamType?: pulumi.Input<string>;
     /**
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -1544,6 +1634,42 @@ export interface SavedSearchesArgs {
      * The app/user context that is the namespace for the resource
      */
     acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    /**
+     * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     */
+    actionCreateXsoarIncident?: pulumi.Input<string>;
+    /**
+     * XSOAR custom incident fields (should be a comma separated list)
+     */
+    actionCreateXsoarIncidentParamCustomFields?: pulumi.Input<string>;
+    /**
+     * XSOAR incident description
+     */
+    actionCreateXsoarIncidentParamDetails?: pulumi.Input<string>;
+    /**
+     * XSOAR incident name
+     */
+    actionCreateXsoarIncidentParamIncidentName?: pulumi.Input<string>;
+    /**
+     * XSOAR incident time
+     */
+    actionCreateXsoarIncidentParamOccurred?: pulumi.Input<string>;
+    /**
+     * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     */
+    actionCreateXsoarIncidentParamSendAllServers?: pulumi.Input<string>;
+    /**
+     * XSOAR Server instance URL (Should start with https:// || http://)
+     */
+    actionCreateXsoarIncidentParamServerUrl?: pulumi.Input<string>;
+    /**
+     * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     */
+    actionCreateXsoarIncidentParamSeverity?: pulumi.Input<string>;
+    /**
+     * XSOAR incident type
+     */
+    actionCreateXsoarIncidentParamType?: pulumi.Input<string>;
     /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      */

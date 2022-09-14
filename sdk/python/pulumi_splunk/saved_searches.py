@@ -18,6 +18,15 @@ class SavedSearchesArgs:
     def __init__(__self__, *,
                  search: pulumi.Input[str],
                  acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+                 action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
                  action_email_auth_password: Optional[pulumi.Input[str]] = None,
                  action_email_auth_username: Optional[pulumi.Input[str]] = None,
                  action_email_bcc: Optional[pulumi.Input[str]] = None,
@@ -159,6 +168,15 @@ class SavedSearchesArgs:
         The set of arguments for constructing a SavedSearches resource.
         :param pulumi.Input[str] search: Required when creating a new search.
         :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_details: XSOAR incident description
+        :param pulumi.Input[str] action_create_xsoar_incident_param_incident_name: XSOAR incident name
+        :param pulumi.Input[str] action_create_xsoar_incident_param_occurred: XSOAR incident time
+        :param pulumi.Input[str] action_create_xsoar_incident_param_send_all_servers: Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_server_url: XSOAR Server instance URL (Should start with https:// || http://)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_severity: XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_type: XSOAR incident type
         :param pulumi.Input[str] action_email_auth_password: The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         :param pulumi.Input[str] action_email_auth_username: The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
         :param pulumi.Input[str] action_email_bcc: BCC email address to use if action.email is enabled.
@@ -300,6 +318,24 @@ class SavedSearchesArgs:
         pulumi.set(__self__, "search", search)
         if acl is not None:
             pulumi.set(__self__, "acl", acl)
+        if action_create_xsoar_incident is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident", action_create_xsoar_incident)
+        if action_create_xsoar_incident_param_custom_fields is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_custom_fields", action_create_xsoar_incident_param_custom_fields)
+        if action_create_xsoar_incident_param_details is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_details", action_create_xsoar_incident_param_details)
+        if action_create_xsoar_incident_param_incident_name is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_incident_name", action_create_xsoar_incident_param_incident_name)
+        if action_create_xsoar_incident_param_occurred is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_occurred", action_create_xsoar_incident_param_occurred)
+        if action_create_xsoar_incident_param_send_all_servers is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_send_all_servers", action_create_xsoar_incident_param_send_all_servers)
+        if action_create_xsoar_incident_param_server_url is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_server_url", action_create_xsoar_incident_param_server_url)
+        if action_create_xsoar_incident_param_severity is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_severity", action_create_xsoar_incident_param_severity)
+        if action_create_xsoar_incident_param_type is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_type", action_create_xsoar_incident_param_type)
         if action_email_auth_password is not None:
             pulumi.set(__self__, "action_email_auth_password", action_email_auth_password)
         if action_email_auth_username is not None:
@@ -598,6 +634,114 @@ class SavedSearchesArgs:
     @acl.setter
     def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
         pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncident")
+    def action_create_xsoar_incident(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_create_xsoar_incident")
+
+    @action_create_xsoar_incident.setter
+    def action_create_xsoar_incident(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamCustomFields")
+    def action_create_xsoar_incident_param_custom_fields(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR custom incident fields (should be a comma separated list)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_custom_fields")
+
+    @action_create_xsoar_incident_param_custom_fields.setter
+    def action_create_xsoar_incident_param_custom_fields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_custom_fields", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamDetails")
+    def action_create_xsoar_incident_param_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident description
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_details")
+
+    @action_create_xsoar_incident_param_details.setter
+    def action_create_xsoar_incident_param_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_details", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamIncidentName")
+    def action_create_xsoar_incident_param_incident_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident name
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_incident_name")
+
+    @action_create_xsoar_incident_param_incident_name.setter
+    def action_create_xsoar_incident_param_incident_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_incident_name", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamOccurred")
+    def action_create_xsoar_incident_param_occurred(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident time
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_occurred")
+
+    @action_create_xsoar_incident_param_occurred.setter
+    def action_create_xsoar_incident_param_occurred(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_occurred", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamSendAllServers")
+    def action_create_xsoar_incident_param_send_all_servers(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_send_all_servers")
+
+    @action_create_xsoar_incident_param_send_all_servers.setter
+    def action_create_xsoar_incident_param_send_all_servers(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_send_all_servers", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamServerUrl")
+    def action_create_xsoar_incident_param_server_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR Server instance URL (Should start with https:// || http://)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_server_url")
+
+    @action_create_xsoar_incident_param_server_url.setter
+    def action_create_xsoar_incident_param_server_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_server_url", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamSeverity")
+    def action_create_xsoar_incident_param_severity(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_severity")
+
+    @action_create_xsoar_incident_param_severity.setter
+    def action_create_xsoar_incident_param_severity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_severity", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamType")
+    def action_create_xsoar_incident_param_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident type
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_type")
+
+    @action_create_xsoar_incident_param_type.setter
+    def action_create_xsoar_incident_param_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_type", value)
 
     @property
     @pulumi.getter(name="actionEmailAuthPassword")
@@ -2248,6 +2392,15 @@ class SavedSearchesArgs:
 class _SavedSearchesState:
     def __init__(__self__, *,
                  acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+                 action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
                  action_email: Optional[pulumi.Input[bool]] = None,
                  action_email_auth_password: Optional[pulumi.Input[str]] = None,
                  action_email_auth_username: Optional[pulumi.Input[str]] = None,
@@ -2394,6 +2547,15 @@ class _SavedSearchesState:
         """
         Input properties used for looking up and filtering SavedSearches resources.
         :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_details: XSOAR incident description
+        :param pulumi.Input[str] action_create_xsoar_incident_param_incident_name: XSOAR incident name
+        :param pulumi.Input[str] action_create_xsoar_incident_param_occurred: XSOAR incident time
+        :param pulumi.Input[str] action_create_xsoar_incident_param_send_all_servers: Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_server_url: XSOAR Server instance URL (Should start with https:// || http://)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_severity: XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_type: XSOAR incident type
         :param pulumi.Input[bool] action_email: The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_email_auth_password: The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         :param pulumi.Input[str] action_email_auth_username: The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
@@ -2540,6 +2702,24 @@ class _SavedSearchesState:
         """
         if acl is not None:
             pulumi.set(__self__, "acl", acl)
+        if action_create_xsoar_incident is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident", action_create_xsoar_incident)
+        if action_create_xsoar_incident_param_custom_fields is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_custom_fields", action_create_xsoar_incident_param_custom_fields)
+        if action_create_xsoar_incident_param_details is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_details", action_create_xsoar_incident_param_details)
+        if action_create_xsoar_incident_param_incident_name is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_incident_name", action_create_xsoar_incident_param_incident_name)
+        if action_create_xsoar_incident_param_occurred is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_occurred", action_create_xsoar_incident_param_occurred)
+        if action_create_xsoar_incident_param_send_all_servers is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_send_all_servers", action_create_xsoar_incident_param_send_all_servers)
+        if action_create_xsoar_incident_param_server_url is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_server_url", action_create_xsoar_incident_param_server_url)
+        if action_create_xsoar_incident_param_severity is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_severity", action_create_xsoar_incident_param_severity)
+        if action_create_xsoar_incident_param_type is not None:
+            pulumi.set(__self__, "action_create_xsoar_incident_param_type", action_create_xsoar_incident_param_type)
         if action_email is not None:
             pulumi.set(__self__, "action_email", action_email)
         if action_email_auth_password is not None:
@@ -2838,6 +3018,114 @@ class _SavedSearchesState:
     @acl.setter
     def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
         pulumi.set(self, "acl", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncident")
+    def action_create_xsoar_incident(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_create_xsoar_incident")
+
+    @action_create_xsoar_incident.setter
+    def action_create_xsoar_incident(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamCustomFields")
+    def action_create_xsoar_incident_param_custom_fields(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR custom incident fields (should be a comma separated list)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_custom_fields")
+
+    @action_create_xsoar_incident_param_custom_fields.setter
+    def action_create_xsoar_incident_param_custom_fields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_custom_fields", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamDetails")
+    def action_create_xsoar_incident_param_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident description
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_details")
+
+    @action_create_xsoar_incident_param_details.setter
+    def action_create_xsoar_incident_param_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_details", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamIncidentName")
+    def action_create_xsoar_incident_param_incident_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident name
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_incident_name")
+
+    @action_create_xsoar_incident_param_incident_name.setter
+    def action_create_xsoar_incident_param_incident_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_incident_name", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamOccurred")
+    def action_create_xsoar_incident_param_occurred(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident time
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_occurred")
+
+    @action_create_xsoar_incident_param_occurred.setter
+    def action_create_xsoar_incident_param_occurred(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_occurred", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamSendAllServers")
+    def action_create_xsoar_incident_param_send_all_servers(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_send_all_servers")
+
+    @action_create_xsoar_incident_param_send_all_servers.setter
+    def action_create_xsoar_incident_param_send_all_servers(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_send_all_servers", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamServerUrl")
+    def action_create_xsoar_incident_param_server_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR Server instance URL (Should start with https:// || http://)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_server_url")
+
+    @action_create_xsoar_incident_param_server_url.setter
+    def action_create_xsoar_incident_param_server_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_server_url", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamSeverity")
+    def action_create_xsoar_incident_param_severity(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_severity")
+
+    @action_create_xsoar_incident_param_severity.setter
+    def action_create_xsoar_incident_param_severity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_severity", value)
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamType")
+    def action_create_xsoar_incident_param_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        XSOAR incident type
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_type")
+
+    @action_create_xsoar_incident_param_type.setter
+    def action_create_xsoar_incident_param_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_create_xsoar_incident_param_type", value)
 
     @property
     @pulumi.getter(name="actionEmail")
@@ -4562,6 +4850,15 @@ class SavedSearches(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acl: Optional[pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']]] = None,
+                 action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
                  action_email_auth_password: Optional[pulumi.Input[str]] = None,
                  action_email_auth_username: Optional[pulumi.Input[str]] = None,
                  action_email_bcc: Optional[pulumi.Input[str]] = None,
@@ -4735,6 +5032,15 @@ class SavedSearches(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_details: XSOAR incident description
+        :param pulumi.Input[str] action_create_xsoar_incident_param_incident_name: XSOAR incident name
+        :param pulumi.Input[str] action_create_xsoar_incident_param_occurred: XSOAR incident time
+        :param pulumi.Input[str] action_create_xsoar_incident_param_send_all_servers: Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_server_url: XSOAR Server instance URL (Should start with https:// || http://)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_severity: XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_type: XSOAR incident type
         :param pulumi.Input[str] action_email_auth_password: The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         :param pulumi.Input[str] action_email_auth_username: The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
         :param pulumi.Input[str] action_email_bcc: BCC email address to use if action.email is enabled.
@@ -4927,6 +5233,15 @@ class SavedSearches(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acl: Optional[pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']]] = None,
+                 action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
                  action_email_auth_password: Optional[pulumi.Input[str]] = None,
                  action_email_auth_username: Optional[pulumi.Input[str]] = None,
                  action_email_bcc: Optional[pulumi.Input[str]] = None,
@@ -5075,6 +5390,15 @@ class SavedSearches(pulumi.CustomResource):
             __props__ = SavedSearchesArgs.__new__(SavedSearchesArgs)
 
             __props__.__dict__["acl"] = acl
+            __props__.__dict__["action_create_xsoar_incident"] = action_create_xsoar_incident
+            __props__.__dict__["action_create_xsoar_incident_param_custom_fields"] = action_create_xsoar_incident_param_custom_fields
+            __props__.__dict__["action_create_xsoar_incident_param_details"] = action_create_xsoar_incident_param_details
+            __props__.__dict__["action_create_xsoar_incident_param_incident_name"] = action_create_xsoar_incident_param_incident_name
+            __props__.__dict__["action_create_xsoar_incident_param_occurred"] = action_create_xsoar_incident_param_occurred
+            __props__.__dict__["action_create_xsoar_incident_param_send_all_servers"] = action_create_xsoar_incident_param_send_all_servers
+            __props__.__dict__["action_create_xsoar_incident_param_server_url"] = action_create_xsoar_incident_param_server_url
+            __props__.__dict__["action_create_xsoar_incident_param_severity"] = action_create_xsoar_incident_param_severity
+            __props__.__dict__["action_create_xsoar_incident_param_type"] = action_create_xsoar_incident_param_type
             __props__.__dict__["action_email_auth_password"] = action_email_auth_password
             __props__.__dict__["action_email_auth_username"] = action_email_auth_username
             __props__.__dict__["action_email_bcc"] = action_email_bcc
@@ -5231,6 +5555,15 @@ class SavedSearches(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             acl: Optional[pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']]] = None,
+            action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+            action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
             action_email: Optional[pulumi.Input[bool]] = None,
             action_email_auth_password: Optional[pulumi.Input[str]] = None,
             action_email_auth_username: Optional[pulumi.Input[str]] = None,
@@ -5382,6 +5715,15 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_details: XSOAR incident description
+        :param pulumi.Input[str] action_create_xsoar_incident_param_incident_name: XSOAR incident name
+        :param pulumi.Input[str] action_create_xsoar_incident_param_occurred: XSOAR incident time
+        :param pulumi.Input[str] action_create_xsoar_incident_param_send_all_servers: Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_server_url: XSOAR Server instance URL (Should start with https:// || http://)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_severity: XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        :param pulumi.Input[str] action_create_xsoar_incident_param_type: XSOAR incident type
         :param pulumi.Input[bool] action_email: The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_email_auth_password: The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         :param pulumi.Input[str] action_email_auth_username: The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
@@ -5531,6 +5873,15 @@ class SavedSearches(pulumi.CustomResource):
         __props__ = _SavedSearchesState.__new__(_SavedSearchesState)
 
         __props__.__dict__["acl"] = acl
+        __props__.__dict__["action_create_xsoar_incident"] = action_create_xsoar_incident
+        __props__.__dict__["action_create_xsoar_incident_param_custom_fields"] = action_create_xsoar_incident_param_custom_fields
+        __props__.__dict__["action_create_xsoar_incident_param_details"] = action_create_xsoar_incident_param_details
+        __props__.__dict__["action_create_xsoar_incident_param_incident_name"] = action_create_xsoar_incident_param_incident_name
+        __props__.__dict__["action_create_xsoar_incident_param_occurred"] = action_create_xsoar_incident_param_occurred
+        __props__.__dict__["action_create_xsoar_incident_param_send_all_servers"] = action_create_xsoar_incident_param_send_all_servers
+        __props__.__dict__["action_create_xsoar_incident_param_server_url"] = action_create_xsoar_incident_param_server_url
+        __props__.__dict__["action_create_xsoar_incident_param_severity"] = action_create_xsoar_incident_param_severity
+        __props__.__dict__["action_create_xsoar_incident_param_type"] = action_create_xsoar_incident_param_type
         __props__.__dict__["action_email"] = action_email
         __props__.__dict__["action_email_auth_password"] = action_email_auth_password
         __props__.__dict__["action_email_auth_username"] = action_email_auth_username
@@ -5683,6 +6034,78 @@ class SavedSearches(pulumi.CustomResource):
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncident")
+    def action_create_xsoar_incident(self) -> pulumi.Output[Optional[str]]:
+        """
+        Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_create_xsoar_incident")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamCustomFields")
+    def action_create_xsoar_incident_param_custom_fields(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR custom incident fields (should be a comma separated list)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_custom_fields")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamDetails")
+    def action_create_xsoar_incident_param_details(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR incident description
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_details")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamIncidentName")
+    def action_create_xsoar_incident_param_incident_name(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR incident name
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_incident_name")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamOccurred")
+    def action_create_xsoar_incident_param_occurred(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR incident time
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_occurred")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamSendAllServers")
+    def action_create_xsoar_incident_param_send_all_servers(self) -> pulumi.Output[Optional[str]]:
+        """
+        Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_send_all_servers")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamServerUrl")
+    def action_create_xsoar_incident_param_server_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR Server instance URL (Should start with https:// || http://)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_server_url")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamSeverity")
+    def action_create_xsoar_incident_param_severity(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_severity")
+
+    @property
+    @pulumi.getter(name="actionCreateXsoarIncidentParamType")
+    def action_create_xsoar_incident_param_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        XSOAR incident type
+        """
+        return pulumi.get(self, "action_create_xsoar_incident_param_type")
 
     @property
     @pulumi.getter(name="actionEmail")
