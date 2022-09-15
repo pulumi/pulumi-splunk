@@ -88,6 +88,132 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.acl;
     }
     /**
+     * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Export(name="actionCreateXsoarIncident", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncident;
+
+    /**
+     * @return Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncident() {
+        return Codegen.optional(this.actionCreateXsoarIncident);
+    }
+    /**
+     * XSOAR custom incident fields (should be a comma separated list)
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamCustomFields", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamCustomFields;
+
+    /**
+     * @return XSOAR custom incident fields (should be a comma separated list)
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamCustomFields() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamCustomFields);
+    }
+    /**
+     * XSOAR incident description
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamDetails", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamDetails;
+
+    /**
+     * @return XSOAR incident description
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamDetails() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamDetails);
+    }
+    /**
+     * XSOAR incident name
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamIncidentName", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamIncidentName;
+
+    /**
+     * @return XSOAR incident name
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamIncidentName() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamIncidentName);
+    }
+    /**
+     * XSOAR incident time
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamOccurred", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamOccurred;
+
+    /**
+     * @return XSOAR incident time
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamOccurred() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamOccurred);
+    }
+    /**
+     * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamSendAllServers", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamSendAllServers;
+
+    /**
+     * @return Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamSendAllServers() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamSendAllServers);
+    }
+    /**
+     * XSOAR Server instance URL (Should start with https:// || http://)
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamServerUrl", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamServerUrl;
+
+    /**
+     * @return XSOAR Server instance URL (Should start with https:// || http://)
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamServerUrl() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamServerUrl);
+    }
+    /**
+     * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamSeverity", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamSeverity;
+
+    /**
+     * @return XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamSeverity() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamSeverity);
+    }
+    /**
+     * XSOAR incident type
+     * 
+     */
+    @Export(name="actionCreateXsoarIncidentParamType", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionCreateXsoarIncidentParamType;
+
+    /**
+     * @return XSOAR incident type
+     * 
+     */
+    public Output<Optional<String>> actionCreateXsoarIncidentParamType() {
+        return Codegen.optional(this.actionCreateXsoarIncidentParamType);
+    }
+    /**
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */

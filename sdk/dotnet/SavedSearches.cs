@@ -58,6 +58,60 @@ namespace Pulumi.Splunk
         public Output<Outputs.SavedSearchesAcl> Acl { get; private set; } = null!;
 
         /// <summary>
+        /// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Output("actionCreateXsoarIncident")]
+        public Output<string?> ActionCreateXsoarIncident { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR custom incident fields (should be a comma separated list)
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamCustomFields")]
+        public Output<string?> ActionCreateXsoarIncidentParamCustomFields { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR incident description
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamDetails")]
+        public Output<string?> ActionCreateXsoarIncidentParamDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR incident name
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamIncidentName")]
+        public Output<string?> ActionCreateXsoarIncidentParamIncidentName { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR incident time
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamOccurred")]
+        public Output<string?> ActionCreateXsoarIncidentParamOccurred { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamSendAllServers")]
+        public Output<string?> ActionCreateXsoarIncidentParamSendAllServers { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR Server instance URL (Should start with https:// || http://)
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamServerUrl")]
+        public Output<string?> ActionCreateXsoarIncidentParamServerUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamSeverity")]
+        public Output<string?> ActionCreateXsoarIncidentParamSeverity { get; private set; } = null!;
+
+        /// <summary>
+        /// XSOAR incident type
+        /// </summary>
+        [Output("actionCreateXsoarIncidentParamType")]
+        public Output<string?> ActionCreateXsoarIncidentParamType { get; private set; } = null!;
+
+        /// <summary>
         /// The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         /// </summary>
         [Output("actionEmail")]
@@ -968,6 +1022,60 @@ namespace Pulumi.Splunk
         public Input<Inputs.SavedSearchesAclArgs>? Acl { get; set; }
 
         /// <summary>
+        /// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionCreateXsoarIncident")]
+        public Input<string>? ActionCreateXsoarIncident { get; set; }
+
+        /// <summary>
+        /// XSOAR custom incident fields (should be a comma separated list)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamCustomFields")]
+        public Input<string>? ActionCreateXsoarIncidentParamCustomFields { get; set; }
+
+        /// <summary>
+        /// XSOAR incident description
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamDetails")]
+        public Input<string>? ActionCreateXsoarIncidentParamDetails { get; set; }
+
+        /// <summary>
+        /// XSOAR incident name
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamIncidentName")]
+        public Input<string>? ActionCreateXsoarIncidentParamIncidentName { get; set; }
+
+        /// <summary>
+        /// XSOAR incident time
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamOccurred")]
+        public Input<string>? ActionCreateXsoarIncidentParamOccurred { get; set; }
+
+        /// <summary>
+        /// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamSendAllServers")]
+        public Input<string>? ActionCreateXsoarIncidentParamSendAllServers { get; set; }
+
+        /// <summary>
+        /// XSOAR Server instance URL (Should start with https:// || http://)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamServerUrl")]
+        public Input<string>? ActionCreateXsoarIncidentParamServerUrl { get; set; }
+
+        /// <summary>
+        /// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamSeverity")]
+        public Input<string>? ActionCreateXsoarIncidentParamSeverity { get; set; }
+
+        /// <summary>
+        /// XSOAR incident type
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamType")]
+        public Input<string>? ActionCreateXsoarIncidentParamType { get; set; }
+
+        /// <summary>
         /// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         /// </summary>
         [Input("actionEmailAuthPassword")]
@@ -1808,6 +1916,60 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("acl")]
         public Input<Inputs.SavedSearchesAclGetArgs>? Acl { get; set; }
+
+        /// <summary>
+        /// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionCreateXsoarIncident")]
+        public Input<string>? ActionCreateXsoarIncident { get; set; }
+
+        /// <summary>
+        /// XSOAR custom incident fields (should be a comma separated list)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamCustomFields")]
+        public Input<string>? ActionCreateXsoarIncidentParamCustomFields { get; set; }
+
+        /// <summary>
+        /// XSOAR incident description
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamDetails")]
+        public Input<string>? ActionCreateXsoarIncidentParamDetails { get; set; }
+
+        /// <summary>
+        /// XSOAR incident name
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamIncidentName")]
+        public Input<string>? ActionCreateXsoarIncidentParamIncidentName { get; set; }
+
+        /// <summary>
+        /// XSOAR incident time
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamOccurred")]
+        public Input<string>? ActionCreateXsoarIncidentParamOccurred { get; set; }
+
+        /// <summary>
+        /// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamSendAllServers")]
+        public Input<string>? ActionCreateXsoarIncidentParamSendAllServers { get; set; }
+
+        /// <summary>
+        /// XSOAR Server instance URL (Should start with https:// || http://)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamServerUrl")]
+        public Input<string>? ActionCreateXsoarIncidentParamServerUrl { get; set; }
+
+        /// <summary>
+        /// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamSeverity")]
+        public Input<string>? ActionCreateXsoarIncidentParamSeverity { get; set; }
+
+        /// <summary>
+        /// XSOAR incident type
+        /// </summary>
+        [Input("actionCreateXsoarIncidentParamType")]
+        public Input<string>? ActionCreateXsoarIncidentParamType { get; set; }
 
         /// <summary>
         /// The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.

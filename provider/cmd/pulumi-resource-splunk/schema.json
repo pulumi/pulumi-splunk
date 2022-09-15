@@ -5323,6 +5323,42 @@
                     "$ref": "#/types/splunk:index/SavedSearchesAcl:SavedSearchesAcl",
                     "description": "The app/user context that is the namespace for the resource\n"
                 },
+                "actionCreateXsoarIncident": {
+                    "type": "string",
+                    "description": "Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionCreateXsoarIncidentParamCustomFields": {
+                    "type": "string",
+                    "description": "XSOAR custom incident fields (should be a comma separated list)\n"
+                },
+                "actionCreateXsoarIncidentParamDetails": {
+                    "type": "string",
+                    "description": "XSOAR incident description\n"
+                },
+                "actionCreateXsoarIncidentParamIncidentName": {
+                    "type": "string",
+                    "description": "XSOAR incident name\n"
+                },
+                "actionCreateXsoarIncidentParamOccurred": {
+                    "type": "string",
+                    "description": "XSOAR incident time\n"
+                },
+                "actionCreateXsoarIncidentParamSendAllServers": {
+                    "type": "string",
+                    "description": "Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)\n"
+                },
+                "actionCreateXsoarIncidentParamServerUrl": {
+                    "type": "string",
+                    "description": "XSOAR Server instance URL (Should start with https:// || http://)\n"
+                },
+                "actionCreateXsoarIncidentParamSeverity": {
+                    "type": "string",
+                    "description": "XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)\n"
+                },
+                "actionCreateXsoarIncidentParamType": {
+                    "type": "string",
+                    "description": "XSOAR incident type\n"
+                },
                 "actionEmail": {
                     "type": "boolean",
                     "description": "The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.\n"
@@ -6034,6 +6070,42 @@
                     "$ref": "#/types/splunk:index/SavedSearchesAcl:SavedSearchesAcl",
                     "description": "The app/user context that is the namespace for the resource\n"
                 },
+                "actionCreateXsoarIncident": {
+                    "type": "string",
+                    "description": "Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionCreateXsoarIncidentParamCustomFields": {
+                    "type": "string",
+                    "description": "XSOAR custom incident fields (should be a comma separated list)\n"
+                },
+                "actionCreateXsoarIncidentParamDetails": {
+                    "type": "string",
+                    "description": "XSOAR incident description\n"
+                },
+                "actionCreateXsoarIncidentParamIncidentName": {
+                    "type": "string",
+                    "description": "XSOAR incident name\n"
+                },
+                "actionCreateXsoarIncidentParamOccurred": {
+                    "type": "string",
+                    "description": "XSOAR incident time\n"
+                },
+                "actionCreateXsoarIncidentParamSendAllServers": {
+                    "type": "string",
+                    "description": "Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)\n"
+                },
+                "actionCreateXsoarIncidentParamServerUrl": {
+                    "type": "string",
+                    "description": "XSOAR Server instance URL (Should start with https:// || http://)\n"
+                },
+                "actionCreateXsoarIncidentParamSeverity": {
+                    "type": "string",
+                    "description": "XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)\n"
+                },
+                "actionCreateXsoarIncidentParamType": {
+                    "type": "string",
+                    "description": "XSOAR incident type\n"
+                },
                 "actionEmailAuthPassword": {
                     "type": "string",
                     "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n"
@@ -6597,6 +6669,42 @@
                     "acl": {
                         "$ref": "#/types/splunk:index/SavedSearchesAcl:SavedSearchesAcl",
                         "description": "The app/user context that is the namespace for the resource\n"
+                    },
+                    "actionCreateXsoarIncident": {
+                        "type": "string",
+                        "description": "Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))\n"
+                    },
+                    "actionCreateXsoarIncidentParamCustomFields": {
+                        "type": "string",
+                        "description": "XSOAR custom incident fields (should be a comma separated list)\n"
+                    },
+                    "actionCreateXsoarIncidentParamDetails": {
+                        "type": "string",
+                        "description": "XSOAR incident description\n"
+                    },
+                    "actionCreateXsoarIncidentParamIncidentName": {
+                        "type": "string",
+                        "description": "XSOAR incident name\n"
+                    },
+                    "actionCreateXsoarIncidentParamOccurred": {
+                        "type": "string",
+                        "description": "XSOAR incident time\n"
+                    },
+                    "actionCreateXsoarIncidentParamSendAllServers": {
+                        "type": "string",
+                        "description": "Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)\n"
+                    },
+                    "actionCreateXsoarIncidentParamServerUrl": {
+                        "type": "string",
+                        "description": "XSOAR Server instance URL (Should start with https:// || http://)\n"
+                    },
+                    "actionCreateXsoarIncidentParamSeverity": {
+                        "type": "string",
+                        "description": "XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)\n"
+                    },
+                    "actionCreateXsoarIncidentParamType": {
+                        "type": "string",
+                        "description": "XSOAR incident type\n"
                     },
                     "actionEmail": {
                         "type": "boolean",

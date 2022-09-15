@@ -63,6 +63,24 @@ type SavedSearches struct {
 
 	// The app/user context that is the namespace for the resource
 	Acl SavedSearchesAclOutput `pulumi:"acl"`
+	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+	ActionCreateXsoarIncident pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncident"`
+	// XSOAR custom incident fields (should be a comma separated list)
+	ActionCreateXsoarIncidentParamCustomFields pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamCustomFields"`
+	// XSOAR incident description
+	ActionCreateXsoarIncidentParamDetails pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamDetails"`
+	// XSOAR incident name
+	ActionCreateXsoarIncidentParamIncidentName pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamIncidentName"`
+	// XSOAR incident time
+	ActionCreateXsoarIncidentParamOccurred pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamOccurred"`
+	// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+	ActionCreateXsoarIncidentParamSendAllServers pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamSendAllServers"`
+	// XSOAR Server instance URL (Should start with https:// || http://)
+	ActionCreateXsoarIncidentParamServerUrl pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamServerUrl"`
+	// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+	ActionCreateXsoarIncidentParamSeverity pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamSeverity"`
+	// XSOAR incident type
+	ActionCreateXsoarIncidentParamType pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncidentParamType"`
 	// The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionEmail pulumi.BoolOutput `pulumi:"actionEmail"`
 	// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
@@ -385,6 +403,24 @@ func GetSavedSearches(ctx *pulumi.Context,
 type savedSearchesState struct {
 	// The app/user context that is the namespace for the resource
 	Acl *SavedSearchesAcl `pulumi:"acl"`
+	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+	ActionCreateXsoarIncident *string `pulumi:"actionCreateXsoarIncident"`
+	// XSOAR custom incident fields (should be a comma separated list)
+	ActionCreateXsoarIncidentParamCustomFields *string `pulumi:"actionCreateXsoarIncidentParamCustomFields"`
+	// XSOAR incident description
+	ActionCreateXsoarIncidentParamDetails *string `pulumi:"actionCreateXsoarIncidentParamDetails"`
+	// XSOAR incident name
+	ActionCreateXsoarIncidentParamIncidentName *string `pulumi:"actionCreateXsoarIncidentParamIncidentName"`
+	// XSOAR incident time
+	ActionCreateXsoarIncidentParamOccurred *string `pulumi:"actionCreateXsoarIncidentParamOccurred"`
+	// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+	ActionCreateXsoarIncidentParamSendAllServers *string `pulumi:"actionCreateXsoarIncidentParamSendAllServers"`
+	// XSOAR Server instance URL (Should start with https:// || http://)
+	ActionCreateXsoarIncidentParamServerUrl *string `pulumi:"actionCreateXsoarIncidentParamServerUrl"`
+	// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+	ActionCreateXsoarIncidentParamSeverity *string `pulumi:"actionCreateXsoarIncidentParamSeverity"`
+	// XSOAR incident type
+	ActionCreateXsoarIncidentParamType *string `pulumi:"actionCreateXsoarIncidentParamType"`
 	// The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionEmail *bool `pulumi:"actionEmail"`
 	// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
@@ -676,6 +712,24 @@ type savedSearchesState struct {
 type SavedSearchesState struct {
 	// The app/user context that is the namespace for the resource
 	Acl SavedSearchesAclPtrInput
+	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+	ActionCreateXsoarIncident pulumi.StringPtrInput
+	// XSOAR custom incident fields (should be a comma separated list)
+	ActionCreateXsoarIncidentParamCustomFields pulumi.StringPtrInput
+	// XSOAR incident description
+	ActionCreateXsoarIncidentParamDetails pulumi.StringPtrInput
+	// XSOAR incident name
+	ActionCreateXsoarIncidentParamIncidentName pulumi.StringPtrInput
+	// XSOAR incident time
+	ActionCreateXsoarIncidentParamOccurred pulumi.StringPtrInput
+	// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+	ActionCreateXsoarIncidentParamSendAllServers pulumi.StringPtrInput
+	// XSOAR Server instance URL (Should start with https:// || http://)
+	ActionCreateXsoarIncidentParamServerUrl pulumi.StringPtrInput
+	// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+	ActionCreateXsoarIncidentParamSeverity pulumi.StringPtrInput
+	// XSOAR incident type
+	ActionCreateXsoarIncidentParamType pulumi.StringPtrInput
 	// The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionEmail pulumi.BoolPtrInput
 	// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
@@ -971,6 +1025,24 @@ func (SavedSearchesState) ElementType() reflect.Type {
 type savedSearchesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *SavedSearchesAcl `pulumi:"acl"`
+	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+	ActionCreateXsoarIncident *string `pulumi:"actionCreateXsoarIncident"`
+	// XSOAR custom incident fields (should be a comma separated list)
+	ActionCreateXsoarIncidentParamCustomFields *string `pulumi:"actionCreateXsoarIncidentParamCustomFields"`
+	// XSOAR incident description
+	ActionCreateXsoarIncidentParamDetails *string `pulumi:"actionCreateXsoarIncidentParamDetails"`
+	// XSOAR incident name
+	ActionCreateXsoarIncidentParamIncidentName *string `pulumi:"actionCreateXsoarIncidentParamIncidentName"`
+	// XSOAR incident time
+	ActionCreateXsoarIncidentParamOccurred *string `pulumi:"actionCreateXsoarIncidentParamOccurred"`
+	// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+	ActionCreateXsoarIncidentParamSendAllServers *string `pulumi:"actionCreateXsoarIncidentParamSendAllServers"`
+	// XSOAR Server instance URL (Should start with https:// || http://)
+	ActionCreateXsoarIncidentParamServerUrl *string `pulumi:"actionCreateXsoarIncidentParamServerUrl"`
+	// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+	ActionCreateXsoarIncidentParamSeverity *string `pulumi:"actionCreateXsoarIncidentParamSeverity"`
+	// XSOAR incident type
+	ActionCreateXsoarIncidentParamType *string `pulumi:"actionCreateXsoarIncidentParamType"`
 	// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
 	ActionEmailAuthPassword *string `pulumi:"actionEmailAuthPassword"`
 	// The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
@@ -1253,6 +1325,24 @@ type savedSearchesArgs struct {
 type SavedSearchesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl SavedSearchesAclPtrInput
+	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+	ActionCreateXsoarIncident pulumi.StringPtrInput
+	// XSOAR custom incident fields (should be a comma separated list)
+	ActionCreateXsoarIncidentParamCustomFields pulumi.StringPtrInput
+	// XSOAR incident description
+	ActionCreateXsoarIncidentParamDetails pulumi.StringPtrInput
+	// XSOAR incident name
+	ActionCreateXsoarIncidentParamIncidentName pulumi.StringPtrInput
+	// XSOAR incident time
+	ActionCreateXsoarIncidentParamOccurred pulumi.StringPtrInput
+	// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+	ActionCreateXsoarIncidentParamSendAllServers pulumi.StringPtrInput
+	// XSOAR Server instance URL (Should start with https:// || http://)
+	ActionCreateXsoarIncidentParamServerUrl pulumi.StringPtrInput
+	// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+	ActionCreateXsoarIncidentParamSeverity pulumi.StringPtrInput
+	// XSOAR incident type
+	ActionCreateXsoarIncidentParamType pulumi.StringPtrInput
 	// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
 	ActionEmailAuthPassword pulumi.StringPtrInput
 	// The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
@@ -1621,6 +1711,51 @@ func (o SavedSearchesOutput) ToSavedSearchesOutputWithContext(ctx context.Contex
 // The app/user context that is the namespace for the resource
 func (o SavedSearchesOutput) Acl() SavedSearchesAclOutput {
 	return o.ApplyT(func(v *SavedSearches) SavedSearchesAclOutput { return v.Acl }).(SavedSearchesAclOutput)
+}
+
+// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
+func (o SavedSearchesOutput) ActionCreateXsoarIncident() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncident }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR custom incident fields (should be a comma separated list)
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamCustomFields() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamCustomFields }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR incident description
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamDetails }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR incident name
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamIncidentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamIncidentName }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR incident time
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamOccurred() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamOccurred }).(pulumi.StringPtrOutput)
+}
+
+// Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamSendAllServers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamSendAllServers }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR Server instance URL (Should start with https:// || http://)
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamServerUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamServerUrl }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamSeverity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamSeverity }).(pulumi.StringPtrOutput)
+}
+
+// XSOAR incident type
+func (o SavedSearchesOutput) ActionCreateXsoarIncidentParamType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionCreateXsoarIncidentParamType }).(pulumi.StringPtrOutput)
 }
 
 // The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
