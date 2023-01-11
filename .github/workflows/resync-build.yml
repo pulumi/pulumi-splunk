@@ -22,6 +22,7 @@ env:
   SPLUNK_PASSWORD: password
   SPLUNK_URL: localhost:8089
   SPLUNK_USERNAME: admin
+  TF_APPEND_USER_AGENT: pulumi
   TRAVIS_OS_NAME: linux
 jobs:
   resync_build:
@@ -101,7 +102,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
