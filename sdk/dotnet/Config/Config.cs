@@ -30,7 +30,7 @@ namespace Pulumi.Splunk
             }
         }
 
-        private static readonly Pulumi.Config __config = new Pulumi.Config("splunk");
+        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("splunk");
 
         private static readonly __Value<string?> _authToken = new __Value<string?>(() => __config.Get("authToken"));
         /// <summary>

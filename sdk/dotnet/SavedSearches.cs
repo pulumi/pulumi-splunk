@@ -544,6 +544,70 @@ namespace Pulumi.Splunk
         public Output<string?> ActionSlackParamWebhookUrlOverride { get; private set; } = null!;
 
         /// <summary>
+        /// Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        /// </summary>
+        [Output("actionSnowEventParamAccount")]
+        public Output<string> ActionSnowEventParamAccount { get; private set; } = null!;
+
+        /// <summary>
+        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+        /// your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+        /// create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+        /// resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+        /// event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+        /// snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+        /// other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+        /// </summary>
+        [Output("actionSnowEventParamAdditionalInfo")]
+        public Output<string> ActionSnowEventParamAdditionalInfo { get; private set; } = null!;
+
+        /// <summary>
+        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+        /// example, k1=v1||k2=v2.
+        /// </summary>
+        [Output("actionSnowEventParamCiIdentifier")]
+        public Output<string> ActionSnowEventParamCiIdentifier { get; private set; } = null!;
+
+        /// <summary>
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+        /// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+        /// in the em_event table of ServiceNow.
+        /// </summary>
+        [Output("actionSnowEventParamCustomFields")]
+        public Output<string> ActionSnowEventParamCustomFields { get; private set; } = null!;
+
+        /// <summary>
+        /// A brief description of the event.
+        /// </summary>
+        [Output("actionSnowEventParamDescription")]
+        public Output<string> ActionSnowEventParamDescription { get; private set; } = null!;
+
+        /// <summary>
+        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+        /// same host name, the event is automatically assigned to the matching CI.
+        /// </summary>
+        [Output("actionSnowEventParamNode")]
+        public Output<string> ActionSnowEventParamNode { get; private set; } = null!;
+
+        /// <summary>
+        /// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        /// </summary>
+        [Output("actionSnowEventParamResource")]
+        public Output<string> ActionSnowEventParamResource { get; private set; } = null!;
+
+        /// <summary>
+        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        /// </summary>
+        [Output("actionSnowEventParamSeverity")]
+        public Output<int> ActionSnowEventParamSeverity { get; private set; } = null!;
+
+        /// <summary>
+        /// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+        /// </summary>
+        [Output("actionSnowEventParamType")]
+        public Output<string> ActionSnowEventParamType { get; private set; } = null!;
+
+        /// <summary>
         /// The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         /// </summary>
         [Output("actionSummaryIndex")]
@@ -1484,6 +1548,70 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSlackParamWebhookUrlOverride { get; set; }
 
         /// <summary>
+        /// Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        /// </summary>
+        [Input("actionSnowEventParamAccount")]
+        public Input<string>? ActionSnowEventParamAccount { get; set; }
+
+        /// <summary>
+        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+        /// your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+        /// create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+        /// resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+        /// event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+        /// snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+        /// other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+        /// </summary>
+        [Input("actionSnowEventParamAdditionalInfo")]
+        public Input<string>? ActionSnowEventParamAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+        /// example, k1=v1||k2=v2.
+        /// </summary>
+        [Input("actionSnowEventParamCiIdentifier")]
+        public Input<string>? ActionSnowEventParamCiIdentifier { get; set; }
+
+        /// <summary>
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+        /// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+        /// in the em_event table of ServiceNow.
+        /// </summary>
+        [Input("actionSnowEventParamCustomFields")]
+        public Input<string>? ActionSnowEventParamCustomFields { get; set; }
+
+        /// <summary>
+        /// A brief description of the event.
+        /// </summary>
+        [Input("actionSnowEventParamDescription")]
+        public Input<string>? ActionSnowEventParamDescription { get; set; }
+
+        /// <summary>
+        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+        /// same host name, the event is automatically assigned to the matching CI.
+        /// </summary>
+        [Input("actionSnowEventParamNode")]
+        public Input<string>? ActionSnowEventParamNode { get; set; }
+
+        /// <summary>
+        /// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        /// </summary>
+        [Input("actionSnowEventParamResource")]
+        public Input<string>? ActionSnowEventParamResource { get; set; }
+
+        /// <summary>
+        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        /// </summary>
+        [Input("actionSnowEventParamSeverity")]
+        public Input<int>? ActionSnowEventParamSeverity { get; set; }
+
+        /// <summary>
+        /// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+        /// </summary>
+        [Input("actionSnowEventParamType")]
+        public Input<string>? ActionSnowEventParamType { get; set; }
+
+        /// <summary>
         /// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         /// </summary>
         [Input("actionSummaryIndexCommand")]
@@ -2402,6 +2530,70 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionSlackParamWebhookUrlOverride")]
         public Input<string>? ActionSlackParamWebhookUrlOverride { get; set; }
+
+        /// <summary>
+        /// Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        /// </summary>
+        [Input("actionSnowEventParamAccount")]
+        public Input<string>? ActionSnowEventParamAccount { get; set; }
+
+        /// <summary>
+        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+        /// your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+        /// create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+        /// resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+        /// event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+        /// snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+        /// other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+        /// </summary>
+        [Input("actionSnowEventParamAdditionalInfo")]
+        public Input<string>? ActionSnowEventParamAdditionalInfo { get; set; }
+
+        /// <summary>
+        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+        /// example, k1=v1||k2=v2.
+        /// </summary>
+        [Input("actionSnowEventParamCiIdentifier")]
+        public Input<string>? ActionSnowEventParamCiIdentifier { get; set; }
+
+        /// <summary>
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+        /// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+        /// in the em_event table of ServiceNow.
+        /// </summary>
+        [Input("actionSnowEventParamCustomFields")]
+        public Input<string>? ActionSnowEventParamCustomFields { get; set; }
+
+        /// <summary>
+        /// A brief description of the event.
+        /// </summary>
+        [Input("actionSnowEventParamDescription")]
+        public Input<string>? ActionSnowEventParamDescription { get; set; }
+
+        /// <summary>
+        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+        /// same host name, the event is automatically assigned to the matching CI.
+        /// </summary>
+        [Input("actionSnowEventParamNode")]
+        public Input<string>? ActionSnowEventParamNode { get; set; }
+
+        /// <summary>
+        /// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        /// </summary>
+        [Input("actionSnowEventParamResource")]
+        public Input<string>? ActionSnowEventParamResource { get; set; }
+
+        /// <summary>
+        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        /// </summary>
+        [Input("actionSnowEventParamSeverity")]
+        public Input<int>? ActionSnowEventParamSeverity { get; set; }
+
+        /// <summary>
+        /// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+        /// </summary>
+        [Input("actionSnowEventParamType")]
+        public Input<string>? ActionSnowEventParamType { get; set; }
 
         /// <summary>
         /// The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.

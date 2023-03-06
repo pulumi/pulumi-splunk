@@ -62,6 +62,13 @@ func NewInputsTcpSsl(ctx *pulumi.Context,
 		args = &InputsTcpSslArgs{}
 	}
 
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	var resource InputsTcpSsl
 	err := ctx.RegisterResource("splunk:index/inputsTcpSsl:InputsTcpSsl", name, args, &resource, opts...)
 	if err != nil {

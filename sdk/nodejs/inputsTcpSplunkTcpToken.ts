@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -16,9 +17,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpSplunkTcpToken = new splunk.InputsTcpSplunkTcpToken("tcp_splunk_tcp_token", {
- *     token: "D66C45B3-7C28-48A1-A13A-027914146501",
- * });
+ * const tcpSplunkTcpToken = new splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", {token: "D66C45B3-7C28-48A1-A13A-027914146501"});
  * ```
  */
 export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {

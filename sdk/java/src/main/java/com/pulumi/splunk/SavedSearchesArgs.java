@@ -1190,6 +1190,161 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+     * 
+     */
+    @Import(name="actionSnowEventParamAccount")
+    private @Nullable Output<String> actionSnowEventParamAccount;
+
+    /**
+     * @return Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamAccount() {
+        return Optional.ofNullable(this.actionSnowEventParamAccount);
+    }
+
+    /**
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+     * other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+     * 
+     */
+    @Import(name="actionSnowEventParamAdditionalInfo")
+    private @Nullable Output<String> actionSnowEventParamAdditionalInfo;
+
+    /**
+     * @return You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+     * other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamAdditionalInfo() {
+        return Optional.ofNullable(this.actionSnowEventParamAdditionalInfo);
+    }
+
+    /**
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+     * example, k1=v1||k2=v2.
+     * 
+     */
+    @Import(name="actionSnowEventParamCiIdentifier")
+    private @Nullable Output<String> actionSnowEventParamCiIdentifier;
+
+    /**
+     * @return String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+     * example, k1=v1||k2=v2.
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamCiIdentifier() {
+        return Optional.ofNullable(this.actionSnowEventParamCiIdentifier);
+    }
+
+    /**
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+     * in the em_event table of ServiceNow.
+     * 
+     */
+    @Import(name="actionSnowEventParamCustomFields")
+    private @Nullable Output<String> actionSnowEventParamCustomFields;
+
+    /**
+     * @return The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+     * in the em_event table of ServiceNow.
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamCustomFields() {
+        return Optional.ofNullable(this.actionSnowEventParamCustomFields);
+    }
+
+    /**
+     * A brief description of the event.
+     * 
+     */
+    @Import(name="actionSnowEventParamDescription")
+    private @Nullable Output<String> actionSnowEventParamDescription;
+
+    /**
+     * @return A brief description of the event.
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamDescription() {
+        return Optional.ofNullable(this.actionSnowEventParamDescription);
+    }
+
+    /**
+     * The node, formatted to follow your organization&#39;s ITIL standards and mapping. If the node value matches a CI with the
+     * same host name, the event is automatically assigned to the matching CI.
+     * 
+     */
+    @Import(name="actionSnowEventParamNode")
+    private @Nullable Output<String> actionSnowEventParamNode;
+
+    /**
+     * @return The node, formatted to follow your organization&#39;s ITIL standards and mapping. If the node value matches a CI with the
+     * same host name, the event is automatically assigned to the matching CI.
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamNode() {
+        return Optional.ofNullable(this.actionSnowEventParamNode);
+    }
+
+    /**
+     * The resource, formatted to follow your organization&#39;s ITIL standards and mapping. For example, resource=&#39;CPU&#39;.
+     * 
+     */
+    @Import(name="actionSnowEventParamResource")
+    private @Nullable Output<String> actionSnowEventParamResource;
+
+    /**
+     * @return The resource, formatted to follow your organization&#39;s ITIL standards and mapping. For example, resource=&#39;CPU&#39;.
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamResource() {
+        return Optional.ofNullable(this.actionSnowEventParamResource);
+    }
+
+    /**
+     * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     * 
+     */
+    @Import(name="actionSnowEventParamSeverity")
+    private @Nullable Output<Integer> actionSnowEventParamSeverity;
+
+    /**
+     * @return The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     * 
+     */
+    public Optional<Output<Integer>> actionSnowEventParamSeverity() {
+        return Optional.ofNullable(this.actionSnowEventParamSeverity);
+    }
+
+    /**
+     * The type, formatted to follow your organization&#39;s ITIL standards and mapping. For example, type=&#39;Virtual Machine&#39;.
+     * 
+     */
+    @Import(name="actionSnowEventParamType")
+    private @Nullable Output<String> actionSnowEventParamType;
+
+    /**
+     * @return The type, formatted to follow your organization&#39;s ITIL standards and mapping. For example, type=&#39;Virtual Machine&#39;.
+     * 
+     */
+    public Optional<Output<String>> actionSnowEventParamType() {
+        return Optional.ofNullable(this.actionSnowEventParamType);
+    }
+
+    /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      * 
      */
@@ -2320,6 +2475,15 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionSlackParamFields = $.actionSlackParamFields;
         this.actionSlackParamMessage = $.actionSlackParamMessage;
         this.actionSlackParamWebhookUrlOverride = $.actionSlackParamWebhookUrlOverride;
+        this.actionSnowEventParamAccount = $.actionSnowEventParamAccount;
+        this.actionSnowEventParamAdditionalInfo = $.actionSnowEventParamAdditionalInfo;
+        this.actionSnowEventParamCiIdentifier = $.actionSnowEventParamCiIdentifier;
+        this.actionSnowEventParamCustomFields = $.actionSnowEventParamCustomFields;
+        this.actionSnowEventParamDescription = $.actionSnowEventParamDescription;
+        this.actionSnowEventParamNode = $.actionSnowEventParamNode;
+        this.actionSnowEventParamResource = $.actionSnowEventParamResource;
+        this.actionSnowEventParamSeverity = $.actionSnowEventParamSeverity;
+        this.actionSnowEventParamType = $.actionSnowEventParamType;
         this.actionSummaryIndexCommand = $.actionSummaryIndexCommand;
         this.actionSummaryIndexHostname = $.actionSummaryIndexHostname;
         this.actionSummaryIndexInline = $.actionSummaryIndexInline;
@@ -4046,6 +4210,215 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionSlackParamWebhookUrlOverride(String actionSlackParamWebhookUrlOverride) {
             return actionSlackParamWebhookUrlOverride(Output.of(actionSlackParamWebhookUrlOverride));
+        }
+
+        /**
+         * @param actionSnowEventParamAccount Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamAccount(@Nullable Output<String> actionSnowEventParamAccount) {
+            $.actionSnowEventParamAccount = actionSnowEventParamAccount;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamAccount Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamAccount(String actionSnowEventParamAccount) {
+            return actionSnowEventParamAccount(Output.of(actionSnowEventParamAccount));
+        }
+
+        /**
+         * @param actionSnowEventParamAdditionalInfo You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+         * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+         * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+         * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+         * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+         * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+         * other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamAdditionalInfo(@Nullable Output<String> actionSnowEventParamAdditionalInfo) {
+            $.actionSnowEventParamAdditionalInfo = actionSnowEventParamAdditionalInfo;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamAdditionalInfo You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+         * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+         * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+         * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+         * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+         * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
+         * other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamAdditionalInfo(String actionSnowEventParamAdditionalInfo) {
+            return actionSnowEventParamAdditionalInfo(Output.of(actionSnowEventParamAdditionalInfo));
+        }
+
+        /**
+         * @param actionSnowEventParamCiIdentifier String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+         * example, k1=v1||k2=v2.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamCiIdentifier(@Nullable Output<String> actionSnowEventParamCiIdentifier) {
+            $.actionSnowEventParamCiIdentifier = actionSnowEventParamCiIdentifier;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamCiIdentifier String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+         * example, k1=v1||k2=v2.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamCiIdentifier(String actionSnowEventParamCiIdentifier) {
+            return actionSnowEventParamCiIdentifier(Output.of(actionSnowEventParamCiIdentifier));
+        }
+
+        /**
+         * @param actionSnowEventParamCustomFields The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+         * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+         * in the em_event table of ServiceNow.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamCustomFields(@Nullable Output<String> actionSnowEventParamCustomFields) {
+            $.actionSnowEventParamCustomFields = actionSnowEventParamCustomFields;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamCustomFields The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+         * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+         * in the em_event table of ServiceNow.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamCustomFields(String actionSnowEventParamCustomFields) {
+            return actionSnowEventParamCustomFields(Output.of(actionSnowEventParamCustomFields));
+        }
+
+        /**
+         * @param actionSnowEventParamDescription A brief description of the event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamDescription(@Nullable Output<String> actionSnowEventParamDescription) {
+            $.actionSnowEventParamDescription = actionSnowEventParamDescription;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamDescription A brief description of the event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamDescription(String actionSnowEventParamDescription) {
+            return actionSnowEventParamDescription(Output.of(actionSnowEventParamDescription));
+        }
+
+        /**
+         * @param actionSnowEventParamNode The node, formatted to follow your organization&#39;s ITIL standards and mapping. If the node value matches a CI with the
+         * same host name, the event is automatically assigned to the matching CI.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamNode(@Nullable Output<String> actionSnowEventParamNode) {
+            $.actionSnowEventParamNode = actionSnowEventParamNode;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamNode The node, formatted to follow your organization&#39;s ITIL standards and mapping. If the node value matches a CI with the
+         * same host name, the event is automatically assigned to the matching CI.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamNode(String actionSnowEventParamNode) {
+            return actionSnowEventParamNode(Output.of(actionSnowEventParamNode));
+        }
+
+        /**
+         * @param actionSnowEventParamResource The resource, formatted to follow your organization&#39;s ITIL standards and mapping. For example, resource=&#39;CPU&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamResource(@Nullable Output<String> actionSnowEventParamResource) {
+            $.actionSnowEventParamResource = actionSnowEventParamResource;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamResource The resource, formatted to follow your organization&#39;s ITIL standards and mapping. For example, resource=&#39;CPU&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamResource(String actionSnowEventParamResource) {
+            return actionSnowEventParamResource(Output.of(actionSnowEventParamResource));
+        }
+
+        /**
+         * @param actionSnowEventParamSeverity The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamSeverity(@Nullable Output<Integer> actionSnowEventParamSeverity) {
+            $.actionSnowEventParamSeverity = actionSnowEventParamSeverity;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamSeverity The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamSeverity(Integer actionSnowEventParamSeverity) {
+            return actionSnowEventParamSeverity(Output.of(actionSnowEventParamSeverity));
+        }
+
+        /**
+         * @param actionSnowEventParamType The type, formatted to follow your organization&#39;s ITIL standards and mapping. For example, type=&#39;Virtual Machine&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamType(@Nullable Output<String> actionSnowEventParamType) {
+            $.actionSnowEventParamType = actionSnowEventParamType;
+            return this;
+        }
+
+        /**
+         * @param actionSnowEventParamType The type, formatted to follow your organization&#39;s ITIL standards and mapping. For example, type=&#39;Virtual Machine&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSnowEventParamType(String actionSnowEventParamType) {
+            return actionSnowEventParamType(Output.of(actionSnowEventParamType));
         }
 
         /**

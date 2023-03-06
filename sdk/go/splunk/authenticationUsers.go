@@ -74,6 +74,13 @@ func NewAuthenticationUsers(ctx *pulumi.Context,
 		args = &AuthenticationUsersArgs{}
 	}
 
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	var resource AuthenticationUsers
 	err := ctx.RegisterResource("splunk:index/authenticationUsers:AuthenticationUsers", name, args, &resource, opts...)
 	if err != nil {

@@ -15,12 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const saml_group = new splunk.AdminSamlGroups("saml-group", {
- *     roles: [
- *         "admin",
- *         "power",
- *     ],
- * });
+ * const saml_group = new splunk.AdminSamlGroups("saml-group", {roles: [
+ *     "admin",
+ *     "power",
+ * ]});
  * ```
  *
  * ## Import

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -16,9 +17,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpServer = new splunk.OutputsTcpServer("tcp_server", {
- *     sslAltNameToCheck: "old-host",
- * });
+ * const tcpServer = new splunk.OutputsTcpServer("tcpServer", {sslAltNameToCheck: "old-host"});
  * ```
  */
 export class OutputsTcpServer extends pulumi.CustomResource {
@@ -131,11 +130,13 @@ export class OutputsTcpServer extends pulumi.CustomResource {
             resourceInputs["sslCertPath"] = args ? args.sslCertPath : undefined;
             resourceInputs["sslCipher"] = args ? args.sslCipher : undefined;
             resourceInputs["sslCommonNameToCheck"] = args ? args.sslCommonNameToCheck : undefined;
-            resourceInputs["sslPassword"] = args ? args.sslPassword : undefined;
+            resourceInputs["sslPassword"] = args?.sslPassword ? pulumi.secret(args.sslPassword) : undefined;
             resourceInputs["sslRootCaPath"] = args ? args.sslRootCaPath : undefined;
             resourceInputs["sslVerifyServerCert"] = args ? args.sslVerifyServerCert : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["sslPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(OutputsTcpServer.__pulumiType, name, resourceInputs, opts);
     }
 }

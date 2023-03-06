@@ -504,9 +504,11 @@ class OutputsTcpServer(pulumi.CustomResource):
             __props__.__dict__["ssl_cert_path"] = ssl_cert_path
             __props__.__dict__["ssl_cipher"] = ssl_cipher
             __props__.__dict__["ssl_common_name_to_check"] = ssl_common_name_to_check
-            __props__.__dict__["ssl_password"] = ssl_password
+            __props__.__dict__["ssl_password"] = None if ssl_password is None else pulumi.Output.secret(ssl_password)
             __props__.__dict__["ssl_root_ca_path"] = ssl_root_ca_path
             __props__.__dict__["ssl_verify_server_cert"] = ssl_verify_server_cert
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["sslPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(OutputsTcpServer, __self__).__init__(
             'splunk:index/outputsTcpServer:OutputsTcpServer',
             resource_name,

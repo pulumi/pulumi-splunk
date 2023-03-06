@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -16,7 +17,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const savedSearch = new splunk.SavedSearches("saved_search", {
+ * const savedSearch = new splunk.SavedSearches("savedSearch", {
  *     acl: {
  *         app: "launcher",
  *         owner: "admin",
@@ -26,7 +27,7 @@ import * as utilities from "./utilities";
  *     actionEmailMaxResults: 10,
  *     actionEmailMaxTime: "5m",
  *     actionEmailSendResults: false,
- *     actionEmailSubject: "Splunk Alert: $name$",
+ *     actionEmailSubject: `Splunk Alert: $name$`,
  *     actionEmailTo: "splunk@splunk.com",
  *     actionEmailTrackAlert: true,
  *     actions: "email",
@@ -393,6 +394,52 @@ export class SavedSearches extends pulumi.CustomResource {
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
     public readonly actionSlackParamWebhookUrlOverride!: pulumi.Output<string | undefined>;
+    /**
+     * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+     */
+    public readonly actionSnowEventParamAccount!: pulumi.Output<string>;
+    /**
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+     * other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+     */
+    public readonly actionSnowEventParamAdditionalInfo!: pulumi.Output<string>;
+    /**
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+     * example, k1=v1||k2=v2.
+     */
+    public readonly actionSnowEventParamCiIdentifier!: pulumi.Output<string>;
+    /**
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+     * in the em_event table of ServiceNow.
+     */
+    public readonly actionSnowEventParamCustomFields!: pulumi.Output<string>;
+    /**
+     * A brief description of the event.
+     */
+    public readonly actionSnowEventParamDescription!: pulumi.Output<string>;
+    /**
+     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+     * same host name, the event is automatically assigned to the matching CI.
+     */
+    public readonly actionSnowEventParamNode!: pulumi.Output<string>;
+    /**
+     * The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+     */
+    public readonly actionSnowEventParamResource!: pulumi.Output<string>;
+    /**
+     * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     */
+    public readonly actionSnowEventParamSeverity!: pulumi.Output<number>;
+    /**
+     * The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+     */
+    public readonly actionSnowEventParamType!: pulumi.Output<string>;
     /**
      * The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -773,6 +820,15 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionSlackParamFields"] = state ? state.actionSlackParamFields : undefined;
             resourceInputs["actionSlackParamMessage"] = state ? state.actionSlackParamMessage : undefined;
             resourceInputs["actionSlackParamWebhookUrlOverride"] = state ? state.actionSlackParamWebhookUrlOverride : undefined;
+            resourceInputs["actionSnowEventParamAccount"] = state ? state.actionSnowEventParamAccount : undefined;
+            resourceInputs["actionSnowEventParamAdditionalInfo"] = state ? state.actionSnowEventParamAdditionalInfo : undefined;
+            resourceInputs["actionSnowEventParamCiIdentifier"] = state ? state.actionSnowEventParamCiIdentifier : undefined;
+            resourceInputs["actionSnowEventParamCustomFields"] = state ? state.actionSnowEventParamCustomFields : undefined;
+            resourceInputs["actionSnowEventParamDescription"] = state ? state.actionSnowEventParamDescription : undefined;
+            resourceInputs["actionSnowEventParamNode"] = state ? state.actionSnowEventParamNode : undefined;
+            resourceInputs["actionSnowEventParamResource"] = state ? state.actionSnowEventParamResource : undefined;
+            resourceInputs["actionSnowEventParamSeverity"] = state ? state.actionSnowEventParamSeverity : undefined;
+            resourceInputs["actionSnowEventParamType"] = state ? state.actionSnowEventParamType : undefined;
             resourceInputs["actionSummaryIndex"] = state ? state.actionSummaryIndex : undefined;
             resourceInputs["actionSummaryIndexCommand"] = state ? state.actionSummaryIndexCommand : undefined;
             resourceInputs["actionSummaryIndexHostname"] = state ? state.actionSummaryIndexHostname : undefined;
@@ -927,6 +983,15 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionSlackParamFields"] = args ? args.actionSlackParamFields : undefined;
             resourceInputs["actionSlackParamMessage"] = args ? args.actionSlackParamMessage : undefined;
             resourceInputs["actionSlackParamWebhookUrlOverride"] = args ? args.actionSlackParamWebhookUrlOverride : undefined;
+            resourceInputs["actionSnowEventParamAccount"] = args ? args.actionSnowEventParamAccount : undefined;
+            resourceInputs["actionSnowEventParamAdditionalInfo"] = args ? args.actionSnowEventParamAdditionalInfo : undefined;
+            resourceInputs["actionSnowEventParamCiIdentifier"] = args ? args.actionSnowEventParamCiIdentifier : undefined;
+            resourceInputs["actionSnowEventParamCustomFields"] = args ? args.actionSnowEventParamCustomFields : undefined;
+            resourceInputs["actionSnowEventParamDescription"] = args ? args.actionSnowEventParamDescription : undefined;
+            resourceInputs["actionSnowEventParamNode"] = args ? args.actionSnowEventParamNode : undefined;
+            resourceInputs["actionSnowEventParamResource"] = args ? args.actionSnowEventParamResource : undefined;
+            resourceInputs["actionSnowEventParamSeverity"] = args ? args.actionSnowEventParamSeverity : undefined;
+            resourceInputs["actionSnowEventParamType"] = args ? args.actionSnowEventParamType : undefined;
             resourceInputs["actionSummaryIndexCommand"] = args ? args.actionSummaryIndexCommand : undefined;
             resourceInputs["actionSummaryIndexHostname"] = args ? args.actionSummaryIndexHostname : undefined;
             resourceInputs["actionSummaryIndexInline"] = args ? args.actionSummaryIndexInline : undefined;
@@ -1340,6 +1405,52 @@ export interface SavedSearchesState {
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
     actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
+    /**
+     * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+     */
+    actionSnowEventParamAccount?: pulumi.Input<string>;
+    /**
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+     * other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+     */
+    actionSnowEventParamAdditionalInfo?: pulumi.Input<string>;
+    /**
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+     * example, k1=v1||k2=v2.
+     */
+    actionSnowEventParamCiIdentifier?: pulumi.Input<string>;
+    /**
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+     * in the em_event table of ServiceNow.
+     */
+    actionSnowEventParamCustomFields?: pulumi.Input<string>;
+    /**
+     * A brief description of the event.
+     */
+    actionSnowEventParamDescription?: pulumi.Input<string>;
+    /**
+     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+     * same host name, the event is automatically assigned to the matching CI.
+     */
+    actionSnowEventParamNode?: pulumi.Input<string>;
+    /**
+     * The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+     */
+    actionSnowEventParamResource?: pulumi.Input<string>;
+    /**
+     * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     */
+    actionSnowEventParamSeverity?: pulumi.Input<number>;
+    /**
+     * The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+     */
+    actionSnowEventParamType?: pulumi.Input<string>;
     /**
      * The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -1942,6 +2053,52 @@ export interface SavedSearchesArgs {
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
     actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
+    /**
+     * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+     */
+    actionSnowEventParamAccount?: pulumi.Input<string>;
+    /**
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+     * other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+     */
+    actionSnowEventParamAdditionalInfo?: pulumi.Input<string>;
+    /**
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+     * example, k1=v1||k2=v2.
+     */
+    actionSnowEventParamCiIdentifier?: pulumi.Input<string>;
+    /**
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+     * in the em_event table of ServiceNow.
+     */
+    actionSnowEventParamCustomFields?: pulumi.Input<string>;
+    /**
+     * A brief description of the event.
+     */
+    actionSnowEventParamDescription?: pulumi.Input<string>;
+    /**
+     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+     * same host name, the event is automatically assigned to the matching CI.
+     */
+    actionSnowEventParamNode?: pulumi.Input<string>;
+    /**
+     * The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+     */
+    actionSnowEventParamResource?: pulumi.Input<string>;
+    /**
+     * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     */
+    actionSnowEventParamSeverity?: pulumi.Input<number>;
+    /**
+     * The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+     */
+    actionSnowEventParamType?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */

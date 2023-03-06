@@ -91,12 +91,14 @@ export class InputsTcpSsl extends pulumi.CustomResource {
         } else {
             const args = argsOrState as InputsTcpSslArgs | undefined;
             resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["requireClientCert"] = args ? args.requireClientCert : undefined;
             resourceInputs["rootCa"] = args ? args.rootCa : undefined;
             resourceInputs["serverCert"] = args ? args.serverCert : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(InputsTcpSsl.__pulumiType, name, resourceInputs, opts);
     }
 }

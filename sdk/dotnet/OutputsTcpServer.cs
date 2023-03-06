@@ -126,6 +126,10 @@ namespace Pulumi.Splunk
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "sslPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -199,12 +203,22 @@ namespace Pulumi.Splunk
         [Input("sslCommonNameToCheck")]
         public Input<string>? SslCommonNameToCheck { get; set; }
 
+        [Input("sslPassword")]
+        private Input<string>? _sslPassword;
+
         /// <summary>
         /// The password associated with the CAcert.
         /// The default Splunk Enterprise CAcert uses the password "password."
         /// </summary>
-        [Input("sslPassword")]
-        public Input<string>? SslPassword { get; set; }
+        public Input<string>? SslPassword
+        {
+            get => _sslPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sslPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The path to the root certificate authority file.
@@ -276,12 +290,22 @@ namespace Pulumi.Splunk
         [Input("sslCommonNameToCheck")]
         public Input<string>? SslCommonNameToCheck { get; set; }
 
+        [Input("sslPassword")]
+        private Input<string>? _sslPassword;
+
         /// <summary>
         /// The password associated with the CAcert.
         /// The default Splunk Enterprise CAcert uses the password "password."
         /// </summary>
-        [Input("sslPassword")]
-        public Input<string>? SslPassword { get; set; }
+        public Input<string>? SslPassword
+        {
+            get => _sslPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sslPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The path to the root certificate authority file.

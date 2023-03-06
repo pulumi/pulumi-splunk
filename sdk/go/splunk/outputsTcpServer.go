@@ -76,6 +76,13 @@ func NewOutputsTcpServer(ctx *pulumi.Context,
 		args = &OutputsTcpServerArgs{}
 	}
 
+	if args.SslPassword != nil {
+		args.SslPassword = pulumi.ToSecret(args.SslPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"sslPassword",
+	})
+	opts = append(opts, secrets)
 	var resource OutputsTcpServer
 	err := ctx.RegisterResource("splunk:index/outputsTcpServer:OutputsTcpServer", name, args, &resource, opts...)
 	if err != nil {
