@@ -95,6 +95,15 @@ class SavedSearchesArgs:
                  action_slack_param_fields: Optional[pulumi.Input[str]] = None,
                  action_slack_param_message: Optional[pulumi.Input[str]] = None,
                  action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+                 action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
                  action_summary_index_command: Optional[pulumi.Input[str]] = None,
                  action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
                  action_summary_index_inline: Optional[pulumi.Input[bool]] = None,
@@ -245,6 +254,25 @@ class SavedSearchesArgs:
         :param pulumi.Input[str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
         :param pulumi.Input[str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+        :param pulumi.Input[str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        :param pulumi.Input[str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+               example, k1=v1||k2=v2.
+        :param pulumi.Input[str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+               in the em_event table of ServiceNow.
+        :param pulumi.Input[str] action_snow_event_param_description: A brief description of the event.
+        :param pulumi.Input[str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        :param pulumi.Input[int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
@@ -472,6 +500,24 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_slack_param_message", action_slack_param_message)
         if action_slack_param_webhook_url_override is not None:
             pulumi.set(__self__, "action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
+        if action_snow_event_param_account is not None:
+            pulumi.set(__self__, "action_snow_event_param_account", action_snow_event_param_account)
+        if action_snow_event_param_additional_info is not None:
+            pulumi.set(__self__, "action_snow_event_param_additional_info", action_snow_event_param_additional_info)
+        if action_snow_event_param_ci_identifier is not None:
+            pulumi.set(__self__, "action_snow_event_param_ci_identifier", action_snow_event_param_ci_identifier)
+        if action_snow_event_param_custom_fields is not None:
+            pulumi.set(__self__, "action_snow_event_param_custom_fields", action_snow_event_param_custom_fields)
+        if action_snow_event_param_description is not None:
+            pulumi.set(__self__, "action_snow_event_param_description", action_snow_event_param_description)
+        if action_snow_event_param_node is not None:
+            pulumi.set(__self__, "action_snow_event_param_node", action_snow_event_param_node)
+        if action_snow_event_param_resource is not None:
+            pulumi.set(__self__, "action_snow_event_param_resource", action_snow_event_param_resource)
+        if action_snow_event_param_severity is not None:
+            pulumi.set(__self__, "action_snow_event_param_severity", action_snow_event_param_severity)
+        if action_snow_event_param_type is not None:
+            pulumi.set(__self__, "action_snow_event_param_type", action_snow_event_param_type)
         if action_summary_index_command is not None:
             pulumi.set(__self__, "action_summary_index_command", action_summary_index_command)
         if action_summary_index_hostname is not None:
@@ -1560,6 +1606,124 @@ class SavedSearchesArgs:
         pulumi.set(self, "action_slack_param_webhook_url_override", value)
 
     @property
+    @pulumi.getter(name="actionSnowEventParamAccount")
+    def action_snow_event_param_account(self) -> Optional[pulumi.Input[str]]:
+        """
+        Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        """
+        return pulumi.get(self, "action_snow_event_param_account")
+
+    @action_snow_event_param_account.setter
+    def action_snow_event_param_account(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_account", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
+    def action_snow_event_param_additional_info(self) -> Optional[pulumi.Input[str]]:
+        """
+        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+        your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+        create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+        resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+        event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+        snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+        other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        """
+        return pulumi.get(self, "action_snow_event_param_additional_info")
+
+    @action_snow_event_param_additional_info.setter
+    def action_snow_event_param_additional_info(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_additional_info", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamCiIdentifier")
+    def action_snow_event_param_ci_identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+        example, k1=v1||k2=v2.
+        """
+        return pulumi.get(self, "action_snow_event_param_ci_identifier")
+
+    @action_snow_event_param_ci_identifier.setter
+    def action_snow_event_param_ci_identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_ci_identifier", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamCustomFields")
+    def action_snow_event_param_custom_fields(self) -> Optional[pulumi.Input[str]]:
+        """
+        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+        the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+        in the em_event table of ServiceNow.
+        """
+        return pulumi.get(self, "action_snow_event_param_custom_fields")
+
+    @action_snow_event_param_custom_fields.setter
+    def action_snow_event_param_custom_fields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_custom_fields", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamDescription")
+    def action_snow_event_param_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A brief description of the event.
+        """
+        return pulumi.get(self, "action_snow_event_param_description")
+
+    @action_snow_event_param_description.setter
+    def action_snow_event_param_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_description", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamNode")
+    def action_snow_event_param_node(self) -> Optional[pulumi.Input[str]]:
+        """
+        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+        same host name, the event is automatically assigned to the matching CI.
+        """
+        return pulumi.get(self, "action_snow_event_param_node")
+
+    @action_snow_event_param_node.setter
+    def action_snow_event_param_node(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_node", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamResource")
+    def action_snow_event_param_resource(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        """
+        return pulumi.get(self, "action_snow_event_param_resource")
+
+    @action_snow_event_param_resource.setter
+    def action_snow_event_param_resource(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_resource", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamSeverity")
+    def action_snow_event_param_severity(self) -> Optional[pulumi.Input[int]]:
+        """
+        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        """
+        return pulumi.get(self, "action_snow_event_param_severity")
+
+    @action_snow_event_param_severity.setter
+    def action_snow_event_param_severity(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_snow_event_param_severity", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamType")
+    def action_snow_event_param_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+        """
+        return pulumi.get(self, "action_snow_event_param_type")
+
+    @action_snow_event_param_type.setter
+    def action_snow_event_param_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_type", value)
+
+    @property
     @pulumi.getter(name="actionSummaryIndexCommand")
     def action_summary_index_command(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2473,6 +2637,15 @@ class _SavedSearchesState:
                  action_slack_param_fields: Optional[pulumi.Input[str]] = None,
                  action_slack_param_message: Optional[pulumi.Input[str]] = None,
                  action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+                 action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
                  action_summary_index: Optional[pulumi.Input[bool]] = None,
                  action_summary_index_command: Optional[pulumi.Input[str]] = None,
                  action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
@@ -2628,6 +2801,25 @@ class _SavedSearchesState:
         :param pulumi.Input[str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
         :param pulumi.Input[str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+        :param pulumi.Input[str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        :param pulumi.Input[str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+               example, k1=v1||k2=v2.
+        :param pulumi.Input[str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+               in the em_event table of ServiceNow.
+        :param pulumi.Input[str] action_snow_event_param_description: A brief description of the event.
+        :param pulumi.Input[str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        :param pulumi.Input[int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -2864,6 +3056,24 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_slack_param_message", action_slack_param_message)
         if action_slack_param_webhook_url_override is not None:
             pulumi.set(__self__, "action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
+        if action_snow_event_param_account is not None:
+            pulumi.set(__self__, "action_snow_event_param_account", action_snow_event_param_account)
+        if action_snow_event_param_additional_info is not None:
+            pulumi.set(__self__, "action_snow_event_param_additional_info", action_snow_event_param_additional_info)
+        if action_snow_event_param_ci_identifier is not None:
+            pulumi.set(__self__, "action_snow_event_param_ci_identifier", action_snow_event_param_ci_identifier)
+        if action_snow_event_param_custom_fields is not None:
+            pulumi.set(__self__, "action_snow_event_param_custom_fields", action_snow_event_param_custom_fields)
+        if action_snow_event_param_description is not None:
+            pulumi.set(__self__, "action_snow_event_param_description", action_snow_event_param_description)
+        if action_snow_event_param_node is not None:
+            pulumi.set(__self__, "action_snow_event_param_node", action_snow_event_param_node)
+        if action_snow_event_param_resource is not None:
+            pulumi.set(__self__, "action_snow_event_param_resource", action_snow_event_param_resource)
+        if action_snow_event_param_severity is not None:
+            pulumi.set(__self__, "action_snow_event_param_severity", action_snow_event_param_severity)
+        if action_snow_event_param_type is not None:
+            pulumi.set(__self__, "action_snow_event_param_type", action_snow_event_param_type)
         if action_summary_index is not None:
             pulumi.set(__self__, "action_summary_index", action_summary_index)
         if action_summary_index_command is not None:
@@ -3992,6 +4202,124 @@ class _SavedSearchesState:
         pulumi.set(self, "action_slack_param_webhook_url_override", value)
 
     @property
+    @pulumi.getter(name="actionSnowEventParamAccount")
+    def action_snow_event_param_account(self) -> Optional[pulumi.Input[str]]:
+        """
+        Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        """
+        return pulumi.get(self, "action_snow_event_param_account")
+
+    @action_snow_event_param_account.setter
+    def action_snow_event_param_account(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_account", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
+    def action_snow_event_param_additional_info(self) -> Optional[pulumi.Input[str]]:
+        """
+        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+        your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+        create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+        resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+        event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+        snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+        other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        """
+        return pulumi.get(self, "action_snow_event_param_additional_info")
+
+    @action_snow_event_param_additional_info.setter
+    def action_snow_event_param_additional_info(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_additional_info", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamCiIdentifier")
+    def action_snow_event_param_ci_identifier(self) -> Optional[pulumi.Input[str]]:
+        """
+        String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+        example, k1=v1||k2=v2.
+        """
+        return pulumi.get(self, "action_snow_event_param_ci_identifier")
+
+    @action_snow_event_param_ci_identifier.setter
+    def action_snow_event_param_ci_identifier(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_ci_identifier", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamCustomFields")
+    def action_snow_event_param_custom_fields(self) -> Optional[pulumi.Input[str]]:
+        """
+        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+        the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+        in the em_event table of ServiceNow.
+        """
+        return pulumi.get(self, "action_snow_event_param_custom_fields")
+
+    @action_snow_event_param_custom_fields.setter
+    def action_snow_event_param_custom_fields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_custom_fields", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamDescription")
+    def action_snow_event_param_description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A brief description of the event.
+        """
+        return pulumi.get(self, "action_snow_event_param_description")
+
+    @action_snow_event_param_description.setter
+    def action_snow_event_param_description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_description", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamNode")
+    def action_snow_event_param_node(self) -> Optional[pulumi.Input[str]]:
+        """
+        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+        same host name, the event is automatically assigned to the matching CI.
+        """
+        return pulumi.get(self, "action_snow_event_param_node")
+
+    @action_snow_event_param_node.setter
+    def action_snow_event_param_node(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_node", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamResource")
+    def action_snow_event_param_resource(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        """
+        return pulumi.get(self, "action_snow_event_param_resource")
+
+    @action_snow_event_param_resource.setter
+    def action_snow_event_param_resource(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_resource", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamSeverity")
+    def action_snow_event_param_severity(self) -> Optional[pulumi.Input[int]]:
+        """
+        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        """
+        return pulumi.get(self, "action_snow_event_param_severity")
+
+    @action_snow_event_param_severity.setter
+    def action_snow_event_param_severity(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "action_snow_event_param_severity", value)
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamType")
+    def action_snow_event_param_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+        """
+        return pulumi.get(self, "action_snow_event_param_type")
+
+    @action_snow_event_param_type.setter
+    def action_snow_event_param_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_snow_event_param_type", value)
+
+    @property
     @pulumi.getter(name="actionSummaryIndex")
     def action_summary_index(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -4927,6 +5255,15 @@ class SavedSearches(pulumi.CustomResource):
                  action_slack_param_fields: Optional[pulumi.Input[str]] = None,
                  action_slack_param_message: Optional[pulumi.Input[str]] = None,
                  action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+                 action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
                  action_summary_index_command: Optional[pulumi.Input[str]] = None,
                  action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
                  action_summary_index_inline: Optional[pulumi.Input[bool]] = None,
@@ -5109,6 +5446,25 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
         :param pulumi.Input[str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+        :param pulumi.Input[str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        :param pulumi.Input[str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+               example, k1=v1||k2=v2.
+        :param pulumi.Input[str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+               in the em_event table of ServiceNow.
+        :param pulumi.Input[str] action_snow_event_param_description: A brief description of the event.
+        :param pulumi.Input[str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        :param pulumi.Input[int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
@@ -5310,6 +5666,15 @@ class SavedSearches(pulumi.CustomResource):
                  action_slack_param_fields: Optional[pulumi.Input[str]] = None,
                  action_slack_param_message: Optional[pulumi.Input[str]] = None,
                  action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+                 action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+                 action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
                  action_summary_index_command: Optional[pulumi.Input[str]] = None,
                  action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
                  action_summary_index_inline: Optional[pulumi.Input[bool]] = None,
@@ -5467,6 +5832,15 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
             __props__.__dict__["action_slack_param_message"] = action_slack_param_message
             __props__.__dict__["action_slack_param_webhook_url_override"] = action_slack_param_webhook_url_override
+            __props__.__dict__["action_snow_event_param_account"] = action_snow_event_param_account
+            __props__.__dict__["action_snow_event_param_additional_info"] = action_snow_event_param_additional_info
+            __props__.__dict__["action_snow_event_param_ci_identifier"] = action_snow_event_param_ci_identifier
+            __props__.__dict__["action_snow_event_param_custom_fields"] = action_snow_event_param_custom_fields
+            __props__.__dict__["action_snow_event_param_description"] = action_snow_event_param_description
+            __props__.__dict__["action_snow_event_param_node"] = action_snow_event_param_node
+            __props__.__dict__["action_snow_event_param_resource"] = action_snow_event_param_resource
+            __props__.__dict__["action_snow_event_param_severity"] = action_snow_event_param_severity
+            __props__.__dict__["action_snow_event_param_type"] = action_snow_event_param_type
             __props__.__dict__["action_summary_index_command"] = action_summary_index_command
             __props__.__dict__["action_summary_index_hostname"] = action_summary_index_hostname
             __props__.__dict__["action_summary_index_inline"] = action_summary_index_inline
@@ -5636,6 +6010,15 @@ class SavedSearches(pulumi.CustomResource):
             action_slack_param_fields: Optional[pulumi.Input[str]] = None,
             action_slack_param_message: Optional[pulumi.Input[str]] = None,
             action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+            action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+            action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
             action_summary_index: Optional[pulumi.Input[bool]] = None,
             action_summary_index_command: Optional[pulumi.Input[str]] = None,
             action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
@@ -5796,6 +6179,25 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
         :param pulumi.Input[str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
+        :param pulumi.Input[str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        :param pulumi.Input[str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+               example, k1=v1||k2=v2.
+        :param pulumi.Input[str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+               in the em_event table of ServiceNow.
+        :param pulumi.Input[str] action_snow_event_param_description: A brief description of the event.
+        :param pulumi.Input[str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        :param pulumi.Input[int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -5954,6 +6356,15 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
         __props__.__dict__["action_slack_param_message"] = action_slack_param_message
         __props__.__dict__["action_slack_param_webhook_url_override"] = action_slack_param_webhook_url_override
+        __props__.__dict__["action_snow_event_param_account"] = action_snow_event_param_account
+        __props__.__dict__["action_snow_event_param_additional_info"] = action_snow_event_param_additional_info
+        __props__.__dict__["action_snow_event_param_ci_identifier"] = action_snow_event_param_ci_identifier
+        __props__.__dict__["action_snow_event_param_custom_fields"] = action_snow_event_param_custom_fields
+        __props__.__dict__["action_snow_event_param_description"] = action_snow_event_param_description
+        __props__.__dict__["action_snow_event_param_node"] = action_snow_event_param_node
+        __props__.__dict__["action_snow_event_param_resource"] = action_snow_event_param_resource
+        __props__.__dict__["action_snow_event_param_severity"] = action_snow_event_param_severity
+        __props__.__dict__["action_snow_event_param_type"] = action_snow_event_param_type
         __props__.__dict__["action_summary_index"] = action_summary_index
         __props__.__dict__["action_summary_index_command"] = action_summary_index_command
         __props__.__dict__["action_summary_index_hostname"] = action_summary_index_hostname
@@ -6682,6 +7093,88 @@ class SavedSearches(pulumi.CustomResource):
         You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         """
         return pulumi.get(self, "action_slack_param_webhook_url_override")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamAccount")
+    def action_snow_event_param_account(self) -> pulumi.Output[str]:
+        """
+        Account(s) for which the event is/ are to be created across ServiceNow instance(s).
+        """
+        return pulumi.get(self, "action_snow_event_param_account")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
+    def action_snow_event_param_additional_info(self) -> pulumi.Output[str]:
+        """
+        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
+        your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
+        create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
+        resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
+        event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
+        snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
+        other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        """
+        return pulumi.get(self, "action_snow_event_param_additional_info")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamCiIdentifier")
+    def action_snow_event_param_ci_identifier(self) -> pulumi.Output[str]:
+        """
+        String that represents a configuration item in your network. You can pass value as || separated key-value format. For
+        example, k1=v1||k2=v2.
+        """
+        return pulumi.get(self, "action_snow_event_param_ci_identifier")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamCustomFields")
+    def action_snow_event_param_custom_fields(self) -> pulumi.Output[str]:
+        """
+        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
+        the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
+        in the em_event table of ServiceNow.
+        """
+        return pulumi.get(self, "action_snow_event_param_custom_fields")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamDescription")
+    def action_snow_event_param_description(self) -> pulumi.Output[str]:
+        """
+        A brief description of the event.
+        """
+        return pulumi.get(self, "action_snow_event_param_description")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamNode")
+    def action_snow_event_param_node(self) -> pulumi.Output[str]:
+        """
+        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
+        same host name, the event is automatically assigned to the matching CI.
+        """
+        return pulumi.get(self, "action_snow_event_param_node")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamResource")
+    def action_snow_event_param_resource(self) -> pulumi.Output[str]:
+        """
+        The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
+        """
+        return pulumi.get(self, "action_snow_event_param_resource")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamSeverity")
+    def action_snow_event_param_severity(self) -> pulumi.Output[int]:
+        """
+        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        """
+        return pulumi.get(self, "action_snow_event_param_severity")
+
+    @property
+    @pulumi.getter(name="actionSnowEventParamType")
+    def action_snow_event_param_type(self) -> pulumi.Output[str]:
+        """
+        The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
+        """
+        return pulumi.get(self, "action_snow_event_param_type")
 
     @property
     @pulumi.getter(name="actionSummaryIndex")

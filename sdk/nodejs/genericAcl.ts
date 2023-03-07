@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -12,9 +13,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const myApp = new splunk.GenericAcl("my_app", {
+ * const myApp = new splunk.GenericAcl("myApp", {
  *     acl: {
- *         // use app=system, owner=nobody when managing apps, as they have no owner or app context
  *         app: "system",
  *         owner: "nobody",
  *         reads: ["*"],
@@ -23,10 +23,9 @@ import * as utilities from "./utilities";
  *             "power",
  *         ],
  *     },
- *     // apps are managed via the apps/local/<app> endpoint
  *     path: "apps/local/my_app",
  * });
- * const myDashboard = new splunk.GenericAcl("my_dashboard", {
+ * const myDashboard = new splunk.GenericAcl("myDashboard", {
  *     acl: {
  *         app: "my_app",
  *         owner: "joe_user",

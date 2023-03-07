@@ -26,7 +26,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewGenericAcl(ctx, "myApp", &splunk.GenericAclArgs{
-//				Acl: &GenericAclAclArgs{
+//				Acl: &splunk.GenericAclAclArgs{
 //					App:   pulumi.String("system"),
 //					Owner: pulumi.String("nobody"),
 //					Reads: pulumi.StringArray{
@@ -43,7 +43,7 @@ import (
 //				return err
 //			}
 //			_, err = splunk.NewGenericAcl(ctx, "myDashboard", &splunk.GenericAclArgs{
-//				Acl: &GenericAclAclArgs{
+//				Acl: &splunk.GenericAclAclArgs{
 //					App:   pulumi.String("my_app"),
 //					Owner: pulumi.String("joe_user"),
 //					Reads: pulumi.StringArray{

@@ -116,13 +116,15 @@ export class AuthenticationUsers extends pulumi.CustomResource {
             resourceInputs["email"] = args ? args.email : undefined;
             resourceInputs["forceChangePass"] = args ? args.forceChangePass : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["realname"] = args ? args.realname : undefined;
             resourceInputs["restartBackgroundJobs"] = args ? args.restartBackgroundJobs : undefined;
             resourceInputs["roles"] = args ? args.roles : undefined;
             resourceInputs["tz"] = args ? args.tz : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AuthenticationUsers.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -5,30 +5,126 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./adminSamlGroups";
-export * from "./appsLocal";
-export * from "./authenticationUsers";
-export * from "./authorizationRoles";
-export * from "./configsConf";
-export * from "./dataUiViews";
-export * from "./genericAcl";
-export * from "./globalHttpEventCollector";
-export * from "./indexes";
-export * from "./inputsHttpEventCollector";
-export * from "./inputsMonitor";
-export * from "./inputsScript";
-export * from "./inputsTcpCooked";
-export * from "./inputsTcpRaw";
-export * from "./inputsTcpSplunkTcpToken";
-export * from "./inputsTcpSsl";
-export * from "./inputsUdp";
-export * from "./outputsTcpDefault";
-export * from "./outputsTcpGroup";
-export * from "./outputsTcpServer";
-export * from "./outputsTcpSyslog";
-export * from "./provider";
-export * from "./savedSearches";
-export * from "./shIndexesManager";
+export { AdminSamlGroupsArgs, AdminSamlGroupsState } from "./adminSamlGroups";
+export type AdminSamlGroups = import("./adminSamlGroups").AdminSamlGroups;
+export const AdminSamlGroups: typeof import("./adminSamlGroups").AdminSamlGroups = null as any;
+utilities.lazyLoad(exports, ["AdminSamlGroups"], () => require("./adminSamlGroups"));
+
+export { AppsLocalArgs, AppsLocalState } from "./appsLocal";
+export type AppsLocal = import("./appsLocal").AppsLocal;
+export const AppsLocal: typeof import("./appsLocal").AppsLocal = null as any;
+utilities.lazyLoad(exports, ["AppsLocal"], () => require("./appsLocal"));
+
+export { AuthenticationUsersArgs, AuthenticationUsersState } from "./authenticationUsers";
+export type AuthenticationUsers = import("./authenticationUsers").AuthenticationUsers;
+export const AuthenticationUsers: typeof import("./authenticationUsers").AuthenticationUsers = null as any;
+utilities.lazyLoad(exports, ["AuthenticationUsers"], () => require("./authenticationUsers"));
+
+export { AuthorizationRolesArgs, AuthorizationRolesState } from "./authorizationRoles";
+export type AuthorizationRoles = import("./authorizationRoles").AuthorizationRoles;
+export const AuthorizationRoles: typeof import("./authorizationRoles").AuthorizationRoles = null as any;
+utilities.lazyLoad(exports, ["AuthorizationRoles"], () => require("./authorizationRoles"));
+
+export { ConfigsConfArgs, ConfigsConfState } from "./configsConf";
+export type ConfigsConf = import("./configsConf").ConfigsConf;
+export const ConfigsConf: typeof import("./configsConf").ConfigsConf = null as any;
+utilities.lazyLoad(exports, ["ConfigsConf"], () => require("./configsConf"));
+
+export { DataUiViewsArgs, DataUiViewsState } from "./dataUiViews";
+export type DataUiViews = import("./dataUiViews").DataUiViews;
+export const DataUiViews: typeof import("./dataUiViews").DataUiViews = null as any;
+utilities.lazyLoad(exports, ["DataUiViews"], () => require("./dataUiViews"));
+
+export { GenericAclArgs, GenericAclState } from "./genericAcl";
+export type GenericAcl = import("./genericAcl").GenericAcl;
+export const GenericAcl: typeof import("./genericAcl").GenericAcl = null as any;
+utilities.lazyLoad(exports, ["GenericAcl"], () => require("./genericAcl"));
+
+export { GlobalHttpEventCollectorArgs, GlobalHttpEventCollectorState } from "./globalHttpEventCollector";
+export type GlobalHttpEventCollector = import("./globalHttpEventCollector").GlobalHttpEventCollector;
+export const GlobalHttpEventCollector: typeof import("./globalHttpEventCollector").GlobalHttpEventCollector = null as any;
+utilities.lazyLoad(exports, ["GlobalHttpEventCollector"], () => require("./globalHttpEventCollector"));
+
+export { IndexesArgs, IndexesState } from "./indexes";
+export type Indexes = import("./indexes").Indexes;
+export const Indexes: typeof import("./indexes").Indexes = null as any;
+utilities.lazyLoad(exports, ["Indexes"], () => require("./indexes"));
+
+export { InputsHttpEventCollectorArgs, InputsHttpEventCollectorState } from "./inputsHttpEventCollector";
+export type InputsHttpEventCollector = import("./inputsHttpEventCollector").InputsHttpEventCollector;
+export const InputsHttpEventCollector: typeof import("./inputsHttpEventCollector").InputsHttpEventCollector = null as any;
+utilities.lazyLoad(exports, ["InputsHttpEventCollector"], () => require("./inputsHttpEventCollector"));
+
+export { InputsMonitorArgs, InputsMonitorState } from "./inputsMonitor";
+export type InputsMonitor = import("./inputsMonitor").InputsMonitor;
+export const InputsMonitor: typeof import("./inputsMonitor").InputsMonitor = null as any;
+utilities.lazyLoad(exports, ["InputsMonitor"], () => require("./inputsMonitor"));
+
+export { InputsScriptArgs, InputsScriptState } from "./inputsScript";
+export type InputsScript = import("./inputsScript").InputsScript;
+export const InputsScript: typeof import("./inputsScript").InputsScript = null as any;
+utilities.lazyLoad(exports, ["InputsScript"], () => require("./inputsScript"));
+
+export { InputsTcpCookedArgs, InputsTcpCookedState } from "./inputsTcpCooked";
+export type InputsTcpCooked = import("./inputsTcpCooked").InputsTcpCooked;
+export const InputsTcpCooked: typeof import("./inputsTcpCooked").InputsTcpCooked = null as any;
+utilities.lazyLoad(exports, ["InputsTcpCooked"], () => require("./inputsTcpCooked"));
+
+export { InputsTcpRawArgs, InputsTcpRawState } from "./inputsTcpRaw";
+export type InputsTcpRaw = import("./inputsTcpRaw").InputsTcpRaw;
+export const InputsTcpRaw: typeof import("./inputsTcpRaw").InputsTcpRaw = null as any;
+utilities.lazyLoad(exports, ["InputsTcpRaw"], () => require("./inputsTcpRaw"));
+
+export { InputsTcpSplunkTcpTokenArgs, InputsTcpSplunkTcpTokenState } from "./inputsTcpSplunkTcpToken";
+export type InputsTcpSplunkTcpToken = import("./inputsTcpSplunkTcpToken").InputsTcpSplunkTcpToken;
+export const InputsTcpSplunkTcpToken: typeof import("./inputsTcpSplunkTcpToken").InputsTcpSplunkTcpToken = null as any;
+utilities.lazyLoad(exports, ["InputsTcpSplunkTcpToken"], () => require("./inputsTcpSplunkTcpToken"));
+
+export { InputsTcpSslArgs, InputsTcpSslState } from "./inputsTcpSsl";
+export type InputsTcpSsl = import("./inputsTcpSsl").InputsTcpSsl;
+export const InputsTcpSsl: typeof import("./inputsTcpSsl").InputsTcpSsl = null as any;
+utilities.lazyLoad(exports, ["InputsTcpSsl"], () => require("./inputsTcpSsl"));
+
+export { InputsUdpArgs, InputsUdpState } from "./inputsUdp";
+export type InputsUdp = import("./inputsUdp").InputsUdp;
+export const InputsUdp: typeof import("./inputsUdp").InputsUdp = null as any;
+utilities.lazyLoad(exports, ["InputsUdp"], () => require("./inputsUdp"));
+
+export { OutputsTcpDefaultArgs, OutputsTcpDefaultState } from "./outputsTcpDefault";
+export type OutputsTcpDefault = import("./outputsTcpDefault").OutputsTcpDefault;
+export const OutputsTcpDefault: typeof import("./outputsTcpDefault").OutputsTcpDefault = null as any;
+utilities.lazyLoad(exports, ["OutputsTcpDefault"], () => require("./outputsTcpDefault"));
+
+export { OutputsTcpGroupArgs, OutputsTcpGroupState } from "./outputsTcpGroup";
+export type OutputsTcpGroup = import("./outputsTcpGroup").OutputsTcpGroup;
+export const OutputsTcpGroup: typeof import("./outputsTcpGroup").OutputsTcpGroup = null as any;
+utilities.lazyLoad(exports, ["OutputsTcpGroup"], () => require("./outputsTcpGroup"));
+
+export { OutputsTcpServerArgs, OutputsTcpServerState } from "./outputsTcpServer";
+export type OutputsTcpServer = import("./outputsTcpServer").OutputsTcpServer;
+export const OutputsTcpServer: typeof import("./outputsTcpServer").OutputsTcpServer = null as any;
+utilities.lazyLoad(exports, ["OutputsTcpServer"], () => require("./outputsTcpServer"));
+
+export { OutputsTcpSyslogArgs, OutputsTcpSyslogState } from "./outputsTcpSyslog";
+export type OutputsTcpSyslog = import("./outputsTcpSyslog").OutputsTcpSyslog;
+export const OutputsTcpSyslog: typeof import("./outputsTcpSyslog").OutputsTcpSyslog = null as any;
+utilities.lazyLoad(exports, ["OutputsTcpSyslog"], () => require("./outputsTcpSyslog"));
+
+export { ProviderArgs } from "./provider";
+export type Provider = import("./provider").Provider;
+export const Provider: typeof import("./provider").Provider = null as any;
+utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+
+export { SavedSearchesArgs, SavedSearchesState } from "./savedSearches";
+export type SavedSearches = import("./savedSearches").SavedSearches;
+export const SavedSearches: typeof import("./savedSearches").SavedSearches = null as any;
+utilities.lazyLoad(exports, ["SavedSearches"], () => require("./savedSearches"));
+
+export { ShIndexesManagerArgs, ShIndexesManagerState } from "./shIndexesManager";
+export type ShIndexesManager = import("./shIndexesManager").ShIndexesManager;
+export const ShIndexesManager: typeof import("./shIndexesManager").ShIndexesManager = null as any;
+utilities.lazyLoad(exports, ["ShIndexesManager"], () => require("./shIndexesManager"));
+
 
 // Export sub-modules:
 import * as config from "./config";
@@ -38,31 +134,6 @@ export {
     config,
     types,
 };
-
-// Import resources to register:
-import { AdminSamlGroups } from "./adminSamlGroups";
-import { AppsLocal } from "./appsLocal";
-import { AuthenticationUsers } from "./authenticationUsers";
-import { AuthorizationRoles } from "./authorizationRoles";
-import { ConfigsConf } from "./configsConf";
-import { DataUiViews } from "./dataUiViews";
-import { GenericAcl } from "./genericAcl";
-import { GlobalHttpEventCollector } from "./globalHttpEventCollector";
-import { Indexes } from "./indexes";
-import { InputsHttpEventCollector } from "./inputsHttpEventCollector";
-import { InputsMonitor } from "./inputsMonitor";
-import { InputsScript } from "./inputsScript";
-import { InputsTcpCooked } from "./inputsTcpCooked";
-import { InputsTcpRaw } from "./inputsTcpRaw";
-import { InputsTcpSplunkTcpToken } from "./inputsTcpSplunkTcpToken";
-import { InputsTcpSsl } from "./inputsTcpSsl";
-import { InputsUdp } from "./inputsUdp";
-import { OutputsTcpDefault } from "./outputsTcpDefault";
-import { OutputsTcpGroup } from "./outputsTcpGroup";
-import { OutputsTcpServer } from "./outputsTcpServer";
-import { OutputsTcpSyslog } from "./outputsTcpSyslog";
-import { SavedSearches } from "./savedSearches";
-import { ShIndexesManager } from "./shIndexesManager";
 
 const _module = {
     version: utilities.getVersion(),
@@ -142,9 +213,6 @@ pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpServer", _modul
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpSyslog", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/savedSearches", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/shIndexesManager", _module)
-
-import { Provider } from "./provider";
-
 pulumi.runtime.registerResourcePackage("splunk", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

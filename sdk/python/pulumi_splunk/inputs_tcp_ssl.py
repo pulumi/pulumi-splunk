@@ -274,10 +274,12 @@ class InputsTcpSsl(pulumi.CustomResource):
             __props__ = InputsTcpSslArgs.__new__(InputsTcpSslArgs)
 
             __props__.__dict__["disabled"] = disabled
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["require_client_cert"] = require_client_cert
             __props__.__dict__["root_ca"] = root_ca
             __props__.__dict__["server_cert"] = server_cert
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(InputsTcpSsl, __self__).__init__(
             'splunk:index/inputsTcpSsl:InputsTcpSsl',
             resource_name,

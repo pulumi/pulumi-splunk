@@ -421,11 +421,13 @@ class AuthenticationUsers(pulumi.CustomResource):
             __props__.__dict__["email"] = email
             __props__.__dict__["force_change_pass"] = force_change_pass
             __props__.__dict__["name"] = name
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["realname"] = realname
             __props__.__dict__["restart_background_jobs"] = restart_background_jobs
             __props__.__dict__["roles"] = roles
             __props__.__dict__["tz"] = tz
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AuthenticationUsers, __self__).__init__(
             'splunk:index/authenticationUsers:AuthenticationUsers',
             resource_name,
