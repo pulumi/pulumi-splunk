@@ -17,17 +17,9 @@ public final class ConfigsConfArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ConfigsConfArgs Empty = new ConfigsConfArgs();
 
-    /**
-     * The app/user context that is the namespace for the resource
-     * 
-     */
     @Import(name="acl")
     private @Nullable Output<ConfigsConfAclArgs> acl;
 
-    /**
-     * @return The app/user context that is the namespace for the resource
-     * 
-     */
     public Optional<Output<ConfigsConfAclArgs>> acl() {
         return Optional.ofNullable(this.acl);
     }
@@ -88,23 +80,11 @@ public final class ConfigsConfArgs extends com.pulumi.resources.ResourceArgs {
             $ = new ConfigsConfArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param acl The app/user context that is the namespace for the resource
-         * 
-         * @return builder
-         * 
-         */
         public Builder acl(@Nullable Output<ConfigsConfAclArgs> acl) {
             $.acl = acl;
             return this;
         }
 
-        /**
-         * @param acl The app/user context that is the namespace for the resource
-         * 
-         * @return builder
-         * 
-         */
         public Builder acl(ConfigsConfAclArgs acl) {
             return acl(Output.of(acl));
         }

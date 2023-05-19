@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -21,8 +21,6 @@ import (
 // package main
 //
 // import (
-//
-//	"fmt"
 //
 //	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
@@ -41,7 +39,7 @@ import (
 //				ActionEmailMaxResults:  pulumi.Int(10),
 //				ActionEmailMaxTime:     pulumi.String("5m"),
 //				ActionEmailSendResults: pulumi.Bool(false),
-//				ActionEmailSubject:     pulumi.String(fmt.Sprintf("Splunk Alert: $name$")),
+//				ActionEmailSubject:     pulumi.String("Splunk Alert: $name$"),
 //				ActionEmailTo:          pulumi.String("splunk@splunk.com"),
 //				ActionEmailTrackAlert:  pulumi.Bool(true),
 //				Actions:                pulumi.String("email"),
@@ -169,6 +167,10 @@ type SavedSearches struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrl pulumi.StringPtrOutput `pulumi:"actionPagerdutyIntegrationUrl"`
+	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrlOverride pulumi.StringPtrOutput `pulumi:"actionPagerdutyIntegrationUrlOverride"`
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup pulumi.BoolOutput `pulumi:"actionPopulateLookup"`
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -537,6 +539,10 @@ type savedSearchesState struct {
 	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrl *string `pulumi:"actionPagerdutyIntegrationUrl"`
+	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrlOverride *string `pulumi:"actionPagerdutyIntegrationUrlOverride"`
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup *bool `pulumi:"actionPopulateLookup"`
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -874,6 +880,10 @@ type SavedSearchesState struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
+	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrl pulumi.StringPtrInput
+	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrlOverride pulumi.StringPtrInput
 	// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionPopulateLookup pulumi.BoolPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.
@@ -1213,6 +1223,10 @@ type savedSearchesArgs struct {
 	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrl *string `pulumi:"actionPagerdutyIntegrationUrl"`
+	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrlOverride *string `pulumi:"actionPagerdutyIntegrationUrlOverride"`
 	// The search command (or pipeline) which is responsible for executing the action.
 	ActionPopulateLookupCommand *string `pulumi:"actionPopulateLookupCommand"`
 	// Lookup name of path of the lookup to populate
@@ -1541,6 +1555,10 @@ type SavedSearchesArgs struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
+	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrl pulumi.StringPtrInput
+	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+	ActionPagerdutyIntegrationUrlOverride pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.
 	ActionPopulateLookupCommand pulumi.StringPtrInput
 	// Lookup name of path of the lookup to populate
@@ -2116,6 +2134,16 @@ func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraProject() pulumi.Stri
 // Jira issue title/summary
 func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraSummary() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraSummary }).(pulumi.StringPtrOutput)
+}
+
+// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+func (o SavedSearchesOutput) ActionPagerdutyIntegrationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionPagerdutyIntegrationUrl }).(pulumi.StringPtrOutput)
+}
+
+// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+func (o SavedSearchesOutput) ActionPagerdutyIntegrationUrlOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionPagerdutyIntegrationUrlOverride }).(pulumi.StringPtrOutput)
 }
 
 // The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.

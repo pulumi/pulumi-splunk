@@ -830,6 +830,34 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionJiraServiceDeskParamJiraSummary);
     }
     /**
+     * The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    @Export(name="actionPagerdutyIntegrationUrl", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionPagerdutyIntegrationUrl;
+
+    /**
+     * @return The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    public Output<Optional<String>> actionPagerdutyIntegrationUrl() {
+        return Codegen.optional(this.actionPagerdutyIntegrationUrl);
+    }
+    /**
+     * The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    @Export(name="actionPagerdutyIntegrationUrlOverride", type=String.class, parameters={})
+    private Output</* @Nullable */ String> actionPagerdutyIntegrationUrlOverride;
+
+    /**
+     * @return The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    public Output<Optional<String>> actionPagerdutyIntegrationUrlOverride() {
+        return Codegen.optional(this.actionPagerdutyIntegrationUrlOverride);
+    }
+    /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */

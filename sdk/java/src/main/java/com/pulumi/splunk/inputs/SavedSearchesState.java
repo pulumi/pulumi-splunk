@@ -830,6 +830,36 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    @Import(name="actionPagerdutyIntegrationUrl")
+    private @Nullable Output<String> actionPagerdutyIntegrationUrl;
+
+    /**
+     * @return The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    public Optional<Output<String>> actionPagerdutyIntegrationUrl() {
+        return Optional.ofNullable(this.actionPagerdutyIntegrationUrl);
+    }
+
+    /**
+     * The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    @Import(name="actionPagerdutyIntegrationUrlOverride")
+    private @Nullable Output<String> actionPagerdutyIntegrationUrlOverride;
+
+    /**
+     * @return The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+     * 
+     */
+    public Optional<Output<String>> actionPagerdutyIntegrationUrlOverride() {
+        return Optional.ofNullable(this.actionPagerdutyIntegrationUrlOverride);
+    }
+
+    /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
@@ -2526,6 +2556,8 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         this.actionJiraServiceDeskParamJiraPriority = $.actionJiraServiceDeskParamJiraPriority;
         this.actionJiraServiceDeskParamJiraProject = $.actionJiraServiceDeskParamJiraProject;
         this.actionJiraServiceDeskParamJiraSummary = $.actionJiraServiceDeskParamJiraSummary;
+        this.actionPagerdutyIntegrationUrl = $.actionPagerdutyIntegrationUrl;
+        this.actionPagerdutyIntegrationUrlOverride = $.actionPagerdutyIntegrationUrlOverride;
         this.actionPopulateLookup = $.actionPopulateLookup;
         this.actionPopulateLookupCommand = $.actionPopulateLookupCommand;
         this.actionPopulateLookupDest = $.actionPopulateLookupDest;
@@ -3786,6 +3818,48 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder actionJiraServiceDeskParamJiraSummary(String actionJiraServiceDeskParamJiraSummary) {
             return actionJiraServiceDeskParamJiraSummary(Output.of(actionJiraServiceDeskParamJiraSummary));
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationUrl The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationUrl(@Nullable Output<String> actionPagerdutyIntegrationUrl) {
+            $.actionPagerdutyIntegrationUrl = actionPagerdutyIntegrationUrl;
+            return this;
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationUrl The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationUrl(String actionPagerdutyIntegrationUrl) {
+            return actionPagerdutyIntegrationUrl(Output.of(actionPagerdutyIntegrationUrl));
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationUrlOverride The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationUrlOverride(@Nullable Output<String> actionPagerdutyIntegrationUrlOverride) {
+            $.actionPagerdutyIntegrationUrlOverride = actionPagerdutyIntegrationUrlOverride;
+            return this;
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationUrlOverride The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationUrlOverride(String actionPagerdutyIntegrationUrlOverride) {
+            return actionPagerdutyIntegrationUrlOverride(Output.of(actionPagerdutyIntegrationUrlOverride));
         }
 
         /**

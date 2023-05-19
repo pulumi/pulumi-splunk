@@ -18,6 +18,7 @@ namespace Pulumi.Splunk
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
@@ -38,9 +39,6 @@ namespace Pulumi.Splunk
     [SplunkResourceType("splunk:index/configsConf:ConfigsConf")]
     public partial class ConfigsConf : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// The app/user context that is the namespace for the resource
-        /// </summary>
         [Output("acl")]
         public Output<Outputs.ConfigsConfAcl> Acl { get; private set; } = null!;
 
@@ -102,9 +100,6 @@ namespace Pulumi.Splunk
 
     public sealed class ConfigsConfArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The app/user context that is the namespace for the resource
-        /// </summary>
         [Input("acl")]
         public Input<Inputs.ConfigsConfAclArgs>? Acl { get; set; }
 
@@ -134,9 +129,6 @@ namespace Pulumi.Splunk
 
     public sealed class ConfigsConfState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The app/user context that is the namespace for the resource
-        /// </summary>
         [Input("acl")]
         public Input<Inputs.ConfigsConfAclGetArgs>? Acl { get; set; }
 

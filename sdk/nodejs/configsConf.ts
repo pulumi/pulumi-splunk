@@ -51,9 +51,6 @@ export class ConfigsConf extends pulumi.CustomResource {
         return obj['__pulumiType'] === ConfigsConf.__pulumiType;
     }
 
-    /**
-     * The app/user context that is the namespace for the resource
-     */
     public readonly acl!: pulumi.Output<outputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -95,9 +92,6 @@ export class ConfigsConf extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ConfigsConf resources.
  */
 export interface ConfigsConfState {
-    /**
-     * The app/user context that is the namespace for the resource
-     */
     acl?: pulumi.Input<inputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -113,9 +107,6 @@ export interface ConfigsConfState {
  * The set of arguments for constructing a ConfigsConf resource.
  */
 export interface ConfigsConfArgs {
-    /**
-     * The app/user context that is the namespace for the resource
-     */
     acl?: pulumi.Input<inputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
