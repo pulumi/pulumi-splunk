@@ -21,7 +21,6 @@ class ConfigsConfArgs:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a ConfigsConf resource.
-        :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
         """
@@ -35,9 +34,6 @@ class ConfigsConfArgs:
     @property
     @pulumi.getter
     def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
-        """
-        The app/user context that is the namespace for the resource
-        """
         return pulumi.get(self, "acl")
 
     @acl.setter
@@ -77,7 +73,6 @@ class _ConfigsConfState:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering ConfigsConf resources.
-        :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
         """
@@ -91,9 +86,6 @@ class _ConfigsConfState:
     @property
     @pulumi.getter
     def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
-        """
-        The app/user context that is the namespace for the resource
-        """
         return pulumi.get(self, "acl")
 
     @acl.setter
@@ -153,7 +145,6 @@ class ConfigsConf(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ConfigsConfAclArgs']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
         """
@@ -230,7 +221,6 @@ class ConfigsConf(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ConfigsConfAclArgs']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
         """
@@ -246,9 +236,6 @@ class ConfigsConf(pulumi.CustomResource):
     @property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.ConfigsConfAcl']:
-        """
-        The app/user context that is the namespace for the resource
-        """
         return pulumi.get(self, "acl")
 
     @property

@@ -27,7 +27,7 @@ import * as utilities from "./utilities";
  *     actionEmailMaxResults: 10,
  *     actionEmailMaxTime: "5m",
  *     actionEmailSendResults: false,
- *     actionEmailSubject: `Splunk Alert: $name$`,
+ *     actionEmailSubject: "Splunk Alert: $name$",
  *     actionEmailTo: "splunk@splunk.com",
  *     actionEmailTrackAlert: true,
  *     actions: "email",
@@ -282,6 +282,14 @@ export class SavedSearches extends pulumi.CustomResource {
      * Jira issue title/summary
      */
     public readonly actionJiraServiceDeskParamJiraSummary!: pulumi.Output<string | undefined>;
+    /**
+     * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+     */
+    public readonly actionPagerdutyIntegrationUrl!: pulumi.Output<string | undefined>;
+    /**
+     * The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+     */
+    public readonly actionPagerdutyIntegrationUrlOverride!: pulumi.Output<string | undefined>;
     /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -792,6 +800,8 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state ? state.actionJiraServiceDeskParamJiraPriority : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraProject"] = state ? state.actionJiraServiceDeskParamJiraProject : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraSummary"] = state ? state.actionJiraServiceDeskParamJiraSummary : undefined;
+            resourceInputs["actionPagerdutyIntegrationUrl"] = state ? state.actionPagerdutyIntegrationUrl : undefined;
+            resourceInputs["actionPagerdutyIntegrationUrlOverride"] = state ? state.actionPagerdutyIntegrationUrlOverride : undefined;
             resourceInputs["actionPopulateLookup"] = state ? state.actionPopulateLookup : undefined;
             resourceInputs["actionPopulateLookupCommand"] = state ? state.actionPopulateLookupCommand : undefined;
             resourceInputs["actionPopulateLookupDest"] = state ? state.actionPopulateLookupDest : undefined;
@@ -958,6 +968,8 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args ? args.actionJiraServiceDeskParamJiraPriority : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraProject"] = args ? args.actionJiraServiceDeskParamJiraProject : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraSummary"] = args ? args.actionJiraServiceDeskParamJiraSummary : undefined;
+            resourceInputs["actionPagerdutyIntegrationUrl"] = args ? args.actionPagerdutyIntegrationUrl : undefined;
+            resourceInputs["actionPagerdutyIntegrationUrlOverride"] = args ? args.actionPagerdutyIntegrationUrlOverride : undefined;
             resourceInputs["actionPopulateLookupCommand"] = args ? args.actionPopulateLookupCommand : undefined;
             resourceInputs["actionPopulateLookupDest"] = args ? args.actionPopulateLookupDest : undefined;
             resourceInputs["actionPopulateLookupHostname"] = args ? args.actionPopulateLookupHostname : undefined;
@@ -1293,6 +1305,14 @@ export interface SavedSearchesState {
      * Jira issue title/summary
      */
     actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    /**
+     * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+     */
+    actionPagerdutyIntegrationUrl?: pulumi.Input<string>;
+    /**
+     * The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+     */
+    actionPagerdutyIntegrationUrlOverride?: pulumi.Input<string>;
     /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -1953,6 +1973,14 @@ export interface SavedSearchesArgs {
      * Jira issue title/summary
      */
     actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    /**
+     * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+     */
+    actionPagerdutyIntegrationUrl?: pulumi.Input<string>;
+    /**
+     * The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+     */
+    actionPagerdutyIntegrationUrlOverride?: pulumi.Input<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */

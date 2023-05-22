@@ -14,6 +14,7 @@ namespace Pulumi.Splunk
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 

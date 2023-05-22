@@ -56,17 +56,9 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="splunk:index/configsConf:ConfigsConf")
 public class ConfigsConf extends com.pulumi.resources.CustomResource {
-    /**
-     * The app/user context that is the namespace for the resource
-     * 
-     */
     @Export(name="acl", type=ConfigsConfAcl.class, parameters={})
     private Output<ConfigsConfAcl> acl;
 
-    /**
-     * @return The app/user context that is the namespace for the resource
-     * 
-     */
     public Output<ConfigsConfAcl> acl() {
         return this.acl;
     }

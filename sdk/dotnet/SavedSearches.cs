@@ -18,6 +18,7 @@ namespace Pulumi.Splunk
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Splunk = Pulumi.Splunk;
     /// 
@@ -374,6 +375,18 @@ namespace Pulumi.Splunk
         /// </summary>
         [Output("actionJiraServiceDeskParamJiraSummary")]
         public Output<string?> ActionJiraServiceDeskParamJiraSummary { get; private set; } = null!;
+
+        /// <summary>
+        /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+        /// </summary>
+        [Output("actionPagerdutyIntegrationUrl")]
+        public Output<string?> ActionPagerdutyIntegrationUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+        /// </summary>
+        [Output("actionPagerdutyIntegrationUrlOverride")]
+        public Output<string?> ActionPagerdutyIntegrationUrlOverride { get; private set; } = null!;
 
         /// <summary>
         /// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -1398,6 +1411,18 @@ namespace Pulumi.Splunk
         public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
 
         /// <summary>
+        /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationUrl")]
+        public Input<string>? ActionPagerdutyIntegrationUrl { get; set; }
+
+        /// <summary>
+        /// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationUrlOverride")]
+        public Input<string>? ActionPagerdutyIntegrationUrlOverride { get; set; }
+
+        /// <summary>
         /// The search command (or pipeline) which is responsible for executing the action.
         /// </summary>
         [Input("actionPopulateLookupCommand")]
@@ -2362,6 +2387,18 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionJiraServiceDeskParamJiraSummary")]
         public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
+
+        /// <summary>
+        /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationUrl")]
+        public Input<string>? ActionPagerdutyIntegrationUrl { get; set; }
+
+        /// <summary>
+        /// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationUrlOverride")]
+        public Input<string>? ActionPagerdutyIntegrationUrlOverride { get; set; }
 
         /// <summary>
         /// The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
