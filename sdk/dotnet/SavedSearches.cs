@@ -377,6 +377,24 @@ namespace Pulumi.Splunk
         public Output<string?> ActionJiraServiceDeskParamJiraSummary { get; private set; } = null!;
 
         /// <summary>
+        /// The PagerDuty custom details information.
+        /// </summary>
+        [Output("actionPagerdutyCustomDetails")]
+        public Output<string> ActionPagerdutyCustomDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The PagerDuty integration Key.
+        /// </summary>
+        [Output("actionPagerdutyIntegrationKey")]
+        public Output<string> ActionPagerdutyIntegrationKey { get; private set; } = null!;
+
+        /// <summary>
+        /// The PagerDuty integration Key override.
+        /// </summary>
+        [Output("actionPagerdutyIntegrationKeyOverride")]
+        public Output<string> ActionPagerdutyIntegrationKeyOverride { get; private set; } = null!;
+
+        /// <summary>
         /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         /// </summary>
         [Output("actionPagerdutyIntegrationUrl")]
@@ -1411,6 +1429,24 @@ namespace Pulumi.Splunk
         public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
 
         /// <summary>
+        /// The PagerDuty custom details information.
+        /// </summary>
+        [Input("actionPagerdutyCustomDetails")]
+        public Input<string>? ActionPagerdutyCustomDetails { get; set; }
+
+        /// <summary>
+        /// The PagerDuty integration Key.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationKey")]
+        public Input<string>? ActionPagerdutyIntegrationKey { get; set; }
+
+        /// <summary>
+        /// The PagerDuty integration Key override.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationKeyOverride")]
+        public Input<string>? ActionPagerdutyIntegrationKeyOverride { get; set; }
+
+        /// <summary>
         /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         /// </summary>
         [Input("actionPagerdutyIntegrationUrl")]
@@ -2387,6 +2423,24 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionJiraServiceDeskParamJiraSummary")]
         public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
+
+        /// <summary>
+        /// The PagerDuty custom details information.
+        /// </summary>
+        [Input("actionPagerdutyCustomDetails")]
+        public Input<string>? ActionPagerdutyCustomDetails { get; set; }
+
+        /// <summary>
+        /// The PagerDuty integration Key.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationKey")]
+        public Input<string>? ActionPagerdutyIntegrationKey { get; set; }
+
+        /// <summary>
+        /// The PagerDuty integration Key override.
+        /// </summary>
+        [Input("actionPagerdutyIntegrationKeyOverride")]
+        public Input<string>? ActionPagerdutyIntegrationKeyOverride { get; set; }
 
         /// <summary>
         /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.

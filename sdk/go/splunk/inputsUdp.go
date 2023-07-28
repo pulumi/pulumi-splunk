@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -84,6 +85,7 @@ func NewInputsUdp(ctx *pulumi.Context,
 		args = &InputsUdpArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsUdp
 	err := ctx.RegisterResource("splunk:index/inputsUdp:InputsUdp", name, args, &resource, opts...)
 	if err != nil {

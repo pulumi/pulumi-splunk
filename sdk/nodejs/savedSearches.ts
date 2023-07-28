@@ -283,6 +283,18 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     public readonly actionJiraServiceDeskParamJiraSummary!: pulumi.Output<string | undefined>;
     /**
+     * The PagerDuty custom details information.
+     */
+    public readonly actionPagerdutyCustomDetails!: pulumi.Output<string>;
+    /**
+     * The PagerDuty integration Key.
+     */
+    public readonly actionPagerdutyIntegrationKey!: pulumi.Output<string>;
+    /**
+     * The PagerDuty integration Key override.
+     */
+    public readonly actionPagerdutyIntegrationKeyOverride!: pulumi.Output<string>;
+    /**
      * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
     public readonly actionPagerdutyIntegrationUrl!: pulumi.Output<string | undefined>;
@@ -800,6 +812,9 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state ? state.actionJiraServiceDeskParamJiraPriority : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraProject"] = state ? state.actionJiraServiceDeskParamJiraProject : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraSummary"] = state ? state.actionJiraServiceDeskParamJiraSummary : undefined;
+            resourceInputs["actionPagerdutyCustomDetails"] = state ? state.actionPagerdutyCustomDetails : undefined;
+            resourceInputs["actionPagerdutyIntegrationKey"] = state ? state.actionPagerdutyIntegrationKey : undefined;
+            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = state ? state.actionPagerdutyIntegrationKeyOverride : undefined;
             resourceInputs["actionPagerdutyIntegrationUrl"] = state ? state.actionPagerdutyIntegrationUrl : undefined;
             resourceInputs["actionPagerdutyIntegrationUrlOverride"] = state ? state.actionPagerdutyIntegrationUrlOverride : undefined;
             resourceInputs["actionPopulateLookup"] = state ? state.actionPopulateLookup : undefined;
@@ -968,6 +983,9 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args ? args.actionJiraServiceDeskParamJiraPriority : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraProject"] = args ? args.actionJiraServiceDeskParamJiraProject : undefined;
             resourceInputs["actionJiraServiceDeskParamJiraSummary"] = args ? args.actionJiraServiceDeskParamJiraSummary : undefined;
+            resourceInputs["actionPagerdutyCustomDetails"] = args ? args.actionPagerdutyCustomDetails : undefined;
+            resourceInputs["actionPagerdutyIntegrationKey"] = args ? args.actionPagerdutyIntegrationKey : undefined;
+            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = args ? args.actionPagerdutyIntegrationKeyOverride : undefined;
             resourceInputs["actionPagerdutyIntegrationUrl"] = args ? args.actionPagerdutyIntegrationUrl : undefined;
             resourceInputs["actionPagerdutyIntegrationUrlOverride"] = args ? args.actionPagerdutyIntegrationUrlOverride : undefined;
             resourceInputs["actionPopulateLookupCommand"] = args ? args.actionPopulateLookupCommand : undefined;
@@ -1305,6 +1323,18 @@ export interface SavedSearchesState {
      * Jira issue title/summary
      */
     actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    /**
+     * The PagerDuty custom details information.
+     */
+    actionPagerdutyCustomDetails?: pulumi.Input<string>;
+    /**
+     * The PagerDuty integration Key.
+     */
+    actionPagerdutyIntegrationKey?: pulumi.Input<string>;
+    /**
+     * The PagerDuty integration Key override.
+     */
+    actionPagerdutyIntegrationKeyOverride?: pulumi.Input<string>;
     /**
      * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
@@ -1973,6 +2003,18 @@ export interface SavedSearchesArgs {
      * Jira issue title/summary
      */
     actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    /**
+     * The PagerDuty custom details information.
+     */
+    actionPagerdutyCustomDetails?: pulumi.Input<string>;
+    /**
+     * The PagerDuty integration Key.
+     */
+    actionPagerdutyIntegrationKey?: pulumi.Input<string>;
+    /**
+     * The PagerDuty integration Key override.
+     */
+    actionPagerdutyIntegrationKeyOverride?: pulumi.Input<string>;
     /**
      * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */

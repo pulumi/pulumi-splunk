@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -70,6 +71,7 @@ func NewInputsTcpCooked(ctx *pulumi.Context,
 		args = &InputsTcpCookedArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsTcpCooked
 	err := ctx.RegisterResource("splunk:index/inputsTcpCooked:InputsTcpCooked", name, args, &resource, opts...)
 	if err != nil {

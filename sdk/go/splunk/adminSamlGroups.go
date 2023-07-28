@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -68,6 +69,7 @@ func NewAdminSamlGroups(ctx *pulumi.Context,
 		args = &AdminSamlGroupsArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AdminSamlGroups
 	err := ctx.RegisterResource("splunk:index/adminSamlGroups:AdminSamlGroups", name, args, &resource, opts...)
 	if err != nil {

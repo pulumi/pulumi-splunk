@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -68,6 +69,7 @@ func NewGlobalHttpEventCollector(ctx *pulumi.Context,
 		args = &GlobalHttpEventCollectorArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource GlobalHttpEventCollector
 	err := ctx.RegisterResource("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector", name, args, &resource, opts...)
 	if err != nil {

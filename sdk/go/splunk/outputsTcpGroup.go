@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -94,6 +95,7 @@ func NewOutputsTcpGroup(ctx *pulumi.Context,
 	if args.Servers == nil {
 		return nil, errors.New("invalid value for required argument 'Servers'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OutputsTcpGroup
 	err := ctx.RegisterResource("splunk:index/outputsTcpGroup:OutputsTcpGroup", name, args, &resource, opts...)
 	if err != nil {

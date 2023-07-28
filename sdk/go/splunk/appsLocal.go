@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -89,6 +90,7 @@ func NewAppsLocal(ctx *pulumi.Context,
 		args = &AppsLocalArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppsLocal
 	err := ctx.RegisterResource("splunk:index/appsLocal:AppsLocal", name, args, &resource, opts...)
 	if err != nil {
