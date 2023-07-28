@@ -37,6 +37,8 @@
             "disableUnionOutputTypes": true,
             "packageDescription": "A Pulumi package for creating and managing splunk cloud resources.",
             "packageName": "",
+            "pluginName": "",
+            "pluginVersion": "",
             "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/splunk/terraform-provider-splunk)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-splunk` repo](https://github.com/pulumi/pulumi-splunk/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-splunk` repo](https://github.com/splunk/terraform-provider-splunk/issues).",
             "typescriptVersion": ""
         },
@@ -4551,6 +4553,18 @@
                     "type": "string",
                     "description": "Jira issue title/summary\n"
                 },
+                "actionPagerdutyCustomDetails": {
+                    "type": "string",
+                    "description": "The PagerDuty custom details information.\n"
+                },
+                "actionPagerdutyIntegrationKey": {
+                    "type": "string",
+                    "description": "The PagerDuty integration Key.\n"
+                },
+                "actionPagerdutyIntegrationKeyOverride": {
+                    "type": "string",
+                    "description": "The PagerDuty integration Key override.\n"
+                },
                 "actionPagerdutyIntegrationUrl": {
                     "type": "string",
                     "description": "The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.\n"
@@ -5032,6 +5046,9 @@
                 "actionEmailUseSsl",
                 "actionEmailUseTls",
                 "actionEmailWidthSortColumns",
+                "actionPagerdutyCustomDetails",
+                "actionPagerdutyIntegrationKey",
+                "actionPagerdutyIntegrationKeyOverride",
                 "actionPopulateLookup",
                 "actionPopulateLookupCommand",
                 "actionPopulateLookupDest",
@@ -5346,6 +5363,18 @@
                 "actionJiraServiceDeskParamJiraSummary": {
                     "type": "string",
                     "description": "Jira issue title/summary\n"
+                },
+                "actionPagerdutyCustomDetails": {
+                    "type": "string",
+                    "description": "The PagerDuty custom details information.\n"
+                },
+                "actionPagerdutyIntegrationKey": {
+                    "type": "string",
+                    "description": "The PagerDuty integration Key.\n"
+                },
+                "actionPagerdutyIntegrationKeyOverride": {
+                    "type": "string",
+                    "description": "The PagerDuty integration Key override.\n"
                 },
                 "actionPagerdutyIntegrationUrl": {
                     "type": "string",
@@ -5994,6 +6023,18 @@
                     "actionJiraServiceDeskParamJiraSummary": {
                         "type": "string",
                         "description": "Jira issue title/summary\n"
+                    },
+                    "actionPagerdutyCustomDetails": {
+                        "type": "string",
+                        "description": "The PagerDuty custom details information.\n"
+                    },
+                    "actionPagerdutyIntegrationKey": {
+                        "type": "string",
+                        "description": "The PagerDuty integration Key.\n"
+                    },
+                    "actionPagerdutyIntegrationKeyOverride": {
+                        "type": "string",
+                        "description": "The PagerDuty integration Key override.\n"
                     },
                     "actionPagerdutyIntegrationUrl": {
                         "type": "string",
