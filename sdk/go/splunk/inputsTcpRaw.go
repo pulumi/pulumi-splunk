@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -89,6 +90,7 @@ func NewInputsTcpRaw(ctx *pulumi.Context,
 		args = &InputsTcpRawArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsTcpRaw
 	err := ctx.RegisterResource("splunk:index/inputsTcpRaw:InputsTcpRaw", name, args, &resource, opts...)
 	if err != nil {

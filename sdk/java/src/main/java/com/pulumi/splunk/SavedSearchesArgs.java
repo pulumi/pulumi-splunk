@@ -815,6 +815,51 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The PagerDuty custom details information.
+     * 
+     */
+    @Import(name="actionPagerdutyCustomDetails")
+    private @Nullable Output<String> actionPagerdutyCustomDetails;
+
+    /**
+     * @return The PagerDuty custom details information.
+     * 
+     */
+    public Optional<Output<String>> actionPagerdutyCustomDetails() {
+        return Optional.ofNullable(this.actionPagerdutyCustomDetails);
+    }
+
+    /**
+     * The PagerDuty integration Key.
+     * 
+     */
+    @Import(name="actionPagerdutyIntegrationKey")
+    private @Nullable Output<String> actionPagerdutyIntegrationKey;
+
+    /**
+     * @return The PagerDuty integration Key.
+     * 
+     */
+    public Optional<Output<String>> actionPagerdutyIntegrationKey() {
+        return Optional.ofNullable(this.actionPagerdutyIntegrationKey);
+    }
+
+    /**
+     * The PagerDuty integration Key override.
+     * 
+     */
+    @Import(name="actionPagerdutyIntegrationKeyOverride")
+    private @Nullable Output<String> actionPagerdutyIntegrationKeyOverride;
+
+    /**
+     * @return The PagerDuty integration Key override.
+     * 
+     */
+    public Optional<Output<String>> actionPagerdutyIntegrationKeyOverride() {
+        return Optional.ofNullable(this.actionPagerdutyIntegrationKeyOverride);
+    }
+
+    /**
      * The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
      * 
      */
@@ -2480,6 +2525,9 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionJiraServiceDeskParamJiraPriority = $.actionJiraServiceDeskParamJiraPriority;
         this.actionJiraServiceDeskParamJiraProject = $.actionJiraServiceDeskParamJiraProject;
         this.actionJiraServiceDeskParamJiraSummary = $.actionJiraServiceDeskParamJiraSummary;
+        this.actionPagerdutyCustomDetails = $.actionPagerdutyCustomDetails;
+        this.actionPagerdutyIntegrationKey = $.actionPagerdutyIntegrationKey;
+        this.actionPagerdutyIntegrationKeyOverride = $.actionPagerdutyIntegrationKeyOverride;
         this.actionPagerdutyIntegrationUrl = $.actionPagerdutyIntegrationUrl;
         this.actionPagerdutyIntegrationUrlOverride = $.actionPagerdutyIntegrationUrlOverride;
         this.actionPopulateLookupCommand = $.actionPopulateLookupCommand;
@@ -3717,6 +3765,69 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionJiraServiceDeskParamJiraSummary(String actionJiraServiceDeskParamJiraSummary) {
             return actionJiraServiceDeskParamJiraSummary(Output.of(actionJiraServiceDeskParamJiraSummary));
+        }
+
+        /**
+         * @param actionPagerdutyCustomDetails The PagerDuty custom details information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyCustomDetails(@Nullable Output<String> actionPagerdutyCustomDetails) {
+            $.actionPagerdutyCustomDetails = actionPagerdutyCustomDetails;
+            return this;
+        }
+
+        /**
+         * @param actionPagerdutyCustomDetails The PagerDuty custom details information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyCustomDetails(String actionPagerdutyCustomDetails) {
+            return actionPagerdutyCustomDetails(Output.of(actionPagerdutyCustomDetails));
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationKey The PagerDuty integration Key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationKey(@Nullable Output<String> actionPagerdutyIntegrationKey) {
+            $.actionPagerdutyIntegrationKey = actionPagerdutyIntegrationKey;
+            return this;
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationKey The PagerDuty integration Key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationKey(String actionPagerdutyIntegrationKey) {
+            return actionPagerdutyIntegrationKey(Output.of(actionPagerdutyIntegrationKey));
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationKeyOverride The PagerDuty integration Key override.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationKeyOverride(@Nullable Output<String> actionPagerdutyIntegrationKeyOverride) {
+            $.actionPagerdutyIntegrationKeyOverride = actionPagerdutyIntegrationKeyOverride;
+            return this;
+        }
+
+        /**
+         * @param actionPagerdutyIntegrationKeyOverride The PagerDuty integration Key override.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionPagerdutyIntegrationKeyOverride(String actionPagerdutyIntegrationKeyOverride) {
+            return actionPagerdutyIntegrationKeyOverride(Output.of(actionPagerdutyIntegrationKeyOverride));
         }
 
         /**

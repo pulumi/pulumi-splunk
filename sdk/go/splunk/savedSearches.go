@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -167,6 +168,12 @@ type SavedSearches struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// The PagerDuty custom details information.
+	ActionPagerdutyCustomDetails pulumi.StringOutput `pulumi:"actionPagerdutyCustomDetails"`
+	// The PagerDuty integration Key.
+	ActionPagerdutyIntegrationKey pulumi.StringOutput `pulumi:"actionPagerdutyIntegrationKey"`
+	// The PagerDuty integration Key override.
+	ActionPagerdutyIntegrationKeyOverride pulumi.StringOutput `pulumi:"actionPagerdutyIntegrationKeyOverride"`
 	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
 	ActionPagerdutyIntegrationUrl pulumi.StringPtrOutput `pulumi:"actionPagerdutyIntegrationUrl"`
 	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -409,6 +416,7 @@ func NewSavedSearches(ctx *pulumi.Context,
 	if args.Search == nil {
 		return nil, errors.New("invalid value for required argument 'Search'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SavedSearches
 	err := ctx.RegisterResource("splunk:index/savedSearches:SavedSearches", name, args, &resource, opts...)
 	if err != nil {
@@ -539,6 +547,12 @@ type savedSearchesState struct {
 	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// The PagerDuty custom details information.
+	ActionPagerdutyCustomDetails *string `pulumi:"actionPagerdutyCustomDetails"`
+	// The PagerDuty integration Key.
+	ActionPagerdutyIntegrationKey *string `pulumi:"actionPagerdutyIntegrationKey"`
+	// The PagerDuty integration Key override.
+	ActionPagerdutyIntegrationKeyOverride *string `pulumi:"actionPagerdutyIntegrationKeyOverride"`
 	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
 	ActionPagerdutyIntegrationUrl *string `pulumi:"actionPagerdutyIntegrationUrl"`
 	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -880,6 +894,12 @@ type SavedSearchesState struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
+	// The PagerDuty custom details information.
+	ActionPagerdutyCustomDetails pulumi.StringPtrInput
+	// The PagerDuty integration Key.
+	ActionPagerdutyIntegrationKey pulumi.StringPtrInput
+	// The PagerDuty integration Key override.
+	ActionPagerdutyIntegrationKeyOverride pulumi.StringPtrInput
 	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
 	ActionPagerdutyIntegrationUrl pulumi.StringPtrInput
 	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -1223,6 +1243,12 @@ type savedSearchesArgs struct {
 	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// The PagerDuty custom details information.
+	ActionPagerdutyCustomDetails *string `pulumi:"actionPagerdutyCustomDetails"`
+	// The PagerDuty integration Key.
+	ActionPagerdutyIntegrationKey *string `pulumi:"actionPagerdutyIntegrationKey"`
+	// The PagerDuty integration Key override.
+	ActionPagerdutyIntegrationKeyOverride *string `pulumi:"actionPagerdutyIntegrationKeyOverride"`
 	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
 	ActionPagerdutyIntegrationUrl *string `pulumi:"actionPagerdutyIntegrationUrl"`
 	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -1555,6 +1581,12 @@ type SavedSearchesArgs struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
+	// The PagerDuty custom details information.
+	ActionPagerdutyCustomDetails pulumi.StringPtrInput
+	// The PagerDuty integration Key.
+	ActionPagerdutyIntegrationKey pulumi.StringPtrInput
+	// The PagerDuty integration Key override.
+	ActionPagerdutyIntegrationKeyOverride pulumi.StringPtrInput
 	// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
 	ActionPagerdutyIntegrationUrl pulumi.StringPtrInput
 	// The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -2134,6 +2166,21 @@ func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraProject() pulumi.Stri
 // Jira issue title/summary
 func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraSummary() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraSummary }).(pulumi.StringPtrOutput)
+}
+
+// The PagerDuty custom details information.
+func (o SavedSearchesOutput) ActionPagerdutyCustomDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPagerdutyCustomDetails }).(pulumi.StringOutput)
+}
+
+// The PagerDuty integration Key.
+func (o SavedSearchesOutput) ActionPagerdutyIntegrationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPagerdutyIntegrationKey }).(pulumi.StringOutput)
+}
+
+// The PagerDuty integration Key override.
+func (o SavedSearchesOutput) ActionPagerdutyIntegrationKeyOverride() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPagerdutyIntegrationKeyOverride }).(pulumi.StringOutput)
 }
 
 // The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.

@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -57,6 +58,7 @@ func NewInputsTcpSplunkTcpToken(ctx *pulumi.Context,
 		args = &InputsTcpSplunkTcpTokenArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsTcpSplunkTcpToken
 	err := ctx.RegisterResource("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", name, args, &resource, opts...)
 	if err != nil {

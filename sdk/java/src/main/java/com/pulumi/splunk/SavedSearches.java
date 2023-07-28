@@ -830,6 +830,48 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionJiraServiceDeskParamJiraSummary);
     }
     /**
+     * The PagerDuty custom details information.
+     * 
+     */
+    @Export(name="actionPagerdutyCustomDetails", type=String.class, parameters={})
+    private Output<String> actionPagerdutyCustomDetails;
+
+    /**
+     * @return The PagerDuty custom details information.
+     * 
+     */
+    public Output<String> actionPagerdutyCustomDetails() {
+        return this.actionPagerdutyCustomDetails;
+    }
+    /**
+     * The PagerDuty integration Key.
+     * 
+     */
+    @Export(name="actionPagerdutyIntegrationKey", type=String.class, parameters={})
+    private Output<String> actionPagerdutyIntegrationKey;
+
+    /**
+     * @return The PagerDuty integration Key.
+     * 
+     */
+    public Output<String> actionPagerdutyIntegrationKey() {
+        return this.actionPagerdutyIntegrationKey;
+    }
+    /**
+     * The PagerDuty integration Key override.
+     * 
+     */
+    @Export(name="actionPagerdutyIntegrationKeyOverride", type=String.class, parameters={})
+    private Output<String> actionPagerdutyIntegrationKeyOverride;
+
+    /**
+     * @return The PagerDuty integration Key override.
+     * 
+     */
+    public Output<String> actionPagerdutyIntegrationKeyOverride() {
+        return this.actionPagerdutyIntegrationKeyOverride;
+    }
+    /**
      * The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
      * 
      */

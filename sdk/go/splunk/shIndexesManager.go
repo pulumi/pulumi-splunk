@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -68,6 +69,7 @@ func NewShIndexesManager(ctx *pulumi.Context,
 		args = &ShIndexesManagerArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ShIndexesManager
 	err := ctx.RegisterResource("splunk:index/shIndexesManager:ShIndexesManager", name, args, &resource, opts...)
 	if err != nil {

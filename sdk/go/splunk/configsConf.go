@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -59,6 +60,7 @@ func NewConfigsConf(ctx *pulumi.Context,
 		args = &ConfigsConfArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ConfigsConf
 	err := ctx.RegisterResource("splunk:index/configsConf:ConfigsConf", name, args, &resource, opts...)
 	if err != nil {

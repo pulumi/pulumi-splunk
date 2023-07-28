@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -86,6 +87,7 @@ func NewOutputsTcpDefault(ctx *pulumi.Context,
 		args = &OutputsTcpDefaultArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OutputsTcpDefault
 	err := ctx.RegisterResource("splunk:index/outputsTcpDefault:OutputsTcpDefault", name, args, &resource, opts...)
 	if err != nil {

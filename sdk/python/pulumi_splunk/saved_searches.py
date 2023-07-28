@@ -70,6 +70,9 @@ class SavedSearchesArgs:
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
@@ -231,6 +234,9 @@ class SavedSearchesArgs:
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[str] action_pagerduty_custom_details: The PagerDuty custom details information.
+        :param pulumi.Input[str] action_pagerduty_integration_key: The PagerDuty integration Key.
+        :param pulumi.Input[str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
         :param pulumi.Input[str] action_pagerduty_integration_url: The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_pagerduty_integration_url_override: The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
@@ -454,6 +460,12 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
         if action_jira_service_desk_param_jira_summary is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
+        if action_pagerduty_custom_details is not None:
+            pulumi.set(__self__, "action_pagerduty_custom_details", action_pagerduty_custom_details)
+        if action_pagerduty_integration_key is not None:
+            pulumi.set(__self__, "action_pagerduty_integration_key", action_pagerduty_integration_key)
+        if action_pagerduty_integration_key_override is not None:
+            pulumi.set(__self__, "action_pagerduty_integration_key_override", action_pagerduty_integration_key_override)
         if action_pagerduty_integration_url is not None:
             pulumi.set(__self__, "action_pagerduty_integration_url", action_pagerduty_integration_url)
         if action_pagerduty_integration_url_override is not None:
@@ -1312,6 +1324,42 @@ class SavedSearchesArgs:
     @action_jira_service_desk_param_jira_summary.setter
     def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
+
+    @property
+    @pulumi.getter(name="actionPagerdutyCustomDetails")
+    def action_pagerduty_custom_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The PagerDuty custom details information.
+        """
+        return pulumi.get(self, "action_pagerduty_custom_details")
+
+    @action_pagerduty_custom_details.setter
+    def action_pagerduty_custom_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_pagerduty_custom_details", value)
+
+    @property
+    @pulumi.getter(name="actionPagerdutyIntegrationKey")
+    def action_pagerduty_integration_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The PagerDuty integration Key.
+        """
+        return pulumi.get(self, "action_pagerduty_integration_key")
+
+    @action_pagerduty_integration_key.setter
+    def action_pagerduty_integration_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_pagerduty_integration_key", value)
+
+    @property
+    @pulumi.getter(name="actionPagerdutyIntegrationKeyOverride")
+    def action_pagerduty_integration_key_override(self) -> Optional[pulumi.Input[str]]:
+        """
+        The PagerDuty integration Key override.
+        """
+        return pulumi.get(self, "action_pagerduty_integration_key_override")
+
+    @action_pagerduty_integration_key_override.setter
+    def action_pagerduty_integration_key_override(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_pagerduty_integration_key_override", value)
 
     @property
     @pulumi.getter(name="actionPagerdutyIntegrationUrl")
@@ -2641,6 +2689,9 @@ class _SavedSearchesState:
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup: Optional[pulumi.Input[bool]] = None,
@@ -2807,6 +2858,9 @@ class _SavedSearchesState:
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[str] action_pagerduty_custom_details: The PagerDuty custom details information.
+        :param pulumi.Input[str] action_pagerduty_integration_key: The PagerDuty integration Key.
+        :param pulumi.Input[str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
         :param pulumi.Input[str] action_pagerduty_integration_url: The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_pagerduty_integration_url_override: The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -3036,6 +3090,12 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
         if action_jira_service_desk_param_jira_summary is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
+        if action_pagerduty_custom_details is not None:
+            pulumi.set(__self__, "action_pagerduty_custom_details", action_pagerduty_custom_details)
+        if action_pagerduty_integration_key is not None:
+            pulumi.set(__self__, "action_pagerduty_integration_key", action_pagerduty_integration_key)
+        if action_pagerduty_integration_key_override is not None:
+            pulumi.set(__self__, "action_pagerduty_integration_key_override", action_pagerduty_integration_key_override)
         if action_pagerduty_integration_url is not None:
             pulumi.set(__self__, "action_pagerduty_integration_url", action_pagerduty_integration_url)
         if action_pagerduty_integration_url_override is not None:
@@ -3904,6 +3964,42 @@ class _SavedSearchesState:
     @action_jira_service_desk_param_jira_summary.setter
     def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
+
+    @property
+    @pulumi.getter(name="actionPagerdutyCustomDetails")
+    def action_pagerduty_custom_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        The PagerDuty custom details information.
+        """
+        return pulumi.get(self, "action_pagerduty_custom_details")
+
+    @action_pagerduty_custom_details.setter
+    def action_pagerduty_custom_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_pagerduty_custom_details", value)
+
+    @property
+    @pulumi.getter(name="actionPagerdutyIntegrationKey")
+    def action_pagerduty_integration_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        The PagerDuty integration Key.
+        """
+        return pulumi.get(self, "action_pagerduty_integration_key")
+
+    @action_pagerduty_integration_key.setter
+    def action_pagerduty_integration_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_pagerduty_integration_key", value)
+
+    @property
+    @pulumi.getter(name="actionPagerdutyIntegrationKeyOverride")
+    def action_pagerduty_integration_key_override(self) -> Optional[pulumi.Input[str]]:
+        """
+        The PagerDuty integration Key override.
+        """
+        return pulumi.get(self, "action_pagerduty_integration_key_override")
+
+    @action_pagerduty_integration_key_override.setter
+    def action_pagerduty_integration_key_override(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_pagerduty_integration_key_override", value)
 
     @property
     @pulumi.getter(name="actionPagerdutyIntegrationUrl")
@@ -5294,6 +5390,9 @@ class SavedSearches(pulumi.CustomResource):
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
@@ -5487,6 +5586,9 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[str] action_pagerduty_custom_details: The PagerDuty custom details information.
+        :param pulumi.Input[str] action_pagerduty_integration_key: The PagerDuty integration Key.
+        :param pulumi.Input[str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
         :param pulumi.Input[str] action_pagerduty_integration_url: The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_pagerduty_integration_url_override: The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
@@ -5709,6 +5811,9 @@ class SavedSearches(pulumi.CustomResource):
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+                 action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
                  action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
                  action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
@@ -5877,6 +5982,9 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
             __props__.__dict__["action_jira_service_desk_param_jira_project"] = action_jira_service_desk_param_jira_project
             __props__.__dict__["action_jira_service_desk_param_jira_summary"] = action_jira_service_desk_param_jira_summary
+            __props__.__dict__["action_pagerduty_custom_details"] = action_pagerduty_custom_details
+            __props__.__dict__["action_pagerduty_integration_key"] = action_pagerduty_integration_key
+            __props__.__dict__["action_pagerduty_integration_key_override"] = action_pagerduty_integration_key_override
             __props__.__dict__["action_pagerduty_integration_url"] = action_pagerduty_integration_url
             __props__.__dict__["action_pagerduty_integration_url_override"] = action_pagerduty_integration_url_override
             __props__.__dict__["action_populate_lookup_command"] = action_populate_lookup_command
@@ -6054,6 +6162,9 @@ class SavedSearches(pulumi.CustomResource):
             action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
             action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
             action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+            action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+            action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+            action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
             action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
             action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
             action_populate_lookup: Optional[pulumi.Input[bool]] = None,
@@ -6225,6 +6336,9 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[str] action_pagerduty_custom_details: The PagerDuty custom details information.
+        :param pulumi.Input[str] action_pagerduty_integration_key: The PagerDuty integration Key.
+        :param pulumi.Input[str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
         :param pulumi.Input[str] action_pagerduty_integration_url: The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_pagerduty_integration_url_override: The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -6404,6 +6518,9 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
         __props__.__dict__["action_jira_service_desk_param_jira_project"] = action_jira_service_desk_param_jira_project
         __props__.__dict__["action_jira_service_desk_param_jira_summary"] = action_jira_service_desk_param_jira_summary
+        __props__.__dict__["action_pagerduty_custom_details"] = action_pagerduty_custom_details
+        __props__.__dict__["action_pagerduty_integration_key"] = action_pagerduty_integration_key
+        __props__.__dict__["action_pagerduty_integration_key_override"] = action_pagerduty_integration_key_override
         __props__.__dict__["action_pagerduty_integration_url"] = action_pagerduty_integration_url
         __props__.__dict__["action_pagerduty_integration_url_override"] = action_pagerduty_integration_url_override
         __props__.__dict__["action_populate_lookup"] = action_populate_lookup
@@ -6947,6 +7064,30 @@ class SavedSearches(pulumi.CustomResource):
         Jira issue title/summary
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
+
+    @property
+    @pulumi.getter(name="actionPagerdutyCustomDetails")
+    def action_pagerduty_custom_details(self) -> pulumi.Output[str]:
+        """
+        The PagerDuty custom details information.
+        """
+        return pulumi.get(self, "action_pagerduty_custom_details")
+
+    @property
+    @pulumi.getter(name="actionPagerdutyIntegrationKey")
+    def action_pagerduty_integration_key(self) -> pulumi.Output[str]:
+        """
+        The PagerDuty integration Key.
+        """
+        return pulumi.get(self, "action_pagerduty_integration_key")
+
+    @property
+    @pulumi.getter(name="actionPagerdutyIntegrationKeyOverride")
+    def action_pagerduty_integration_key_override(self) -> pulumi.Output[str]:
+        """
+        The PagerDuty integration Key override.
+        """
+        return pulumi.get(self, "action_pagerduty_integration_key_override")
 
     @property
     @pulumi.getter(name="actionPagerdutyIntegrationUrl")

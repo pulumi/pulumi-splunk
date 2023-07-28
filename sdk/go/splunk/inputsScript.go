@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -51,6 +52,7 @@ func NewInputsScript(ctx *pulumi.Context,
 	if args.Interval == nil {
 		return nil, errors.New("invalid value for required argument 'Interval'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsScript
 	err := ctx.RegisterResource("splunk:index/inputsScript:InputsScript", name, args, &resource, opts...)
 	if err != nil {

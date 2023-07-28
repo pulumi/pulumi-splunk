@@ -4,9 +4,12 @@
 package config
 
 import (
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
+
+var _ = internal.GetEnvOrDefault
 
 // Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
 // the Splunk platform

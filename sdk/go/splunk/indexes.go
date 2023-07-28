@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -179,6 +180,7 @@ func NewIndexes(ctx *pulumi.Context,
 		args = &IndexesArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Indexes
 	err := ctx.RegisterResource("splunk:index/indexes:Indexes", name, args, &resource, opts...)
 	if err != nil {

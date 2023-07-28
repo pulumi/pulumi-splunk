@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -74,6 +75,7 @@ func NewOutputsTcpSyslog(ctx *pulumi.Context,
 		args = &OutputsTcpSyslogArgs{}
 	}
 
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OutputsTcpSyslog
 	err := ctx.RegisterResource("splunk:index/outputsTcpSyslog:OutputsTcpSyslog", name, args, &resource, opts...)
 	if err != nil {
