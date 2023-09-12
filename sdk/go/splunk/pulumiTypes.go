@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -64,6 +65,12 @@ func (i AppsLocalAclArgs) ToAppsLocalAclOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalAclOutput)
 }
 
+func (i AppsLocalAclArgs) ToOutput(ctx context.Context) pulumix.Output[AppsLocalAcl] {
+	return pulumix.Output[AppsLocalAcl]{
+		OutputState: i.ToAppsLocalAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i AppsLocalAclArgs) ToAppsLocalAclPtrOutput() AppsLocalAclPtrOutput {
 	return i.ToAppsLocalAclPtrOutputWithContext(context.Background())
 }
@@ -105,6 +112,12 @@ func (i *appsLocalAclPtrType) ToAppsLocalAclPtrOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalAclPtrOutput)
 }
 
+func (i *appsLocalAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*AppsLocalAcl] {
+	return pulumix.Output[*AppsLocalAcl]{
+		OutputState: i.ToAppsLocalAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppsLocalAclOutput struct{ *pulumi.OutputState }
 
 func (AppsLocalAclOutput) ElementType() reflect.Type {
@@ -127,6 +140,12 @@ func (o AppsLocalAclOutput) ToAppsLocalAclPtrOutputWithContext(ctx context.Conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AppsLocalAcl) *AppsLocalAcl {
 		return &v
 	}).(AppsLocalAclPtrOutput)
+}
+
+func (o AppsLocalAclOutput) ToOutput(ctx context.Context) pulumix.Output[AppsLocalAcl] {
+	return pulumix.Output[AppsLocalAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppsLocalAclOutput) App() pulumi.StringPtrOutput {
@@ -185,6 +204,12 @@ func (o AppsLocalAclPtrOutput) ToAppsLocalAclPtrOutput() AppsLocalAclPtrOutput {
 
 func (o AppsLocalAclPtrOutput) ToAppsLocalAclPtrOutputWithContext(ctx context.Context) AppsLocalAclPtrOutput {
 	return o
+}
+
+func (o AppsLocalAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AppsLocalAcl] {
+	return pulumix.Output[*AppsLocalAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppsLocalAclPtrOutput) Elem() AppsLocalAclOutput {
@@ -347,6 +372,12 @@ func (i ConfigsConfAclArgs) ToConfigsConfAclOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfAclOutput)
 }
 
+func (i ConfigsConfAclArgs) ToOutput(ctx context.Context) pulumix.Output[ConfigsConfAcl] {
+	return pulumix.Output[ConfigsConfAcl]{
+		OutputState: i.ToConfigsConfAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ConfigsConfAclArgs) ToConfigsConfAclPtrOutput() ConfigsConfAclPtrOutput {
 	return i.ToConfigsConfAclPtrOutputWithContext(context.Background())
 }
@@ -388,6 +419,12 @@ func (i *configsConfAclPtrType) ToConfigsConfAclPtrOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfAclPtrOutput)
 }
 
+func (i *configsConfAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConfigsConfAcl] {
+	return pulumix.Output[*ConfigsConfAcl]{
+		OutputState: i.ToConfigsConfAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConfigsConfAclOutput struct{ *pulumi.OutputState }
 
 func (ConfigsConfAclOutput) ElementType() reflect.Type {
@@ -410,6 +447,12 @@ func (o ConfigsConfAclOutput) ToConfigsConfAclPtrOutputWithContext(ctx context.C
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigsConfAcl) *ConfigsConfAcl {
 		return &v
 	}).(ConfigsConfAclPtrOutput)
+}
+
+func (o ConfigsConfAclOutput) ToOutput(ctx context.Context) pulumix.Output[ConfigsConfAcl] {
+	return pulumix.Output[ConfigsConfAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConfigsConfAclOutput) App() pulumi.StringPtrOutput {
@@ -468,6 +511,12 @@ func (o ConfigsConfAclPtrOutput) ToConfigsConfAclPtrOutput() ConfigsConfAclPtrOu
 
 func (o ConfigsConfAclPtrOutput) ToConfigsConfAclPtrOutputWithContext(ctx context.Context) ConfigsConfAclPtrOutput {
 	return o
+}
+
+func (o ConfigsConfAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigsConfAcl] {
+	return pulumix.Output[*ConfigsConfAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConfigsConfAclPtrOutput) Elem() ConfigsConfAclOutput {
@@ -630,6 +679,12 @@ func (i DataUiViewsAclArgs) ToDataUiViewsAclOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsAclOutput)
 }
 
+func (i DataUiViewsAclArgs) ToOutput(ctx context.Context) pulumix.Output[DataUiViewsAcl] {
+	return pulumix.Output[DataUiViewsAcl]{
+		OutputState: i.ToDataUiViewsAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i DataUiViewsAclArgs) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOutput {
 	return i.ToDataUiViewsAclPtrOutputWithContext(context.Background())
 }
@@ -671,6 +726,12 @@ func (i *dataUiViewsAclPtrType) ToDataUiViewsAclPtrOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsAclPtrOutput)
 }
 
+func (i *dataUiViewsAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*DataUiViewsAcl] {
+	return pulumix.Output[*DataUiViewsAcl]{
+		OutputState: i.ToDataUiViewsAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DataUiViewsAclOutput struct{ *pulumi.OutputState }
 
 func (DataUiViewsAclOutput) ElementType() reflect.Type {
@@ -693,6 +754,12 @@ func (o DataUiViewsAclOutput) ToDataUiViewsAclPtrOutputWithContext(ctx context.C
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataUiViewsAcl) *DataUiViewsAcl {
 		return &v
 	}).(DataUiViewsAclPtrOutput)
+}
+
+func (o DataUiViewsAclOutput) ToOutput(ctx context.Context) pulumix.Output[DataUiViewsAcl] {
+	return pulumix.Output[DataUiViewsAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataUiViewsAclOutput) App() pulumi.StringPtrOutput {
@@ -751,6 +818,12 @@ func (o DataUiViewsAclPtrOutput) ToDataUiViewsAclPtrOutput() DataUiViewsAclPtrOu
 
 func (o DataUiViewsAclPtrOutput) ToDataUiViewsAclPtrOutputWithContext(ctx context.Context) DataUiViewsAclPtrOutput {
 	return o
+}
+
+func (o DataUiViewsAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DataUiViewsAcl] {
+	return pulumix.Output[*DataUiViewsAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataUiViewsAclPtrOutput) Elem() DataUiViewsAclOutput {
@@ -913,6 +986,12 @@ func (i GenericAclAclArgs) ToGenericAclAclOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GenericAclAclOutput)
 }
 
+func (i GenericAclAclArgs) ToOutput(ctx context.Context) pulumix.Output[GenericAclAcl] {
+	return pulumix.Output[GenericAclAcl]{
+		OutputState: i.ToGenericAclAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i GenericAclAclArgs) ToGenericAclAclPtrOutput() GenericAclAclPtrOutput {
 	return i.ToGenericAclAclPtrOutputWithContext(context.Background())
 }
@@ -954,6 +1033,12 @@ func (i *genericAclAclPtrType) ToGenericAclAclPtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(GenericAclAclPtrOutput)
 }
 
+func (i *genericAclAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*GenericAclAcl] {
+	return pulumix.Output[*GenericAclAcl]{
+		OutputState: i.ToGenericAclAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GenericAclAclOutput struct{ *pulumi.OutputState }
 
 func (GenericAclAclOutput) ElementType() reflect.Type {
@@ -976,6 +1061,12 @@ func (o GenericAclAclOutput) ToGenericAclAclPtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v GenericAclAcl) *GenericAclAcl {
 		return &v
 	}).(GenericAclAclPtrOutput)
+}
+
+func (o GenericAclAclOutput) ToOutput(ctx context.Context) pulumix.Output[GenericAclAcl] {
+	return pulumix.Output[GenericAclAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GenericAclAclOutput) App() pulumi.StringPtrOutput {
@@ -1034,6 +1125,12 @@ func (o GenericAclAclPtrOutput) ToGenericAclAclPtrOutput() GenericAclAclPtrOutpu
 
 func (o GenericAclAclPtrOutput) ToGenericAclAclPtrOutputWithContext(ctx context.Context) GenericAclAclPtrOutput {
 	return o
+}
+
+func (o GenericAclAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*GenericAclAcl] {
+	return pulumix.Output[*GenericAclAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GenericAclAclPtrOutput) Elem() GenericAclAclOutput {
@@ -1196,6 +1293,12 @@ func (i IndexesAclArgs) ToIndexesAclOutputWithContext(ctx context.Context) Index
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesAclOutput)
 }
 
+func (i IndexesAclArgs) ToOutput(ctx context.Context) pulumix.Output[IndexesAcl] {
+	return pulumix.Output[IndexesAcl]{
+		OutputState: i.ToIndexesAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i IndexesAclArgs) ToIndexesAclPtrOutput() IndexesAclPtrOutput {
 	return i.ToIndexesAclPtrOutputWithContext(context.Background())
 }
@@ -1237,6 +1340,12 @@ func (i *indexesAclPtrType) ToIndexesAclPtrOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesAclPtrOutput)
 }
 
+func (i *indexesAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*IndexesAcl] {
+	return pulumix.Output[*IndexesAcl]{
+		OutputState: i.ToIndexesAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IndexesAclOutput struct{ *pulumi.OutputState }
 
 func (IndexesAclOutput) ElementType() reflect.Type {
@@ -1259,6 +1368,12 @@ func (o IndexesAclOutput) ToIndexesAclPtrOutputWithContext(ctx context.Context) 
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexesAcl) *IndexesAcl {
 		return &v
 	}).(IndexesAclPtrOutput)
+}
+
+func (o IndexesAclOutput) ToOutput(ctx context.Context) pulumix.Output[IndexesAcl] {
+	return pulumix.Output[IndexesAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IndexesAclOutput) App() pulumi.StringPtrOutput {
@@ -1317,6 +1432,12 @@ func (o IndexesAclPtrOutput) ToIndexesAclPtrOutput() IndexesAclPtrOutput {
 
 func (o IndexesAclPtrOutput) ToIndexesAclPtrOutputWithContext(ctx context.Context) IndexesAclPtrOutput {
 	return o
+}
+
+func (o IndexesAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*IndexesAcl] {
+	return pulumix.Output[*IndexesAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IndexesAclPtrOutput) Elem() IndexesAclOutput {
@@ -1479,6 +1600,12 @@ func (i InputsHttpEventCollectorAclArgs) ToInputsHttpEventCollectorAclOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorAclOutput)
 }
 
+func (i InputsHttpEventCollectorAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsHttpEventCollectorAcl] {
+	return pulumix.Output[InputsHttpEventCollectorAcl]{
+		OutputState: i.ToInputsHttpEventCollectorAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsHttpEventCollectorAclArgs) ToInputsHttpEventCollectorAclPtrOutput() InputsHttpEventCollectorAclPtrOutput {
 	return i.ToInputsHttpEventCollectorAclPtrOutputWithContext(context.Background())
 }
@@ -1520,6 +1647,12 @@ func (i *inputsHttpEventCollectorAclPtrType) ToInputsHttpEventCollectorAclPtrOut
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorAclPtrOutput)
 }
 
+func (i *inputsHttpEventCollectorAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsHttpEventCollectorAcl] {
+	return pulumix.Output[*InputsHttpEventCollectorAcl]{
+		OutputState: i.ToInputsHttpEventCollectorAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsHttpEventCollectorAclOutput struct{ *pulumi.OutputState }
 
 func (InputsHttpEventCollectorAclOutput) ElementType() reflect.Type {
@@ -1542,6 +1675,12 @@ func (o InputsHttpEventCollectorAclOutput) ToInputsHttpEventCollectorAclPtrOutpu
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsHttpEventCollectorAcl) *InputsHttpEventCollectorAcl {
 		return &v
 	}).(InputsHttpEventCollectorAclPtrOutput)
+}
+
+func (o InputsHttpEventCollectorAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsHttpEventCollectorAcl] {
+	return pulumix.Output[InputsHttpEventCollectorAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsHttpEventCollectorAclOutput) App() pulumi.StringPtrOutput {
@@ -1600,6 +1739,12 @@ func (o InputsHttpEventCollectorAclPtrOutput) ToInputsHttpEventCollectorAclPtrOu
 
 func (o InputsHttpEventCollectorAclPtrOutput) ToInputsHttpEventCollectorAclPtrOutputWithContext(ctx context.Context) InputsHttpEventCollectorAclPtrOutput {
 	return o
+}
+
+func (o InputsHttpEventCollectorAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsHttpEventCollectorAcl] {
+	return pulumix.Output[*InputsHttpEventCollectorAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsHttpEventCollectorAclPtrOutput) Elem() InputsHttpEventCollectorAclOutput {
@@ -1762,6 +1907,12 @@ func (i InputsMonitorAclArgs) ToInputsMonitorAclOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorAclOutput)
 }
 
+func (i InputsMonitorAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsMonitorAcl] {
+	return pulumix.Output[InputsMonitorAcl]{
+		OutputState: i.ToInputsMonitorAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsMonitorAclArgs) ToInputsMonitorAclPtrOutput() InputsMonitorAclPtrOutput {
 	return i.ToInputsMonitorAclPtrOutputWithContext(context.Background())
 }
@@ -1803,6 +1954,12 @@ func (i *inputsMonitorAclPtrType) ToInputsMonitorAclPtrOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorAclPtrOutput)
 }
 
+func (i *inputsMonitorAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsMonitorAcl] {
+	return pulumix.Output[*InputsMonitorAcl]{
+		OutputState: i.ToInputsMonitorAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsMonitorAclOutput struct{ *pulumi.OutputState }
 
 func (InputsMonitorAclOutput) ElementType() reflect.Type {
@@ -1825,6 +1982,12 @@ func (o InputsMonitorAclOutput) ToInputsMonitorAclPtrOutputWithContext(ctx conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsMonitorAcl) *InputsMonitorAcl {
 		return &v
 	}).(InputsMonitorAclPtrOutput)
+}
+
+func (o InputsMonitorAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsMonitorAcl] {
+	return pulumix.Output[InputsMonitorAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsMonitorAclOutput) App() pulumi.StringPtrOutput {
@@ -1883,6 +2046,12 @@ func (o InputsMonitorAclPtrOutput) ToInputsMonitorAclPtrOutput() InputsMonitorAc
 
 func (o InputsMonitorAclPtrOutput) ToInputsMonitorAclPtrOutputWithContext(ctx context.Context) InputsMonitorAclPtrOutput {
 	return o
+}
+
+func (o InputsMonitorAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsMonitorAcl] {
+	return pulumix.Output[*InputsMonitorAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsMonitorAclPtrOutput) Elem() InputsMonitorAclOutput {
@@ -2045,6 +2214,12 @@ func (i InputsScriptAclArgs) ToInputsScriptAclOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptAclOutput)
 }
 
+func (i InputsScriptAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsScriptAcl] {
+	return pulumix.Output[InputsScriptAcl]{
+		OutputState: i.ToInputsScriptAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsScriptAclArgs) ToInputsScriptAclPtrOutput() InputsScriptAclPtrOutput {
 	return i.ToInputsScriptAclPtrOutputWithContext(context.Background())
 }
@@ -2086,6 +2261,12 @@ func (i *inputsScriptAclPtrType) ToInputsScriptAclPtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptAclPtrOutput)
 }
 
+func (i *inputsScriptAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsScriptAcl] {
+	return pulumix.Output[*InputsScriptAcl]{
+		OutputState: i.ToInputsScriptAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsScriptAclOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptAclOutput) ElementType() reflect.Type {
@@ -2108,6 +2289,12 @@ func (o InputsScriptAclOutput) ToInputsScriptAclPtrOutputWithContext(ctx context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsScriptAcl) *InputsScriptAcl {
 		return &v
 	}).(InputsScriptAclPtrOutput)
+}
+
+func (o InputsScriptAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsScriptAcl] {
+	return pulumix.Output[InputsScriptAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsScriptAclOutput) App() pulumi.StringPtrOutput {
@@ -2166,6 +2353,12 @@ func (o InputsScriptAclPtrOutput) ToInputsScriptAclPtrOutput() InputsScriptAclPt
 
 func (o InputsScriptAclPtrOutput) ToInputsScriptAclPtrOutputWithContext(ctx context.Context) InputsScriptAclPtrOutput {
 	return o
+}
+
+func (o InputsScriptAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsScriptAcl] {
+	return pulumix.Output[*InputsScriptAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsScriptAclPtrOutput) Elem() InputsScriptAclOutput {
@@ -2328,6 +2521,12 @@ func (i InputsTcpCookedAclArgs) ToInputsTcpCookedAclOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedAclOutput)
 }
 
+func (i InputsTcpCookedAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsTcpCookedAcl] {
+	return pulumix.Output[InputsTcpCookedAcl]{
+		OutputState: i.ToInputsTcpCookedAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsTcpCookedAclArgs) ToInputsTcpCookedAclPtrOutput() InputsTcpCookedAclPtrOutput {
 	return i.ToInputsTcpCookedAclPtrOutputWithContext(context.Background())
 }
@@ -2369,6 +2568,12 @@ func (i *inputsTcpCookedAclPtrType) ToInputsTcpCookedAclPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedAclPtrOutput)
 }
 
+func (i *inputsTcpCookedAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpCookedAcl] {
+	return pulumix.Output[*InputsTcpCookedAcl]{
+		OutputState: i.ToInputsTcpCookedAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsTcpCookedAclOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpCookedAclOutput) ElementType() reflect.Type {
@@ -2391,6 +2596,12 @@ func (o InputsTcpCookedAclOutput) ToInputsTcpCookedAclPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpCookedAcl) *InputsTcpCookedAcl {
 		return &v
 	}).(InputsTcpCookedAclPtrOutput)
+}
+
+func (o InputsTcpCookedAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsTcpCookedAcl] {
+	return pulumix.Output[InputsTcpCookedAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpCookedAclOutput) App() pulumi.StringPtrOutput {
@@ -2449,6 +2660,12 @@ func (o InputsTcpCookedAclPtrOutput) ToInputsTcpCookedAclPtrOutput() InputsTcpCo
 
 func (o InputsTcpCookedAclPtrOutput) ToInputsTcpCookedAclPtrOutputWithContext(ctx context.Context) InputsTcpCookedAclPtrOutput {
 	return o
+}
+
+func (o InputsTcpCookedAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpCookedAcl] {
+	return pulumix.Output[*InputsTcpCookedAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpCookedAclPtrOutput) Elem() InputsTcpCookedAclOutput {
@@ -2611,6 +2828,12 @@ func (i InputsTcpRawAclArgs) ToInputsTcpRawAclOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawAclOutput)
 }
 
+func (i InputsTcpRawAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsTcpRawAcl] {
+	return pulumix.Output[InputsTcpRawAcl]{
+		OutputState: i.ToInputsTcpRawAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsTcpRawAclArgs) ToInputsTcpRawAclPtrOutput() InputsTcpRawAclPtrOutput {
 	return i.ToInputsTcpRawAclPtrOutputWithContext(context.Background())
 }
@@ -2652,6 +2875,12 @@ func (i *inputsTcpRawAclPtrType) ToInputsTcpRawAclPtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawAclPtrOutput)
 }
 
+func (i *inputsTcpRawAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpRawAcl] {
+	return pulumix.Output[*InputsTcpRawAcl]{
+		OutputState: i.ToInputsTcpRawAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsTcpRawAclOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpRawAclOutput) ElementType() reflect.Type {
@@ -2674,6 +2903,12 @@ func (o InputsTcpRawAclOutput) ToInputsTcpRawAclPtrOutputWithContext(ctx context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpRawAcl) *InputsTcpRawAcl {
 		return &v
 	}).(InputsTcpRawAclPtrOutput)
+}
+
+func (o InputsTcpRawAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsTcpRawAcl] {
+	return pulumix.Output[InputsTcpRawAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpRawAclOutput) App() pulumi.StringPtrOutput {
@@ -2732,6 +2967,12 @@ func (o InputsTcpRawAclPtrOutput) ToInputsTcpRawAclPtrOutput() InputsTcpRawAclPt
 
 func (o InputsTcpRawAclPtrOutput) ToInputsTcpRawAclPtrOutputWithContext(ctx context.Context) InputsTcpRawAclPtrOutput {
 	return o
+}
+
+func (o InputsTcpRawAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpRawAcl] {
+	return pulumix.Output[*InputsTcpRawAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpRawAclPtrOutput) Elem() InputsTcpRawAclOutput {
@@ -2894,6 +3135,12 @@ func (i InputsTcpSplunkTcpTokenAclArgs) ToInputsTcpSplunkTcpTokenAclOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenAclOutput)
 }
 
+func (i InputsTcpSplunkTcpTokenAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsTcpSplunkTcpTokenAcl] {
+	return pulumix.Output[InputsTcpSplunkTcpTokenAcl]{
+		OutputState: i.ToInputsTcpSplunkTcpTokenAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsTcpSplunkTcpTokenAclArgs) ToInputsTcpSplunkTcpTokenAclPtrOutput() InputsTcpSplunkTcpTokenAclPtrOutput {
 	return i.ToInputsTcpSplunkTcpTokenAclPtrOutputWithContext(context.Background())
 }
@@ -2935,6 +3182,12 @@ func (i *inputsTcpSplunkTcpTokenAclPtrType) ToInputsTcpSplunkTcpTokenAclPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenAclPtrOutput)
 }
 
+func (i *inputsTcpSplunkTcpTokenAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpSplunkTcpTokenAcl] {
+	return pulumix.Output[*InputsTcpSplunkTcpTokenAcl]{
+		OutputState: i.ToInputsTcpSplunkTcpTokenAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsTcpSplunkTcpTokenAclOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSplunkTcpTokenAclOutput) ElementType() reflect.Type {
@@ -2957,6 +3210,12 @@ func (o InputsTcpSplunkTcpTokenAclOutput) ToInputsTcpSplunkTcpTokenAclPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsTcpSplunkTcpTokenAcl) *InputsTcpSplunkTcpTokenAcl {
 		return &v
 	}).(InputsTcpSplunkTcpTokenAclPtrOutput)
+}
+
+func (o InputsTcpSplunkTcpTokenAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsTcpSplunkTcpTokenAcl] {
+	return pulumix.Output[InputsTcpSplunkTcpTokenAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpSplunkTcpTokenAclOutput) App() pulumi.StringPtrOutput {
@@ -3015,6 +3274,12 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) ToInputsTcpSplunkTcpTokenAclPtrOutp
 
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) ToInputsTcpSplunkTcpTokenAclPtrOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenAclPtrOutput {
 	return o
+}
+
+func (o InputsTcpSplunkTcpTokenAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpSplunkTcpTokenAcl] {
+	return pulumix.Output[*InputsTcpSplunkTcpTokenAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Elem() InputsTcpSplunkTcpTokenAclOutput {
@@ -3177,6 +3442,12 @@ func (i InputsUdpAclArgs) ToInputsUdpAclOutputWithContext(ctx context.Context) I
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpAclOutput)
 }
 
+func (i InputsUdpAclArgs) ToOutput(ctx context.Context) pulumix.Output[InputsUdpAcl] {
+	return pulumix.Output[InputsUdpAcl]{
+		OutputState: i.ToInputsUdpAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i InputsUdpAclArgs) ToInputsUdpAclPtrOutput() InputsUdpAclPtrOutput {
 	return i.ToInputsUdpAclPtrOutputWithContext(context.Background())
 }
@@ -3218,6 +3489,12 @@ func (i *inputsUdpAclPtrType) ToInputsUdpAclPtrOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpAclPtrOutput)
 }
 
+func (i *inputsUdpAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*InputsUdpAcl] {
+	return pulumix.Output[*InputsUdpAcl]{
+		OutputState: i.ToInputsUdpAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsUdpAclOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpAclOutput) ElementType() reflect.Type {
@@ -3240,6 +3517,12 @@ func (o InputsUdpAclOutput) ToInputsUdpAclPtrOutputWithContext(ctx context.Conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v InputsUdpAcl) *InputsUdpAcl {
 		return &v
 	}).(InputsUdpAclPtrOutput)
+}
+
+func (o InputsUdpAclOutput) ToOutput(ctx context.Context) pulumix.Output[InputsUdpAcl] {
+	return pulumix.Output[InputsUdpAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsUdpAclOutput) App() pulumi.StringPtrOutput {
@@ -3298,6 +3581,12 @@ func (o InputsUdpAclPtrOutput) ToInputsUdpAclPtrOutput() InputsUdpAclPtrOutput {
 
 func (o InputsUdpAclPtrOutput) ToInputsUdpAclPtrOutputWithContext(ctx context.Context) InputsUdpAclPtrOutput {
 	return o
+}
+
+func (o InputsUdpAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsUdpAcl] {
+	return pulumix.Output[*InputsUdpAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsUdpAclPtrOutput) Elem() InputsUdpAclOutput {
@@ -3460,6 +3749,12 @@ func (i OutputsTcpDefaultAclArgs) ToOutputsTcpDefaultAclOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultAclOutput)
 }
 
+func (i OutputsTcpDefaultAclArgs) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpDefaultAcl] {
+	return pulumix.Output[OutputsTcpDefaultAcl]{
+		OutputState: i.ToOutputsTcpDefaultAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i OutputsTcpDefaultAclArgs) ToOutputsTcpDefaultAclPtrOutput() OutputsTcpDefaultAclPtrOutput {
 	return i.ToOutputsTcpDefaultAclPtrOutputWithContext(context.Background())
 }
@@ -3501,6 +3796,12 @@ func (i *outputsTcpDefaultAclPtrType) ToOutputsTcpDefaultAclPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultAclPtrOutput)
 }
 
+func (i *outputsTcpDefaultAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpDefaultAcl] {
+	return pulumix.Output[*OutputsTcpDefaultAcl]{
+		OutputState: i.ToOutputsTcpDefaultAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OutputsTcpDefaultAclOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpDefaultAclOutput) ElementType() reflect.Type {
@@ -3523,6 +3824,12 @@ func (o OutputsTcpDefaultAclOutput) ToOutputsTcpDefaultAclPtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpDefaultAcl) *OutputsTcpDefaultAcl {
 		return &v
 	}).(OutputsTcpDefaultAclPtrOutput)
+}
+
+func (o OutputsTcpDefaultAclOutput) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpDefaultAcl] {
+	return pulumix.Output[OutputsTcpDefaultAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpDefaultAclOutput) App() pulumi.StringPtrOutput {
@@ -3581,6 +3888,12 @@ func (o OutputsTcpDefaultAclPtrOutput) ToOutputsTcpDefaultAclPtrOutput() Outputs
 
 func (o OutputsTcpDefaultAclPtrOutput) ToOutputsTcpDefaultAclPtrOutputWithContext(ctx context.Context) OutputsTcpDefaultAclPtrOutput {
 	return o
+}
+
+func (o OutputsTcpDefaultAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpDefaultAcl] {
+	return pulumix.Output[*OutputsTcpDefaultAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpDefaultAclPtrOutput) Elem() OutputsTcpDefaultAclOutput {
@@ -3743,6 +4056,12 @@ func (i OutputsTcpGroupAclArgs) ToOutputsTcpGroupAclOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupAclOutput)
 }
 
+func (i OutputsTcpGroupAclArgs) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpGroupAcl] {
+	return pulumix.Output[OutputsTcpGroupAcl]{
+		OutputState: i.ToOutputsTcpGroupAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i OutputsTcpGroupAclArgs) ToOutputsTcpGroupAclPtrOutput() OutputsTcpGroupAclPtrOutput {
 	return i.ToOutputsTcpGroupAclPtrOutputWithContext(context.Background())
 }
@@ -3784,6 +4103,12 @@ func (i *outputsTcpGroupAclPtrType) ToOutputsTcpGroupAclPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupAclPtrOutput)
 }
 
+func (i *outputsTcpGroupAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpGroupAcl] {
+	return pulumix.Output[*OutputsTcpGroupAcl]{
+		OutputState: i.ToOutputsTcpGroupAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OutputsTcpGroupAclOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpGroupAclOutput) ElementType() reflect.Type {
@@ -3806,6 +4131,12 @@ func (o OutputsTcpGroupAclOutput) ToOutputsTcpGroupAclPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpGroupAcl) *OutputsTcpGroupAcl {
 		return &v
 	}).(OutputsTcpGroupAclPtrOutput)
+}
+
+func (o OutputsTcpGroupAclOutput) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpGroupAcl] {
+	return pulumix.Output[OutputsTcpGroupAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpGroupAclOutput) App() pulumi.StringPtrOutput {
@@ -3864,6 +4195,12 @@ func (o OutputsTcpGroupAclPtrOutput) ToOutputsTcpGroupAclPtrOutput() OutputsTcpG
 
 func (o OutputsTcpGroupAclPtrOutput) ToOutputsTcpGroupAclPtrOutputWithContext(ctx context.Context) OutputsTcpGroupAclPtrOutput {
 	return o
+}
+
+func (o OutputsTcpGroupAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpGroupAcl] {
+	return pulumix.Output[*OutputsTcpGroupAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpGroupAclPtrOutput) Elem() OutputsTcpGroupAclOutput {
@@ -4026,6 +4363,12 @@ func (i OutputsTcpServerAclArgs) ToOutputsTcpServerAclOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerAclOutput)
 }
 
+func (i OutputsTcpServerAclArgs) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpServerAcl] {
+	return pulumix.Output[OutputsTcpServerAcl]{
+		OutputState: i.ToOutputsTcpServerAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i OutputsTcpServerAclArgs) ToOutputsTcpServerAclPtrOutput() OutputsTcpServerAclPtrOutput {
 	return i.ToOutputsTcpServerAclPtrOutputWithContext(context.Background())
 }
@@ -4067,6 +4410,12 @@ func (i *outputsTcpServerAclPtrType) ToOutputsTcpServerAclPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerAclPtrOutput)
 }
 
+func (i *outputsTcpServerAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpServerAcl] {
+	return pulumix.Output[*OutputsTcpServerAcl]{
+		OutputState: i.ToOutputsTcpServerAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OutputsTcpServerAclOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpServerAclOutput) ElementType() reflect.Type {
@@ -4089,6 +4438,12 @@ func (o OutputsTcpServerAclOutput) ToOutputsTcpServerAclPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpServerAcl) *OutputsTcpServerAcl {
 		return &v
 	}).(OutputsTcpServerAclPtrOutput)
+}
+
+func (o OutputsTcpServerAclOutput) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpServerAcl] {
+	return pulumix.Output[OutputsTcpServerAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpServerAclOutput) App() pulumi.StringPtrOutput {
@@ -4147,6 +4502,12 @@ func (o OutputsTcpServerAclPtrOutput) ToOutputsTcpServerAclPtrOutput() OutputsTc
 
 func (o OutputsTcpServerAclPtrOutput) ToOutputsTcpServerAclPtrOutputWithContext(ctx context.Context) OutputsTcpServerAclPtrOutput {
 	return o
+}
+
+func (o OutputsTcpServerAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpServerAcl] {
+	return pulumix.Output[*OutputsTcpServerAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpServerAclPtrOutput) Elem() OutputsTcpServerAclOutput {
@@ -4309,6 +4670,12 @@ func (i OutputsTcpSyslogAclArgs) ToOutputsTcpSyslogAclOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogAclOutput)
 }
 
+func (i OutputsTcpSyslogAclArgs) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpSyslogAcl] {
+	return pulumix.Output[OutputsTcpSyslogAcl]{
+		OutputState: i.ToOutputsTcpSyslogAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i OutputsTcpSyslogAclArgs) ToOutputsTcpSyslogAclPtrOutput() OutputsTcpSyslogAclPtrOutput {
 	return i.ToOutputsTcpSyslogAclPtrOutputWithContext(context.Background())
 }
@@ -4350,6 +4717,12 @@ func (i *outputsTcpSyslogAclPtrType) ToOutputsTcpSyslogAclPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogAclPtrOutput)
 }
 
+func (i *outputsTcpSyslogAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpSyslogAcl] {
+	return pulumix.Output[*OutputsTcpSyslogAcl]{
+		OutputState: i.ToOutputsTcpSyslogAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OutputsTcpSyslogAclOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpSyslogAclOutput) ElementType() reflect.Type {
@@ -4372,6 +4745,12 @@ func (o OutputsTcpSyslogAclOutput) ToOutputsTcpSyslogAclPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v OutputsTcpSyslogAcl) *OutputsTcpSyslogAcl {
 		return &v
 	}).(OutputsTcpSyslogAclPtrOutput)
+}
+
+func (o OutputsTcpSyslogAclOutput) ToOutput(ctx context.Context) pulumix.Output[OutputsTcpSyslogAcl] {
+	return pulumix.Output[OutputsTcpSyslogAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpSyslogAclOutput) App() pulumi.StringPtrOutput {
@@ -4430,6 +4809,12 @@ func (o OutputsTcpSyslogAclPtrOutput) ToOutputsTcpSyslogAclPtrOutput() OutputsTc
 
 func (o OutputsTcpSyslogAclPtrOutput) ToOutputsTcpSyslogAclPtrOutputWithContext(ctx context.Context) OutputsTcpSyslogAclPtrOutput {
 	return o
+}
+
+func (o OutputsTcpSyslogAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpSyslogAcl] {
+	return pulumix.Output[*OutputsTcpSyslogAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpSyslogAclPtrOutput) Elem() OutputsTcpSyslogAclOutput {
@@ -4592,6 +4977,12 @@ func (i SavedSearchesAclArgs) ToSavedSearchesAclOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesAclOutput)
 }
 
+func (i SavedSearchesAclArgs) ToOutput(ctx context.Context) pulumix.Output[SavedSearchesAcl] {
+	return pulumix.Output[SavedSearchesAcl]{
+		OutputState: i.ToSavedSearchesAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i SavedSearchesAclArgs) ToSavedSearchesAclPtrOutput() SavedSearchesAclPtrOutput {
 	return i.ToSavedSearchesAclPtrOutputWithContext(context.Background())
 }
@@ -4633,6 +5024,12 @@ func (i *savedSearchesAclPtrType) ToSavedSearchesAclPtrOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(SavedSearchesAclPtrOutput)
 }
 
+func (i *savedSearchesAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*SavedSearchesAcl] {
+	return pulumix.Output[*SavedSearchesAcl]{
+		OutputState: i.ToSavedSearchesAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SavedSearchesAclOutput struct{ *pulumi.OutputState }
 
 func (SavedSearchesAclOutput) ElementType() reflect.Type {
@@ -4655,6 +5052,12 @@ func (o SavedSearchesAclOutput) ToSavedSearchesAclPtrOutputWithContext(ctx conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SavedSearchesAcl) *SavedSearchesAcl {
 		return &v
 	}).(SavedSearchesAclPtrOutput)
+}
+
+func (o SavedSearchesAclOutput) ToOutput(ctx context.Context) pulumix.Output[SavedSearchesAcl] {
+	return pulumix.Output[SavedSearchesAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SavedSearchesAclOutput) App() pulumi.StringPtrOutput {
@@ -4713,6 +5116,12 @@ func (o SavedSearchesAclPtrOutput) ToSavedSearchesAclPtrOutput() SavedSearchesAc
 
 func (o SavedSearchesAclPtrOutput) ToSavedSearchesAclPtrOutputWithContext(ctx context.Context) SavedSearchesAclPtrOutput {
 	return o
+}
+
+func (o SavedSearchesAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SavedSearchesAcl] {
+	return pulumix.Output[*SavedSearchesAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SavedSearchesAclPtrOutput) Elem() SavedSearchesAclOutput {
@@ -4875,6 +5284,12 @@ func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerAclOutput)
 }
 
+func (i ShIndexesManagerAclArgs) ToOutput(ctx context.Context) pulumix.Output[ShIndexesManagerAcl] {
+	return pulumix.Output[ShIndexesManagerAcl]{
+		OutputState: i.ToShIndexesManagerAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 func (i ShIndexesManagerAclArgs) ToShIndexesManagerAclPtrOutput() ShIndexesManagerAclPtrOutput {
 	return i.ToShIndexesManagerAclPtrOutputWithContext(context.Background())
 }
@@ -4916,6 +5331,12 @@ func (i *shIndexesManagerAclPtrType) ToShIndexesManagerAclPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerAclPtrOutput)
 }
 
+func (i *shIndexesManagerAclPtrType) ToOutput(ctx context.Context) pulumix.Output[*ShIndexesManagerAcl] {
+	return pulumix.Output[*ShIndexesManagerAcl]{
+		OutputState: i.ToShIndexesManagerAclPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ShIndexesManagerAclOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerAclOutput) ElementType() reflect.Type {
@@ -4938,6 +5359,12 @@ func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShIndexesManagerAcl) *ShIndexesManagerAcl {
 		return &v
 	}).(ShIndexesManagerAclPtrOutput)
+}
+
+func (o ShIndexesManagerAclOutput) ToOutput(ctx context.Context) pulumix.Output[ShIndexesManagerAcl] {
+	return pulumix.Output[ShIndexesManagerAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ShIndexesManagerAclOutput) App() pulumi.StringPtrOutput {
@@ -4996,6 +5423,12 @@ func (o ShIndexesManagerAclPtrOutput) ToShIndexesManagerAclPtrOutput() ShIndexes
 
 func (o ShIndexesManagerAclPtrOutput) ToShIndexesManagerAclPtrOutputWithContext(ctx context.Context) ShIndexesManagerAclPtrOutput {
 	return o
+}
+
+func (o ShIndexesManagerAclPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ShIndexesManagerAcl] {
+	return pulumix.Output[*ShIndexesManagerAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ShIndexesManagerAclPtrOutput) Elem() ShIndexesManagerAclOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsTcpCooked
@@ -201,6 +202,12 @@ func (i *InputsTcpCooked) ToInputsTcpCookedOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedOutput)
 }
 
+func (i *InputsTcpCooked) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpCooked] {
+	return pulumix.Output[*InputsTcpCooked]{
+		OutputState: i.ToInputsTcpCookedOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InputsTcpCookedArrayInput is an input type that accepts InputsTcpCookedArray and InputsTcpCookedArrayOutput values.
 // You can construct a concrete instance of `InputsTcpCookedArrayInput` via:
 //
@@ -224,6 +231,12 @@ func (i InputsTcpCookedArray) ToInputsTcpCookedArrayOutput() InputsTcpCookedArra
 
 func (i InputsTcpCookedArray) ToInputsTcpCookedArrayOutputWithContext(ctx context.Context) InputsTcpCookedArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedArrayOutput)
+}
+
+func (i InputsTcpCookedArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpCooked] {
+	return pulumix.Output[[]*InputsTcpCooked]{
+		OutputState: i.ToInputsTcpCookedArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InputsTcpCookedMapInput is an input type that accepts InputsTcpCookedMap and InputsTcpCookedMapOutput values.
@@ -251,6 +264,12 @@ func (i InputsTcpCookedMap) ToInputsTcpCookedMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpCookedMapOutput)
 }
 
+func (i InputsTcpCookedMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpCooked] {
+	return pulumix.Output[map[string]*InputsTcpCooked]{
+		OutputState: i.ToInputsTcpCookedMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsTcpCookedOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpCookedOutput) ElementType() reflect.Type {
@@ -263,6 +282,12 @@ func (o InputsTcpCookedOutput) ToInputsTcpCookedOutput() InputsTcpCookedOutput {
 
 func (o InputsTcpCookedOutput) ToInputsTcpCookedOutputWithContext(ctx context.Context) InputsTcpCookedOutput {
 	return o
+}
+
+func (o InputsTcpCookedOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpCooked] {
+	return pulumix.Output[*InputsTcpCooked]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -314,6 +339,12 @@ func (o InputsTcpCookedArrayOutput) ToInputsTcpCookedArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o InputsTcpCookedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpCooked] {
+	return pulumix.Output[[]*InputsTcpCooked]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InputsTcpCookedArrayOutput) Index(i pulumi.IntInput) InputsTcpCookedOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsTcpCooked {
 		return vs[0].([]*InputsTcpCooked)[vs[1].(int)]
@@ -332,6 +363,12 @@ func (o InputsTcpCookedMapOutput) ToInputsTcpCookedMapOutput() InputsTcpCookedMa
 
 func (o InputsTcpCookedMapOutput) ToInputsTcpCookedMapOutputWithContext(ctx context.Context) InputsTcpCookedMapOutput {
 	return o
+}
+
+func (o InputsTcpCookedMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpCooked] {
+	return pulumix.Output[map[string]*InputsTcpCooked]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpCookedMapOutput) MapIndex(k pulumi.StringInput) InputsTcpCookedOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: AuthorizationRoles
@@ -263,6 +264,12 @@ func (i *AuthorizationRoles) ToAuthorizationRolesOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesOutput)
 }
 
+func (i *AuthorizationRoles) ToOutput(ctx context.Context) pulumix.Output[*AuthorizationRoles] {
+	return pulumix.Output[*AuthorizationRoles]{
+		OutputState: i.ToAuthorizationRolesOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuthorizationRolesArrayInput is an input type that accepts AuthorizationRolesArray and AuthorizationRolesArrayOutput values.
 // You can construct a concrete instance of `AuthorizationRolesArrayInput` via:
 //
@@ -286,6 +293,12 @@ func (i AuthorizationRolesArray) ToAuthorizationRolesArrayOutput() Authorization
 
 func (i AuthorizationRolesArray) ToAuthorizationRolesArrayOutputWithContext(ctx context.Context) AuthorizationRolesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesArrayOutput)
+}
+
+func (i AuthorizationRolesArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuthorizationRoles] {
+	return pulumix.Output[[]*AuthorizationRoles]{
+		OutputState: i.ToAuthorizationRolesArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AuthorizationRolesMapInput is an input type that accepts AuthorizationRolesMap and AuthorizationRolesMapOutput values.
@@ -313,6 +326,12 @@ func (i AuthorizationRolesMap) ToAuthorizationRolesMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AuthorizationRolesMapOutput)
 }
 
+func (i AuthorizationRolesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthorizationRoles] {
+	return pulumix.Output[map[string]*AuthorizationRoles]{
+		OutputState: i.ToAuthorizationRolesMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuthorizationRolesOutput struct{ *pulumi.OutputState }
 
 func (AuthorizationRolesOutput) ElementType() reflect.Type {
@@ -325,6 +344,12 @@ func (o AuthorizationRolesOutput) ToAuthorizationRolesOutput() AuthorizationRole
 
 func (o AuthorizationRolesOutput) ToAuthorizationRolesOutputWithContext(ctx context.Context) AuthorizationRolesOutput {
 	return o
+}
+
+func (o AuthorizationRolesOutput) ToOutput(ctx context.Context) pulumix.Output[*AuthorizationRoles] {
+	return pulumix.Output[*AuthorizationRoles]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of capabilities assigned to role.
@@ -406,6 +431,12 @@ func (o AuthorizationRolesArrayOutput) ToAuthorizationRolesArrayOutputWithContex
 	return o
 }
 
+func (o AuthorizationRolesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuthorizationRoles] {
+	return pulumix.Output[[]*AuthorizationRoles]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AuthorizationRolesArrayOutput) Index(i pulumi.IntInput) AuthorizationRolesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuthorizationRoles {
 		return vs[0].([]*AuthorizationRoles)[vs[1].(int)]
@@ -424,6 +455,12 @@ func (o AuthorizationRolesMapOutput) ToAuthorizationRolesMapOutput() Authorizati
 
 func (o AuthorizationRolesMapOutput) ToAuthorizationRolesMapOutputWithContext(ctx context.Context) AuthorizationRolesMapOutput {
 	return o
+}
+
+func (o AuthorizationRolesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthorizationRoles] {
+	return pulumix.Output[map[string]*AuthorizationRoles]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuthorizationRolesMapOutput) MapIndex(k pulumi.StringInput) AuthorizationRolesOutput {

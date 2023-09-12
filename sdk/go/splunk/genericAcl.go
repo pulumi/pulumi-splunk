@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -186,6 +187,12 @@ func (i *GenericAcl) ToGenericAclOutputWithContext(ctx context.Context) GenericA
 	return pulumi.ToOutputWithContext(ctx, i).(GenericAclOutput)
 }
 
+func (i *GenericAcl) ToOutput(ctx context.Context) pulumix.Output[*GenericAcl] {
+	return pulumix.Output[*GenericAcl]{
+		OutputState: i.ToGenericAclOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GenericAclArrayInput is an input type that accepts GenericAclArray and GenericAclArrayOutput values.
 // You can construct a concrete instance of `GenericAclArrayInput` via:
 //
@@ -209,6 +216,12 @@ func (i GenericAclArray) ToGenericAclArrayOutput() GenericAclArrayOutput {
 
 func (i GenericAclArray) ToGenericAclArrayOutputWithContext(ctx context.Context) GenericAclArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GenericAclArrayOutput)
+}
+
+func (i GenericAclArray) ToOutput(ctx context.Context) pulumix.Output[[]*GenericAcl] {
+	return pulumix.Output[[]*GenericAcl]{
+		OutputState: i.ToGenericAclArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // GenericAclMapInput is an input type that accepts GenericAclMap and GenericAclMapOutput values.
@@ -236,6 +249,12 @@ func (i GenericAclMap) ToGenericAclMapOutputWithContext(ctx context.Context) Gen
 	return pulumi.ToOutputWithContext(ctx, i).(GenericAclMapOutput)
 }
 
+func (i GenericAclMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GenericAcl] {
+	return pulumix.Output[map[string]*GenericAcl]{
+		OutputState: i.ToGenericAclMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GenericAclOutput struct{ *pulumi.OutputState }
 
 func (GenericAclOutput) ElementType() reflect.Type {
@@ -248,6 +267,12 @@ func (o GenericAclOutput) ToGenericAclOutput() GenericAclOutput {
 
 func (o GenericAclOutput) ToGenericAclOutputWithContext(ctx context.Context) GenericAclOutput {
 	return o
+}
+
+func (o GenericAclOutput) ToOutput(ctx context.Context) pulumix.Output[*GenericAcl] {
+	return pulumix.Output[*GenericAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The ACL to apply to the object, including app/owner to properly identify the object.
@@ -277,6 +302,12 @@ func (o GenericAclArrayOutput) ToGenericAclArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o GenericAclArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GenericAcl] {
+	return pulumix.Output[[]*GenericAcl]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GenericAclArrayOutput) Index(i pulumi.IntInput) GenericAclOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GenericAcl {
 		return vs[0].([]*GenericAcl)[vs[1].(int)]
@@ -295,6 +326,12 @@ func (o GenericAclMapOutput) ToGenericAclMapOutput() GenericAclMapOutput {
 
 func (o GenericAclMapOutput) ToGenericAclMapOutputWithContext(ctx context.Context) GenericAclMapOutput {
 	return o
+}
+
+func (o GenericAclMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GenericAcl] {
+	return pulumix.Output[map[string]*GenericAcl]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GenericAclMapOutput) MapIndex(k pulumi.StringInput) GenericAclOutput {

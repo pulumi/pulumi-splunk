@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: Indexes
@@ -730,6 +731,12 @@ func (i *Indexes) ToIndexesOutputWithContext(ctx context.Context) IndexesOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesOutput)
 }
 
+func (i *Indexes) ToOutput(ctx context.Context) pulumix.Output[*Indexes] {
+	return pulumix.Output[*Indexes]{
+		OutputState: i.ToIndexesOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IndexesArrayInput is an input type that accepts IndexesArray and IndexesArrayOutput values.
 // You can construct a concrete instance of `IndexesArrayInput` via:
 //
@@ -753,6 +760,12 @@ func (i IndexesArray) ToIndexesArrayOutput() IndexesArrayOutput {
 
 func (i IndexesArray) ToIndexesArrayOutputWithContext(ctx context.Context) IndexesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesArrayOutput)
+}
+
+func (i IndexesArray) ToOutput(ctx context.Context) pulumix.Output[[]*Indexes] {
+	return pulumix.Output[[]*Indexes]{
+		OutputState: i.ToIndexesArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IndexesMapInput is an input type that accepts IndexesMap and IndexesMapOutput values.
@@ -780,6 +793,12 @@ func (i IndexesMap) ToIndexesMapOutputWithContext(ctx context.Context) IndexesMa
 	return pulumi.ToOutputWithContext(ctx, i).(IndexesMapOutput)
 }
 
+func (i IndexesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Indexes] {
+	return pulumix.Output[map[string]*Indexes]{
+		OutputState: i.ToIndexesMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IndexesOutput struct{ *pulumi.OutputState }
 
 func (IndexesOutput) ElementType() reflect.Type {
@@ -792,6 +811,12 @@ func (o IndexesOutput) ToIndexesOutput() IndexesOutput {
 
 func (o IndexesOutput) ToIndexesOutputWithContext(ctx context.Context) IndexesOutput {
 	return o
+}
+
+func (o IndexesOutput) ToOutput(ctx context.Context) pulumix.Output[*Indexes] {
+	return pulumix.Output[*Indexes]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -1047,6 +1072,12 @@ func (o IndexesArrayOutput) ToIndexesArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o IndexesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Indexes] {
+	return pulumix.Output[[]*Indexes]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IndexesArrayOutput) Index(i pulumi.IntInput) IndexesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Indexes {
 		return vs[0].([]*Indexes)[vs[1].(int)]
@@ -1065,6 +1096,12 @@ func (o IndexesMapOutput) ToIndexesMapOutput() IndexesMapOutput {
 
 func (o IndexesMapOutput) ToIndexesMapOutputWithContext(ctx context.Context) IndexesMapOutput {
 	return o
+}
+
+func (o IndexesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Indexes] {
+	return pulumix.Output[map[string]*Indexes]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IndexesMapOutput) MapIndex(k pulumi.StringInput) IndexesOutput {

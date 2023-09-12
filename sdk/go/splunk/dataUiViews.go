@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: DataUiViews
@@ -151,6 +152,12 @@ func (i *DataUiViews) ToDataUiViewsOutputWithContext(ctx context.Context) DataUi
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsOutput)
 }
 
+func (i *DataUiViews) ToOutput(ctx context.Context) pulumix.Output[*DataUiViews] {
+	return pulumix.Output[*DataUiViews]{
+		OutputState: i.ToDataUiViewsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DataUiViewsArrayInput is an input type that accepts DataUiViewsArray and DataUiViewsArrayOutput values.
 // You can construct a concrete instance of `DataUiViewsArrayInput` via:
 //
@@ -174,6 +181,12 @@ func (i DataUiViewsArray) ToDataUiViewsArrayOutput() DataUiViewsArrayOutput {
 
 func (i DataUiViewsArray) ToDataUiViewsArrayOutputWithContext(ctx context.Context) DataUiViewsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsArrayOutput)
+}
+
+func (i DataUiViewsArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataUiViews] {
+	return pulumix.Output[[]*DataUiViews]{
+		OutputState: i.ToDataUiViewsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DataUiViewsMapInput is an input type that accepts DataUiViewsMap and DataUiViewsMapOutput values.
@@ -201,6 +214,12 @@ func (i DataUiViewsMap) ToDataUiViewsMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DataUiViewsMapOutput)
 }
 
+func (i DataUiViewsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataUiViews] {
+	return pulumix.Output[map[string]*DataUiViews]{
+		OutputState: i.ToDataUiViewsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DataUiViewsOutput struct{ *pulumi.OutputState }
 
 func (DataUiViewsOutput) ElementType() reflect.Type {
@@ -213,6 +232,12 @@ func (o DataUiViewsOutput) ToDataUiViewsOutput() DataUiViewsOutput {
 
 func (o DataUiViewsOutput) ToDataUiViewsOutputWithContext(ctx context.Context) DataUiViewsOutput {
 	return o
+}
+
+func (o DataUiViewsOutput) ToOutput(ctx context.Context) pulumix.Output[*DataUiViews] {
+	return pulumix.Output[*DataUiViews]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataUiViewsOutput) Acl() DataUiViewsAclOutput {
@@ -244,6 +269,12 @@ func (o DataUiViewsArrayOutput) ToDataUiViewsArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o DataUiViewsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataUiViews] {
+	return pulumix.Output[[]*DataUiViews]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DataUiViewsArrayOutput) Index(i pulumi.IntInput) DataUiViewsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataUiViews {
 		return vs[0].([]*DataUiViews)[vs[1].(int)]
@@ -262,6 +293,12 @@ func (o DataUiViewsMapOutput) ToDataUiViewsMapOutput() DataUiViewsMapOutput {
 
 func (o DataUiViewsMapOutput) ToDataUiViewsMapOutputWithContext(ctx context.Context) DataUiViewsMapOutput {
 	return o
+}
+
+func (o DataUiViewsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataUiViews] {
+	return pulumix.Output[map[string]*DataUiViews]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DataUiViewsMapOutput) MapIndex(k pulumi.StringInput) DataUiViewsOutput {

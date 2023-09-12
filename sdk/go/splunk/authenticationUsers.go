@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: AuthenticationUsers
@@ -216,6 +217,12 @@ func (i *AuthenticationUsers) ToAuthenticationUsersOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersOutput)
 }
 
+func (i *AuthenticationUsers) ToOutput(ctx context.Context) pulumix.Output[*AuthenticationUsers] {
+	return pulumix.Output[*AuthenticationUsers]{
+		OutputState: i.ToAuthenticationUsersOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AuthenticationUsersArrayInput is an input type that accepts AuthenticationUsersArray and AuthenticationUsersArrayOutput values.
 // You can construct a concrete instance of `AuthenticationUsersArrayInput` via:
 //
@@ -239,6 +246,12 @@ func (i AuthenticationUsersArray) ToAuthenticationUsersArrayOutput() Authenticat
 
 func (i AuthenticationUsersArray) ToAuthenticationUsersArrayOutputWithContext(ctx context.Context) AuthenticationUsersArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersArrayOutput)
+}
+
+func (i AuthenticationUsersArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuthenticationUsers] {
+	return pulumix.Output[[]*AuthenticationUsers]{
+		OutputState: i.ToAuthenticationUsersArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AuthenticationUsersMapInput is an input type that accepts AuthenticationUsersMap and AuthenticationUsersMapOutput values.
@@ -266,6 +279,12 @@ func (i AuthenticationUsersMap) ToAuthenticationUsersMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AuthenticationUsersMapOutput)
 }
 
+func (i AuthenticationUsersMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthenticationUsers] {
+	return pulumix.Output[map[string]*AuthenticationUsers]{
+		OutputState: i.ToAuthenticationUsersMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AuthenticationUsersOutput struct{ *pulumi.OutputState }
 
 func (AuthenticationUsersOutput) ElementType() reflect.Type {
@@ -278,6 +297,12 @@ func (o AuthenticationUsersOutput) ToAuthenticationUsersOutput() AuthenticationU
 
 func (o AuthenticationUsersOutput) ToAuthenticationUsersOutputWithContext(ctx context.Context) AuthenticationUsersOutput {
 	return o
+}
+
+func (o AuthenticationUsersOutput) ToOutput(ctx context.Context) pulumix.Output[*AuthenticationUsers] {
+	return pulumix.Output[*AuthenticationUsers]{
+		OutputState: o.OutputState,
+	}
 }
 
 // User default app. Overrides the default app inherited from the user roles.
@@ -339,6 +364,12 @@ func (o AuthenticationUsersArrayOutput) ToAuthenticationUsersArrayOutputWithCont
 	return o
 }
 
+func (o AuthenticationUsersArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuthenticationUsers] {
+	return pulumix.Output[[]*AuthenticationUsers]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AuthenticationUsersArrayOutput) Index(i pulumi.IntInput) AuthenticationUsersOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AuthenticationUsers {
 		return vs[0].([]*AuthenticationUsers)[vs[1].(int)]
@@ -357,6 +388,12 @@ func (o AuthenticationUsersMapOutput) ToAuthenticationUsersMapOutput() Authentic
 
 func (o AuthenticationUsersMapOutput) ToAuthenticationUsersMapOutputWithContext(ctx context.Context) AuthenticationUsersMapOutput {
 	return o
+}
+
+func (o AuthenticationUsersMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuthenticationUsers] {
+	return pulumix.Output[map[string]*AuthenticationUsers]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AuthenticationUsersMapOutput) MapIndex(k pulumi.StringInput) AuthenticationUsersOutput {

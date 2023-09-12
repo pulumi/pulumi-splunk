@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsTcpSplunkTcpToken
@@ -144,6 +145,12 @@ func (i *InputsTcpSplunkTcpToken) ToInputsTcpSplunkTcpTokenOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenOutput)
 }
 
+func (i *InputsTcpSplunkTcpToken) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpSplunkTcpToken] {
+	return pulumix.Output[*InputsTcpSplunkTcpToken]{
+		OutputState: i.ToInputsTcpSplunkTcpTokenOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InputsTcpSplunkTcpTokenArrayInput is an input type that accepts InputsTcpSplunkTcpTokenArray and InputsTcpSplunkTcpTokenArrayOutput values.
 // You can construct a concrete instance of `InputsTcpSplunkTcpTokenArrayInput` via:
 //
@@ -167,6 +174,12 @@ func (i InputsTcpSplunkTcpTokenArray) ToInputsTcpSplunkTcpTokenArrayOutput() Inp
 
 func (i InputsTcpSplunkTcpTokenArray) ToInputsTcpSplunkTcpTokenArrayOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenArrayOutput)
+}
+
+func (i InputsTcpSplunkTcpTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpSplunkTcpToken] {
+	return pulumix.Output[[]*InputsTcpSplunkTcpToken]{
+		OutputState: i.ToInputsTcpSplunkTcpTokenArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InputsTcpSplunkTcpTokenMapInput is an input type that accepts InputsTcpSplunkTcpTokenMap and InputsTcpSplunkTcpTokenMapOutput values.
@@ -194,6 +207,12 @@ func (i InputsTcpSplunkTcpTokenMap) ToInputsTcpSplunkTcpTokenMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSplunkTcpTokenMapOutput)
 }
 
+func (i InputsTcpSplunkTcpTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpSplunkTcpToken] {
+	return pulumix.Output[map[string]*InputsTcpSplunkTcpToken]{
+		OutputState: i.ToInputsTcpSplunkTcpTokenMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsTcpSplunkTcpTokenOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSplunkTcpTokenOutput) ElementType() reflect.Type {
@@ -206,6 +225,12 @@ func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenOutput() InputsT
 
 func (o InputsTcpSplunkTcpTokenOutput) ToInputsTcpSplunkTcpTokenOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenOutput {
 	return o
+}
+
+func (o InputsTcpSplunkTcpTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpSplunkTcpToken] {
+	return pulumix.Output[*InputsTcpSplunkTcpToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -237,6 +262,12 @@ func (o InputsTcpSplunkTcpTokenArrayOutput) ToInputsTcpSplunkTcpTokenArrayOutput
 	return o
 }
 
+func (o InputsTcpSplunkTcpTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpSplunkTcpToken] {
+	return pulumix.Output[[]*InputsTcpSplunkTcpToken]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InputsTcpSplunkTcpTokenArrayOutput) Index(i pulumi.IntInput) InputsTcpSplunkTcpTokenOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsTcpSplunkTcpToken {
 		return vs[0].([]*InputsTcpSplunkTcpToken)[vs[1].(int)]
@@ -255,6 +286,12 @@ func (o InputsTcpSplunkTcpTokenMapOutput) ToInputsTcpSplunkTcpTokenMapOutput() I
 
 func (o InputsTcpSplunkTcpTokenMapOutput) ToInputsTcpSplunkTcpTokenMapOutputWithContext(ctx context.Context) InputsTcpSplunkTcpTokenMapOutput {
 	return o
+}
+
+func (o InputsTcpSplunkTcpTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpSplunkTcpToken] {
+	return pulumix.Output[map[string]*InputsTcpSplunkTcpToken]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpSplunkTcpTokenMapOutput) MapIndex(k pulumi.StringInput) InputsTcpSplunkTcpTokenOutput {
