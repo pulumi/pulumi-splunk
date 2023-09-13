@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: AppsLocal
@@ -300,6 +301,12 @@ func (i *AppsLocal) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalO
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalOutput)
 }
 
+func (i *AppsLocal) ToOutput(ctx context.Context) pulumix.Output[*AppsLocal] {
+	return pulumix.Output[*AppsLocal]{
+		OutputState: i.ToAppsLocalOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppsLocalArrayInput is an input type that accepts AppsLocalArray and AppsLocalArrayOutput values.
 // You can construct a concrete instance of `AppsLocalArrayInput` via:
 //
@@ -323,6 +330,12 @@ func (i AppsLocalArray) ToAppsLocalArrayOutput() AppsLocalArrayOutput {
 
 func (i AppsLocalArray) ToAppsLocalArrayOutputWithContext(ctx context.Context) AppsLocalArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalArrayOutput)
+}
+
+func (i AppsLocalArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppsLocal] {
+	return pulumix.Output[[]*AppsLocal]{
+		OutputState: i.ToAppsLocalArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppsLocalMapInput is an input type that accepts AppsLocalMap and AppsLocalMapOutput values.
@@ -350,6 +363,12 @@ func (i AppsLocalMap) ToAppsLocalMapOutputWithContext(ctx context.Context) AppsL
 	return pulumi.ToOutputWithContext(ctx, i).(AppsLocalMapOutput)
 }
 
+func (i AppsLocalMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsLocal] {
+	return pulumix.Output[map[string]*AppsLocal]{
+		OutputState: i.ToAppsLocalMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppsLocalOutput struct{ *pulumi.OutputState }
 
 func (AppsLocalOutput) ElementType() reflect.Type {
@@ -362,6 +381,12 @@ func (o AppsLocalOutput) ToAppsLocalOutput() AppsLocalOutput {
 
 func (o AppsLocalOutput) ToAppsLocalOutputWithContext(ctx context.Context) AppsLocalOutput {
 	return o
+}
+
+func (o AppsLocalOutput) ToOutput(ctx context.Context) pulumix.Output[*AppsLocal] {
+	return pulumix.Output[*AppsLocal]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -454,6 +479,12 @@ func (o AppsLocalArrayOutput) ToAppsLocalArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o AppsLocalArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppsLocal] {
+	return pulumix.Output[[]*AppsLocal]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppsLocalArrayOutput) Index(i pulumi.IntInput) AppsLocalOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppsLocal {
 		return vs[0].([]*AppsLocal)[vs[1].(int)]
@@ -472,6 +503,12 @@ func (o AppsLocalMapOutput) ToAppsLocalMapOutput() AppsLocalMapOutput {
 
 func (o AppsLocalMapOutput) ToAppsLocalMapOutputWithContext(ctx context.Context) AppsLocalMapOutput {
 	return o
+}
+
+func (o AppsLocalMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsLocal] {
+	return pulumix.Output[map[string]*AppsLocal]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppsLocalMapOutput) MapIndex(k pulumi.StringInput) AppsLocalOutput {

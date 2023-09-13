@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsScript
@@ -202,6 +203,12 @@ func (i *InputsScript) ToInputsScriptOutputWithContext(ctx context.Context) Inpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptOutput)
 }
 
+func (i *InputsScript) ToOutput(ctx context.Context) pulumix.Output[*InputsScript] {
+	return pulumix.Output[*InputsScript]{
+		OutputState: i.ToInputsScriptOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InputsScriptArrayInput is an input type that accepts InputsScriptArray and InputsScriptArrayOutput values.
 // You can construct a concrete instance of `InputsScriptArrayInput` via:
 //
@@ -225,6 +232,12 @@ func (i InputsScriptArray) ToInputsScriptArrayOutput() InputsScriptArrayOutput {
 
 func (i InputsScriptArray) ToInputsScriptArrayOutputWithContext(ctx context.Context) InputsScriptArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptArrayOutput)
+}
+
+func (i InputsScriptArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsScript] {
+	return pulumix.Output[[]*InputsScript]{
+		OutputState: i.ToInputsScriptArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InputsScriptMapInput is an input type that accepts InputsScriptMap and InputsScriptMapOutput values.
@@ -252,6 +265,12 @@ func (i InputsScriptMap) ToInputsScriptMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InputsScriptMapOutput)
 }
 
+func (i InputsScriptMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsScript] {
+	return pulumix.Output[map[string]*InputsScript]{
+		OutputState: i.ToInputsScriptMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsScriptOutput struct{ *pulumi.OutputState }
 
 func (InputsScriptOutput) ElementType() reflect.Type {
@@ -264,6 +283,12 @@ func (o InputsScriptOutput) ToInputsScriptOutput() InputsScriptOutput {
 
 func (o InputsScriptOutput) ToInputsScriptOutputWithContext(ctx context.Context) InputsScriptOutput {
 	return o
+}
+
+func (o InputsScriptOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsScript] {
+	return pulumix.Output[*InputsScript]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -332,6 +357,12 @@ func (o InputsScriptArrayOutput) ToInputsScriptArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o InputsScriptArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsScript] {
+	return pulumix.Output[[]*InputsScript]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InputsScriptArrayOutput) Index(i pulumi.IntInput) InputsScriptOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsScript {
 		return vs[0].([]*InputsScript)[vs[1].(int)]
@@ -350,6 +381,12 @@ func (o InputsScriptMapOutput) ToInputsScriptMapOutput() InputsScriptMapOutput {
 
 func (o InputsScriptMapOutput) ToInputsScriptMapOutputWithContext(ctx context.Context) InputsScriptMapOutput {
 	return o
+}
+
+func (o InputsScriptMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsScript] {
+	return pulumix.Output[map[string]*InputsScript]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsScriptMapOutput) MapIndex(k pulumi.StringInput) InputsScriptOutput {

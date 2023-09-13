@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsTcpRaw
@@ -288,6 +289,12 @@ func (i *InputsTcpRaw) ToInputsTcpRawOutputWithContext(ctx context.Context) Inpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawOutput)
 }
 
+func (i *InputsTcpRaw) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpRaw] {
+	return pulumix.Output[*InputsTcpRaw]{
+		OutputState: i.ToInputsTcpRawOutputWithContext(ctx).OutputState,
+	}
+}
+
 // InputsTcpRawArrayInput is an input type that accepts InputsTcpRawArray and InputsTcpRawArrayOutput values.
 // You can construct a concrete instance of `InputsTcpRawArrayInput` via:
 //
@@ -311,6 +318,12 @@ func (i InputsTcpRawArray) ToInputsTcpRawArrayOutput() InputsTcpRawArrayOutput {
 
 func (i InputsTcpRawArray) ToInputsTcpRawArrayOutputWithContext(ctx context.Context) InputsTcpRawArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawArrayOutput)
+}
+
+func (i InputsTcpRawArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpRaw] {
+	return pulumix.Output[[]*InputsTcpRaw]{
+		OutputState: i.ToInputsTcpRawArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // InputsTcpRawMapInput is an input type that accepts InputsTcpRawMap and InputsTcpRawMapOutput values.
@@ -338,6 +351,12 @@ func (i InputsTcpRawMap) ToInputsTcpRawMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpRawMapOutput)
 }
 
+func (i InputsTcpRawMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpRaw] {
+	return pulumix.Output[map[string]*InputsTcpRaw]{
+		OutputState: i.ToInputsTcpRawMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type InputsTcpRawOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpRawOutput) ElementType() reflect.Type {
@@ -350,6 +369,12 @@ func (o InputsTcpRawOutput) ToInputsTcpRawOutput() InputsTcpRawOutput {
 
 func (o InputsTcpRawOutput) ToInputsTcpRawOutputWithContext(ctx context.Context) InputsTcpRawOutput {
 	return o
+}
+
+func (o InputsTcpRawOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpRaw] {
+	return pulumix.Output[*InputsTcpRaw]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -433,6 +458,12 @@ func (o InputsTcpRawArrayOutput) ToInputsTcpRawArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o InputsTcpRawArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpRaw] {
+	return pulumix.Output[[]*InputsTcpRaw]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o InputsTcpRawArrayOutput) Index(i pulumi.IntInput) InputsTcpRawOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsTcpRaw {
 		return vs[0].([]*InputsTcpRaw)[vs[1].(int)]
@@ -451,6 +482,12 @@ func (o InputsTcpRawMapOutput) ToInputsTcpRawMapOutput() InputsTcpRawMapOutput {
 
 func (o InputsTcpRawMapOutput) ToInputsTcpRawMapOutputWithContext(ctx context.Context) InputsTcpRawMapOutput {
 	return o
+}
+
+func (o InputsTcpRawMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpRaw] {
+	return pulumix.Output[map[string]*InputsTcpRaw]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o InputsTcpRawMapOutput) MapIndex(k pulumi.StringInput) InputsTcpRawOutput {

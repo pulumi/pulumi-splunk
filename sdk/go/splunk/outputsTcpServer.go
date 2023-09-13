@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: OutputsTcpServer
@@ -246,6 +247,12 @@ func (i *OutputsTcpServer) ToOutputsTcpServerOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerOutput)
 }
 
+func (i *OutputsTcpServer) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpServer] {
+	return pulumix.Output[*OutputsTcpServer]{
+		OutputState: i.ToOutputsTcpServerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // OutputsTcpServerArrayInput is an input type that accepts OutputsTcpServerArray and OutputsTcpServerArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpServerArrayInput` via:
 //
@@ -269,6 +276,12 @@ func (i OutputsTcpServerArray) ToOutputsTcpServerArrayOutput() OutputsTcpServerA
 
 func (i OutputsTcpServerArray) ToOutputsTcpServerArrayOutputWithContext(ctx context.Context) OutputsTcpServerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerArrayOutput)
+}
+
+func (i OutputsTcpServerArray) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpServer] {
+	return pulumix.Output[[]*OutputsTcpServer]{
+		OutputState: i.ToOutputsTcpServerArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // OutputsTcpServerMapInput is an input type that accepts OutputsTcpServerMap and OutputsTcpServerMapOutput values.
@@ -296,6 +309,12 @@ func (i OutputsTcpServerMap) ToOutputsTcpServerMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpServerMapOutput)
 }
 
+func (i OutputsTcpServerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpServer] {
+	return pulumix.Output[map[string]*OutputsTcpServer]{
+		OutputState: i.ToOutputsTcpServerMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type OutputsTcpServerOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpServerOutput) ElementType() reflect.Type {
@@ -308,6 +327,12 @@ func (o OutputsTcpServerOutput) ToOutputsTcpServerOutput() OutputsTcpServerOutpu
 
 func (o OutputsTcpServerOutput) ToOutputsTcpServerOutputWithContext(ctx context.Context) OutputsTcpServerOutput {
 	return o
+}
+
+func (o OutputsTcpServerOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpServer] {
+	return pulumix.Output[*OutputsTcpServer]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -382,6 +407,12 @@ func (o OutputsTcpServerArrayOutput) ToOutputsTcpServerArrayOutputWithContext(ct
 	return o
 }
 
+func (o OutputsTcpServerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpServer] {
+	return pulumix.Output[[]*OutputsTcpServer]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o OutputsTcpServerArrayOutput) Index(i pulumi.IntInput) OutputsTcpServerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutputsTcpServer {
 		return vs[0].([]*OutputsTcpServer)[vs[1].(int)]
@@ -400,6 +431,12 @@ func (o OutputsTcpServerMapOutput) ToOutputsTcpServerMapOutput() OutputsTcpServe
 
 func (o OutputsTcpServerMapOutput) ToOutputsTcpServerMapOutputWithContext(ctx context.Context) OutputsTcpServerMapOutput {
 	return o
+}
+
+func (o OutputsTcpServerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpServer] {
+	return pulumix.Output[map[string]*OutputsTcpServer]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o OutputsTcpServerMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpServerOutput {

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: AdminSamlGroups
@@ -147,6 +148,12 @@ func (i *AdminSamlGroups) ToAdminSamlGroupsOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsOutput)
 }
 
+func (i *AdminSamlGroups) ToOutput(ctx context.Context) pulumix.Output[*AdminSamlGroups] {
+	return pulumix.Output[*AdminSamlGroups]{
+		OutputState: i.ToAdminSamlGroupsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AdminSamlGroupsArrayInput is an input type that accepts AdminSamlGroupsArray and AdminSamlGroupsArrayOutput values.
 // You can construct a concrete instance of `AdminSamlGroupsArrayInput` via:
 //
@@ -170,6 +177,12 @@ func (i AdminSamlGroupsArray) ToAdminSamlGroupsArrayOutput() AdminSamlGroupsArra
 
 func (i AdminSamlGroupsArray) ToAdminSamlGroupsArrayOutputWithContext(ctx context.Context) AdminSamlGroupsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsArrayOutput)
+}
+
+func (i AdminSamlGroupsArray) ToOutput(ctx context.Context) pulumix.Output[[]*AdminSamlGroups] {
+	return pulumix.Output[[]*AdminSamlGroups]{
+		OutputState: i.ToAdminSamlGroupsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AdminSamlGroupsMapInput is an input type that accepts AdminSamlGroupsMap and AdminSamlGroupsMapOutput values.
@@ -197,6 +210,12 @@ func (i AdminSamlGroupsMap) ToAdminSamlGroupsMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AdminSamlGroupsMapOutput)
 }
 
+func (i AdminSamlGroupsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AdminSamlGroups] {
+	return pulumix.Output[map[string]*AdminSamlGroups]{
+		OutputState: i.ToAdminSamlGroupsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AdminSamlGroupsOutput struct{ *pulumi.OutputState }
 
 func (AdminSamlGroupsOutput) ElementType() reflect.Type {
@@ -209,6 +228,12 @@ func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutput() AdminSamlGroupsOutput {
 
 func (o AdminSamlGroupsOutput) ToAdminSamlGroupsOutputWithContext(ctx context.Context) AdminSamlGroupsOutput {
 	return o
+}
+
+func (o AdminSamlGroupsOutput) ToOutput(ctx context.Context) pulumix.Output[*AdminSamlGroups] {
+	return pulumix.Output[*AdminSamlGroups]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the external group.
@@ -235,6 +260,12 @@ func (o AdminSamlGroupsArrayOutput) ToAdminSamlGroupsArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o AdminSamlGroupsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AdminSamlGroups] {
+	return pulumix.Output[[]*AdminSamlGroups]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AdminSamlGroupsArrayOutput) Index(i pulumi.IntInput) AdminSamlGroupsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AdminSamlGroups {
 		return vs[0].([]*AdminSamlGroups)[vs[1].(int)]
@@ -253,6 +284,12 @@ func (o AdminSamlGroupsMapOutput) ToAdminSamlGroupsMapOutput() AdminSamlGroupsMa
 
 func (o AdminSamlGroupsMapOutput) ToAdminSamlGroupsMapOutputWithContext(ctx context.Context) AdminSamlGroupsMapOutput {
 	return o
+}
+
+func (o AdminSamlGroupsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AdminSamlGroups] {
+	return pulumix.Output[map[string]*AdminSamlGroups]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AdminSamlGroupsMapOutput) MapIndex(k pulumi.StringInput) AdminSamlGroupsOutput {
