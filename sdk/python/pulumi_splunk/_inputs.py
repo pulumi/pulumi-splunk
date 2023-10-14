@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
@@ -44,28 +44,57 @@ class AppsLocalAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        AppsLocalAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -181,28 +210,57 @@ class ConfigsConfAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        ConfigsConfAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -318,28 +376,57 @@ class DataUiViewsAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        DataUiViewsAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -455,28 +542,57 @@ class GenericAclAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        GenericAclAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -592,28 +708,57 @@ class IndexesAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        IndexesAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -729,28 +874,57 @@ class InputsHttpEventCollectorAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsHttpEventCollectorAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -866,28 +1040,57 @@ class InputsMonitorAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsMonitorAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1003,28 +1206,57 @@ class InputsScriptAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsScriptAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1140,28 +1372,57 @@ class InputsTcpCookedAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsTcpCookedAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1277,28 +1538,57 @@ class InputsTcpRawAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsTcpRawAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1414,28 +1704,57 @@ class InputsTcpSplunkTcpTokenAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsTcpSplunkTcpTokenAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1551,28 +1870,57 @@ class InputsUdpAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        InputsUdpAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1688,28 +2036,57 @@ class OutputsTcpDefaultAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        OutputsTcpDefaultAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1825,28 +2202,57 @@ class OutputsTcpGroupAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        OutputsTcpGroupAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -1962,28 +2368,57 @@ class OutputsTcpServerAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        OutputsTcpServerAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -2099,28 +2534,57 @@ class OutputsTcpSyslogAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        OutputsTcpSyslogAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -2236,28 +2700,57 @@ class SavedSearchesAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        SavedSearchesAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
@@ -2373,28 +2866,57 @@ class ShIndexesManagerAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        ShIndexesManagerAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app=app,
+            can_change_perms=can_change_perms,
+            can_share_app=can_share_app,
+            can_share_global=can_share_global,
+            can_share_user=can_share_user,
+            can_write=can_write,
+            owner=owner,
+            reads=reads,
+            removable=removable,
+            sharing=sharing,
+            writes=writes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app: Optional[pulumi.Input[str]] = None,
+             can_change_perms: Optional[pulumi.Input[bool]] = None,
+             can_share_app: Optional[pulumi.Input[bool]] = None,
+             can_share_global: Optional[pulumi.Input[bool]] = None,
+             can_share_user: Optional[pulumi.Input[bool]] = None,
+             can_write: Optional[pulumi.Input[bool]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             reads: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             removable: Optional[pulumi.Input[bool]] = None,
+             sharing: Optional[pulumi.Input[str]] = None,
+             writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app is not None:
-            pulumi.set(__self__, "app", app)
+            _setter("app", app)
         if can_change_perms is not None:
-            pulumi.set(__self__, "can_change_perms", can_change_perms)
+            _setter("can_change_perms", can_change_perms)
         if can_share_app is not None:
-            pulumi.set(__self__, "can_share_app", can_share_app)
+            _setter("can_share_app", can_share_app)
         if can_share_global is not None:
-            pulumi.set(__self__, "can_share_global", can_share_global)
+            _setter("can_share_global", can_share_global)
         if can_share_user is not None:
-            pulumi.set(__self__, "can_share_user", can_share_user)
+            _setter("can_share_user", can_share_user)
         if can_write is not None:
-            pulumi.set(__self__, "can_write", can_write)
+            _setter("can_write", can_write)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if reads is not None:
-            pulumi.set(__self__, "reads", reads)
+            _setter("reads", reads)
         if removable is not None:
-            pulumi.set(__self__, "removable", removable)
+            _setter("removable", removable)
         if sharing is not None:
-            pulumi.set(__self__, "sharing", sharing)
+            _setter("sharing", sharing)
         if writes is not None:
-            pulumi.set(__self__, "writes", writes)
+            _setter("writes", writes)
 
     @property
     @pulumi.getter
