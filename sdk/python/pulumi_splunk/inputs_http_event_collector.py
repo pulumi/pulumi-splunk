@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,26 +39,53 @@ class InputsHttpEventCollectorArgs:
         :param pulumi.Input[str] token: Token value for sending data to collector/event endpoint
         :param pulumi.Input[int] use_ack: Indexer acknowledgement for this token
         """
+        InputsHttpEventCollectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            disabled=disabled,
+            host=host,
+            index=index,
+            indexes=indexes,
+            name=name,
+            source=source,
+            sourcetype=sourcetype,
+            token=token,
+            use_ack=use_ack,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['InputsHttpEventCollectorAclArgs']] = None,
+             disabled: Optional[pulumi.Input[bool]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             index: Optional[pulumi.Input[str]] = None,
+             indexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             sourcetype: Optional[pulumi.Input[str]] = None,
+             token: Optional[pulumi.Input[str]] = None,
+             use_ack: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if index is not None:
-            pulumi.set(__self__, "index", index)
+            _setter("index", index)
         if indexes is not None:
-            pulumi.set(__self__, "indexes", indexes)
+            _setter("indexes", indexes)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if sourcetype is not None:
-            pulumi.set(__self__, "sourcetype", sourcetype)
+            _setter("sourcetype", sourcetype)
         if token is not None:
-            pulumi.set(__self__, "token", token)
+            _setter("token", token)
         if use_ack is not None:
-            pulumi.set(__self__, "use_ack", use_ack)
+            _setter("use_ack", use_ack)
 
     @property
     @pulumi.getter
@@ -207,26 +234,53 @@ class _InputsHttpEventCollectorState:
         :param pulumi.Input[str] token: Token value for sending data to collector/event endpoint
         :param pulumi.Input[int] use_ack: Indexer acknowledgement for this token
         """
+        _InputsHttpEventCollectorState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            disabled=disabled,
+            host=host,
+            index=index,
+            indexes=indexes,
+            name=name,
+            source=source,
+            sourcetype=sourcetype,
+            token=token,
+            use_ack=use_ack,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['InputsHttpEventCollectorAclArgs']] = None,
+             disabled: Optional[pulumi.Input[bool]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             index: Optional[pulumi.Input[str]] = None,
+             indexes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             sourcetype: Optional[pulumi.Input[str]] = None,
+             token: Optional[pulumi.Input[str]] = None,
+             use_ack: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if index is not None:
-            pulumi.set(__self__, "index", index)
+            _setter("index", index)
         if indexes is not None:
-            pulumi.set(__self__, "indexes", indexes)
+            _setter("indexes", indexes)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if sourcetype is not None:
-            pulumi.set(__self__, "sourcetype", sourcetype)
+            _setter("sourcetype", sourcetype)
         if token is not None:
-            pulumi.set(__self__, "token", token)
+            _setter("token", token)
         if use_ack is not None:
-            pulumi.set(__self__, "use_ack", use_ack)
+            _setter("use_ack", use_ack)
 
     @property
     @pulumi.getter
@@ -404,6 +458,10 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            InputsHttpEventCollectorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -428,6 +486,11 @@ class InputsHttpEventCollector(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsHttpEventCollectorArgs.__new__(InputsHttpEventCollectorArgs)
 
+            if acl is not None and not isinstance(acl, InputsHttpEventCollectorAclArgs):
+                acl = acl or {}
+                def _setter(key, value):
+                    acl[key] = value
+                InputsHttpEventCollectorAclArgs._configure(_setter, **acl)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["host"] = host

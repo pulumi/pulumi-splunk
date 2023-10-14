@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AuthorizationRolesArgs', 'AuthorizationRoles']
@@ -43,32 +43,65 @@ class AuthorizationRolesArgs:
         :param pulumi.Input[int] search_jobs_quota: The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         :param pulumi.Input[int] search_time_win: Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """
+        AuthorizationRolesArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capabilities=capabilities,
+            cumulative_realtime_search_jobs_quota=cumulative_realtime_search_jobs_quota,
+            cumulative_search_jobs_quota=cumulative_search_jobs_quota,
+            default_app=default_app,
+            imported_roles=imported_roles,
+            name=name,
+            realtime_search_jobs_quota=realtime_search_jobs_quota,
+            search_disk_quota=search_disk_quota,
+            search_filter=search_filter,
+            search_indexes_alloweds=search_indexes_alloweds,
+            search_indexes_defaults=search_indexes_defaults,
+            search_jobs_quota=search_jobs_quota,
+            search_time_win=search_time_win,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             cumulative_realtime_search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             cumulative_search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             default_app: Optional[pulumi.Input[str]] = None,
+             imported_roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             realtime_search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             search_disk_quota: Optional[pulumi.Input[int]] = None,
+             search_filter: Optional[pulumi.Input[str]] = None,
+             search_indexes_alloweds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             search_indexes_defaults: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             search_time_win: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if capabilities is not None:
-            pulumi.set(__self__, "capabilities", capabilities)
+            _setter("capabilities", capabilities)
         if cumulative_realtime_search_jobs_quota is not None:
-            pulumi.set(__self__, "cumulative_realtime_search_jobs_quota", cumulative_realtime_search_jobs_quota)
+            _setter("cumulative_realtime_search_jobs_quota", cumulative_realtime_search_jobs_quota)
         if cumulative_search_jobs_quota is not None:
-            pulumi.set(__self__, "cumulative_search_jobs_quota", cumulative_search_jobs_quota)
+            _setter("cumulative_search_jobs_quota", cumulative_search_jobs_quota)
         if default_app is not None:
-            pulumi.set(__self__, "default_app", default_app)
+            _setter("default_app", default_app)
         if imported_roles is not None:
-            pulumi.set(__self__, "imported_roles", imported_roles)
+            _setter("imported_roles", imported_roles)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if realtime_search_jobs_quota is not None:
-            pulumi.set(__self__, "realtime_search_jobs_quota", realtime_search_jobs_quota)
+            _setter("realtime_search_jobs_quota", realtime_search_jobs_quota)
         if search_disk_quota is not None:
-            pulumi.set(__self__, "search_disk_quota", search_disk_quota)
+            _setter("search_disk_quota", search_disk_quota)
         if search_filter is not None:
-            pulumi.set(__self__, "search_filter", search_filter)
+            _setter("search_filter", search_filter)
         if search_indexes_alloweds is not None:
-            pulumi.set(__self__, "search_indexes_alloweds", search_indexes_alloweds)
+            _setter("search_indexes_alloweds", search_indexes_alloweds)
         if search_indexes_defaults is not None:
-            pulumi.set(__self__, "search_indexes_defaults", search_indexes_defaults)
+            _setter("search_indexes_defaults", search_indexes_defaults)
         if search_jobs_quota is not None:
-            pulumi.set(__self__, "search_jobs_quota", search_jobs_quota)
+            _setter("search_jobs_quota", search_jobs_quota)
         if search_time_win is not None:
-            pulumi.set(__self__, "search_time_win", search_time_win)
+            _setter("search_time_win", search_time_win)
 
     @property
     @pulumi.getter
@@ -259,32 +292,65 @@ class _AuthorizationRolesState:
         :param pulumi.Input[int] search_jobs_quota: The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         :param pulumi.Input[int] search_time_win: Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """
+        _AuthorizationRolesState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capabilities=capabilities,
+            cumulative_realtime_search_jobs_quota=cumulative_realtime_search_jobs_quota,
+            cumulative_search_jobs_quota=cumulative_search_jobs_quota,
+            default_app=default_app,
+            imported_roles=imported_roles,
+            name=name,
+            realtime_search_jobs_quota=realtime_search_jobs_quota,
+            search_disk_quota=search_disk_quota,
+            search_filter=search_filter,
+            search_indexes_alloweds=search_indexes_alloweds,
+            search_indexes_defaults=search_indexes_defaults,
+            search_jobs_quota=search_jobs_quota,
+            search_time_win=search_time_win,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             cumulative_realtime_search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             cumulative_search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             default_app: Optional[pulumi.Input[str]] = None,
+             imported_roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             realtime_search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             search_disk_quota: Optional[pulumi.Input[int]] = None,
+             search_filter: Optional[pulumi.Input[str]] = None,
+             search_indexes_alloweds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             search_indexes_defaults: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             search_jobs_quota: Optional[pulumi.Input[int]] = None,
+             search_time_win: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if capabilities is not None:
-            pulumi.set(__self__, "capabilities", capabilities)
+            _setter("capabilities", capabilities)
         if cumulative_realtime_search_jobs_quota is not None:
-            pulumi.set(__self__, "cumulative_realtime_search_jobs_quota", cumulative_realtime_search_jobs_quota)
+            _setter("cumulative_realtime_search_jobs_quota", cumulative_realtime_search_jobs_quota)
         if cumulative_search_jobs_quota is not None:
-            pulumi.set(__self__, "cumulative_search_jobs_quota", cumulative_search_jobs_quota)
+            _setter("cumulative_search_jobs_quota", cumulative_search_jobs_quota)
         if default_app is not None:
-            pulumi.set(__self__, "default_app", default_app)
+            _setter("default_app", default_app)
         if imported_roles is not None:
-            pulumi.set(__self__, "imported_roles", imported_roles)
+            _setter("imported_roles", imported_roles)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if realtime_search_jobs_quota is not None:
-            pulumi.set(__self__, "realtime_search_jobs_quota", realtime_search_jobs_quota)
+            _setter("realtime_search_jobs_quota", realtime_search_jobs_quota)
         if search_disk_quota is not None:
-            pulumi.set(__self__, "search_disk_quota", search_disk_quota)
+            _setter("search_disk_quota", search_disk_quota)
         if search_filter is not None:
-            pulumi.set(__self__, "search_filter", search_filter)
+            _setter("search_filter", search_filter)
         if search_indexes_alloweds is not None:
-            pulumi.set(__self__, "search_indexes_alloweds", search_indexes_alloweds)
+            _setter("search_indexes_alloweds", search_indexes_alloweds)
         if search_indexes_defaults is not None:
-            pulumi.set(__self__, "search_indexes_defaults", search_indexes_defaults)
+            _setter("search_indexes_defaults", search_indexes_defaults)
         if search_jobs_quota is not None:
-            pulumi.set(__self__, "search_jobs_quota", search_jobs_quota)
+            _setter("search_jobs_quota", search_jobs_quota)
         if search_time_win is not None:
-            pulumi.set(__self__, "search_time_win", search_time_win)
+            _setter("search_time_win", search_time_win)
 
     @property
     @pulumi.getter
@@ -562,6 +628,10 @@ class AuthorizationRoles(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AuthorizationRolesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

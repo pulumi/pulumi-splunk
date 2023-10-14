@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AdminSamlGroupsArgs', 'AdminSamlGroups']
@@ -21,10 +21,21 @@ class AdminSamlGroupsArgs:
         :param pulumi.Input[str] name: The name of the external group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: List of internal roles assigned to the group.
         """
+        AdminSamlGroupsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            roles=roles,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if roles is not None:
-            pulumi.set(__self__, "roles", roles)
+            _setter("roles", roles)
 
     @property
     @pulumi.getter
@@ -61,10 +72,21 @@ class _AdminSamlGroupsState:
         :param pulumi.Input[str] name: The name of the external group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: List of internal roles assigned to the group.
         """
+        _AdminSamlGroupsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            roles=roles,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if roles is not None:
-            pulumi.set(__self__, "roles", roles)
+            _setter("roles", roles)
 
     @property
     @pulumi.getter
@@ -170,6 +192,10 @@ class AdminSamlGroups(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AdminSamlGroupsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

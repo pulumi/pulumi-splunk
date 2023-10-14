@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -353,329 +353,660 @@ class SavedSearchesArgs:
         :param pulumi.Input[str] vsid: Defines the viewstate id associated with the UI view listed in 'displayview'.
         :param pulumi.Input[str] workload_pool: Specifies the new workload pool where the existing running search will be placed.`
         """
-        pulumi.set(__self__, "search", search)
+        SavedSearchesArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            search=search,
+            acl=acl,
+            action_create_xsoar_incident=action_create_xsoar_incident,
+            action_create_xsoar_incident_param_custom_fields=action_create_xsoar_incident_param_custom_fields,
+            action_create_xsoar_incident_param_details=action_create_xsoar_incident_param_details,
+            action_create_xsoar_incident_param_incident_name=action_create_xsoar_incident_param_incident_name,
+            action_create_xsoar_incident_param_occurred=action_create_xsoar_incident_param_occurred,
+            action_create_xsoar_incident_param_send_all_servers=action_create_xsoar_incident_param_send_all_servers,
+            action_create_xsoar_incident_param_server_url=action_create_xsoar_incident_param_server_url,
+            action_create_xsoar_incident_param_severity=action_create_xsoar_incident_param_severity,
+            action_create_xsoar_incident_param_type=action_create_xsoar_incident_param_type,
+            action_email_auth_password=action_email_auth_password,
+            action_email_auth_username=action_email_auth_username,
+            action_email_bcc=action_email_bcc,
+            action_email_cc=action_email_cc,
+            action_email_command=action_email_command,
+            action_email_format=action_email_format,
+            action_email_from=action_email_from,
+            action_email_hostname=action_email_hostname,
+            action_email_include_results_link=action_email_include_results_link,
+            action_email_include_search=action_email_include_search,
+            action_email_include_trigger=action_email_include_trigger,
+            action_email_include_trigger_time=action_email_include_trigger_time,
+            action_email_include_view_link=action_email_include_view_link,
+            action_email_inline=action_email_inline,
+            action_email_mailserver=action_email_mailserver,
+            action_email_max_results=action_email_max_results,
+            action_email_max_time=action_email_max_time,
+            action_email_message_alert=action_email_message_alert,
+            action_email_message_report=action_email_message_report,
+            action_email_pdfview=action_email_pdfview,
+            action_email_preprocess_results=action_email_preprocess_results,
+            action_email_report_cid_font_list=action_email_report_cid_font_list,
+            action_email_report_include_splunk_logo=action_email_report_include_splunk_logo,
+            action_email_report_paper_orientation=action_email_report_paper_orientation,
+            action_email_report_paper_size=action_email_report_paper_size,
+            action_email_report_server_enabled=action_email_report_server_enabled,
+            action_email_report_server_url=action_email_report_server_url,
+            action_email_send_csv=action_email_send_csv,
+            action_email_send_pdf=action_email_send_pdf,
+            action_email_send_results=action_email_send_results,
+            action_email_subject=action_email_subject,
+            action_email_to=action_email_to,
+            action_email_track_alert=action_email_track_alert,
+            action_email_ttl=action_email_ttl,
+            action_email_use_ssl=action_email_use_ssl,
+            action_email_use_tls=action_email_use_tls,
+            action_email_width_sort_columns=action_email_width_sort_columns,
+            action_jira_service_desk_param_account=action_jira_service_desk_param_account,
+            action_jira_service_desk_param_jira_description=action_jira_service_desk_param_jira_description,
+            action_jira_service_desk_param_jira_issue_type=action_jira_service_desk_param_jira_issue_type,
+            action_jira_service_desk_param_jira_priority=action_jira_service_desk_param_jira_priority,
+            action_jira_service_desk_param_jira_project=action_jira_service_desk_param_jira_project,
+            action_jira_service_desk_param_jira_summary=action_jira_service_desk_param_jira_summary,
+            action_pagerduty_custom_details=action_pagerduty_custom_details,
+            action_pagerduty_integration_key=action_pagerduty_integration_key,
+            action_pagerduty_integration_key_override=action_pagerduty_integration_key_override,
+            action_pagerduty_integration_url=action_pagerduty_integration_url,
+            action_pagerduty_integration_url_override=action_pagerduty_integration_url_override,
+            action_populate_lookup_command=action_populate_lookup_command,
+            action_populate_lookup_dest=action_populate_lookup_dest,
+            action_populate_lookup_hostname=action_populate_lookup_hostname,
+            action_populate_lookup_max_results=action_populate_lookup_max_results,
+            action_populate_lookup_max_time=action_populate_lookup_max_time,
+            action_populate_lookup_track_alert=action_populate_lookup_track_alert,
+            action_populate_lookup_ttl=action_populate_lookup_ttl,
+            action_rss_command=action_rss_command,
+            action_rss_hostname=action_rss_hostname,
+            action_rss_max_results=action_rss_max_results,
+            action_rss_max_time=action_rss_max_time,
+            action_rss_track_alert=action_rss_track_alert,
+            action_rss_ttl=action_rss_ttl,
+            action_script_command=action_script_command,
+            action_script_filename=action_script_filename,
+            action_script_hostname=action_script_hostname,
+            action_script_max_results=action_script_max_results,
+            action_script_max_time=action_script_max_time,
+            action_script_track_alert=action_script_track_alert,
+            action_script_ttl=action_script_ttl,
+            action_slack_param_attachment=action_slack_param_attachment,
+            action_slack_param_channel=action_slack_param_channel,
+            action_slack_param_fields=action_slack_param_fields,
+            action_slack_param_message=action_slack_param_message,
+            action_slack_param_webhook_url_override=action_slack_param_webhook_url_override,
+            action_snow_event_param_account=action_snow_event_param_account,
+            action_snow_event_param_additional_info=action_snow_event_param_additional_info,
+            action_snow_event_param_ci_identifier=action_snow_event_param_ci_identifier,
+            action_snow_event_param_custom_fields=action_snow_event_param_custom_fields,
+            action_snow_event_param_description=action_snow_event_param_description,
+            action_snow_event_param_node=action_snow_event_param_node,
+            action_snow_event_param_resource=action_snow_event_param_resource,
+            action_snow_event_param_severity=action_snow_event_param_severity,
+            action_snow_event_param_type=action_snow_event_param_type,
+            action_summary_index_command=action_summary_index_command,
+            action_summary_index_hostname=action_summary_index_hostname,
+            action_summary_index_inline=action_summary_index_inline,
+            action_summary_index_max_results=action_summary_index_max_results,
+            action_summary_index_max_time=action_summary_index_max_time,
+            action_summary_index_name=action_summary_index_name,
+            action_summary_index_track_alert=action_summary_index_track_alert,
+            action_summary_index_ttl=action_summary_index_ttl,
+            action_webhook_param_url=action_webhook_param_url,
+            actions=actions,
+            alert_comparator=alert_comparator,
+            alert_condition=alert_condition,
+            alert_digest_mode=alert_digest_mode,
+            alert_expires=alert_expires,
+            alert_severity=alert_severity,
+            alert_suppress=alert_suppress,
+            alert_suppress_fields=alert_suppress_fields,
+            alert_suppress_period=alert_suppress_period,
+            alert_threshold=alert_threshold,
+            alert_track=alert_track,
+            alert_type=alert_type,
+            allow_skew=allow_skew,
+            auto_summarize=auto_summarize,
+            auto_summarize_command=auto_summarize_command,
+            auto_summarize_cron_schedule=auto_summarize_cron_schedule,
+            auto_summarize_dispatch_earliest_time=auto_summarize_dispatch_earliest_time,
+            auto_summarize_dispatch_latest_time=auto_summarize_dispatch_latest_time,
+            auto_summarize_dispatch_time_format=auto_summarize_dispatch_time_format,
+            auto_summarize_dispatch_ttl=auto_summarize_dispatch_ttl,
+            auto_summarize_max_disabled_buckets=auto_summarize_max_disabled_buckets,
+            auto_summarize_max_summary_ratio=auto_summarize_max_summary_ratio,
+            auto_summarize_max_summary_size=auto_summarize_max_summary_size,
+            auto_summarize_max_time=auto_summarize_max_time,
+            auto_summarize_suspend_period=auto_summarize_suspend_period,
+            auto_summarize_timespan=auto_summarize_timespan,
+            cron_schedule=cron_schedule,
+            description=description,
+            disabled=disabled,
+            dispatch_buckets=dispatch_buckets,
+            dispatch_earliest_time=dispatch_earliest_time,
+            dispatch_index_earliest=dispatch_index_earliest,
+            dispatch_index_latest=dispatch_index_latest,
+            dispatch_indexed_realtime=dispatch_indexed_realtime,
+            dispatch_indexed_realtime_minspan=dispatch_indexed_realtime_minspan,
+            dispatch_indexed_realtime_offset=dispatch_indexed_realtime_offset,
+            dispatch_latest_time=dispatch_latest_time,
+            dispatch_lookups=dispatch_lookups,
+            dispatch_max_count=dispatch_max_count,
+            dispatch_max_time=dispatch_max_time,
+            dispatch_reduce_freq=dispatch_reduce_freq,
+            dispatch_rt_backfill=dispatch_rt_backfill,
+            dispatch_rt_maximum_span=dispatch_rt_maximum_span,
+            dispatch_spawn_process=dispatch_spawn_process,
+            dispatch_time_format=dispatch_time_format,
+            dispatch_ttl=dispatch_ttl,
+            display_view=display_view,
+            is_scheduled=is_scheduled,
+            is_visible=is_visible,
+            max_concurrent=max_concurrent,
+            name=name,
+            realtime_schedule=realtime_schedule,
+            request_ui_dispatch_app=request_ui_dispatch_app,
+            request_ui_dispatch_view=request_ui_dispatch_view,
+            restart_on_searchpeer_add=restart_on_searchpeer_add,
+            run_on_startup=run_on_startup,
+            schedule_priority=schedule_priority,
+            schedule_window=schedule_window,
+            vsid=vsid,
+            workload_pool=workload_pool,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             search: pulumi.Input[str],
+             acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+             action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
+             action_email_auth_password: Optional[pulumi.Input[str]] = None,
+             action_email_auth_username: Optional[pulumi.Input[str]] = None,
+             action_email_bcc: Optional[pulumi.Input[str]] = None,
+             action_email_cc: Optional[pulumi.Input[str]] = None,
+             action_email_command: Optional[pulumi.Input[str]] = None,
+             action_email_format: Optional[pulumi.Input[str]] = None,
+             action_email_from: Optional[pulumi.Input[str]] = None,
+             action_email_hostname: Optional[pulumi.Input[str]] = None,
+             action_email_include_results_link: Optional[pulumi.Input[int]] = None,
+             action_email_include_search: Optional[pulumi.Input[int]] = None,
+             action_email_include_trigger: Optional[pulumi.Input[int]] = None,
+             action_email_include_trigger_time: Optional[pulumi.Input[int]] = None,
+             action_email_include_view_link: Optional[pulumi.Input[int]] = None,
+             action_email_inline: Optional[pulumi.Input[bool]] = None,
+             action_email_mailserver: Optional[pulumi.Input[str]] = None,
+             action_email_max_results: Optional[pulumi.Input[int]] = None,
+             action_email_max_time: Optional[pulumi.Input[str]] = None,
+             action_email_message_alert: Optional[pulumi.Input[str]] = None,
+             action_email_message_report: Optional[pulumi.Input[str]] = None,
+             action_email_pdfview: Optional[pulumi.Input[str]] = None,
+             action_email_preprocess_results: Optional[pulumi.Input[str]] = None,
+             action_email_report_cid_font_list: Optional[pulumi.Input[str]] = None,
+             action_email_report_include_splunk_logo: Optional[pulumi.Input[bool]] = None,
+             action_email_report_paper_orientation: Optional[pulumi.Input[str]] = None,
+             action_email_report_paper_size: Optional[pulumi.Input[str]] = None,
+             action_email_report_server_enabled: Optional[pulumi.Input[bool]] = None,
+             action_email_report_server_url: Optional[pulumi.Input[str]] = None,
+             action_email_send_csv: Optional[pulumi.Input[int]] = None,
+             action_email_send_pdf: Optional[pulumi.Input[bool]] = None,
+             action_email_send_results: Optional[pulumi.Input[bool]] = None,
+             action_email_subject: Optional[pulumi.Input[str]] = None,
+             action_email_to: Optional[pulumi.Input[str]] = None,
+             action_email_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_email_ttl: Optional[pulumi.Input[str]] = None,
+             action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
+             action_email_use_tls: Optional[pulumi.Input[bool]] = None,
+             action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+             action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_hostname: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_max_results: Optional[pulumi.Input[int]] = None,
+             action_populate_lookup_max_time: Optional[pulumi.Input[int]] = None,
+             action_populate_lookup_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_populate_lookup_ttl: Optional[pulumi.Input[str]] = None,
+             action_rss_command: Optional[pulumi.Input[str]] = None,
+             action_rss_hostname: Optional[pulumi.Input[str]] = None,
+             action_rss_max_results: Optional[pulumi.Input[int]] = None,
+             action_rss_max_time: Optional[pulumi.Input[int]] = None,
+             action_rss_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_rss_ttl: Optional[pulumi.Input[str]] = None,
+             action_script_command: Optional[pulumi.Input[str]] = None,
+             action_script_filename: Optional[pulumi.Input[str]] = None,
+             action_script_hostname: Optional[pulumi.Input[str]] = None,
+             action_script_max_results: Optional[pulumi.Input[int]] = None,
+             action_script_max_time: Optional[pulumi.Input[int]] = None,
+             action_script_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_script_ttl: Optional[pulumi.Input[str]] = None,
+             action_slack_param_attachment: Optional[pulumi.Input[str]] = None,
+             action_slack_param_channel: Optional[pulumi.Input[str]] = None,
+             action_slack_param_fields: Optional[pulumi.Input[str]] = None,
+             action_slack_param_message: Optional[pulumi.Input[str]] = None,
+             action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+             action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
+             action_summary_index_command: Optional[pulumi.Input[str]] = None,
+             action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
+             action_summary_index_inline: Optional[pulumi.Input[bool]] = None,
+             action_summary_index_max_results: Optional[pulumi.Input[int]] = None,
+             action_summary_index_max_time: Optional[pulumi.Input[int]] = None,
+             action_summary_index_name: Optional[pulumi.Input[str]] = None,
+             action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+             action_webhook_param_url: Optional[pulumi.Input[str]] = None,
+             actions: Optional[pulumi.Input[str]] = None,
+             alert_comparator: Optional[pulumi.Input[str]] = None,
+             alert_condition: Optional[pulumi.Input[str]] = None,
+             alert_digest_mode: Optional[pulumi.Input[bool]] = None,
+             alert_expires: Optional[pulumi.Input[str]] = None,
+             alert_severity: Optional[pulumi.Input[int]] = None,
+             alert_suppress: Optional[pulumi.Input[bool]] = None,
+             alert_suppress_fields: Optional[pulumi.Input[str]] = None,
+             alert_suppress_period: Optional[pulumi.Input[str]] = None,
+             alert_threshold: Optional[pulumi.Input[str]] = None,
+             alert_track: Optional[pulumi.Input[bool]] = None,
+             alert_type: Optional[pulumi.Input[str]] = None,
+             allow_skew: Optional[pulumi.Input[str]] = None,
+             auto_summarize: Optional[pulumi.Input[bool]] = None,
+             auto_summarize_command: Optional[pulumi.Input[str]] = None,
+             auto_summarize_cron_schedule: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_latest_time: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_time_format: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_ttl: Optional[pulumi.Input[str]] = None,
+             auto_summarize_max_disabled_buckets: Optional[pulumi.Input[int]] = None,
+             auto_summarize_max_summary_ratio: Optional[pulumi.Input[float]] = None,
+             auto_summarize_max_summary_size: Optional[pulumi.Input[int]] = None,
+             auto_summarize_max_time: Optional[pulumi.Input[int]] = None,
+             auto_summarize_suspend_period: Optional[pulumi.Input[str]] = None,
+             auto_summarize_timespan: Optional[pulumi.Input[str]] = None,
+             cron_schedule: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             disabled: Optional[pulumi.Input[bool]] = None,
+             dispatch_buckets: Optional[pulumi.Input[int]] = None,
+             dispatch_earliest_time: Optional[pulumi.Input[str]] = None,
+             dispatch_index_earliest: Optional[pulumi.Input[str]] = None,
+             dispatch_index_latest: Optional[pulumi.Input[str]] = None,
+             dispatch_indexed_realtime: Optional[pulumi.Input[bool]] = None,
+             dispatch_indexed_realtime_minspan: Optional[pulumi.Input[int]] = None,
+             dispatch_indexed_realtime_offset: Optional[pulumi.Input[int]] = None,
+             dispatch_latest_time: Optional[pulumi.Input[str]] = None,
+             dispatch_lookups: Optional[pulumi.Input[bool]] = None,
+             dispatch_max_count: Optional[pulumi.Input[int]] = None,
+             dispatch_max_time: Optional[pulumi.Input[int]] = None,
+             dispatch_reduce_freq: Optional[pulumi.Input[int]] = None,
+             dispatch_rt_backfill: Optional[pulumi.Input[bool]] = None,
+             dispatch_rt_maximum_span: Optional[pulumi.Input[int]] = None,
+             dispatch_spawn_process: Optional[pulumi.Input[bool]] = None,
+             dispatch_time_format: Optional[pulumi.Input[str]] = None,
+             dispatch_ttl: Optional[pulumi.Input[str]] = None,
+             display_view: Optional[pulumi.Input[str]] = None,
+             is_scheduled: Optional[pulumi.Input[bool]] = None,
+             is_visible: Optional[pulumi.Input[bool]] = None,
+             max_concurrent: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             realtime_schedule: Optional[pulumi.Input[bool]] = None,
+             request_ui_dispatch_app: Optional[pulumi.Input[str]] = None,
+             request_ui_dispatch_view: Optional[pulumi.Input[str]] = None,
+             restart_on_searchpeer_add: Optional[pulumi.Input[bool]] = None,
+             run_on_startup: Optional[pulumi.Input[bool]] = None,
+             schedule_priority: Optional[pulumi.Input[str]] = None,
+             schedule_window: Optional[pulumi.Input[str]] = None,
+             vsid: Optional[pulumi.Input[str]] = None,
+             workload_pool: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("search", search)
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if action_create_xsoar_incident is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident", action_create_xsoar_incident)
+            _setter("action_create_xsoar_incident", action_create_xsoar_incident)
         if action_create_xsoar_incident_param_custom_fields is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_custom_fields", action_create_xsoar_incident_param_custom_fields)
+            _setter("action_create_xsoar_incident_param_custom_fields", action_create_xsoar_incident_param_custom_fields)
         if action_create_xsoar_incident_param_details is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_details", action_create_xsoar_incident_param_details)
+            _setter("action_create_xsoar_incident_param_details", action_create_xsoar_incident_param_details)
         if action_create_xsoar_incident_param_incident_name is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_incident_name", action_create_xsoar_incident_param_incident_name)
+            _setter("action_create_xsoar_incident_param_incident_name", action_create_xsoar_incident_param_incident_name)
         if action_create_xsoar_incident_param_occurred is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_occurred", action_create_xsoar_incident_param_occurred)
+            _setter("action_create_xsoar_incident_param_occurred", action_create_xsoar_incident_param_occurred)
         if action_create_xsoar_incident_param_send_all_servers is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_send_all_servers", action_create_xsoar_incident_param_send_all_servers)
+            _setter("action_create_xsoar_incident_param_send_all_servers", action_create_xsoar_incident_param_send_all_servers)
         if action_create_xsoar_incident_param_server_url is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_server_url", action_create_xsoar_incident_param_server_url)
+            _setter("action_create_xsoar_incident_param_server_url", action_create_xsoar_incident_param_server_url)
         if action_create_xsoar_incident_param_severity is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_severity", action_create_xsoar_incident_param_severity)
+            _setter("action_create_xsoar_incident_param_severity", action_create_xsoar_incident_param_severity)
         if action_create_xsoar_incident_param_type is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_type", action_create_xsoar_incident_param_type)
+            _setter("action_create_xsoar_incident_param_type", action_create_xsoar_incident_param_type)
         if action_email_auth_password is not None:
-            pulumi.set(__self__, "action_email_auth_password", action_email_auth_password)
+            _setter("action_email_auth_password", action_email_auth_password)
         if action_email_auth_username is not None:
-            pulumi.set(__self__, "action_email_auth_username", action_email_auth_username)
+            _setter("action_email_auth_username", action_email_auth_username)
         if action_email_bcc is not None:
-            pulumi.set(__self__, "action_email_bcc", action_email_bcc)
+            _setter("action_email_bcc", action_email_bcc)
         if action_email_cc is not None:
-            pulumi.set(__self__, "action_email_cc", action_email_cc)
+            _setter("action_email_cc", action_email_cc)
         if action_email_command is not None:
-            pulumi.set(__self__, "action_email_command", action_email_command)
+            _setter("action_email_command", action_email_command)
         if action_email_format is not None:
-            pulumi.set(__self__, "action_email_format", action_email_format)
+            _setter("action_email_format", action_email_format)
         if action_email_from is not None:
-            pulumi.set(__self__, "action_email_from", action_email_from)
+            _setter("action_email_from", action_email_from)
         if action_email_hostname is not None:
-            pulumi.set(__self__, "action_email_hostname", action_email_hostname)
+            _setter("action_email_hostname", action_email_hostname)
         if action_email_include_results_link is not None:
-            pulumi.set(__self__, "action_email_include_results_link", action_email_include_results_link)
+            _setter("action_email_include_results_link", action_email_include_results_link)
         if action_email_include_search is not None:
-            pulumi.set(__self__, "action_email_include_search", action_email_include_search)
+            _setter("action_email_include_search", action_email_include_search)
         if action_email_include_trigger is not None:
-            pulumi.set(__self__, "action_email_include_trigger", action_email_include_trigger)
+            _setter("action_email_include_trigger", action_email_include_trigger)
         if action_email_include_trigger_time is not None:
-            pulumi.set(__self__, "action_email_include_trigger_time", action_email_include_trigger_time)
+            _setter("action_email_include_trigger_time", action_email_include_trigger_time)
         if action_email_include_view_link is not None:
-            pulumi.set(__self__, "action_email_include_view_link", action_email_include_view_link)
+            _setter("action_email_include_view_link", action_email_include_view_link)
         if action_email_inline is not None:
-            pulumi.set(__self__, "action_email_inline", action_email_inline)
+            _setter("action_email_inline", action_email_inline)
         if action_email_mailserver is not None:
-            pulumi.set(__self__, "action_email_mailserver", action_email_mailserver)
+            _setter("action_email_mailserver", action_email_mailserver)
         if action_email_max_results is not None:
-            pulumi.set(__self__, "action_email_max_results", action_email_max_results)
+            _setter("action_email_max_results", action_email_max_results)
         if action_email_max_time is not None:
-            pulumi.set(__self__, "action_email_max_time", action_email_max_time)
+            _setter("action_email_max_time", action_email_max_time)
         if action_email_message_alert is not None:
-            pulumi.set(__self__, "action_email_message_alert", action_email_message_alert)
+            _setter("action_email_message_alert", action_email_message_alert)
         if action_email_message_report is not None:
-            pulumi.set(__self__, "action_email_message_report", action_email_message_report)
+            _setter("action_email_message_report", action_email_message_report)
         if action_email_pdfview is not None:
-            pulumi.set(__self__, "action_email_pdfview", action_email_pdfview)
+            _setter("action_email_pdfview", action_email_pdfview)
         if action_email_preprocess_results is not None:
-            pulumi.set(__self__, "action_email_preprocess_results", action_email_preprocess_results)
+            _setter("action_email_preprocess_results", action_email_preprocess_results)
         if action_email_report_cid_font_list is not None:
-            pulumi.set(__self__, "action_email_report_cid_font_list", action_email_report_cid_font_list)
+            _setter("action_email_report_cid_font_list", action_email_report_cid_font_list)
         if action_email_report_include_splunk_logo is not None:
-            pulumi.set(__self__, "action_email_report_include_splunk_logo", action_email_report_include_splunk_logo)
+            _setter("action_email_report_include_splunk_logo", action_email_report_include_splunk_logo)
         if action_email_report_paper_orientation is not None:
-            pulumi.set(__self__, "action_email_report_paper_orientation", action_email_report_paper_orientation)
+            _setter("action_email_report_paper_orientation", action_email_report_paper_orientation)
         if action_email_report_paper_size is not None:
-            pulumi.set(__self__, "action_email_report_paper_size", action_email_report_paper_size)
+            _setter("action_email_report_paper_size", action_email_report_paper_size)
         if action_email_report_server_enabled is not None:
-            pulumi.set(__self__, "action_email_report_server_enabled", action_email_report_server_enabled)
+            _setter("action_email_report_server_enabled", action_email_report_server_enabled)
         if action_email_report_server_url is not None:
-            pulumi.set(__self__, "action_email_report_server_url", action_email_report_server_url)
+            _setter("action_email_report_server_url", action_email_report_server_url)
         if action_email_send_csv is not None:
-            pulumi.set(__self__, "action_email_send_csv", action_email_send_csv)
+            _setter("action_email_send_csv", action_email_send_csv)
         if action_email_send_pdf is not None:
-            pulumi.set(__self__, "action_email_send_pdf", action_email_send_pdf)
+            _setter("action_email_send_pdf", action_email_send_pdf)
         if action_email_send_results is not None:
-            pulumi.set(__self__, "action_email_send_results", action_email_send_results)
+            _setter("action_email_send_results", action_email_send_results)
         if action_email_subject is not None:
-            pulumi.set(__self__, "action_email_subject", action_email_subject)
+            _setter("action_email_subject", action_email_subject)
         if action_email_to is not None:
-            pulumi.set(__self__, "action_email_to", action_email_to)
+            _setter("action_email_to", action_email_to)
         if action_email_track_alert is not None:
-            pulumi.set(__self__, "action_email_track_alert", action_email_track_alert)
+            _setter("action_email_track_alert", action_email_track_alert)
         if action_email_ttl is not None:
-            pulumi.set(__self__, "action_email_ttl", action_email_ttl)
+            _setter("action_email_ttl", action_email_ttl)
         if action_email_use_ssl is not None:
-            pulumi.set(__self__, "action_email_use_ssl", action_email_use_ssl)
+            _setter("action_email_use_ssl", action_email_use_ssl)
         if action_email_use_tls is not None:
-            pulumi.set(__self__, "action_email_use_tls", action_email_use_tls)
+            _setter("action_email_use_tls", action_email_use_tls)
         if action_email_width_sort_columns is not None:
-            pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
+            _setter("action_email_width_sort_columns", action_email_width_sort_columns)
         if action_jira_service_desk_param_account is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
+            _setter("action_jira_service_desk_param_account", action_jira_service_desk_param_account)
         if action_jira_service_desk_param_jira_description is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
+            _setter("action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
         if action_jira_service_desk_param_jira_issue_type is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_issue_type", action_jira_service_desk_param_jira_issue_type)
+            _setter("action_jira_service_desk_param_jira_issue_type", action_jira_service_desk_param_jira_issue_type)
         if action_jira_service_desk_param_jira_priority is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_priority", action_jira_service_desk_param_jira_priority)
+            _setter("action_jira_service_desk_param_jira_priority", action_jira_service_desk_param_jira_priority)
         if action_jira_service_desk_param_jira_project is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
+            _setter("action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
         if action_jira_service_desk_param_jira_summary is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
+            _setter("action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
         if action_pagerduty_custom_details is not None:
-            pulumi.set(__self__, "action_pagerduty_custom_details", action_pagerduty_custom_details)
+            _setter("action_pagerduty_custom_details", action_pagerduty_custom_details)
         if action_pagerduty_integration_key is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_key", action_pagerduty_integration_key)
+            _setter("action_pagerduty_integration_key", action_pagerduty_integration_key)
         if action_pagerduty_integration_key_override is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_key_override", action_pagerduty_integration_key_override)
+            _setter("action_pagerduty_integration_key_override", action_pagerduty_integration_key_override)
         if action_pagerduty_integration_url is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_url", action_pagerduty_integration_url)
+            _setter("action_pagerduty_integration_url", action_pagerduty_integration_url)
         if action_pagerduty_integration_url_override is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_url_override", action_pagerduty_integration_url_override)
+            _setter("action_pagerduty_integration_url_override", action_pagerduty_integration_url_override)
         if action_populate_lookup_command is not None:
-            pulumi.set(__self__, "action_populate_lookup_command", action_populate_lookup_command)
+            _setter("action_populate_lookup_command", action_populate_lookup_command)
         if action_populate_lookup_dest is not None:
-            pulumi.set(__self__, "action_populate_lookup_dest", action_populate_lookup_dest)
+            _setter("action_populate_lookup_dest", action_populate_lookup_dest)
         if action_populate_lookup_hostname is not None:
-            pulumi.set(__self__, "action_populate_lookup_hostname", action_populate_lookup_hostname)
+            _setter("action_populate_lookup_hostname", action_populate_lookup_hostname)
         if action_populate_lookup_max_results is not None:
-            pulumi.set(__self__, "action_populate_lookup_max_results", action_populate_lookup_max_results)
+            _setter("action_populate_lookup_max_results", action_populate_lookup_max_results)
         if action_populate_lookup_max_time is not None:
-            pulumi.set(__self__, "action_populate_lookup_max_time", action_populate_lookup_max_time)
+            _setter("action_populate_lookup_max_time", action_populate_lookup_max_time)
         if action_populate_lookup_track_alert is not None:
-            pulumi.set(__self__, "action_populate_lookup_track_alert", action_populate_lookup_track_alert)
+            _setter("action_populate_lookup_track_alert", action_populate_lookup_track_alert)
         if action_populate_lookup_ttl is not None:
-            pulumi.set(__self__, "action_populate_lookup_ttl", action_populate_lookup_ttl)
+            _setter("action_populate_lookup_ttl", action_populate_lookup_ttl)
         if action_rss_command is not None:
-            pulumi.set(__self__, "action_rss_command", action_rss_command)
+            _setter("action_rss_command", action_rss_command)
         if action_rss_hostname is not None:
-            pulumi.set(__self__, "action_rss_hostname", action_rss_hostname)
+            _setter("action_rss_hostname", action_rss_hostname)
         if action_rss_max_results is not None:
-            pulumi.set(__self__, "action_rss_max_results", action_rss_max_results)
+            _setter("action_rss_max_results", action_rss_max_results)
         if action_rss_max_time is not None:
-            pulumi.set(__self__, "action_rss_max_time", action_rss_max_time)
+            _setter("action_rss_max_time", action_rss_max_time)
         if action_rss_track_alert is not None:
-            pulumi.set(__self__, "action_rss_track_alert", action_rss_track_alert)
+            _setter("action_rss_track_alert", action_rss_track_alert)
         if action_rss_ttl is not None:
-            pulumi.set(__self__, "action_rss_ttl", action_rss_ttl)
+            _setter("action_rss_ttl", action_rss_ttl)
         if action_script_command is not None:
-            pulumi.set(__self__, "action_script_command", action_script_command)
+            _setter("action_script_command", action_script_command)
         if action_script_filename is not None:
-            pulumi.set(__self__, "action_script_filename", action_script_filename)
+            _setter("action_script_filename", action_script_filename)
         if action_script_hostname is not None:
-            pulumi.set(__self__, "action_script_hostname", action_script_hostname)
+            _setter("action_script_hostname", action_script_hostname)
         if action_script_max_results is not None:
-            pulumi.set(__self__, "action_script_max_results", action_script_max_results)
+            _setter("action_script_max_results", action_script_max_results)
         if action_script_max_time is not None:
-            pulumi.set(__self__, "action_script_max_time", action_script_max_time)
+            _setter("action_script_max_time", action_script_max_time)
         if action_script_track_alert is not None:
-            pulumi.set(__self__, "action_script_track_alert", action_script_track_alert)
+            _setter("action_script_track_alert", action_script_track_alert)
         if action_script_ttl is not None:
-            pulumi.set(__self__, "action_script_ttl", action_script_ttl)
+            _setter("action_script_ttl", action_script_ttl)
         if action_slack_param_attachment is not None:
-            pulumi.set(__self__, "action_slack_param_attachment", action_slack_param_attachment)
+            _setter("action_slack_param_attachment", action_slack_param_attachment)
         if action_slack_param_channel is not None:
-            pulumi.set(__self__, "action_slack_param_channel", action_slack_param_channel)
+            _setter("action_slack_param_channel", action_slack_param_channel)
         if action_slack_param_fields is not None:
-            pulumi.set(__self__, "action_slack_param_fields", action_slack_param_fields)
+            _setter("action_slack_param_fields", action_slack_param_fields)
         if action_slack_param_message is not None:
-            pulumi.set(__self__, "action_slack_param_message", action_slack_param_message)
+            _setter("action_slack_param_message", action_slack_param_message)
         if action_slack_param_webhook_url_override is not None:
-            pulumi.set(__self__, "action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
+            _setter("action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
         if action_snow_event_param_account is not None:
-            pulumi.set(__self__, "action_snow_event_param_account", action_snow_event_param_account)
+            _setter("action_snow_event_param_account", action_snow_event_param_account)
         if action_snow_event_param_additional_info is not None:
-            pulumi.set(__self__, "action_snow_event_param_additional_info", action_snow_event_param_additional_info)
+            _setter("action_snow_event_param_additional_info", action_snow_event_param_additional_info)
         if action_snow_event_param_ci_identifier is not None:
-            pulumi.set(__self__, "action_snow_event_param_ci_identifier", action_snow_event_param_ci_identifier)
+            _setter("action_snow_event_param_ci_identifier", action_snow_event_param_ci_identifier)
         if action_snow_event_param_custom_fields is not None:
-            pulumi.set(__self__, "action_snow_event_param_custom_fields", action_snow_event_param_custom_fields)
+            _setter("action_snow_event_param_custom_fields", action_snow_event_param_custom_fields)
         if action_snow_event_param_description is not None:
-            pulumi.set(__self__, "action_snow_event_param_description", action_snow_event_param_description)
+            _setter("action_snow_event_param_description", action_snow_event_param_description)
         if action_snow_event_param_node is not None:
-            pulumi.set(__self__, "action_snow_event_param_node", action_snow_event_param_node)
+            _setter("action_snow_event_param_node", action_snow_event_param_node)
         if action_snow_event_param_resource is not None:
-            pulumi.set(__self__, "action_snow_event_param_resource", action_snow_event_param_resource)
+            _setter("action_snow_event_param_resource", action_snow_event_param_resource)
         if action_snow_event_param_severity is not None:
-            pulumi.set(__self__, "action_snow_event_param_severity", action_snow_event_param_severity)
+            _setter("action_snow_event_param_severity", action_snow_event_param_severity)
         if action_snow_event_param_type is not None:
-            pulumi.set(__self__, "action_snow_event_param_type", action_snow_event_param_type)
+            _setter("action_snow_event_param_type", action_snow_event_param_type)
         if action_summary_index_command is not None:
-            pulumi.set(__self__, "action_summary_index_command", action_summary_index_command)
+            _setter("action_summary_index_command", action_summary_index_command)
         if action_summary_index_hostname is not None:
-            pulumi.set(__self__, "action_summary_index_hostname", action_summary_index_hostname)
+            _setter("action_summary_index_hostname", action_summary_index_hostname)
         if action_summary_index_inline is not None:
-            pulumi.set(__self__, "action_summary_index_inline", action_summary_index_inline)
+            _setter("action_summary_index_inline", action_summary_index_inline)
         if action_summary_index_max_results is not None:
-            pulumi.set(__self__, "action_summary_index_max_results", action_summary_index_max_results)
+            _setter("action_summary_index_max_results", action_summary_index_max_results)
         if action_summary_index_max_time is not None:
-            pulumi.set(__self__, "action_summary_index_max_time", action_summary_index_max_time)
+            _setter("action_summary_index_max_time", action_summary_index_max_time)
         if action_summary_index_name is not None:
-            pulumi.set(__self__, "action_summary_index_name", action_summary_index_name)
+            _setter("action_summary_index_name", action_summary_index_name)
         if action_summary_index_track_alert is not None:
-            pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
+            _setter("action_summary_index_track_alert", action_summary_index_track_alert)
         if action_summary_index_ttl is not None:
-            pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+            _setter("action_summary_index_ttl", action_summary_index_ttl)
         if action_webhook_param_url is not None:
-            pulumi.set(__self__, "action_webhook_param_url", action_webhook_param_url)
+            _setter("action_webhook_param_url", action_webhook_param_url)
         if actions is not None:
-            pulumi.set(__self__, "actions", actions)
+            _setter("actions", actions)
         if alert_comparator is not None:
-            pulumi.set(__self__, "alert_comparator", alert_comparator)
+            _setter("alert_comparator", alert_comparator)
         if alert_condition is not None:
-            pulumi.set(__self__, "alert_condition", alert_condition)
+            _setter("alert_condition", alert_condition)
         if alert_digest_mode is not None:
-            pulumi.set(__self__, "alert_digest_mode", alert_digest_mode)
+            _setter("alert_digest_mode", alert_digest_mode)
         if alert_expires is not None:
-            pulumi.set(__self__, "alert_expires", alert_expires)
+            _setter("alert_expires", alert_expires)
         if alert_severity is not None:
-            pulumi.set(__self__, "alert_severity", alert_severity)
+            _setter("alert_severity", alert_severity)
         if alert_suppress is not None:
-            pulumi.set(__self__, "alert_suppress", alert_suppress)
+            _setter("alert_suppress", alert_suppress)
         if alert_suppress_fields is not None:
-            pulumi.set(__self__, "alert_suppress_fields", alert_suppress_fields)
+            _setter("alert_suppress_fields", alert_suppress_fields)
         if alert_suppress_period is not None:
-            pulumi.set(__self__, "alert_suppress_period", alert_suppress_period)
+            _setter("alert_suppress_period", alert_suppress_period)
         if alert_threshold is not None:
-            pulumi.set(__self__, "alert_threshold", alert_threshold)
+            _setter("alert_threshold", alert_threshold)
         if alert_track is not None:
-            pulumi.set(__self__, "alert_track", alert_track)
+            _setter("alert_track", alert_track)
         if alert_type is not None:
-            pulumi.set(__self__, "alert_type", alert_type)
+            _setter("alert_type", alert_type)
         if allow_skew is not None:
-            pulumi.set(__self__, "allow_skew", allow_skew)
+            _setter("allow_skew", allow_skew)
         if auto_summarize is not None:
-            pulumi.set(__self__, "auto_summarize", auto_summarize)
+            _setter("auto_summarize", auto_summarize)
         if auto_summarize_command is not None:
-            pulumi.set(__self__, "auto_summarize_command", auto_summarize_command)
+            _setter("auto_summarize_command", auto_summarize_command)
         if auto_summarize_cron_schedule is not None:
-            pulumi.set(__self__, "auto_summarize_cron_schedule", auto_summarize_cron_schedule)
+            _setter("auto_summarize_cron_schedule", auto_summarize_cron_schedule)
         if auto_summarize_dispatch_earliest_time is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_earliest_time", auto_summarize_dispatch_earliest_time)
+            _setter("auto_summarize_dispatch_earliest_time", auto_summarize_dispatch_earliest_time)
         if auto_summarize_dispatch_latest_time is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_latest_time", auto_summarize_dispatch_latest_time)
+            _setter("auto_summarize_dispatch_latest_time", auto_summarize_dispatch_latest_time)
         if auto_summarize_dispatch_time_format is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_time_format", auto_summarize_dispatch_time_format)
+            _setter("auto_summarize_dispatch_time_format", auto_summarize_dispatch_time_format)
         if auto_summarize_dispatch_ttl is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_ttl", auto_summarize_dispatch_ttl)
+            _setter("auto_summarize_dispatch_ttl", auto_summarize_dispatch_ttl)
         if auto_summarize_max_disabled_buckets is not None:
-            pulumi.set(__self__, "auto_summarize_max_disabled_buckets", auto_summarize_max_disabled_buckets)
+            _setter("auto_summarize_max_disabled_buckets", auto_summarize_max_disabled_buckets)
         if auto_summarize_max_summary_ratio is not None:
-            pulumi.set(__self__, "auto_summarize_max_summary_ratio", auto_summarize_max_summary_ratio)
+            _setter("auto_summarize_max_summary_ratio", auto_summarize_max_summary_ratio)
         if auto_summarize_max_summary_size is not None:
-            pulumi.set(__self__, "auto_summarize_max_summary_size", auto_summarize_max_summary_size)
+            _setter("auto_summarize_max_summary_size", auto_summarize_max_summary_size)
         if auto_summarize_max_time is not None:
-            pulumi.set(__self__, "auto_summarize_max_time", auto_summarize_max_time)
+            _setter("auto_summarize_max_time", auto_summarize_max_time)
         if auto_summarize_suspend_period is not None:
-            pulumi.set(__self__, "auto_summarize_suspend_period", auto_summarize_suspend_period)
+            _setter("auto_summarize_suspend_period", auto_summarize_suspend_period)
         if auto_summarize_timespan is not None:
-            pulumi.set(__self__, "auto_summarize_timespan", auto_summarize_timespan)
+            _setter("auto_summarize_timespan", auto_summarize_timespan)
         if cron_schedule is not None:
-            pulumi.set(__self__, "cron_schedule", cron_schedule)
+            _setter("cron_schedule", cron_schedule)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if dispatch_buckets is not None:
-            pulumi.set(__self__, "dispatch_buckets", dispatch_buckets)
+            _setter("dispatch_buckets", dispatch_buckets)
         if dispatch_earliest_time is not None:
-            pulumi.set(__self__, "dispatch_earliest_time", dispatch_earliest_time)
+            _setter("dispatch_earliest_time", dispatch_earliest_time)
         if dispatch_index_earliest is not None:
-            pulumi.set(__self__, "dispatch_index_earliest", dispatch_index_earliest)
+            _setter("dispatch_index_earliest", dispatch_index_earliest)
         if dispatch_index_latest is not None:
-            pulumi.set(__self__, "dispatch_index_latest", dispatch_index_latest)
+            _setter("dispatch_index_latest", dispatch_index_latest)
         if dispatch_indexed_realtime is not None:
-            pulumi.set(__self__, "dispatch_indexed_realtime", dispatch_indexed_realtime)
+            _setter("dispatch_indexed_realtime", dispatch_indexed_realtime)
         if dispatch_indexed_realtime_minspan is not None:
-            pulumi.set(__self__, "dispatch_indexed_realtime_minspan", dispatch_indexed_realtime_minspan)
+            _setter("dispatch_indexed_realtime_minspan", dispatch_indexed_realtime_minspan)
         if dispatch_indexed_realtime_offset is not None:
-            pulumi.set(__self__, "dispatch_indexed_realtime_offset", dispatch_indexed_realtime_offset)
+            _setter("dispatch_indexed_realtime_offset", dispatch_indexed_realtime_offset)
         if dispatch_latest_time is not None:
-            pulumi.set(__self__, "dispatch_latest_time", dispatch_latest_time)
+            _setter("dispatch_latest_time", dispatch_latest_time)
         if dispatch_lookups is not None:
-            pulumi.set(__self__, "dispatch_lookups", dispatch_lookups)
+            _setter("dispatch_lookups", dispatch_lookups)
         if dispatch_max_count is not None:
-            pulumi.set(__self__, "dispatch_max_count", dispatch_max_count)
+            _setter("dispatch_max_count", dispatch_max_count)
         if dispatch_max_time is not None:
-            pulumi.set(__self__, "dispatch_max_time", dispatch_max_time)
+            _setter("dispatch_max_time", dispatch_max_time)
         if dispatch_reduce_freq is not None:
-            pulumi.set(__self__, "dispatch_reduce_freq", dispatch_reduce_freq)
+            _setter("dispatch_reduce_freq", dispatch_reduce_freq)
         if dispatch_rt_backfill is not None:
-            pulumi.set(__self__, "dispatch_rt_backfill", dispatch_rt_backfill)
+            _setter("dispatch_rt_backfill", dispatch_rt_backfill)
         if dispatch_rt_maximum_span is not None:
-            pulumi.set(__self__, "dispatch_rt_maximum_span", dispatch_rt_maximum_span)
+            _setter("dispatch_rt_maximum_span", dispatch_rt_maximum_span)
         if dispatch_spawn_process is not None:
-            pulumi.set(__self__, "dispatch_spawn_process", dispatch_spawn_process)
+            _setter("dispatch_spawn_process", dispatch_spawn_process)
         if dispatch_time_format is not None:
-            pulumi.set(__self__, "dispatch_time_format", dispatch_time_format)
+            _setter("dispatch_time_format", dispatch_time_format)
         if dispatch_ttl is not None:
-            pulumi.set(__self__, "dispatch_ttl", dispatch_ttl)
+            _setter("dispatch_ttl", dispatch_ttl)
         if display_view is not None:
-            pulumi.set(__self__, "display_view", display_view)
+            _setter("display_view", display_view)
         if is_scheduled is not None:
-            pulumi.set(__self__, "is_scheduled", is_scheduled)
+            _setter("is_scheduled", is_scheduled)
         if is_visible is not None:
-            pulumi.set(__self__, "is_visible", is_visible)
+            _setter("is_visible", is_visible)
         if max_concurrent is not None:
-            pulumi.set(__self__, "max_concurrent", max_concurrent)
+            _setter("max_concurrent", max_concurrent)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if realtime_schedule is not None:
-            pulumi.set(__self__, "realtime_schedule", realtime_schedule)
+            _setter("realtime_schedule", realtime_schedule)
         if request_ui_dispatch_app is not None:
-            pulumi.set(__self__, "request_ui_dispatch_app", request_ui_dispatch_app)
+            _setter("request_ui_dispatch_app", request_ui_dispatch_app)
         if request_ui_dispatch_view is not None:
-            pulumi.set(__self__, "request_ui_dispatch_view", request_ui_dispatch_view)
+            _setter("request_ui_dispatch_view", request_ui_dispatch_view)
         if restart_on_searchpeer_add is not None:
-            pulumi.set(__self__, "restart_on_searchpeer_add", restart_on_searchpeer_add)
+            _setter("restart_on_searchpeer_add", restart_on_searchpeer_add)
         if run_on_startup is not None:
-            pulumi.set(__self__, "run_on_startup", run_on_startup)
+            _setter("run_on_startup", run_on_startup)
         if schedule_priority is not None:
-            pulumi.set(__self__, "schedule_priority", schedule_priority)
+            _setter("schedule_priority", schedule_priority)
         if schedule_window is not None:
-            pulumi.set(__self__, "schedule_window", schedule_window)
+            _setter("schedule_window", schedule_window)
         if vsid is not None:
-            pulumi.set(__self__, "vsid", vsid)
+            _setter("vsid", vsid)
         if workload_pool is not None:
-            pulumi.set(__self__, "workload_pool", workload_pool)
+            _setter("workload_pool", workload_pool)
 
     @property
     @pulumi.getter
@@ -2982,340 +3313,681 @@ class _SavedSearchesState:
         :param pulumi.Input[str] vsid: Defines the viewstate id associated with the UI view listed in 'displayview'.
         :param pulumi.Input[str] workload_pool: Specifies the new workload pool where the existing running search will be placed.`
         """
+        _SavedSearchesState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            action_create_xsoar_incident=action_create_xsoar_incident,
+            action_create_xsoar_incident_param_custom_fields=action_create_xsoar_incident_param_custom_fields,
+            action_create_xsoar_incident_param_details=action_create_xsoar_incident_param_details,
+            action_create_xsoar_incident_param_incident_name=action_create_xsoar_incident_param_incident_name,
+            action_create_xsoar_incident_param_occurred=action_create_xsoar_incident_param_occurred,
+            action_create_xsoar_incident_param_send_all_servers=action_create_xsoar_incident_param_send_all_servers,
+            action_create_xsoar_incident_param_server_url=action_create_xsoar_incident_param_server_url,
+            action_create_xsoar_incident_param_severity=action_create_xsoar_incident_param_severity,
+            action_create_xsoar_incident_param_type=action_create_xsoar_incident_param_type,
+            action_email=action_email,
+            action_email_auth_password=action_email_auth_password,
+            action_email_auth_username=action_email_auth_username,
+            action_email_bcc=action_email_bcc,
+            action_email_cc=action_email_cc,
+            action_email_command=action_email_command,
+            action_email_format=action_email_format,
+            action_email_from=action_email_from,
+            action_email_hostname=action_email_hostname,
+            action_email_include_results_link=action_email_include_results_link,
+            action_email_include_search=action_email_include_search,
+            action_email_include_trigger=action_email_include_trigger,
+            action_email_include_trigger_time=action_email_include_trigger_time,
+            action_email_include_view_link=action_email_include_view_link,
+            action_email_inline=action_email_inline,
+            action_email_mailserver=action_email_mailserver,
+            action_email_max_results=action_email_max_results,
+            action_email_max_time=action_email_max_time,
+            action_email_message_alert=action_email_message_alert,
+            action_email_message_report=action_email_message_report,
+            action_email_pdfview=action_email_pdfview,
+            action_email_preprocess_results=action_email_preprocess_results,
+            action_email_report_cid_font_list=action_email_report_cid_font_list,
+            action_email_report_include_splunk_logo=action_email_report_include_splunk_logo,
+            action_email_report_paper_orientation=action_email_report_paper_orientation,
+            action_email_report_paper_size=action_email_report_paper_size,
+            action_email_report_server_enabled=action_email_report_server_enabled,
+            action_email_report_server_url=action_email_report_server_url,
+            action_email_send_csv=action_email_send_csv,
+            action_email_send_pdf=action_email_send_pdf,
+            action_email_send_results=action_email_send_results,
+            action_email_subject=action_email_subject,
+            action_email_to=action_email_to,
+            action_email_track_alert=action_email_track_alert,
+            action_email_ttl=action_email_ttl,
+            action_email_use_ssl=action_email_use_ssl,
+            action_email_use_tls=action_email_use_tls,
+            action_email_width_sort_columns=action_email_width_sort_columns,
+            action_jira_service_desk_param_account=action_jira_service_desk_param_account,
+            action_jira_service_desk_param_jira_description=action_jira_service_desk_param_jira_description,
+            action_jira_service_desk_param_jira_issue_type=action_jira_service_desk_param_jira_issue_type,
+            action_jira_service_desk_param_jira_priority=action_jira_service_desk_param_jira_priority,
+            action_jira_service_desk_param_jira_project=action_jira_service_desk_param_jira_project,
+            action_jira_service_desk_param_jira_summary=action_jira_service_desk_param_jira_summary,
+            action_pagerduty_custom_details=action_pagerduty_custom_details,
+            action_pagerduty_integration_key=action_pagerduty_integration_key,
+            action_pagerduty_integration_key_override=action_pagerduty_integration_key_override,
+            action_pagerduty_integration_url=action_pagerduty_integration_url,
+            action_pagerduty_integration_url_override=action_pagerduty_integration_url_override,
+            action_populate_lookup=action_populate_lookup,
+            action_populate_lookup_command=action_populate_lookup_command,
+            action_populate_lookup_dest=action_populate_lookup_dest,
+            action_populate_lookup_hostname=action_populate_lookup_hostname,
+            action_populate_lookup_max_results=action_populate_lookup_max_results,
+            action_populate_lookup_max_time=action_populate_lookup_max_time,
+            action_populate_lookup_track_alert=action_populate_lookup_track_alert,
+            action_populate_lookup_ttl=action_populate_lookup_ttl,
+            action_rss=action_rss,
+            action_rss_command=action_rss_command,
+            action_rss_hostname=action_rss_hostname,
+            action_rss_max_results=action_rss_max_results,
+            action_rss_max_time=action_rss_max_time,
+            action_rss_track_alert=action_rss_track_alert,
+            action_rss_ttl=action_rss_ttl,
+            action_script=action_script,
+            action_script_command=action_script_command,
+            action_script_filename=action_script_filename,
+            action_script_hostname=action_script_hostname,
+            action_script_max_results=action_script_max_results,
+            action_script_max_time=action_script_max_time,
+            action_script_track_alert=action_script_track_alert,
+            action_script_ttl=action_script_ttl,
+            action_slack_param_attachment=action_slack_param_attachment,
+            action_slack_param_channel=action_slack_param_channel,
+            action_slack_param_fields=action_slack_param_fields,
+            action_slack_param_message=action_slack_param_message,
+            action_slack_param_webhook_url_override=action_slack_param_webhook_url_override,
+            action_snow_event_param_account=action_snow_event_param_account,
+            action_snow_event_param_additional_info=action_snow_event_param_additional_info,
+            action_snow_event_param_ci_identifier=action_snow_event_param_ci_identifier,
+            action_snow_event_param_custom_fields=action_snow_event_param_custom_fields,
+            action_snow_event_param_description=action_snow_event_param_description,
+            action_snow_event_param_node=action_snow_event_param_node,
+            action_snow_event_param_resource=action_snow_event_param_resource,
+            action_snow_event_param_severity=action_snow_event_param_severity,
+            action_snow_event_param_type=action_snow_event_param_type,
+            action_summary_index=action_summary_index,
+            action_summary_index_command=action_summary_index_command,
+            action_summary_index_hostname=action_summary_index_hostname,
+            action_summary_index_inline=action_summary_index_inline,
+            action_summary_index_max_results=action_summary_index_max_results,
+            action_summary_index_max_time=action_summary_index_max_time,
+            action_summary_index_name=action_summary_index_name,
+            action_summary_index_track_alert=action_summary_index_track_alert,
+            action_summary_index_ttl=action_summary_index_ttl,
+            action_webhook_param_url=action_webhook_param_url,
+            actions=actions,
+            alert_comparator=alert_comparator,
+            alert_condition=alert_condition,
+            alert_digest_mode=alert_digest_mode,
+            alert_expires=alert_expires,
+            alert_severity=alert_severity,
+            alert_suppress=alert_suppress,
+            alert_suppress_fields=alert_suppress_fields,
+            alert_suppress_period=alert_suppress_period,
+            alert_threshold=alert_threshold,
+            alert_track=alert_track,
+            alert_type=alert_type,
+            allow_skew=allow_skew,
+            auto_summarize=auto_summarize,
+            auto_summarize_command=auto_summarize_command,
+            auto_summarize_cron_schedule=auto_summarize_cron_schedule,
+            auto_summarize_dispatch_earliest_time=auto_summarize_dispatch_earliest_time,
+            auto_summarize_dispatch_latest_time=auto_summarize_dispatch_latest_time,
+            auto_summarize_dispatch_time_format=auto_summarize_dispatch_time_format,
+            auto_summarize_dispatch_ttl=auto_summarize_dispatch_ttl,
+            auto_summarize_max_disabled_buckets=auto_summarize_max_disabled_buckets,
+            auto_summarize_max_summary_ratio=auto_summarize_max_summary_ratio,
+            auto_summarize_max_summary_size=auto_summarize_max_summary_size,
+            auto_summarize_max_time=auto_summarize_max_time,
+            auto_summarize_suspend_period=auto_summarize_suspend_period,
+            auto_summarize_timespan=auto_summarize_timespan,
+            cron_schedule=cron_schedule,
+            description=description,
+            disabled=disabled,
+            dispatch_buckets=dispatch_buckets,
+            dispatch_earliest_time=dispatch_earliest_time,
+            dispatch_index_earliest=dispatch_index_earliest,
+            dispatch_index_latest=dispatch_index_latest,
+            dispatch_indexed_realtime=dispatch_indexed_realtime,
+            dispatch_indexed_realtime_minspan=dispatch_indexed_realtime_minspan,
+            dispatch_indexed_realtime_offset=dispatch_indexed_realtime_offset,
+            dispatch_latest_time=dispatch_latest_time,
+            dispatch_lookups=dispatch_lookups,
+            dispatch_max_count=dispatch_max_count,
+            dispatch_max_time=dispatch_max_time,
+            dispatch_reduce_freq=dispatch_reduce_freq,
+            dispatch_rt_backfill=dispatch_rt_backfill,
+            dispatch_rt_maximum_span=dispatch_rt_maximum_span,
+            dispatch_spawn_process=dispatch_spawn_process,
+            dispatch_time_format=dispatch_time_format,
+            dispatch_ttl=dispatch_ttl,
+            display_view=display_view,
+            is_scheduled=is_scheduled,
+            is_visible=is_visible,
+            max_concurrent=max_concurrent,
+            name=name,
+            realtime_schedule=realtime_schedule,
+            request_ui_dispatch_app=request_ui_dispatch_app,
+            request_ui_dispatch_view=request_ui_dispatch_view,
+            restart_on_searchpeer_add=restart_on_searchpeer_add,
+            run_on_startup=run_on_startup,
+            schedule_priority=schedule_priority,
+            schedule_window=schedule_window,
+            search=search,
+            vsid=vsid,
+            workload_pool=workload_pool,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+             action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_severity: Optional[pulumi.Input[str]] = None,
+             action_create_xsoar_incident_param_type: Optional[pulumi.Input[str]] = None,
+             action_email: Optional[pulumi.Input[bool]] = None,
+             action_email_auth_password: Optional[pulumi.Input[str]] = None,
+             action_email_auth_username: Optional[pulumi.Input[str]] = None,
+             action_email_bcc: Optional[pulumi.Input[str]] = None,
+             action_email_cc: Optional[pulumi.Input[str]] = None,
+             action_email_command: Optional[pulumi.Input[str]] = None,
+             action_email_format: Optional[pulumi.Input[str]] = None,
+             action_email_from: Optional[pulumi.Input[str]] = None,
+             action_email_hostname: Optional[pulumi.Input[str]] = None,
+             action_email_include_results_link: Optional[pulumi.Input[int]] = None,
+             action_email_include_search: Optional[pulumi.Input[int]] = None,
+             action_email_include_trigger: Optional[pulumi.Input[int]] = None,
+             action_email_include_trigger_time: Optional[pulumi.Input[int]] = None,
+             action_email_include_view_link: Optional[pulumi.Input[int]] = None,
+             action_email_inline: Optional[pulumi.Input[bool]] = None,
+             action_email_mailserver: Optional[pulumi.Input[str]] = None,
+             action_email_max_results: Optional[pulumi.Input[int]] = None,
+             action_email_max_time: Optional[pulumi.Input[str]] = None,
+             action_email_message_alert: Optional[pulumi.Input[str]] = None,
+             action_email_message_report: Optional[pulumi.Input[str]] = None,
+             action_email_pdfview: Optional[pulumi.Input[str]] = None,
+             action_email_preprocess_results: Optional[pulumi.Input[str]] = None,
+             action_email_report_cid_font_list: Optional[pulumi.Input[str]] = None,
+             action_email_report_include_splunk_logo: Optional[pulumi.Input[bool]] = None,
+             action_email_report_paper_orientation: Optional[pulumi.Input[str]] = None,
+             action_email_report_paper_size: Optional[pulumi.Input[str]] = None,
+             action_email_report_server_enabled: Optional[pulumi.Input[bool]] = None,
+             action_email_report_server_url: Optional[pulumi.Input[str]] = None,
+             action_email_send_csv: Optional[pulumi.Input[int]] = None,
+             action_email_send_pdf: Optional[pulumi.Input[bool]] = None,
+             action_email_send_results: Optional[pulumi.Input[bool]] = None,
+             action_email_subject: Optional[pulumi.Input[str]] = None,
+             action_email_to: Optional[pulumi.Input[str]] = None,
+             action_email_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_email_ttl: Optional[pulumi.Input[str]] = None,
+             action_email_use_ssl: Optional[pulumi.Input[bool]] = None,
+             action_email_use_tls: Optional[pulumi.Input[bool]] = None,
+             action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
+             action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_project: Optional[pulumi.Input[str]] = None,
+             action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_custom_details: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_key: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_key_override: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_url: Optional[pulumi.Input[str]] = None,
+             action_pagerduty_integration_url_override: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup: Optional[pulumi.Input[bool]] = None,
+             action_populate_lookup_command: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_dest: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_hostname: Optional[pulumi.Input[str]] = None,
+             action_populate_lookup_max_results: Optional[pulumi.Input[int]] = None,
+             action_populate_lookup_max_time: Optional[pulumi.Input[int]] = None,
+             action_populate_lookup_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_populate_lookup_ttl: Optional[pulumi.Input[str]] = None,
+             action_rss: Optional[pulumi.Input[bool]] = None,
+             action_rss_command: Optional[pulumi.Input[str]] = None,
+             action_rss_hostname: Optional[pulumi.Input[str]] = None,
+             action_rss_max_results: Optional[pulumi.Input[int]] = None,
+             action_rss_max_time: Optional[pulumi.Input[int]] = None,
+             action_rss_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_rss_ttl: Optional[pulumi.Input[str]] = None,
+             action_script: Optional[pulumi.Input[bool]] = None,
+             action_script_command: Optional[pulumi.Input[str]] = None,
+             action_script_filename: Optional[pulumi.Input[str]] = None,
+             action_script_hostname: Optional[pulumi.Input[str]] = None,
+             action_script_max_results: Optional[pulumi.Input[int]] = None,
+             action_script_max_time: Optional[pulumi.Input[int]] = None,
+             action_script_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_script_ttl: Optional[pulumi.Input[str]] = None,
+             action_slack_param_attachment: Optional[pulumi.Input[str]] = None,
+             action_slack_param_channel: Optional[pulumi.Input[str]] = None,
+             action_slack_param_fields: Optional[pulumi.Input[str]] = None,
+             action_slack_param_message: Optional[pulumi.Input[str]] = None,
+             action_slack_param_webhook_url_override: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_account: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_additional_info: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_ci_identifier: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_custom_fields: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_description: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_node: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_resource: Optional[pulumi.Input[str]] = None,
+             action_snow_event_param_severity: Optional[pulumi.Input[int]] = None,
+             action_snow_event_param_type: Optional[pulumi.Input[str]] = None,
+             action_summary_index: Optional[pulumi.Input[bool]] = None,
+             action_summary_index_command: Optional[pulumi.Input[str]] = None,
+             action_summary_index_hostname: Optional[pulumi.Input[str]] = None,
+             action_summary_index_inline: Optional[pulumi.Input[bool]] = None,
+             action_summary_index_max_results: Optional[pulumi.Input[int]] = None,
+             action_summary_index_max_time: Optional[pulumi.Input[int]] = None,
+             action_summary_index_name: Optional[pulumi.Input[str]] = None,
+             action_summary_index_track_alert: Optional[pulumi.Input[bool]] = None,
+             action_summary_index_ttl: Optional[pulumi.Input[str]] = None,
+             action_webhook_param_url: Optional[pulumi.Input[str]] = None,
+             actions: Optional[pulumi.Input[str]] = None,
+             alert_comparator: Optional[pulumi.Input[str]] = None,
+             alert_condition: Optional[pulumi.Input[str]] = None,
+             alert_digest_mode: Optional[pulumi.Input[bool]] = None,
+             alert_expires: Optional[pulumi.Input[str]] = None,
+             alert_severity: Optional[pulumi.Input[int]] = None,
+             alert_suppress: Optional[pulumi.Input[bool]] = None,
+             alert_suppress_fields: Optional[pulumi.Input[str]] = None,
+             alert_suppress_period: Optional[pulumi.Input[str]] = None,
+             alert_threshold: Optional[pulumi.Input[str]] = None,
+             alert_track: Optional[pulumi.Input[bool]] = None,
+             alert_type: Optional[pulumi.Input[str]] = None,
+             allow_skew: Optional[pulumi.Input[str]] = None,
+             auto_summarize: Optional[pulumi.Input[bool]] = None,
+             auto_summarize_command: Optional[pulumi.Input[str]] = None,
+             auto_summarize_cron_schedule: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_latest_time: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_time_format: Optional[pulumi.Input[str]] = None,
+             auto_summarize_dispatch_ttl: Optional[pulumi.Input[str]] = None,
+             auto_summarize_max_disabled_buckets: Optional[pulumi.Input[int]] = None,
+             auto_summarize_max_summary_ratio: Optional[pulumi.Input[float]] = None,
+             auto_summarize_max_summary_size: Optional[pulumi.Input[int]] = None,
+             auto_summarize_max_time: Optional[pulumi.Input[int]] = None,
+             auto_summarize_suspend_period: Optional[pulumi.Input[str]] = None,
+             auto_summarize_timespan: Optional[pulumi.Input[str]] = None,
+             cron_schedule: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             disabled: Optional[pulumi.Input[bool]] = None,
+             dispatch_buckets: Optional[pulumi.Input[int]] = None,
+             dispatch_earliest_time: Optional[pulumi.Input[str]] = None,
+             dispatch_index_earliest: Optional[pulumi.Input[str]] = None,
+             dispatch_index_latest: Optional[pulumi.Input[str]] = None,
+             dispatch_indexed_realtime: Optional[pulumi.Input[bool]] = None,
+             dispatch_indexed_realtime_minspan: Optional[pulumi.Input[int]] = None,
+             dispatch_indexed_realtime_offset: Optional[pulumi.Input[int]] = None,
+             dispatch_latest_time: Optional[pulumi.Input[str]] = None,
+             dispatch_lookups: Optional[pulumi.Input[bool]] = None,
+             dispatch_max_count: Optional[pulumi.Input[int]] = None,
+             dispatch_max_time: Optional[pulumi.Input[int]] = None,
+             dispatch_reduce_freq: Optional[pulumi.Input[int]] = None,
+             dispatch_rt_backfill: Optional[pulumi.Input[bool]] = None,
+             dispatch_rt_maximum_span: Optional[pulumi.Input[int]] = None,
+             dispatch_spawn_process: Optional[pulumi.Input[bool]] = None,
+             dispatch_time_format: Optional[pulumi.Input[str]] = None,
+             dispatch_ttl: Optional[pulumi.Input[str]] = None,
+             display_view: Optional[pulumi.Input[str]] = None,
+             is_scheduled: Optional[pulumi.Input[bool]] = None,
+             is_visible: Optional[pulumi.Input[bool]] = None,
+             max_concurrent: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             realtime_schedule: Optional[pulumi.Input[bool]] = None,
+             request_ui_dispatch_app: Optional[pulumi.Input[str]] = None,
+             request_ui_dispatch_view: Optional[pulumi.Input[str]] = None,
+             restart_on_searchpeer_add: Optional[pulumi.Input[bool]] = None,
+             run_on_startup: Optional[pulumi.Input[bool]] = None,
+             schedule_priority: Optional[pulumi.Input[str]] = None,
+             schedule_window: Optional[pulumi.Input[str]] = None,
+             search: Optional[pulumi.Input[str]] = None,
+             vsid: Optional[pulumi.Input[str]] = None,
+             workload_pool: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if action_create_xsoar_incident is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident", action_create_xsoar_incident)
+            _setter("action_create_xsoar_incident", action_create_xsoar_incident)
         if action_create_xsoar_incident_param_custom_fields is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_custom_fields", action_create_xsoar_incident_param_custom_fields)
+            _setter("action_create_xsoar_incident_param_custom_fields", action_create_xsoar_incident_param_custom_fields)
         if action_create_xsoar_incident_param_details is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_details", action_create_xsoar_incident_param_details)
+            _setter("action_create_xsoar_incident_param_details", action_create_xsoar_incident_param_details)
         if action_create_xsoar_incident_param_incident_name is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_incident_name", action_create_xsoar_incident_param_incident_name)
+            _setter("action_create_xsoar_incident_param_incident_name", action_create_xsoar_incident_param_incident_name)
         if action_create_xsoar_incident_param_occurred is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_occurred", action_create_xsoar_incident_param_occurred)
+            _setter("action_create_xsoar_incident_param_occurred", action_create_xsoar_incident_param_occurred)
         if action_create_xsoar_incident_param_send_all_servers is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_send_all_servers", action_create_xsoar_incident_param_send_all_servers)
+            _setter("action_create_xsoar_incident_param_send_all_servers", action_create_xsoar_incident_param_send_all_servers)
         if action_create_xsoar_incident_param_server_url is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_server_url", action_create_xsoar_incident_param_server_url)
+            _setter("action_create_xsoar_incident_param_server_url", action_create_xsoar_incident_param_server_url)
         if action_create_xsoar_incident_param_severity is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_severity", action_create_xsoar_incident_param_severity)
+            _setter("action_create_xsoar_incident_param_severity", action_create_xsoar_incident_param_severity)
         if action_create_xsoar_incident_param_type is not None:
-            pulumi.set(__self__, "action_create_xsoar_incident_param_type", action_create_xsoar_incident_param_type)
+            _setter("action_create_xsoar_incident_param_type", action_create_xsoar_incident_param_type)
         if action_email is not None:
-            pulumi.set(__self__, "action_email", action_email)
+            _setter("action_email", action_email)
         if action_email_auth_password is not None:
-            pulumi.set(__self__, "action_email_auth_password", action_email_auth_password)
+            _setter("action_email_auth_password", action_email_auth_password)
         if action_email_auth_username is not None:
-            pulumi.set(__self__, "action_email_auth_username", action_email_auth_username)
+            _setter("action_email_auth_username", action_email_auth_username)
         if action_email_bcc is not None:
-            pulumi.set(__self__, "action_email_bcc", action_email_bcc)
+            _setter("action_email_bcc", action_email_bcc)
         if action_email_cc is not None:
-            pulumi.set(__self__, "action_email_cc", action_email_cc)
+            _setter("action_email_cc", action_email_cc)
         if action_email_command is not None:
-            pulumi.set(__self__, "action_email_command", action_email_command)
+            _setter("action_email_command", action_email_command)
         if action_email_format is not None:
-            pulumi.set(__self__, "action_email_format", action_email_format)
+            _setter("action_email_format", action_email_format)
         if action_email_from is not None:
-            pulumi.set(__self__, "action_email_from", action_email_from)
+            _setter("action_email_from", action_email_from)
         if action_email_hostname is not None:
-            pulumi.set(__self__, "action_email_hostname", action_email_hostname)
+            _setter("action_email_hostname", action_email_hostname)
         if action_email_include_results_link is not None:
-            pulumi.set(__self__, "action_email_include_results_link", action_email_include_results_link)
+            _setter("action_email_include_results_link", action_email_include_results_link)
         if action_email_include_search is not None:
-            pulumi.set(__self__, "action_email_include_search", action_email_include_search)
+            _setter("action_email_include_search", action_email_include_search)
         if action_email_include_trigger is not None:
-            pulumi.set(__self__, "action_email_include_trigger", action_email_include_trigger)
+            _setter("action_email_include_trigger", action_email_include_trigger)
         if action_email_include_trigger_time is not None:
-            pulumi.set(__self__, "action_email_include_trigger_time", action_email_include_trigger_time)
+            _setter("action_email_include_trigger_time", action_email_include_trigger_time)
         if action_email_include_view_link is not None:
-            pulumi.set(__self__, "action_email_include_view_link", action_email_include_view_link)
+            _setter("action_email_include_view_link", action_email_include_view_link)
         if action_email_inline is not None:
-            pulumi.set(__self__, "action_email_inline", action_email_inline)
+            _setter("action_email_inline", action_email_inline)
         if action_email_mailserver is not None:
-            pulumi.set(__self__, "action_email_mailserver", action_email_mailserver)
+            _setter("action_email_mailserver", action_email_mailserver)
         if action_email_max_results is not None:
-            pulumi.set(__self__, "action_email_max_results", action_email_max_results)
+            _setter("action_email_max_results", action_email_max_results)
         if action_email_max_time is not None:
-            pulumi.set(__self__, "action_email_max_time", action_email_max_time)
+            _setter("action_email_max_time", action_email_max_time)
         if action_email_message_alert is not None:
-            pulumi.set(__self__, "action_email_message_alert", action_email_message_alert)
+            _setter("action_email_message_alert", action_email_message_alert)
         if action_email_message_report is not None:
-            pulumi.set(__self__, "action_email_message_report", action_email_message_report)
+            _setter("action_email_message_report", action_email_message_report)
         if action_email_pdfview is not None:
-            pulumi.set(__self__, "action_email_pdfview", action_email_pdfview)
+            _setter("action_email_pdfview", action_email_pdfview)
         if action_email_preprocess_results is not None:
-            pulumi.set(__self__, "action_email_preprocess_results", action_email_preprocess_results)
+            _setter("action_email_preprocess_results", action_email_preprocess_results)
         if action_email_report_cid_font_list is not None:
-            pulumi.set(__self__, "action_email_report_cid_font_list", action_email_report_cid_font_list)
+            _setter("action_email_report_cid_font_list", action_email_report_cid_font_list)
         if action_email_report_include_splunk_logo is not None:
-            pulumi.set(__self__, "action_email_report_include_splunk_logo", action_email_report_include_splunk_logo)
+            _setter("action_email_report_include_splunk_logo", action_email_report_include_splunk_logo)
         if action_email_report_paper_orientation is not None:
-            pulumi.set(__self__, "action_email_report_paper_orientation", action_email_report_paper_orientation)
+            _setter("action_email_report_paper_orientation", action_email_report_paper_orientation)
         if action_email_report_paper_size is not None:
-            pulumi.set(__self__, "action_email_report_paper_size", action_email_report_paper_size)
+            _setter("action_email_report_paper_size", action_email_report_paper_size)
         if action_email_report_server_enabled is not None:
-            pulumi.set(__self__, "action_email_report_server_enabled", action_email_report_server_enabled)
+            _setter("action_email_report_server_enabled", action_email_report_server_enabled)
         if action_email_report_server_url is not None:
-            pulumi.set(__self__, "action_email_report_server_url", action_email_report_server_url)
+            _setter("action_email_report_server_url", action_email_report_server_url)
         if action_email_send_csv is not None:
-            pulumi.set(__self__, "action_email_send_csv", action_email_send_csv)
+            _setter("action_email_send_csv", action_email_send_csv)
         if action_email_send_pdf is not None:
-            pulumi.set(__self__, "action_email_send_pdf", action_email_send_pdf)
+            _setter("action_email_send_pdf", action_email_send_pdf)
         if action_email_send_results is not None:
-            pulumi.set(__self__, "action_email_send_results", action_email_send_results)
+            _setter("action_email_send_results", action_email_send_results)
         if action_email_subject is not None:
-            pulumi.set(__self__, "action_email_subject", action_email_subject)
+            _setter("action_email_subject", action_email_subject)
         if action_email_to is not None:
-            pulumi.set(__self__, "action_email_to", action_email_to)
+            _setter("action_email_to", action_email_to)
         if action_email_track_alert is not None:
-            pulumi.set(__self__, "action_email_track_alert", action_email_track_alert)
+            _setter("action_email_track_alert", action_email_track_alert)
         if action_email_ttl is not None:
-            pulumi.set(__self__, "action_email_ttl", action_email_ttl)
+            _setter("action_email_ttl", action_email_ttl)
         if action_email_use_ssl is not None:
-            pulumi.set(__self__, "action_email_use_ssl", action_email_use_ssl)
+            _setter("action_email_use_ssl", action_email_use_ssl)
         if action_email_use_tls is not None:
-            pulumi.set(__self__, "action_email_use_tls", action_email_use_tls)
+            _setter("action_email_use_tls", action_email_use_tls)
         if action_email_width_sort_columns is not None:
-            pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
+            _setter("action_email_width_sort_columns", action_email_width_sort_columns)
         if action_jira_service_desk_param_account is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
+            _setter("action_jira_service_desk_param_account", action_jira_service_desk_param_account)
         if action_jira_service_desk_param_jira_description is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
+            _setter("action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
         if action_jira_service_desk_param_jira_issue_type is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_issue_type", action_jira_service_desk_param_jira_issue_type)
+            _setter("action_jira_service_desk_param_jira_issue_type", action_jira_service_desk_param_jira_issue_type)
         if action_jira_service_desk_param_jira_priority is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_priority", action_jira_service_desk_param_jira_priority)
+            _setter("action_jira_service_desk_param_jira_priority", action_jira_service_desk_param_jira_priority)
         if action_jira_service_desk_param_jira_project is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
+            _setter("action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
         if action_jira_service_desk_param_jira_summary is not None:
-            pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
+            _setter("action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
         if action_pagerduty_custom_details is not None:
-            pulumi.set(__self__, "action_pagerduty_custom_details", action_pagerduty_custom_details)
+            _setter("action_pagerduty_custom_details", action_pagerduty_custom_details)
         if action_pagerduty_integration_key is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_key", action_pagerduty_integration_key)
+            _setter("action_pagerduty_integration_key", action_pagerduty_integration_key)
         if action_pagerduty_integration_key_override is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_key_override", action_pagerduty_integration_key_override)
+            _setter("action_pagerduty_integration_key_override", action_pagerduty_integration_key_override)
         if action_pagerduty_integration_url is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_url", action_pagerduty_integration_url)
+            _setter("action_pagerduty_integration_url", action_pagerduty_integration_url)
         if action_pagerduty_integration_url_override is not None:
-            pulumi.set(__self__, "action_pagerduty_integration_url_override", action_pagerduty_integration_url_override)
+            _setter("action_pagerduty_integration_url_override", action_pagerduty_integration_url_override)
         if action_populate_lookup is not None:
-            pulumi.set(__self__, "action_populate_lookup", action_populate_lookup)
+            _setter("action_populate_lookup", action_populate_lookup)
         if action_populate_lookup_command is not None:
-            pulumi.set(__self__, "action_populate_lookup_command", action_populate_lookup_command)
+            _setter("action_populate_lookup_command", action_populate_lookup_command)
         if action_populate_lookup_dest is not None:
-            pulumi.set(__self__, "action_populate_lookup_dest", action_populate_lookup_dest)
+            _setter("action_populate_lookup_dest", action_populate_lookup_dest)
         if action_populate_lookup_hostname is not None:
-            pulumi.set(__self__, "action_populate_lookup_hostname", action_populate_lookup_hostname)
+            _setter("action_populate_lookup_hostname", action_populate_lookup_hostname)
         if action_populate_lookup_max_results is not None:
-            pulumi.set(__self__, "action_populate_lookup_max_results", action_populate_lookup_max_results)
+            _setter("action_populate_lookup_max_results", action_populate_lookup_max_results)
         if action_populate_lookup_max_time is not None:
-            pulumi.set(__self__, "action_populate_lookup_max_time", action_populate_lookup_max_time)
+            _setter("action_populate_lookup_max_time", action_populate_lookup_max_time)
         if action_populate_lookup_track_alert is not None:
-            pulumi.set(__self__, "action_populate_lookup_track_alert", action_populate_lookup_track_alert)
+            _setter("action_populate_lookup_track_alert", action_populate_lookup_track_alert)
         if action_populate_lookup_ttl is not None:
-            pulumi.set(__self__, "action_populate_lookup_ttl", action_populate_lookup_ttl)
+            _setter("action_populate_lookup_ttl", action_populate_lookup_ttl)
         if action_rss is not None:
-            pulumi.set(__self__, "action_rss", action_rss)
+            _setter("action_rss", action_rss)
         if action_rss_command is not None:
-            pulumi.set(__self__, "action_rss_command", action_rss_command)
+            _setter("action_rss_command", action_rss_command)
         if action_rss_hostname is not None:
-            pulumi.set(__self__, "action_rss_hostname", action_rss_hostname)
+            _setter("action_rss_hostname", action_rss_hostname)
         if action_rss_max_results is not None:
-            pulumi.set(__self__, "action_rss_max_results", action_rss_max_results)
+            _setter("action_rss_max_results", action_rss_max_results)
         if action_rss_max_time is not None:
-            pulumi.set(__self__, "action_rss_max_time", action_rss_max_time)
+            _setter("action_rss_max_time", action_rss_max_time)
         if action_rss_track_alert is not None:
-            pulumi.set(__self__, "action_rss_track_alert", action_rss_track_alert)
+            _setter("action_rss_track_alert", action_rss_track_alert)
         if action_rss_ttl is not None:
-            pulumi.set(__self__, "action_rss_ttl", action_rss_ttl)
+            _setter("action_rss_ttl", action_rss_ttl)
         if action_script is not None:
-            pulumi.set(__self__, "action_script", action_script)
+            _setter("action_script", action_script)
         if action_script_command is not None:
-            pulumi.set(__self__, "action_script_command", action_script_command)
+            _setter("action_script_command", action_script_command)
         if action_script_filename is not None:
-            pulumi.set(__self__, "action_script_filename", action_script_filename)
+            _setter("action_script_filename", action_script_filename)
         if action_script_hostname is not None:
-            pulumi.set(__self__, "action_script_hostname", action_script_hostname)
+            _setter("action_script_hostname", action_script_hostname)
         if action_script_max_results is not None:
-            pulumi.set(__self__, "action_script_max_results", action_script_max_results)
+            _setter("action_script_max_results", action_script_max_results)
         if action_script_max_time is not None:
-            pulumi.set(__self__, "action_script_max_time", action_script_max_time)
+            _setter("action_script_max_time", action_script_max_time)
         if action_script_track_alert is not None:
-            pulumi.set(__self__, "action_script_track_alert", action_script_track_alert)
+            _setter("action_script_track_alert", action_script_track_alert)
         if action_script_ttl is not None:
-            pulumi.set(__self__, "action_script_ttl", action_script_ttl)
+            _setter("action_script_ttl", action_script_ttl)
         if action_slack_param_attachment is not None:
-            pulumi.set(__self__, "action_slack_param_attachment", action_slack_param_attachment)
+            _setter("action_slack_param_attachment", action_slack_param_attachment)
         if action_slack_param_channel is not None:
-            pulumi.set(__self__, "action_slack_param_channel", action_slack_param_channel)
+            _setter("action_slack_param_channel", action_slack_param_channel)
         if action_slack_param_fields is not None:
-            pulumi.set(__self__, "action_slack_param_fields", action_slack_param_fields)
+            _setter("action_slack_param_fields", action_slack_param_fields)
         if action_slack_param_message is not None:
-            pulumi.set(__self__, "action_slack_param_message", action_slack_param_message)
+            _setter("action_slack_param_message", action_slack_param_message)
         if action_slack_param_webhook_url_override is not None:
-            pulumi.set(__self__, "action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
+            _setter("action_slack_param_webhook_url_override", action_slack_param_webhook_url_override)
         if action_snow_event_param_account is not None:
-            pulumi.set(__self__, "action_snow_event_param_account", action_snow_event_param_account)
+            _setter("action_snow_event_param_account", action_snow_event_param_account)
         if action_snow_event_param_additional_info is not None:
-            pulumi.set(__self__, "action_snow_event_param_additional_info", action_snow_event_param_additional_info)
+            _setter("action_snow_event_param_additional_info", action_snow_event_param_additional_info)
         if action_snow_event_param_ci_identifier is not None:
-            pulumi.set(__self__, "action_snow_event_param_ci_identifier", action_snow_event_param_ci_identifier)
+            _setter("action_snow_event_param_ci_identifier", action_snow_event_param_ci_identifier)
         if action_snow_event_param_custom_fields is not None:
-            pulumi.set(__self__, "action_snow_event_param_custom_fields", action_snow_event_param_custom_fields)
+            _setter("action_snow_event_param_custom_fields", action_snow_event_param_custom_fields)
         if action_snow_event_param_description is not None:
-            pulumi.set(__self__, "action_snow_event_param_description", action_snow_event_param_description)
+            _setter("action_snow_event_param_description", action_snow_event_param_description)
         if action_snow_event_param_node is not None:
-            pulumi.set(__self__, "action_snow_event_param_node", action_snow_event_param_node)
+            _setter("action_snow_event_param_node", action_snow_event_param_node)
         if action_snow_event_param_resource is not None:
-            pulumi.set(__self__, "action_snow_event_param_resource", action_snow_event_param_resource)
+            _setter("action_snow_event_param_resource", action_snow_event_param_resource)
         if action_snow_event_param_severity is not None:
-            pulumi.set(__self__, "action_snow_event_param_severity", action_snow_event_param_severity)
+            _setter("action_snow_event_param_severity", action_snow_event_param_severity)
         if action_snow_event_param_type is not None:
-            pulumi.set(__self__, "action_snow_event_param_type", action_snow_event_param_type)
+            _setter("action_snow_event_param_type", action_snow_event_param_type)
         if action_summary_index is not None:
-            pulumi.set(__self__, "action_summary_index", action_summary_index)
+            _setter("action_summary_index", action_summary_index)
         if action_summary_index_command is not None:
-            pulumi.set(__self__, "action_summary_index_command", action_summary_index_command)
+            _setter("action_summary_index_command", action_summary_index_command)
         if action_summary_index_hostname is not None:
-            pulumi.set(__self__, "action_summary_index_hostname", action_summary_index_hostname)
+            _setter("action_summary_index_hostname", action_summary_index_hostname)
         if action_summary_index_inline is not None:
-            pulumi.set(__self__, "action_summary_index_inline", action_summary_index_inline)
+            _setter("action_summary_index_inline", action_summary_index_inline)
         if action_summary_index_max_results is not None:
-            pulumi.set(__self__, "action_summary_index_max_results", action_summary_index_max_results)
+            _setter("action_summary_index_max_results", action_summary_index_max_results)
         if action_summary_index_max_time is not None:
-            pulumi.set(__self__, "action_summary_index_max_time", action_summary_index_max_time)
+            _setter("action_summary_index_max_time", action_summary_index_max_time)
         if action_summary_index_name is not None:
-            pulumi.set(__self__, "action_summary_index_name", action_summary_index_name)
+            _setter("action_summary_index_name", action_summary_index_name)
         if action_summary_index_track_alert is not None:
-            pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
+            _setter("action_summary_index_track_alert", action_summary_index_track_alert)
         if action_summary_index_ttl is not None:
-            pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+            _setter("action_summary_index_ttl", action_summary_index_ttl)
         if action_webhook_param_url is not None:
-            pulumi.set(__self__, "action_webhook_param_url", action_webhook_param_url)
+            _setter("action_webhook_param_url", action_webhook_param_url)
         if actions is not None:
-            pulumi.set(__self__, "actions", actions)
+            _setter("actions", actions)
         if alert_comparator is not None:
-            pulumi.set(__self__, "alert_comparator", alert_comparator)
+            _setter("alert_comparator", alert_comparator)
         if alert_condition is not None:
-            pulumi.set(__self__, "alert_condition", alert_condition)
+            _setter("alert_condition", alert_condition)
         if alert_digest_mode is not None:
-            pulumi.set(__self__, "alert_digest_mode", alert_digest_mode)
+            _setter("alert_digest_mode", alert_digest_mode)
         if alert_expires is not None:
-            pulumi.set(__self__, "alert_expires", alert_expires)
+            _setter("alert_expires", alert_expires)
         if alert_severity is not None:
-            pulumi.set(__self__, "alert_severity", alert_severity)
+            _setter("alert_severity", alert_severity)
         if alert_suppress is not None:
-            pulumi.set(__self__, "alert_suppress", alert_suppress)
+            _setter("alert_suppress", alert_suppress)
         if alert_suppress_fields is not None:
-            pulumi.set(__self__, "alert_suppress_fields", alert_suppress_fields)
+            _setter("alert_suppress_fields", alert_suppress_fields)
         if alert_suppress_period is not None:
-            pulumi.set(__self__, "alert_suppress_period", alert_suppress_period)
+            _setter("alert_suppress_period", alert_suppress_period)
         if alert_threshold is not None:
-            pulumi.set(__self__, "alert_threshold", alert_threshold)
+            _setter("alert_threshold", alert_threshold)
         if alert_track is not None:
-            pulumi.set(__self__, "alert_track", alert_track)
+            _setter("alert_track", alert_track)
         if alert_type is not None:
-            pulumi.set(__self__, "alert_type", alert_type)
+            _setter("alert_type", alert_type)
         if allow_skew is not None:
-            pulumi.set(__self__, "allow_skew", allow_skew)
+            _setter("allow_skew", allow_skew)
         if auto_summarize is not None:
-            pulumi.set(__self__, "auto_summarize", auto_summarize)
+            _setter("auto_summarize", auto_summarize)
         if auto_summarize_command is not None:
-            pulumi.set(__self__, "auto_summarize_command", auto_summarize_command)
+            _setter("auto_summarize_command", auto_summarize_command)
         if auto_summarize_cron_schedule is not None:
-            pulumi.set(__self__, "auto_summarize_cron_schedule", auto_summarize_cron_schedule)
+            _setter("auto_summarize_cron_schedule", auto_summarize_cron_schedule)
         if auto_summarize_dispatch_earliest_time is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_earliest_time", auto_summarize_dispatch_earliest_time)
+            _setter("auto_summarize_dispatch_earliest_time", auto_summarize_dispatch_earliest_time)
         if auto_summarize_dispatch_latest_time is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_latest_time", auto_summarize_dispatch_latest_time)
+            _setter("auto_summarize_dispatch_latest_time", auto_summarize_dispatch_latest_time)
         if auto_summarize_dispatch_time_format is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_time_format", auto_summarize_dispatch_time_format)
+            _setter("auto_summarize_dispatch_time_format", auto_summarize_dispatch_time_format)
         if auto_summarize_dispatch_ttl is not None:
-            pulumi.set(__self__, "auto_summarize_dispatch_ttl", auto_summarize_dispatch_ttl)
+            _setter("auto_summarize_dispatch_ttl", auto_summarize_dispatch_ttl)
         if auto_summarize_max_disabled_buckets is not None:
-            pulumi.set(__self__, "auto_summarize_max_disabled_buckets", auto_summarize_max_disabled_buckets)
+            _setter("auto_summarize_max_disabled_buckets", auto_summarize_max_disabled_buckets)
         if auto_summarize_max_summary_ratio is not None:
-            pulumi.set(__self__, "auto_summarize_max_summary_ratio", auto_summarize_max_summary_ratio)
+            _setter("auto_summarize_max_summary_ratio", auto_summarize_max_summary_ratio)
         if auto_summarize_max_summary_size is not None:
-            pulumi.set(__self__, "auto_summarize_max_summary_size", auto_summarize_max_summary_size)
+            _setter("auto_summarize_max_summary_size", auto_summarize_max_summary_size)
         if auto_summarize_max_time is not None:
-            pulumi.set(__self__, "auto_summarize_max_time", auto_summarize_max_time)
+            _setter("auto_summarize_max_time", auto_summarize_max_time)
         if auto_summarize_suspend_period is not None:
-            pulumi.set(__self__, "auto_summarize_suspend_period", auto_summarize_suspend_period)
+            _setter("auto_summarize_suspend_period", auto_summarize_suspend_period)
         if auto_summarize_timespan is not None:
-            pulumi.set(__self__, "auto_summarize_timespan", auto_summarize_timespan)
+            _setter("auto_summarize_timespan", auto_summarize_timespan)
         if cron_schedule is not None:
-            pulumi.set(__self__, "cron_schedule", cron_schedule)
+            _setter("cron_schedule", cron_schedule)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if dispatch_buckets is not None:
-            pulumi.set(__self__, "dispatch_buckets", dispatch_buckets)
+            _setter("dispatch_buckets", dispatch_buckets)
         if dispatch_earliest_time is not None:
-            pulumi.set(__self__, "dispatch_earliest_time", dispatch_earliest_time)
+            _setter("dispatch_earliest_time", dispatch_earliest_time)
         if dispatch_index_earliest is not None:
-            pulumi.set(__self__, "dispatch_index_earliest", dispatch_index_earliest)
+            _setter("dispatch_index_earliest", dispatch_index_earliest)
         if dispatch_index_latest is not None:
-            pulumi.set(__self__, "dispatch_index_latest", dispatch_index_latest)
+            _setter("dispatch_index_latest", dispatch_index_latest)
         if dispatch_indexed_realtime is not None:
-            pulumi.set(__self__, "dispatch_indexed_realtime", dispatch_indexed_realtime)
+            _setter("dispatch_indexed_realtime", dispatch_indexed_realtime)
         if dispatch_indexed_realtime_minspan is not None:
-            pulumi.set(__self__, "dispatch_indexed_realtime_minspan", dispatch_indexed_realtime_minspan)
+            _setter("dispatch_indexed_realtime_minspan", dispatch_indexed_realtime_minspan)
         if dispatch_indexed_realtime_offset is not None:
-            pulumi.set(__self__, "dispatch_indexed_realtime_offset", dispatch_indexed_realtime_offset)
+            _setter("dispatch_indexed_realtime_offset", dispatch_indexed_realtime_offset)
         if dispatch_latest_time is not None:
-            pulumi.set(__self__, "dispatch_latest_time", dispatch_latest_time)
+            _setter("dispatch_latest_time", dispatch_latest_time)
         if dispatch_lookups is not None:
-            pulumi.set(__self__, "dispatch_lookups", dispatch_lookups)
+            _setter("dispatch_lookups", dispatch_lookups)
         if dispatch_max_count is not None:
-            pulumi.set(__self__, "dispatch_max_count", dispatch_max_count)
+            _setter("dispatch_max_count", dispatch_max_count)
         if dispatch_max_time is not None:
-            pulumi.set(__self__, "dispatch_max_time", dispatch_max_time)
+            _setter("dispatch_max_time", dispatch_max_time)
         if dispatch_reduce_freq is not None:
-            pulumi.set(__self__, "dispatch_reduce_freq", dispatch_reduce_freq)
+            _setter("dispatch_reduce_freq", dispatch_reduce_freq)
         if dispatch_rt_backfill is not None:
-            pulumi.set(__self__, "dispatch_rt_backfill", dispatch_rt_backfill)
+            _setter("dispatch_rt_backfill", dispatch_rt_backfill)
         if dispatch_rt_maximum_span is not None:
-            pulumi.set(__self__, "dispatch_rt_maximum_span", dispatch_rt_maximum_span)
+            _setter("dispatch_rt_maximum_span", dispatch_rt_maximum_span)
         if dispatch_spawn_process is not None:
-            pulumi.set(__self__, "dispatch_spawn_process", dispatch_spawn_process)
+            _setter("dispatch_spawn_process", dispatch_spawn_process)
         if dispatch_time_format is not None:
-            pulumi.set(__self__, "dispatch_time_format", dispatch_time_format)
+            _setter("dispatch_time_format", dispatch_time_format)
         if dispatch_ttl is not None:
-            pulumi.set(__self__, "dispatch_ttl", dispatch_ttl)
+            _setter("dispatch_ttl", dispatch_ttl)
         if display_view is not None:
-            pulumi.set(__self__, "display_view", display_view)
+            _setter("display_view", display_view)
         if is_scheduled is not None:
-            pulumi.set(__self__, "is_scheduled", is_scheduled)
+            _setter("is_scheduled", is_scheduled)
         if is_visible is not None:
-            pulumi.set(__self__, "is_visible", is_visible)
+            _setter("is_visible", is_visible)
         if max_concurrent is not None:
-            pulumi.set(__self__, "max_concurrent", max_concurrent)
+            _setter("max_concurrent", max_concurrent)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if realtime_schedule is not None:
-            pulumi.set(__self__, "realtime_schedule", realtime_schedule)
+            _setter("realtime_schedule", realtime_schedule)
         if request_ui_dispatch_app is not None:
-            pulumi.set(__self__, "request_ui_dispatch_app", request_ui_dispatch_app)
+            _setter("request_ui_dispatch_app", request_ui_dispatch_app)
         if request_ui_dispatch_view is not None:
-            pulumi.set(__self__, "request_ui_dispatch_view", request_ui_dispatch_view)
+            _setter("request_ui_dispatch_view", request_ui_dispatch_view)
         if restart_on_searchpeer_add is not None:
-            pulumi.set(__self__, "restart_on_searchpeer_add", restart_on_searchpeer_add)
+            _setter("restart_on_searchpeer_add", restart_on_searchpeer_add)
         if run_on_startup is not None:
-            pulumi.set(__self__, "run_on_startup", run_on_startup)
+            _setter("run_on_startup", run_on_startup)
         if schedule_priority is not None:
-            pulumi.set(__self__, "schedule_priority", schedule_priority)
+            _setter("schedule_priority", schedule_priority)
         if schedule_window is not None:
-            pulumi.set(__self__, "schedule_window", schedule_window)
+            _setter("schedule_window", schedule_window)
         if search is not None:
-            pulumi.set(__self__, "search", search)
+            _setter("search", search)
         if vsid is not None:
-            pulumi.set(__self__, "vsid", vsid)
+            _setter("vsid", vsid)
         if workload_pool is not None:
-            pulumi.set(__self__, "workload_pool", workload_pool)
+            _setter("workload_pool", workload_pool)
 
     @property
     @pulumi.getter
@@ -5753,6 +6425,10 @@ class SavedSearches(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SavedSearchesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -5929,6 +6605,11 @@ class SavedSearches(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = SavedSearchesArgs.__new__(SavedSearchesArgs)
 
+            if acl is not None and not isinstance(acl, SavedSearchesAclArgs):
+                acl = acl or {}
+                def _setter(key, value):
+                    acl[key] = value
+                SavedSearchesAclArgs._configure(_setter, **acl)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["action_create_xsoar_incident"] = action_create_xsoar_incident
             __props__.__dict__["action_create_xsoar_incident_param_custom_fields"] = action_create_xsoar_incident_param_custom_fields

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,25 +41,52 @@ class InputsScriptArgs:
         :param pulumi.Input[str] sourcetype: Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
                Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
         """
-        pulumi.set(__self__, "interval", interval)
+        InputsScriptArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            interval=interval,
+            acl=acl,
+            disabled=disabled,
+            host=host,
+            index=index,
+            name=name,
+            passauth=passauth,
+            rename_source=rename_source,
+            source=source,
+            sourcetype=sourcetype,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             interval: pulumi.Input[int],
+             acl: Optional[pulumi.Input['InputsScriptAclArgs']] = None,
+             disabled: Optional[pulumi.Input[bool]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             index: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             passauth: Optional[pulumi.Input[str]] = None,
+             rename_source: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             sourcetype: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("interval", interval)
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if index is not None:
-            pulumi.set(__self__, "index", index)
+            _setter("index", index)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if passauth is not None:
-            pulumi.set(__self__, "passauth", passauth)
+            _setter("passauth", passauth)
         if rename_source is not None:
-            pulumi.set(__self__, "rename_source", rename_source)
+            _setter("rename_source", rename_source)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if sourcetype is not None:
-            pulumi.set(__self__, "sourcetype", sourcetype)
+            _setter("sourcetype", sourcetype)
 
     @property
     @pulumi.getter
@@ -212,26 +239,53 @@ class _InputsScriptState:
         :param pulumi.Input[str] sourcetype: Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
                Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
         """
+        _InputsScriptState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            disabled=disabled,
+            host=host,
+            index=index,
+            interval=interval,
+            name=name,
+            passauth=passauth,
+            rename_source=rename_source,
+            source=source,
+            sourcetype=sourcetype,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['InputsScriptAclArgs']] = None,
+             disabled: Optional[pulumi.Input[bool]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             index: Optional[pulumi.Input[str]] = None,
+             interval: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             passauth: Optional[pulumi.Input[str]] = None,
+             rename_source: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             sourcetype: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if disabled is not None:
-            pulumi.set(__self__, "disabled", disabled)
+            _setter("disabled", disabled)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if index is not None:
-            pulumi.set(__self__, "index", index)
+            _setter("index", index)
         if interval is not None:
-            pulumi.set(__self__, "interval", interval)
+            _setter("interval", interval)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if passauth is not None:
-            pulumi.set(__self__, "passauth", passauth)
+            _setter("passauth", passauth)
         if rename_source is not None:
-            pulumi.set(__self__, "rename_source", rename_source)
+            _setter("rename_source", rename_source)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if sourcetype is not None:
-            pulumi.set(__self__, "sourcetype", sourcetype)
+            _setter("sourcetype", sourcetype)
 
     @property
     @pulumi.getter
@@ -413,6 +467,10 @@ class InputsScript(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            InputsScriptArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -437,6 +495,11 @@ class InputsScript(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsScriptArgs.__new__(InputsScriptArgs)
 
+            if acl is not None and not isinstance(acl, InputsScriptAclArgs):
+                acl = acl or {}
+                def _setter(key, value):
+                    acl[key] = value
+                InputsScriptAclArgs._configure(_setter, **acl)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["host"] = host
