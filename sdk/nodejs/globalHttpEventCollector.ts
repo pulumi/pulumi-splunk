@@ -8,6 +8,19 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.GlobalHttpEventCollector
  *
  * Update Global HTTP Event Collector input configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const http = new splunk.GlobalHttpEventCollector("http", {
+ *     disabled: false,
+ *     enableSsl: true,
+ *     port: 8088,
+ * });
+ * ```
  */
 export class GlobalHttpEventCollector extends pulumi.CustomResource {
     /**

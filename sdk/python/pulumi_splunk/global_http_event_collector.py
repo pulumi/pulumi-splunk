@@ -339,6 +339,18 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
 
         Update Global HTTP Event Collector input configuration.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        http = splunk.GlobalHttpEventCollector("http",
+            disabled=False,
+            enable_ssl=True,
+            port=8088)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] dedicated_io_threads: Number of threads used by HTTP Input server.
@@ -360,6 +372,18 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
         ## # Resource: GlobalHttpEventCollector
 
         Update Global HTTP Event Collector input configuration.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        http = splunk.GlobalHttpEventCollector("http",
+            disabled=False,
+            enable_ssl=True,
+            port=8088)
+        ```
 
         :param str resource_name: The name of the resource.
         :param GlobalHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

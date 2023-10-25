@@ -10,6 +10,18 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsMonitor
  *
  * Create or update a new file or directory monitor input.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const monitor = new splunk.InputsMonitor("monitor", {
+ *     recursive: true,
+ *     sourcetype: "text",
+ * });
+ * ```
  */
 export class InputsMonitor extends pulumi.CustomResource {
     /**

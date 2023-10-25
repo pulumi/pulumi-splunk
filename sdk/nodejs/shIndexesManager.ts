@@ -14,6 +14,19 @@ import * as utilities from "./utilities";
  * ## Authorization and authentication
  *
  * As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const tf_index = new splunk.ShIndexesManager("tf-index", {
+ *     datatype: "event",
+ *     frozenTimePeriodInSecs: "94608000",
+ *     maxGlobalRawDataSizeMb: "100",
+ * });
+ * ```
  */
 export class ShIndexesManager extends pulumi.CustomResource {
     /**

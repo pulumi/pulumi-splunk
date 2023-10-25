@@ -678,6 +678,17 @@ class InputsMonitor(pulumi.CustomResource):
 
         Create or update a new file or directory monitor input.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        monitor = splunk.InputsMonitor("monitor",
+            recursive=True,
+            sourcetype="text")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsMonitorAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -707,6 +718,17 @@ class InputsMonitor(pulumi.CustomResource):
         ## # Resource: InputsMonitor
 
         Create or update a new file or directory monitor input.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        monitor = splunk.InputsMonitor("monitor",
+            recursive=True,
+            sourcetype="text")
+        ```
 
         :param str resource_name: The name of the resource.
         :param InputsMonitorArgs args: The arguments to use to populate this resource's properties.

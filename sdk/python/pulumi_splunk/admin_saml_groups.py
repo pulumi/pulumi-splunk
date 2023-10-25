@@ -130,6 +130,18 @@ class AdminSamlGroups(pulumi.CustomResource):
 
         Manage external groups in an IdP response to internal Splunk roles.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        saml_group = splunk.AdminSamlGroups("saml-group", roles=[
+            "admin",
+            "power",
+        ])
+        ```
+
         ## Import
 
         SAML groups can be imported using the id, e.g.
@@ -153,6 +165,18 @@ class AdminSamlGroups(pulumi.CustomResource):
         ## # Resource: AdminSamlGroups
 
         Manage external groups in an IdP response to internal Splunk roles.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        saml_group = splunk.AdminSamlGroups("saml-group", roles=[
+            "admin",
+            "power",
+        ])
+        ```
 
         ## Import
 

@@ -386,6 +386,17 @@ class OutputsTcpSyslog(pulumi.CustomResource):
 
         Access the configuration of a forwarded server configured to provide data in standard syslog format.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_syslog = splunk.OutputsTcpSyslog("tcpSyslog",
+            priority=5,
+            server="new-host-1:1234")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpSyslogAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -413,6 +424,17 @@ class OutputsTcpSyslog(pulumi.CustomResource):
         ## # Resource: OutputsTcpSyslog
 
         Access the configuration of a forwarded server configured to provide data in standard syslog format.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_syslog = splunk.OutputsTcpSyslog("tcpSyslog",
+            priority=5,
+            server="new-host-1:1234")
+        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpSyslogArgs args: The arguments to use to populate this resource's properties.

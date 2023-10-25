@@ -1826,6 +1826,17 @@ class Indexes(pulumi.CustomResource):
         By default, all users can list all indexes. However, if the indexes_list_all capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
         To enable indexes_list_all capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        user01_index = splunk.Indexes("user01-index",
+            max_hot_buckets=6,
+            max_total_data_size_mb=1000000)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['IndexesAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -1927,6 +1938,17 @@ class Indexes(pulumi.CustomResource):
 
         By default, all users can list all indexes. However, if the indexes_list_all capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
         To enable indexes_list_all capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        user01_index = splunk.Indexes("user01-index",
+            max_hot_buckets=6,
+            max_total_data_size_mb=1000000)
+        ```
 
         :param str resource_name: The name of the resource.
         :param IndexesArgs args: The arguments to use to populate this resource's properties.

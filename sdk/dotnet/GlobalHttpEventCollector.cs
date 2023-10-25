@@ -13,6 +13,26 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.GlobalHttpEventCollector
     /// 
     /// Update Global HTTP Event Collector input configuration.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var http = new Splunk.GlobalHttpEventCollector("http", new()
+    ///     {
+    ///         Disabled = false,
+    ///         EnableSsl = true,
+    ///         Port = 8088,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector")]
     public partial class GlobalHttpEventCollector : global::Pulumi.CustomResource

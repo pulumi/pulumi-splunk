@@ -525,6 +525,20 @@ class InputsTcpRaw(pulumi.CustomResource):
 
         Create or update raw TCP input information for managing raw tcp inputs from forwarders.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_raw = splunk.InputsTcpRaw("tcpRaw",
+            disabled=False,
+            index="main",
+            queue="indexQueue",
+            source="new",
+            sourcetype="new")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsTcpRawAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -561,6 +575,20 @@ class InputsTcpRaw(pulumi.CustomResource):
         ## # Resource: InputsTcpRaw
 
         Create or update raw TCP input information for managing raw tcp inputs from forwarders.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_raw = splunk.InputsTcpRaw("tcpRaw",
+            disabled=False,
+            index="main",
+            queue="indexQueue",
+            source="new",
+            sourcetype="new")
+        ```
 
         :param str resource_name: The name of the resource.
         :param InputsTcpRawArgs args: The arguments to use to populate this resource's properties.

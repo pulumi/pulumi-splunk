@@ -15,6 +15,34 @@ import (
 // ## # Resource: InputsTcpCooked
 //
 // Create or update cooked TCP input information and create new containers for managing cooked data.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpCooked(ctx, "tcpCooked", &splunk.InputsTcpCookedArgs{
+//				ConnectionHost: pulumi.String("dns"),
+//				Disabled:       pulumi.Bool(false),
+//				RestrictToHost: pulumi.String("splunk"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type InputsTcpCooked struct {
 	pulumi.CustomResourceState
 

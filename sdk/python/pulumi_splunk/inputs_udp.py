@@ -542,6 +542,19 @@ class InputsUdp(pulumi.CustomResource):
 
         Create and manage UDP data inputs.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        udp = splunk.InputsUdp("udp",
+            disabled=False,
+            index="main",
+            source="new",
+            sourcetype="new")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsUdpAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -573,6 +586,19 @@ class InputsUdp(pulumi.CustomResource):
         ## # Resource: InputsTcpRaw
 
         Create and manage UDP data inputs.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        udp = splunk.InputsUdp("udp",
+            disabled=False,
+            index="main",
+            source="new",
+            sourcetype="new")
+        ```
 
         :param str resource_name: The name of the resource.
         :param InputsUdpArgs args: The arguments to use to populate this resource's properties.

@@ -141,6 +141,33 @@ class GenericAcl(pulumi.CustomResource):
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        my_app = splunk.GenericAcl("myApp",
+            acl=splunk.GenericAclAclArgs(
+                app="system",
+                owner="nobody",
+                reads=["*"],
+                writes=[
+                    "admin",
+                    "power",
+                ],
+            ),
+            path="apps/local/my_app")
+        my_dashboard = splunk.GenericAcl("myDashboard",
+            acl=splunk.GenericAclAclArgs(
+                app="my_app",
+                owner="joe_user",
+                reads=["team_joe"],
+                writes=["team_joe"],
+            ),
+            path="data/ui/views/my_dashboard")
+        ```
+
         ## Import
 
         Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
@@ -164,6 +191,33 @@ class GenericAcl(pulumi.CustomResource):
                  args: GenericAclArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        my_app = splunk.GenericAcl("myApp",
+            acl=splunk.GenericAclAclArgs(
+                app="system",
+                owner="nobody",
+                reads=["*"],
+                writes=[
+                    "admin",
+                    "power",
+                ],
+            ),
+            path="apps/local/my_app")
+        my_dashboard = splunk.GenericAcl("myDashboard",
+            acl=splunk.GenericAclAclArgs(
+                app="my_app",
+                owner="joe_user",
+                reads=["team_joe"],
+                writes=["team_joe"],
+            ),
+            path="data/ui/views/my_dashboard")
+        ```
+
         ## Import
 
         Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID

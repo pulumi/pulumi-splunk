@@ -8,6 +8,36 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.AuthorizationRoles
  *
  * Create and update role information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const role01 = new splunk.AuthorizationRoles("role01", {
+ *     capabilities: [
+ *         "accelerate_datamodel",
+ *         "change_authentication",
+ *         "restart_splunkd",
+ *     ],
+ *     defaultApp: "search",
+ *     importedRoles: [
+ *         "power",
+ *         "user",
+ *     ],
+ *     searchIndexesAlloweds: [
+ *         "_audit",
+ *         "_internal",
+ *         "main",
+ *     ],
+ *     searchIndexesDefaults: [
+ *         "_audit",
+ *         "_internal",
+ *         "main",
+ *     ],
+ * });
+ * ```
  */
 export class AuthorizationRoles extends pulumi.CustomResource {
     /**

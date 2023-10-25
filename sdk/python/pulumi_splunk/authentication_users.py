@@ -401,6 +401,19 @@ class AuthenticationUsers(pulumi.CustomResource):
 
         Create and update user information or delete the user.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        user01 = splunk.AuthenticationUsers("user01",
+            email="user01@example.com",
+            force_change_pass=False,
+            password="password01",
+            roles=["terraform-user01-role"])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] default_app: User default app. Overrides the default app inherited from the user roles.
@@ -423,6 +436,19 @@ class AuthenticationUsers(pulumi.CustomResource):
         ## # Resource: AuthenticationUsers
 
         Create and update user information or delete the user.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        user01 = splunk.AuthenticationUsers("user01",
+            email="user01@example.com",
+            force_change_pass=False,
+            password="password01",
+            roles=["terraform-user01-role"])
+        ```
 
         :param str resource_name: The name of the resource.
         :param AuthenticationUsersArgs args: The arguments to use to populate this resource's properties.

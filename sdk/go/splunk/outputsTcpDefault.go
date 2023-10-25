@@ -15,6 +15,37 @@ import (
 // ## # Resource: OutputsTcpDefault
 //
 // Manage to global tcpout properties.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpDefault(ctx, "tcpDefault", &splunk.OutputsTcpDefaultArgs{
+//				DefaultGroup:          pulumi.String("test-indexers"),
+//				Disabled:              pulumi.Bool(false),
+//				DropEventsOnQueueFull: pulumi.Int(60),
+//				IndexAndForward:       pulumi.Bool(true),
+//				MaxQueueSize:          pulumi.String("100KB"),
+//				SendCookedData:        pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OutputsTcpDefault struct {
 	pulumi.CustomResourceState
 

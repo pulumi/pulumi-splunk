@@ -9,6 +9,18 @@ import * as utilities from "./utilities";
  *
  * Manage external groups in an IdP response to internal Splunk roles.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const saml_group = new splunk.AdminSamlGroups("saml-group", {roles: [
+ *     "admin",
+ *     "power",
+ * ]});
+ * ```
+ *
  * ## Import
  *
  * SAML groups can be imported using the id, e.g.

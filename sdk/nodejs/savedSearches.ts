@@ -10,6 +10,33 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.SavedSearches
  *
  * Create and manage saved searches.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const savedSearch = new splunk.SavedSearches("savedSearch", {
+ *     acl: {
+ *         app: "launcher",
+ *         owner: "admin",
+ *         sharing: "app",
+ *     },
+ *     actionEmailFormat: "table",
+ *     actionEmailMaxResults: 10,
+ *     actionEmailMaxTime: "5m",
+ *     actionEmailSendResults: false,
+ *     actionEmailSubject: "Splunk Alert: $name$",
+ *     actionEmailTo: "splunk@splunk.com",
+ *     actionEmailTrackAlert: true,
+ *     actions: "email",
+ *     cronSchedule: "*&#47;5 * * * *",
+ *     dispatchEarliestTime: "rt-15m",
+ *     dispatchLatestTime: "rt-0m",
+ *     search: "index=main",
+ * });
+ * ```
  */
 export class SavedSearches extends pulumi.CustomResource {
     /**

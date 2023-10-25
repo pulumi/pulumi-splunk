@@ -10,6 +10,21 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsTcpRaw
  *
  * Create or update raw TCP input information for managing raw tcp inputs from forwarders.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const tcpRaw = new splunk.InputsTcpRaw("tcpRaw", {
+ *     disabled: false,
+ *     index: "main",
+ *     queue: "indexQueue",
+ *     source: "new",
+ *     sourcetype: "new",
+ * });
+ * ```
  */
 export class InputsTcpRaw extends pulumi.CustomResource {
     /**

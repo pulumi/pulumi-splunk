@@ -10,6 +10,22 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.OutputsTcpDefault
  *
  * Manage to global tcpout properties.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const tcpDefault = new splunk.OutputsTcpDefault("tcpDefault", {
+ *     defaultGroup: "test-indexers",
+ *     disabled: false,
+ *     dropEventsOnQueueFull: 60,
+ *     indexAndForward: true,
+ *     maxQueueSize: "100KB",
+ *     sendCookedData: true,
+ * });
+ * ```
  */
 export class OutputsTcpDefault extends pulumi.CustomResource {
     /**

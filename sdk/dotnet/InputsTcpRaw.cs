@@ -13,6 +13,28 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsTcpRaw
     /// 
     /// Create or update raw TCP input information for managing raw tcp inputs from forwarders.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var tcpRaw = new Splunk.InputsTcpRaw("tcpRaw", new()
+    ///     {
+    ///         Disabled = false,
+    ///         Index = "main",
+    ///         Queue = "indexQueue",
+    ///         Source = "new",
+    ///         Sourcetype = "new",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpRaw:InputsTcpRaw")]
     public partial class InputsTcpRaw : global::Pulumi.CustomResource

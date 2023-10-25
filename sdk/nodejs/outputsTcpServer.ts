@@ -10,6 +10,15 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.OutputsTcpServer
  *
  * Access data forwarding configurations.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const tcpServer = new splunk.OutputsTcpServer("tcpServer", {sslAltNameToCheck: "old-host"});
+ * ```
  */
 export class OutputsTcpServer extends pulumi.CustomResource {
     /**

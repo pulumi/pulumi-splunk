@@ -6813,6 +6813,32 @@ class SavedSearches(pulumi.CustomResource):
 
         Create and manage saved searches.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        saved_search = splunk.SavedSearches("savedSearch",
+            acl=splunk.SavedSearchesAclArgs(
+                app="launcher",
+                owner="admin",
+                sharing="app",
+            ),
+            action_email_format="table",
+            action_email_max_results=10,
+            action_email_max_time="5m",
+            action_email_send_results=False,
+            action_email_subject="Splunk Alert: $name$",
+            action_email_to="splunk@splunk.com",
+            action_email_track_alert=True,
+            actions="email",
+            cron_schedule="*/5 * * * *",
+            dispatch_earliest_time="rt-15m",
+            dispatch_latest_time="rt-0m",
+            search="index=main")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -6998,6 +7024,32 @@ class SavedSearches(pulumi.CustomResource):
         ## # Resource: SavedSearches
 
         Create and manage saved searches.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        saved_search = splunk.SavedSearches("savedSearch",
+            acl=splunk.SavedSearchesAclArgs(
+                app="launcher",
+                owner="admin",
+                sharing="app",
+            ),
+            action_email_format="table",
+            action_email_max_results=10,
+            action_email_max_time="5m",
+            action_email_send_results=False,
+            action_email_subject="Splunk Alert: $name$",
+            action_email_to="splunk@splunk.com",
+            action_email_track_alert=True,
+            actions="email",
+            cron_schedule="*/5 * * * *",
+            dispatch_earliest_time="rt-15m",
+            dispatch_latest_time="rt-0m",
+            search="index=main")
+        ```
 
         :param str resource_name: The name of the resource.
         :param SavedSearchesArgs args: The arguments to use to populate this resource's properties.
