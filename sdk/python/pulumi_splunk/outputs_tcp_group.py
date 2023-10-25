@@ -68,7 +68,7 @@ class OutputsTcpGroupArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             servers: pulumi.Input[Sequence[pulumi.Input[str]]],
+             servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              acl: Optional[pulumi.Input['OutputsTcpGroupAclArgs']] = None,
              compressed: Optional[pulumi.Input[bool]] = None,
              disabled: Optional[pulumi.Input[bool]] = None,
@@ -79,7 +79,19 @@ class OutputsTcpGroupArgs:
              name: Optional[pulumi.Input[str]] = None,
              send_cooked_data: Optional[pulumi.Input[bool]] = None,
              token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if servers is None:
+            raise TypeError("Missing 'servers' argument")
+        if drop_events_on_queue_full is None and 'dropEventsOnQueueFull' in kwargs:
+            drop_events_on_queue_full = kwargs['dropEventsOnQueueFull']
+        if heartbeat_frequency is None and 'heartbeatFrequency' in kwargs:
+            heartbeat_frequency = kwargs['heartbeatFrequency']
+        if max_queue_size is None and 'maxQueueSize' in kwargs:
+            max_queue_size = kwargs['maxQueueSize']
+        if send_cooked_data is None and 'sendCookedData' in kwargs:
+            send_cooked_data = kwargs['sendCookedData']
+
         _setter("servers", servers)
         if acl is not None:
             _setter("acl", acl)
@@ -311,7 +323,17 @@ class _OutputsTcpGroupState:
              send_cooked_data: Optional[pulumi.Input[bool]] = None,
              servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if drop_events_on_queue_full is None and 'dropEventsOnQueueFull' in kwargs:
+            drop_events_on_queue_full = kwargs['dropEventsOnQueueFull']
+        if heartbeat_frequency is None and 'heartbeatFrequency' in kwargs:
+            heartbeat_frequency = kwargs['heartbeatFrequency']
+        if max_queue_size is None and 'maxQueueSize' in kwargs:
+            max_queue_size = kwargs['maxQueueSize']
+        if send_cooked_data is None and 'sendCookedData' in kwargs:
+            send_cooked_data = kwargs['sendCookedData']
+
         if acl is not None:
             _setter("acl", acl)
         if compressed is not None:
@@ -500,23 +522,6 @@ class OutputsTcpGroup(pulumi.CustomResource):
 
         Access to the configuration of a group of one or more data forwarding destinations.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_group = splunk.OutputsTcpGroup("tcpGroup",
-            disabled=False,
-            drop_events_on_queue_full=60,
-            max_queue_size="100KB",
-            send_cooked_data=True,
-            servers=[
-                "1.1.1.1:1234",
-                "2.2.2.2:1234",
-            ])
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpGroupAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -551,23 +556,6 @@ class OutputsTcpGroup(pulumi.CustomResource):
         ## # Resource: OutputsTcpGroup
 
         Access to the configuration of a group of one or more data forwarding destinations.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_group = splunk.OutputsTcpGroup("tcpGroup",
-            disabled=False,
-            drop_events_on_queue_full=60,
-            max_queue_size="100KB",
-            send_cooked_data=True,
-            servers=[
-                "1.1.1.1:1234",
-                "2.2.2.2:1234",
-            ])
-        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpGroupArgs args: The arguments to use to populate this resource's properties.
@@ -608,11 +596,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpGroupArgs.__new__(OutputsTcpGroupArgs)
 
-            if acl is not None and not isinstance(acl, OutputsTcpGroupAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                OutputsTcpGroupAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, OutputsTcpGroupAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["compressed"] = compressed
             __props__.__dict__["disabled"] = disabled

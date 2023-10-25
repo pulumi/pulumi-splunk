@@ -13,47 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.AuthorizationRoles
     /// 
     /// Create and update role information.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var role01 = new Splunk.AuthorizationRoles("role01", new()
-    ///     {
-    ///         Capabilities = new[]
-    ///         {
-    ///             "accelerate_datamodel",
-    ///             "change_authentication",
-    ///             "restart_splunkd",
-    ///         },
-    ///         DefaultApp = "search",
-    ///         ImportedRoles = new[]
-    ///         {
-    ///             "power",
-    ///             "user",
-    ///         },
-    ///         SearchIndexesAlloweds = new[]
-    ///         {
-    ///             "_audit",
-    ///             "_internal",
-    ///             "main",
-    ///         },
-    ///         SearchIndexesDefaults = new[]
-    ///         {
-    ///             "_audit",
-    ///             "_internal",
-    ///             "main",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/authorizationRoles:AuthorizationRoles")]
     public partial class AuthorizationRoles : global::Pulumi.CustomResource

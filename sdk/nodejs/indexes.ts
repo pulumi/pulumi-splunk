@@ -15,18 +15,6 @@ import * as utilities from "./utilities";
  *
  * By default, all users can list all indexes. However, if the indexesListAll capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
  * To enable indexesListAll capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as splunk from "@pulumi/splunk";
- *
- * const user01_index = new splunk.Indexes("user01-index", {
- *     maxHotBuckets: 6,
- *     maxTotalDataSizeMb: 1000000,
- * });
- * ```
  */
 export class Indexes extends pulumi.CustomResource {
     /**

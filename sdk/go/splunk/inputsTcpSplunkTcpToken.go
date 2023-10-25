@@ -15,32 +15,6 @@ import (
 // ## # Resource: InputsTcpSplunkTcpToken
 //
 // Manage receiver access using tokens.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsTcpSplunkTcpToken(ctx, "tcpSplunkTcpToken", &splunk.InputsTcpSplunkTcpTokenArgs{
-//				Token: pulumi.String("D66C45B3-7C28-48A1-A13A-027914146501"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type InputsTcpSplunkTcpToken struct {
 	pulumi.CustomResourceState
 

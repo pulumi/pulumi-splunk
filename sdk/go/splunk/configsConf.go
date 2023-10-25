@@ -15,35 +15,6 @@ import (
 // ## # Resource: ConfigsConf
 //
 // Create and manage configuration file stanzas.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewConfigsConf(ctx, "new-conf-stanza", &splunk.ConfigsConfArgs{
-//				Variables: pulumi.StringMap{
-//					"disabled":   pulumi.String("false"),
-//					"custom_key": pulumi.String("value"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type ConfigsConf struct {
 	pulumi.CustomResourceState
 

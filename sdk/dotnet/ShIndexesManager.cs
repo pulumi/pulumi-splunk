@@ -17,26 +17,6 @@ namespace Pulumi.Splunk
     /// ## Authorization and authentication
     /// 
     /// As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var tf_index = new Splunk.ShIndexesManager("tf-index", new()
-    ///     {
-    ///         Datatype = "event",
-    ///         FrozenTimePeriodInSecs = "94608000",
-    ///         MaxGlobalRawDataSizeMb = "100",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/shIndexesManager:ShIndexesManager")]
     public partial class ShIndexesManager : global::Pulumi.CustomResource

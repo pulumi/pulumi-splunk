@@ -65,7 +65,11 @@ class InputsHttpEventCollectorArgs:
              sourcetype: Optional[pulumi.Input[str]] = None,
              token: Optional[pulumi.Input[str]] = None,
              use_ack: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if use_ack is None and 'useAck' in kwargs:
+            use_ack = kwargs['useAck']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -260,7 +264,11 @@ class _InputsHttpEventCollectorState:
              sourcetype: Optional[pulumi.Input[str]] = None,
              token: Optional[pulumi.Input[str]] = None,
              use_ack: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if use_ack is None and 'useAck' in kwargs:
+            use_ack = kwargs['useAck']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -486,11 +494,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsHttpEventCollectorArgs.__new__(InputsHttpEventCollectorArgs)
 
-            if acl is not None and not isinstance(acl, InputsHttpEventCollectorAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsHttpEventCollectorAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsHttpEventCollectorAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["host"] = host

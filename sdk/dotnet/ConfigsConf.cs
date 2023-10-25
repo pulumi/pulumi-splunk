@@ -13,28 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.ConfigsConf
     /// 
     /// Create and manage configuration file stanzas.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var new_conf_stanza = new Splunk.ConfigsConf("new-conf-stanza", new()
-    ///     {
-    ///         Variables = 
-    ///         {
-    ///             { "disabled", "false" },
-    ///             { "custom_key", "value" },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/configsConf:ConfigsConf")]
     public partial class ConfigsConf : global::Pulumi.CustomResource

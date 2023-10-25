@@ -42,13 +42,21 @@ class ProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             url: pulumi.Input[str],
+             url: Optional[pulumi.Input[str]] = None,
              auth_token: Optional[pulumi.Input[str]] = None,
              insecure_skip_verify: Optional[pulumi.Input[bool]] = None,
              password: Optional[pulumi.Input[str]] = None,
              timeout: Optional[pulumi.Input[int]] = None,
              username: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+        if auth_token is None and 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if insecure_skip_verify is None and 'insecureSkipVerify' in kwargs:
+            insecure_skip_verify = kwargs['insecureSkipVerify']
+
         _setter("url", url)
         if auth_token is not None:
             _setter("auth_token", auth_token)

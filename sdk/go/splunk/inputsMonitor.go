@@ -15,33 +15,6 @@ import (
 // ## # Resource: InputsMonitor
 //
 // Create or update a new file or directory monitor input.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsMonitor(ctx, "monitor", &splunk.InputsMonitorArgs{
-//				Recursive:  pulumi.Bool(true),
-//				Sourcetype: pulumi.String("text"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type InputsMonitor struct {
 	pulumi.CustomResourceState
 

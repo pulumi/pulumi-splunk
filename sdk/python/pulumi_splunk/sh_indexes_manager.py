@@ -46,7 +46,13 @@ class ShIndexesManagerArgs:
              frozen_time_period_in_secs: Optional[pulumi.Input[str]] = None,
              max_global_raw_data_size_mb: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if frozen_time_period_in_secs is None and 'frozenTimePeriodInSecs' in kwargs:
+            frozen_time_period_in_secs = kwargs['frozenTimePeriodInSecs']
+        if max_global_raw_data_size_mb is None and 'maxGlobalRawDataSizeMb' in kwargs:
+            max_global_raw_data_size_mb = kwargs['maxGlobalRawDataSizeMb']
+
         if acl is not None:
             _setter("acl", acl)
         if datatype is not None:
@@ -151,7 +157,13 @@ class _ShIndexesManagerState:
              frozen_time_period_in_secs: Optional[pulumi.Input[str]] = None,
              max_global_raw_data_size_mb: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if frozen_time_period_in_secs is None and 'frozenTimePeriodInSecs' in kwargs:
+            frozen_time_period_in_secs = kwargs['frozenTimePeriodInSecs']
+        if max_global_raw_data_size_mb is None and 'maxGlobalRawDataSizeMb' in kwargs:
+            max_global_raw_data_size_mb = kwargs['maxGlobalRawDataSizeMb']
+
         if acl is not None:
             _setter("acl", acl)
         if datatype is not None:
@@ -243,18 +255,6 @@ class ShIndexesManager(pulumi.CustomResource):
 
         As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tf_index = splunk.ShIndexesManager("tf-index",
-            datatype="event",
-            frozen_time_period_in_secs="94608000",
-            max_global_raw_data_size_mb="100")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] datatype: Valid values: (event | metric). Specifies the type of index.
@@ -278,18 +278,6 @@ class ShIndexesManager(pulumi.CustomResource):
         ## Authorization and authentication
 
         As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tf_index = splunk.ShIndexesManager("tf-index",
-            datatype="event",
-            frozen_time_period_in_secs="94608000",
-            max_global_raw_data_size_mb="100")
-        ```
 
         :param str resource_name: The name of the resource.
         :param ShIndexesManagerArgs args: The arguments to use to populate this resource's properties.
@@ -324,11 +312,7 @@ class ShIndexesManager(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ShIndexesManagerArgs.__new__(ShIndexesManagerArgs)
 
-            if acl is not None and not isinstance(acl, ShIndexesManagerAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                ShIndexesManagerAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, ShIndexesManagerAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["datatype"] = datatype
             __props__.__dict__["frozen_time_period_in_secs"] = frozen_time_period_in_secs

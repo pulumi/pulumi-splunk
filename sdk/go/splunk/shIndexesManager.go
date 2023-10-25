@@ -19,34 +19,6 @@ import (
 // ## Authorization and authentication
 //
 // As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewShIndexesManager(ctx, "tf-index", &splunk.ShIndexesManagerArgs{
-//				Datatype:               pulumi.String("event"),
-//				FrozenTimePeriodInSecs: pulumi.String("94608000"),
-//				MaxGlobalRawDataSizeMb: pulumi.String("100"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type ShIndexesManager struct {
 	pulumi.CustomResourceState
 

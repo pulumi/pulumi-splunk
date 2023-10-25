@@ -72,7 +72,19 @@ class AppsLocalAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -238,7 +250,19 @@ class ConfigsConfAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -404,7 +428,19 @@ class DataUiViewsAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -570,7 +606,19 @@ class GenericAclAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -736,7 +784,19 @@ class IndexesAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -902,7 +962,19 @@ class InputsHttpEventCollectorAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -1068,7 +1140,19 @@ class InputsMonitorAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -1234,7 +1318,19 @@ class InputsScriptAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -1400,7 +1496,19 @@ class InputsTcpCookedAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -1566,7 +1674,19 @@ class InputsTcpRawAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -1732,7 +1852,19 @@ class InputsTcpSplunkTcpTokenAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -1898,7 +2030,19 @@ class InputsUdpAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -2064,7 +2208,19 @@ class OutputsTcpDefaultAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -2230,7 +2386,19 @@ class OutputsTcpGroupAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -2396,7 +2564,19 @@ class OutputsTcpServerAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -2562,7 +2742,19 @@ class OutputsTcpSyslogAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -2728,7 +2920,19 @@ class SavedSearchesAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:
@@ -2894,7 +3098,19 @@ class ShIndexesManagerAclArgs:
              removable: Optional[pulumi.Input[bool]] = None,
              sharing: Optional[pulumi.Input[str]] = None,
              writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if can_change_perms is None and 'canChangePerms' in kwargs:
+            can_change_perms = kwargs['canChangePerms']
+        if can_share_app is None and 'canShareApp' in kwargs:
+            can_share_app = kwargs['canShareApp']
+        if can_share_global is None and 'canShareGlobal' in kwargs:
+            can_share_global = kwargs['canShareGlobal']
+        if can_share_user is None and 'canShareUser' in kwargs:
+            can_share_user = kwargs['canShareUser']
+        if can_write is None and 'canWrite' in kwargs:
+            can_write = kwargs['canWrite']
+
         if app is not None:
             _setter("app", app)
         if can_change_perms is not None:

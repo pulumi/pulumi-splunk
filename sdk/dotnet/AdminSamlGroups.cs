@@ -14,28 +14,6 @@ namespace Pulumi.Splunk
     /// 
     /// Manage external groups in an IdP response to internal Splunk roles.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var saml_group = new Splunk.AdminSamlGroups("saml-group", new()
-    ///     {
-    ///         Roles = new[]
-    ///         {
-    ///             "admin",
-    ///             "power",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// SAML groups can be imported using the id, e.g.

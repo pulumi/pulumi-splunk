@@ -79,7 +79,17 @@ class InputsUdpArgs:
              restrict_to_host: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if connection_host is None and 'connectionHost' in kwargs:
+            connection_host = kwargs['connectionHost']
+        if no_appending_timestamp is None and 'noAppendingTimestamp' in kwargs:
+            no_appending_timestamp = kwargs['noAppendingTimestamp']
+        if no_priority_stripping is None and 'noPriorityStripping' in kwargs:
+            no_priority_stripping = kwargs['noPriorityStripping']
+        if restrict_to_host is None and 'restrictToHost' in kwargs:
+            restrict_to_host = kwargs['restrictToHost']
+
         if acl is not None:
             _setter("acl", acl)
         if connection_host is not None:
@@ -322,7 +332,17 @@ class _InputsUdpState:
              restrict_to_host: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if connection_host is None and 'connectionHost' in kwargs:
+            connection_host = kwargs['connectionHost']
+        if no_appending_timestamp is None and 'noAppendingTimestamp' in kwargs:
+            no_appending_timestamp = kwargs['noAppendingTimestamp']
+        if no_priority_stripping is None and 'noPriorityStripping' in kwargs:
+            no_priority_stripping = kwargs['noPriorityStripping']
+        if restrict_to_host is None and 'restrictToHost' in kwargs:
+            restrict_to_host = kwargs['restrictToHost']
+
         if acl is not None:
             _setter("acl", acl)
         if connection_host is not None:
@@ -522,19 +542,6 @@ class InputsUdp(pulumi.CustomResource):
 
         Create and manage UDP data inputs.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        udp = splunk.InputsUdp("udp",
-            disabled=False,
-            index="main",
-            source="new",
-            sourcetype="new")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsUdpAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -566,19 +573,6 @@ class InputsUdp(pulumi.CustomResource):
         ## # Resource: InputsTcpRaw
 
         Create and manage UDP data inputs.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        udp = splunk.InputsUdp("udp",
-            disabled=False,
-            index="main",
-            source="new",
-            sourcetype="new")
-        ```
 
         :param str resource_name: The name of the resource.
         :param InputsUdpArgs args: The arguments to use to populate this resource's properties.
@@ -620,11 +614,7 @@ class InputsUdp(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsUdpArgs.__new__(InputsUdpArgs)
 
-            if acl is not None and not isinstance(acl, InputsUdpAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsUdpAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsUdpAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["connection_host"] = connection_host
             __props__.__dict__["disabled"] = disabled

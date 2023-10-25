@@ -13,25 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsMonitor
     /// 
     /// Create or update a new file or directory monitor input.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var monitor = new Splunk.InputsMonitor("monitor", new()
-    ///     {
-    ///         Recursive = true,
-    ///         Sourcetype = "text",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsMonitor:InputsMonitor")]
     public partial class InputsMonitor : global::Pulumi.CustomResource

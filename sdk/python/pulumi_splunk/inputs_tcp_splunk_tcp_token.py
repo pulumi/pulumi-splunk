@@ -37,7 +37,9 @@ class InputsTcpSplunkTcpTokenArgs:
              acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
              token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if acl is not None:
             _setter("acl", acl)
         if name is not None:
@@ -106,7 +108,9 @@ class _InputsTcpSplunkTcpTokenState:
              acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
              token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if acl is not None:
             _setter("acl", acl)
         if name is not None:
@@ -165,15 +169,6 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
 
         Manage receiver access using tokens.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", token="D66C45B3-7C28-48A1-A13A-027914146501")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsTcpSplunkTcpTokenAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -190,15 +185,6 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         ## # Resource: InputsTcpSplunkTcpToken
 
         Manage receiver access using tokens.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", token="D66C45B3-7C28-48A1-A13A-027914146501")
-        ```
 
         :param str resource_name: The name of the resource.
         :param InputsTcpSplunkTcpTokenArgs args: The arguments to use to populate this resource's properties.
@@ -231,11 +217,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsTcpSplunkTcpTokenArgs.__new__(InputsTcpSplunkTcpTokenArgs)
 
-            if acl is not None and not isinstance(acl, InputsTcpSplunkTcpTokenAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsTcpSplunkTcpTokenAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsTcpSplunkTcpTokenAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["name"] = name
             __props__.__dict__["token"] = token

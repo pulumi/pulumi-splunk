@@ -73,7 +73,21 @@ class OutputsTcpDefaultArgs:
              max_queue_size: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              send_cooked_data: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if default_group is None and 'defaultGroup' in kwargs:
+            default_group = kwargs['defaultGroup']
+        if drop_events_on_queue_full is None and 'dropEventsOnQueueFull' in kwargs:
+            drop_events_on_queue_full = kwargs['dropEventsOnQueueFull']
+        if heartbeat_frequency is None and 'heartbeatFrequency' in kwargs:
+            heartbeat_frequency = kwargs['heartbeatFrequency']
+        if index_and_forward is None and 'indexAndForward' in kwargs:
+            index_and_forward = kwargs['indexAndForward']
+        if max_queue_size is None and 'maxQueueSize' in kwargs:
+            max_queue_size = kwargs['maxQueueSize']
+        if send_cooked_data is None and 'sendCookedData' in kwargs:
+            send_cooked_data = kwargs['sendCookedData']
+
         if acl is not None:
             _setter("acl", acl)
         if default_group is not None:
@@ -274,7 +288,21 @@ class _OutputsTcpDefaultState:
              max_queue_size: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              send_cooked_data: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if default_group is None and 'defaultGroup' in kwargs:
+            default_group = kwargs['defaultGroup']
+        if drop_events_on_queue_full is None and 'dropEventsOnQueueFull' in kwargs:
+            drop_events_on_queue_full = kwargs['dropEventsOnQueueFull']
+        if heartbeat_frequency is None and 'heartbeatFrequency' in kwargs:
+            heartbeat_frequency = kwargs['heartbeatFrequency']
+        if index_and_forward is None and 'indexAndForward' in kwargs:
+            index_and_forward = kwargs['indexAndForward']
+        if max_queue_size is None and 'maxQueueSize' in kwargs:
+            max_queue_size = kwargs['maxQueueSize']
+        if send_cooked_data is None and 'sendCookedData' in kwargs:
+            send_cooked_data = kwargs['sendCookedData']
+
         if acl is not None:
             _setter("acl", acl)
         if default_group is not None:
@@ -435,21 +463,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
 
         Manage to global tcpout properties.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_default = splunk.OutputsTcpDefault("tcpDefault",
-            default_group="test-indexers",
-            disabled=False,
-            drop_events_on_queue_full=60,
-            index_and_forward=True,
-            max_queue_size="100KB",
-            send_cooked_data=True)
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpDefaultAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -484,21 +497,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
         ## # Resource: OutputsTcpDefault
 
         Manage to global tcpout properties.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_default = splunk.OutputsTcpDefault("tcpDefault",
-            default_group="test-indexers",
-            disabled=False,
-            drop_events_on_queue_full=60,
-            index_and_forward=True,
-            max_queue_size="100KB",
-            send_cooked_data=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpDefaultArgs args: The arguments to use to populate this resource's properties.
@@ -537,11 +535,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpDefaultArgs.__new__(OutputsTcpDefaultArgs)
 
-            if acl is not None and not isinstance(acl, OutputsTcpDefaultAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                OutputsTcpDefaultAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, OutputsTcpDefaultAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["default_group"] = default_group
             __props__.__dict__["disabled"] = disabled

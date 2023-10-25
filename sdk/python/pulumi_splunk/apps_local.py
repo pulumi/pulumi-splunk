@@ -88,7 +88,11 @@ class AppsLocalArgs:
              update: Optional[pulumi.Input[bool]] = None,
              version: Optional[pulumi.Input[str]] = None,
              visible: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if explicit_appname is None and 'explicitAppname' in kwargs:
+            explicit_appname = kwargs['explicitAppname']
+
         if acl is not None:
             _setter("acl", acl)
         if auth is not None:
@@ -359,7 +363,11 @@ class _AppsLocalState:
              update: Optional[pulumi.Input[bool]] = None,
              version: Optional[pulumi.Input[str]] = None,
              visible: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if explicit_appname is None and 'explicitAppname' in kwargs:
+            explicit_appname = kwargs['explicitAppname']
+
         if acl is not None:
             _setter("acl", acl)
         if auth is not None:
@@ -579,17 +587,6 @@ class AppsLocal(pulumi.CustomResource):
 
         Create, install and manage apps on your Splunk instance
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        amazon_connect_app = splunk.AppsLocal("amazonConnectApp",
-            explicit_appname="amazon_connect_app_for_splunk",
-            filename=True)
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AppsLocalAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -627,17 +624,6 @@ class AppsLocal(pulumi.CustomResource):
         ## # Resource: AppsLocal
 
         Create, install and manage apps on your Splunk instance
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        amazon_connect_app = splunk.AppsLocal("amazonConnectApp",
-            explicit_appname="amazon_connect_app_for_splunk",
-            filename=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param AppsLocalArgs args: The arguments to use to populate this resource's properties.
@@ -680,11 +666,7 @@ class AppsLocal(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AppsLocalArgs.__new__(AppsLocalArgs)
 
-            if acl is not None and not isinstance(acl, AppsLocalAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                AppsLocalAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, AppsLocalAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["auth"] = auth
             __props__.__dict__["author"] = author

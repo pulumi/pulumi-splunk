@@ -89,7 +89,23 @@ class InputsMonitorArgs:
              sourcetype: Optional[pulumi.Input[str]] = None,
              time_before_close: Optional[pulumi.Input[int]] = None,
              whitelist: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if crc_salt is None and 'crcSalt' in kwargs:
+            crc_salt = kwargs['crcSalt']
+        if follow_tail is None and 'followTail' in kwargs:
+            follow_tail = kwargs['followTail']
+        if host_regex is None and 'hostRegex' in kwargs:
+            host_regex = kwargs['hostRegex']
+        if host_segment is None and 'hostSegment' in kwargs:
+            host_segment = kwargs['hostSegment']
+        if ignore_older_than is None and 'ignoreOlderThan' in kwargs:
+            ignore_older_than = kwargs['ignoreOlderThan']
+        if rename_source is None and 'renameSource' in kwargs:
+            rename_source = kwargs['renameSource']
+        if time_before_close is None and 'timeBeforeClose' in kwargs:
+            time_before_close = kwargs['timeBeforeClose']
+
         if acl is not None:
             _setter("acl", acl)
         if blacklist is not None:
@@ -392,7 +408,23 @@ class _InputsMonitorState:
              sourcetype: Optional[pulumi.Input[str]] = None,
              time_before_close: Optional[pulumi.Input[int]] = None,
              whitelist: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if crc_salt is None and 'crcSalt' in kwargs:
+            crc_salt = kwargs['crcSalt']
+        if follow_tail is None and 'followTail' in kwargs:
+            follow_tail = kwargs['followTail']
+        if host_regex is None and 'hostRegex' in kwargs:
+            host_regex = kwargs['hostRegex']
+        if host_segment is None and 'hostSegment' in kwargs:
+            host_segment = kwargs['hostSegment']
+        if ignore_older_than is None and 'ignoreOlderThan' in kwargs:
+            ignore_older_than = kwargs['ignoreOlderThan']
+        if rename_source is None and 'renameSource' in kwargs:
+            rename_source = kwargs['renameSource']
+        if time_before_close is None and 'timeBeforeClose' in kwargs:
+            time_before_close = kwargs['timeBeforeClose']
+
         if acl is not None:
             _setter("acl", acl)
         if blacklist is not None:
@@ -646,17 +678,6 @@ class InputsMonitor(pulumi.CustomResource):
 
         Create or update a new file or directory monitor input.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        monitor = splunk.InputsMonitor("monitor",
-            recursive=True,
-            sourcetype="text")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsMonitorAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -686,17 +707,6 @@ class InputsMonitor(pulumi.CustomResource):
         ## # Resource: InputsMonitor
 
         Create or update a new file or directory monitor input.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        monitor = splunk.InputsMonitor("monitor",
-            recursive=True,
-            sourcetype="text")
-        ```
 
         :param str resource_name: The name of the resource.
         :param InputsMonitorArgs args: The arguments to use to populate this resource's properties.
@@ -742,11 +752,7 @@ class InputsMonitor(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsMonitorArgs.__new__(InputsMonitorArgs)
 
-            if acl is not None and not isinstance(acl, InputsMonitorAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsMonitorAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsMonitorAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["blacklist"] = blacklist
             __props__.__dict__["crc_salt"] = crc_salt
