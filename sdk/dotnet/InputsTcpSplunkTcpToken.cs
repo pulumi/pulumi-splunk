@@ -13,6 +13,24 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsTcpSplunkTcpToken
     /// 
     /// Manage receiver access using tokens.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var tcpSplunkTcpToken = new Splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", new()
+    ///     {
+    ///         Token = "D66C45B3-7C28-48A1-A13A-027914146501",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken")]
     public partial class InputsTcpSplunkTcpToken : global::Pulumi.CustomResource

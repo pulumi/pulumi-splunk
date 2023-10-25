@@ -13,6 +13,25 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsTcpSsl
     /// 
     /// Access or update the SSL configuration for the host.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Splunk.InputsTcpSsl("test", new()
+    ///     {
+    ///         Disabled = false,
+    ///         RequireClientCert = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpSsl:InputsTcpSsl")]
     public partial class InputsTcpSsl : global::Pulumi.CustomResource

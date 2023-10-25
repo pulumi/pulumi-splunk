@@ -308,6 +308,18 @@ class InputsTcpCooked(pulumi.CustomResource):
 
         Create or update cooked TCP input information and create new containers for managing cooked data.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_cooked = splunk.InputsTcpCooked("tcpCooked",
+            connection_host="dns",
+            disabled=False,
+            restrict_to_host="splunk")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsTcpCookedAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -332,6 +344,18 @@ class InputsTcpCooked(pulumi.CustomResource):
         ## # Resource: InputsTcpCooked
 
         Create or update cooked TCP input information and create new containers for managing cooked data.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_cooked = splunk.InputsTcpCooked("tcpCooked",
+            connection_host="dns",
+            disabled=False,
+            restrict_to_host="splunk")
+        ```
 
         :param str resource_name: The name of the resource.
         :param InputsTcpCookedArgs args: The arguments to use to populate this resource's properties.

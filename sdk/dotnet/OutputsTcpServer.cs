@@ -13,6 +13,24 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.OutputsTcpServer
     /// 
     /// Access data forwarding configurations.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var tcpServer = new Splunk.OutputsTcpServer("tcpServer", new()
+    ///     {
+    ///         SslAltNameToCheck = "old-host",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpServer:OutputsTcpServer")]
     public partial class OutputsTcpServer : global::Pulumi.CustomResource

@@ -15,6 +15,36 @@ import (
 // ## # Resource: InputsTcpRaw
 //
 // Create or update raw TCP input information for managing raw tcp inputs from forwarders.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpRaw(ctx, "tcpRaw", &splunk.InputsTcpRawArgs{
+//				Disabled:   pulumi.Bool(false),
+//				Index:      pulumi.String("main"),
+//				Queue:      pulumi.String("indexQueue"),
+//				Source:     pulumi.String("new"),
+//				Sourcetype: pulumi.String("new"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type InputsTcpRaw struct {
 	pulumi.CustomResourceState
 

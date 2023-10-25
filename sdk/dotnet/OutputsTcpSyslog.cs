@@ -13,6 +13,25 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.OutputsTcpSyslog
     /// 
     /// Access the configuration of a forwarded server configured to provide data in standard syslog format.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var tcpSyslog = new Splunk.OutputsTcpSyslog("tcpSyslog", new()
+    ///     {
+    ///         Priority = 5,
+    ///         Server = "new-host-1:1234",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpSyslog:OutputsTcpSyslog")]
     public partial class OutputsTcpSyslog : global::Pulumi.CustomResource

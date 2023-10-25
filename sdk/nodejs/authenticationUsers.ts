@@ -8,6 +8,20 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.AuthenticationUsers
  *
  * Create and update user information or delete the user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const user01 = new splunk.AuthenticationUsers("user01", {
+ *     email: "user01@example.com",
+ *     forceChangePass: false,
+ *     password: "password01",
+ *     roles: ["terraform-user01-role"],
+ * });
+ * ```
  */
 export class AuthenticationUsers extends pulumi.CustomResource {
     /**

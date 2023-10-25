@@ -15,6 +15,33 @@ import (
 // ## # Resource: OutputsTcpSyslog
 //
 // Access the configuration of a forwarded server configured to provide data in standard syslog format.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpSyslog(ctx, "tcpSyslog", &splunk.OutputsTcpSyslogArgs{
+//				Priority: pulumi.Int(5),
+//				Server:   pulumi.String("new-host-1:1234"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OutputsTcpSyslog struct {
 	pulumi.CustomResourceState
 

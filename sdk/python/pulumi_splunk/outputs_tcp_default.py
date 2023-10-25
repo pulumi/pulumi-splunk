@@ -463,6 +463,21 @@ class OutputsTcpDefault(pulumi.CustomResource):
 
         Manage to global tcpout properties.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_default = splunk.OutputsTcpDefault("tcpDefault",
+            default_group="test-indexers",
+            disabled=False,
+            drop_events_on_queue_full=60,
+            index_and_forward=True,
+            max_queue_size="100KB",
+            send_cooked_data=True)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpDefaultAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -497,6 +512,21 @@ class OutputsTcpDefault(pulumi.CustomResource):
         ## # Resource: OutputsTcpDefault
 
         Manage to global tcpout properties.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_default = splunk.OutputsTcpDefault("tcpDefault",
+            default_group="test-indexers",
+            disabled=False,
+            drop_events_on_queue_full=60,
+            index_and_forward=True,
+            max_queue_size="100KB",
+            send_cooked_data=True)
+        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpDefaultArgs args: The arguments to use to populate this resource's properties.

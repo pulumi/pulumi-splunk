@@ -13,6 +13,59 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewGenericAcl(ctx, "myApp", &splunk.GenericAclArgs{
+//				Acl: &splunk.GenericAclAclArgs{
+//					App:   pulumi.String("system"),
+//					Owner: pulumi.String("nobody"),
+//					Reads: pulumi.StringArray{
+//						pulumi.String("*"),
+//					},
+//					Writes: pulumi.StringArray{
+//						pulumi.String("admin"),
+//						pulumi.String("power"),
+//					},
+//				},
+//				Path: pulumi.String("apps/local/my_app"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = splunk.NewGenericAcl(ctx, "myDashboard", &splunk.GenericAclArgs{
+//				Acl: &splunk.GenericAclAclArgs{
+//					App:   pulumi.String("my_app"),
+//					Owner: pulumi.String("joe_user"),
+//					Reads: pulumi.StringArray{
+//						pulumi.String("team_joe"),
+//					},
+//					Writes: pulumi.StringArray{
+//						pulumi.String("team_joe"),
+//					},
+//				},
+//				Path: pulumi.String("data/ui/views/my_dashboard"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // # Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID

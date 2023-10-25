@@ -15,6 +15,32 @@ import (
 // ## # Resource: OutputsTcpServer
 //
 // Access data forwarding configurations.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpServer(ctx, "tcpServer", &splunk.OutputsTcpServerArgs{
+//				SslAltNameToCheck: pulumi.String("old-host"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OutputsTcpServer struct {
 	pulumi.CustomResourceState
 

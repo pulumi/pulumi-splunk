@@ -18,6 +18,25 @@ namespace Pulumi.Splunk
     /// 
     /// By default, all users can list all indexes. However, if the indexes_list_all capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
     /// To enable indexes_list_all capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var user01_index = new Splunk.Indexes("user01-index", new()
+    ///     {
+    ///         MaxHotBuckets = 6,
+    ///         MaxTotalDataSizeMb = 1000000,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/indexes:Indexes")]
     public partial class Indexes : global::Pulumi.CustomResource

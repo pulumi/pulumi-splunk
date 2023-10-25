@@ -16,6 +16,39 @@ import (
 // ## # Resource: OutputsTcpGroup
 //
 // Access to the configuration of a group of one or more data forwarding destinations.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewOutputsTcpGroup(ctx, "tcpGroup", &splunk.OutputsTcpGroupArgs{
+//				Disabled:              pulumi.Bool(false),
+//				DropEventsOnQueueFull: pulumi.Int(60),
+//				MaxQueueSize:          pulumi.String("100KB"),
+//				SendCookedData:        pulumi.Bool(true),
+//				Servers: pulumi.StringArray{
+//					pulumi.String("1.1.1.1:1234"),
+//					pulumi.String("2.2.2.2:1234"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type OutputsTcpGroup struct {
 	pulumi.CustomResourceState
 

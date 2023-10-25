@@ -10,6 +10,19 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsTcpCooked
  *
  * Create or update cooked TCP input information and create new containers for managing cooked data.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const tcpCooked = new splunk.InputsTcpCooked("tcpCooked", {
+ *     connectionHost: "dns",
+ *     disabled: false,
+ *     restrictToHost: "splunk",
+ * });
+ * ```
  */
 export class InputsTcpCooked extends pulumi.CustomResource {
     /**

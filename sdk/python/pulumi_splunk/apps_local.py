@@ -587,6 +587,17 @@ class AppsLocal(pulumi.CustomResource):
 
         Create, install and manage apps on your Splunk instance
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        amazon_connect_app = splunk.AppsLocal("amazonConnectApp",
+            explicit_appname="amazon_connect_app_for_splunk",
+            filename=True)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AppsLocalAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -624,6 +635,17 @@ class AppsLocal(pulumi.CustomResource):
         ## # Resource: AppsLocal
 
         Create, install and manage apps on your Splunk instance
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        amazon_connect_app = splunk.AppsLocal("amazonConnectApp",
+            explicit_appname="amazon_connect_app_for_splunk",
+            filename=True)
+        ```
 
         :param str resource_name: The name of the resource.
         :param AppsLocalArgs args: The arguments to use to populate this resource's properties.

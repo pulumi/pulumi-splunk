@@ -505,6 +505,15 @@ class OutputsTcpServer(pulumi.CustomResource):
 
         Access data forwarding configurations.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpServerAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -532,6 +541,15 @@ class OutputsTcpServer(pulumi.CustomResource):
         ## # Resource: OutputsTcpServer
 
         Access data forwarding configurations.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
+        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpServerArgs args: The arguments to use to populate this resource's properties.

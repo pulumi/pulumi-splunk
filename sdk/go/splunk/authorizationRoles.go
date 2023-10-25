@@ -15,6 +15,51 @@ import (
 // ## # Resource: AuthorizationRoles
 //
 // Create and update role information.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewAuthorizationRoles(ctx, "role01", &splunk.AuthorizationRolesArgs{
+//				Capabilities: pulumi.StringArray{
+//					pulumi.String("accelerate_datamodel"),
+//					pulumi.String("change_authentication"),
+//					pulumi.String("restart_splunkd"),
+//				},
+//				DefaultApp: pulumi.String("search"),
+//				ImportedRoles: pulumi.StringArray{
+//					pulumi.String("power"),
+//					pulumi.String("user"),
+//				},
+//				SearchIndexesAlloweds: pulumi.StringArray{
+//					pulumi.String("_audit"),
+//					pulumi.String("_internal"),
+//					pulumi.String("main"),
+//				},
+//				SearchIndexesDefaults: pulumi.StringArray{
+//					pulumi.String("_audit"),
+//					pulumi.String("_internal"),
+//					pulumi.String("main"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AuthorizationRoles struct {
 	pulumi.CustomResourceState
 

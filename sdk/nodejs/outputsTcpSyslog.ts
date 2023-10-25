@@ -10,6 +10,18 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.OutputsTcpSyslog
  *
  * Access the configuration of a forwarded server configured to provide data in standard syslog format.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const tcpSyslog = new splunk.OutputsTcpSyslog("tcpSyslog", {
+ *     priority: 5,
+ *     server: "new-host-1:1234",
+ * });
+ * ```
  */
 export class OutputsTcpSyslog extends pulumi.CustomResource {
     /**

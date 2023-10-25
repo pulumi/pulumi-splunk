@@ -255,6 +255,18 @@ class ShIndexesManager(pulumi.CustomResource):
 
         As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tf_index = splunk.ShIndexesManager("tf-index",
+            datatype="event",
+            frozen_time_period_in_secs="94608000",
+            max_global_raw_data_size_mb="100")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] datatype: Valid values: (event | metric). Specifies the type of index.
@@ -278,6 +290,18 @@ class ShIndexesManager(pulumi.CustomResource):
         ## Authorization and authentication
 
         As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        tf_index = splunk.ShIndexesManager("tf-index",
+            datatype="event",
+            frozen_time_period_in_secs="94608000",
+            max_global_raw_data_size_mb="100")
+        ```
 
         :param str resource_name: The name of the resource.
         :param ShIndexesManagerArgs args: The arguments to use to populate this resource's properties.

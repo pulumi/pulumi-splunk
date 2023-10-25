@@ -581,6 +581,35 @@ class AuthorizationRoles(pulumi.CustomResource):
 
         Create and update role information.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        role01 = splunk.AuthorizationRoles("role01",
+            capabilities=[
+                "accelerate_datamodel",
+                "change_authentication",
+                "restart_splunkd",
+            ],
+            default_app="search",
+            imported_roles=[
+                "power",
+                "user",
+            ],
+            search_indexes_alloweds=[
+                "_audit",
+                "_internal",
+                "main",
+            ],
+            search_indexes_defaults=[
+                "_audit",
+                "_internal",
+                "main",
+            ])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] capabilities: List of capabilities assigned to role.
@@ -607,6 +636,35 @@ class AuthorizationRoles(pulumi.CustomResource):
         ## # Resource: AuthorizationRoles
 
         Create and update role information.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        role01 = splunk.AuthorizationRoles("role01",
+            capabilities=[
+                "accelerate_datamodel",
+                "change_authentication",
+                "restart_splunkd",
+            ],
+            default_app="search",
+            imported_roles=[
+                "power",
+                "user",
+            ],
+            search_indexes_alloweds=[
+                "_audit",
+                "_internal",
+                "main",
+            ],
+            search_indexes_defaults=[
+                "_audit",
+                "_internal",
+                "main",
+            ])
+        ```
 
         :param str resource_name: The name of the resource.
         :param AuthorizationRolesArgs args: The arguments to use to populate this resource's properties.

@@ -13,6 +13,32 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.OutputsTcpGroup
     /// 
     /// Access to the configuration of a group of one or more data forwarding destinations.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var tcpGroup = new Splunk.OutputsTcpGroup("tcpGroup", new()
+    ///     {
+    ///         Disabled = false,
+    ///         DropEventsOnQueueFull = 60,
+    ///         MaxQueueSize = "100KB",
+    ///         SendCookedData = true,
+    ///         Servers = new[]
+    ///         {
+    ///             "1.1.1.1:1234",
+    ///             "2.2.2.2:1234",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpGroup:OutputsTcpGroup")]
     public partial class OutputsTcpGroup : global::Pulumi.CustomResource

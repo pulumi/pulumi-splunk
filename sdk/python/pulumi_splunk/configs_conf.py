@@ -161,6 +161,18 @@ class ConfigsConf(pulumi.CustomResource):
 
         Create and manage configuration file stanzas.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza", variables={
+            "disabled": "false",
+            "custom_key": "value",
+        })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -176,6 +188,18 @@ class ConfigsConf(pulumi.CustomResource):
         ## # Resource: ConfigsConf
 
         Create and manage configuration file stanzas.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza", variables={
+            "disabled": "false",
+            "custom_key": "value",
+        })
+        ```
 
         :param str resource_name: The name of the resource.
         :param ConfigsConfArgs args: The arguments to use to populate this resource's properties.

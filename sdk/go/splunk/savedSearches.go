@@ -16,6 +16,48 @@ import (
 // ## # Resource: SavedSearches
 //
 // Create and manage saved searches.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewSavedSearches(ctx, "savedSearch", &splunk.SavedSearchesArgs{
+//				Acl: &splunk.SavedSearchesAclArgs{
+//					App:     pulumi.String("launcher"),
+//					Owner:   pulumi.String("admin"),
+//					Sharing: pulumi.String("app"),
+//				},
+//				ActionEmailFormat:      pulumi.String("table"),
+//				ActionEmailMaxResults:  pulumi.Int(10),
+//				ActionEmailMaxTime:     pulumi.String("5m"),
+//				ActionEmailSendResults: pulumi.Bool(false),
+//				ActionEmailSubject:     pulumi.String("Splunk Alert: $name$"),
+//				ActionEmailTo:          pulumi.String("splunk@splunk.com"),
+//				ActionEmailTrackAlert:  pulumi.Bool(true),
+//				Actions:                pulumi.String("email"),
+//				CronSchedule:           pulumi.String("*/5 * * * *"),
+//				DispatchEarliestTime:   pulumi.String("rt-15m"),
+//				DispatchLatestTime:     pulumi.String("rt-0m"),
+//				Search:                 pulumi.String("index=main"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type SavedSearches struct {
 	pulumi.CustomResourceState
 

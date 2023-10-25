@@ -10,6 +10,18 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.AppsLocal
  *
  * Create, install and manage apps on your Splunk instance
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const amazonConnectApp = new splunk.AppsLocal("amazonConnectApp", {
+ *     explicitAppname: "amazon_connect_app_for_splunk",
+ *     filename: true,
+ * });
+ * ```
  */
 export class AppsLocal extends pulumi.CustomResource {
     /**

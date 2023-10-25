@@ -15,6 +15,33 @@ import (
 // ## # Resource: InputsTcpSsl
 //
 // Access or update the SSL configuration for the host.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsTcpSsl(ctx, "test", &splunk.InputsTcpSslArgs{
+//				Disabled:          pulumi.Bool(false),
+//				RequireClientCert: pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type InputsTcpSsl struct {
 	pulumi.CustomResourceState
 
