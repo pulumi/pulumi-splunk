@@ -13,29 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.OutputsTcpDefault
     /// 
     /// Manage to global tcpout properties.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var tcpDefault = new Splunk.OutputsTcpDefault("tcpDefault", new()
-    ///     {
-    ///         DefaultGroup = "test-indexers",
-    ///         Disabled = false,
-    ///         DropEventsOnQueueFull = 60,
-    ///         IndexAndForward = true,
-    ///         MaxQueueSize = "100KB",
-    ///         SendCookedData = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpDefault:OutputsTcpDefault")]
     public partial class OutputsTcpDefault : global::Pulumi.CustomResource

@@ -10,18 +10,6 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.ConfigsConf
  *
  * Create and manage configuration file stanzas.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as splunk from "@pulumi/splunk";
- *
- * const new_conf_stanza = new splunk.ConfigsConf("new-conf-stanza", {variables: {
- *     disabled: "false",
- *     custom_key: "value",
- * }});
- * ```
  */
 export class ConfigsConf extends pulumi.CustomResource {
     /**

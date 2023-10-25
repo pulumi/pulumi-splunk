@@ -14,34 +14,7 @@ import (
 
 // ## # Resource: AppsLocal
 //
-// # Create, install and manage apps on your Splunk instance
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewAppsLocal(ctx, "amazonConnectApp", &splunk.AppsLocalArgs{
-//				ExplicitAppname: pulumi.String("amazon_connect_app_for_splunk"),
-//				Filename:        pulumi.Bool(true),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
+// Create, install and manage apps on your Splunk instance
 type AppsLocal struct {
 	pulumi.CustomResourceState
 

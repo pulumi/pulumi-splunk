@@ -63,7 +63,13 @@ class OutputsTcpSyslogArgs:
              syslog_sourcetype: Optional[pulumi.Input[str]] = None,
              timestamp_format: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if syslog_sourcetype is None and 'syslogSourcetype' in kwargs:
+            syslog_sourcetype = kwargs['syslogSourcetype']
+        if timestamp_format is None and 'timestampFormat' in kwargs:
+            timestamp_format = kwargs['timestampFormat']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -234,7 +240,13 @@ class _OutputsTcpSyslogState:
              syslog_sourcetype: Optional[pulumi.Input[str]] = None,
              timestamp_format: Optional[pulumi.Input[str]] = None,
              type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if syslog_sourcetype is None and 'syslogSourcetype' in kwargs:
+            syslog_sourcetype = kwargs['syslogSourcetype']
+        if timestamp_format is None and 'timestampFormat' in kwargs:
+            timestamp_format = kwargs['timestampFormat']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -374,17 +386,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
 
         Access the configuration of a forwarded server configured to provide data in standard syslog format.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_syslog = splunk.OutputsTcpSyslog("tcpSyslog",
-            priority=5,
-            server="new-host-1:1234")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpSyslogAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -412,17 +413,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
         ## # Resource: OutputsTcpSyslog
 
         Access the configuration of a forwarded server configured to provide data in standard syslog format.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_syslog = splunk.OutputsTcpSyslog("tcpSyslog",
-            priority=5,
-            server="new-host-1:1234")
-        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpSyslogArgs args: The arguments to use to populate this resource's properties.
@@ -460,11 +450,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpSyslogArgs.__new__(OutputsTcpSyslogArgs)
 
-            if acl is not None and not isinstance(acl, OutputsTcpSyslogAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                OutputsTcpSyslogAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, OutputsTcpSyslogAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["name"] = name

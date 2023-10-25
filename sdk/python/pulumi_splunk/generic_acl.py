@@ -34,9 +34,13 @@ class GenericAclArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             path: pulumi.Input[str],
+             path: Optional[pulumi.Input[str]] = None,
              acl: Optional[pulumi.Input['GenericAclAclArgs']] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+
         _setter("path", path)
         if acl is not None:
             _setter("acl", acl)
@@ -92,7 +96,9 @@ class _GenericAclState:
              _setter: Callable[[Any, Any], None],
              acl: Optional[pulumi.Input['GenericAclAclArgs']] = None,
              path: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if acl is not None:
             _setter("acl", acl)
         if path is not None:
@@ -135,33 +141,6 @@ class GenericAcl(pulumi.CustomResource):
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        my_app = splunk.GenericAcl("myApp",
-            acl=splunk.GenericAclAclArgs(
-                app="system",
-                owner="nobody",
-                reads=["*"],
-                writes=[
-                    "admin",
-                    "power",
-                ],
-            ),
-            path="apps/local/my_app")
-        my_dashboard = splunk.GenericAcl("myDashboard",
-            acl=splunk.GenericAclAclArgs(
-                app="my_app",
-                owner="joe_user",
-                reads=["team_joe"],
-                writes=["team_joe"],
-            ),
-            path="data/ui/views/my_dashboard")
-        ```
-
         ## Import
 
         Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
@@ -185,33 +164,6 @@ class GenericAcl(pulumi.CustomResource):
                  args: GenericAclArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        my_app = splunk.GenericAcl("myApp",
-            acl=splunk.GenericAclAclArgs(
-                app="system",
-                owner="nobody",
-                reads=["*"],
-                writes=[
-                    "admin",
-                    "power",
-                ],
-            ),
-            path="apps/local/my_app")
-        my_dashboard = splunk.GenericAcl("myDashboard",
-            acl=splunk.GenericAclAclArgs(
-                app="my_app",
-                owner="joe_user",
-                reads=["team_joe"],
-                writes=["team_joe"],
-            ),
-            path="data/ui/views/my_dashboard")
-        ```
-
         ## Import
 
         Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
@@ -250,11 +202,7 @@ class GenericAcl(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = GenericAclArgs.__new__(GenericAclArgs)
 
-            if acl is not None and not isinstance(acl, GenericAclAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                GenericAclAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, GenericAclAclArgs, True)
             __props__.__dict__["acl"] = acl
             if path is None and not opts.urn:
                 raise TypeError("Missing required property 'path'")

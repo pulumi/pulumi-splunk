@@ -8,18 +8,6 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsTcpSsl
  *
  * Access or update the SSL configuration for the host.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as splunk from "@pulumi/splunk";
- *
- * const test = new splunk.InputsTcpSsl("test", {
- *     disabled: false,
- *     requireClientCert: true,
- * });
- * ```
  */
 export class InputsTcpSsl extends pulumi.CustomResource {
     /**

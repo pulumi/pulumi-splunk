@@ -13,30 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.AuthenticationUsers
     /// 
     /// Create and update user information or delete the user.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var user01 = new Splunk.AuthenticationUsers("user01", new()
-    ///     {
-    ///         Email = "user01@example.com",
-    ///         ForceChangePass = false,
-    ///         Password = "password01",
-    ///         Roles = new[]
-    ///         {
-    ///             "terraform-user01-role",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/authenticationUsers:AuthenticationUsers")]
     public partial class AuthenticationUsers : global::Pulumi.CustomResource

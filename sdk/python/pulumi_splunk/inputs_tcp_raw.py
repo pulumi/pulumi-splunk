@@ -81,7 +81,15 @@ class InputsTcpRawArgs:
              restrict_to_host: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if connection_host is None and 'connectionHost' in kwargs:
+            connection_host = kwargs['connectionHost']
+        if raw_tcp_done_timeout is None and 'rawTcpDoneTimeout' in kwargs:
+            raw_tcp_done_timeout = kwargs['rawTcpDoneTimeout']
+        if restrict_to_host is None and 'restrictToHost' in kwargs:
+            restrict_to_host = kwargs['restrictToHost']
+
         if acl is not None:
             _setter("acl", acl)
         if connection_host is not None:
@@ -318,7 +326,15 @@ class _InputsTcpRawState:
              restrict_to_host: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if connection_host is None and 'connectionHost' in kwargs:
+            connection_host = kwargs['connectionHost']
+        if raw_tcp_done_timeout is None and 'rawTcpDoneTimeout' in kwargs:
+            raw_tcp_done_timeout = kwargs['rawTcpDoneTimeout']
+        if restrict_to_host is None and 'restrictToHost' in kwargs:
+            restrict_to_host = kwargs['restrictToHost']
+
         if acl is not None:
             _setter("acl", acl)
         if connection_host is not None:
@@ -509,20 +525,6 @@ class InputsTcpRaw(pulumi.CustomResource):
 
         Create or update raw TCP input information for managing raw tcp inputs from forwarders.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_raw = splunk.InputsTcpRaw("tcpRaw",
-            disabled=False,
-            index="main",
-            queue="indexQueue",
-            source="new",
-            sourcetype="new")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsTcpRawAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -559,20 +561,6 @@ class InputsTcpRaw(pulumi.CustomResource):
         ## # Resource: InputsTcpRaw
 
         Create or update raw TCP input information for managing raw tcp inputs from forwarders.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_raw = splunk.InputsTcpRaw("tcpRaw",
-            disabled=False,
-            index="main",
-            queue="indexQueue",
-            source="new",
-            sourcetype="new")
-        ```
 
         :param str resource_name: The name of the resource.
         :param InputsTcpRawArgs args: The arguments to use to populate this resource's properties.
@@ -613,11 +601,7 @@ class InputsTcpRaw(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsTcpRawArgs.__new__(InputsTcpRawArgs)
 
-            if acl is not None and not isinstance(acl, InputsTcpRawAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsTcpRawAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsTcpRawAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["connection_host"] = connection_host
             __props__.__dict__["disabled"] = disabled

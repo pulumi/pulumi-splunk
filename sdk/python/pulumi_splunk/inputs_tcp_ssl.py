@@ -43,7 +43,15 @@ class InputsTcpSslArgs:
              require_client_cert: Optional[pulumi.Input[bool]] = None,
              root_ca: Optional[pulumi.Input[str]] = None,
              server_cert: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if require_client_cert is None and 'requireClientCert' in kwargs:
+            require_client_cert = kwargs['requireClientCert']
+        if root_ca is None and 'rootCa' in kwargs:
+            root_ca = kwargs['rootCa']
+        if server_cert is None and 'serverCert' in kwargs:
+            server_cert = kwargs['serverCert']
+
         if disabled is not None:
             _setter("disabled", disabled)
         if password is not None:
@@ -148,7 +156,15 @@ class _InputsTcpSslState:
              require_client_cert: Optional[pulumi.Input[bool]] = None,
              root_ca: Optional[pulumi.Input[str]] = None,
              server_cert: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if require_client_cert is None and 'requireClientCert' in kwargs:
+            require_client_cert = kwargs['requireClientCert']
+        if root_ca is None and 'rootCa' in kwargs:
+            root_ca = kwargs['rootCa']
+        if server_cert is None and 'serverCert' in kwargs:
+            server_cert = kwargs['serverCert']
+
         if disabled is not None:
             _setter("disabled", disabled)
         if password is not None:
@@ -237,17 +253,6 @@ class InputsTcpSsl(pulumi.CustomResource):
 
         Access or update the SSL configuration for the host.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        test = splunk.InputsTcpSsl("test",
-            disabled=False,
-            require_client_cert=True)
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] disabled: Indicates if input is disabled.
@@ -266,17 +271,6 @@ class InputsTcpSsl(pulumi.CustomResource):
         ## # Resource: InputsTcpSsl
 
         Access or update the SSL configuration for the host.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        test = splunk.InputsTcpSsl("test",
-            disabled=False,
-            require_client_cert=True)
-        ```
 
         :param str resource_name: The name of the resource.
         :param InputsTcpSslArgs args: The arguments to use to populate this resource's properties.

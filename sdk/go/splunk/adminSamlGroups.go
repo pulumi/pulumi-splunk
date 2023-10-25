@@ -16,35 +16,6 @@ import (
 //
 // Manage external groups in an IdP response to internal Splunk roles.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewAdminSamlGroups(ctx, "saml-group", &splunk.AdminSamlGroupsArgs{
-//				Roles: pulumi.StringArray{
-//					pulumi.String("admin"),
-//					pulumi.String("power"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // SAML groups can be imported using the id, e.g.

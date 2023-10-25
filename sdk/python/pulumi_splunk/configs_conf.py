@@ -36,7 +36,9 @@ class ConfigsConfArgs:
              acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
              variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if acl is not None:
             _setter("acl", acl)
         if name is not None:
@@ -101,7 +103,9 @@ class _ConfigsConfState:
              acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
              name: Optional[pulumi.Input[str]] = None,
              variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if acl is not None:
             _setter("acl", acl)
         if name is not None:
@@ -157,18 +161,6 @@ class ConfigsConf(pulumi.CustomResource):
 
         Create and manage configuration file stanzas.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza", variables={
-            "disabled": "false",
-            "custom_key": "value",
-        })
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -184,18 +176,6 @@ class ConfigsConf(pulumi.CustomResource):
         ## # Resource: ConfigsConf
 
         Create and manage configuration file stanzas.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza", variables={
-            "disabled": "false",
-            "custom_key": "value",
-        })
-        ```
 
         :param str resource_name: The name of the resource.
         :param ConfigsConfArgs args: The arguments to use to populate this resource's properties.
@@ -228,11 +208,7 @@ class ConfigsConf(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConfigsConfArgs.__new__(ConfigsConfArgs)
 
-            if acl is not None and not isinstance(acl, ConfigsConfAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                ConfigsConfAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, ConfigsConfAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["name"] = name
             __props__.__dict__["variables"] = variables

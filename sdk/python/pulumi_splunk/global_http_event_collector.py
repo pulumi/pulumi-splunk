@@ -52,7 +52,19 @@ class GlobalHttpEventCollectorArgs:
              max_threads: Optional[pulumi.Input[int]] = None,
              port: Optional[pulumi.Input[int]] = None,
              use_deployment_server: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if dedicated_io_threads is None and 'dedicatedIoThreads' in kwargs:
+            dedicated_io_threads = kwargs['dedicatedIoThreads']
+        if enable_ssl is None and 'enableSsl' in kwargs:
+            enable_ssl = kwargs['enableSsl']
+        if max_sockets is None and 'maxSockets' in kwargs:
+            max_sockets = kwargs['maxSockets']
+        if max_threads is None and 'maxThreads' in kwargs:
+            max_threads = kwargs['maxThreads']
+        if use_deployment_server is None and 'useDeploymentServer' in kwargs:
+            use_deployment_server = kwargs['useDeploymentServer']
+
         if dedicated_io_threads is not None:
             _setter("dedicated_io_threads", dedicated_io_threads)
         if disabled is not None:
@@ -195,7 +207,19 @@ class _GlobalHttpEventCollectorState:
              max_threads: Optional[pulumi.Input[int]] = None,
              port: Optional[pulumi.Input[int]] = None,
              use_deployment_server: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if dedicated_io_threads is None and 'dedicatedIoThreads' in kwargs:
+            dedicated_io_threads = kwargs['dedicatedIoThreads']
+        if enable_ssl is None and 'enableSsl' in kwargs:
+            enable_ssl = kwargs['enableSsl']
+        if max_sockets is None and 'maxSockets' in kwargs:
+            max_sockets = kwargs['maxSockets']
+        if max_threads is None and 'maxThreads' in kwargs:
+            max_threads = kwargs['maxThreads']
+        if use_deployment_server is None and 'useDeploymentServer' in kwargs:
+            use_deployment_server = kwargs['useDeploymentServer']
+
         if dedicated_io_threads is not None:
             _setter("dedicated_io_threads", dedicated_io_threads)
         if disabled is not None:
@@ -315,18 +339,6 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
 
         Update Global HTTP Event Collector input configuration.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        http = splunk.GlobalHttpEventCollector("http",
-            disabled=False,
-            enable_ssl=True,
-            port=8088)
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] dedicated_io_threads: Number of threads used by HTTP Input server.
@@ -348,18 +360,6 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
         ## # Resource: GlobalHttpEventCollector
 
         Update Global HTTP Event Collector input configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        http = splunk.GlobalHttpEventCollector("http",
-            disabled=False,
-            enable_ssl=True,
-            port=8088)
-        ```
 
         :param str resource_name: The name of the resource.
         :param GlobalHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

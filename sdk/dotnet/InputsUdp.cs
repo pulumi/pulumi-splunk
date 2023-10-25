@@ -13,27 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsTcpRaw
     /// 
     /// Create and manage UDP data inputs.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var udp = new Splunk.InputsUdp("udp", new()
-    ///     {
-    ///         Disabled = false,
-    ///         Index = "main",
-    ///         Source = "new",
-    ///         Sourcetype = "new",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsUdp:InputsUdp")]
     public partial class InputsUdp : global::Pulumi.CustomResource

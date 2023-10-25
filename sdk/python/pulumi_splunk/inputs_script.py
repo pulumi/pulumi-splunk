@@ -57,7 +57,7 @@ class InputsScriptArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             interval: pulumi.Input[int],
+             interval: Optional[pulumi.Input[int]] = None,
              acl: Optional[pulumi.Input['InputsScriptAclArgs']] = None,
              disabled: Optional[pulumi.Input[bool]] = None,
              host: Optional[pulumi.Input[str]] = None,
@@ -67,7 +67,13 @@ class InputsScriptArgs:
              rename_source: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if interval is None:
+            raise TypeError("Missing 'interval' argument")
+        if rename_source is None and 'renameSource' in kwargs:
+            rename_source = kwargs['renameSource']
+
         _setter("interval", interval)
         if acl is not None:
             _setter("acl", acl)
@@ -265,7 +271,11 @@ class _InputsScriptState:
              rename_source: Optional[pulumi.Input[str]] = None,
              source: Optional[pulumi.Input[str]] = None,
              sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if rename_source is None and 'renameSource' in kwargs:
+            rename_source = kwargs['renameSource']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -495,11 +505,7 @@ class InputsScript(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsScriptArgs.__new__(InputsScriptArgs)
 
-            if acl is not None and not isinstance(acl, InputsScriptAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsScriptAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsScriptAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["host"] = host

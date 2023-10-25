@@ -54,7 +54,13 @@ class InputsTcpCookedArgs:
              host: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              restrict_to_host: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if connection_host is None and 'connectionHost' in kwargs:
+            connection_host = kwargs['connectionHost']
+        if restrict_to_host is None and 'restrictToHost' in kwargs:
+            restrict_to_host = kwargs['restrictToHost']
+
         if acl is not None:
             _setter("acl", acl)
         if connection_host is not None:
@@ -187,7 +193,13 @@ class _InputsTcpCookedState:
              host: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              restrict_to_host: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if connection_host is None and 'connectionHost' in kwargs:
+            connection_host = kwargs['connectionHost']
+        if restrict_to_host is None and 'restrictToHost' in kwargs:
+            restrict_to_host = kwargs['restrictToHost']
+
         if acl is not None:
             _setter("acl", acl)
         if connection_host is not None:
@@ -296,18 +308,6 @@ class InputsTcpCooked(pulumi.CustomResource):
 
         Create or update cooked TCP input information and create new containers for managing cooked data.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_cooked = splunk.InputsTcpCooked("tcpCooked",
-            connection_host="dns",
-            disabled=False,
-            restrict_to_host="splunk")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsTcpCookedAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -332,18 +332,6 @@ class InputsTcpCooked(pulumi.CustomResource):
         ## # Resource: InputsTcpCooked
 
         Create or update cooked TCP input information and create new containers for managing cooked data.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_cooked = splunk.InputsTcpCooked("tcpCooked",
-            connection_host="dns",
-            disabled=False,
-            restrict_to_host="splunk")
-        ```
 
         :param str resource_name: The name of the resource.
         :param InputsTcpCookedArgs args: The arguments to use to populate this resource's properties.
@@ -379,11 +367,7 @@ class InputsTcpCooked(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsTcpCookedArgs.__new__(InputsTcpCookedArgs)
 
-            if acl is not None and not isinstance(acl, InputsTcpCookedAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                InputsTcpCookedAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, InputsTcpCookedAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["connection_host"] = connection_host
             __props__.__dict__["disabled"] = disabled

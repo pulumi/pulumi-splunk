@@ -10,56 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var myApp = new Splunk.GenericAcl("myApp", new()
-    ///     {
-    ///         Acl = new Splunk.Inputs.GenericAclAclArgs
-    ///         {
-    ///             App = "system",
-    ///             Owner = "nobody",
-    ///             Reads = new[]
-    ///             {
-    ///                 "*",
-    ///             },
-    ///             Writes = new[]
-    ///             {
-    ///                 "admin",
-    ///                 "power",
-    ///             },
-    ///         },
-    ///         Path = "apps/local/my_app",
-    ///     });
-    /// 
-    ///     var myDashboard = new Splunk.GenericAcl("myDashboard", new()
-    ///     {
-    ///         Acl = new Splunk.Inputs.GenericAclAclArgs
-    ///         {
-    ///             App = "my_app",
-    ///             Owner = "joe_user",
-    ///             Reads = new[]
-    ///             {
-    ///                 "team_joe",
-    ///             },
-    ///             Writes = new[]
-    ///             {
-    ///                 "team_joe",
-    ///             },
-    ///         },
-    ///         Path = "data/ui/views/my_dashboard",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID

@@ -10,20 +10,6 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsTcpRaw
  *
  * Create and manage UDP data inputs.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as splunk from "@pulumi/splunk";
- *
- * const udp = new splunk.InputsUdp("udp", {
- *     disabled: false,
- *     index: "main",
- *     source: "new",
- *     sourcetype: "new",
- * });
- * ```
  */
 export class InputsUdp extends pulumi.CustomResource {
     /**

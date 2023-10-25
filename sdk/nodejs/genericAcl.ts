@@ -7,35 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as splunk from "@pulumi/splunk";
- *
- * const myApp = new splunk.GenericAcl("myApp", {
- *     acl: {
- *         app: "system",
- *         owner: "nobody",
- *         reads: ["*"],
- *         writes: [
- *             "admin",
- *             "power",
- *         ],
- *     },
- *     path: "apps/local/my_app",
- * });
- * const myDashboard = new splunk.GenericAcl("myDashboard", {
- *     acl: {
- *         app: "my_app",
- *         owner: "joe_user",
- *         reads: ["team_joe"],
- *         writes: ["team_joe"],
- *     },
- *     path: "data/ui/views/my_dashboard",
- * });
- * ```
- *
  * ## Import
  *
  * Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID

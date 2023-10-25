@@ -13,41 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.SavedSearches
     /// 
     /// Create and manage saved searches.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var savedSearch = new Splunk.SavedSearches("savedSearch", new()
-    ///     {
-    ///         Acl = new Splunk.Inputs.SavedSearchesAclArgs
-    ///         {
-    ///             App = "launcher",
-    ///             Owner = "admin",
-    ///             Sharing = "app",
-    ///         },
-    ///         ActionEmailFormat = "table",
-    ///         ActionEmailMaxResults = 10,
-    ///         ActionEmailMaxTime = "5m",
-    ///         ActionEmailSendResults = false,
-    ///         ActionEmailSubject = "Splunk Alert: $name$",
-    ///         ActionEmailTo = "splunk@splunk.com",
-    ///         ActionEmailTrackAlert = true,
-    ///         Actions = "email",
-    ///         CronSchedule = "*/5 * * * *",
-    ///         DispatchEarliestTime = "rt-15m",
-    ///         DispatchLatestTime = "rt-0m",
-    ///         Search = "index=main",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/savedSearches:SavedSearches")]
     public partial class SavedSearches : global::Pulumi.CustomResource

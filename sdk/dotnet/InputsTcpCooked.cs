@@ -13,26 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsTcpCooked
     /// 
     /// Create or update cooked TCP input information and create new containers for managing cooked data.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var tcpCooked = new Splunk.InputsTcpCooked("tcpCooked", new()
-    ///     {
-    ///         ConnectionHost = "dns",
-    ///         Disabled = false,
-    ///         RestrictToHost = "splunk",
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpCooked:InputsTcpCooked")]
     public partial class InputsTcpCooked : global::Pulumi.CustomResource

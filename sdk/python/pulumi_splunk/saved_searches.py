@@ -521,7 +521,7 @@ class SavedSearchesArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             search: pulumi.Input[str],
+             search: Optional[pulumi.Input[str]] = None,
              acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
              action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
              action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
@@ -683,7 +683,321 @@ class SavedSearchesArgs:
              schedule_window: Optional[pulumi.Input[str]] = None,
              vsid: Optional[pulumi.Input[str]] = None,
              workload_pool: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if search is None:
+            raise TypeError("Missing 'search' argument")
+        if action_create_xsoar_incident is None and 'actionCreateXsoarIncident' in kwargs:
+            action_create_xsoar_incident = kwargs['actionCreateXsoarIncident']
+        if action_create_xsoar_incident_param_custom_fields is None and 'actionCreateXsoarIncidentParamCustomFields' in kwargs:
+            action_create_xsoar_incident_param_custom_fields = kwargs['actionCreateXsoarIncidentParamCustomFields']
+        if action_create_xsoar_incident_param_details is None and 'actionCreateXsoarIncidentParamDetails' in kwargs:
+            action_create_xsoar_incident_param_details = kwargs['actionCreateXsoarIncidentParamDetails']
+        if action_create_xsoar_incident_param_incident_name is None and 'actionCreateXsoarIncidentParamIncidentName' in kwargs:
+            action_create_xsoar_incident_param_incident_name = kwargs['actionCreateXsoarIncidentParamIncidentName']
+        if action_create_xsoar_incident_param_occurred is None and 'actionCreateXsoarIncidentParamOccurred' in kwargs:
+            action_create_xsoar_incident_param_occurred = kwargs['actionCreateXsoarIncidentParamOccurred']
+        if action_create_xsoar_incident_param_send_all_servers is None and 'actionCreateXsoarIncidentParamSendAllServers' in kwargs:
+            action_create_xsoar_incident_param_send_all_servers = kwargs['actionCreateXsoarIncidentParamSendAllServers']
+        if action_create_xsoar_incident_param_server_url is None and 'actionCreateXsoarIncidentParamServerUrl' in kwargs:
+            action_create_xsoar_incident_param_server_url = kwargs['actionCreateXsoarIncidentParamServerUrl']
+        if action_create_xsoar_incident_param_severity is None and 'actionCreateXsoarIncidentParamSeverity' in kwargs:
+            action_create_xsoar_incident_param_severity = kwargs['actionCreateXsoarIncidentParamSeverity']
+        if action_create_xsoar_incident_param_type is None and 'actionCreateXsoarIncidentParamType' in kwargs:
+            action_create_xsoar_incident_param_type = kwargs['actionCreateXsoarIncidentParamType']
+        if action_email_auth_password is None and 'actionEmailAuthPassword' in kwargs:
+            action_email_auth_password = kwargs['actionEmailAuthPassword']
+        if action_email_auth_username is None and 'actionEmailAuthUsername' in kwargs:
+            action_email_auth_username = kwargs['actionEmailAuthUsername']
+        if action_email_bcc is None and 'actionEmailBcc' in kwargs:
+            action_email_bcc = kwargs['actionEmailBcc']
+        if action_email_cc is None and 'actionEmailCc' in kwargs:
+            action_email_cc = kwargs['actionEmailCc']
+        if action_email_command is None and 'actionEmailCommand' in kwargs:
+            action_email_command = kwargs['actionEmailCommand']
+        if action_email_format is None and 'actionEmailFormat' in kwargs:
+            action_email_format = kwargs['actionEmailFormat']
+        if action_email_from is None and 'actionEmailFrom' in kwargs:
+            action_email_from = kwargs['actionEmailFrom']
+        if action_email_hostname is None and 'actionEmailHostname' in kwargs:
+            action_email_hostname = kwargs['actionEmailHostname']
+        if action_email_include_results_link is None and 'actionEmailIncludeResultsLink' in kwargs:
+            action_email_include_results_link = kwargs['actionEmailIncludeResultsLink']
+        if action_email_include_search is None and 'actionEmailIncludeSearch' in kwargs:
+            action_email_include_search = kwargs['actionEmailIncludeSearch']
+        if action_email_include_trigger is None and 'actionEmailIncludeTrigger' in kwargs:
+            action_email_include_trigger = kwargs['actionEmailIncludeTrigger']
+        if action_email_include_trigger_time is None and 'actionEmailIncludeTriggerTime' in kwargs:
+            action_email_include_trigger_time = kwargs['actionEmailIncludeTriggerTime']
+        if action_email_include_view_link is None and 'actionEmailIncludeViewLink' in kwargs:
+            action_email_include_view_link = kwargs['actionEmailIncludeViewLink']
+        if action_email_inline is None and 'actionEmailInline' in kwargs:
+            action_email_inline = kwargs['actionEmailInline']
+        if action_email_mailserver is None and 'actionEmailMailserver' in kwargs:
+            action_email_mailserver = kwargs['actionEmailMailserver']
+        if action_email_max_results is None and 'actionEmailMaxResults' in kwargs:
+            action_email_max_results = kwargs['actionEmailMaxResults']
+        if action_email_max_time is None and 'actionEmailMaxTime' in kwargs:
+            action_email_max_time = kwargs['actionEmailMaxTime']
+        if action_email_message_alert is None and 'actionEmailMessageAlert' in kwargs:
+            action_email_message_alert = kwargs['actionEmailMessageAlert']
+        if action_email_message_report is None and 'actionEmailMessageReport' in kwargs:
+            action_email_message_report = kwargs['actionEmailMessageReport']
+        if action_email_pdfview is None and 'actionEmailPdfview' in kwargs:
+            action_email_pdfview = kwargs['actionEmailPdfview']
+        if action_email_preprocess_results is None and 'actionEmailPreprocessResults' in kwargs:
+            action_email_preprocess_results = kwargs['actionEmailPreprocessResults']
+        if action_email_report_cid_font_list is None and 'actionEmailReportCidFontList' in kwargs:
+            action_email_report_cid_font_list = kwargs['actionEmailReportCidFontList']
+        if action_email_report_include_splunk_logo is None and 'actionEmailReportIncludeSplunkLogo' in kwargs:
+            action_email_report_include_splunk_logo = kwargs['actionEmailReportIncludeSplunkLogo']
+        if action_email_report_paper_orientation is None and 'actionEmailReportPaperOrientation' in kwargs:
+            action_email_report_paper_orientation = kwargs['actionEmailReportPaperOrientation']
+        if action_email_report_paper_size is None and 'actionEmailReportPaperSize' in kwargs:
+            action_email_report_paper_size = kwargs['actionEmailReportPaperSize']
+        if action_email_report_server_enabled is None and 'actionEmailReportServerEnabled' in kwargs:
+            action_email_report_server_enabled = kwargs['actionEmailReportServerEnabled']
+        if action_email_report_server_url is None and 'actionEmailReportServerUrl' in kwargs:
+            action_email_report_server_url = kwargs['actionEmailReportServerUrl']
+        if action_email_send_csv is None and 'actionEmailSendCsv' in kwargs:
+            action_email_send_csv = kwargs['actionEmailSendCsv']
+        if action_email_send_pdf is None and 'actionEmailSendPdf' in kwargs:
+            action_email_send_pdf = kwargs['actionEmailSendPdf']
+        if action_email_send_results is None and 'actionEmailSendResults' in kwargs:
+            action_email_send_results = kwargs['actionEmailSendResults']
+        if action_email_subject is None and 'actionEmailSubject' in kwargs:
+            action_email_subject = kwargs['actionEmailSubject']
+        if action_email_to is None and 'actionEmailTo' in kwargs:
+            action_email_to = kwargs['actionEmailTo']
+        if action_email_track_alert is None and 'actionEmailTrackAlert' in kwargs:
+            action_email_track_alert = kwargs['actionEmailTrackAlert']
+        if action_email_ttl is None and 'actionEmailTtl' in kwargs:
+            action_email_ttl = kwargs['actionEmailTtl']
+        if action_email_use_ssl is None and 'actionEmailUseSsl' in kwargs:
+            action_email_use_ssl = kwargs['actionEmailUseSsl']
+        if action_email_use_tls is None and 'actionEmailUseTls' in kwargs:
+            action_email_use_tls = kwargs['actionEmailUseTls']
+        if action_email_width_sort_columns is None and 'actionEmailWidthSortColumns' in kwargs:
+            action_email_width_sort_columns = kwargs['actionEmailWidthSortColumns']
+        if action_jira_service_desk_param_account is None and 'actionJiraServiceDeskParamAccount' in kwargs:
+            action_jira_service_desk_param_account = kwargs['actionJiraServiceDeskParamAccount']
+        if action_jira_service_desk_param_jira_description is None and 'actionJiraServiceDeskParamJiraDescription' in kwargs:
+            action_jira_service_desk_param_jira_description = kwargs['actionJiraServiceDeskParamJiraDescription']
+        if action_jira_service_desk_param_jira_issue_type is None and 'actionJiraServiceDeskParamJiraIssueType' in kwargs:
+            action_jira_service_desk_param_jira_issue_type = kwargs['actionJiraServiceDeskParamJiraIssueType']
+        if action_jira_service_desk_param_jira_priority is None and 'actionJiraServiceDeskParamJiraPriority' in kwargs:
+            action_jira_service_desk_param_jira_priority = kwargs['actionJiraServiceDeskParamJiraPriority']
+        if action_jira_service_desk_param_jira_project is None and 'actionJiraServiceDeskParamJiraProject' in kwargs:
+            action_jira_service_desk_param_jira_project = kwargs['actionJiraServiceDeskParamJiraProject']
+        if action_jira_service_desk_param_jira_summary is None and 'actionJiraServiceDeskParamJiraSummary' in kwargs:
+            action_jira_service_desk_param_jira_summary = kwargs['actionJiraServiceDeskParamJiraSummary']
+        if action_pagerduty_custom_details is None and 'actionPagerdutyCustomDetails' in kwargs:
+            action_pagerduty_custom_details = kwargs['actionPagerdutyCustomDetails']
+        if action_pagerduty_integration_key is None and 'actionPagerdutyIntegrationKey' in kwargs:
+            action_pagerduty_integration_key = kwargs['actionPagerdutyIntegrationKey']
+        if action_pagerduty_integration_key_override is None and 'actionPagerdutyIntegrationKeyOverride' in kwargs:
+            action_pagerduty_integration_key_override = kwargs['actionPagerdutyIntegrationKeyOverride']
+        if action_pagerduty_integration_url is None and 'actionPagerdutyIntegrationUrl' in kwargs:
+            action_pagerduty_integration_url = kwargs['actionPagerdutyIntegrationUrl']
+        if action_pagerduty_integration_url_override is None and 'actionPagerdutyIntegrationUrlOverride' in kwargs:
+            action_pagerduty_integration_url_override = kwargs['actionPagerdutyIntegrationUrlOverride']
+        if action_populate_lookup_command is None and 'actionPopulateLookupCommand' in kwargs:
+            action_populate_lookup_command = kwargs['actionPopulateLookupCommand']
+        if action_populate_lookup_dest is None and 'actionPopulateLookupDest' in kwargs:
+            action_populate_lookup_dest = kwargs['actionPopulateLookupDest']
+        if action_populate_lookup_hostname is None and 'actionPopulateLookupHostname' in kwargs:
+            action_populate_lookup_hostname = kwargs['actionPopulateLookupHostname']
+        if action_populate_lookup_max_results is None and 'actionPopulateLookupMaxResults' in kwargs:
+            action_populate_lookup_max_results = kwargs['actionPopulateLookupMaxResults']
+        if action_populate_lookup_max_time is None and 'actionPopulateLookupMaxTime' in kwargs:
+            action_populate_lookup_max_time = kwargs['actionPopulateLookupMaxTime']
+        if action_populate_lookup_track_alert is None and 'actionPopulateLookupTrackAlert' in kwargs:
+            action_populate_lookup_track_alert = kwargs['actionPopulateLookupTrackAlert']
+        if action_populate_lookup_ttl is None and 'actionPopulateLookupTtl' in kwargs:
+            action_populate_lookup_ttl = kwargs['actionPopulateLookupTtl']
+        if action_rss_command is None and 'actionRssCommand' in kwargs:
+            action_rss_command = kwargs['actionRssCommand']
+        if action_rss_hostname is None and 'actionRssHostname' in kwargs:
+            action_rss_hostname = kwargs['actionRssHostname']
+        if action_rss_max_results is None and 'actionRssMaxResults' in kwargs:
+            action_rss_max_results = kwargs['actionRssMaxResults']
+        if action_rss_max_time is None and 'actionRssMaxTime' in kwargs:
+            action_rss_max_time = kwargs['actionRssMaxTime']
+        if action_rss_track_alert is None and 'actionRssTrackAlert' in kwargs:
+            action_rss_track_alert = kwargs['actionRssTrackAlert']
+        if action_rss_ttl is None and 'actionRssTtl' in kwargs:
+            action_rss_ttl = kwargs['actionRssTtl']
+        if action_script_command is None and 'actionScriptCommand' in kwargs:
+            action_script_command = kwargs['actionScriptCommand']
+        if action_script_filename is None and 'actionScriptFilename' in kwargs:
+            action_script_filename = kwargs['actionScriptFilename']
+        if action_script_hostname is None and 'actionScriptHostname' in kwargs:
+            action_script_hostname = kwargs['actionScriptHostname']
+        if action_script_max_results is None and 'actionScriptMaxResults' in kwargs:
+            action_script_max_results = kwargs['actionScriptMaxResults']
+        if action_script_max_time is None and 'actionScriptMaxTime' in kwargs:
+            action_script_max_time = kwargs['actionScriptMaxTime']
+        if action_script_track_alert is None and 'actionScriptTrackAlert' in kwargs:
+            action_script_track_alert = kwargs['actionScriptTrackAlert']
+        if action_script_ttl is None and 'actionScriptTtl' in kwargs:
+            action_script_ttl = kwargs['actionScriptTtl']
+        if action_slack_param_attachment is None and 'actionSlackParamAttachment' in kwargs:
+            action_slack_param_attachment = kwargs['actionSlackParamAttachment']
+        if action_slack_param_channel is None and 'actionSlackParamChannel' in kwargs:
+            action_slack_param_channel = kwargs['actionSlackParamChannel']
+        if action_slack_param_fields is None and 'actionSlackParamFields' in kwargs:
+            action_slack_param_fields = kwargs['actionSlackParamFields']
+        if action_slack_param_message is None and 'actionSlackParamMessage' in kwargs:
+            action_slack_param_message = kwargs['actionSlackParamMessage']
+        if action_slack_param_webhook_url_override is None and 'actionSlackParamWebhookUrlOverride' in kwargs:
+            action_slack_param_webhook_url_override = kwargs['actionSlackParamWebhookUrlOverride']
+        if action_snow_event_param_account is None and 'actionSnowEventParamAccount' in kwargs:
+            action_snow_event_param_account = kwargs['actionSnowEventParamAccount']
+        if action_snow_event_param_additional_info is None and 'actionSnowEventParamAdditionalInfo' in kwargs:
+            action_snow_event_param_additional_info = kwargs['actionSnowEventParamAdditionalInfo']
+        if action_snow_event_param_ci_identifier is None and 'actionSnowEventParamCiIdentifier' in kwargs:
+            action_snow_event_param_ci_identifier = kwargs['actionSnowEventParamCiIdentifier']
+        if action_snow_event_param_custom_fields is None and 'actionSnowEventParamCustomFields' in kwargs:
+            action_snow_event_param_custom_fields = kwargs['actionSnowEventParamCustomFields']
+        if action_snow_event_param_description is None and 'actionSnowEventParamDescription' in kwargs:
+            action_snow_event_param_description = kwargs['actionSnowEventParamDescription']
+        if action_snow_event_param_node is None and 'actionSnowEventParamNode' in kwargs:
+            action_snow_event_param_node = kwargs['actionSnowEventParamNode']
+        if action_snow_event_param_resource is None and 'actionSnowEventParamResource' in kwargs:
+            action_snow_event_param_resource = kwargs['actionSnowEventParamResource']
+        if action_snow_event_param_severity is None and 'actionSnowEventParamSeverity' in kwargs:
+            action_snow_event_param_severity = kwargs['actionSnowEventParamSeverity']
+        if action_snow_event_param_type is None and 'actionSnowEventParamType' in kwargs:
+            action_snow_event_param_type = kwargs['actionSnowEventParamType']
+        if action_summary_index_command is None and 'actionSummaryIndexCommand' in kwargs:
+            action_summary_index_command = kwargs['actionSummaryIndexCommand']
+        if action_summary_index_hostname is None and 'actionSummaryIndexHostname' in kwargs:
+            action_summary_index_hostname = kwargs['actionSummaryIndexHostname']
+        if action_summary_index_inline is None and 'actionSummaryIndexInline' in kwargs:
+            action_summary_index_inline = kwargs['actionSummaryIndexInline']
+        if action_summary_index_max_results is None and 'actionSummaryIndexMaxResults' in kwargs:
+            action_summary_index_max_results = kwargs['actionSummaryIndexMaxResults']
+        if action_summary_index_max_time is None and 'actionSummaryIndexMaxTime' in kwargs:
+            action_summary_index_max_time = kwargs['actionSummaryIndexMaxTime']
+        if action_summary_index_name is None and 'actionSummaryIndexName' in kwargs:
+            action_summary_index_name = kwargs['actionSummaryIndexName']
+        if action_summary_index_track_alert is None and 'actionSummaryIndexTrackAlert' in kwargs:
+            action_summary_index_track_alert = kwargs['actionSummaryIndexTrackAlert']
+        if action_summary_index_ttl is None and 'actionSummaryIndexTtl' in kwargs:
+            action_summary_index_ttl = kwargs['actionSummaryIndexTtl']
+        if action_webhook_param_url is None and 'actionWebhookParamUrl' in kwargs:
+            action_webhook_param_url = kwargs['actionWebhookParamUrl']
+        if alert_comparator is None and 'alertComparator' in kwargs:
+            alert_comparator = kwargs['alertComparator']
+        if alert_condition is None and 'alertCondition' in kwargs:
+            alert_condition = kwargs['alertCondition']
+        if alert_digest_mode is None and 'alertDigestMode' in kwargs:
+            alert_digest_mode = kwargs['alertDigestMode']
+        if alert_expires is None and 'alertExpires' in kwargs:
+            alert_expires = kwargs['alertExpires']
+        if alert_severity is None and 'alertSeverity' in kwargs:
+            alert_severity = kwargs['alertSeverity']
+        if alert_suppress is None and 'alertSuppress' in kwargs:
+            alert_suppress = kwargs['alertSuppress']
+        if alert_suppress_fields is None and 'alertSuppressFields' in kwargs:
+            alert_suppress_fields = kwargs['alertSuppressFields']
+        if alert_suppress_period is None and 'alertSuppressPeriod' in kwargs:
+            alert_suppress_period = kwargs['alertSuppressPeriod']
+        if alert_threshold is None and 'alertThreshold' in kwargs:
+            alert_threshold = kwargs['alertThreshold']
+        if alert_track is None and 'alertTrack' in kwargs:
+            alert_track = kwargs['alertTrack']
+        if alert_type is None and 'alertType' in kwargs:
+            alert_type = kwargs['alertType']
+        if allow_skew is None and 'allowSkew' in kwargs:
+            allow_skew = kwargs['allowSkew']
+        if auto_summarize is None and 'autoSummarize' in kwargs:
+            auto_summarize = kwargs['autoSummarize']
+        if auto_summarize_command is None and 'autoSummarizeCommand' in kwargs:
+            auto_summarize_command = kwargs['autoSummarizeCommand']
+        if auto_summarize_cron_schedule is None and 'autoSummarizeCronSchedule' in kwargs:
+            auto_summarize_cron_schedule = kwargs['autoSummarizeCronSchedule']
+        if auto_summarize_dispatch_earliest_time is None and 'autoSummarizeDispatchEarliestTime' in kwargs:
+            auto_summarize_dispatch_earliest_time = kwargs['autoSummarizeDispatchEarliestTime']
+        if auto_summarize_dispatch_latest_time is None and 'autoSummarizeDispatchLatestTime' in kwargs:
+            auto_summarize_dispatch_latest_time = kwargs['autoSummarizeDispatchLatestTime']
+        if auto_summarize_dispatch_time_format is None and 'autoSummarizeDispatchTimeFormat' in kwargs:
+            auto_summarize_dispatch_time_format = kwargs['autoSummarizeDispatchTimeFormat']
+        if auto_summarize_dispatch_ttl is None and 'autoSummarizeDispatchTtl' in kwargs:
+            auto_summarize_dispatch_ttl = kwargs['autoSummarizeDispatchTtl']
+        if auto_summarize_max_disabled_buckets is None and 'autoSummarizeMaxDisabledBuckets' in kwargs:
+            auto_summarize_max_disabled_buckets = kwargs['autoSummarizeMaxDisabledBuckets']
+        if auto_summarize_max_summary_ratio is None and 'autoSummarizeMaxSummaryRatio' in kwargs:
+            auto_summarize_max_summary_ratio = kwargs['autoSummarizeMaxSummaryRatio']
+        if auto_summarize_max_summary_size is None and 'autoSummarizeMaxSummarySize' in kwargs:
+            auto_summarize_max_summary_size = kwargs['autoSummarizeMaxSummarySize']
+        if auto_summarize_max_time is None and 'autoSummarizeMaxTime' in kwargs:
+            auto_summarize_max_time = kwargs['autoSummarizeMaxTime']
+        if auto_summarize_suspend_period is None and 'autoSummarizeSuspendPeriod' in kwargs:
+            auto_summarize_suspend_period = kwargs['autoSummarizeSuspendPeriod']
+        if auto_summarize_timespan is None and 'autoSummarizeTimespan' in kwargs:
+            auto_summarize_timespan = kwargs['autoSummarizeTimespan']
+        if cron_schedule is None and 'cronSchedule' in kwargs:
+            cron_schedule = kwargs['cronSchedule']
+        if dispatch_buckets is None and 'dispatchBuckets' in kwargs:
+            dispatch_buckets = kwargs['dispatchBuckets']
+        if dispatch_earliest_time is None and 'dispatchEarliestTime' in kwargs:
+            dispatch_earliest_time = kwargs['dispatchEarliestTime']
+        if dispatch_index_earliest is None and 'dispatchIndexEarliest' in kwargs:
+            dispatch_index_earliest = kwargs['dispatchIndexEarliest']
+        if dispatch_index_latest is None and 'dispatchIndexLatest' in kwargs:
+            dispatch_index_latest = kwargs['dispatchIndexLatest']
+        if dispatch_indexed_realtime is None and 'dispatchIndexedRealtime' in kwargs:
+            dispatch_indexed_realtime = kwargs['dispatchIndexedRealtime']
+        if dispatch_indexed_realtime_minspan is None and 'dispatchIndexedRealtimeMinspan' in kwargs:
+            dispatch_indexed_realtime_minspan = kwargs['dispatchIndexedRealtimeMinspan']
+        if dispatch_indexed_realtime_offset is None and 'dispatchIndexedRealtimeOffset' in kwargs:
+            dispatch_indexed_realtime_offset = kwargs['dispatchIndexedRealtimeOffset']
+        if dispatch_latest_time is None and 'dispatchLatestTime' in kwargs:
+            dispatch_latest_time = kwargs['dispatchLatestTime']
+        if dispatch_lookups is None and 'dispatchLookups' in kwargs:
+            dispatch_lookups = kwargs['dispatchLookups']
+        if dispatch_max_count is None and 'dispatchMaxCount' in kwargs:
+            dispatch_max_count = kwargs['dispatchMaxCount']
+        if dispatch_max_time is None and 'dispatchMaxTime' in kwargs:
+            dispatch_max_time = kwargs['dispatchMaxTime']
+        if dispatch_reduce_freq is None and 'dispatchReduceFreq' in kwargs:
+            dispatch_reduce_freq = kwargs['dispatchReduceFreq']
+        if dispatch_rt_backfill is None and 'dispatchRtBackfill' in kwargs:
+            dispatch_rt_backfill = kwargs['dispatchRtBackfill']
+        if dispatch_rt_maximum_span is None and 'dispatchRtMaximumSpan' in kwargs:
+            dispatch_rt_maximum_span = kwargs['dispatchRtMaximumSpan']
+        if dispatch_spawn_process is None and 'dispatchSpawnProcess' in kwargs:
+            dispatch_spawn_process = kwargs['dispatchSpawnProcess']
+        if dispatch_time_format is None and 'dispatchTimeFormat' in kwargs:
+            dispatch_time_format = kwargs['dispatchTimeFormat']
+        if dispatch_ttl is None and 'dispatchTtl' in kwargs:
+            dispatch_ttl = kwargs['dispatchTtl']
+        if display_view is None and 'displayView' in kwargs:
+            display_view = kwargs['displayView']
+        if is_scheduled is None and 'isScheduled' in kwargs:
+            is_scheduled = kwargs['isScheduled']
+        if is_visible is None and 'isVisible' in kwargs:
+            is_visible = kwargs['isVisible']
+        if max_concurrent is None and 'maxConcurrent' in kwargs:
+            max_concurrent = kwargs['maxConcurrent']
+        if realtime_schedule is None and 'realtimeSchedule' in kwargs:
+            realtime_schedule = kwargs['realtimeSchedule']
+        if request_ui_dispatch_app is None and 'requestUiDispatchApp' in kwargs:
+            request_ui_dispatch_app = kwargs['requestUiDispatchApp']
+        if request_ui_dispatch_view is None and 'requestUiDispatchView' in kwargs:
+            request_ui_dispatch_view = kwargs['requestUiDispatchView']
+        if restart_on_searchpeer_add is None and 'restartOnSearchpeerAdd' in kwargs:
+            restart_on_searchpeer_add = kwargs['restartOnSearchpeerAdd']
+        if run_on_startup is None and 'runOnStartup' in kwargs:
+            run_on_startup = kwargs['runOnStartup']
+        if schedule_priority is None and 'schedulePriority' in kwargs:
+            schedule_priority = kwargs['schedulePriority']
+        if schedule_window is None and 'scheduleWindow' in kwargs:
+            schedule_window = kwargs['scheduleWindow']
+        if workload_pool is None and 'workloadPool' in kwargs:
+            workload_pool = kwargs['workloadPool']
+
         _setter("search", search)
         if acl is not None:
             _setter("acl", acl)
@@ -3653,7 +3967,329 @@ class _SavedSearchesState:
              search: Optional[pulumi.Input[str]] = None,
              vsid: Optional[pulumi.Input[str]] = None,
              workload_pool: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if action_create_xsoar_incident is None and 'actionCreateXsoarIncident' in kwargs:
+            action_create_xsoar_incident = kwargs['actionCreateXsoarIncident']
+        if action_create_xsoar_incident_param_custom_fields is None and 'actionCreateXsoarIncidentParamCustomFields' in kwargs:
+            action_create_xsoar_incident_param_custom_fields = kwargs['actionCreateXsoarIncidentParamCustomFields']
+        if action_create_xsoar_incident_param_details is None and 'actionCreateXsoarIncidentParamDetails' in kwargs:
+            action_create_xsoar_incident_param_details = kwargs['actionCreateXsoarIncidentParamDetails']
+        if action_create_xsoar_incident_param_incident_name is None and 'actionCreateXsoarIncidentParamIncidentName' in kwargs:
+            action_create_xsoar_incident_param_incident_name = kwargs['actionCreateXsoarIncidentParamIncidentName']
+        if action_create_xsoar_incident_param_occurred is None and 'actionCreateXsoarIncidentParamOccurred' in kwargs:
+            action_create_xsoar_incident_param_occurred = kwargs['actionCreateXsoarIncidentParamOccurred']
+        if action_create_xsoar_incident_param_send_all_servers is None and 'actionCreateXsoarIncidentParamSendAllServers' in kwargs:
+            action_create_xsoar_incident_param_send_all_servers = kwargs['actionCreateXsoarIncidentParamSendAllServers']
+        if action_create_xsoar_incident_param_server_url is None and 'actionCreateXsoarIncidentParamServerUrl' in kwargs:
+            action_create_xsoar_incident_param_server_url = kwargs['actionCreateXsoarIncidentParamServerUrl']
+        if action_create_xsoar_incident_param_severity is None and 'actionCreateXsoarIncidentParamSeverity' in kwargs:
+            action_create_xsoar_incident_param_severity = kwargs['actionCreateXsoarIncidentParamSeverity']
+        if action_create_xsoar_incident_param_type is None and 'actionCreateXsoarIncidentParamType' in kwargs:
+            action_create_xsoar_incident_param_type = kwargs['actionCreateXsoarIncidentParamType']
+        if action_email is None and 'actionEmail' in kwargs:
+            action_email = kwargs['actionEmail']
+        if action_email_auth_password is None and 'actionEmailAuthPassword' in kwargs:
+            action_email_auth_password = kwargs['actionEmailAuthPassword']
+        if action_email_auth_username is None and 'actionEmailAuthUsername' in kwargs:
+            action_email_auth_username = kwargs['actionEmailAuthUsername']
+        if action_email_bcc is None and 'actionEmailBcc' in kwargs:
+            action_email_bcc = kwargs['actionEmailBcc']
+        if action_email_cc is None and 'actionEmailCc' in kwargs:
+            action_email_cc = kwargs['actionEmailCc']
+        if action_email_command is None and 'actionEmailCommand' in kwargs:
+            action_email_command = kwargs['actionEmailCommand']
+        if action_email_format is None and 'actionEmailFormat' in kwargs:
+            action_email_format = kwargs['actionEmailFormat']
+        if action_email_from is None and 'actionEmailFrom' in kwargs:
+            action_email_from = kwargs['actionEmailFrom']
+        if action_email_hostname is None and 'actionEmailHostname' in kwargs:
+            action_email_hostname = kwargs['actionEmailHostname']
+        if action_email_include_results_link is None and 'actionEmailIncludeResultsLink' in kwargs:
+            action_email_include_results_link = kwargs['actionEmailIncludeResultsLink']
+        if action_email_include_search is None and 'actionEmailIncludeSearch' in kwargs:
+            action_email_include_search = kwargs['actionEmailIncludeSearch']
+        if action_email_include_trigger is None and 'actionEmailIncludeTrigger' in kwargs:
+            action_email_include_trigger = kwargs['actionEmailIncludeTrigger']
+        if action_email_include_trigger_time is None and 'actionEmailIncludeTriggerTime' in kwargs:
+            action_email_include_trigger_time = kwargs['actionEmailIncludeTriggerTime']
+        if action_email_include_view_link is None and 'actionEmailIncludeViewLink' in kwargs:
+            action_email_include_view_link = kwargs['actionEmailIncludeViewLink']
+        if action_email_inline is None and 'actionEmailInline' in kwargs:
+            action_email_inline = kwargs['actionEmailInline']
+        if action_email_mailserver is None and 'actionEmailMailserver' in kwargs:
+            action_email_mailserver = kwargs['actionEmailMailserver']
+        if action_email_max_results is None and 'actionEmailMaxResults' in kwargs:
+            action_email_max_results = kwargs['actionEmailMaxResults']
+        if action_email_max_time is None and 'actionEmailMaxTime' in kwargs:
+            action_email_max_time = kwargs['actionEmailMaxTime']
+        if action_email_message_alert is None and 'actionEmailMessageAlert' in kwargs:
+            action_email_message_alert = kwargs['actionEmailMessageAlert']
+        if action_email_message_report is None and 'actionEmailMessageReport' in kwargs:
+            action_email_message_report = kwargs['actionEmailMessageReport']
+        if action_email_pdfview is None and 'actionEmailPdfview' in kwargs:
+            action_email_pdfview = kwargs['actionEmailPdfview']
+        if action_email_preprocess_results is None and 'actionEmailPreprocessResults' in kwargs:
+            action_email_preprocess_results = kwargs['actionEmailPreprocessResults']
+        if action_email_report_cid_font_list is None and 'actionEmailReportCidFontList' in kwargs:
+            action_email_report_cid_font_list = kwargs['actionEmailReportCidFontList']
+        if action_email_report_include_splunk_logo is None and 'actionEmailReportIncludeSplunkLogo' in kwargs:
+            action_email_report_include_splunk_logo = kwargs['actionEmailReportIncludeSplunkLogo']
+        if action_email_report_paper_orientation is None and 'actionEmailReportPaperOrientation' in kwargs:
+            action_email_report_paper_orientation = kwargs['actionEmailReportPaperOrientation']
+        if action_email_report_paper_size is None and 'actionEmailReportPaperSize' in kwargs:
+            action_email_report_paper_size = kwargs['actionEmailReportPaperSize']
+        if action_email_report_server_enabled is None and 'actionEmailReportServerEnabled' in kwargs:
+            action_email_report_server_enabled = kwargs['actionEmailReportServerEnabled']
+        if action_email_report_server_url is None and 'actionEmailReportServerUrl' in kwargs:
+            action_email_report_server_url = kwargs['actionEmailReportServerUrl']
+        if action_email_send_csv is None and 'actionEmailSendCsv' in kwargs:
+            action_email_send_csv = kwargs['actionEmailSendCsv']
+        if action_email_send_pdf is None and 'actionEmailSendPdf' in kwargs:
+            action_email_send_pdf = kwargs['actionEmailSendPdf']
+        if action_email_send_results is None and 'actionEmailSendResults' in kwargs:
+            action_email_send_results = kwargs['actionEmailSendResults']
+        if action_email_subject is None and 'actionEmailSubject' in kwargs:
+            action_email_subject = kwargs['actionEmailSubject']
+        if action_email_to is None and 'actionEmailTo' in kwargs:
+            action_email_to = kwargs['actionEmailTo']
+        if action_email_track_alert is None and 'actionEmailTrackAlert' in kwargs:
+            action_email_track_alert = kwargs['actionEmailTrackAlert']
+        if action_email_ttl is None and 'actionEmailTtl' in kwargs:
+            action_email_ttl = kwargs['actionEmailTtl']
+        if action_email_use_ssl is None and 'actionEmailUseSsl' in kwargs:
+            action_email_use_ssl = kwargs['actionEmailUseSsl']
+        if action_email_use_tls is None and 'actionEmailUseTls' in kwargs:
+            action_email_use_tls = kwargs['actionEmailUseTls']
+        if action_email_width_sort_columns is None and 'actionEmailWidthSortColumns' in kwargs:
+            action_email_width_sort_columns = kwargs['actionEmailWidthSortColumns']
+        if action_jira_service_desk_param_account is None and 'actionJiraServiceDeskParamAccount' in kwargs:
+            action_jira_service_desk_param_account = kwargs['actionJiraServiceDeskParamAccount']
+        if action_jira_service_desk_param_jira_description is None and 'actionJiraServiceDeskParamJiraDescription' in kwargs:
+            action_jira_service_desk_param_jira_description = kwargs['actionJiraServiceDeskParamJiraDescription']
+        if action_jira_service_desk_param_jira_issue_type is None and 'actionJiraServiceDeskParamJiraIssueType' in kwargs:
+            action_jira_service_desk_param_jira_issue_type = kwargs['actionJiraServiceDeskParamJiraIssueType']
+        if action_jira_service_desk_param_jira_priority is None and 'actionJiraServiceDeskParamJiraPriority' in kwargs:
+            action_jira_service_desk_param_jira_priority = kwargs['actionJiraServiceDeskParamJiraPriority']
+        if action_jira_service_desk_param_jira_project is None and 'actionJiraServiceDeskParamJiraProject' in kwargs:
+            action_jira_service_desk_param_jira_project = kwargs['actionJiraServiceDeskParamJiraProject']
+        if action_jira_service_desk_param_jira_summary is None and 'actionJiraServiceDeskParamJiraSummary' in kwargs:
+            action_jira_service_desk_param_jira_summary = kwargs['actionJiraServiceDeskParamJiraSummary']
+        if action_pagerduty_custom_details is None and 'actionPagerdutyCustomDetails' in kwargs:
+            action_pagerduty_custom_details = kwargs['actionPagerdutyCustomDetails']
+        if action_pagerduty_integration_key is None and 'actionPagerdutyIntegrationKey' in kwargs:
+            action_pagerduty_integration_key = kwargs['actionPagerdutyIntegrationKey']
+        if action_pagerduty_integration_key_override is None and 'actionPagerdutyIntegrationKeyOverride' in kwargs:
+            action_pagerduty_integration_key_override = kwargs['actionPagerdutyIntegrationKeyOverride']
+        if action_pagerduty_integration_url is None and 'actionPagerdutyIntegrationUrl' in kwargs:
+            action_pagerduty_integration_url = kwargs['actionPagerdutyIntegrationUrl']
+        if action_pagerduty_integration_url_override is None and 'actionPagerdutyIntegrationUrlOverride' in kwargs:
+            action_pagerduty_integration_url_override = kwargs['actionPagerdutyIntegrationUrlOverride']
+        if action_populate_lookup is None and 'actionPopulateLookup' in kwargs:
+            action_populate_lookup = kwargs['actionPopulateLookup']
+        if action_populate_lookup_command is None and 'actionPopulateLookupCommand' in kwargs:
+            action_populate_lookup_command = kwargs['actionPopulateLookupCommand']
+        if action_populate_lookup_dest is None and 'actionPopulateLookupDest' in kwargs:
+            action_populate_lookup_dest = kwargs['actionPopulateLookupDest']
+        if action_populate_lookup_hostname is None and 'actionPopulateLookupHostname' in kwargs:
+            action_populate_lookup_hostname = kwargs['actionPopulateLookupHostname']
+        if action_populate_lookup_max_results is None and 'actionPopulateLookupMaxResults' in kwargs:
+            action_populate_lookup_max_results = kwargs['actionPopulateLookupMaxResults']
+        if action_populate_lookup_max_time is None and 'actionPopulateLookupMaxTime' in kwargs:
+            action_populate_lookup_max_time = kwargs['actionPopulateLookupMaxTime']
+        if action_populate_lookup_track_alert is None and 'actionPopulateLookupTrackAlert' in kwargs:
+            action_populate_lookup_track_alert = kwargs['actionPopulateLookupTrackAlert']
+        if action_populate_lookup_ttl is None and 'actionPopulateLookupTtl' in kwargs:
+            action_populate_lookup_ttl = kwargs['actionPopulateLookupTtl']
+        if action_rss is None and 'actionRss' in kwargs:
+            action_rss = kwargs['actionRss']
+        if action_rss_command is None and 'actionRssCommand' in kwargs:
+            action_rss_command = kwargs['actionRssCommand']
+        if action_rss_hostname is None and 'actionRssHostname' in kwargs:
+            action_rss_hostname = kwargs['actionRssHostname']
+        if action_rss_max_results is None and 'actionRssMaxResults' in kwargs:
+            action_rss_max_results = kwargs['actionRssMaxResults']
+        if action_rss_max_time is None and 'actionRssMaxTime' in kwargs:
+            action_rss_max_time = kwargs['actionRssMaxTime']
+        if action_rss_track_alert is None and 'actionRssTrackAlert' in kwargs:
+            action_rss_track_alert = kwargs['actionRssTrackAlert']
+        if action_rss_ttl is None and 'actionRssTtl' in kwargs:
+            action_rss_ttl = kwargs['actionRssTtl']
+        if action_script is None and 'actionScript' in kwargs:
+            action_script = kwargs['actionScript']
+        if action_script_command is None and 'actionScriptCommand' in kwargs:
+            action_script_command = kwargs['actionScriptCommand']
+        if action_script_filename is None and 'actionScriptFilename' in kwargs:
+            action_script_filename = kwargs['actionScriptFilename']
+        if action_script_hostname is None and 'actionScriptHostname' in kwargs:
+            action_script_hostname = kwargs['actionScriptHostname']
+        if action_script_max_results is None and 'actionScriptMaxResults' in kwargs:
+            action_script_max_results = kwargs['actionScriptMaxResults']
+        if action_script_max_time is None and 'actionScriptMaxTime' in kwargs:
+            action_script_max_time = kwargs['actionScriptMaxTime']
+        if action_script_track_alert is None and 'actionScriptTrackAlert' in kwargs:
+            action_script_track_alert = kwargs['actionScriptTrackAlert']
+        if action_script_ttl is None and 'actionScriptTtl' in kwargs:
+            action_script_ttl = kwargs['actionScriptTtl']
+        if action_slack_param_attachment is None and 'actionSlackParamAttachment' in kwargs:
+            action_slack_param_attachment = kwargs['actionSlackParamAttachment']
+        if action_slack_param_channel is None and 'actionSlackParamChannel' in kwargs:
+            action_slack_param_channel = kwargs['actionSlackParamChannel']
+        if action_slack_param_fields is None and 'actionSlackParamFields' in kwargs:
+            action_slack_param_fields = kwargs['actionSlackParamFields']
+        if action_slack_param_message is None and 'actionSlackParamMessage' in kwargs:
+            action_slack_param_message = kwargs['actionSlackParamMessage']
+        if action_slack_param_webhook_url_override is None and 'actionSlackParamWebhookUrlOverride' in kwargs:
+            action_slack_param_webhook_url_override = kwargs['actionSlackParamWebhookUrlOverride']
+        if action_snow_event_param_account is None and 'actionSnowEventParamAccount' in kwargs:
+            action_snow_event_param_account = kwargs['actionSnowEventParamAccount']
+        if action_snow_event_param_additional_info is None and 'actionSnowEventParamAdditionalInfo' in kwargs:
+            action_snow_event_param_additional_info = kwargs['actionSnowEventParamAdditionalInfo']
+        if action_snow_event_param_ci_identifier is None and 'actionSnowEventParamCiIdentifier' in kwargs:
+            action_snow_event_param_ci_identifier = kwargs['actionSnowEventParamCiIdentifier']
+        if action_snow_event_param_custom_fields is None and 'actionSnowEventParamCustomFields' in kwargs:
+            action_snow_event_param_custom_fields = kwargs['actionSnowEventParamCustomFields']
+        if action_snow_event_param_description is None and 'actionSnowEventParamDescription' in kwargs:
+            action_snow_event_param_description = kwargs['actionSnowEventParamDescription']
+        if action_snow_event_param_node is None and 'actionSnowEventParamNode' in kwargs:
+            action_snow_event_param_node = kwargs['actionSnowEventParamNode']
+        if action_snow_event_param_resource is None and 'actionSnowEventParamResource' in kwargs:
+            action_snow_event_param_resource = kwargs['actionSnowEventParamResource']
+        if action_snow_event_param_severity is None and 'actionSnowEventParamSeverity' in kwargs:
+            action_snow_event_param_severity = kwargs['actionSnowEventParamSeverity']
+        if action_snow_event_param_type is None and 'actionSnowEventParamType' in kwargs:
+            action_snow_event_param_type = kwargs['actionSnowEventParamType']
+        if action_summary_index is None and 'actionSummaryIndex' in kwargs:
+            action_summary_index = kwargs['actionSummaryIndex']
+        if action_summary_index_command is None and 'actionSummaryIndexCommand' in kwargs:
+            action_summary_index_command = kwargs['actionSummaryIndexCommand']
+        if action_summary_index_hostname is None and 'actionSummaryIndexHostname' in kwargs:
+            action_summary_index_hostname = kwargs['actionSummaryIndexHostname']
+        if action_summary_index_inline is None and 'actionSummaryIndexInline' in kwargs:
+            action_summary_index_inline = kwargs['actionSummaryIndexInline']
+        if action_summary_index_max_results is None and 'actionSummaryIndexMaxResults' in kwargs:
+            action_summary_index_max_results = kwargs['actionSummaryIndexMaxResults']
+        if action_summary_index_max_time is None and 'actionSummaryIndexMaxTime' in kwargs:
+            action_summary_index_max_time = kwargs['actionSummaryIndexMaxTime']
+        if action_summary_index_name is None and 'actionSummaryIndexName' in kwargs:
+            action_summary_index_name = kwargs['actionSummaryIndexName']
+        if action_summary_index_track_alert is None and 'actionSummaryIndexTrackAlert' in kwargs:
+            action_summary_index_track_alert = kwargs['actionSummaryIndexTrackAlert']
+        if action_summary_index_ttl is None and 'actionSummaryIndexTtl' in kwargs:
+            action_summary_index_ttl = kwargs['actionSummaryIndexTtl']
+        if action_webhook_param_url is None and 'actionWebhookParamUrl' in kwargs:
+            action_webhook_param_url = kwargs['actionWebhookParamUrl']
+        if alert_comparator is None and 'alertComparator' in kwargs:
+            alert_comparator = kwargs['alertComparator']
+        if alert_condition is None and 'alertCondition' in kwargs:
+            alert_condition = kwargs['alertCondition']
+        if alert_digest_mode is None and 'alertDigestMode' in kwargs:
+            alert_digest_mode = kwargs['alertDigestMode']
+        if alert_expires is None and 'alertExpires' in kwargs:
+            alert_expires = kwargs['alertExpires']
+        if alert_severity is None and 'alertSeverity' in kwargs:
+            alert_severity = kwargs['alertSeverity']
+        if alert_suppress is None and 'alertSuppress' in kwargs:
+            alert_suppress = kwargs['alertSuppress']
+        if alert_suppress_fields is None and 'alertSuppressFields' in kwargs:
+            alert_suppress_fields = kwargs['alertSuppressFields']
+        if alert_suppress_period is None and 'alertSuppressPeriod' in kwargs:
+            alert_suppress_period = kwargs['alertSuppressPeriod']
+        if alert_threshold is None and 'alertThreshold' in kwargs:
+            alert_threshold = kwargs['alertThreshold']
+        if alert_track is None and 'alertTrack' in kwargs:
+            alert_track = kwargs['alertTrack']
+        if alert_type is None and 'alertType' in kwargs:
+            alert_type = kwargs['alertType']
+        if allow_skew is None and 'allowSkew' in kwargs:
+            allow_skew = kwargs['allowSkew']
+        if auto_summarize is None and 'autoSummarize' in kwargs:
+            auto_summarize = kwargs['autoSummarize']
+        if auto_summarize_command is None and 'autoSummarizeCommand' in kwargs:
+            auto_summarize_command = kwargs['autoSummarizeCommand']
+        if auto_summarize_cron_schedule is None and 'autoSummarizeCronSchedule' in kwargs:
+            auto_summarize_cron_schedule = kwargs['autoSummarizeCronSchedule']
+        if auto_summarize_dispatch_earliest_time is None and 'autoSummarizeDispatchEarliestTime' in kwargs:
+            auto_summarize_dispatch_earliest_time = kwargs['autoSummarizeDispatchEarliestTime']
+        if auto_summarize_dispatch_latest_time is None and 'autoSummarizeDispatchLatestTime' in kwargs:
+            auto_summarize_dispatch_latest_time = kwargs['autoSummarizeDispatchLatestTime']
+        if auto_summarize_dispatch_time_format is None and 'autoSummarizeDispatchTimeFormat' in kwargs:
+            auto_summarize_dispatch_time_format = kwargs['autoSummarizeDispatchTimeFormat']
+        if auto_summarize_dispatch_ttl is None and 'autoSummarizeDispatchTtl' in kwargs:
+            auto_summarize_dispatch_ttl = kwargs['autoSummarizeDispatchTtl']
+        if auto_summarize_max_disabled_buckets is None and 'autoSummarizeMaxDisabledBuckets' in kwargs:
+            auto_summarize_max_disabled_buckets = kwargs['autoSummarizeMaxDisabledBuckets']
+        if auto_summarize_max_summary_ratio is None and 'autoSummarizeMaxSummaryRatio' in kwargs:
+            auto_summarize_max_summary_ratio = kwargs['autoSummarizeMaxSummaryRatio']
+        if auto_summarize_max_summary_size is None and 'autoSummarizeMaxSummarySize' in kwargs:
+            auto_summarize_max_summary_size = kwargs['autoSummarizeMaxSummarySize']
+        if auto_summarize_max_time is None and 'autoSummarizeMaxTime' in kwargs:
+            auto_summarize_max_time = kwargs['autoSummarizeMaxTime']
+        if auto_summarize_suspend_period is None and 'autoSummarizeSuspendPeriod' in kwargs:
+            auto_summarize_suspend_period = kwargs['autoSummarizeSuspendPeriod']
+        if auto_summarize_timespan is None and 'autoSummarizeTimespan' in kwargs:
+            auto_summarize_timespan = kwargs['autoSummarizeTimespan']
+        if cron_schedule is None and 'cronSchedule' in kwargs:
+            cron_schedule = kwargs['cronSchedule']
+        if dispatch_buckets is None and 'dispatchBuckets' in kwargs:
+            dispatch_buckets = kwargs['dispatchBuckets']
+        if dispatch_earliest_time is None and 'dispatchEarliestTime' in kwargs:
+            dispatch_earliest_time = kwargs['dispatchEarliestTime']
+        if dispatch_index_earliest is None and 'dispatchIndexEarliest' in kwargs:
+            dispatch_index_earliest = kwargs['dispatchIndexEarliest']
+        if dispatch_index_latest is None and 'dispatchIndexLatest' in kwargs:
+            dispatch_index_latest = kwargs['dispatchIndexLatest']
+        if dispatch_indexed_realtime is None and 'dispatchIndexedRealtime' in kwargs:
+            dispatch_indexed_realtime = kwargs['dispatchIndexedRealtime']
+        if dispatch_indexed_realtime_minspan is None and 'dispatchIndexedRealtimeMinspan' in kwargs:
+            dispatch_indexed_realtime_minspan = kwargs['dispatchIndexedRealtimeMinspan']
+        if dispatch_indexed_realtime_offset is None and 'dispatchIndexedRealtimeOffset' in kwargs:
+            dispatch_indexed_realtime_offset = kwargs['dispatchIndexedRealtimeOffset']
+        if dispatch_latest_time is None and 'dispatchLatestTime' in kwargs:
+            dispatch_latest_time = kwargs['dispatchLatestTime']
+        if dispatch_lookups is None and 'dispatchLookups' in kwargs:
+            dispatch_lookups = kwargs['dispatchLookups']
+        if dispatch_max_count is None and 'dispatchMaxCount' in kwargs:
+            dispatch_max_count = kwargs['dispatchMaxCount']
+        if dispatch_max_time is None and 'dispatchMaxTime' in kwargs:
+            dispatch_max_time = kwargs['dispatchMaxTime']
+        if dispatch_reduce_freq is None and 'dispatchReduceFreq' in kwargs:
+            dispatch_reduce_freq = kwargs['dispatchReduceFreq']
+        if dispatch_rt_backfill is None and 'dispatchRtBackfill' in kwargs:
+            dispatch_rt_backfill = kwargs['dispatchRtBackfill']
+        if dispatch_rt_maximum_span is None and 'dispatchRtMaximumSpan' in kwargs:
+            dispatch_rt_maximum_span = kwargs['dispatchRtMaximumSpan']
+        if dispatch_spawn_process is None and 'dispatchSpawnProcess' in kwargs:
+            dispatch_spawn_process = kwargs['dispatchSpawnProcess']
+        if dispatch_time_format is None and 'dispatchTimeFormat' in kwargs:
+            dispatch_time_format = kwargs['dispatchTimeFormat']
+        if dispatch_ttl is None and 'dispatchTtl' in kwargs:
+            dispatch_ttl = kwargs['dispatchTtl']
+        if display_view is None and 'displayView' in kwargs:
+            display_view = kwargs['displayView']
+        if is_scheduled is None and 'isScheduled' in kwargs:
+            is_scheduled = kwargs['isScheduled']
+        if is_visible is None and 'isVisible' in kwargs:
+            is_visible = kwargs['isVisible']
+        if max_concurrent is None and 'maxConcurrent' in kwargs:
+            max_concurrent = kwargs['maxConcurrent']
+        if realtime_schedule is None and 'realtimeSchedule' in kwargs:
+            realtime_schedule = kwargs['realtimeSchedule']
+        if request_ui_dispatch_app is None and 'requestUiDispatchApp' in kwargs:
+            request_ui_dispatch_app = kwargs['requestUiDispatchApp']
+        if request_ui_dispatch_view is None and 'requestUiDispatchView' in kwargs:
+            request_ui_dispatch_view = kwargs['requestUiDispatchView']
+        if restart_on_searchpeer_add is None and 'restartOnSearchpeerAdd' in kwargs:
+            restart_on_searchpeer_add = kwargs['restartOnSearchpeerAdd']
+        if run_on_startup is None and 'runOnStartup' in kwargs:
+            run_on_startup = kwargs['runOnStartup']
+        if schedule_priority is None and 'schedulePriority' in kwargs:
+            schedule_priority = kwargs['schedulePriority']
+        if schedule_window is None and 'scheduleWindow' in kwargs:
+            schedule_window = kwargs['scheduleWindow']
+        if workload_pool is None and 'workloadPool' in kwargs:
+            workload_pool = kwargs['workloadPool']
+
         if acl is not None:
             _setter("acl", acl)
         if action_create_xsoar_incident is not None:
@@ -6177,32 +6813,6 @@ class SavedSearches(pulumi.CustomResource):
 
         Create and manage saved searches.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        saved_search = splunk.SavedSearches("savedSearch",
-            acl=splunk.SavedSearchesAclArgs(
-                app="launcher",
-                owner="admin",
-                sharing="app",
-            ),
-            action_email_format="table",
-            action_email_max_results=10,
-            action_email_max_time="5m",
-            action_email_send_results=False,
-            action_email_subject="Splunk Alert: $name$",
-            action_email_to="splunk@splunk.com",
-            action_email_track_alert=True,
-            actions="email",
-            cron_schedule="*/5 * * * *",
-            dispatch_earliest_time="rt-15m",
-            dispatch_latest_time="rt-0m",
-            search="index=main")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -6388,32 +6998,6 @@ class SavedSearches(pulumi.CustomResource):
         ## # Resource: SavedSearches
 
         Create and manage saved searches.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        saved_search = splunk.SavedSearches("savedSearch",
-            acl=splunk.SavedSearchesAclArgs(
-                app="launcher",
-                owner="admin",
-                sharing="app",
-            ),
-            action_email_format="table",
-            action_email_max_results=10,
-            action_email_max_time="5m",
-            action_email_send_results=False,
-            action_email_subject="Splunk Alert: $name$",
-            action_email_to="splunk@splunk.com",
-            action_email_track_alert=True,
-            actions="email",
-            cron_schedule="*/5 * * * *",
-            dispatch_earliest_time="rt-15m",
-            dispatch_latest_time="rt-0m",
-            search="index=main")
-        ```
 
         :param str resource_name: The name of the resource.
         :param SavedSearchesArgs args: The arguments to use to populate this resource's properties.
@@ -6605,11 +7189,7 @@ class SavedSearches(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = SavedSearchesArgs.__new__(SavedSearchesArgs)
 
-            if acl is not None and not isinstance(acl, SavedSearchesAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                SavedSearchesAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, SavedSearchesAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["action_create_xsoar_incident"] = action_create_xsoar_incident
             __props__.__dict__["action_create_xsoar_incident_param_custom_fields"] = action_create_xsoar_incident_param_custom_fields

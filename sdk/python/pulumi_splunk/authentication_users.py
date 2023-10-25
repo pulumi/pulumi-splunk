@@ -59,7 +59,15 @@ class AuthenticationUsersArgs:
              restart_background_jobs: Optional[pulumi.Input[bool]] = None,
              roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tz: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if default_app is None and 'defaultApp' in kwargs:
+            default_app = kwargs['defaultApp']
+        if force_change_pass is None and 'forceChangePass' in kwargs:
+            force_change_pass = kwargs['forceChangePass']
+        if restart_background_jobs is None and 'restartBackgroundJobs' in kwargs:
+            restart_background_jobs = kwargs['restartBackgroundJobs']
+
         if default_app is not None:
             _setter("default_app", default_app)
         if email is not None:
@@ -236,7 +244,15 @@ class _AuthenticationUsersState:
              restart_background_jobs: Optional[pulumi.Input[bool]] = None,
              roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              tz: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if default_app is None and 'defaultApp' in kwargs:
+            default_app = kwargs['defaultApp']
+        if force_change_pass is None and 'forceChangePass' in kwargs:
+            force_change_pass = kwargs['forceChangePass']
+        if restart_background_jobs is None and 'restartBackgroundJobs' in kwargs:
+            restart_background_jobs = kwargs['restartBackgroundJobs']
+
         if default_app is not None:
             _setter("default_app", default_app)
         if email is not None:
@@ -385,19 +401,6 @@ class AuthenticationUsers(pulumi.CustomResource):
 
         Create and update user information or delete the user.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        user01 = splunk.AuthenticationUsers("user01",
-            email="user01@example.com",
-            force_change_pass=False,
-            password="password01",
-            roles=["terraform-user01-role"])
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] default_app: User default app. Overrides the default app inherited from the user roles.
@@ -420,19 +423,6 @@ class AuthenticationUsers(pulumi.CustomResource):
         ## # Resource: AuthenticationUsers
 
         Create and update user information or delete the user.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        user01 = splunk.AuthenticationUsers("user01",
-            email="user01@example.com",
-            force_change_pass=False,
-            password="password01",
-            roles=["terraform-user01-role"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param AuthenticationUsersArgs args: The arguments to use to populate this resource's properties.

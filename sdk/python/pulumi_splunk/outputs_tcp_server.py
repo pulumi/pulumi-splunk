@@ -72,7 +72,23 @@ class OutputsTcpServerArgs:
              ssl_password: Optional[pulumi.Input[str]] = None,
              ssl_root_ca_path: Optional[pulumi.Input[str]] = None,
              ssl_verify_server_cert: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if ssl_alt_name_to_check is None and 'sslAltNameToCheck' in kwargs:
+            ssl_alt_name_to_check = kwargs['sslAltNameToCheck']
+        if ssl_cert_path is None and 'sslCertPath' in kwargs:
+            ssl_cert_path = kwargs['sslCertPath']
+        if ssl_cipher is None and 'sslCipher' in kwargs:
+            ssl_cipher = kwargs['sslCipher']
+        if ssl_common_name_to_check is None and 'sslCommonNameToCheck' in kwargs:
+            ssl_common_name_to_check = kwargs['sslCommonNameToCheck']
+        if ssl_password is None and 'sslPassword' in kwargs:
+            ssl_password = kwargs['sslPassword']
+        if ssl_root_ca_path is None and 'sslRootCaPath' in kwargs:
+            ssl_root_ca_path = kwargs['sslRootCaPath']
+        if ssl_verify_server_cert is None and 'sslVerifyServerCert' in kwargs:
+            ssl_verify_server_cert = kwargs['sslVerifyServerCert']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -291,7 +307,23 @@ class _OutputsTcpServerState:
              ssl_password: Optional[pulumi.Input[str]] = None,
              ssl_root_ca_path: Optional[pulumi.Input[str]] = None,
              ssl_verify_server_cert: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if ssl_alt_name_to_check is None and 'sslAltNameToCheck' in kwargs:
+            ssl_alt_name_to_check = kwargs['sslAltNameToCheck']
+        if ssl_cert_path is None and 'sslCertPath' in kwargs:
+            ssl_cert_path = kwargs['sslCertPath']
+        if ssl_cipher is None and 'sslCipher' in kwargs:
+            ssl_cipher = kwargs['sslCipher']
+        if ssl_common_name_to_check is None and 'sslCommonNameToCheck' in kwargs:
+            ssl_common_name_to_check = kwargs['sslCommonNameToCheck']
+        if ssl_password is None and 'sslPassword' in kwargs:
+            ssl_password = kwargs['sslPassword']
+        if ssl_root_ca_path is None and 'sslRootCaPath' in kwargs:
+            ssl_root_ca_path = kwargs['sslRootCaPath']
+        if ssl_verify_server_cert is None and 'sslVerifyServerCert' in kwargs:
+            ssl_verify_server_cert = kwargs['sslVerifyServerCert']
+
         if acl is not None:
             _setter("acl", acl)
         if disabled is not None:
@@ -473,15 +505,6 @@ class OutputsTcpServer(pulumi.CustomResource):
 
         Access data forwarding configurations.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['OutputsTcpServerAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -509,15 +532,6 @@ class OutputsTcpServer(pulumi.CustomResource):
         ## # Resource: OutputsTcpServer
 
         Access data forwarding configurations.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
-        ```
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpServerArgs args: The arguments to use to populate this resource's properties.
@@ -558,11 +572,7 @@ class OutputsTcpServer(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpServerArgs.__new__(OutputsTcpServerArgs)
 
-            if acl is not None and not isinstance(acl, OutputsTcpServerAclArgs):
-                acl = acl or {}
-                def _setter(key, value):
-                    acl[key] = value
-                OutputsTcpServerAclArgs._configure(_setter, **acl)
+            acl = _utilities.configure(acl, OutputsTcpServerAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["method"] = method

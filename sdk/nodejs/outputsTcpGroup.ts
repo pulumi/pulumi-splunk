@@ -10,24 +10,6 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.OutputsTcpGroup
  *
  * Access to the configuration of a group of one or more data forwarding destinations.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as splunk from "@pulumi/splunk";
- *
- * const tcpGroup = new splunk.OutputsTcpGroup("tcpGroup", {
- *     disabled: false,
- *     dropEventsOnQueueFull: 60,
- *     maxQueueSize: "100KB",
- *     sendCookedData: true,
- *     servers: [
- *         "1.1.1.1:1234",
- *         "2.2.2.2:1234",
- *     ],
- * });
- * ```
  */
 export class OutputsTcpGroup extends pulumi.CustomResource {
     /**

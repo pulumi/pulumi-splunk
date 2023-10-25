@@ -15,35 +15,6 @@ import (
 // ## # Resource: InputsTcpRaw
 //
 // Create and manage UDP data inputs.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsUdp(ctx, "udp", &splunk.InputsUdpArgs{
-//				Disabled:   pulumi.Bool(false),
-//				Index:      pulumi.String("main"),
-//				Source:     pulumi.String("new"),
-//				Sourcetype: pulumi.String("new"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type InputsUdp struct {
 	pulumi.CustomResourceState
 

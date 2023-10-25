@@ -75,7 +75,31 @@ class AuthorizationRolesArgs:
              search_indexes_defaults: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              search_jobs_quota: Optional[pulumi.Input[int]] = None,
              search_time_win: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if cumulative_realtime_search_jobs_quota is None and 'cumulativeRealtimeSearchJobsQuota' in kwargs:
+            cumulative_realtime_search_jobs_quota = kwargs['cumulativeRealtimeSearchJobsQuota']
+        if cumulative_search_jobs_quota is None and 'cumulativeSearchJobsQuota' in kwargs:
+            cumulative_search_jobs_quota = kwargs['cumulativeSearchJobsQuota']
+        if default_app is None and 'defaultApp' in kwargs:
+            default_app = kwargs['defaultApp']
+        if imported_roles is None and 'importedRoles' in kwargs:
+            imported_roles = kwargs['importedRoles']
+        if realtime_search_jobs_quota is None and 'realtimeSearchJobsQuota' in kwargs:
+            realtime_search_jobs_quota = kwargs['realtimeSearchJobsQuota']
+        if search_disk_quota is None and 'searchDiskQuota' in kwargs:
+            search_disk_quota = kwargs['searchDiskQuota']
+        if search_filter is None and 'searchFilter' in kwargs:
+            search_filter = kwargs['searchFilter']
+        if search_indexes_alloweds is None and 'searchIndexesAlloweds' in kwargs:
+            search_indexes_alloweds = kwargs['searchIndexesAlloweds']
+        if search_indexes_defaults is None and 'searchIndexesDefaults' in kwargs:
+            search_indexes_defaults = kwargs['searchIndexesDefaults']
+        if search_jobs_quota is None and 'searchJobsQuota' in kwargs:
+            search_jobs_quota = kwargs['searchJobsQuota']
+        if search_time_win is None and 'searchTimeWin' in kwargs:
+            search_time_win = kwargs['searchTimeWin']
+
         if capabilities is not None:
             _setter("capabilities", capabilities)
         if cumulative_realtime_search_jobs_quota is not None:
@@ -324,7 +348,31 @@ class _AuthorizationRolesState:
              search_indexes_defaults: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              search_jobs_quota: Optional[pulumi.Input[int]] = None,
              search_time_win: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if cumulative_realtime_search_jobs_quota is None and 'cumulativeRealtimeSearchJobsQuota' in kwargs:
+            cumulative_realtime_search_jobs_quota = kwargs['cumulativeRealtimeSearchJobsQuota']
+        if cumulative_search_jobs_quota is None and 'cumulativeSearchJobsQuota' in kwargs:
+            cumulative_search_jobs_quota = kwargs['cumulativeSearchJobsQuota']
+        if default_app is None and 'defaultApp' in kwargs:
+            default_app = kwargs['defaultApp']
+        if imported_roles is None and 'importedRoles' in kwargs:
+            imported_roles = kwargs['importedRoles']
+        if realtime_search_jobs_quota is None and 'realtimeSearchJobsQuota' in kwargs:
+            realtime_search_jobs_quota = kwargs['realtimeSearchJobsQuota']
+        if search_disk_quota is None and 'searchDiskQuota' in kwargs:
+            search_disk_quota = kwargs['searchDiskQuota']
+        if search_filter is None and 'searchFilter' in kwargs:
+            search_filter = kwargs['searchFilter']
+        if search_indexes_alloweds is None and 'searchIndexesAlloweds' in kwargs:
+            search_indexes_alloweds = kwargs['searchIndexesAlloweds']
+        if search_indexes_defaults is None and 'searchIndexesDefaults' in kwargs:
+            search_indexes_defaults = kwargs['searchIndexesDefaults']
+        if search_jobs_quota is None and 'searchJobsQuota' in kwargs:
+            search_jobs_quota = kwargs['searchJobsQuota']
+        if search_time_win is None and 'searchTimeWin' in kwargs:
+            search_time_win = kwargs['searchTimeWin']
+
         if capabilities is not None:
             _setter("capabilities", capabilities)
         if cumulative_realtime_search_jobs_quota is not None:
@@ -533,35 +581,6 @@ class AuthorizationRoles(pulumi.CustomResource):
 
         Create and update role information.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        role01 = splunk.AuthorizationRoles("role01",
-            capabilities=[
-                "accelerate_datamodel",
-                "change_authentication",
-                "restart_splunkd",
-            ],
-            default_app="search",
-            imported_roles=[
-                "power",
-                "user",
-            ],
-            search_indexes_alloweds=[
-                "_audit",
-                "_internal",
-                "main",
-            ],
-            search_indexes_defaults=[
-                "_audit",
-                "_internal",
-                "main",
-            ])
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] capabilities: List of capabilities assigned to role.
@@ -588,35 +607,6 @@ class AuthorizationRoles(pulumi.CustomResource):
         ## # Resource: AuthorizationRoles
 
         Create and update role information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_splunk as splunk
-
-        role01 = splunk.AuthorizationRoles("role01",
-            capabilities=[
-                "accelerate_datamodel",
-                "change_authentication",
-                "restart_splunkd",
-            ],
-            default_app="search",
-            imported_roles=[
-                "power",
-                "user",
-            ],
-            search_indexes_alloweds=[
-                "_audit",
-                "_internal",
-                "main",
-            ],
-            search_indexes_defaults=[
-                "_audit",
-                "_internal",
-                "main",
-            ])
-        ```
 
         :param str resource_name: The name of the resource.
         :param AuthorizationRolesArgs args: The arguments to use to populate this resource's properties.

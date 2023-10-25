@@ -15,37 +15,6 @@ import (
 // ## # Resource: AuthenticationUsers
 //
 // Create and update user information or delete the user.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewAuthenticationUsers(ctx, "user01", &splunk.AuthenticationUsersArgs{
-//				Email:           pulumi.String("user01@example.com"),
-//				ForceChangePass: pulumi.Bool(false),
-//				Password:        pulumi.String("password01"),
-//				Roles: pulumi.StringArray{
-//					pulumi.String("terraform-user01-role"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AuthenticationUsers struct {
 	pulumi.CustomResourceState
 

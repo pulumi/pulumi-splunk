@@ -20,33 +20,6 @@ import (
 //
 // By default, all users can list all indexes. However, if the indexesListAll capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
 // To enable indexesListAll capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewIndexes(ctx, "user01-index", &splunk.IndexesArgs{
-//				MaxHotBuckets:      pulumi.Int(6),
-//				MaxTotalDataSizeMb: pulumi.Int(1000000),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type Indexes struct {
 	pulumi.CustomResourceState
 

@@ -15,34 +15,6 @@ import (
 // ## # Resource: GlobalHttpEventCollector
 //
 // Update Global HTTP Event Collector input configuration.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewGlobalHttpEventCollector(ctx, "http", &splunk.GlobalHttpEventCollectorArgs{
-//				Disabled:  pulumi.Bool(false),
-//				EnableSsl: pulumi.Bool(true),
-//				Port:      pulumi.Int(8088),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type GlobalHttpEventCollector struct {
 	pulumi.CustomResourceState
 

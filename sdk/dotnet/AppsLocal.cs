@@ -13,25 +13,6 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.AppsLocal
     /// 
     /// Create, install and manage apps on your Splunk instance
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Splunk = Pulumi.Splunk;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var amazonConnectApp = new Splunk.AppsLocal("amazonConnectApp", new()
-    ///     {
-    ///         ExplicitAppname = "amazon_connect_app_for_splunk",
-    ///         Filename = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/appsLocal:AppsLocal")]
     public partial class AppsLocal : global::Pulumi.CustomResource
