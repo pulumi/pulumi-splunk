@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,93 +51,38 @@ class InputsMonitorArgs:
         :param pulumi.Input[int] time_before_close: When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
         :param pulumi.Input[str] whitelist: Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
         """
-        InputsMonitorArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            blacklist=blacklist,
-            crc_salt=crc_salt,
-            disabled=disabled,
-            follow_tail=follow_tail,
-            host=host,
-            host_regex=host_regex,
-            host_segment=host_segment,
-            ignore_older_than=ignore_older_than,
-            index=index,
-            name=name,
-            recursive=recursive,
-            rename_source=rename_source,
-            sourcetype=sourcetype,
-            time_before_close=time_before_close,
-            whitelist=whitelist,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsMonitorAclArgs']] = None,
-             blacklist: Optional[pulumi.Input[str]] = None,
-             crc_salt: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             follow_tail: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             host_regex: Optional[pulumi.Input[str]] = None,
-             host_segment: Optional[pulumi.Input[int]] = None,
-             ignore_older_than: Optional[pulumi.Input[str]] = None,
-             index: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             recursive: Optional[pulumi.Input[bool]] = None,
-             rename_source: Optional[pulumi.Input[str]] = None,
-             sourcetype: Optional[pulumi.Input[str]] = None,
-             time_before_close: Optional[pulumi.Input[int]] = None,
-             whitelist: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if crc_salt is None and 'crcSalt' in kwargs:
-            crc_salt = kwargs['crcSalt']
-        if follow_tail is None and 'followTail' in kwargs:
-            follow_tail = kwargs['followTail']
-        if host_regex is None and 'hostRegex' in kwargs:
-            host_regex = kwargs['hostRegex']
-        if host_segment is None and 'hostSegment' in kwargs:
-            host_segment = kwargs['hostSegment']
-        if ignore_older_than is None and 'ignoreOlderThan' in kwargs:
-            ignore_older_than = kwargs['ignoreOlderThan']
-        if rename_source is None and 'renameSource' in kwargs:
-            rename_source = kwargs['renameSource']
-        if time_before_close is None and 'timeBeforeClose' in kwargs:
-            time_before_close = kwargs['timeBeforeClose']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if blacklist is not None:
-            _setter("blacklist", blacklist)
+            pulumi.set(__self__, "blacklist", blacklist)
         if crc_salt is not None:
-            _setter("crc_salt", crc_salt)
+            pulumi.set(__self__, "crc_salt", crc_salt)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if follow_tail is not None:
-            _setter("follow_tail", follow_tail)
+            pulumi.set(__self__, "follow_tail", follow_tail)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if host_regex is not None:
-            _setter("host_regex", host_regex)
+            pulumi.set(__self__, "host_regex", host_regex)
         if host_segment is not None:
-            _setter("host_segment", host_segment)
+            pulumi.set(__self__, "host_segment", host_segment)
         if ignore_older_than is not None:
-            _setter("ignore_older_than", ignore_older_than)
+            pulumi.set(__self__, "ignore_older_than", ignore_older_than)
         if index is not None:
-            _setter("index", index)
+            pulumi.set(__self__, "index", index)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if recursive is not None:
-            _setter("recursive", recursive)
+            pulumi.set(__self__, "recursive", recursive)
         if rename_source is not None:
-            _setter("rename_source", rename_source)
+            pulumi.set(__self__, "rename_source", rename_source)
         if sourcetype is not None:
-            _setter("sourcetype", sourcetype)
+            pulumi.set(__self__, "sourcetype", sourcetype)
         if time_before_close is not None:
-            _setter("time_before_close", time_before_close)
+            pulumi.set(__self__, "time_before_close", time_before_close)
         if whitelist is not None:
-            _setter("whitelist", whitelist)
+            pulumi.set(__self__, "whitelist", whitelist)
 
     @property
     @pulumi.getter
@@ -370,93 +315,38 @@ class _InputsMonitorState:
         :param pulumi.Input[int] time_before_close: When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
         :param pulumi.Input[str] whitelist: Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
         """
-        _InputsMonitorState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            blacklist=blacklist,
-            crc_salt=crc_salt,
-            disabled=disabled,
-            follow_tail=follow_tail,
-            host=host,
-            host_regex=host_regex,
-            host_segment=host_segment,
-            ignore_older_than=ignore_older_than,
-            index=index,
-            name=name,
-            recursive=recursive,
-            rename_source=rename_source,
-            sourcetype=sourcetype,
-            time_before_close=time_before_close,
-            whitelist=whitelist,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsMonitorAclArgs']] = None,
-             blacklist: Optional[pulumi.Input[str]] = None,
-             crc_salt: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             follow_tail: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             host_regex: Optional[pulumi.Input[str]] = None,
-             host_segment: Optional[pulumi.Input[int]] = None,
-             ignore_older_than: Optional[pulumi.Input[str]] = None,
-             index: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             recursive: Optional[pulumi.Input[bool]] = None,
-             rename_source: Optional[pulumi.Input[str]] = None,
-             sourcetype: Optional[pulumi.Input[str]] = None,
-             time_before_close: Optional[pulumi.Input[int]] = None,
-             whitelist: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if crc_salt is None and 'crcSalt' in kwargs:
-            crc_salt = kwargs['crcSalt']
-        if follow_tail is None and 'followTail' in kwargs:
-            follow_tail = kwargs['followTail']
-        if host_regex is None and 'hostRegex' in kwargs:
-            host_regex = kwargs['hostRegex']
-        if host_segment is None and 'hostSegment' in kwargs:
-            host_segment = kwargs['hostSegment']
-        if ignore_older_than is None and 'ignoreOlderThan' in kwargs:
-            ignore_older_than = kwargs['ignoreOlderThan']
-        if rename_source is None and 'renameSource' in kwargs:
-            rename_source = kwargs['renameSource']
-        if time_before_close is None and 'timeBeforeClose' in kwargs:
-            time_before_close = kwargs['timeBeforeClose']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if blacklist is not None:
-            _setter("blacklist", blacklist)
+            pulumi.set(__self__, "blacklist", blacklist)
         if crc_salt is not None:
-            _setter("crc_salt", crc_salt)
+            pulumi.set(__self__, "crc_salt", crc_salt)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if follow_tail is not None:
-            _setter("follow_tail", follow_tail)
+            pulumi.set(__self__, "follow_tail", follow_tail)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if host_regex is not None:
-            _setter("host_regex", host_regex)
+            pulumi.set(__self__, "host_regex", host_regex)
         if host_segment is not None:
-            _setter("host_segment", host_segment)
+            pulumi.set(__self__, "host_segment", host_segment)
         if ignore_older_than is not None:
-            _setter("ignore_older_than", ignore_older_than)
+            pulumi.set(__self__, "ignore_older_than", ignore_older_than)
         if index is not None:
-            _setter("index", index)
+            pulumi.set(__self__, "index", index)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if recursive is not None:
-            _setter("recursive", recursive)
+            pulumi.set(__self__, "recursive", recursive)
         if rename_source is not None:
-            _setter("rename_source", rename_source)
+            pulumi.set(__self__, "rename_source", rename_source)
         if sourcetype is not None:
-            _setter("sourcetype", sourcetype)
+            pulumi.set(__self__, "sourcetype", sourcetype)
         if time_before_close is not None:
-            _setter("time_before_close", time_before_close)
+            pulumi.set(__self__, "time_before_close", time_before_close)
         if whitelist is not None:
-            _setter("whitelist", whitelist)
+            pulumi.set(__self__, "whitelist", whitelist)
 
     @property
     @pulumi.getter
@@ -740,10 +630,6 @@ class InputsMonitor(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InputsMonitorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -774,7 +660,6 @@ class InputsMonitor(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsMonitorArgs.__new__(InputsMonitorArgs)
 
-            acl = _utilities.configure(acl, InputsMonitorAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["blacklist"] = blacklist
             __props__.__dict__["crc_salt"] = crc_salt

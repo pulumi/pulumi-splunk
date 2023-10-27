@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,63 +49,24 @@ class OutputsTcpDefaultArgs:
         :param pulumi.Input[bool] send_cooked_data: If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
                Set to false if you are sending to a third-party system.
         """
-        OutputsTcpDefaultArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            default_group=default_group,
-            disabled=disabled,
-            drop_events_on_queue_full=drop_events_on_queue_full,
-            heartbeat_frequency=heartbeat_frequency,
-            index_and_forward=index_and_forward,
-            max_queue_size=max_queue_size,
-            name=name,
-            send_cooked_data=send_cooked_data,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']] = None,
-             default_group: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             drop_events_on_queue_full: Optional[pulumi.Input[int]] = None,
-             heartbeat_frequency: Optional[pulumi.Input[int]] = None,
-             index_and_forward: Optional[pulumi.Input[bool]] = None,
-             max_queue_size: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             send_cooked_data: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_group is None and 'defaultGroup' in kwargs:
-            default_group = kwargs['defaultGroup']
-        if drop_events_on_queue_full is None and 'dropEventsOnQueueFull' in kwargs:
-            drop_events_on_queue_full = kwargs['dropEventsOnQueueFull']
-        if heartbeat_frequency is None and 'heartbeatFrequency' in kwargs:
-            heartbeat_frequency = kwargs['heartbeatFrequency']
-        if index_and_forward is None and 'indexAndForward' in kwargs:
-            index_and_forward = kwargs['indexAndForward']
-        if max_queue_size is None and 'maxQueueSize' in kwargs:
-            max_queue_size = kwargs['maxQueueSize']
-        if send_cooked_data is None and 'sendCookedData' in kwargs:
-            send_cooked_data = kwargs['sendCookedData']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if default_group is not None:
-            _setter("default_group", default_group)
+            pulumi.set(__self__, "default_group", default_group)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if drop_events_on_queue_full is not None:
-            _setter("drop_events_on_queue_full", drop_events_on_queue_full)
+            pulumi.set(__self__, "drop_events_on_queue_full", drop_events_on_queue_full)
         if heartbeat_frequency is not None:
-            _setter("heartbeat_frequency", heartbeat_frequency)
+            pulumi.set(__self__, "heartbeat_frequency", heartbeat_frequency)
         if index_and_forward is not None:
-            _setter("index_and_forward", index_and_forward)
+            pulumi.set(__self__, "index_and_forward", index_and_forward)
         if max_queue_size is not None:
-            _setter("max_queue_size", max_queue_size)
+            pulumi.set(__self__, "max_queue_size", max_queue_size)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if send_cooked_data is not None:
-            _setter("send_cooked_data", send_cooked_data)
+            pulumi.set(__self__, "send_cooked_data", send_cooked_data)
 
     @property
     @pulumi.getter
@@ -264,63 +225,24 @@ class _OutputsTcpDefaultState:
         :param pulumi.Input[bool] send_cooked_data: If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
                Set to false if you are sending to a third-party system.
         """
-        _OutputsTcpDefaultState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            default_group=default_group,
-            disabled=disabled,
-            drop_events_on_queue_full=drop_events_on_queue_full,
-            heartbeat_frequency=heartbeat_frequency,
-            index_and_forward=index_and_forward,
-            max_queue_size=max_queue_size,
-            name=name,
-            send_cooked_data=send_cooked_data,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']] = None,
-             default_group: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             drop_events_on_queue_full: Optional[pulumi.Input[int]] = None,
-             heartbeat_frequency: Optional[pulumi.Input[int]] = None,
-             index_and_forward: Optional[pulumi.Input[bool]] = None,
-             max_queue_size: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             send_cooked_data: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_group is None and 'defaultGroup' in kwargs:
-            default_group = kwargs['defaultGroup']
-        if drop_events_on_queue_full is None and 'dropEventsOnQueueFull' in kwargs:
-            drop_events_on_queue_full = kwargs['dropEventsOnQueueFull']
-        if heartbeat_frequency is None and 'heartbeatFrequency' in kwargs:
-            heartbeat_frequency = kwargs['heartbeatFrequency']
-        if index_and_forward is None and 'indexAndForward' in kwargs:
-            index_and_forward = kwargs['indexAndForward']
-        if max_queue_size is None and 'maxQueueSize' in kwargs:
-            max_queue_size = kwargs['maxQueueSize']
-        if send_cooked_data is None and 'sendCookedData' in kwargs:
-            send_cooked_data = kwargs['sendCookedData']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if default_group is not None:
-            _setter("default_group", default_group)
+            pulumi.set(__self__, "default_group", default_group)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if drop_events_on_queue_full is not None:
-            _setter("drop_events_on_queue_full", drop_events_on_queue_full)
+            pulumi.set(__self__, "drop_events_on_queue_full", drop_events_on_queue_full)
         if heartbeat_frequency is not None:
-            _setter("heartbeat_frequency", heartbeat_frequency)
+            pulumi.set(__self__, "heartbeat_frequency", heartbeat_frequency)
         if index_and_forward is not None:
-            _setter("index_and_forward", index_and_forward)
+            pulumi.set(__self__, "index_and_forward", index_and_forward)
         if max_queue_size is not None:
-            _setter("max_queue_size", max_queue_size)
+            pulumi.set(__self__, "max_queue_size", max_queue_size)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if send_cooked_data is not None:
-            _setter("send_cooked_data", send_cooked_data)
+            pulumi.set(__self__, "send_cooked_data", send_cooked_data)
 
     @property
     @pulumi.getter
@@ -538,10 +460,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OutputsTcpDefaultArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -565,7 +483,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpDefaultArgs.__new__(OutputsTcpDefaultArgs)
 
-            acl = _utilities.configure(acl, OutputsTcpDefaultAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["default_group"] = default_group
             __props__.__dict__["disabled"] = disabled

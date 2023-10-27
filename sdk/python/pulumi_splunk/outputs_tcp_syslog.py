@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,51 +41,22 @@ class OutputsTcpSyslogArgs:
                The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
         :param pulumi.Input[str] type: Protocol to use to send syslog data. Valid values: (tcp | udp ).
         """
-        OutputsTcpSyslogArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            disabled=disabled,
-            name=name,
-            priority=priority,
-            server=server,
-            syslog_sourcetype=syslog_sourcetype,
-            timestamp_format=timestamp_format,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['OutputsTcpSyslogAclArgs']] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             priority: Optional[pulumi.Input[int]] = None,
-             server: Optional[pulumi.Input[str]] = None,
-             syslog_sourcetype: Optional[pulumi.Input[str]] = None,
-             timestamp_format: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if syslog_sourcetype is None and 'syslogSourcetype' in kwargs:
-            syslog_sourcetype = kwargs['syslogSourcetype']
-        if timestamp_format is None and 'timestampFormat' in kwargs:
-            timestamp_format = kwargs['timestampFormat']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if priority is not None:
-            _setter("priority", priority)
+            pulumi.set(__self__, "priority", priority)
         if server is not None:
-            _setter("server", server)
+            pulumi.set(__self__, "server", server)
         if syslog_sourcetype is not None:
-            _setter("syslog_sourcetype", syslog_sourcetype)
+            pulumi.set(__self__, "syslog_sourcetype", syslog_sourcetype)
         if timestamp_format is not None:
-            _setter("timestamp_format", timestamp_format)
+            pulumi.set(__self__, "timestamp_format", timestamp_format)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -218,51 +189,22 @@ class _OutputsTcpSyslogState:
                The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
         :param pulumi.Input[str] type: Protocol to use to send syslog data. Valid values: (tcp | udp ).
         """
-        _OutputsTcpSyslogState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            disabled=disabled,
-            name=name,
-            priority=priority,
-            server=server,
-            syslog_sourcetype=syslog_sourcetype,
-            timestamp_format=timestamp_format,
-            type=type,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['OutputsTcpSyslogAclArgs']] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             priority: Optional[pulumi.Input[int]] = None,
-             server: Optional[pulumi.Input[str]] = None,
-             syslog_sourcetype: Optional[pulumi.Input[str]] = None,
-             timestamp_format: Optional[pulumi.Input[str]] = None,
-             type: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if syslog_sourcetype is None and 'syslogSourcetype' in kwargs:
-            syslog_sourcetype = kwargs['syslogSourcetype']
-        if timestamp_format is None and 'timestampFormat' in kwargs:
-            timestamp_format = kwargs['timestampFormat']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if priority is not None:
-            _setter("priority", priority)
+            pulumi.set(__self__, "priority", priority)
         if server is not None:
-            _setter("server", server)
+            pulumi.set(__self__, "server", server)
         if syslog_sourcetype is not None:
-            _setter("syslog_sourcetype", syslog_sourcetype)
+            pulumi.set(__self__, "syslog_sourcetype", syslog_sourcetype)
         if timestamp_format is not None:
-            _setter("timestamp_format", timestamp_format)
+            pulumi.set(__self__, "timestamp_format", timestamp_format)
         if type is not None:
-            _setter("type", type)
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
@@ -446,10 +388,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OutputsTcpSyslogArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -472,7 +410,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpSyslogArgs.__new__(OutputsTcpSyslogArgs)
 
-            acl = _utilities.configure(acl, OutputsTcpSyslogAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["name"] = name
