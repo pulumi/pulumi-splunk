@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -141,243 +141,84 @@ class IndexesArgs:
         :param pulumi.Input[str] warm_to_cold_script: Path to a script to run when moving data from warm to cold.
                This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
         """
-        IndexesArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            block_sign_size=block_sign_size,
-            bucket_rebuild_memory_hint=bucket_rebuild_memory_hint,
-            cold_path=cold_path,
-            cold_to_frozen_dir=cold_to_frozen_dir,
-            cold_to_frozen_script=cold_to_frozen_script,
-            compress_rawdata=compress_rawdata,
-            datatype=datatype,
-            enable_online_bucket_repair=enable_online_bucket_repair,
-            frozen_time_period_in_secs=frozen_time_period_in_secs,
-            home_path=home_path,
-            max_bloom_backfill_bucket_age=max_bloom_backfill_bucket_age,
-            max_concurrent_optimizes=max_concurrent_optimizes,
-            max_data_size=max_data_size,
-            max_hot_buckets=max_hot_buckets,
-            max_hot_idle_secs=max_hot_idle_secs,
-            max_hot_span_secs=max_hot_span_secs,
-            max_mem_mb=max_mem_mb,
-            max_meta_entries=max_meta_entries,
-            max_time_unreplicated_no_acks=max_time_unreplicated_no_acks,
-            max_time_unreplicated_with_acks=max_time_unreplicated_with_acks,
-            max_total_data_size_mb=max_total_data_size_mb,
-            max_warm_db_count=max_warm_db_count,
-            min_raw_file_sync_secs=min_raw_file_sync_secs,
-            min_stream_group_queue_size=min_stream_group_queue_size,
-            name=name,
-            partial_service_meta_period=partial_service_meta_period,
-            process_tracker_service_interval=process_tracker_service_interval,
-            quarantine_future_secs=quarantine_future_secs,
-            quarantine_past_secs=quarantine_past_secs,
-            raw_chunk_size_bytes=raw_chunk_size_bytes,
-            rep_factor=rep_factor,
-            rotate_period_in_secs=rotate_period_in_secs,
-            service_meta_period=service_meta_period,
-            sync_meta=sync_meta,
-            thawed_path=thawed_path,
-            throttle_check_period=throttle_check_period,
-            tstats_home_path=tstats_home_path,
-            warm_to_cold_script=warm_to_cold_script,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['IndexesAclArgs']] = None,
-             block_sign_size: Optional[pulumi.Input[int]] = None,
-             bucket_rebuild_memory_hint: Optional[pulumi.Input[str]] = None,
-             cold_path: Optional[pulumi.Input[str]] = None,
-             cold_to_frozen_dir: Optional[pulumi.Input[str]] = None,
-             cold_to_frozen_script: Optional[pulumi.Input[str]] = None,
-             compress_rawdata: Optional[pulumi.Input[bool]] = None,
-             datatype: Optional[pulumi.Input[str]] = None,
-             enable_online_bucket_repair: Optional[pulumi.Input[bool]] = None,
-             frozen_time_period_in_secs: Optional[pulumi.Input[int]] = None,
-             home_path: Optional[pulumi.Input[str]] = None,
-             max_bloom_backfill_bucket_age: Optional[pulumi.Input[str]] = None,
-             max_concurrent_optimizes: Optional[pulumi.Input[int]] = None,
-             max_data_size: Optional[pulumi.Input[str]] = None,
-             max_hot_buckets: Optional[pulumi.Input[int]] = None,
-             max_hot_idle_secs: Optional[pulumi.Input[int]] = None,
-             max_hot_span_secs: Optional[pulumi.Input[int]] = None,
-             max_mem_mb: Optional[pulumi.Input[int]] = None,
-             max_meta_entries: Optional[pulumi.Input[int]] = None,
-             max_time_unreplicated_no_acks: Optional[pulumi.Input[int]] = None,
-             max_time_unreplicated_with_acks: Optional[pulumi.Input[int]] = None,
-             max_total_data_size_mb: Optional[pulumi.Input[int]] = None,
-             max_warm_db_count: Optional[pulumi.Input[int]] = None,
-             min_raw_file_sync_secs: Optional[pulumi.Input[str]] = None,
-             min_stream_group_queue_size: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             partial_service_meta_period: Optional[pulumi.Input[int]] = None,
-             process_tracker_service_interval: Optional[pulumi.Input[int]] = None,
-             quarantine_future_secs: Optional[pulumi.Input[int]] = None,
-             quarantine_past_secs: Optional[pulumi.Input[int]] = None,
-             raw_chunk_size_bytes: Optional[pulumi.Input[int]] = None,
-             rep_factor: Optional[pulumi.Input[str]] = None,
-             rotate_period_in_secs: Optional[pulumi.Input[int]] = None,
-             service_meta_period: Optional[pulumi.Input[int]] = None,
-             sync_meta: Optional[pulumi.Input[bool]] = None,
-             thawed_path: Optional[pulumi.Input[str]] = None,
-             throttle_check_period: Optional[pulumi.Input[int]] = None,
-             tstats_home_path: Optional[pulumi.Input[str]] = None,
-             warm_to_cold_script: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if block_sign_size is None and 'blockSignSize' in kwargs:
-            block_sign_size = kwargs['blockSignSize']
-        if bucket_rebuild_memory_hint is None and 'bucketRebuildMemoryHint' in kwargs:
-            bucket_rebuild_memory_hint = kwargs['bucketRebuildMemoryHint']
-        if cold_path is None and 'coldPath' in kwargs:
-            cold_path = kwargs['coldPath']
-        if cold_to_frozen_dir is None and 'coldToFrozenDir' in kwargs:
-            cold_to_frozen_dir = kwargs['coldToFrozenDir']
-        if cold_to_frozen_script is None and 'coldToFrozenScript' in kwargs:
-            cold_to_frozen_script = kwargs['coldToFrozenScript']
-        if compress_rawdata is None and 'compressRawdata' in kwargs:
-            compress_rawdata = kwargs['compressRawdata']
-        if enable_online_bucket_repair is None and 'enableOnlineBucketRepair' in kwargs:
-            enable_online_bucket_repair = kwargs['enableOnlineBucketRepair']
-        if frozen_time_period_in_secs is None and 'frozenTimePeriodInSecs' in kwargs:
-            frozen_time_period_in_secs = kwargs['frozenTimePeriodInSecs']
-        if home_path is None and 'homePath' in kwargs:
-            home_path = kwargs['homePath']
-        if max_bloom_backfill_bucket_age is None and 'maxBloomBackfillBucketAge' in kwargs:
-            max_bloom_backfill_bucket_age = kwargs['maxBloomBackfillBucketAge']
-        if max_concurrent_optimizes is None and 'maxConcurrentOptimizes' in kwargs:
-            max_concurrent_optimizes = kwargs['maxConcurrentOptimizes']
-        if max_data_size is None and 'maxDataSize' in kwargs:
-            max_data_size = kwargs['maxDataSize']
-        if max_hot_buckets is None and 'maxHotBuckets' in kwargs:
-            max_hot_buckets = kwargs['maxHotBuckets']
-        if max_hot_idle_secs is None and 'maxHotIdleSecs' in kwargs:
-            max_hot_idle_secs = kwargs['maxHotIdleSecs']
-        if max_hot_span_secs is None and 'maxHotSpanSecs' in kwargs:
-            max_hot_span_secs = kwargs['maxHotSpanSecs']
-        if max_mem_mb is None and 'maxMemMb' in kwargs:
-            max_mem_mb = kwargs['maxMemMb']
-        if max_meta_entries is None and 'maxMetaEntries' in kwargs:
-            max_meta_entries = kwargs['maxMetaEntries']
-        if max_time_unreplicated_no_acks is None and 'maxTimeUnreplicatedNoAcks' in kwargs:
-            max_time_unreplicated_no_acks = kwargs['maxTimeUnreplicatedNoAcks']
-        if max_time_unreplicated_with_acks is None and 'maxTimeUnreplicatedWithAcks' in kwargs:
-            max_time_unreplicated_with_acks = kwargs['maxTimeUnreplicatedWithAcks']
-        if max_total_data_size_mb is None and 'maxTotalDataSizeMb' in kwargs:
-            max_total_data_size_mb = kwargs['maxTotalDataSizeMb']
-        if max_warm_db_count is None and 'maxWarmDbCount' in kwargs:
-            max_warm_db_count = kwargs['maxWarmDbCount']
-        if min_raw_file_sync_secs is None and 'minRawFileSyncSecs' in kwargs:
-            min_raw_file_sync_secs = kwargs['minRawFileSyncSecs']
-        if min_stream_group_queue_size is None and 'minStreamGroupQueueSize' in kwargs:
-            min_stream_group_queue_size = kwargs['minStreamGroupQueueSize']
-        if partial_service_meta_period is None and 'partialServiceMetaPeriod' in kwargs:
-            partial_service_meta_period = kwargs['partialServiceMetaPeriod']
-        if process_tracker_service_interval is None and 'processTrackerServiceInterval' in kwargs:
-            process_tracker_service_interval = kwargs['processTrackerServiceInterval']
-        if quarantine_future_secs is None and 'quarantineFutureSecs' in kwargs:
-            quarantine_future_secs = kwargs['quarantineFutureSecs']
-        if quarantine_past_secs is None and 'quarantinePastSecs' in kwargs:
-            quarantine_past_secs = kwargs['quarantinePastSecs']
-        if raw_chunk_size_bytes is None and 'rawChunkSizeBytes' in kwargs:
-            raw_chunk_size_bytes = kwargs['rawChunkSizeBytes']
-        if rep_factor is None and 'repFactor' in kwargs:
-            rep_factor = kwargs['repFactor']
-        if rotate_period_in_secs is None and 'rotatePeriodInSecs' in kwargs:
-            rotate_period_in_secs = kwargs['rotatePeriodInSecs']
-        if service_meta_period is None and 'serviceMetaPeriod' in kwargs:
-            service_meta_period = kwargs['serviceMetaPeriod']
-        if sync_meta is None and 'syncMeta' in kwargs:
-            sync_meta = kwargs['syncMeta']
-        if thawed_path is None and 'thawedPath' in kwargs:
-            thawed_path = kwargs['thawedPath']
-        if throttle_check_period is None and 'throttleCheckPeriod' in kwargs:
-            throttle_check_period = kwargs['throttleCheckPeriod']
-        if tstats_home_path is None and 'tstatsHomePath' in kwargs:
-            tstats_home_path = kwargs['tstatsHomePath']
-        if warm_to_cold_script is None and 'warmToColdScript' in kwargs:
-            warm_to_cold_script = kwargs['warmToColdScript']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if block_sign_size is not None:
-            _setter("block_sign_size", block_sign_size)
+            pulumi.set(__self__, "block_sign_size", block_sign_size)
         if bucket_rebuild_memory_hint is not None:
-            _setter("bucket_rebuild_memory_hint", bucket_rebuild_memory_hint)
+            pulumi.set(__self__, "bucket_rebuild_memory_hint", bucket_rebuild_memory_hint)
         if cold_path is not None:
-            _setter("cold_path", cold_path)
+            pulumi.set(__self__, "cold_path", cold_path)
         if cold_to_frozen_dir is not None:
-            _setter("cold_to_frozen_dir", cold_to_frozen_dir)
+            pulumi.set(__self__, "cold_to_frozen_dir", cold_to_frozen_dir)
         if cold_to_frozen_script is not None:
-            _setter("cold_to_frozen_script", cold_to_frozen_script)
+            pulumi.set(__self__, "cold_to_frozen_script", cold_to_frozen_script)
         if compress_rawdata is not None:
-            _setter("compress_rawdata", compress_rawdata)
+            pulumi.set(__self__, "compress_rawdata", compress_rawdata)
         if datatype is not None:
-            _setter("datatype", datatype)
+            pulumi.set(__self__, "datatype", datatype)
         if enable_online_bucket_repair is not None:
-            _setter("enable_online_bucket_repair", enable_online_bucket_repair)
+            pulumi.set(__self__, "enable_online_bucket_repair", enable_online_bucket_repair)
         if frozen_time_period_in_secs is not None:
-            _setter("frozen_time_period_in_secs", frozen_time_period_in_secs)
+            pulumi.set(__self__, "frozen_time_period_in_secs", frozen_time_period_in_secs)
         if home_path is not None:
-            _setter("home_path", home_path)
+            pulumi.set(__self__, "home_path", home_path)
         if max_bloom_backfill_bucket_age is not None:
-            _setter("max_bloom_backfill_bucket_age", max_bloom_backfill_bucket_age)
+            pulumi.set(__self__, "max_bloom_backfill_bucket_age", max_bloom_backfill_bucket_age)
         if max_concurrent_optimizes is not None:
-            _setter("max_concurrent_optimizes", max_concurrent_optimizes)
+            pulumi.set(__self__, "max_concurrent_optimizes", max_concurrent_optimizes)
         if max_data_size is not None:
-            _setter("max_data_size", max_data_size)
+            pulumi.set(__self__, "max_data_size", max_data_size)
         if max_hot_buckets is not None:
-            _setter("max_hot_buckets", max_hot_buckets)
+            pulumi.set(__self__, "max_hot_buckets", max_hot_buckets)
         if max_hot_idle_secs is not None:
-            _setter("max_hot_idle_secs", max_hot_idle_secs)
+            pulumi.set(__self__, "max_hot_idle_secs", max_hot_idle_secs)
         if max_hot_span_secs is not None:
-            _setter("max_hot_span_secs", max_hot_span_secs)
+            pulumi.set(__self__, "max_hot_span_secs", max_hot_span_secs)
         if max_mem_mb is not None:
-            _setter("max_mem_mb", max_mem_mb)
+            pulumi.set(__self__, "max_mem_mb", max_mem_mb)
         if max_meta_entries is not None:
-            _setter("max_meta_entries", max_meta_entries)
+            pulumi.set(__self__, "max_meta_entries", max_meta_entries)
         if max_time_unreplicated_no_acks is not None:
-            _setter("max_time_unreplicated_no_acks", max_time_unreplicated_no_acks)
+            pulumi.set(__self__, "max_time_unreplicated_no_acks", max_time_unreplicated_no_acks)
         if max_time_unreplicated_with_acks is not None:
-            _setter("max_time_unreplicated_with_acks", max_time_unreplicated_with_acks)
+            pulumi.set(__self__, "max_time_unreplicated_with_acks", max_time_unreplicated_with_acks)
         if max_total_data_size_mb is not None:
-            _setter("max_total_data_size_mb", max_total_data_size_mb)
+            pulumi.set(__self__, "max_total_data_size_mb", max_total_data_size_mb)
         if max_warm_db_count is not None:
-            _setter("max_warm_db_count", max_warm_db_count)
+            pulumi.set(__self__, "max_warm_db_count", max_warm_db_count)
         if min_raw_file_sync_secs is not None:
-            _setter("min_raw_file_sync_secs", min_raw_file_sync_secs)
+            pulumi.set(__self__, "min_raw_file_sync_secs", min_raw_file_sync_secs)
         if min_stream_group_queue_size is not None:
-            _setter("min_stream_group_queue_size", min_stream_group_queue_size)
+            pulumi.set(__self__, "min_stream_group_queue_size", min_stream_group_queue_size)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if partial_service_meta_period is not None:
-            _setter("partial_service_meta_period", partial_service_meta_period)
+            pulumi.set(__self__, "partial_service_meta_period", partial_service_meta_period)
         if process_tracker_service_interval is not None:
-            _setter("process_tracker_service_interval", process_tracker_service_interval)
+            pulumi.set(__self__, "process_tracker_service_interval", process_tracker_service_interval)
         if quarantine_future_secs is not None:
-            _setter("quarantine_future_secs", quarantine_future_secs)
+            pulumi.set(__self__, "quarantine_future_secs", quarantine_future_secs)
         if quarantine_past_secs is not None:
-            _setter("quarantine_past_secs", quarantine_past_secs)
+            pulumi.set(__self__, "quarantine_past_secs", quarantine_past_secs)
         if raw_chunk_size_bytes is not None:
-            _setter("raw_chunk_size_bytes", raw_chunk_size_bytes)
+            pulumi.set(__self__, "raw_chunk_size_bytes", raw_chunk_size_bytes)
         if rep_factor is not None:
-            _setter("rep_factor", rep_factor)
+            pulumi.set(__self__, "rep_factor", rep_factor)
         if rotate_period_in_secs is not None:
-            _setter("rotate_period_in_secs", rotate_period_in_secs)
+            pulumi.set(__self__, "rotate_period_in_secs", rotate_period_in_secs)
         if service_meta_period is not None:
-            _setter("service_meta_period", service_meta_period)
+            pulumi.set(__self__, "service_meta_period", service_meta_period)
         if sync_meta is not None:
-            _setter("sync_meta", sync_meta)
+            pulumi.set(__self__, "sync_meta", sync_meta)
         if thawed_path is not None:
-            _setter("thawed_path", thawed_path)
+            pulumi.set(__self__, "thawed_path", thawed_path)
         if throttle_check_period is not None:
-            _setter("throttle_check_period", throttle_check_period)
+            pulumi.set(__self__, "throttle_check_period", throttle_check_period)
         if tstats_home_path is not None:
-            _setter("tstats_home_path", tstats_home_path)
+            pulumi.set(__self__, "tstats_home_path", tstats_home_path)
         if warm_to_cold_script is not None:
-            _setter("warm_to_cold_script", warm_to_cold_script)
+            pulumi.set(__self__, "warm_to_cold_script", warm_to_cold_script)
 
     @property
     @pulumi.getter
@@ -1020,243 +861,84 @@ class _IndexesState:
         :param pulumi.Input[str] warm_to_cold_script: Path to a script to run when moving data from warm to cold.
                This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
         """
-        _IndexesState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            block_sign_size=block_sign_size,
-            bucket_rebuild_memory_hint=bucket_rebuild_memory_hint,
-            cold_path=cold_path,
-            cold_to_frozen_dir=cold_to_frozen_dir,
-            cold_to_frozen_script=cold_to_frozen_script,
-            compress_rawdata=compress_rawdata,
-            datatype=datatype,
-            enable_online_bucket_repair=enable_online_bucket_repair,
-            frozen_time_period_in_secs=frozen_time_period_in_secs,
-            home_path=home_path,
-            max_bloom_backfill_bucket_age=max_bloom_backfill_bucket_age,
-            max_concurrent_optimizes=max_concurrent_optimizes,
-            max_data_size=max_data_size,
-            max_hot_buckets=max_hot_buckets,
-            max_hot_idle_secs=max_hot_idle_secs,
-            max_hot_span_secs=max_hot_span_secs,
-            max_mem_mb=max_mem_mb,
-            max_meta_entries=max_meta_entries,
-            max_time_unreplicated_no_acks=max_time_unreplicated_no_acks,
-            max_time_unreplicated_with_acks=max_time_unreplicated_with_acks,
-            max_total_data_size_mb=max_total_data_size_mb,
-            max_warm_db_count=max_warm_db_count,
-            min_raw_file_sync_secs=min_raw_file_sync_secs,
-            min_stream_group_queue_size=min_stream_group_queue_size,
-            name=name,
-            partial_service_meta_period=partial_service_meta_period,
-            process_tracker_service_interval=process_tracker_service_interval,
-            quarantine_future_secs=quarantine_future_secs,
-            quarantine_past_secs=quarantine_past_secs,
-            raw_chunk_size_bytes=raw_chunk_size_bytes,
-            rep_factor=rep_factor,
-            rotate_period_in_secs=rotate_period_in_secs,
-            service_meta_period=service_meta_period,
-            sync_meta=sync_meta,
-            thawed_path=thawed_path,
-            throttle_check_period=throttle_check_period,
-            tstats_home_path=tstats_home_path,
-            warm_to_cold_script=warm_to_cold_script,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['IndexesAclArgs']] = None,
-             block_sign_size: Optional[pulumi.Input[int]] = None,
-             bucket_rebuild_memory_hint: Optional[pulumi.Input[str]] = None,
-             cold_path: Optional[pulumi.Input[str]] = None,
-             cold_to_frozen_dir: Optional[pulumi.Input[str]] = None,
-             cold_to_frozen_script: Optional[pulumi.Input[str]] = None,
-             compress_rawdata: Optional[pulumi.Input[bool]] = None,
-             datatype: Optional[pulumi.Input[str]] = None,
-             enable_online_bucket_repair: Optional[pulumi.Input[bool]] = None,
-             frozen_time_period_in_secs: Optional[pulumi.Input[int]] = None,
-             home_path: Optional[pulumi.Input[str]] = None,
-             max_bloom_backfill_bucket_age: Optional[pulumi.Input[str]] = None,
-             max_concurrent_optimizes: Optional[pulumi.Input[int]] = None,
-             max_data_size: Optional[pulumi.Input[str]] = None,
-             max_hot_buckets: Optional[pulumi.Input[int]] = None,
-             max_hot_idle_secs: Optional[pulumi.Input[int]] = None,
-             max_hot_span_secs: Optional[pulumi.Input[int]] = None,
-             max_mem_mb: Optional[pulumi.Input[int]] = None,
-             max_meta_entries: Optional[pulumi.Input[int]] = None,
-             max_time_unreplicated_no_acks: Optional[pulumi.Input[int]] = None,
-             max_time_unreplicated_with_acks: Optional[pulumi.Input[int]] = None,
-             max_total_data_size_mb: Optional[pulumi.Input[int]] = None,
-             max_warm_db_count: Optional[pulumi.Input[int]] = None,
-             min_raw_file_sync_secs: Optional[pulumi.Input[str]] = None,
-             min_stream_group_queue_size: Optional[pulumi.Input[int]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             partial_service_meta_period: Optional[pulumi.Input[int]] = None,
-             process_tracker_service_interval: Optional[pulumi.Input[int]] = None,
-             quarantine_future_secs: Optional[pulumi.Input[int]] = None,
-             quarantine_past_secs: Optional[pulumi.Input[int]] = None,
-             raw_chunk_size_bytes: Optional[pulumi.Input[int]] = None,
-             rep_factor: Optional[pulumi.Input[str]] = None,
-             rotate_period_in_secs: Optional[pulumi.Input[int]] = None,
-             service_meta_period: Optional[pulumi.Input[int]] = None,
-             sync_meta: Optional[pulumi.Input[bool]] = None,
-             thawed_path: Optional[pulumi.Input[str]] = None,
-             throttle_check_period: Optional[pulumi.Input[int]] = None,
-             tstats_home_path: Optional[pulumi.Input[str]] = None,
-             warm_to_cold_script: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if block_sign_size is None and 'blockSignSize' in kwargs:
-            block_sign_size = kwargs['blockSignSize']
-        if bucket_rebuild_memory_hint is None and 'bucketRebuildMemoryHint' in kwargs:
-            bucket_rebuild_memory_hint = kwargs['bucketRebuildMemoryHint']
-        if cold_path is None and 'coldPath' in kwargs:
-            cold_path = kwargs['coldPath']
-        if cold_to_frozen_dir is None and 'coldToFrozenDir' in kwargs:
-            cold_to_frozen_dir = kwargs['coldToFrozenDir']
-        if cold_to_frozen_script is None and 'coldToFrozenScript' in kwargs:
-            cold_to_frozen_script = kwargs['coldToFrozenScript']
-        if compress_rawdata is None and 'compressRawdata' in kwargs:
-            compress_rawdata = kwargs['compressRawdata']
-        if enable_online_bucket_repair is None and 'enableOnlineBucketRepair' in kwargs:
-            enable_online_bucket_repair = kwargs['enableOnlineBucketRepair']
-        if frozen_time_period_in_secs is None and 'frozenTimePeriodInSecs' in kwargs:
-            frozen_time_period_in_secs = kwargs['frozenTimePeriodInSecs']
-        if home_path is None and 'homePath' in kwargs:
-            home_path = kwargs['homePath']
-        if max_bloom_backfill_bucket_age is None and 'maxBloomBackfillBucketAge' in kwargs:
-            max_bloom_backfill_bucket_age = kwargs['maxBloomBackfillBucketAge']
-        if max_concurrent_optimizes is None and 'maxConcurrentOptimizes' in kwargs:
-            max_concurrent_optimizes = kwargs['maxConcurrentOptimizes']
-        if max_data_size is None and 'maxDataSize' in kwargs:
-            max_data_size = kwargs['maxDataSize']
-        if max_hot_buckets is None and 'maxHotBuckets' in kwargs:
-            max_hot_buckets = kwargs['maxHotBuckets']
-        if max_hot_idle_secs is None and 'maxHotIdleSecs' in kwargs:
-            max_hot_idle_secs = kwargs['maxHotIdleSecs']
-        if max_hot_span_secs is None and 'maxHotSpanSecs' in kwargs:
-            max_hot_span_secs = kwargs['maxHotSpanSecs']
-        if max_mem_mb is None and 'maxMemMb' in kwargs:
-            max_mem_mb = kwargs['maxMemMb']
-        if max_meta_entries is None and 'maxMetaEntries' in kwargs:
-            max_meta_entries = kwargs['maxMetaEntries']
-        if max_time_unreplicated_no_acks is None and 'maxTimeUnreplicatedNoAcks' in kwargs:
-            max_time_unreplicated_no_acks = kwargs['maxTimeUnreplicatedNoAcks']
-        if max_time_unreplicated_with_acks is None and 'maxTimeUnreplicatedWithAcks' in kwargs:
-            max_time_unreplicated_with_acks = kwargs['maxTimeUnreplicatedWithAcks']
-        if max_total_data_size_mb is None and 'maxTotalDataSizeMb' in kwargs:
-            max_total_data_size_mb = kwargs['maxTotalDataSizeMb']
-        if max_warm_db_count is None and 'maxWarmDbCount' in kwargs:
-            max_warm_db_count = kwargs['maxWarmDbCount']
-        if min_raw_file_sync_secs is None and 'minRawFileSyncSecs' in kwargs:
-            min_raw_file_sync_secs = kwargs['minRawFileSyncSecs']
-        if min_stream_group_queue_size is None and 'minStreamGroupQueueSize' in kwargs:
-            min_stream_group_queue_size = kwargs['minStreamGroupQueueSize']
-        if partial_service_meta_period is None and 'partialServiceMetaPeriod' in kwargs:
-            partial_service_meta_period = kwargs['partialServiceMetaPeriod']
-        if process_tracker_service_interval is None and 'processTrackerServiceInterval' in kwargs:
-            process_tracker_service_interval = kwargs['processTrackerServiceInterval']
-        if quarantine_future_secs is None and 'quarantineFutureSecs' in kwargs:
-            quarantine_future_secs = kwargs['quarantineFutureSecs']
-        if quarantine_past_secs is None and 'quarantinePastSecs' in kwargs:
-            quarantine_past_secs = kwargs['quarantinePastSecs']
-        if raw_chunk_size_bytes is None and 'rawChunkSizeBytes' in kwargs:
-            raw_chunk_size_bytes = kwargs['rawChunkSizeBytes']
-        if rep_factor is None and 'repFactor' in kwargs:
-            rep_factor = kwargs['repFactor']
-        if rotate_period_in_secs is None and 'rotatePeriodInSecs' in kwargs:
-            rotate_period_in_secs = kwargs['rotatePeriodInSecs']
-        if service_meta_period is None and 'serviceMetaPeriod' in kwargs:
-            service_meta_period = kwargs['serviceMetaPeriod']
-        if sync_meta is None and 'syncMeta' in kwargs:
-            sync_meta = kwargs['syncMeta']
-        if thawed_path is None and 'thawedPath' in kwargs:
-            thawed_path = kwargs['thawedPath']
-        if throttle_check_period is None and 'throttleCheckPeriod' in kwargs:
-            throttle_check_period = kwargs['throttleCheckPeriod']
-        if tstats_home_path is None and 'tstatsHomePath' in kwargs:
-            tstats_home_path = kwargs['tstatsHomePath']
-        if warm_to_cold_script is None and 'warmToColdScript' in kwargs:
-            warm_to_cold_script = kwargs['warmToColdScript']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if block_sign_size is not None:
-            _setter("block_sign_size", block_sign_size)
+            pulumi.set(__self__, "block_sign_size", block_sign_size)
         if bucket_rebuild_memory_hint is not None:
-            _setter("bucket_rebuild_memory_hint", bucket_rebuild_memory_hint)
+            pulumi.set(__self__, "bucket_rebuild_memory_hint", bucket_rebuild_memory_hint)
         if cold_path is not None:
-            _setter("cold_path", cold_path)
+            pulumi.set(__self__, "cold_path", cold_path)
         if cold_to_frozen_dir is not None:
-            _setter("cold_to_frozen_dir", cold_to_frozen_dir)
+            pulumi.set(__self__, "cold_to_frozen_dir", cold_to_frozen_dir)
         if cold_to_frozen_script is not None:
-            _setter("cold_to_frozen_script", cold_to_frozen_script)
+            pulumi.set(__self__, "cold_to_frozen_script", cold_to_frozen_script)
         if compress_rawdata is not None:
-            _setter("compress_rawdata", compress_rawdata)
+            pulumi.set(__self__, "compress_rawdata", compress_rawdata)
         if datatype is not None:
-            _setter("datatype", datatype)
+            pulumi.set(__self__, "datatype", datatype)
         if enable_online_bucket_repair is not None:
-            _setter("enable_online_bucket_repair", enable_online_bucket_repair)
+            pulumi.set(__self__, "enable_online_bucket_repair", enable_online_bucket_repair)
         if frozen_time_period_in_secs is not None:
-            _setter("frozen_time_period_in_secs", frozen_time_period_in_secs)
+            pulumi.set(__self__, "frozen_time_period_in_secs", frozen_time_period_in_secs)
         if home_path is not None:
-            _setter("home_path", home_path)
+            pulumi.set(__self__, "home_path", home_path)
         if max_bloom_backfill_bucket_age is not None:
-            _setter("max_bloom_backfill_bucket_age", max_bloom_backfill_bucket_age)
+            pulumi.set(__self__, "max_bloom_backfill_bucket_age", max_bloom_backfill_bucket_age)
         if max_concurrent_optimizes is not None:
-            _setter("max_concurrent_optimizes", max_concurrent_optimizes)
+            pulumi.set(__self__, "max_concurrent_optimizes", max_concurrent_optimizes)
         if max_data_size is not None:
-            _setter("max_data_size", max_data_size)
+            pulumi.set(__self__, "max_data_size", max_data_size)
         if max_hot_buckets is not None:
-            _setter("max_hot_buckets", max_hot_buckets)
+            pulumi.set(__self__, "max_hot_buckets", max_hot_buckets)
         if max_hot_idle_secs is not None:
-            _setter("max_hot_idle_secs", max_hot_idle_secs)
+            pulumi.set(__self__, "max_hot_idle_secs", max_hot_idle_secs)
         if max_hot_span_secs is not None:
-            _setter("max_hot_span_secs", max_hot_span_secs)
+            pulumi.set(__self__, "max_hot_span_secs", max_hot_span_secs)
         if max_mem_mb is not None:
-            _setter("max_mem_mb", max_mem_mb)
+            pulumi.set(__self__, "max_mem_mb", max_mem_mb)
         if max_meta_entries is not None:
-            _setter("max_meta_entries", max_meta_entries)
+            pulumi.set(__self__, "max_meta_entries", max_meta_entries)
         if max_time_unreplicated_no_acks is not None:
-            _setter("max_time_unreplicated_no_acks", max_time_unreplicated_no_acks)
+            pulumi.set(__self__, "max_time_unreplicated_no_acks", max_time_unreplicated_no_acks)
         if max_time_unreplicated_with_acks is not None:
-            _setter("max_time_unreplicated_with_acks", max_time_unreplicated_with_acks)
+            pulumi.set(__self__, "max_time_unreplicated_with_acks", max_time_unreplicated_with_acks)
         if max_total_data_size_mb is not None:
-            _setter("max_total_data_size_mb", max_total_data_size_mb)
+            pulumi.set(__self__, "max_total_data_size_mb", max_total_data_size_mb)
         if max_warm_db_count is not None:
-            _setter("max_warm_db_count", max_warm_db_count)
+            pulumi.set(__self__, "max_warm_db_count", max_warm_db_count)
         if min_raw_file_sync_secs is not None:
-            _setter("min_raw_file_sync_secs", min_raw_file_sync_secs)
+            pulumi.set(__self__, "min_raw_file_sync_secs", min_raw_file_sync_secs)
         if min_stream_group_queue_size is not None:
-            _setter("min_stream_group_queue_size", min_stream_group_queue_size)
+            pulumi.set(__self__, "min_stream_group_queue_size", min_stream_group_queue_size)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if partial_service_meta_period is not None:
-            _setter("partial_service_meta_period", partial_service_meta_period)
+            pulumi.set(__self__, "partial_service_meta_period", partial_service_meta_period)
         if process_tracker_service_interval is not None:
-            _setter("process_tracker_service_interval", process_tracker_service_interval)
+            pulumi.set(__self__, "process_tracker_service_interval", process_tracker_service_interval)
         if quarantine_future_secs is not None:
-            _setter("quarantine_future_secs", quarantine_future_secs)
+            pulumi.set(__self__, "quarantine_future_secs", quarantine_future_secs)
         if quarantine_past_secs is not None:
-            _setter("quarantine_past_secs", quarantine_past_secs)
+            pulumi.set(__self__, "quarantine_past_secs", quarantine_past_secs)
         if raw_chunk_size_bytes is not None:
-            _setter("raw_chunk_size_bytes", raw_chunk_size_bytes)
+            pulumi.set(__self__, "raw_chunk_size_bytes", raw_chunk_size_bytes)
         if rep_factor is not None:
-            _setter("rep_factor", rep_factor)
+            pulumi.set(__self__, "rep_factor", rep_factor)
         if rotate_period_in_secs is not None:
-            _setter("rotate_period_in_secs", rotate_period_in_secs)
+            pulumi.set(__self__, "rotate_period_in_secs", rotate_period_in_secs)
         if service_meta_period is not None:
-            _setter("service_meta_period", service_meta_period)
+            pulumi.set(__self__, "service_meta_period", service_meta_period)
         if sync_meta is not None:
-            _setter("sync_meta", sync_meta)
+            pulumi.set(__self__, "sync_meta", sync_meta)
         if thawed_path is not None:
-            _setter("thawed_path", thawed_path)
+            pulumi.set(__self__, "thawed_path", thawed_path)
         if throttle_check_period is not None:
-            _setter("throttle_check_period", throttle_check_period)
+            pulumi.set(__self__, "throttle_check_period", throttle_check_period)
         if tstats_home_path is not None:
-            _setter("tstats_home_path", tstats_home_path)
+            pulumi.set(__self__, "tstats_home_path", tstats_home_path)
         if warm_to_cold_script is not None:
-            _setter("warm_to_cold_script", warm_to_cold_script)
+            pulumi.set(__self__, "warm_to_cold_script", warm_to_cold_script)
 
     @property
     @pulumi.getter
@@ -1960,10 +1642,6 @@ class Indexes(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            IndexesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -2017,7 +1695,6 @@ class Indexes(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IndexesArgs.__new__(IndexesArgs)
 
-            acl = _utilities.configure(acl, IndexesAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["block_sign_size"] = block_sign_size
             __props__.__dict__["bucket_rebuild_memory_hint"] = bucket_rebuild_memory_hint

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -56,69 +56,32 @@ class AppsLocalArgs:
                <br>true = App is visible and navigable.
                <br>false = App is not visible or navigable.
         """
-        AppsLocalArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            auth=auth,
-            author=author,
-            configured=configured,
-            description=description,
-            explicit_appname=explicit_appname,
-            filename=filename,
-            label=label,
-            name=name,
-            session=session,
-            update=update,
-            version=version,
-            visible=visible,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['AppsLocalAclArgs']] = None,
-             auth: Optional[pulumi.Input[str]] = None,
-             author: Optional[pulumi.Input[str]] = None,
-             configured: Optional[pulumi.Input[bool]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             explicit_appname: Optional[pulumi.Input[str]] = None,
-             filename: Optional[pulumi.Input[bool]] = None,
-             label: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             session: Optional[pulumi.Input[str]] = None,
-             update: Optional[pulumi.Input[bool]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             visible: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if explicit_appname is None and 'explicitAppname' in kwargs:
-            explicit_appname = kwargs['explicitAppname']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if auth is not None:
-            _setter("auth", auth)
+            pulumi.set(__self__, "auth", auth)
         if author is not None:
-            _setter("author", author)
+            pulumi.set(__self__, "author", author)
         if configured is not None:
-            _setter("configured", configured)
+            pulumi.set(__self__, "configured", configured)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if explicit_appname is not None:
-            _setter("explicit_appname", explicit_appname)
+            pulumi.set(__self__, "explicit_appname", explicit_appname)
         if filename is not None:
-            _setter("filename", filename)
+            pulumi.set(__self__, "filename", filename)
         if label is not None:
-            _setter("label", label)
+            pulumi.set(__self__, "label", label)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if session is not None:
-            _setter("session", session)
+            pulumi.set(__self__, "session", session)
         if update is not None:
-            _setter("update", update)
+            pulumi.set(__self__, "update", update)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
         if visible is not None:
-            _setter("visible", visible)
+            pulumi.set(__self__, "visible", visible)
 
     @property
     @pulumi.getter
@@ -331,69 +294,32 @@ class _AppsLocalState:
                <br>true = App is visible and navigable.
                <br>false = App is not visible or navigable.
         """
-        _AppsLocalState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            auth=auth,
-            author=author,
-            configured=configured,
-            description=description,
-            explicit_appname=explicit_appname,
-            filename=filename,
-            label=label,
-            name=name,
-            session=session,
-            update=update,
-            version=version,
-            visible=visible,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['AppsLocalAclArgs']] = None,
-             auth: Optional[pulumi.Input[str]] = None,
-             author: Optional[pulumi.Input[str]] = None,
-             configured: Optional[pulumi.Input[bool]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             explicit_appname: Optional[pulumi.Input[str]] = None,
-             filename: Optional[pulumi.Input[bool]] = None,
-             label: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             session: Optional[pulumi.Input[str]] = None,
-             update: Optional[pulumi.Input[bool]] = None,
-             version: Optional[pulumi.Input[str]] = None,
-             visible: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if explicit_appname is None and 'explicitAppname' in kwargs:
-            explicit_appname = kwargs['explicitAppname']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if auth is not None:
-            _setter("auth", auth)
+            pulumi.set(__self__, "auth", auth)
         if author is not None:
-            _setter("author", author)
+            pulumi.set(__self__, "author", author)
         if configured is not None:
-            _setter("configured", configured)
+            pulumi.set(__self__, "configured", configured)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if explicit_appname is not None:
-            _setter("explicit_appname", explicit_appname)
+            pulumi.set(__self__, "explicit_appname", explicit_appname)
         if filename is not None:
-            _setter("filename", filename)
+            pulumi.set(__self__, "filename", filename)
         if label is not None:
-            _setter("label", label)
+            pulumi.set(__self__, "label", label)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if session is not None:
-            _setter("session", session)
+            pulumi.set(__self__, "session", session)
         if update is not None:
-            _setter("update", update)
+            pulumi.set(__self__, "update", update)
         if version is not None:
-            _setter("version", version)
+            pulumi.set(__self__, "version", version)
         if visible is not None:
-            _setter("visible", visible)
+            pulumi.set(__self__, "visible", visible)
 
     @property
     @pulumi.getter
@@ -657,10 +583,6 @@ class AppsLocal(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AppsLocalArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -688,7 +610,6 @@ class AppsLocal(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AppsLocalArgs.__new__(AppsLocalArgs)
 
-            acl = _utilities.configure(acl, AppsLocalAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["auth"] = auth
             __props__.__dict__["author"] = author

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['InputsTcpSslArgs', 'InputsTcpSsl']
@@ -27,41 +27,16 @@ class InputsTcpSslArgs:
         :param pulumi.Input[str] root_ca: Certificate authority list (root file)
         :param pulumi.Input[str] server_cert: Full path to the server certificate.
         """
-        InputsTcpSslArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            password=password,
-            require_client_cert=require_client_cert,
-            root_ca=root_ca,
-            server_cert=server_cert,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[pulumi.Input[bool]] = None,
-             password: Optional[pulumi.Input[str]] = None,
-             require_client_cert: Optional[pulumi.Input[bool]] = None,
-             root_ca: Optional[pulumi.Input[str]] = None,
-             server_cert: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if require_client_cert is None and 'requireClientCert' in kwargs:
-            require_client_cert = kwargs['requireClientCert']
-        if root_ca is None and 'rootCa' in kwargs:
-            root_ca = kwargs['rootCa']
-        if server_cert is None and 'serverCert' in kwargs:
-            server_cert = kwargs['serverCert']
-
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if password is not None:
-            _setter("password", password)
+            pulumi.set(__self__, "password", password)
         if require_client_cert is not None:
-            _setter("require_client_cert", require_client_cert)
+            pulumi.set(__self__, "require_client_cert", require_client_cert)
         if root_ca is not None:
-            _setter("root_ca", root_ca)
+            pulumi.set(__self__, "root_ca", root_ca)
         if server_cert is not None:
-            _setter("server_cert", server_cert)
+            pulumi.set(__self__, "server_cert", server_cert)
 
     @property
     @pulumi.getter
@@ -140,41 +115,16 @@ class _InputsTcpSslState:
         :param pulumi.Input[str] root_ca: Certificate authority list (root file)
         :param pulumi.Input[str] server_cert: Full path to the server certificate.
         """
-        _InputsTcpSslState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            disabled=disabled,
-            password=password,
-            require_client_cert=require_client_cert,
-            root_ca=root_ca,
-            server_cert=server_cert,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             disabled: Optional[pulumi.Input[bool]] = None,
-             password: Optional[pulumi.Input[str]] = None,
-             require_client_cert: Optional[pulumi.Input[bool]] = None,
-             root_ca: Optional[pulumi.Input[str]] = None,
-             server_cert: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if require_client_cert is None and 'requireClientCert' in kwargs:
-            require_client_cert = kwargs['requireClientCert']
-        if root_ca is None and 'rootCa' in kwargs:
-            root_ca = kwargs['rootCa']
-        if server_cert is None and 'serverCert' in kwargs:
-            server_cert = kwargs['serverCert']
-
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if password is not None:
-            _setter("password", password)
+            pulumi.set(__self__, "password", password)
         if require_client_cert is not None:
-            _setter("require_client_cert", require_client_cert)
+            pulumi.set(__self__, "require_client_cert", require_client_cert)
         if root_ca is not None:
-            _setter("root_ca", root_ca)
+            pulumi.set(__self__, "root_ca", root_ca)
         if server_cert is not None:
-            _setter("server_cert", server_cert)
+            pulumi.set(__self__, "server_cert", server_cert)
 
     @property
     @pulumi.getter
@@ -304,10 +254,6 @@ class InputsTcpSsl(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InputsTcpSslArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

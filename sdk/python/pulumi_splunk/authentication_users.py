@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AuthenticationUsersArgs', 'AuthenticationUsers']
@@ -35,57 +35,24 @@ class AuthenticationUsersArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: Role to assign to this user. At least one existing role is required.
         :param pulumi.Input[str] tz: User timezone.
         """
-        AuthenticationUsersArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            default_app=default_app,
-            email=email,
-            force_change_pass=force_change_pass,
-            name=name,
-            password=password,
-            realname=realname,
-            restart_background_jobs=restart_background_jobs,
-            roles=roles,
-            tz=tz,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             default_app: Optional[pulumi.Input[str]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             force_change_pass: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             password: Optional[pulumi.Input[str]] = None,
-             realname: Optional[pulumi.Input[str]] = None,
-             restart_background_jobs: Optional[pulumi.Input[bool]] = None,
-             roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             tz: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_app is None and 'defaultApp' in kwargs:
-            default_app = kwargs['defaultApp']
-        if force_change_pass is None and 'forceChangePass' in kwargs:
-            force_change_pass = kwargs['forceChangePass']
-        if restart_background_jobs is None and 'restartBackgroundJobs' in kwargs:
-            restart_background_jobs = kwargs['restartBackgroundJobs']
-
         if default_app is not None:
-            _setter("default_app", default_app)
+            pulumi.set(__self__, "default_app", default_app)
         if email is not None:
-            _setter("email", email)
+            pulumi.set(__self__, "email", email)
         if force_change_pass is not None:
-            _setter("force_change_pass", force_change_pass)
+            pulumi.set(__self__, "force_change_pass", force_change_pass)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if password is not None:
-            _setter("password", password)
+            pulumi.set(__self__, "password", password)
         if realname is not None:
-            _setter("realname", realname)
+            pulumi.set(__self__, "realname", realname)
         if restart_background_jobs is not None:
-            _setter("restart_background_jobs", restart_background_jobs)
+            pulumi.set(__self__, "restart_background_jobs", restart_background_jobs)
         if roles is not None:
-            _setter("roles", roles)
+            pulumi.set(__self__, "roles", roles)
         if tz is not None:
-            _setter("tz", tz)
+            pulumi.set(__self__, "tz", tz)
 
     @property
     @pulumi.getter(name="defaultApp")
@@ -220,57 +187,24 @@ class _AuthenticationUsersState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: Role to assign to this user. At least one existing role is required.
         :param pulumi.Input[str] tz: User timezone.
         """
-        _AuthenticationUsersState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            default_app=default_app,
-            email=email,
-            force_change_pass=force_change_pass,
-            name=name,
-            password=password,
-            realname=realname,
-            restart_background_jobs=restart_background_jobs,
-            roles=roles,
-            tz=tz,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             default_app: Optional[pulumi.Input[str]] = None,
-             email: Optional[pulumi.Input[str]] = None,
-             force_change_pass: Optional[pulumi.Input[bool]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             password: Optional[pulumi.Input[str]] = None,
-             realname: Optional[pulumi.Input[str]] = None,
-             restart_background_jobs: Optional[pulumi.Input[bool]] = None,
-             roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             tz: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if default_app is None and 'defaultApp' in kwargs:
-            default_app = kwargs['defaultApp']
-        if force_change_pass is None and 'forceChangePass' in kwargs:
-            force_change_pass = kwargs['forceChangePass']
-        if restart_background_jobs is None and 'restartBackgroundJobs' in kwargs:
-            restart_background_jobs = kwargs['restartBackgroundJobs']
-
         if default_app is not None:
-            _setter("default_app", default_app)
+            pulumi.set(__self__, "default_app", default_app)
         if email is not None:
-            _setter("email", email)
+            pulumi.set(__self__, "email", email)
         if force_change_pass is not None:
-            _setter("force_change_pass", force_change_pass)
+            pulumi.set(__self__, "force_change_pass", force_change_pass)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if password is not None:
-            _setter("password", password)
+            pulumi.set(__self__, "password", password)
         if realname is not None:
-            _setter("realname", realname)
+            pulumi.set(__self__, "realname", realname)
         if restart_background_jobs is not None:
-            _setter("restart_background_jobs", restart_background_jobs)
+            pulumi.set(__self__, "restart_background_jobs", restart_background_jobs)
         if roles is not None:
-            _setter("roles", roles)
+            pulumi.set(__self__, "roles", roles)
         if tz is not None:
-            _setter("tz", tz)
+            pulumi.set(__self__, "tz", tz)
 
     @property
     @pulumi.getter(name="defaultApp")
@@ -460,10 +394,6 @@ class AuthenticationUsers(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            AuthenticationUsersArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

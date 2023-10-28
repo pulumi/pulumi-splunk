@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -44,73 +44,28 @@ class OutputsTcpServerArgs:
         :param pulumi.Input[str] ssl_root_ca_path: The path to the root certificate authority file.
         :param pulumi.Input[bool] ssl_verify_server_cert: If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
         """
-        OutputsTcpServerArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            disabled=disabled,
-            method=method,
-            name=name,
-            ssl_alt_name_to_check=ssl_alt_name_to_check,
-            ssl_cert_path=ssl_cert_path,
-            ssl_cipher=ssl_cipher,
-            ssl_common_name_to_check=ssl_common_name_to_check,
-            ssl_password=ssl_password,
-            ssl_root_ca_path=ssl_root_ca_path,
-            ssl_verify_server_cert=ssl_verify_server_cert,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['OutputsTcpServerAclArgs']] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             method: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             ssl_alt_name_to_check: Optional[pulumi.Input[str]] = None,
-             ssl_cert_path: Optional[pulumi.Input[str]] = None,
-             ssl_cipher: Optional[pulumi.Input[str]] = None,
-             ssl_common_name_to_check: Optional[pulumi.Input[str]] = None,
-             ssl_password: Optional[pulumi.Input[str]] = None,
-             ssl_root_ca_path: Optional[pulumi.Input[str]] = None,
-             ssl_verify_server_cert: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ssl_alt_name_to_check is None and 'sslAltNameToCheck' in kwargs:
-            ssl_alt_name_to_check = kwargs['sslAltNameToCheck']
-        if ssl_cert_path is None and 'sslCertPath' in kwargs:
-            ssl_cert_path = kwargs['sslCertPath']
-        if ssl_cipher is None and 'sslCipher' in kwargs:
-            ssl_cipher = kwargs['sslCipher']
-        if ssl_common_name_to_check is None and 'sslCommonNameToCheck' in kwargs:
-            ssl_common_name_to_check = kwargs['sslCommonNameToCheck']
-        if ssl_password is None and 'sslPassword' in kwargs:
-            ssl_password = kwargs['sslPassword']
-        if ssl_root_ca_path is None and 'sslRootCaPath' in kwargs:
-            ssl_root_ca_path = kwargs['sslRootCaPath']
-        if ssl_verify_server_cert is None and 'sslVerifyServerCert' in kwargs:
-            ssl_verify_server_cert = kwargs['sslVerifyServerCert']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if method is not None:
-            _setter("method", method)
+            pulumi.set(__self__, "method", method)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if ssl_alt_name_to_check is not None:
-            _setter("ssl_alt_name_to_check", ssl_alt_name_to_check)
+            pulumi.set(__self__, "ssl_alt_name_to_check", ssl_alt_name_to_check)
         if ssl_cert_path is not None:
-            _setter("ssl_cert_path", ssl_cert_path)
+            pulumi.set(__self__, "ssl_cert_path", ssl_cert_path)
         if ssl_cipher is not None:
-            _setter("ssl_cipher", ssl_cipher)
+            pulumi.set(__self__, "ssl_cipher", ssl_cipher)
         if ssl_common_name_to_check is not None:
-            _setter("ssl_common_name_to_check", ssl_common_name_to_check)
+            pulumi.set(__self__, "ssl_common_name_to_check", ssl_common_name_to_check)
         if ssl_password is not None:
-            _setter("ssl_password", ssl_password)
+            pulumi.set(__self__, "ssl_password", ssl_password)
         if ssl_root_ca_path is not None:
-            _setter("ssl_root_ca_path", ssl_root_ca_path)
+            pulumi.set(__self__, "ssl_root_ca_path", ssl_root_ca_path)
         if ssl_verify_server_cert is not None:
-            _setter("ssl_verify_server_cert", ssl_verify_server_cert)
+            pulumi.set(__self__, "ssl_verify_server_cert", ssl_verify_server_cert)
 
     @property
     @pulumi.getter
@@ -279,73 +234,28 @@ class _OutputsTcpServerState:
         :param pulumi.Input[str] ssl_root_ca_path: The path to the root certificate authority file.
         :param pulumi.Input[bool] ssl_verify_server_cert: If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
         """
-        _OutputsTcpServerState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            disabled=disabled,
-            method=method,
-            name=name,
-            ssl_alt_name_to_check=ssl_alt_name_to_check,
-            ssl_cert_path=ssl_cert_path,
-            ssl_cipher=ssl_cipher,
-            ssl_common_name_to_check=ssl_common_name_to_check,
-            ssl_password=ssl_password,
-            ssl_root_ca_path=ssl_root_ca_path,
-            ssl_verify_server_cert=ssl_verify_server_cert,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['OutputsTcpServerAclArgs']] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             method: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             ssl_alt_name_to_check: Optional[pulumi.Input[str]] = None,
-             ssl_cert_path: Optional[pulumi.Input[str]] = None,
-             ssl_cipher: Optional[pulumi.Input[str]] = None,
-             ssl_common_name_to_check: Optional[pulumi.Input[str]] = None,
-             ssl_password: Optional[pulumi.Input[str]] = None,
-             ssl_root_ca_path: Optional[pulumi.Input[str]] = None,
-             ssl_verify_server_cert: Optional[pulumi.Input[bool]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if ssl_alt_name_to_check is None and 'sslAltNameToCheck' in kwargs:
-            ssl_alt_name_to_check = kwargs['sslAltNameToCheck']
-        if ssl_cert_path is None and 'sslCertPath' in kwargs:
-            ssl_cert_path = kwargs['sslCertPath']
-        if ssl_cipher is None and 'sslCipher' in kwargs:
-            ssl_cipher = kwargs['sslCipher']
-        if ssl_common_name_to_check is None and 'sslCommonNameToCheck' in kwargs:
-            ssl_common_name_to_check = kwargs['sslCommonNameToCheck']
-        if ssl_password is None and 'sslPassword' in kwargs:
-            ssl_password = kwargs['sslPassword']
-        if ssl_root_ca_path is None and 'sslRootCaPath' in kwargs:
-            ssl_root_ca_path = kwargs['sslRootCaPath']
-        if ssl_verify_server_cert is None and 'sslVerifyServerCert' in kwargs:
-            ssl_verify_server_cert = kwargs['sslVerifyServerCert']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if method is not None:
-            _setter("method", method)
+            pulumi.set(__self__, "method", method)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if ssl_alt_name_to_check is not None:
-            _setter("ssl_alt_name_to_check", ssl_alt_name_to_check)
+            pulumi.set(__self__, "ssl_alt_name_to_check", ssl_alt_name_to_check)
         if ssl_cert_path is not None:
-            _setter("ssl_cert_path", ssl_cert_path)
+            pulumi.set(__self__, "ssl_cert_path", ssl_cert_path)
         if ssl_cipher is not None:
-            _setter("ssl_cipher", ssl_cipher)
+            pulumi.set(__self__, "ssl_cipher", ssl_cipher)
         if ssl_common_name_to_check is not None:
-            _setter("ssl_common_name_to_check", ssl_common_name_to_check)
+            pulumi.set(__self__, "ssl_common_name_to_check", ssl_common_name_to_check)
         if ssl_password is not None:
-            _setter("ssl_password", ssl_password)
+            pulumi.set(__self__, "ssl_password", ssl_password)
         if ssl_root_ca_path is not None:
-            _setter("ssl_root_ca_path", ssl_root_ca_path)
+            pulumi.set(__self__, "ssl_root_ca_path", ssl_root_ca_path)
         if ssl_verify_server_cert is not None:
-            _setter("ssl_verify_server_cert", ssl_verify_server_cert)
+            pulumi.set(__self__, "ssl_verify_server_cert", ssl_verify_server_cert)
 
     @property
     @pulumi.getter
@@ -561,10 +471,6 @@ class OutputsTcpServer(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            OutputsTcpServerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -590,7 +496,6 @@ class OutputsTcpServer(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = OutputsTcpServerArgs.__new__(OutputsTcpServerArgs)
 
-            acl = _utilities.configure(acl, OutputsTcpServerAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["disabled"] = disabled
             __props__.__dict__["method"] = method

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -53,65 +53,28 @@ class InputsTcpRawArgs:
                "sourcetype=" is automatically prepended to <string>.
                Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
         """
-        InputsTcpRawArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            connection_host=connection_host,
-            disabled=disabled,
-            host=host,
-            index=index,
-            name=name,
-            queue=queue,
-            raw_tcp_done_timeout=raw_tcp_done_timeout,
-            restrict_to_host=restrict_to_host,
-            source=source,
-            sourcetype=sourcetype,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsTcpRawAclArgs']] = None,
-             connection_host: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             index: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             queue: Optional[pulumi.Input[str]] = None,
-             raw_tcp_done_timeout: Optional[pulumi.Input[int]] = None,
-             restrict_to_host: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_host is None and 'connectionHost' in kwargs:
-            connection_host = kwargs['connectionHost']
-        if raw_tcp_done_timeout is None and 'rawTcpDoneTimeout' in kwargs:
-            raw_tcp_done_timeout = kwargs['rawTcpDoneTimeout']
-        if restrict_to_host is None and 'restrictToHost' in kwargs:
-            restrict_to_host = kwargs['restrictToHost']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if connection_host is not None:
-            _setter("connection_host", connection_host)
+            pulumi.set(__self__, "connection_host", connection_host)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if index is not None:
-            _setter("index", index)
+            pulumi.set(__self__, "index", index)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if queue is not None:
-            _setter("queue", queue)
+            pulumi.set(__self__, "queue", queue)
         if raw_tcp_done_timeout is not None:
-            _setter("raw_tcp_done_timeout", raw_tcp_done_timeout)
+            pulumi.set(__self__, "raw_tcp_done_timeout", raw_tcp_done_timeout)
         if restrict_to_host is not None:
-            _setter("restrict_to_host", restrict_to_host)
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if sourcetype is not None:
-            _setter("sourcetype", sourcetype)
+            pulumi.set(__self__, "sourcetype", sourcetype)
 
     @property
     @pulumi.getter
@@ -298,65 +261,28 @@ class _InputsTcpRawState:
                "sourcetype=" is automatically prepended to <string>.
                Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
         """
-        _InputsTcpRawState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            connection_host=connection_host,
-            disabled=disabled,
-            host=host,
-            index=index,
-            name=name,
-            queue=queue,
-            raw_tcp_done_timeout=raw_tcp_done_timeout,
-            restrict_to_host=restrict_to_host,
-            source=source,
-            sourcetype=sourcetype,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsTcpRawAclArgs']] = None,
-             connection_host: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             index: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             queue: Optional[pulumi.Input[str]] = None,
-             raw_tcp_done_timeout: Optional[pulumi.Input[int]] = None,
-             restrict_to_host: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_host is None and 'connectionHost' in kwargs:
-            connection_host = kwargs['connectionHost']
-        if raw_tcp_done_timeout is None and 'rawTcpDoneTimeout' in kwargs:
-            raw_tcp_done_timeout = kwargs['rawTcpDoneTimeout']
-        if restrict_to_host is None and 'restrictToHost' in kwargs:
-            restrict_to_host = kwargs['restrictToHost']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if connection_host is not None:
-            _setter("connection_host", connection_host)
+            pulumi.set(__self__, "connection_host", connection_host)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if index is not None:
-            _setter("index", index)
+            pulumi.set(__self__, "index", index)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if queue is not None:
-            _setter("queue", queue)
+            pulumi.set(__self__, "queue", queue)
         if raw_tcp_done_timeout is not None:
-            _setter("raw_tcp_done_timeout", raw_tcp_done_timeout)
+            pulumi.set(__self__, "raw_tcp_done_timeout", raw_tcp_done_timeout)
         if restrict_to_host is not None:
-            _setter("restrict_to_host", restrict_to_host)
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if sourcetype is not None:
-            _setter("sourcetype", sourcetype)
+            pulumi.set(__self__, "sourcetype", sourcetype)
 
     @property
     @pulumi.getter
@@ -600,10 +526,6 @@ class InputsTcpRaw(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InputsTcpRawArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -629,7 +551,6 @@ class InputsTcpRaw(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsTcpRawArgs.__new__(InputsTcpRawArgs)
 
-            acl = _utilities.configure(acl, InputsTcpRawAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["connection_host"] = connection_host
             __props__.__dict__["disabled"] = disabled

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,27 +25,12 @@ class InputsTcpSplunkTcpTokenArgs:
         :param pulumi.Input[str] name: Required. Name for the token to create.
         :param pulumi.Input[str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
         """
-        InputsTcpSplunkTcpTokenArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            name=name,
-            token=token,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if token is not None:
-            _setter("token", token)
+            pulumi.set(__self__, "token", token)
 
     @property
     @pulumi.getter
@@ -96,27 +81,12 @@ class _InputsTcpSplunkTcpTokenState:
         :param pulumi.Input[str] name: Required. Name for the token to create.
         :param pulumi.Input[str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
         """
-        _InputsTcpSplunkTcpTokenState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            name=name,
-            token=token,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             token: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if token is not None:
-            _setter("token", token)
+            pulumi.set(__self__, "token", token)
 
     @property
     @pulumi.getter
@@ -214,10 +184,6 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InputsTcpSplunkTcpTokenArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -235,7 +201,6 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsTcpSplunkTcpTokenArgs.__new__(InputsTcpSplunkTcpTokenArgs)
 
-            acl = _utilities.configure(acl, InputsTcpSplunkTcpTokenAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["name"] = name
             __props__.__dict__["token"] = token
