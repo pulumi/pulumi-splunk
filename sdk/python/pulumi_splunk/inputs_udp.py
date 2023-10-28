@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,71 +49,30 @@ class InputsUdpArgs:
         :param pulumi.Input[str] source: The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
         :param pulumi.Input[str] sourcetype: The value to populate in the sourcetype field for incoming events.
         """
-        InputsUdpArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            connection_host=connection_host,
-            disabled=disabled,
-            host=host,
-            index=index,
-            name=name,
-            no_appending_timestamp=no_appending_timestamp,
-            no_priority_stripping=no_priority_stripping,
-            queue=queue,
-            restrict_to_host=restrict_to_host,
-            source=source,
-            sourcetype=sourcetype,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsUdpAclArgs']] = None,
-             connection_host: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             index: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             no_appending_timestamp: Optional[pulumi.Input[bool]] = None,
-             no_priority_stripping: Optional[pulumi.Input[bool]] = None,
-             queue: Optional[pulumi.Input[str]] = None,
-             restrict_to_host: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_host is None and 'connectionHost' in kwargs:
-            connection_host = kwargs['connectionHost']
-        if no_appending_timestamp is None and 'noAppendingTimestamp' in kwargs:
-            no_appending_timestamp = kwargs['noAppendingTimestamp']
-        if no_priority_stripping is None and 'noPriorityStripping' in kwargs:
-            no_priority_stripping = kwargs['noPriorityStripping']
-        if restrict_to_host is None and 'restrictToHost' in kwargs:
-            restrict_to_host = kwargs['restrictToHost']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if connection_host is not None:
-            _setter("connection_host", connection_host)
+            pulumi.set(__self__, "connection_host", connection_host)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if index is not None:
-            _setter("index", index)
+            pulumi.set(__self__, "index", index)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if no_appending_timestamp is not None:
-            _setter("no_appending_timestamp", no_appending_timestamp)
+            pulumi.set(__self__, "no_appending_timestamp", no_appending_timestamp)
         if no_priority_stripping is not None:
-            _setter("no_priority_stripping", no_priority_stripping)
+            pulumi.set(__self__, "no_priority_stripping", no_priority_stripping)
         if queue is not None:
-            _setter("queue", queue)
+            pulumi.set(__self__, "queue", queue)
         if restrict_to_host is not None:
-            _setter("restrict_to_host", restrict_to_host)
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if sourcetype is not None:
-            _setter("sourcetype", sourcetype)
+            pulumi.set(__self__, "sourcetype", sourcetype)
 
     @property
     @pulumi.getter
@@ -302,71 +261,30 @@ class _InputsUdpState:
         :param pulumi.Input[str] source: The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
         :param pulumi.Input[str] sourcetype: The value to populate in the sourcetype field for incoming events.
         """
-        _InputsUdpState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            connection_host=connection_host,
-            disabled=disabled,
-            host=host,
-            index=index,
-            name=name,
-            no_appending_timestamp=no_appending_timestamp,
-            no_priority_stripping=no_priority_stripping,
-            queue=queue,
-            restrict_to_host=restrict_to_host,
-            source=source,
-            sourcetype=sourcetype,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsUdpAclArgs']] = None,
-             connection_host: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             index: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             no_appending_timestamp: Optional[pulumi.Input[bool]] = None,
-             no_priority_stripping: Optional[pulumi.Input[bool]] = None,
-             queue: Optional[pulumi.Input[str]] = None,
-             restrict_to_host: Optional[pulumi.Input[str]] = None,
-             source: Optional[pulumi.Input[str]] = None,
-             sourcetype: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_host is None and 'connectionHost' in kwargs:
-            connection_host = kwargs['connectionHost']
-        if no_appending_timestamp is None and 'noAppendingTimestamp' in kwargs:
-            no_appending_timestamp = kwargs['noAppendingTimestamp']
-        if no_priority_stripping is None and 'noPriorityStripping' in kwargs:
-            no_priority_stripping = kwargs['noPriorityStripping']
-        if restrict_to_host is None and 'restrictToHost' in kwargs:
-            restrict_to_host = kwargs['restrictToHost']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if connection_host is not None:
-            _setter("connection_host", connection_host)
+            pulumi.set(__self__, "connection_host", connection_host)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if index is not None:
-            _setter("index", index)
+            pulumi.set(__self__, "index", index)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if no_appending_timestamp is not None:
-            _setter("no_appending_timestamp", no_appending_timestamp)
+            pulumi.set(__self__, "no_appending_timestamp", no_appending_timestamp)
         if no_priority_stripping is not None:
-            _setter("no_priority_stripping", no_priority_stripping)
+            pulumi.set(__self__, "no_priority_stripping", no_priority_stripping)
         if queue is not None:
-            _setter("queue", queue)
+            pulumi.set(__self__, "queue", queue)
         if restrict_to_host is not None:
-            _setter("restrict_to_host", restrict_to_host)
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
         if source is not None:
-            _setter("source", source)
+            pulumi.set(__self__, "source", source)
         if sourcetype is not None:
-            _setter("sourcetype", sourcetype)
+            pulumi.set(__self__, "sourcetype", sourcetype)
 
     @property
     @pulumi.getter
@@ -610,10 +528,6 @@ class InputsUdp(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InputsUdpArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -640,7 +554,6 @@ class InputsUdp(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsUdpArgs.__new__(InputsUdpArgs)
 
-            acl = _utilities.configure(acl, InputsUdpAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["connection_host"] = connection_host
             __props__.__dict__["disabled"] = disabled

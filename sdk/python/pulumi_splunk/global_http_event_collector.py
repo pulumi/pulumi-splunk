@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['GlobalHttpEventCollectorArgs', 'GlobalHttpEventCollector']
@@ -32,53 +32,20 @@ class GlobalHttpEventCollectorArgs:
         :param pulumi.Input[int] use_deployment_server: Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
                Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
         """
-        GlobalHttpEventCollectorArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dedicated_io_threads=dedicated_io_threads,
-            disabled=disabled,
-            enable_ssl=enable_ssl,
-            max_sockets=max_sockets,
-            max_threads=max_threads,
-            port=port,
-            use_deployment_server=use_deployment_server,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dedicated_io_threads: Optional[pulumi.Input[int]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             enable_ssl: Optional[pulumi.Input[bool]] = None,
-             max_sockets: Optional[pulumi.Input[int]] = None,
-             max_threads: Optional[pulumi.Input[int]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             use_deployment_server: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dedicated_io_threads is None and 'dedicatedIoThreads' in kwargs:
-            dedicated_io_threads = kwargs['dedicatedIoThreads']
-        if enable_ssl is None and 'enableSsl' in kwargs:
-            enable_ssl = kwargs['enableSsl']
-        if max_sockets is None and 'maxSockets' in kwargs:
-            max_sockets = kwargs['maxSockets']
-        if max_threads is None and 'maxThreads' in kwargs:
-            max_threads = kwargs['maxThreads']
-        if use_deployment_server is None and 'useDeploymentServer' in kwargs:
-            use_deployment_server = kwargs['useDeploymentServer']
-
         if dedicated_io_threads is not None:
-            _setter("dedicated_io_threads", dedicated_io_threads)
+            pulumi.set(__self__, "dedicated_io_threads", dedicated_io_threads)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if enable_ssl is not None:
-            _setter("enable_ssl", enable_ssl)
+            pulumi.set(__self__, "enable_ssl", enable_ssl)
         if max_sockets is not None:
-            _setter("max_sockets", max_sockets)
+            pulumi.set(__self__, "max_sockets", max_sockets)
         if max_threads is not None:
-            _setter("max_threads", max_threads)
+            pulumi.set(__self__, "max_threads", max_threads)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if use_deployment_server is not None:
-            _setter("use_deployment_server", use_deployment_server)
+            pulumi.set(__self__, "use_deployment_server", use_deployment_server)
 
     @property
     @pulumi.getter(name="dedicatedIoThreads")
@@ -187,53 +154,20 @@ class _GlobalHttpEventCollectorState:
         :param pulumi.Input[int] use_deployment_server: Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
                Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
         """
-        _GlobalHttpEventCollectorState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            dedicated_io_threads=dedicated_io_threads,
-            disabled=disabled,
-            enable_ssl=enable_ssl,
-            max_sockets=max_sockets,
-            max_threads=max_threads,
-            port=port,
-            use_deployment_server=use_deployment_server,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             dedicated_io_threads: Optional[pulumi.Input[int]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             enable_ssl: Optional[pulumi.Input[bool]] = None,
-             max_sockets: Optional[pulumi.Input[int]] = None,
-             max_threads: Optional[pulumi.Input[int]] = None,
-             port: Optional[pulumi.Input[int]] = None,
-             use_deployment_server: Optional[pulumi.Input[int]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if dedicated_io_threads is None and 'dedicatedIoThreads' in kwargs:
-            dedicated_io_threads = kwargs['dedicatedIoThreads']
-        if enable_ssl is None and 'enableSsl' in kwargs:
-            enable_ssl = kwargs['enableSsl']
-        if max_sockets is None and 'maxSockets' in kwargs:
-            max_sockets = kwargs['maxSockets']
-        if max_threads is None and 'maxThreads' in kwargs:
-            max_threads = kwargs['maxThreads']
-        if use_deployment_server is None and 'useDeploymentServer' in kwargs:
-            use_deployment_server = kwargs['useDeploymentServer']
-
         if dedicated_io_threads is not None:
-            _setter("dedicated_io_threads", dedicated_io_threads)
+            pulumi.set(__self__, "dedicated_io_threads", dedicated_io_threads)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if enable_ssl is not None:
-            _setter("enable_ssl", enable_ssl)
+            pulumi.set(__self__, "enable_ssl", enable_ssl)
         if max_sockets is not None:
-            _setter("max_sockets", max_sockets)
+            pulumi.set(__self__, "max_sockets", max_sockets)
         if max_threads is not None:
-            _setter("max_threads", max_threads)
+            pulumi.set(__self__, "max_threads", max_threads)
         if port is not None:
-            _setter("port", port)
+            pulumi.set(__self__, "port", port)
         if use_deployment_server is not None:
-            _setter("use_deployment_server", use_deployment_server)
+            pulumi.set(__self__, "use_deployment_server", use_deployment_server)
 
     @property
     @pulumi.getter(name="dedicatedIoThreads")
@@ -395,10 +329,6 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            GlobalHttpEventCollectorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

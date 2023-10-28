@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -36,43 +36,18 @@ class InputsTcpCookedArgs:
         :param pulumi.Input[str] name: The port number of this input.
         :param pulumi.Input[str] restrict_to_host: Restrict incoming connections on this port to the host specified here.
         """
-        InputsTcpCookedArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            connection_host=connection_host,
-            disabled=disabled,
-            host=host,
-            name=name,
-            restrict_to_host=restrict_to_host,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsTcpCookedAclArgs']] = None,
-             connection_host: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             restrict_to_host: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_host is None and 'connectionHost' in kwargs:
-            connection_host = kwargs['connectionHost']
-        if restrict_to_host is None and 'restrictToHost' in kwargs:
-            restrict_to_host = kwargs['restrictToHost']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if connection_host is not None:
-            _setter("connection_host", connection_host)
+            pulumi.set(__self__, "connection_host", connection_host)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if restrict_to_host is not None:
-            _setter("restrict_to_host", restrict_to_host)
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
 
     @property
     @pulumi.getter
@@ -175,43 +150,18 @@ class _InputsTcpCookedState:
         :param pulumi.Input[str] name: The port number of this input.
         :param pulumi.Input[str] restrict_to_host: Restrict incoming connections on this port to the host specified here.
         """
-        _InputsTcpCookedState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            acl=acl,
-            connection_host=connection_host,
-            disabled=disabled,
-            host=host,
-            name=name,
-            restrict_to_host=restrict_to_host,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             acl: Optional[pulumi.Input['InputsTcpCookedAclArgs']] = None,
-             connection_host: Optional[pulumi.Input[str]] = None,
-             disabled: Optional[pulumi.Input[bool]] = None,
-             host: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             restrict_to_host: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-        if connection_host is None and 'connectionHost' in kwargs:
-            connection_host = kwargs['connectionHost']
-        if restrict_to_host is None and 'restrictToHost' in kwargs:
-            restrict_to_host = kwargs['restrictToHost']
-
         if acl is not None:
-            _setter("acl", acl)
+            pulumi.set(__self__, "acl", acl)
         if connection_host is not None:
-            _setter("connection_host", connection_host)
+            pulumi.set(__self__, "connection_host", connection_host)
         if disabled is not None:
-            _setter("disabled", disabled)
+            pulumi.set(__self__, "disabled", disabled)
         if host is not None:
-            _setter("host", host)
+            pulumi.set(__self__, "host", host)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if restrict_to_host is not None:
-            _setter("restrict_to_host", restrict_to_host)
+            pulumi.set(__self__, "restrict_to_host", restrict_to_host)
 
     @property
     @pulumi.getter
@@ -367,10 +317,6 @@ class InputsTcpCooked(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            InputsTcpCookedArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -391,7 +337,6 @@ class InputsTcpCooked(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InputsTcpCookedArgs.__new__(InputsTcpCookedArgs)
 
-            acl = _utilities.configure(acl, InputsTcpCookedAclArgs, True)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["connection_host"] = connection_host
             __props__.__dict__["disabled"] = disabled
