@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -30,16 +30,39 @@ class ShIndexesManagerArgs:
                Defaults to 100 MB.
         :param pulumi.Input[str] name: The name of the index to create.
         """
+        ShIndexesManagerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            datatype=datatype,
+            frozen_time_period_in_secs=frozen_time_period_in_secs,
+            max_global_raw_data_size_mb=max_global_raw_data_size_mb,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['ShIndexesManagerAclArgs']] = None,
+             datatype: Optional[pulumi.Input[str]] = None,
+             frozen_time_period_in_secs: Optional[pulumi.Input[str]] = None,
+             max_global_raw_data_size_mb: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if frozen_time_period_in_secs is None and 'frozenTimePeriodInSecs' in kwargs:
+            frozen_time_period_in_secs = kwargs['frozenTimePeriodInSecs']
+        if max_global_raw_data_size_mb is None and 'maxGlobalRawDataSizeMb' in kwargs:
+            max_global_raw_data_size_mb = kwargs['maxGlobalRawDataSizeMb']
+
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if datatype is not None:
-            pulumi.set(__self__, "datatype", datatype)
+            _setter("datatype", datatype)
         if frozen_time_period_in_secs is not None:
-            pulumi.set(__self__, "frozen_time_period_in_secs", frozen_time_period_in_secs)
+            _setter("frozen_time_period_in_secs", frozen_time_period_in_secs)
         if max_global_raw_data_size_mb is not None:
-            pulumi.set(__self__, "max_global_raw_data_size_mb", max_global_raw_data_size_mb)
+            _setter("max_global_raw_data_size_mb", max_global_raw_data_size_mb)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -118,16 +141,39 @@ class _ShIndexesManagerState:
                Defaults to 100 MB.
         :param pulumi.Input[str] name: The name of the index to create.
         """
+        _ShIndexesManagerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            datatype=datatype,
+            frozen_time_period_in_secs=frozen_time_period_in_secs,
+            max_global_raw_data_size_mb=max_global_raw_data_size_mb,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['ShIndexesManagerAclArgs']] = None,
+             datatype: Optional[pulumi.Input[str]] = None,
+             frozen_time_period_in_secs: Optional[pulumi.Input[str]] = None,
+             max_global_raw_data_size_mb: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if frozen_time_period_in_secs is None and 'frozenTimePeriodInSecs' in kwargs:
+            frozen_time_period_in_secs = kwargs['frozenTimePeriodInSecs']
+        if max_global_raw_data_size_mb is None and 'maxGlobalRawDataSizeMb' in kwargs:
+            max_global_raw_data_size_mb = kwargs['maxGlobalRawDataSizeMb']
+
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if datatype is not None:
-            pulumi.set(__self__, "datatype", datatype)
+            _setter("datatype", datatype)
         if frozen_time_period_in_secs is not None:
-            pulumi.set(__self__, "frozen_time_period_in_secs", frozen_time_period_in_secs)
+            _setter("frozen_time_period_in_secs", frozen_time_period_in_secs)
         if max_global_raw_data_size_mb is not None:
-            pulumi.set(__self__, "max_global_raw_data_size_mb", max_global_raw_data_size_mb)
+            _setter("max_global_raw_data_size_mb", max_global_raw_data_size_mb)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -267,6 +313,10 @@ class ShIndexesManager(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ShIndexesManagerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -286,6 +336,11 @@ class ShIndexesManager(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ShIndexesManagerArgs.__new__(ShIndexesManagerArgs)
 
+            if acl is not None and not isinstance(acl, ShIndexesManagerAclArgs):
+                acl = acl or {}
+                def _setter(key, value):
+                    acl[key] = value
+                ShIndexesManagerAclArgs._configure(_setter, **acl)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["datatype"] = datatype
             __props__.__dict__["frozen_time_period_in_secs"] = frozen_time_period_in_secs

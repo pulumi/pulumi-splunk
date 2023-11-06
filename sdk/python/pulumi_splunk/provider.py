@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ProviderArgs', 'Provider']
@@ -30,17 +30,44 @@ class ProviderArgs:
         :param pulumi.Input[int] timeout: Timeout when making calls to Splunk server. Defaults to 60 seconds
         :param pulumi.Input[str] username: Splunk instance admin username
         """
-        pulumi.set(__self__, "url", url)
+        ProviderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+            auth_token=auth_token,
+            insecure_skip_verify=insecure_skip_verify,
+            password=password,
+            timeout=timeout,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: Optional[pulumi.Input[str]] = None,
+             auth_token: Optional[pulumi.Input[str]] = None,
+             insecure_skip_verify: Optional[pulumi.Input[bool]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             timeout: Optional[pulumi.Input[int]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if url is None:
+            raise TypeError("Missing 'url' argument")
+        if auth_token is None and 'authToken' in kwargs:
+            auth_token = kwargs['authToken']
+        if insecure_skip_verify is None and 'insecureSkipVerify' in kwargs:
+            insecure_skip_verify = kwargs['insecureSkipVerify']
+
+        _setter("url", url)
         if auth_token is not None:
-            pulumi.set(__self__, "auth_token", auth_token)
+            _setter("auth_token", auth_token)
         if insecure_skip_verify is not None:
-            pulumi.set(__self__, "insecure_skip_verify", insecure_skip_verify)
+            _setter("insecure_skip_verify", insecure_skip_verify)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if timeout is not None:
-            pulumi.set(__self__, "timeout", timeout)
+            _setter("timeout", timeout)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter
@@ -166,6 +193,10 @@ class Provider(pulumi.ProviderResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProviderArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

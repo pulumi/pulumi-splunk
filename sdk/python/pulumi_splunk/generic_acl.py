@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -26,9 +26,24 @@ class GenericAclArgs:
                apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
                app and owner for objects that don't fit in the normal namespace.
         """
-        pulumi.set(__self__, "path", path)
+        GenericAclArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            path=path,
+            acl=acl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             path: Optional[pulumi.Input[str]] = None,
+             acl: Optional[pulumi.Input['GenericAclAclArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+        if path is None:
+            raise TypeError("Missing 'path' argument")
+
+        _setter("path", path)
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
 
     @property
     @pulumi.getter
@@ -71,10 +86,23 @@ class _GenericAclState:
                app and owner for objects that don't fit in the normal namespace.
         :param pulumi.Input[str] path: REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
         """
+        _GenericAclState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['GenericAclAclArgs']] = None,
+             path: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
 
     @property
     @pulumi.getter
@@ -208,6 +236,10 @@ class GenericAcl(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            GenericAclArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -224,6 +256,11 @@ class GenericAcl(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = GenericAclArgs.__new__(GenericAclArgs)
 
+            if acl is not None and not isinstance(acl, GenericAclAclArgs):
+                acl = acl or {}
+                def _setter(key, value):
+                    acl[key] = value
+                GenericAclAclArgs._configure(_setter, **acl)
             __props__.__dict__["acl"] = acl
             if path is None and not opts.urn:
                 raise TypeError("Missing required property 'path'")

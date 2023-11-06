@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -24,12 +24,27 @@ class ConfigsConfArgs:
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
         """
+        ConfigsConfArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            name=name,
+            variables=variables,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if variables is not None:
-            pulumi.set(__self__, "variables", variables)
+            _setter("variables", variables)
 
     @property
     @pulumi.getter
@@ -76,12 +91,27 @@ class _ConfigsConfState:
         :param pulumi.Input[str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] variables: A map of key value pairs for a stanza.
         """
+        _ConfigsConfState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acl=acl,
+            name=name,
+            variables=variables,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None,
+             **kwargs):
+
         if acl is not None:
-            pulumi.set(__self__, "acl", acl)
+            _setter("acl", acl)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if variables is not None:
-            pulumi.set(__self__, "variables", variables)
+            _setter("variables", variables)
 
     @property
     @pulumi.getter
@@ -181,6 +211,10 @@ class ConfigsConf(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ConfigsConfArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -198,6 +232,11 @@ class ConfigsConf(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConfigsConfArgs.__new__(ConfigsConfArgs)
 
+            if acl is not None and not isinstance(acl, ConfigsConfAclArgs):
+                acl = acl or {}
+                def _setter(key, value):
+                    acl[key] = value
+                ConfigsConfAclArgs._configure(_setter, **acl)
             __props__.__dict__["acl"] = acl
             __props__.__dict__["name"] = name
             __props__.__dict__["variables"] = variables
