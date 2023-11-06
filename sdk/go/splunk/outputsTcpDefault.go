@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: OutputsTcpDefault
@@ -270,12 +269,6 @@ func (i *OutputsTcpDefault) ToOutputsTcpDefaultOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultOutput)
 }
 
-func (i *OutputsTcpDefault) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpDefault] {
-	return pulumix.Output[*OutputsTcpDefault]{
-		OutputState: i.ToOutputsTcpDefaultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OutputsTcpDefaultArrayInput is an input type that accepts OutputsTcpDefaultArray and OutputsTcpDefaultArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpDefaultArrayInput` via:
 //
@@ -299,12 +292,6 @@ func (i OutputsTcpDefaultArray) ToOutputsTcpDefaultArrayOutput() OutputsTcpDefau
 
 func (i OutputsTcpDefaultArray) ToOutputsTcpDefaultArrayOutputWithContext(ctx context.Context) OutputsTcpDefaultArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultArrayOutput)
-}
-
-func (i OutputsTcpDefaultArray) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpDefault] {
-	return pulumix.Output[[]*OutputsTcpDefault]{
-		OutputState: i.ToOutputsTcpDefaultArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OutputsTcpDefaultMapInput is an input type that accepts OutputsTcpDefaultMap and OutputsTcpDefaultMapOutput values.
@@ -332,12 +319,6 @@ func (i OutputsTcpDefaultMap) ToOutputsTcpDefaultMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpDefaultMapOutput)
 }
 
-func (i OutputsTcpDefaultMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpDefault] {
-	return pulumix.Output[map[string]*OutputsTcpDefault]{
-		OutputState: i.ToOutputsTcpDefaultMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OutputsTcpDefaultOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpDefaultOutput) ElementType() reflect.Type {
@@ -350,12 +331,6 @@ func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutput() OutputsTcpDefaultOu
 
 func (o OutputsTcpDefaultOutput) ToOutputsTcpDefaultOutputWithContext(ctx context.Context) OutputsTcpDefaultOutput {
 	return o
-}
-
-func (o OutputsTcpDefaultOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpDefault] {
-	return pulumix.Output[*OutputsTcpDefault]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -429,12 +404,6 @@ func (o OutputsTcpDefaultArrayOutput) ToOutputsTcpDefaultArrayOutputWithContext(
 	return o
 }
 
-func (o OutputsTcpDefaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpDefault] {
-	return pulumix.Output[[]*OutputsTcpDefault]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OutputsTcpDefaultArrayOutput) Index(i pulumi.IntInput) OutputsTcpDefaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutputsTcpDefault {
 		return vs[0].([]*OutputsTcpDefault)[vs[1].(int)]
@@ -453,12 +422,6 @@ func (o OutputsTcpDefaultMapOutput) ToOutputsTcpDefaultMapOutput() OutputsTcpDef
 
 func (o OutputsTcpDefaultMapOutput) ToOutputsTcpDefaultMapOutputWithContext(ctx context.Context) OutputsTcpDefaultMapOutput {
 	return o
-}
-
-func (o OutputsTcpDefaultMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpDefault] {
-	return pulumix.Output[map[string]*OutputsTcpDefault]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OutputsTcpDefaultMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpDefaultOutput {

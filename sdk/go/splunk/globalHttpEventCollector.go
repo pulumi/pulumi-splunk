@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: GlobalHttpEventCollector
@@ -192,12 +191,6 @@ func (i *GlobalHttpEventCollector) ToGlobalHttpEventCollectorOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorOutput)
 }
 
-func (i *GlobalHttpEventCollector) ToOutput(ctx context.Context) pulumix.Output[*GlobalHttpEventCollector] {
-	return pulumix.Output[*GlobalHttpEventCollector]{
-		OutputState: i.ToGlobalHttpEventCollectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GlobalHttpEventCollectorArrayInput is an input type that accepts GlobalHttpEventCollectorArray and GlobalHttpEventCollectorArrayOutput values.
 // You can construct a concrete instance of `GlobalHttpEventCollectorArrayInput` via:
 //
@@ -221,12 +214,6 @@ func (i GlobalHttpEventCollectorArray) ToGlobalHttpEventCollectorArrayOutput() G
 
 func (i GlobalHttpEventCollectorArray) ToGlobalHttpEventCollectorArrayOutputWithContext(ctx context.Context) GlobalHttpEventCollectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorArrayOutput)
-}
-
-func (i GlobalHttpEventCollectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*GlobalHttpEventCollector] {
-	return pulumix.Output[[]*GlobalHttpEventCollector]{
-		OutputState: i.ToGlobalHttpEventCollectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GlobalHttpEventCollectorMapInput is an input type that accepts GlobalHttpEventCollectorMap and GlobalHttpEventCollectorMapOutput values.
@@ -254,12 +241,6 @@ func (i GlobalHttpEventCollectorMap) ToGlobalHttpEventCollectorMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GlobalHttpEventCollectorMapOutput)
 }
 
-func (i GlobalHttpEventCollectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GlobalHttpEventCollector] {
-	return pulumix.Output[map[string]*GlobalHttpEventCollector]{
-		OutputState: i.ToGlobalHttpEventCollectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GlobalHttpEventCollectorOutput struct{ *pulumi.OutputState }
 
 func (GlobalHttpEventCollectorOutput) ElementType() reflect.Type {
@@ -272,12 +253,6 @@ func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorOutput() Globa
 
 func (o GlobalHttpEventCollectorOutput) ToGlobalHttpEventCollectorOutputWithContext(ctx context.Context) GlobalHttpEventCollectorOutput {
 	return o
-}
-
-func (o GlobalHttpEventCollectorOutput) ToOutput(ctx context.Context) pulumix.Output[*GlobalHttpEventCollector] {
-	return pulumix.Output[*GlobalHttpEventCollector]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Number of threads used by HTTP Input server.
@@ -330,12 +305,6 @@ func (o GlobalHttpEventCollectorArrayOutput) ToGlobalHttpEventCollectorArrayOutp
 	return o
 }
 
-func (o GlobalHttpEventCollectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GlobalHttpEventCollector] {
-	return pulumix.Output[[]*GlobalHttpEventCollector]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GlobalHttpEventCollectorArrayOutput) Index(i pulumi.IntInput) GlobalHttpEventCollectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GlobalHttpEventCollector {
 		return vs[0].([]*GlobalHttpEventCollector)[vs[1].(int)]
@@ -354,12 +323,6 @@ func (o GlobalHttpEventCollectorMapOutput) ToGlobalHttpEventCollectorMapOutput()
 
 func (o GlobalHttpEventCollectorMapOutput) ToGlobalHttpEventCollectorMapOutputWithContext(ctx context.Context) GlobalHttpEventCollectorMapOutput {
 	return o
-}
-
-func (o GlobalHttpEventCollectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GlobalHttpEventCollector] {
-	return pulumix.Output[map[string]*GlobalHttpEventCollector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GlobalHttpEventCollectorMapOutput) MapIndex(k pulumi.StringInput) GlobalHttpEventCollectorOutput {
