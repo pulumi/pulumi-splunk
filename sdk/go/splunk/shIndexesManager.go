@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: ShIndexesManager
@@ -176,12 +175,6 @@ func (i *ShIndexesManager) ToShIndexesManagerOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerOutput)
 }
 
-func (i *ShIndexesManager) ToOutput(ctx context.Context) pulumix.Output[*ShIndexesManager] {
-	return pulumix.Output[*ShIndexesManager]{
-		OutputState: i.ToShIndexesManagerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ShIndexesManagerArrayInput is an input type that accepts ShIndexesManagerArray and ShIndexesManagerArrayOutput values.
 // You can construct a concrete instance of `ShIndexesManagerArrayInput` via:
 //
@@ -205,12 +198,6 @@ func (i ShIndexesManagerArray) ToShIndexesManagerArrayOutput() ShIndexesManagerA
 
 func (i ShIndexesManagerArray) ToShIndexesManagerArrayOutputWithContext(ctx context.Context) ShIndexesManagerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerArrayOutput)
-}
-
-func (i ShIndexesManagerArray) ToOutput(ctx context.Context) pulumix.Output[[]*ShIndexesManager] {
-	return pulumix.Output[[]*ShIndexesManager]{
-		OutputState: i.ToShIndexesManagerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ShIndexesManagerMapInput is an input type that accepts ShIndexesManagerMap and ShIndexesManagerMapOutput values.
@@ -238,12 +225,6 @@ func (i ShIndexesManagerMap) ToShIndexesManagerMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ShIndexesManagerMapOutput)
 }
 
-func (i ShIndexesManagerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ShIndexesManager] {
-	return pulumix.Output[map[string]*ShIndexesManager]{
-		OutputState: i.ToShIndexesManagerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ShIndexesManagerOutput struct{ *pulumi.OutputState }
 
 func (ShIndexesManagerOutput) ElementType() reflect.Type {
@@ -256,12 +237,6 @@ func (o ShIndexesManagerOutput) ToShIndexesManagerOutput() ShIndexesManagerOutpu
 
 func (o ShIndexesManagerOutput) ToShIndexesManagerOutputWithContext(ctx context.Context) ShIndexesManagerOutput {
 	return o
-}
-
-func (o ShIndexesManagerOutput) ToOutput(ctx context.Context) pulumix.Output[*ShIndexesManager] {
-	return pulumix.Output[*ShIndexesManager]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ShIndexesManagerOutput) Acl() ShIndexesManagerAclOutput {
@@ -304,12 +279,6 @@ func (o ShIndexesManagerArrayOutput) ToShIndexesManagerArrayOutputWithContext(ct
 	return o
 }
 
-func (o ShIndexesManagerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ShIndexesManager] {
-	return pulumix.Output[[]*ShIndexesManager]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ShIndexesManagerArrayOutput) Index(i pulumi.IntInput) ShIndexesManagerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ShIndexesManager {
 		return vs[0].([]*ShIndexesManager)[vs[1].(int)]
@@ -328,12 +297,6 @@ func (o ShIndexesManagerMapOutput) ToShIndexesManagerMapOutput() ShIndexesManage
 
 func (o ShIndexesManagerMapOutput) ToShIndexesManagerMapOutputWithContext(ctx context.Context) ShIndexesManagerMapOutput {
 	return o
-}
-
-func (o ShIndexesManagerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ShIndexesManager] {
-	return pulumix.Output[map[string]*ShIndexesManager]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ShIndexesManagerMapOutput) MapIndex(k pulumi.StringInput) ShIndexesManagerOutput {

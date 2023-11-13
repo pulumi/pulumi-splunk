@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: ConfigsConf
@@ -143,12 +142,6 @@ func (i *ConfigsConf) ToConfigsConfOutputWithContext(ctx context.Context) Config
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfOutput)
 }
 
-func (i *ConfigsConf) ToOutput(ctx context.Context) pulumix.Output[*ConfigsConf] {
-	return pulumix.Output[*ConfigsConf]{
-		OutputState: i.ToConfigsConfOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigsConfArrayInput is an input type that accepts ConfigsConfArray and ConfigsConfArrayOutput values.
 // You can construct a concrete instance of `ConfigsConfArrayInput` via:
 //
@@ -172,12 +165,6 @@ func (i ConfigsConfArray) ToConfigsConfArrayOutput() ConfigsConfArrayOutput {
 
 func (i ConfigsConfArray) ToConfigsConfArrayOutputWithContext(ctx context.Context) ConfigsConfArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfArrayOutput)
-}
-
-func (i ConfigsConfArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConfigsConf] {
-	return pulumix.Output[[]*ConfigsConf]{
-		OutputState: i.ToConfigsConfArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConfigsConfMapInput is an input type that accepts ConfigsConfMap and ConfigsConfMapOutput values.
@@ -205,12 +192,6 @@ func (i ConfigsConfMap) ToConfigsConfMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigsConfMapOutput)
 }
 
-func (i ConfigsConfMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConfigsConf] {
-	return pulumix.Output[map[string]*ConfigsConf]{
-		OutputState: i.ToConfigsConfMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigsConfOutput struct{ *pulumi.OutputState }
 
 func (ConfigsConfOutput) ElementType() reflect.Type {
@@ -223,12 +204,6 @@ func (o ConfigsConfOutput) ToConfigsConfOutput() ConfigsConfOutput {
 
 func (o ConfigsConfOutput) ToConfigsConfOutputWithContext(ctx context.Context) ConfigsConfOutput {
 	return o
-}
-
-func (o ConfigsConfOutput) ToOutput(ctx context.Context) pulumix.Output[*ConfigsConf] {
-	return pulumix.Output[*ConfigsConf]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigsConfOutput) Acl() ConfigsConfAclOutput {
@@ -259,12 +234,6 @@ func (o ConfigsConfArrayOutput) ToConfigsConfArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o ConfigsConfArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConfigsConf] {
-	return pulumix.Output[[]*ConfigsConf]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ConfigsConfArrayOutput) Index(i pulumi.IntInput) ConfigsConfOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ConfigsConf {
 		return vs[0].([]*ConfigsConf)[vs[1].(int)]
@@ -283,12 +252,6 @@ func (o ConfigsConfMapOutput) ToConfigsConfMapOutput() ConfigsConfMapOutput {
 
 func (o ConfigsConfMapOutput) ToConfigsConfMapOutputWithContext(ctx context.Context) ConfigsConfMapOutput {
 	return o
-}
-
-func (o ConfigsConfMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConfigsConf] {
-	return pulumix.Output[map[string]*ConfigsConf]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigsConfMapOutput) MapIndex(k pulumi.StringInput) ConfigsConfOutput {

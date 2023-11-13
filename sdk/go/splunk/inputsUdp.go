@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsTcpRaw
@@ -268,12 +267,6 @@ func (i *InputsUdp) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpO
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpOutput)
 }
 
-func (i *InputsUdp) ToOutput(ctx context.Context) pulumix.Output[*InputsUdp] {
-	return pulumix.Output[*InputsUdp]{
-		OutputState: i.ToInputsUdpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InputsUdpArrayInput is an input type that accepts InputsUdpArray and InputsUdpArrayOutput values.
 // You can construct a concrete instance of `InputsUdpArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i InputsUdpArray) ToInputsUdpArrayOutput() InputsUdpArrayOutput {
 
 func (i InputsUdpArray) ToInputsUdpArrayOutputWithContext(ctx context.Context) InputsUdpArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpArrayOutput)
-}
-
-func (i InputsUdpArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsUdp] {
-	return pulumix.Output[[]*InputsUdp]{
-		OutputState: i.ToInputsUdpArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InputsUdpMapInput is an input type that accepts InputsUdpMap and InputsUdpMapOutput values.
@@ -330,12 +317,6 @@ func (i InputsUdpMap) ToInputsUdpMapOutputWithContext(ctx context.Context) Input
 	return pulumi.ToOutputWithContext(ctx, i).(InputsUdpMapOutput)
 }
 
-func (i InputsUdpMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsUdp] {
-	return pulumix.Output[map[string]*InputsUdp]{
-		OutputState: i.ToInputsUdpMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InputsUdpOutput struct{ *pulumi.OutputState }
 
 func (InputsUdpOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o InputsUdpOutput) ToInputsUdpOutput() InputsUdpOutput {
 
 func (o InputsUdpOutput) ToInputsUdpOutputWithContext(ctx context.Context) InputsUdpOutput {
 	return o
-}
-
-func (o InputsUdpOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsUdp] {
-	return pulumix.Output[*InputsUdp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -436,12 +411,6 @@ func (o InputsUdpArrayOutput) ToInputsUdpArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o InputsUdpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsUdp] {
-	return pulumix.Output[[]*InputsUdp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InputsUdpArrayOutput) Index(i pulumi.IntInput) InputsUdpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsUdp {
 		return vs[0].([]*InputsUdp)[vs[1].(int)]
@@ -460,12 +429,6 @@ func (o InputsUdpMapOutput) ToInputsUdpMapOutput() InputsUdpMapOutput {
 
 func (o InputsUdpMapOutput) ToInputsUdpMapOutputWithContext(ctx context.Context) InputsUdpMapOutput {
 	return o
-}
-
-func (o InputsUdpMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsUdp] {
-	return pulumix.Output[map[string]*InputsUdp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InputsUdpMapOutput) MapIndex(k pulumi.StringInput) InputsUdpOutput {
