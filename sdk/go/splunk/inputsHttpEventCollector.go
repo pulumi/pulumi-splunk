@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsHttpEventCollector
@@ -189,12 +188,6 @@ func (i *InputsHttpEventCollector) ToInputsHttpEventCollectorOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorOutput)
 }
 
-func (i *InputsHttpEventCollector) ToOutput(ctx context.Context) pulumix.Output[*InputsHttpEventCollector] {
-	return pulumix.Output[*InputsHttpEventCollector]{
-		OutputState: i.ToInputsHttpEventCollectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InputsHttpEventCollectorArrayInput is an input type that accepts InputsHttpEventCollectorArray and InputsHttpEventCollectorArrayOutput values.
 // You can construct a concrete instance of `InputsHttpEventCollectorArrayInput` via:
 //
@@ -218,12 +211,6 @@ func (i InputsHttpEventCollectorArray) ToInputsHttpEventCollectorArrayOutput() I
 
 func (i InputsHttpEventCollectorArray) ToInputsHttpEventCollectorArrayOutputWithContext(ctx context.Context) InputsHttpEventCollectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorArrayOutput)
-}
-
-func (i InputsHttpEventCollectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsHttpEventCollector] {
-	return pulumix.Output[[]*InputsHttpEventCollector]{
-		OutputState: i.ToInputsHttpEventCollectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InputsHttpEventCollectorMapInput is an input type that accepts InputsHttpEventCollectorMap and InputsHttpEventCollectorMapOutput values.
@@ -251,12 +238,6 @@ func (i InputsHttpEventCollectorMap) ToInputsHttpEventCollectorMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(InputsHttpEventCollectorMapOutput)
 }
 
-func (i InputsHttpEventCollectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsHttpEventCollector] {
-	return pulumix.Output[map[string]*InputsHttpEventCollector]{
-		OutputState: i.ToInputsHttpEventCollectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InputsHttpEventCollectorOutput struct{ *pulumi.OutputState }
 
 func (InputsHttpEventCollectorOutput) ElementType() reflect.Type {
@@ -269,12 +250,6 @@ func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutput() Input
 
 func (o InputsHttpEventCollectorOutput) ToInputsHttpEventCollectorOutputWithContext(ctx context.Context) InputsHttpEventCollectorOutput {
 	return o
-}
-
-func (o InputsHttpEventCollectorOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsHttpEventCollector] {
-	return pulumix.Output[*InputsHttpEventCollector]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -341,12 +316,6 @@ func (o InputsHttpEventCollectorArrayOutput) ToInputsHttpEventCollectorArrayOutp
 	return o
 }
 
-func (o InputsHttpEventCollectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsHttpEventCollector] {
-	return pulumix.Output[[]*InputsHttpEventCollector]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InputsHttpEventCollectorArrayOutput) Index(i pulumi.IntInput) InputsHttpEventCollectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsHttpEventCollector {
 		return vs[0].([]*InputsHttpEventCollector)[vs[1].(int)]
@@ -365,12 +334,6 @@ func (o InputsHttpEventCollectorMapOutput) ToInputsHttpEventCollectorMapOutput()
 
 func (o InputsHttpEventCollectorMapOutput) ToInputsHttpEventCollectorMapOutputWithContext(ctx context.Context) InputsHttpEventCollectorMapOutput {
 	return o
-}
-
-func (o InputsHttpEventCollectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsHttpEventCollector] {
-	return pulumix.Output[map[string]*InputsHttpEventCollector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InputsHttpEventCollectorMapOutput) MapIndex(k pulumi.StringInput) InputsHttpEventCollectorOutput {

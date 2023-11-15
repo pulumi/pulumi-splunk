@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsMonitor
@@ -276,12 +275,6 @@ func (i *InputsMonitor) ToInputsMonitorOutputWithContext(ctx context.Context) In
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorOutput)
 }
 
-func (i *InputsMonitor) ToOutput(ctx context.Context) pulumix.Output[*InputsMonitor] {
-	return pulumix.Output[*InputsMonitor]{
-		OutputState: i.ToInputsMonitorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InputsMonitorArrayInput is an input type that accepts InputsMonitorArray and InputsMonitorArrayOutput values.
 // You can construct a concrete instance of `InputsMonitorArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i InputsMonitorArray) ToInputsMonitorArrayOutput() InputsMonitorArrayOutpu
 
 func (i InputsMonitorArray) ToInputsMonitorArrayOutputWithContext(ctx context.Context) InputsMonitorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorArrayOutput)
-}
-
-func (i InputsMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsMonitor] {
-	return pulumix.Output[[]*InputsMonitor]{
-		OutputState: i.ToInputsMonitorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InputsMonitorMapInput is an input type that accepts InputsMonitorMap and InputsMonitorMapOutput values.
@@ -338,12 +325,6 @@ func (i InputsMonitorMap) ToInputsMonitorMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(InputsMonitorMapOutput)
 }
 
-func (i InputsMonitorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsMonitor] {
-	return pulumix.Output[map[string]*InputsMonitor]{
-		OutputState: i.ToInputsMonitorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InputsMonitorOutput struct{ *pulumi.OutputState }
 
 func (InputsMonitorOutput) ElementType() reflect.Type {
@@ -356,12 +337,6 @@ func (o InputsMonitorOutput) ToInputsMonitorOutput() InputsMonitorOutput {
 
 func (o InputsMonitorOutput) ToInputsMonitorOutputWithContext(ctx context.Context) InputsMonitorOutput {
 	return o
-}
-
-func (o InputsMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsMonitor] {
-	return pulumix.Output[*InputsMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -458,12 +433,6 @@ func (o InputsMonitorArrayOutput) ToInputsMonitorArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o InputsMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsMonitor] {
-	return pulumix.Output[[]*InputsMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InputsMonitorArrayOutput) Index(i pulumi.IntInput) InputsMonitorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsMonitor {
 		return vs[0].([]*InputsMonitor)[vs[1].(int)]
@@ -482,12 +451,6 @@ func (o InputsMonitorMapOutput) ToInputsMonitorMapOutput() InputsMonitorMapOutpu
 
 func (o InputsMonitorMapOutput) ToInputsMonitorMapOutputWithContext(ctx context.Context) InputsMonitorMapOutput {
 	return o
-}
-
-func (o InputsMonitorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsMonitor] {
-	return pulumix.Output[map[string]*InputsMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InputsMonitorMapOutput) MapIndex(k pulumi.StringInput) InputsMonitorOutput {

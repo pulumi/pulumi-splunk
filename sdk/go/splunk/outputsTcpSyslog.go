@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: OutputsTcpSyslog
@@ -226,12 +225,6 @@ func (i *OutputsTcpSyslog) ToOutputsTcpSyslogOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogOutput)
 }
 
-func (i *OutputsTcpSyslog) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpSyslog] {
-	return pulumix.Output[*OutputsTcpSyslog]{
-		OutputState: i.ToOutputsTcpSyslogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OutputsTcpSyslogArrayInput is an input type that accepts OutputsTcpSyslogArray and OutputsTcpSyslogArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpSyslogArrayInput` via:
 //
@@ -255,12 +248,6 @@ func (i OutputsTcpSyslogArray) ToOutputsTcpSyslogArrayOutput() OutputsTcpSyslogA
 
 func (i OutputsTcpSyslogArray) ToOutputsTcpSyslogArrayOutputWithContext(ctx context.Context) OutputsTcpSyslogArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogArrayOutput)
-}
-
-func (i OutputsTcpSyslogArray) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpSyslog] {
-	return pulumix.Output[[]*OutputsTcpSyslog]{
-		OutputState: i.ToOutputsTcpSyslogArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OutputsTcpSyslogMapInput is an input type that accepts OutputsTcpSyslogMap and OutputsTcpSyslogMapOutput values.
@@ -288,12 +275,6 @@ func (i OutputsTcpSyslogMap) ToOutputsTcpSyslogMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpSyslogMapOutput)
 }
 
-func (i OutputsTcpSyslogMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpSyslog] {
-	return pulumix.Output[map[string]*OutputsTcpSyslog]{
-		OutputState: i.ToOutputsTcpSyslogMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OutputsTcpSyslogOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpSyslogOutput) ElementType() reflect.Type {
@@ -306,12 +287,6 @@ func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutput() OutputsTcpSyslogOutpu
 
 func (o OutputsTcpSyslogOutput) ToOutputsTcpSyslogOutputWithContext(ctx context.Context) OutputsTcpSyslogOutput {
 	return o
-}
-
-func (o OutputsTcpSyslogOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpSyslog] {
-	return pulumix.Output[*OutputsTcpSyslog]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -374,12 +349,6 @@ func (o OutputsTcpSyslogArrayOutput) ToOutputsTcpSyslogArrayOutputWithContext(ct
 	return o
 }
 
-func (o OutputsTcpSyslogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpSyslog] {
-	return pulumix.Output[[]*OutputsTcpSyslog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OutputsTcpSyslogArrayOutput) Index(i pulumi.IntInput) OutputsTcpSyslogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutputsTcpSyslog {
 		return vs[0].([]*OutputsTcpSyslog)[vs[1].(int)]
@@ -398,12 +367,6 @@ func (o OutputsTcpSyslogMapOutput) ToOutputsTcpSyslogMapOutput() OutputsTcpSyslo
 
 func (o OutputsTcpSyslogMapOutput) ToOutputsTcpSyslogMapOutputWithContext(ctx context.Context) OutputsTcpSyslogMapOutput {
 	return o
-}
-
-func (o OutputsTcpSyslogMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpSyslog] {
-	return pulumix.Output[map[string]*OutputsTcpSyslog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OutputsTcpSyslogMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpSyslogOutput {
