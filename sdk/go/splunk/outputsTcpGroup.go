@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: OutputsTcpGroup
@@ -286,12 +285,6 @@ func (i *OutputsTcpGroup) ToOutputsTcpGroupOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupOutput)
 }
 
-func (i *OutputsTcpGroup) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpGroup] {
-	return pulumix.Output[*OutputsTcpGroup]{
-		OutputState: i.ToOutputsTcpGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OutputsTcpGroupArrayInput is an input type that accepts OutputsTcpGroupArray and OutputsTcpGroupArrayOutput values.
 // You can construct a concrete instance of `OutputsTcpGroupArrayInput` via:
 //
@@ -315,12 +308,6 @@ func (i OutputsTcpGroupArray) ToOutputsTcpGroupArrayOutput() OutputsTcpGroupArra
 
 func (i OutputsTcpGroupArray) ToOutputsTcpGroupArrayOutputWithContext(ctx context.Context) OutputsTcpGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupArrayOutput)
-}
-
-func (i OutputsTcpGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpGroup] {
-	return pulumix.Output[[]*OutputsTcpGroup]{
-		OutputState: i.ToOutputsTcpGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OutputsTcpGroupMapInput is an input type that accepts OutputsTcpGroupMap and OutputsTcpGroupMapOutput values.
@@ -348,12 +335,6 @@ func (i OutputsTcpGroupMap) ToOutputsTcpGroupMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(OutputsTcpGroupMapOutput)
 }
 
-func (i OutputsTcpGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpGroup] {
-	return pulumix.Output[map[string]*OutputsTcpGroup]{
-		OutputState: i.ToOutputsTcpGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OutputsTcpGroupOutput struct{ *pulumi.OutputState }
 
 func (OutputsTcpGroupOutput) ElementType() reflect.Type {
@@ -366,12 +347,6 @@ func (o OutputsTcpGroupOutput) ToOutputsTcpGroupOutput() OutputsTcpGroupOutput {
 
 func (o OutputsTcpGroupOutput) ToOutputsTcpGroupOutputWithContext(ctx context.Context) OutputsTcpGroupOutput {
 	return o
-}
-
-func (o OutputsTcpGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*OutputsTcpGroup] {
-	return pulumix.Output[*OutputsTcpGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The app/user context that is the namespace for the resource
@@ -453,12 +428,6 @@ func (o OutputsTcpGroupArrayOutput) ToOutputsTcpGroupArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o OutputsTcpGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OutputsTcpGroup] {
-	return pulumix.Output[[]*OutputsTcpGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OutputsTcpGroupArrayOutput) Index(i pulumi.IntInput) OutputsTcpGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OutputsTcpGroup {
 		return vs[0].([]*OutputsTcpGroup)[vs[1].(int)]
@@ -477,12 +446,6 @@ func (o OutputsTcpGroupMapOutput) ToOutputsTcpGroupMapOutput() OutputsTcpGroupMa
 
 func (o OutputsTcpGroupMapOutput) ToOutputsTcpGroupMapOutputWithContext(ctx context.Context) OutputsTcpGroupMapOutput {
 	return o
-}
-
-func (o OutputsTcpGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutputsTcpGroup] {
-	return pulumix.Output[map[string]*OutputsTcpGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OutputsTcpGroupMapOutput) MapIndex(k pulumi.StringInput) OutputsTcpGroupOutput {

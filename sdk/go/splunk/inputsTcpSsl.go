@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## # Resource: InputsTcpSsl
@@ -173,12 +172,6 @@ func (i *InputsTcpSsl) ToInputsTcpSslOutputWithContext(ctx context.Context) Inpu
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslOutput)
 }
 
-func (i *InputsTcpSsl) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpSsl] {
-	return pulumix.Output[*InputsTcpSsl]{
-		OutputState: i.ToInputsTcpSslOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InputsTcpSslArrayInput is an input type that accepts InputsTcpSslArray and InputsTcpSslArrayOutput values.
 // You can construct a concrete instance of `InputsTcpSslArrayInput` via:
 //
@@ -202,12 +195,6 @@ func (i InputsTcpSslArray) ToInputsTcpSslArrayOutput() InputsTcpSslArrayOutput {
 
 func (i InputsTcpSslArray) ToInputsTcpSslArrayOutputWithContext(ctx context.Context) InputsTcpSslArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslArrayOutput)
-}
-
-func (i InputsTcpSslArray) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpSsl] {
-	return pulumix.Output[[]*InputsTcpSsl]{
-		OutputState: i.ToInputsTcpSslArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InputsTcpSslMapInput is an input type that accepts InputsTcpSslMap and InputsTcpSslMapOutput values.
@@ -235,12 +222,6 @@ func (i InputsTcpSslMap) ToInputsTcpSslMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InputsTcpSslMapOutput)
 }
 
-func (i InputsTcpSslMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpSsl] {
-	return pulumix.Output[map[string]*InputsTcpSsl]{
-		OutputState: i.ToInputsTcpSslMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InputsTcpSslOutput struct{ *pulumi.OutputState }
 
 func (InputsTcpSslOutput) ElementType() reflect.Type {
@@ -253,12 +234,6 @@ func (o InputsTcpSslOutput) ToInputsTcpSslOutput() InputsTcpSslOutput {
 
 func (o InputsTcpSslOutput) ToInputsTcpSslOutputWithContext(ctx context.Context) InputsTcpSslOutput {
 	return o
-}
-
-func (o InputsTcpSslOutput) ToOutput(ctx context.Context) pulumix.Output[*InputsTcpSsl] {
-	return pulumix.Output[*InputsTcpSsl]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Indicates if input is disabled.
@@ -300,12 +275,6 @@ func (o InputsTcpSslArrayOutput) ToInputsTcpSslArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o InputsTcpSslArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InputsTcpSsl] {
-	return pulumix.Output[[]*InputsTcpSsl]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InputsTcpSslArrayOutput) Index(i pulumi.IntInput) InputsTcpSslOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *InputsTcpSsl {
 		return vs[0].([]*InputsTcpSsl)[vs[1].(int)]
@@ -324,12 +293,6 @@ func (o InputsTcpSslMapOutput) ToInputsTcpSslMapOutput() InputsTcpSslMapOutput {
 
 func (o InputsTcpSslMapOutput) ToInputsTcpSslMapOutputWithContext(ctx context.Context) InputsTcpSslMapOutput {
 	return o
-}
-
-func (o InputsTcpSslMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InputsTcpSsl] {
-	return pulumix.Output[map[string]*InputsTcpSsl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InputsTcpSslMapOutput) MapIndex(k pulumi.StringInput) InputsTcpSslOutput {
