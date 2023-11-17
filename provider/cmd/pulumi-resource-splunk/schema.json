@@ -1924,7 +1924,7 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n"
+                    "description": "Dashboard name.\n"
                 }
             },
             "required": [
@@ -1942,7 +1942,7 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n",
+                    "description": "Dashboard name.\n",
                     "willReplaceOnChanges": true
                 }
             },
@@ -1961,7 +1961,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "description": "Dashboard name.\n* `eai:data` - (Required) Dashboard XML definition.\n",
+                        "description": "Dashboard name.\n",
                         "willReplaceOnChanges": true
                     }
                 },
