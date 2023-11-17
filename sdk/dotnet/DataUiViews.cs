@@ -50,7 +50,6 @@ namespace Pulumi.Splunk
 
         /// <summary>
         /// Dashboard name.
-        /// * `eai:data` - (Required) Dashboard XML definition.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -112,7 +111,6 @@ namespace Pulumi.Splunk
 
         /// <summary>
         /// Dashboard name.
-        /// * `eai:data` - (Required) Dashboard XML definition.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -136,7 +134,6 @@ namespace Pulumi.Splunk
 
         /// <summary>
         /// Dashboard name.
-        /// * `eai:data` - (Required) Dashboard XML definition.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

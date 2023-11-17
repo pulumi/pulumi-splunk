@@ -51,7 +51,6 @@ type DataUiViews struct {
 	// Dashboard XML definition.
 	EaiData pulumi.StringOutput `pulumi:"eaiData"`
 	// Dashboard name.
-	// * `eai:data` - (Required) Dashboard XML definition.
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -92,7 +91,6 @@ type dataUiViewsState struct {
 	// Dashboard XML definition.
 	EaiData *string `pulumi:"eaiData"`
 	// Dashboard name.
-	// * `eai:data` - (Required) Dashboard XML definition.
 	Name *string `pulumi:"name"`
 }
 
@@ -101,7 +99,6 @@ type DataUiViewsState struct {
 	// Dashboard XML definition.
 	EaiData pulumi.StringPtrInput
 	// Dashboard name.
-	// * `eai:data` - (Required) Dashboard XML definition.
 	Name pulumi.StringPtrInput
 }
 
@@ -114,7 +111,6 @@ type dataUiViewsArgs struct {
 	// Dashboard XML definition.
 	EaiData string `pulumi:"eaiData"`
 	// Dashboard name.
-	// * `eai:data` - (Required) Dashboard XML definition.
 	Name *string `pulumi:"name"`
 }
 
@@ -124,7 +120,6 @@ type DataUiViewsArgs struct {
 	// Dashboard XML definition.
 	EaiData pulumi.StringInput
 	// Dashboard name.
-	// * `eai:data` - (Required) Dashboard XML definition.
 	Name pulumi.StringPtrInput
 }
 
@@ -225,7 +220,6 @@ func (o DataUiViewsOutput) EaiData() pulumi.StringOutput {
 }
 
 // Dashboard name.
-// * `eai:data` - (Required) Dashboard XML definition.
 func (o DataUiViewsOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataUiViews) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

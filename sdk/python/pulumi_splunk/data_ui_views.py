@@ -23,7 +23,6 @@ class DataUiViewsArgs:
         The set of arguments for constructing a DataUiViews resource.
         :param pulumi.Input[str] eai_data: Dashboard XML definition.
         :param pulumi.Input[str] name: Dashboard name.
-               * `eai:data` - (Required) Dashboard XML definition.
         """
         pulumi.set(__self__, "eai_data", eai_data)
         if acl is not None:
@@ -57,7 +56,6 @@ class DataUiViewsArgs:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         Dashboard name.
-        * `eai:data` - (Required) Dashboard XML definition.
         """
         return pulumi.get(self, "name")
 
@@ -76,7 +74,6 @@ class _DataUiViewsState:
         Input properties used for looking up and filtering DataUiViews resources.
         :param pulumi.Input[str] eai_data: Dashboard XML definition.
         :param pulumi.Input[str] name: Dashboard name.
-               * `eai:data` - (Required) Dashboard XML definition.
         """
         if acl is not None:
             pulumi.set(__self__, "acl", acl)
@@ -111,7 +108,6 @@ class _DataUiViewsState:
     def name(self) -> Optional[pulumi.Input[str]]:
         """
         Dashboard name.
-        * `eai:data` - (Required) Dashboard XML definition.
         """
         return pulumi.get(self, "name")
 
@@ -151,7 +147,6 @@ class DataUiViews(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] eai_data: Dashboard XML definition.
         :param pulumi.Input[str] name: Dashboard name.
-               * `eai:data` - (Required) Dashboard XML definition.
         """
         ...
     @overload
@@ -231,7 +226,6 @@ class DataUiViews(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] eai_data: Dashboard XML definition.
         :param pulumi.Input[str] name: Dashboard name.
-               * `eai:data` - (Required) Dashboard XML definition.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -260,7 +254,6 @@ class DataUiViews(pulumi.CustomResource):
     def name(self) -> pulumi.Output[str]:
         """
         Dashboard name.
-        * `eai:data` - (Required) Dashboard XML definition.
         """
         return pulumi.get(self, "name")
 

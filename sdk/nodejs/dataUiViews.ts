@@ -60,7 +60,6 @@ export class DataUiViews extends pulumi.CustomResource {
     public readonly eaiData!: pulumi.Output<string>;
     /**
      * Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      */
     public readonly name!: pulumi.Output<string>;
 
@@ -105,7 +104,6 @@ export interface DataUiViewsState {
     eaiData?: pulumi.Input<string>;
     /**
      * Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      */
     name?: pulumi.Input<string>;
 }
@@ -121,7 +119,6 @@ export interface DataUiViewsArgs {
     eaiData: pulumi.Input<string>;
     /**
      * Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      */
     name?: pulumi.Input<string>;
 }

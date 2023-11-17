@@ -78,7 +78,6 @@ public class DataUiViews extends com.pulumi.resources.CustomResource {
     }
     /**
      * Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
@@ -86,7 +85,6 @@ public class DataUiViews extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      * 
      */
     public Output<String> name() {

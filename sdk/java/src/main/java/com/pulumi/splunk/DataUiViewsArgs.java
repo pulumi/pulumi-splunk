@@ -40,7 +40,6 @@ public final class DataUiViewsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      * 
      */
     @Import(name="name")
@@ -48,7 +47,6 @@ public final class DataUiViewsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return Dashboard name.
-     * * `eai:data` - (Required) Dashboard XML definition.
      * 
      */
     public Optional<Output<String>> name() {
@@ -113,7 +111,6 @@ public final class DataUiViewsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Dashboard name.
-         * * `eai:data` - (Required) Dashboard XML definition.
          * 
          * @return builder
          * 
@@ -125,7 +122,6 @@ public final class DataUiViewsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Dashboard name.
-         * * `eai:data` - (Required) Dashboard XML definition.
          * 
          * @return builder
          * 
