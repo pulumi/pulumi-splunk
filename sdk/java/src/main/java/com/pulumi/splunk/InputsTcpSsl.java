@@ -58,7 +58,7 @@ public class InputsTcpSsl extends com.pulumi.resources.CustomResource {
      * Indicates if input is disabled.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -72,7 +72,7 @@ public class InputsTcpSsl extends com.pulumi.resources.CustomResource {
      * Server certificate password, if any.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
@@ -86,7 +86,7 @@ public class InputsTcpSsl extends com.pulumi.resources.CustomResource {
      * Determines whether a client must authenticate.
      * 
      */
-    @Export(name="requireClientCert", type=Boolean.class, parameters={})
+    @Export(name="requireClientCert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> requireClientCert;
 
     /**
@@ -100,7 +100,7 @@ public class InputsTcpSsl extends com.pulumi.resources.CustomResource {
      * Certificate authority list (root file)
      * 
      */
-    @Export(name="rootCa", type=String.class, parameters={})
+    @Export(name="rootCa", refs={String.class}, tree="[0]")
     private Output<String> rootCa;
 
     /**
@@ -114,7 +114,7 @@ public class InputsTcpSsl extends com.pulumi.resources.CustomResource {
      * Full path to the server certificate.
      * 
      */
-    @Export(name="serverCert", type=String.class, parameters={})
+    @Export(name="serverCert", refs={String.class}, tree="[0]")
     private Output<String> serverCert;
 
     /**

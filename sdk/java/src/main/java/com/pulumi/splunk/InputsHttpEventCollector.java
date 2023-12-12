@@ -29,7 +29,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsHttpEventCollectorAcl.class, parameters={})
+    @Export(name="acl", refs={InputsHttpEventCollectorAcl.class}, tree="[0]")
     private Output<InputsHttpEventCollectorAcl> acl;
 
     /**
@@ -43,7 +43,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Input disabled indicator
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -57,7 +57,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Default host value for events with this token
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -71,7 +71,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Index to store generated events
      * 
      */
-    @Export(name="index", type=String.class, parameters={})
+    @Export(name="index", refs={String.class}, tree="[0]")
     private Output<String> index;
 
     /**
@@ -85,7 +85,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Set of indexes allowed for events with this token
      * 
      */
-    @Export(name="indexes", type=List.class, parameters={String.class})
+    @Export(name="indexes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> indexes;
 
     /**
@@ -99,7 +99,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Token name (inputs.conf key)
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -113,7 +113,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Default source for events with this token
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -127,7 +127,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Default source type for events with this token
      * 
      */
-    @Export(name="sourcetype", type=String.class, parameters={})
+    @Export(name="sourcetype", refs={String.class}, tree="[0]")
     private Output<String> sourcetype;
 
     /**
@@ -141,7 +141,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Token value for sending data to collector/event endpoint
      * 
      */
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     /**
@@ -155,7 +155,7 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
      * Indexer acknowledgement for this token
      * 
      */
-    @Export(name="useAck", type=Integer.class, parameters={})
+    @Export(name="useAck", refs={Integer.class}, tree="[0]")
     private Output<Integer> useAck;
 
     /**

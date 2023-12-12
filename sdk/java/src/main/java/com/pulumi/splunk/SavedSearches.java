@@ -77,7 +77,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=SavedSearchesAcl.class, parameters={})
+    @Export(name="acl", refs={SavedSearchesAcl.class}, tree="[0]")
     private Output<SavedSearchesAcl> acl;
 
     /**
@@ -91,7 +91,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      * 
      */
-    @Export(name="actionCreateXsoarIncident", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncident", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncident;
 
     /**
@@ -105,7 +105,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR custom incident fields (should be a comma separated list)
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamCustomFields", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamCustomFields", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamCustomFields;
 
     /**
@@ -119,7 +119,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR incident description
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamDetails", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamDetails", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamDetails;
 
     /**
@@ -133,7 +133,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR incident name
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamIncidentName", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamIncidentName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamIncidentName;
 
     /**
@@ -147,7 +147,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR incident time
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamOccurred", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamOccurred", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamOccurred;
 
     /**
@@ -161,7 +161,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamSendAllServers", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamSendAllServers", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamSendAllServers;
 
     /**
@@ -175,7 +175,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR Server instance URL (Should start with https:// || http://)
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamServerUrl", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamServerUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamServerUrl;
 
     /**
@@ -189,7 +189,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamSeverity", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamSeverity", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamSeverity;
 
     /**
@@ -203,7 +203,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * XSOAR incident type
      * 
      */
-    @Export(name="actionCreateXsoarIncidentParamType", type=String.class, parameters={})
+    @Export(name="actionCreateXsoarIncidentParamType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionCreateXsoarIncidentParamType;
 
     /**
@@ -217,7 +217,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
-    @Export(name="actionEmail", type=Boolean.class, parameters={})
+    @Export(name="actionEmail", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmail;
 
     /**
@@ -231,7 +231,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      * 
      */
-    @Export(name="actionEmailAuthPassword", type=String.class, parameters={})
+    @Export(name="actionEmailAuthPassword", refs={String.class}, tree="[0]")
     private Output<String> actionEmailAuthPassword;
 
     /**
@@ -245,7 +245,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
      * 
      */
-    @Export(name="actionEmailAuthUsername", type=String.class, parameters={})
+    @Export(name="actionEmailAuthUsername", refs={String.class}, tree="[0]")
     private Output<String> actionEmailAuthUsername;
 
     /**
@@ -259,7 +259,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * BCC email address to use if action.email is enabled.
      * 
      */
-    @Export(name="actionEmailBcc", type=String.class, parameters={})
+    @Export(name="actionEmailBcc", refs={String.class}, tree="[0]")
     private Output<String> actionEmailBcc;
 
     /**
@@ -273,7 +273,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * CC email address to use if action.email is enabled.
      * 
      */
-    @Export(name="actionEmailCc", type=String.class, parameters={})
+    @Export(name="actionEmailCc", refs={String.class}, tree="[0]")
     private Output<String> actionEmailCc;
 
     /**
@@ -287,7 +287,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      * 
      */
-    @Export(name="actionEmailCommand", type=String.class, parameters={})
+    @Export(name="actionEmailCommand", refs={String.class}, tree="[0]")
     private Output<String> actionEmailCommand;
 
     /**
@@ -301,7 +301,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
      * 
      */
-    @Export(name="actionEmailFormat", type=String.class, parameters={})
+    @Export(name="actionEmailFormat", refs={String.class}, tree="[0]")
     private Output<String> actionEmailFormat;
 
     /**
@@ -315,7 +315,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
      * 
      */
-    @Export(name="actionEmailFrom", type=String.class, parameters={})
+    @Export(name="actionEmailFrom", refs={String.class}, tree="[0]")
     private Output<String> actionEmailFrom;
 
     /**
@@ -329,7 +329,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
      * 
      */
-    @Export(name="actionEmailHostname", type=String.class, parameters={})
+    @Export(name="actionEmailHostname", refs={String.class}, tree="[0]")
     private Output<String> actionEmailHostname;
 
     /**
@@ -343,7 +343,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specify whether to include a link to the results. Defaults to 0.
      * 
      */
-    @Export(name="actionEmailIncludeResultsLink", type=Integer.class, parameters={})
+    @Export(name="actionEmailIncludeResultsLink", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeResultsLink;
 
     /**
@@ -357,7 +357,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specify whether to include the search that caused an email to be sent. Defaults to 0.
      * 
      */
-    @Export(name="actionEmailIncludeSearch", type=Integer.class, parameters={})
+    @Export(name="actionEmailIncludeSearch", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeSearch;
 
     /**
@@ -371,7 +371,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
      * 
      */
-    @Export(name="actionEmailIncludeTrigger", type=Integer.class, parameters={})
+    @Export(name="actionEmailIncludeTrigger", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeTrigger;
 
     /**
@@ -385,7 +385,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specify whether to show the time that the alert was fired. Defaults to 0.
      * 
      */
-    @Export(name="actionEmailIncludeTriggerTime", type=Integer.class, parameters={})
+    @Export(name="actionEmailIncludeTriggerTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeTriggerTime;
 
     /**
@@ -399,7 +399,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
      * 
      */
-    @Export(name="actionEmailIncludeViewLink", type=Integer.class, parameters={})
+    @Export(name="actionEmailIncludeViewLink", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeViewLink;
 
     /**
@@ -413,7 +413,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      * 
      */
-    @Export(name="actionEmailInline", type=Boolean.class, parameters={})
+    @Export(name="actionEmailInline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailInline;
 
     /**
@@ -427,7 +427,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Set the address of the MTA server to be used to send the emails.Defaults to &lt;LOCALHOST&gt; or whatever is set in alert_actions.conf.
      * 
      */
-    @Export(name="actionEmailMailserver", type=String.class, parameters={})
+    @Export(name="actionEmailMailserver", refs={String.class}, tree="[0]")
     private Output<String> actionEmailMailserver;
 
     /**
@@ -441,7 +441,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
      * 
      */
-    @Export(name="actionEmailMaxResults", type=Integer.class, parameters={})
+    @Export(name="actionEmailMaxResults", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailMaxResults;
 
     /**
@@ -455,7 +455,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
      * 
      */
-    @Export(name="actionEmailMaxTime", type=String.class, parameters={})
+    @Export(name="actionEmailMaxTime", refs={String.class}, tree="[0]")
     private Output<String> actionEmailMaxTime;
 
     /**
@@ -469,7 +469,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Customize the message sent in the emailed alert. Defaults to: The alert condition for &#39;$name$&#39; was triggered.
      * 
      */
-    @Export(name="actionEmailMessageAlert", type=String.class, parameters={})
+    @Export(name="actionEmailMessageAlert", refs={String.class}, tree="[0]")
     private Output<String> actionEmailMessageAlert;
 
     /**
@@ -483,7 +483,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Customize the message sent in the emailed report. Defaults to: The scheduled report &#39;$name$&#39; has run
      * 
      */
-    @Export(name="actionEmailMessageReport", type=String.class, parameters={})
+    @Export(name="actionEmailMessageReport", refs={String.class}, tree="[0]")
     private Output<String> actionEmailMessageReport;
 
     /**
@@ -497,7 +497,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The name of the view to deliver if sendpdf is enabled
      * 
      */
-    @Export(name="actionEmailPdfview", type=String.class, parameters={})
+    @Export(name="actionEmailPdfview", refs={String.class}, tree="[0]")
     private Output<String> actionEmailPdfview;
 
     /**
@@ -511,7 +511,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
      * 
      */
-    @Export(name="actionEmailPreprocessResults", type=String.class, parameters={})
+    @Export(name="actionEmailPreprocessResults", refs={String.class}, tree="[0]")
     private Output<String> actionEmailPreprocessResults;
 
     /**
@@ -525,7 +525,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to &#39;gb cns jp kor&#39;
      * 
      */
-    @Export(name="actionEmailReportCidFontList", type=String.class, parameters={})
+    @Export(name="actionEmailReportCidFontList", refs={String.class}, tree="[0]")
     private Output<String> actionEmailReportCidFontList;
 
     /**
@@ -539,7 +539,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether to include the Splunk logo with the report.
      * 
      */
-    @Export(name="actionEmailReportIncludeSplunkLogo", type=Boolean.class, parameters={})
+    @Export(name="actionEmailReportIncludeSplunkLogo", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailReportIncludeSplunkLogo;
 
     /**
@@ -553,7 +553,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
      * 
      */
-    @Export(name="actionEmailReportPaperOrientation", type=String.class, parameters={})
+    @Export(name="actionEmailReportPaperOrientation", refs={String.class}, tree="[0]")
     private Output<String> actionEmailReportPaperOrientation;
 
     /**
@@ -567,7 +567,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
      * 
      */
-    @Export(name="actionEmailReportPaperSize", type=String.class, parameters={})
+    @Export(name="actionEmailReportPaperSize", refs={String.class}, tree="[0]")
     private Output<String> actionEmailReportPaperSize;
 
     /**
@@ -581,7 +581,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * No Supported
      * 
      */
-    @Export(name="actionEmailReportServerEnabled", type=Boolean.class, parameters={})
+    @Export(name="actionEmailReportServerEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailReportServerEnabled;
 
     /**
@@ -595,7 +595,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Not supported.For a default locally installed report server, the URL is http://localhost:8091/
      * 
      */
-    @Export(name="actionEmailReportServerUrl", type=String.class, parameters={})
+    @Export(name="actionEmailReportServerUrl", refs={String.class}, tree="[0]")
     private Output<String> actionEmailReportServerUrl;
 
     /**
@@ -609,7 +609,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specify whether to send results as a CSV file. Defaults to 0.
      * 
      */
-    @Export(name="actionEmailSendCsv", type=Integer.class, parameters={})
+    @Export(name="actionEmailSendCsv", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailSendCsv;
 
     /**
@@ -623,7 +623,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether to create and send the results as a PDF. Defaults to false.
      * 
      */
-    @Export(name="actionEmailSendPdf", type=Boolean.class, parameters={})
+    @Export(name="actionEmailSendPdf", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailSendPdf;
 
     /**
@@ -637,7 +637,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
      * 
      */
-    @Export(name="actionEmailSendResults", type=Boolean.class, parameters={})
+    @Export(name="actionEmailSendResults", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailSendResults;
 
     /**
@@ -651,7 +651,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies an alternate email subject.Defaults to SplunkAlert-&lt;savedsearchname&gt;.
      * 
      */
-    @Export(name="actionEmailSubject", type=String.class, parameters={})
+    @Export(name="actionEmailSubject", refs={String.class}, tree="[0]")
     private Output<String> actionEmailSubject;
 
     /**
@@ -665,7 +665,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
      * 
      */
-    @Export(name="actionEmailTo", type=String.class, parameters={})
+    @Export(name="actionEmailTo", refs={String.class}, tree="[0]")
     private Output<String> actionEmailTo;
 
     /**
@@ -679,7 +679,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the execution of this action signifies a trackable alert.
      * 
      */
-    @Export(name="actionEmailTrackAlert", type=Boolean.class, parameters={})
+    @Export(name="actionEmailTrackAlert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailTrackAlert;
 
     /**
@@ -693,7 +693,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows &lt;Integer&gt;, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
      * 
      */
-    @Export(name="actionEmailTtl", type=String.class, parameters={})
+    @Export(name="actionEmailTtl", refs={String.class}, tree="[0]")
     private Output<String> actionEmailTtl;
 
     /**
@@ -707,7 +707,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
      * 
      */
-    @Export(name="actionEmailUseSsl", type=Boolean.class, parameters={})
+    @Export(name="actionEmailUseSsl", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailUseSsl;
 
     /**
@@ -721,7 +721,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
      * 
      */
-    @Export(name="actionEmailUseTls", type=Boolean.class, parameters={})
+    @Export(name="actionEmailUseTls", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailUseTls;
 
     /**
@@ -735,7 +735,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      * 
      */
-    @Export(name="actionEmailWidthSortColumns", type=Boolean.class, parameters={})
+    @Export(name="actionEmailWidthSortColumns", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionEmailWidthSortColumns;
 
     /**
@@ -749,7 +749,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Jira Service Desk account name
      * 
      */
-    @Export(name="actionJiraServiceDeskParamAccount", type=String.class, parameters={})
+    @Export(name="actionJiraServiceDeskParamAccount", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionJiraServiceDeskParamAccount;
 
     /**
@@ -763,7 +763,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Jira issue description
      * 
      */
-    @Export(name="actionJiraServiceDeskParamJiraDescription", type=String.class, parameters={})
+    @Export(name="actionJiraServiceDeskParamJiraDescription", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraDescription;
 
     /**
@@ -777,7 +777,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Jira issue type name
      * 
      */
-    @Export(name="actionJiraServiceDeskParamJiraIssueType", type=String.class, parameters={})
+    @Export(name="actionJiraServiceDeskParamJiraIssueType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraIssueType;
 
     /**
@@ -791,7 +791,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Jira priority of issue
      * 
      */
-    @Export(name="actionJiraServiceDeskParamJiraPriority", type=String.class, parameters={})
+    @Export(name="actionJiraServiceDeskParamJiraPriority", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraPriority;
 
     /**
@@ -805,7 +805,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Jira Project name
      * 
      */
-    @Export(name="actionJiraServiceDeskParamJiraProject", type=String.class, parameters={})
+    @Export(name="actionJiraServiceDeskParamJiraProject", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraProject;
 
     /**
@@ -819,7 +819,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Jira issue title/summary
      * 
      */
-    @Export(name="actionJiraServiceDeskParamJiraSummary", type=String.class, parameters={})
+    @Export(name="actionJiraServiceDeskParamJiraSummary", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraSummary;
 
     /**
@@ -833,7 +833,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The PagerDuty custom details information.
      * 
      */
-    @Export(name="actionPagerdutyCustomDetails", type=String.class, parameters={})
+    @Export(name="actionPagerdutyCustomDetails", refs={String.class}, tree="[0]")
     private Output<String> actionPagerdutyCustomDetails;
 
     /**
@@ -847,7 +847,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The PagerDuty integration Key.
      * 
      */
-    @Export(name="actionPagerdutyIntegrationKey", type=String.class, parameters={})
+    @Export(name="actionPagerdutyIntegrationKey", refs={String.class}, tree="[0]")
     private Output<String> actionPagerdutyIntegrationKey;
 
     /**
@@ -861,7 +861,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The PagerDuty integration Key override.
      * 
      */
-    @Export(name="actionPagerdutyIntegrationKeyOverride", type=String.class, parameters={})
+    @Export(name="actionPagerdutyIntegrationKeyOverride", refs={String.class}, tree="[0]")
     private Output<String> actionPagerdutyIntegrationKeyOverride;
 
     /**
@@ -875,7 +875,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The pagerduty integration URL. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
      * 
      */
-    @Export(name="actionPagerdutyIntegrationUrl", type=String.class, parameters={})
+    @Export(name="actionPagerdutyIntegrationUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionPagerdutyIntegrationUrl;
 
     /**
@@ -889,7 +889,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The pagerduty integration URL override. This integration uses Splunk&#39;s native webhooks to send events to PagerDuty.
      * 
      */
-    @Export(name="actionPagerdutyIntegrationUrlOverride", type=String.class, parameters={})
+    @Export(name="actionPagerdutyIntegrationUrlOverride", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionPagerdutyIntegrationUrlOverride;
 
     /**
@@ -903,7 +903,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
-    @Export(name="actionPopulateLookup", type=Boolean.class, parameters={})
+    @Export(name="actionPopulateLookup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionPopulateLookup;
 
     /**
@@ -917,7 +917,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The search command (or pipeline) which is responsible for executing the action.
      * 
      */
-    @Export(name="actionPopulateLookupCommand", type=String.class, parameters={})
+    @Export(name="actionPopulateLookupCommand", refs={String.class}, tree="[0]")
     private Output<String> actionPopulateLookupCommand;
 
     /**
@@ -931,7 +931,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Lookup name of path of the lookup to populate
      * 
      */
-    @Export(name="actionPopulateLookupDest", type=String.class, parameters={})
+    @Export(name="actionPopulateLookupDest", refs={String.class}, tree="[0]")
     private Output<String> actionPopulateLookupDest;
 
     /**
@@ -945,7 +945,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
-    @Export(name="actionPopulateLookupHostname", type=String.class, parameters={})
+    @Export(name="actionPopulateLookupHostname", refs={String.class}, tree="[0]")
     private Output<String> actionPopulateLookupHostname;
 
     /**
@@ -959,7 +959,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      * 
      */
-    @Export(name="actionPopulateLookupMaxResults", type=Integer.class, parameters={})
+    @Export(name="actionPopulateLookupMaxResults", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionPopulateLookupMaxResults;
 
     /**
@@ -973,7 +973,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
      * 
      */
-    @Export(name="actionPopulateLookupMaxTime", type=Integer.class, parameters={})
+    @Export(name="actionPopulateLookupMaxTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionPopulateLookupMaxTime;
 
     /**
@@ -987,7 +987,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the execution of this action signifies a trackable alert.
      * 
      */
-    @Export(name="actionPopulateLookupTrackAlert", type=Boolean.class, parameters={})
+    @Export(name="actionPopulateLookupTrackAlert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionPopulateLookupTrackAlert;
 
     /**
@@ -1001,7 +1001,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
      * 
      */
-    @Export(name="actionPopulateLookupTtl", type=String.class, parameters={})
+    @Export(name="actionPopulateLookupTtl", refs={String.class}, tree="[0]")
     private Output<String> actionPopulateLookupTtl;
 
     /**
@@ -1015,7 +1015,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
-    @Export(name="actionRss", type=Boolean.class, parameters={})
+    @Export(name="actionRss", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionRss;
 
     /**
@@ -1029,7 +1029,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      * 
      */
-    @Export(name="actionRssCommand", type=String.class, parameters={})
+    @Export(name="actionRssCommand", refs={String.class}, tree="[0]")
     private Output<String> actionRssCommand;
 
     /**
@@ -1043,7 +1043,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
-    @Export(name="actionRssHostname", type=String.class, parameters={})
+    @Export(name="actionRssHostname", refs={String.class}, tree="[0]")
     private Output<String> actionRssHostname;
 
     /**
@@ -1057,7 +1057,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      * 
      */
-    @Export(name="actionRssMaxResults", type=Integer.class, parameters={})
+    @Export(name="actionRssMaxResults", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionRssMaxResults;
 
     /**
@@ -1071,7 +1071,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      * 
      */
-    @Export(name="actionRssMaxTime", type=Integer.class, parameters={})
+    @Export(name="actionRssMaxTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionRssMaxTime;
 
     /**
@@ -1085,7 +1085,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the execution of this action signifies a trackable alert.
      * 
      */
-    @Export(name="actionRssTrackAlert", type=Boolean.class, parameters={})
+    @Export(name="actionRssTrackAlert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionRssTrackAlert;
 
     /**
@@ -1099,7 +1099,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      * 
      */
-    @Export(name="actionRssTtl", type=String.class, parameters={})
+    @Export(name="actionRssTtl", refs={String.class}, tree="[0]")
     private Output<String> actionRssTtl;
 
     /**
@@ -1113,7 +1113,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
-    @Export(name="actionScript", type=Boolean.class, parameters={})
+    @Export(name="actionScript", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionScript;
 
     /**
@@ -1127,7 +1127,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      * 
      */
-    @Export(name="actionScriptCommand", type=String.class, parameters={})
+    @Export(name="actionScriptCommand", refs={String.class}, tree="[0]")
     private Output<String> actionScriptCommand;
 
     /**
@@ -1141,7 +1141,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * File name of the script to call. Required if script action is enabled
      * 
      */
-    @Export(name="actionScriptFilename", type=String.class, parameters={})
+    @Export(name="actionScriptFilename", refs={String.class}, tree="[0]")
     private Output<String> actionScriptFilename;
 
     /**
@@ -1155,7 +1155,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
-    @Export(name="actionScriptHostname", type=String.class, parameters={})
+    @Export(name="actionScriptHostname", refs={String.class}, tree="[0]")
     private Output<String> actionScriptHostname;
 
     /**
@@ -1169,7 +1169,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      * 
      */
-    @Export(name="actionScriptMaxResults", type=Integer.class, parameters={})
+    @Export(name="actionScriptMaxResults", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionScriptMaxResults;
 
     /**
@@ -1183,7 +1183,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      * 
      */
-    @Export(name="actionScriptMaxTime", type=Integer.class, parameters={})
+    @Export(name="actionScriptMaxTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionScriptMaxTime;
 
     /**
@@ -1197,7 +1197,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the execution of this action signifies a trackable alert.
      * 
      */
-    @Export(name="actionScriptTrackAlert", type=Boolean.class, parameters={})
+    @Export(name="actionScriptTrackAlert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionScriptTrackAlert;
 
     /**
@@ -1211,7 +1211,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      * 
      */
-    @Export(name="actionScriptTtl", type=String.class, parameters={})
+    @Export(name="actionScriptTtl", refs={String.class}, tree="[0]")
     private Output<String> actionScriptTtl;
 
     /**
@@ -1225,7 +1225,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Include a message attachment. Valid values are message, none, or alert_link
      * 
      */
-    @Export(name="actionSlackParamAttachment", type=String.class, parameters={})
+    @Export(name="actionSlackParamAttachment", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamAttachment;
 
     /**
@@ -1239,7 +1239,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Slack channel to send the message to (Should start with # or @)
      * 
      */
-    @Export(name="actionSlackParamChannel", type=String.class, parameters={})
+    @Export(name="actionSlackParamChannel", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamChannel;
 
     /**
@@ -1253,7 +1253,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
      * 
      */
-    @Export(name="actionSlackParamFields", type=String.class, parameters={})
+    @Export(name="actionSlackParamFields", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamFields;
 
     /**
@@ -1267,7 +1267,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
      * 
      */
-    @Export(name="actionSlackParamMessage", type=String.class, parameters={})
+    @Export(name="actionSlackParamMessage", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamMessage;
 
     /**
@@ -1281,7 +1281,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      * 
      */
-    @Export(name="actionSlackParamWebhookUrlOverride", type=String.class, parameters={})
+    @Export(name="actionSlackParamWebhookUrlOverride", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamWebhookUrlOverride;
 
     /**
@@ -1295,7 +1295,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
      * 
      */
-    @Export(name="actionSnowEventParamAccount", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamAccount", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamAccount;
 
     /**
@@ -1315,7 +1315,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
      * 
      */
-    @Export(name="actionSnowEventParamAdditionalInfo", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamAdditionalInfo", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamAdditionalInfo;
 
     /**
@@ -1336,7 +1336,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * example, k1=v1||k2=v2.
      * 
      */
-    @Export(name="actionSnowEventParamCiIdentifier", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamCiIdentifier", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamCiIdentifier;
 
     /**
@@ -1353,7 +1353,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * in the em_event table of ServiceNow.
      * 
      */
-    @Export(name="actionSnowEventParamCustomFields", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamCustomFields", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamCustomFields;
 
     /**
@@ -1369,7 +1369,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A brief description of the event.
      * 
      */
-    @Export(name="actionSnowEventParamDescription", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamDescription", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamDescription;
 
     /**
@@ -1384,7 +1384,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * same host name, the event is automatically assigned to the matching CI.
      * 
      */
-    @Export(name="actionSnowEventParamNode", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamNode", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamNode;
 
     /**
@@ -1399,7 +1399,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The resource, formatted to follow your organization&#39;s ITIL standards and mapping. For example, resource=&#39;CPU&#39;.
      * 
      */
-    @Export(name="actionSnowEventParamResource", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamResource", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamResource;
 
     /**
@@ -1413,7 +1413,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
      * 
      */
-    @Export(name="actionSnowEventParamSeverity", type=Integer.class, parameters={})
+    @Export(name="actionSnowEventParamSeverity", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionSnowEventParamSeverity;
 
     /**
@@ -1427,7 +1427,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The type, formatted to follow your organization&#39;s ITIL standards and mapping. For example, type=&#39;Virtual Machine&#39;.
      * 
      */
-    @Export(name="actionSnowEventParamType", type=String.class, parameters={})
+    @Export(name="actionSnowEventParamType", refs={String.class}, tree="[0]")
     private Output<String> actionSnowEventParamType;
 
     /**
@@ -1441,7 +1441,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
-    @Export(name="actionSummaryIndex", type=Boolean.class, parameters={})
+    @Export(name="actionSummaryIndex", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionSummaryIndex;
 
     /**
@@ -1455,7 +1455,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      * 
      */
-    @Export(name="actionSummaryIndexCommand", type=String.class, parameters={})
+    @Export(name="actionSummaryIndexCommand", refs={String.class}, tree="[0]")
     private Output<String> actionSummaryIndexCommand;
 
     /**
@@ -1469,7 +1469,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
-    @Export(name="actionSummaryIndexHostname", type=String.class, parameters={})
+    @Export(name="actionSummaryIndexHostname", refs={String.class}, tree="[0]")
     private Output<String> actionSummaryIndexHostname;
 
     /**
@@ -1483,7 +1483,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
      * 
      */
-    @Export(name="actionSummaryIndexInline", type=Boolean.class, parameters={})
+    @Export(name="actionSummaryIndexInline", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionSummaryIndexInline;
 
     /**
@@ -1497,7 +1497,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      * 
      */
-    @Export(name="actionSummaryIndexMaxResults", type=Integer.class, parameters={})
+    @Export(name="actionSummaryIndexMaxResults", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionSummaryIndexMaxResults;
 
     /**
@@ -1511,7 +1511,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      * 
      */
-    @Export(name="actionSummaryIndexMaxTime", type=Integer.class, parameters={})
+    @Export(name="actionSummaryIndexMaxTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionSummaryIndexMaxTime;
 
     /**
@@ -1525,7 +1525,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
      * 
      */
-    @Export(name="actionSummaryIndexName", type=String.class, parameters={})
+    @Export(name="actionSummaryIndexName", refs={String.class}, tree="[0]")
     private Output<String> actionSummaryIndexName;
 
     /**
@@ -1539,7 +1539,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the execution of this action signifies a trackable alert.
      * 
      */
-    @Export(name="actionSummaryIndexTrackAlert", type=Boolean.class, parameters={})
+    @Export(name="actionSummaryIndexTrackAlert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> actionSummaryIndexTrackAlert;
 
     /**
@@ -1553,7 +1553,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      * 
      */
-    @Export(name="actionSummaryIndexTtl", type=String.class, parameters={})
+    @Export(name="actionSummaryIndexTtl", refs={String.class}, tree="[0]")
     private Output<String> actionSummaryIndexTtl;
 
     /**
@@ -1567,7 +1567,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      * 
      */
-    @Export(name="actionWebhookParamUrl", type=String.class, parameters={})
+    @Export(name="actionWebhookParamUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionWebhookParamUrl;
 
     /**
@@ -1581,7 +1581,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A comma-separated list of actions to enable. For example: rss,email
      * 
      */
-    @Export(name="actions", type=String.class, parameters={})
+    @Export(name="actions", refs={String.class}, tree="[0]")
     private Output<String> actions;
 
     /**
@@ -1595,7 +1595,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
      * 
      */
-    @Export(name="alertComparator", type=String.class, parameters={})
+    @Export(name="alertComparator", refs={String.class}, tree="[0]")
     private Output<String> alertComparator;
 
     /**
@@ -1609,7 +1609,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
      * 
      */
-    @Export(name="alertCondition", type=String.class, parameters={})
+    @Export(name="alertCondition", refs={String.class}, tree="[0]")
     private Output<String> alertCondition;
 
     /**
@@ -1623,7 +1623,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
      * 
      */
-    @Export(name="alertDigestMode", type=Boolean.class, parameters={})
+    @Export(name="alertDigestMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> alertDigestMode;
 
     /**
@@ -1637,7 +1637,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      * 
      */
-    @Export(name="alertExpires", type=String.class, parameters={})
+    @Export(name="alertExpires", refs={String.class}, tree="[0]")
     private Output<String> alertExpires;
 
     /**
@@ -1651,7 +1651,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
      * 
      */
-    @Export(name="alertSeverity", type=Integer.class, parameters={})
+    @Export(name="alertSeverity", refs={Integer.class}, tree="[0]")
     private Output<Integer> alertSeverity;
 
     /**
@@ -1665,7 +1665,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether alert suppression is enabled for this scheduled search.
      * 
      */
-    @Export(name="alertSuppress", type=Boolean.class, parameters={})
+    @Export(name="alertSuppress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> alertSuppress;
 
     /**
@@ -1679,7 +1679,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
      * 
      */
-    @Export(name="alertSuppressFields", type=String.class, parameters={})
+    @Export(name="alertSuppressFields", refs={String.class}, tree="[0]")
     private Output<String> alertSuppressFields;
 
     /**
@@ -1693,7 +1693,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      * 
      */
-    @Export(name="alertSuppressPeriod", type=String.class, parameters={})
+    @Export(name="alertSuppressPeriod", refs={String.class}, tree="[0]")
     private Output<String> alertSuppressPeriod;
 
     /**
@@ -1707,7 +1707,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
      * 
      */
-    @Export(name="alertThreshold", type=String.class, parameters={})
+    @Export(name="alertThreshold", refs={String.class}, tree="[0]")
     private Output<String> alertThreshold;
 
     /**
@@ -1721,7 +1721,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      * 
      */
-    @Export(name="alertTrack", type=Boolean.class, parameters={})
+    @Export(name="alertTrack", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> alertTrack;
 
     /**
@@ -1735,7 +1735,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      * 
      */
-    @Export(name="alertType", type=String.class, parameters={})
+    @Export(name="alertType", refs={String.class}, tree="[0]")
     private Output<String> alertType;
 
     /**
@@ -1749,7 +1749,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
      * 
      */
-    @Export(name="allowSkew", type=String.class, parameters={})
+    @Export(name="allowSkew", refs={String.class}, tree="[0]")
     private Output<String> allowSkew;
 
     /**
@@ -1763,7 +1763,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
      * 
      */
-    @Export(name="autoSummarize", type=Boolean.class, parameters={})
+    @Export(name="autoSummarize", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoSummarize;
 
     /**
@@ -1777,7 +1777,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
      * 
      */
-    @Export(name="autoSummarizeCommand", type=String.class, parameters={})
+    @Export(name="autoSummarizeCommand", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeCommand;
 
     /**
@@ -1791,7 +1791,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
      * 
      */
-    @Export(name="autoSummarizeCronSchedule", type=String.class, parameters={})
+    @Export(name="autoSummarizeCronSchedule", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeCronSchedule;
 
     /**
@@ -1805,7 +1805,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="autoSummarizeDispatchEarliestTime", type=String.class, parameters={})
+    @Export(name="autoSummarizeDispatchEarliestTime", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeDispatchEarliestTime;
 
     /**
@@ -1819,7 +1819,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="autoSummarizeDispatchLatestTime", type=String.class, parameters={})
+    @Export(name="autoSummarizeDispatchLatestTime", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeDispatchLatestTime;
 
     /**
@@ -1833,7 +1833,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
      * 
      */
-    @Export(name="autoSummarizeDispatchTimeFormat", type=String.class, parameters={})
+    @Export(name="autoSummarizeDispatchTimeFormat", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeDispatchTimeFormat;
 
     /**
@@ -1847,7 +1847,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
      * 
      */
-    @Export(name="autoSummarizeDispatchTtl", type=String.class, parameters={})
+    @Export(name="autoSummarizeDispatchTtl", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeDispatchTtl;
 
     /**
@@ -1861,7 +1861,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
      * 
      */
-    @Export(name="autoSummarizeMaxDisabledBuckets", type=Integer.class, parameters={})
+    @Export(name="autoSummarizeMaxDisabledBuckets", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoSummarizeMaxDisabledBuckets;
 
     /**
@@ -1875,7 +1875,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
      * 
      */
-    @Export(name="autoSummarizeMaxSummaryRatio", type=Double.class, parameters={})
+    @Export(name="autoSummarizeMaxSummaryRatio", refs={Double.class}, tree="[0]")
     private Output<Double> autoSummarizeMaxSummaryRatio;
 
     /**
@@ -1889,7 +1889,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
      * 
      */
-    @Export(name="autoSummarizeMaxSummarySize", type=Integer.class, parameters={})
+    @Export(name="autoSummarizeMaxSummarySize", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoSummarizeMaxSummarySize;
 
     /**
@@ -1903,7 +1903,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
      * 
      */
-    @Export(name="autoSummarizeMaxTime", type=Integer.class, parameters={})
+    @Export(name="autoSummarizeMaxTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoSummarizeMaxTime;
 
     /**
@@ -1917,7 +1917,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
      * 
      */
-    @Export(name="autoSummarizeSuspendPeriod", type=String.class, parameters={})
+    @Export(name="autoSummarizeSuspendPeriod", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeSuspendPeriod;
 
     /**
@@ -1931,7 +1931,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
      * 
      */
-    @Export(name="autoSummarizeTimespan", type=String.class, parameters={})
+    @Export(name="autoSummarizeTimespan", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeTimespan;
 
     /**
@@ -1945,7 +1945,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
      * 
      */
-    @Export(name="cronSchedule", type=String.class, parameters={})
+    @Export(name="cronSchedule", refs={String.class}, tree="[0]")
     private Output<String> cronSchedule;
 
     /**
@@ -1959,7 +1959,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Human-readable description of this saved search. Defaults to empty string.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -1973,7 +1973,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -1987,7 +1987,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The maximum number of timeline buckets. Defaults to 0.
      * 
      */
-    @Export(name="dispatchBuckets", type=Integer.class, parameters={})
+    @Export(name="dispatchBuckets", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchBuckets;
 
     /**
@@ -2001,7 +2001,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="dispatchEarliestTime", type=String.class, parameters={})
+    @Export(name="dispatchEarliestTime", refs={String.class}, tree="[0]")
     private Output<String> dispatchEarliestTime;
 
     /**
@@ -2015,7 +2015,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="dispatchIndexEarliest", type=String.class, parameters={})
+    @Export(name="dispatchIndexEarliest", refs={String.class}, tree="[0]")
     private Output<String> dispatchIndexEarliest;
 
     /**
@@ -2029,7 +2029,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="dispatchIndexLatest", type=String.class, parameters={})
+    @Export(name="dispatchIndexLatest", refs={String.class}, tree="[0]")
     private Output<String> dispatchIndexLatest;
 
     /**
@@ -2043,7 +2043,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="dispatchIndexedRealtime", type=Boolean.class, parameters={})
+    @Export(name="dispatchIndexedRealtime", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dispatchIndexedRealtime;
 
     /**
@@ -2057,7 +2057,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
      * 
      */
-    @Export(name="dispatchIndexedRealtimeMinspan", type=Integer.class, parameters={})
+    @Export(name="dispatchIndexedRealtimeMinspan", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchIndexedRealtimeMinspan;
 
     /**
@@ -2071,7 +2071,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
      * 
      */
-    @Export(name="dispatchIndexedRealtimeOffset", type=Integer.class, parameters={})
+    @Export(name="dispatchIndexedRealtimeOffset", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchIndexedRealtimeOffset;
 
     /**
@@ -2085,7 +2085,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    @Export(name="dispatchLatestTime", type=String.class, parameters={})
+    @Export(name="dispatchLatestTime", refs={String.class}, tree="[0]")
     private Output<String> dispatchLatestTime;
 
     /**
@@ -2099,7 +2099,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Enables or disables the lookups for this search. Defaults to 1.
      * 
      */
-    @Export(name="dispatchLookups", type=Boolean.class, parameters={})
+    @Export(name="dispatchLookups", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dispatchLookups;
 
     /**
@@ -2113,7 +2113,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The maximum number of results before finalizing the search. Defaults to 500000.
      * 
      */
-    @Export(name="dispatchMaxCount", type=Integer.class, parameters={})
+    @Export(name="dispatchMaxCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchMaxCount;
 
     /**
@@ -2127,7 +2127,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
      * 
      */
-    @Export(name="dispatchMaxTime", type=Integer.class, parameters={})
+    @Export(name="dispatchMaxTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchMaxTime;
 
     /**
@@ -2141,7 +2141,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
      * 
      */
-    @Export(name="dispatchReduceFreq", type=Integer.class, parameters={})
+    @Export(name="dispatchReduceFreq", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchReduceFreq;
 
     /**
@@ -2155,7 +2155,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
      * 
      */
-    @Export(name="dispatchRtBackfill", type=Boolean.class, parameters={})
+    @Export(name="dispatchRtBackfill", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dispatchRtBackfill;
 
     /**
@@ -2169,7 +2169,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
      * 
      */
-    @Export(name="dispatchRtMaximumSpan", type=Integer.class, parameters={})
+    @Export(name="dispatchRtMaximumSpan", refs={Integer.class}, tree="[0]")
     private Output<Integer> dispatchRtMaximumSpan;
 
     /**
@@ -2183,7 +2183,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
      * 
      */
-    @Export(name="dispatchSpawnProcess", type=Boolean.class, parameters={})
+    @Export(name="dispatchSpawnProcess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dispatchSpawnProcess;
 
     /**
@@ -2197,7 +2197,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
      * 
      */
-    @Export(name="dispatchTimeFormat", type=String.class, parameters={})
+    @Export(name="dispatchTimeFormat", refs={String.class}, tree="[0]")
     private Output<String> dispatchTimeFormat;
 
     /**
@@ -2211,7 +2211,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
      * 
      */
-    @Export(name="dispatchTtl", type=String.class, parameters={})
+    @Export(name="dispatchTtl", refs={String.class}, tree="[0]")
     private Output<String> dispatchTtl;
 
     /**
@@ -2225,7 +2225,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      * 
      */
-    @Export(name="displayView", type=String.class, parameters={})
+    @Export(name="displayView", refs={String.class}, tree="[0]")
     private Output<String> displayView;
 
     /**
@@ -2239,7 +2239,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Whether this search is to be run on a schedule
      * 
      */
-    @Export(name="isScheduled", type=Boolean.class, parameters={})
+    @Export(name="isScheduled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isScheduled;
 
     /**
@@ -2253,7 +2253,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
      * 
      */
-    @Export(name="isVisible", type=Boolean.class, parameters={})
+    @Export(name="isVisible", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isVisible;
 
     /**
@@ -2267,7 +2267,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
      * 
      */
-    @Export(name="maxConcurrent", type=Integer.class, parameters={})
+    @Export(name="maxConcurrent", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxConcurrent;
 
     /**
@@ -2281,7 +2281,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * A name for the search.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -2295,7 +2295,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
      * 
      */
-    @Export(name="realtimeSchedule", type=Boolean.class, parameters={})
+    @Export(name="realtimeSchedule", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> realtimeSchedule;
 
     /**
@@ -2309,7 +2309,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
      * 
      */
-    @Export(name="requestUiDispatchApp", type=String.class, parameters={})
+    @Export(name="requestUiDispatchApp", refs={String.class}, tree="[0]")
     private Output<String> requestUiDispatchApp;
 
     /**
@@ -2323,7 +2323,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies a field used by Splunk Web to denote the view this search should be displayed in.
      * 
      */
-    @Export(name="requestUiDispatchView", type=String.class, parameters={})
+    @Export(name="requestUiDispatchView", refs={String.class}, tree="[0]")
     private Output<String> requestUiDispatchView;
 
     /**
@@ -2337,7 +2337,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
      * 
      */
-    @Export(name="restartOnSearchpeerAdd", type=Boolean.class, parameters={})
+    @Export(name="restartOnSearchpeerAdd", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> restartOnSearchpeerAdd;
 
     /**
@@ -2351,7 +2351,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
      * 
      */
-    @Export(name="runOnStartup", type=Boolean.class, parameters={})
+    @Export(name="runOnStartup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> runOnStartup;
 
     /**
@@ -2365,7 +2365,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Raises the scheduling priority of the named search. Defaults to Default
      * 
      */
-    @Export(name="schedulePriority", type=String.class, parameters={})
+    @Export(name="schedulePriority", refs={String.class}, tree="[0]")
     private Output<String> schedulePriority;
 
     /**
@@ -2379,7 +2379,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
      * 
      */
-    @Export(name="scheduleWindow", type=String.class, parameters={})
+    @Export(name="scheduleWindow", refs={String.class}, tree="[0]")
     private Output<String> scheduleWindow;
 
     /**
@@ -2393,7 +2393,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Required when creating a new search.
      * 
      */
-    @Export(name="search", type=String.class, parameters={})
+    @Export(name="search", refs={String.class}, tree="[0]")
     private Output<String> search;
 
     /**
@@ -2407,7 +2407,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Defines the viewstate id associated with the UI view listed in &#39;displayview&#39;.
      * 
      */
-    @Export(name="vsid", type=String.class, parameters={})
+    @Export(name="vsid", refs={String.class}, tree="[0]")
     private Output<String> vsid;
 
     /**
@@ -2421,7 +2421,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * Specifies the new workload pool where the existing running search will be placed.`
      * 
      */
-    @Export(name="workloadPool", type=String.class, parameters={})
+    @Export(name="workloadPool", refs={String.class}, tree="[0]")
     private Output<String> workloadPool;
 
     /**

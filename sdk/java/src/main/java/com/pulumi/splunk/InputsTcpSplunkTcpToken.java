@@ -56,7 +56,7 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsTcpSplunkTcpTokenAcl.class, parameters={})
+    @Export(name="acl", refs={InputsTcpSplunkTcpTokenAcl.class}, tree="[0]")
     private Output<InputsTcpSplunkTcpTokenAcl> acl;
 
     /**
@@ -70,7 +70,7 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      * Required. Name for the token to create.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -84,7 +84,7 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      * Optional. Token value to use. If unspecified, a token is generated automatically.
      * 
      */
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     /**

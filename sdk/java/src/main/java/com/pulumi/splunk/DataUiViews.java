@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="splunk:index/dataUiViews:DataUiViews")
 public class DataUiViews extends com.pulumi.resources.CustomResource {
-    @Export(name="acl", type=DataUiViewsAcl.class, parameters={})
+    @Export(name="acl", refs={DataUiViewsAcl.class}, tree="[0]")
     private Output<DataUiViewsAcl> acl;
 
     public Output<DataUiViewsAcl> acl() {
@@ -66,7 +66,7 @@ public class DataUiViews extends com.pulumi.resources.CustomResource {
      * Dashboard XML definition.
      * 
      */
-    @Export(name="eaiData", type=String.class, parameters={})
+    @Export(name="eaiData", refs={String.class}, tree="[0]")
     private Output<String> eaiData;
 
     /**
@@ -81,7 +81,7 @@ public class DataUiViews extends com.pulumi.resources.CustomResource {
      * * `eai:data` - (Required) Dashboard XML definition.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

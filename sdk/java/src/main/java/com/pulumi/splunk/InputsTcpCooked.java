@@ -59,7 +59,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsTcpCookedAcl.class, parameters={})
+    @Export(name="acl", refs={InputsTcpCookedAcl.class}, tree="[0]")
     private Output<InputsTcpCookedAcl> acl;
 
     /**
@@ -78,7 +78,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * Default value is dns.
      * 
      */
-    @Export(name="connectionHost", type=String.class, parameters={})
+    @Export(name="connectionHost", refs={String.class}, tree="[0]")
     private Output<String> connectionHost;
 
     /**
@@ -97,7 +97,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * Indicates if input is disabled.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -111,7 +111,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * Host from which the indexer gets data.
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -125,7 +125,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * The port number of this input.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -139,7 +139,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * Restrict incoming connections on this port to the host specified here.
      * 
      */
-    @Export(name="restrictToHost", type=String.class, parameters={})
+    @Export(name="restrictToHost", refs={String.class}, tree="[0]")
     private Output<String> restrictToHost;
 
     /**

@@ -158,19 +158,19 @@ public final class DataUiViewsAcl {
             return writes(List.of(writes));
         }
         public DataUiViewsAcl build() {
-            final var o = new DataUiViewsAcl();
-            o.app = app;
-            o.canChangePerms = canChangePerms;
-            o.canShareApp = canShareApp;
-            o.canShareGlobal = canShareGlobal;
-            o.canShareUser = canShareUser;
-            o.canWrite = canWrite;
-            o.owner = owner;
-            o.reads = reads;
-            o.removable = removable;
-            o.sharing = sharing;
-            o.writes = writes;
-            return o;
+            final var _resultValue = new DataUiViewsAcl();
+            _resultValue.app = app;
+            _resultValue.canChangePerms = canChangePerms;
+            _resultValue.canShareApp = canShareApp;
+            _resultValue.canShareGlobal = canShareGlobal;
+            _resultValue.canShareUser = canShareUser;
+            _resultValue.canWrite = canWrite;
+            _resultValue.owner = owner;
+            _resultValue.reads = reads;
+            _resultValue.removable = removable;
+            _resultValue.sharing = sharing;
+            _resultValue.writes = writes;
+            return _resultValue;
         }
     }
 }

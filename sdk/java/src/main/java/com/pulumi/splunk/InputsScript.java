@@ -28,7 +28,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsScriptAcl.class, parameters={})
+    @Export(name="acl", refs={InputsScriptAcl.class}, tree="[0]")
     private Output<InputsScriptAcl> acl;
 
     /**
@@ -42,7 +42,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Specifies whether the input script is disabled.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -56,7 +56,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Sets the host for events from this input. Defaults to whatever host sent the event.
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -70,7 +70,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Sets the index for events from this input. Defaults to the main index.
      * 
      */
-    @Export(name="index", type=String.class, parameters={})
+    @Export(name="index", refs={String.class}, tree="[0]")
     private Output<String> index;
 
     /**
@@ -84,7 +84,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
      * 
      */
-    @Export(name="interval", type=Integer.class, parameters={})
+    @Export(name="interval", refs={Integer.class}, tree="[0]")
     private Output<Integer> interval;
 
     /**
@@ -98,7 +98,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Specify the name of the scripted input.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -112,7 +112,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
      * 
      */
-    @Export(name="passauth", type=String.class, parameters={})
+    @Export(name="passauth", refs={String.class}, tree="[0]")
     private Output<String> passauth;
 
     /**
@@ -126,7 +126,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Specify a new name for the source field for the script.
      * 
      */
-    @Export(name="renameSource", type=String.class, parameters={})
+    @Export(name="renameSource", refs={String.class}, tree="[0]")
     private Output<String> renameSource;
 
     /**
@@ -141,7 +141,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with &#39;source::&#39;.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -157,7 +157,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
      * 
      */
-    @Export(name="sourcetype", type=String.class, parameters={})
+    @Export(name="sourcetype", refs={String.class}, tree="[0]")
     private Output<String> sourcetype;
 
     /**

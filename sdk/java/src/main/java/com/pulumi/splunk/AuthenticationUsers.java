@@ -61,7 +61,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * User default app. Overrides the default app inherited from the user roles.
      * 
      */
-    @Export(name="defaultApp", type=String.class, parameters={})
+    @Export(name="defaultApp", refs={String.class}, tree="[0]")
     private Output<String> defaultApp;
 
     /**
@@ -75,7 +75,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * User email address.
      * 
      */
-    @Export(name="email", type=String.class, parameters={})
+    @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
@@ -89,7 +89,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * Force user to change password indication
      * 
      */
-    @Export(name="forceChangePass", type=Boolean.class, parameters={})
+    @Export(name="forceChangePass", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> forceChangePass;
 
     /**
@@ -103,7 +103,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * Unique user login name.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -117,7 +117,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * User login password.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
     /**
@@ -131,7 +131,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * Full user name.
      * 
      */
-    @Export(name="realname", type=String.class, parameters={})
+    @Export(name="realname", refs={String.class}, tree="[0]")
     private Output<String> realname;
 
     /**
@@ -145,7 +145,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * Restart background search job that has not completed when Splunk restarts indication.
      * 
      */
-    @Export(name="restartBackgroundJobs", type=Boolean.class, parameters={})
+    @Export(name="restartBackgroundJobs", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> restartBackgroundJobs;
 
     /**
@@ -159,7 +159,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * Role to assign to this user. At least one existing role is required.
      * 
      */
-    @Export(name="roles", type=List.class, parameters={String.class})
+    @Export(name="roles", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> roles;
 
     /**
@@ -173,7 +173,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * User timezone.
      * 
      */
-    @Export(name="tz", type=String.class, parameters={})
+    @Export(name="tz", refs={String.class}, tree="[0]")
     private Output<String> tz;
 
     /**

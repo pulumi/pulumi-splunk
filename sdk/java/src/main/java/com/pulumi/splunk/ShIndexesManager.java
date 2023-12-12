@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="splunk:index/shIndexesManager:ShIndexesManager")
 public class ShIndexesManager extends com.pulumi.resources.CustomResource {
-    @Export(name="acl", type=ShIndexesManagerAcl.class, parameters={})
+    @Export(name="acl", refs={ShIndexesManagerAcl.class}, tree="[0]")
     private Output<ShIndexesManagerAcl> acl;
 
     public Output<ShIndexesManagerAcl> acl() {
@@ -69,7 +69,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * Valid values: (event | metric). Specifies the type of index.
      * 
      */
-    @Export(name="datatype", type=String.class, parameters={})
+    @Export(name="datatype", refs={String.class}, tree="[0]")
     private Output<String> datatype;
 
     /**
@@ -84,7 +84,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      * 
      */
-    @Export(name="frozenTimePeriodInSecs", type=String.class, parameters={})
+    @Export(name="frozenTimePeriodInSecs", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> frozenTimePeriodInSecs;
 
     /**
@@ -100,7 +100,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * Defaults to 100 MB.
      * 
      */
-    @Export(name="maxGlobalRawDataSizeMb", type=String.class, parameters={})
+    @Export(name="maxGlobalRawDataSizeMb", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> maxGlobalRawDataSizeMb;
 
     /**
@@ -115,7 +115,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * The name of the index to create.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

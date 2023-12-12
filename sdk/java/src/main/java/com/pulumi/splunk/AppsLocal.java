@@ -59,7 +59,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=AppsLocalAcl.class, parameters={})
+    @Export(name="acl", refs={AppsLocalAcl.class}, tree="[0]")
     private Output<AppsLocalAcl> acl;
 
     /**
@@ -73,7 +73,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
      * 
      */
-    @Export(name="auth", type=String.class, parameters={})
+    @Export(name="auth", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> auth;
 
     /**
@@ -87,7 +87,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
      * 
      */
-    @Export(name="author", type=String.class, parameters={})
+    @Export(name="author", refs={String.class}, tree="[0]")
     private Output<String> author;
 
     /**
@@ -103,7 +103,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;false = Custom app setup not complete.
      * 
      */
-    @Export(name="configured", type=Boolean.class, parameters={})
+    @Export(name="configured", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> configured;
 
     /**
@@ -119,7 +119,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * Short app description also displayed below the app title in Splunk Web Launcher.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -133,7 +133,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
      * 
      */
-    @Export(name="explicitAppname", type=String.class, parameters={})
+    @Export(name="explicitAppname", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> explicitAppname;
 
     /**
@@ -149,7 +149,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      * 
      */
-    @Export(name="filename", type=Boolean.class, parameters={})
+    @Export(name="filename", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> filename;
 
     /**
@@ -165,7 +165,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * App name displayed in Splunk Web, from five to eighty characters excluding the prefix &#34;Splunk for&#34;.
      * 
      */
-    @Export(name="label", type=String.class, parameters={})
+    @Export(name="label", refs={String.class}, tree="[0]")
     private Output<String> label;
 
     /**
@@ -182,7 +182,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * The app folder name cannot include spaces or special characters.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -199,7 +199,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
      * 
      */
-    @Export(name="session", type=String.class, parameters={})
+    @Export(name="session", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> session;
 
     /**
@@ -215,7 +215,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;false, which indicates that filename should not be used to update an existing app.
      * 
      */
-    @Export(name="update", type=Boolean.class, parameters={})
+    @Export(name="update", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> update;
 
     /**
@@ -231,7 +231,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * App version.
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
@@ -247,7 +247,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;false = App is not visible or navigable.
      * 
      */
-    @Export(name="visible", type=Boolean.class, parameters={})
+    @Export(name="visible", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> visible;
 
     /**

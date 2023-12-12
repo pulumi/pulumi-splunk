@@ -82,7 +82,7 @@ public class GenericAcl extends com.pulumi.resources.CustomResource {
      * app and owner for objects that don&#39;t fit in the normal namespace.
      * 
      */
-    @Export(name="acl", type=GenericAclAcl.class, parameters={})
+    @Export(name="acl", refs={GenericAclAcl.class}, tree="[0]")
     private Output<GenericAclAcl> acl;
 
     /**
@@ -99,7 +99,7 @@ public class GenericAcl extends com.pulumi.resources.CustomResource {
      * REST API Endpoint path to the object, relative to servicesNS/&lt;owner&gt;/&lt;app&gt;
      * 
      */
-    @Export(name="path", type=String.class, parameters={})
+    @Export(name="path", refs={String.class}, tree="[0]")
     private Output<String> path;
 
     /**
