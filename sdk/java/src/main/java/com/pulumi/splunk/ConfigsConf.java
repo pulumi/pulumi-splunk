@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="splunk:index/configsConf:ConfigsConf")
 public class ConfigsConf extends com.pulumi.resources.CustomResource {
-    @Export(name="acl", type=ConfigsConfAcl.class, parameters={})
+    @Export(name="acl", refs={ConfigsConfAcl.class}, tree="[0]")
     private Output<ConfigsConfAcl> acl;
 
     public Output<ConfigsConfAcl> acl() {
@@ -66,7 +66,7 @@ public class ConfigsConf extends com.pulumi.resources.CustomResource {
      * A &#39;/&#39; separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -80,7 +80,7 @@ public class ConfigsConf extends com.pulumi.resources.CustomResource {
      * A map of key value pairs for a stanza.
      * 
      */
-    @Export(name="variables", type=Map.class, parameters={String.class, String.class})
+    @Export(name="variables", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> variables;
 
     /**

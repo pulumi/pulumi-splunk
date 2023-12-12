@@ -60,7 +60,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsUdpAcl.class, parameters={})
+    @Export(name="acl", refs={InputsUdpAcl.class}, tree="[0]")
     private Output<InputsUdpAcl> acl;
 
     /**
@@ -79,7 +79,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * Default value is dns.
      * 
      */
-    @Export(name="connectionHost", type=String.class, parameters={})
+    @Export(name="connectionHost", refs={String.class}, tree="[0]")
     private Output<String> connectionHost;
 
     /**
@@ -98,7 +98,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * Indicates if input is disabled.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -112,7 +112,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -126,7 +126,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * Which index events from this input should be stored in. Defaults to default.
      * 
      */
-    @Export(name="index", type=String.class, parameters={})
+    @Export(name="index", refs={String.class}, tree="[0]")
     private Output<String> index;
 
     /**
@@ -140,7 +140,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * The UDP port that this input should listen on.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -154,7 +154,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
      * 
      */
-    @Export(name="noAppendingTimestamp", type=Boolean.class, parameters={})
+    @Export(name="noAppendingTimestamp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> noAppendingTimestamp;
 
     /**
@@ -168,7 +168,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * If set to true, Splunk software does not remove the priority field from incoming syslog events.
      * 
      */
-    @Export(name="noPriorityStripping", type=Boolean.class, parameters={})
+    @Export(name="noPriorityStripping", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> noPriorityStripping;
 
     /**
@@ -182,7 +182,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * Which queue events from this input should be sent to. Generally this does not need to be changed.
      * 
      */
-    @Export(name="queue", type=String.class, parameters={})
+    @Export(name="queue", refs={String.class}, tree="[0]")
     private Output<String> queue;
 
     /**
@@ -197,7 +197,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * If this is not set, the value specified in [udp://&lt;remote server&gt;:&lt;port&gt;] in inputs.conf is used.
      * 
      */
-    @Export(name="restrictToHost", type=String.class, parameters={})
+    @Export(name="restrictToHost", refs={String.class}, tree="[0]")
     private Output<String> restrictToHost;
 
     /**
@@ -212,7 +212,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -226,7 +226,7 @@ public class InputsUdp extends com.pulumi.resources.CustomResource {
      * The value to populate in the sourcetype field for incoming events.
      * 
      */
-    @Export(name="sourcetype", type=String.class, parameters={})
+    @Export(name="sourcetype", refs={String.class}, tree="[0]")
     private Output<String> sourcetype;
 
     /**

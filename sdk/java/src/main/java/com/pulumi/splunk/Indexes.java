@@ -64,7 +64,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=IndexesAcl.class, parameters={})
+    @Export(name="acl", refs={IndexesAcl.class}, tree="[0]")
     private Output<IndexesAcl> acl;
 
     /**
@@ -78,7 +78,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. &lt;br&gt;A recommended value is 100.
      * 
      */
-    @Export(name="blockSignSize", type=Integer.class, parameters={})
+    @Export(name="blockSignSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> blockSignSize;
 
     /**
@@ -98,7 +98,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Values other than &#34;auto&#34; must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: &#34;16777216&#34; or &#34;16MB&#34; are equivalent.
      * 
      */
-    @Export(name="bucketRebuildMemoryHint", type=String.class, parameters={})
+    @Export(name="bucketRebuildMemoryHint", refs={String.class}, tree="[0]")
     private Output<String> bucketRebuildMemoryHint;
 
     /**
@@ -118,7 +118,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
      * 
      */
-    @Export(name="coldPath", type=String.class, parameters={})
+    @Export(name="coldPath", refs={String.class}, tree="[0]")
     private Output<String> coldPath;
 
     /**
@@ -139,7 +139,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * If both coldToFrozenDir and coldToFrozenScript are specified, coldToFrozenDir takes precedence
      * 
      */
-    @Export(name="coldToFrozenDir", type=String.class, parameters={})
+    @Export(name="coldToFrozenDir", refs={String.class}, tree="[0]")
     private Output<String> coldToFrozenDir;
 
     /**
@@ -163,7 +163,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;It is best to copy the example script to a new file in bin and modify it for your system. Most importantly, change the default archive path to an existing directory that fits your needs.
      * 
      */
-    @Export(name="coldToFrozenScript", type=String.class, parameters={})
+    @Export(name="coldToFrozenScript", refs={String.class}, tree="[0]")
     private Output<String> coldToFrozenScript;
 
     /**
@@ -180,7 +180,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * This parameter is ignored. The splunkd process always compresses raw data.
      * 
      */
-    @Export(name="compressRawdata", type=Boolean.class, parameters={})
+    @Export(name="compressRawdata", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> compressRawdata;
 
     /**
@@ -194,7 +194,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Valid values: (event | metric). Specifies the type of index.
      * 
      */
-    @Export(name="datatype", type=String.class, parameters={})
+    @Export(name="datatype", refs={String.class}, tree="[0]")
     private Output<String> datatype;
 
     /**
@@ -209,7 +209,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * When enabled, you do not have to wait until buckets are repaired to start the Splunk platform. However, you might observe a slight performance degratation.
      * 
      */
-    @Export(name="enableOnlineBucketRepair", type=Boolean.class, parameters={})
+    @Export(name="enableOnlineBucketRepair", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableOnlineBucketRepair;
 
     /**
@@ -225,7 +225,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Defaults to 188697600 (6 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      * 
      */
-    @Export(name="frozenTimePeriodInSecs", type=Integer.class, parameters={})
+    @Export(name="frozenTimePeriodInSecs", refs={Integer.class}, tree="[0]")
     private Output<Integer> frozenTimePeriodInSecs;
 
     /**
@@ -242,7 +242,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;Caution: The path must be readable and writable.
      * 
      */
-    @Export(name="homePath", type=String.class, parameters={})
+    @Export(name="homePath", refs={String.class}, tree="[0]")
     private Output<String> homePath;
 
     /**
@@ -259,7 +259,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;If a warm or cold bucket is older than the specified age, do not create or rebuild its bloomfilter. Specify 0 to never rebuild bloomfilters.
      * 
      */
-    @Export(name="maxBloomBackfillBucketAge", type=String.class, parameters={})
+    @Export(name="maxBloomBackfillBucketAge", refs={String.class}, tree="[0]")
     private Output<String> maxBloomBackfillBucketAge;
 
     /**
@@ -275,7 +275,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * This number should be increased if instructed by Splunk Support. Typically the default value should suffice.
      * 
      */
-    @Export(name="maxConcurrentOptimizes", type=Integer.class, parameters={})
+    @Export(name="maxConcurrentOptimizes", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxConcurrentOptimizes;
 
     /**
@@ -291,7 +291,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
      * 
      */
-    @Export(name="maxDataSize", type=String.class, parameters={})
+    @Export(name="maxDataSize", refs={String.class}, tree="[0]")
     private Output<String> maxDataSize;
 
     /**
@@ -307,7 +307,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * &lt;br&gt;When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
      * 
      */
-    @Export(name="maxHotBuckets", type=Integer.class, parameters={})
+    @Export(name="maxHotBuckets", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxHotBuckets;
 
     /**
@@ -322,7 +322,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
      * 
      */
-    @Export(name="maxHotIdleSecs", type=Integer.class, parameters={})
+    @Export(name="maxHotIdleSecs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxHotIdleSecs;
 
     /**
@@ -336,7 +336,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
      * 
      */
-    @Export(name="maxHotSpanSecs", type=Integer.class, parameters={})
+    @Export(name="maxHotSpanSecs", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxHotSpanSecs;
 
     /**
@@ -350,7 +350,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
      * 
      */
-    @Export(name="maxMemMb", type=Integer.class, parameters={})
+    @Export(name="maxMemMb", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxMemMb;
 
     /**
@@ -364,7 +364,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored. If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies. Highest legal value is 2147483647. To disable this parameter, set to 0.
      * 
      */
-    @Export(name="maxMetaEntries", type=Integer.class, parameters={})
+    @Export(name="maxMetaEntries", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxMetaEntries;
 
     /**
@@ -380,7 +380,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Highest legal value is 2147483647. To disable this parameter, set to 0.
      * 
      */
-    @Export(name="maxTimeUnreplicatedNoAcks", type=Integer.class, parameters={})
+    @Export(name="maxTimeUnreplicatedNoAcks", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxTimeUnreplicatedNoAcks;
 
     /**
@@ -398,7 +398,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * To disable, set to 0, but this is NOT recommended. Highest legal value is 2147483647.
      * 
      */
-    @Export(name="maxTimeUnreplicatedWithAcks", type=Integer.class, parameters={})
+    @Export(name="maxTimeUnreplicatedWithAcks", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxTimeUnreplicatedWithAcks;
 
     /**
@@ -414,7 +414,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      * 
      */
-    @Export(name="maxTotalDataSizeMb", type=Integer.class, parameters={})
+    @Export(name="maxTotalDataSizeMb", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxTotalDataSizeMb;
 
     /**
@@ -428,7 +428,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * The maximum number of warm buckets. If this number is exceeded, the warm bucket/s with the lowest value for their latest times is moved to cold.
      * 
      */
-    @Export(name="maxWarmDbCount", type=Integer.class, parameters={})
+    @Export(name="maxWarmDbCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxWarmDbCount;
 
     /**
@@ -445,7 +445,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * If 0 is specified, splunkd forces a filesystem sync after every slice completes compressing. Specifying &#34;disable&#34; disables syncing entirely: uncompressed slices are removed as soon as compression is complete.
      * 
      */
-    @Export(name="minRawFileSyncSecs", type=String.class, parameters={})
+    @Export(name="minRawFileSyncSecs", refs={String.class}, tree="[0]")
     private Output<String> minRawFileSyncSecs;
 
     /**
@@ -462,7 +462,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Minimum size of the queue that stores events in memory before committing them to a tsidx file.
      * 
      */
-    @Export(name="minStreamGroupQueueSize", type=Integer.class, parameters={})
+    @Export(name="minStreamGroupQueueSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> minStreamGroupQueueSize;
 
     /**
@@ -476,7 +476,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * The name of the index to create.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -493,7 +493,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * By default it is turned off (zero).
      * 
      */
-    @Export(name="partialServiceMetaPeriod", type=Integer.class, parameters={})
+    @Export(name="partialServiceMetaPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> partialServiceMetaPeriod;
 
     /**
@@ -512,7 +512,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Highest legal value is 4294967295.
      * 
      */
-    @Export(name="processTrackerServiceInterval", type=Integer.class, parameters={})
+    @Export(name="processTrackerServiceInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> processTrackerServiceInterval;
 
     /**
@@ -529,7 +529,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * This is a mechanism to prevent main hot buckets from being polluted with fringe events.
      * 
      */
-    @Export(name="quarantineFutureSecs", type=Integer.class, parameters={})
+    @Export(name="quarantineFutureSecs", refs={Integer.class}, tree="[0]")
     private Output<Integer> quarantineFutureSecs;
 
     /**
@@ -544,7 +544,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Events with timestamp of quarantinePastSecs older than &#34;now&#34; are dropped into quarantine bucket. Defaults to 77760000 (900 days). This is a mechanism to prevent the main hot buckets from being polluted with fringe events.
      * 
      */
-    @Export(name="quarantinePastSecs", type=Integer.class, parameters={})
+    @Export(name="quarantinePastSecs", refs={Integer.class}, tree="[0]")
     private Output<Integer> quarantinePastSecs;
 
     /**
@@ -558,7 +558,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Target uncompressed size in bytes for individual raw slice in the rawdata journal of the index. Defaults to 131072 (128KB). 0 is not a valid value. If 0 is specified, rawChunkSizeBytes is set to the default value.
      * 
      */
-    @Export(name="rawChunkSizeBytes", type=Integer.class, parameters={})
+    @Export(name="rawChunkSizeBytes", refs={Integer.class}, tree="[0]")
     private Output<Integer> rawChunkSizeBytes;
 
     /**
@@ -574,7 +574,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * 0 = Turn off replication for this index.
      * 
      */
-    @Export(name="repFactor", type=String.class, parameters={})
+    @Export(name="repFactor", refs={String.class}, tree="[0]")
     private Output<String> repFactor;
 
     /**
@@ -590,7 +590,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
      * 
      */
-    @Export(name="rotatePeriodInSecs", type=Integer.class, parameters={})
+    @Export(name="rotatePeriodInSecs", refs={Integer.class}, tree="[0]")
     private Output<Integer> rotatePeriodInSecs;
 
     /**
@@ -605,7 +605,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
      * 
      */
-    @Export(name="serviceMetaPeriod", type=Integer.class, parameters={})
+    @Export(name="serviceMetaPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> serviceMetaPeriod;
 
     /**
@@ -620,7 +620,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * When true, a sync operation is called before file descriptor is closed on metadata file updates. This functionality improves integrity of metadata files, especially in regards to operating system crashes/machine failures.
      * 
      */
-    @Export(name="syncMeta", type=Boolean.class, parameters={})
+    @Export(name="syncMeta", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> syncMeta;
 
     /**
@@ -636,7 +636,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Required. Splunk software does not start if an index lacks a valid thawedPath.
      * 
      */
-    @Export(name="thawedPath", type=String.class, parameters={})
+    @Export(name="thawedPath", refs={String.class}, tree="[0]")
     private Output<String> thawedPath;
 
     /**
@@ -652,7 +652,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Defines how frequently Splunk software checks for index throttling condition, in seconds. Defaults to 15 (seconds).
      * 
      */
-    @Export(name="throttleCheckPeriod", type=Integer.class, parameters={})
+    @Export(name="throttleCheckPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> throttleCheckPeriod;
 
     /**
@@ -667,7 +667,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * If specified, it must be defined in terms of a volume definition.
      * 
      */
-    @Export(name="tstatsHomePath", type=String.class, parameters={})
+    @Export(name="tstatsHomePath", refs={String.class}, tree="[0]")
     private Output<String> tstatsHomePath;
 
     /**
@@ -683,7 +683,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
      * 
      */
-    @Export(name="warmToColdScript", type=String.class, parameters={})
+    @Export(name="warmToColdScript", refs={String.class}, tree="[0]")
     private Output<String> warmToColdScript;
 
     /**

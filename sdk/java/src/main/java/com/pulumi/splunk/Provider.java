@@ -27,7 +27,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * the Splunk platform
      * 
      */
-    @Export(name="authToken", type=String.class, parameters={})
+    @Export(name="authToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authToken;
 
     /**
@@ -42,7 +42,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * Splunk instance password
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
     /**
@@ -56,7 +56,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * Splunk instance URL
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
@@ -70,7 +70,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * Splunk instance admin username
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> username;
 
     /**

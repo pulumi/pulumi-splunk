@@ -66,7 +66,7 @@ public class AdminSamlGroups extends com.pulumi.resources.CustomResource {
      * The name of the external group.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -80,7 +80,7 @@ public class AdminSamlGroups extends com.pulumi.resources.CustomResource {
      * List of internal roles assigned to the group.
      * 
      */
-    @Export(name="roles", type=List.class, parameters={String.class})
+    @Export(name="roles", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> roles;
 
     /**

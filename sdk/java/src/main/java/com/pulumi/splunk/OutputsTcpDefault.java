@@ -63,7 +63,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=OutputsTcpDefaultAcl.class, parameters={})
+    @Export(name="acl", refs={OutputsTcpDefaultAcl.class}, tree="[0]")
     private Output<OutputsTcpDefaultAcl> acl;
 
     /**
@@ -78,7 +78,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
      * 
      */
-    @Export(name="defaultGroup", type=String.class, parameters={})
+    @Export(name="defaultGroup", refs={String.class}, tree="[0]")
     private Output<String> defaultGroup;
 
     /**
@@ -93,7 +93,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * Disables default tcpout settings
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -110,7 +110,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * Using auto load-balancing is the best way to minimize this condition, because, in that case, multiple receivers must be down (or jammed up) before queue blocking can occur.
      * 
      */
-    @Export(name="dropEventsOnQueueFull", type=Integer.class, parameters={})
+    @Export(name="dropEventsOnQueueFull", refs={Integer.class}, tree="[0]")
     private Output<Integer> dropEventsOnQueueFull;
 
     /**
@@ -128,7 +128,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
      * 
      */
-    @Export(name="heartbeatFrequency", type=Integer.class, parameters={})
+    @Export(name="heartbeatFrequency", refs={Integer.class}, tree="[0]")
     private Output<Integer> heartbeatFrequency;
 
     /**
@@ -144,7 +144,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * This is known as an &#34;index-and-forward&#34; configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
      * 
      */
-    @Export(name="indexAndForward", type=Boolean.class, parameters={})
+    @Export(name="indexAndForward", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> indexAndForward;
 
     /**
@@ -164,7 +164,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * If specified as an integer followed by KB, MB, or GB (for example, maxQueueSize=100MB), maxQueueSize indicates the maximum RAM allocated to the queue buffer. Defaults to 500KB (which means a maximum size of 500KB for the output queue and 1500KB for the wait queue, if any).
      * 
      */
-    @Export(name="maxQueueSize", type=String.class, parameters={})
+    @Export(name="maxQueueSize", refs={String.class}, tree="[0]")
     private Output<String> maxQueueSize;
 
     /**
@@ -183,7 +183,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * Configuration to be edited. The only valid value is &#34;tcpout&#34;.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -198,7 +198,7 @@ public class OutputsTcpDefault extends com.pulumi.resources.CustomResource {
      * Set to false if you are sending to a third-party system.
      * 
      */
-    @Export(name="sendCookedData", type=Boolean.class, parameters={})
+    @Export(name="sendCookedData", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sendCookedData;
 
     /**

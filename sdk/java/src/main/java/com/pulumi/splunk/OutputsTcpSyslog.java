@@ -59,7 +59,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=OutputsTcpSyslogAcl.class, parameters={})
+    @Export(name="acl", refs={OutputsTcpSyslogAcl.class}, tree="[0]")
     private Output<OutputsTcpSyslogAcl> acl;
 
     /**
@@ -73,7 +73,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * If true, disables global syslog settings.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -87,7 +87,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -101,7 +101,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      * 
      */
-    @Export(name="priority", type=Integer.class, parameters={})
+    @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
@@ -115,7 +115,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * host:port of the server where syslog data should be sent
      * 
      */
-    @Export(name="server", type=String.class, parameters={})
+    @Export(name="server", refs={String.class}, tree="[0]")
     private Output<String> server;
 
     /**
@@ -134,7 +134,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * Data that does not match the rules has a header, potentially a timestamp, and a hostname added to the front of the event. This is how Splunk software causes arbitrary log data to match syslog expectations.
      * 
      */
-    @Export(name="syslogSourcetype", type=String.class, parameters={})
+    @Export(name="syslogSourcetype", refs={String.class}, tree="[0]")
     private Output<String> syslogSourcetype;
 
     /**
@@ -154,7 +154,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      * 
      */
-    @Export(name="timestampFormat", type=String.class, parameters={})
+    @Export(name="timestampFormat", refs={String.class}, tree="[0]")
     private Output<String> timestampFormat;
 
     /**
@@ -169,7 +169,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * Protocol to use to send syslog data. Valid values: (tcp | udp ).
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

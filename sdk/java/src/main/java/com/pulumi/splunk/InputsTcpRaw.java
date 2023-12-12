@@ -62,7 +62,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsTcpRawAcl.class, parameters={})
+    @Export(name="acl", refs={InputsTcpRawAcl.class}, tree="[0]")
     private Output<InputsTcpRawAcl> acl;
 
     /**
@@ -81,7 +81,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Default value is dns.
      * 
      */
-    @Export(name="connectionHost", type=String.class, parameters={})
+    @Export(name="connectionHost", refs={String.class}, tree="[0]")
     private Output<String> connectionHost;
 
     /**
@@ -100,7 +100,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Indicates if input is disabled.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -114,7 +114,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Host from which the indexer gets data.
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -128,7 +128,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Index to store generated events. Defaults to default.
      * 
      */
-    @Export(name="index", type=String.class, parameters={})
+    @Export(name="index", refs={String.class}, tree="[0]")
     private Output<String> index;
 
     /**
@@ -142,7 +142,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * The input port which receives raw data.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -159,7 +159,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Set queue to indexQueue to send your data directly into the index.
      * 
      */
-    @Export(name="queue", type=String.class, parameters={})
+    @Export(name="queue", refs={String.class}, tree="[0]")
     private Output<String> queue;
 
     /**
@@ -177,7 +177,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
      * 
      */
-    @Export(name="rawTcpDoneTimeout", type=Integer.class, parameters={})
+    @Export(name="rawTcpDoneTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> rawTcpDoneTimeout;
 
     /**
@@ -192,7 +192,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Allows for restricting this input to only accept data from the host specified here.
      * 
      */
-    @Export(name="restrictToHost", type=String.class, parameters={})
+    @Export(name="restrictToHost", refs={String.class}, tree="[0]")
     private Output<String> restrictToHost;
 
     /**
@@ -207,7 +207,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with &#39;source::&#39;.
      * 
      */
-    @Export(name="source", type=String.class, parameters={})
+    @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
@@ -224,7 +224,7 @@ public class InputsTcpRaw extends com.pulumi.resources.CustomResource {
      * Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
      * 
      */
-    @Export(name="sourcetype", type=String.class, parameters={})
+    @Export(name="sourcetype", refs={String.class}, tree="[0]")
     private Output<String> sourcetype;
 
     /**

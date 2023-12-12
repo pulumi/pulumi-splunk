@@ -73,7 +73,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * List of capabilities assigned to role.
      * 
      */
-    @Export(name="capabilities", type=List.class, parameters={String.class})
+    @Export(name="capabilities", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> capabilities;
 
     /**
@@ -87,7 +87,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Maximum number of concurrently running real-time searches that all members of this role can have.
      * 
      */
-    @Export(name="cumulativeRealtimeSearchJobsQuota", type=Integer.class, parameters={})
+    @Export(name="cumulativeRealtimeSearchJobsQuota", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> cumulativeRealtimeSearchJobsQuota;
 
     /**
@@ -101,7 +101,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
      * 
      */
-    @Export(name="cumulativeSearchJobsQuota", type=Integer.class, parameters={})
+    @Export(name="cumulativeSearchJobsQuota", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> cumulativeSearchJobsQuota;
 
     /**
@@ -115,7 +115,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
      * 
      */
-    @Export(name="defaultApp", type=String.class, parameters={})
+    @Export(name="defaultApp", refs={String.class}, tree="[0]")
     private Output<String> defaultApp;
 
     /**
@@ -129,7 +129,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * List of imported roles for this role. &lt;br&gt;Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
      * 
      */
-    @Export(name="importedRoles", type=List.class, parameters={String.class})
+    @Export(name="importedRoles", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> importedRoles;
 
     /**
@@ -143,7 +143,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * The name of the user role to create.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -157,7 +157,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
      * 
      */
-    @Export(name="realtimeSearchJobsQuota", type=Integer.class, parameters={})
+    @Export(name="realtimeSearchJobsQuota", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> realtimeSearchJobsQuota;
 
     /**
@@ -171,7 +171,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Specifies the maximum disk space in MB that can be used by a user&#39;s search jobs. For example, a value of 100 limits this role to 100 MB total.
      * 
      */
-    @Export(name="searchDiskQuota", type=Integer.class, parameters={})
+    @Export(name="searchDiskQuota", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> searchDiskQuota;
 
     /**
@@ -185,7 +185,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
      * 
      */
-    @Export(name="searchFilter", type=String.class, parameters={})
+    @Export(name="searchFilter", refs={String.class}, tree="[0]")
     private Output<String> searchFilter;
 
     /**
@@ -199,7 +199,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
      * 
      */
-    @Export(name="searchIndexesAlloweds", type=List.class, parameters={String.class})
+    @Export(name="searchIndexesAlloweds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> searchIndexesAlloweds;
 
     /**
@@ -213,7 +213,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
      * 
      */
-    @Export(name="searchIndexesDefaults", type=List.class, parameters={String.class})
+    @Export(name="searchIndexesDefaults", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> searchIndexesDefaults;
 
     /**
@@ -227,7 +227,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
      * 
      */
-    @Export(name="searchJobsQuota", type=Integer.class, parameters={})
+    @Export(name="searchJobsQuota", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> searchJobsQuota;
 
     /**
@@ -241,7 +241,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to &#39;0&#39;, as the &#39;admin&#39; role does.
      * 
      */
-    @Export(name="searchTimeWin", type=Integer.class, parameters={})
+    @Export(name="searchTimeWin", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> searchTimeWin;
 
     /**

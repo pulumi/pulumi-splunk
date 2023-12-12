@@ -58,7 +58,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=OutputsTcpServerAcl.class, parameters={})
+    @Export(name="acl", refs={OutputsTcpServerAcl.class}, tree="[0]")
     private Output<OutputsTcpServerAcl> acl;
 
     /**
@@ -72,7 +72,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * If true, disables the group.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -87,7 +87,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * The data distribution method used when two or more servers exist in the same forwarder group.
      * 
      */
-    @Export(name="method", type=String.class, parameters={})
+    @Export(name="method", refs={String.class}, tree="[0]")
     private Output<String> method;
 
     /**
@@ -102,7 +102,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * &lt;host&gt;:&lt;port&gt; of the Splunk receiver. &lt;host&gt; can be either an ip address or server name. &lt;port&gt; is the that port that the Splunk receiver is listening on.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -116,7 +116,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * The alternate name to match in the remote server&#39;s SSL certificate.
      * 
      */
-    @Export(name="sslAltNameToCheck", type=String.class, parameters={})
+    @Export(name="sslAltNameToCheck", refs={String.class}, tree="[0]")
     private Output<String> sslAltNameToCheck;
 
     /**
@@ -130,7 +130,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * Path to the client certificate. If specified, connection uses SSL.
      * 
      */
-    @Export(name="sslCertPath", type=String.class, parameters={})
+    @Export(name="sslCertPath", refs={String.class}, tree="[0]")
     private Output<String> sslCertPath;
 
     /**
@@ -144,7 +144,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
      * 
      */
-    @Export(name="sslCipher", type=String.class, parameters={})
+    @Export(name="sslCipher", refs={String.class}, tree="[0]")
     private Output<String> sslCipher;
 
     /**
@@ -159,7 +159,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
      * 
      */
-    @Export(name="sslCommonNameToCheck", type=String.class, parameters={})
+    @Export(name="sslCommonNameToCheck", refs={String.class}, tree="[0]")
     private Output<String> sslCommonNameToCheck;
 
     /**
@@ -175,7 +175,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * The default Splunk Enterprise CAcert uses the password &#34;password.&#34;
      * 
      */
-    @Export(name="sslPassword", type=String.class, parameters={})
+    @Export(name="sslPassword", refs={String.class}, tree="[0]")
     private Output<String> sslPassword;
 
     /**
@@ -190,7 +190,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * The path to the root certificate authority file.
      * 
      */
-    @Export(name="sslRootCaPath", type=String.class, parameters={})
+    @Export(name="sslRootCaPath", refs={String.class}, tree="[0]")
     private Output<String> sslRootCaPath;
 
     /**
@@ -204,7 +204,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
      * 
      */
-    @Export(name="sslVerifyServerCert", type=Boolean.class, parameters={})
+    @Export(name="sslVerifyServerCert", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslVerifyServerCert;
 
     /**

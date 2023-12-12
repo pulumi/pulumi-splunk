@@ -59,7 +59,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * The app/user context that is the namespace for the resource
      * 
      */
-    @Export(name="acl", type=InputsMonitorAcl.class, parameters={})
+    @Export(name="acl", refs={InputsMonitorAcl.class}, tree="[0]")
     private Output<InputsMonitorAcl> acl;
 
     /**
@@ -73,7 +73,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
      * 
      */
-    @Export(name="blacklist", type=String.class, parameters={})
+    @Export(name="blacklist", refs={String.class}, tree="[0]")
     private Output<String> blacklist;
 
     /**
@@ -87,7 +87,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * A string that modifies the file tracking identity for files in this input. The magic value &lt;SOURCE&gt; invokes special behavior.
      * 
      */
-    @Export(name="crcSalt", type=String.class, parameters={})
+    @Export(name="crcSalt", refs={String.class}, tree="[0]")
     private Output<String> crcSalt;
 
     /**
@@ -101,7 +101,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Indicates if input monitoring is disabled.
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disabled;
 
     /**
@@ -115,7 +115,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * If set to true, files that are seen for the first time is read from the end.
      * 
      */
-    @Export(name="followTail", type=Boolean.class, parameters={})
+    @Export(name="followTail", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> followTail;
 
     /**
@@ -129,7 +129,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * The value to populate in the host field for events from this data input.
      * 
      */
-    @Export(name="host", type=String.class, parameters={})
+    @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
@@ -143,7 +143,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
      * 
      */
-    @Export(name="hostRegex", type=String.class, parameters={})
+    @Export(name="hostRegex", refs={String.class}, tree="[0]")
     private Output<String> hostRegex;
 
     /**
@@ -157,7 +157,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Use the specified slash-separate segment of the filepath as the host field value.
      * 
      */
-    @Export(name="hostSegment", type=Integer.class, parameters={})
+    @Export(name="hostSegment", refs={Integer.class}, tree="[0]")
     private Output<Integer> hostSegment;
 
     /**
@@ -171,7 +171,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
      * 
      */
-    @Export(name="ignoreOlderThan", type=String.class, parameters={})
+    @Export(name="ignoreOlderThan", refs={String.class}, tree="[0]")
     private Output<String> ignoreOlderThan;
 
     /**
@@ -185,7 +185,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Which index events from this input should be stored in. Defaults to default.
      * 
      */
-    @Export(name="index", type=String.class, parameters={})
+    @Export(name="index", refs={String.class}, tree="[0]")
     private Output<String> index;
 
     /**
@@ -199,7 +199,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * The file or directory path to monitor on the system.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -213,7 +213,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Setting this to false prevents monitoring of any subdirectories encountered within this data input.
      * 
      */
-    @Export(name="recursive", type=Boolean.class, parameters={})
+    @Export(name="recursive", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> recursive;
 
     /**
@@ -227,7 +227,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
      * 
      */
-    @Export(name="renameSource", type=String.class, parameters={})
+    @Export(name="renameSource", refs={String.class}, tree="[0]")
     private Output<String> renameSource;
 
     /**
@@ -241,7 +241,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * The value to populate in the sourcetype field for incoming events.
      * 
      */
-    @Export(name="sourcetype", type=String.class, parameters={})
+    @Export(name="sourcetype", refs={String.class}, tree="[0]")
     private Output<String> sourcetype;
 
     /**
@@ -255,7 +255,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
      * 
      */
-    @Export(name="timeBeforeClose", type=Integer.class, parameters={})
+    @Export(name="timeBeforeClose", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeBeforeClose;
 
     /**
@@ -269,7 +269,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
      * 
      */
-    @Export(name="whitelist", type=String.class, parameters={})
+    @Export(name="whitelist", refs={String.class}, tree="[0]")
     private Output<String> whitelist;
 
     /**
