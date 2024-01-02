@@ -5,6 +5,7 @@ package com.pulumi.splunk;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.splunk.inputs.GenericAclAclArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -126,7 +127,9 @@ public final class GenericAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public GenericAclArgs build() {
-            $.path = Objects.requireNonNull($.path, "expected parameter 'path' to be non-null");
+            if ($.path == null) {
+                throw new MissingRequiredPropertyException("GenericAclArgs", "path");
+            }
             return $;
         }
     }

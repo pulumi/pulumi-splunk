@@ -5,6 +5,7 @@ package com.pulumi.splunk;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.splunk.inputs.SavedSearchesAclArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -6077,7 +6078,9 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SavedSearchesArgs build() {
-            $.search = Objects.requireNonNull($.search, "expected parameter 'search' to be non-null");
+            if ($.search == null) {
+                throw new MissingRequiredPropertyException("SavedSearchesArgs", "search");
+            }
             return $;
         }
     }
