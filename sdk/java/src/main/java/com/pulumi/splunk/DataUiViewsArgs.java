@@ -5,6 +5,7 @@ package com.pulumi.splunk;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.splunk.inputs.DataUiViewsAclArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -135,7 +136,9 @@ public final class DataUiViewsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DataUiViewsArgs build() {
-            $.eaiData = Objects.requireNonNull($.eaiData, "expected parameter 'eaiData' to be non-null");
+            if ($.eaiData == null) {
+                throw new MissingRequiredPropertyException("DataUiViewsArgs", "eaiData");
+            }
             return $;
         }
     }

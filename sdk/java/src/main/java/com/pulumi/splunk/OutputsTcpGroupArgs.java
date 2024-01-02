@@ -5,6 +5,7 @@ package com.pulumi.splunk;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.splunk.inputs.OutputsTcpGroupAclArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -500,7 +501,9 @@ public final class OutputsTcpGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public OutputsTcpGroupArgs build() {
-            $.servers = Objects.requireNonNull($.servers, "expected parameter 'servers' to be non-null");
+            if ($.servers == null) {
+                throw new MissingRequiredPropertyException("OutputsTcpGroupArgs", "servers");
+            }
             return $;
         }
     }
