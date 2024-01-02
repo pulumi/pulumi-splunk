@@ -98,41 +98,49 @@ public final class ShIndexesManagerAcl {
 
         @CustomType.Setter
         public Builder app(@Nullable String app) {
+
             this.app = app;
             return this;
         }
         @CustomType.Setter
         public Builder canChangePerms(@Nullable Boolean canChangePerms) {
+
             this.canChangePerms = canChangePerms;
             return this;
         }
         @CustomType.Setter
         public Builder canShareApp(@Nullable Boolean canShareApp) {
+
             this.canShareApp = canShareApp;
             return this;
         }
         @CustomType.Setter
         public Builder canShareGlobal(@Nullable Boolean canShareGlobal) {
+
             this.canShareGlobal = canShareGlobal;
             return this;
         }
         @CustomType.Setter
         public Builder canShareUser(@Nullable Boolean canShareUser) {
+
             this.canShareUser = canShareUser;
             return this;
         }
         @CustomType.Setter
         public Builder canWrite(@Nullable Boolean canWrite) {
+
             this.canWrite = canWrite;
             return this;
         }
         @CustomType.Setter
         public Builder owner(@Nullable String owner) {
+
             this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder reads(@Nullable List<String> reads) {
+
             this.reads = reads;
             return this;
         }
@@ -141,16 +149,19 @@ public final class ShIndexesManagerAcl {
         }
         @CustomType.Setter
         public Builder removable(@Nullable Boolean removable) {
+
             this.removable = removable;
             return this;
         }
         @CustomType.Setter
         public Builder sharing(@Nullable String sharing) {
+
             this.sharing = sharing;
             return this;
         }
         @CustomType.Setter
         public Builder writes(@Nullable List<String> writes) {
+
             this.writes = writes;
             return this;
         }

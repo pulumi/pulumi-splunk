@@ -5,6 +5,7 @@ package com.pulumi.splunk;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.splunk.inputs.InputsScriptAclArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -420,7 +421,9 @@ public final class InputsScriptArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public InputsScriptArgs build() {
-            $.interval = Objects.requireNonNull($.interval, "expected parameter 'interval' to be non-null");
+            if ($.interval == null) {
+                throw new MissingRequiredPropertyException("InputsScriptArgs", "interval");
+            }
             return $;
         }
     }
