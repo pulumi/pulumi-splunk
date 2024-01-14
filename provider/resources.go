@@ -20,11 +20,13 @@ import (
 	"unicode"
 
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
-	"github.com/pulumi/pulumi-splunk/provider/pkg/version"
+	"github.com/splunk/terraform-provider-splunk/splunk"
+
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shimv1 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v1"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
-	"github.com/splunk/terraform-provider-splunk/splunk"
+
+	"github.com/pulumi/pulumi-splunk/provider/pkg/version"
 )
 
 // all of the token components used below.
