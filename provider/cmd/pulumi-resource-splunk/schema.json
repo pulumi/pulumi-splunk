@@ -84,43 +84,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -146,43 +157,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -208,43 +230,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -270,43 +303,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -332,43 +376,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -394,43 +449,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -456,43 +522,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -518,43 +595,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -580,43 +668,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -642,43 +741,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -704,43 +814,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -766,43 +887,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -828,43 +960,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -890,43 +1033,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -952,43 +1106,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -1014,43 +1179,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -1076,43 +1252,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
@@ -1138,43 +1325,54 @@
             "properties": {
                 "app": {
                     "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
                     "willReplaceOnChanges": true
                 },
                 "canChangePerms": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
                 },
                 "canShareApp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
                 },
                 "canShareGlobal": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
                 },
                 "canShareUser": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
                 },
                 "canWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
                 },
                 "owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
                 },
                 "reads": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
                 },
                 "removable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
                 },
                 "sharing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Properties that indicate write permissions of the resource.\n"
                 }
             },
             "type": "object",
