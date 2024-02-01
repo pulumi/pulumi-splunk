@@ -14,17 +14,28 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AppsLocalAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // AppsLocalAclInput is an input type that accepts AppsLocalAclArgs and AppsLocalAclOutput values.
@@ -39,17 +50,28 @@ type AppsLocalAclInput interface {
 }
 
 type AppsLocalAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (AppsLocalAclArgs) ElementType() reflect.Type {
@@ -129,46 +151,57 @@ func (o AppsLocalAclOutput) ToAppsLocalAclPtrOutputWithContext(ctx context.Conte
 	}).(AppsLocalAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o AppsLocalAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o AppsLocalAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o AppsLocalAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o AppsLocalAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o AppsLocalAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o AppsLocalAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o AppsLocalAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o AppsLocalAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AppsLocalAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o AppsLocalAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o AppsLocalAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppsLocalAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o AppsLocalAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AppsLocalAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -197,6 +230,7 @@ func (o AppsLocalAclPtrOutput) Elem() AppsLocalAclOutput {
 	}).(AppsLocalAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o AppsLocalAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *string {
 		if v == nil {
@@ -206,6 +240,7 @@ func (o AppsLocalAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o AppsLocalAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *bool {
 		if v == nil {
@@ -215,6 +250,7 @@ func (o AppsLocalAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o AppsLocalAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *bool {
 		if v == nil {
@@ -224,6 +260,7 @@ func (o AppsLocalAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o AppsLocalAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *bool {
 		if v == nil {
@@ -233,6 +270,7 @@ func (o AppsLocalAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o AppsLocalAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *bool {
 		if v == nil {
@@ -242,6 +280,7 @@ func (o AppsLocalAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o AppsLocalAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *bool {
 		if v == nil {
@@ -251,6 +290,7 @@ func (o AppsLocalAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o AppsLocalAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *string {
 		if v == nil {
@@ -260,6 +300,7 @@ func (o AppsLocalAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o AppsLocalAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) []string {
 		if v == nil {
@@ -269,6 +310,7 @@ func (o AppsLocalAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o AppsLocalAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *bool {
 		if v == nil {
@@ -278,6 +320,7 @@ func (o AppsLocalAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o AppsLocalAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) *string {
 		if v == nil {
@@ -287,6 +330,7 @@ func (o AppsLocalAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o AppsLocalAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppsLocalAcl) []string {
 		if v == nil {
@@ -297,17 +341,28 @@ func (o AppsLocalAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type ConfigsConfAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // ConfigsConfAclInput is an input type that accepts ConfigsConfAclArgs and ConfigsConfAclOutput values.
@@ -322,17 +377,28 @@ type ConfigsConfAclInput interface {
 }
 
 type ConfigsConfAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (ConfigsConfAclArgs) ElementType() reflect.Type {
@@ -412,46 +478,57 @@ func (o ConfigsConfAclOutput) ToConfigsConfAclPtrOutputWithContext(ctx context.C
 	}).(ConfigsConfAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o ConfigsConfAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o ConfigsConfAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o ConfigsConfAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o ConfigsConfAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o ConfigsConfAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o ConfigsConfAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o ConfigsConfAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o ConfigsConfAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o ConfigsConfAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o ConfigsConfAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o ConfigsConfAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ConfigsConfAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -480,6 +557,7 @@ func (o ConfigsConfAclPtrOutput) Elem() ConfigsConfAclOutput {
 	}).(ConfigsConfAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o ConfigsConfAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *string {
 		if v == nil {
@@ -489,6 +567,7 @@ func (o ConfigsConfAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o ConfigsConfAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *bool {
 		if v == nil {
@@ -498,6 +577,7 @@ func (o ConfigsConfAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o ConfigsConfAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *bool {
 		if v == nil {
@@ -507,6 +587,7 @@ func (o ConfigsConfAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o ConfigsConfAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *bool {
 		if v == nil {
@@ -516,6 +597,7 @@ func (o ConfigsConfAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o ConfigsConfAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *bool {
 		if v == nil {
@@ -525,6 +607,7 @@ func (o ConfigsConfAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o ConfigsConfAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *bool {
 		if v == nil {
@@ -534,6 +617,7 @@ func (o ConfigsConfAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o ConfigsConfAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *string {
 		if v == nil {
@@ -543,6 +627,7 @@ func (o ConfigsConfAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o ConfigsConfAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) []string {
 		if v == nil {
@@ -552,6 +637,7 @@ func (o ConfigsConfAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o ConfigsConfAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *bool {
 		if v == nil {
@@ -561,6 +647,7 @@ func (o ConfigsConfAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o ConfigsConfAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) *string {
 		if v == nil {
@@ -570,6 +657,7 @@ func (o ConfigsConfAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o ConfigsConfAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ConfigsConfAcl) []string {
 		if v == nil {
@@ -580,17 +668,28 @@ func (o ConfigsConfAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type DataUiViewsAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // DataUiViewsAclInput is an input type that accepts DataUiViewsAclArgs and DataUiViewsAclOutput values.
@@ -605,17 +704,28 @@ type DataUiViewsAclInput interface {
 }
 
 type DataUiViewsAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (DataUiViewsAclArgs) ElementType() reflect.Type {
@@ -695,46 +805,57 @@ func (o DataUiViewsAclOutput) ToDataUiViewsAclPtrOutputWithContext(ctx context.C
 	}).(DataUiViewsAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o DataUiViewsAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o DataUiViewsAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o DataUiViewsAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o DataUiViewsAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o DataUiViewsAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o DataUiViewsAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o DataUiViewsAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o DataUiViewsAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o DataUiViewsAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o DataUiViewsAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o DataUiViewsAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DataUiViewsAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -763,6 +884,7 @@ func (o DataUiViewsAclPtrOutput) Elem() DataUiViewsAclOutput {
 	}).(DataUiViewsAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o DataUiViewsAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *string {
 		if v == nil {
@@ -772,6 +894,7 @@ func (o DataUiViewsAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o DataUiViewsAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
 		if v == nil {
@@ -781,6 +904,7 @@ func (o DataUiViewsAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o DataUiViewsAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
 		if v == nil {
@@ -790,6 +914,7 @@ func (o DataUiViewsAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o DataUiViewsAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
 		if v == nil {
@@ -799,6 +924,7 @@ func (o DataUiViewsAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o DataUiViewsAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
 		if v == nil {
@@ -808,6 +934,7 @@ func (o DataUiViewsAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o DataUiViewsAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
 		if v == nil {
@@ -817,6 +944,7 @@ func (o DataUiViewsAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o DataUiViewsAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *string {
 		if v == nil {
@@ -826,6 +954,7 @@ func (o DataUiViewsAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o DataUiViewsAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) []string {
 		if v == nil {
@@ -835,6 +964,7 @@ func (o DataUiViewsAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o DataUiViewsAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *bool {
 		if v == nil {
@@ -844,6 +974,7 @@ func (o DataUiViewsAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o DataUiViewsAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) *string {
 		if v == nil {
@@ -853,6 +984,7 @@ func (o DataUiViewsAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o DataUiViewsAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataUiViewsAcl) []string {
 		if v == nil {
@@ -863,17 +995,28 @@ func (o DataUiViewsAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type GenericAclAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // GenericAclAclInput is an input type that accepts GenericAclAclArgs and GenericAclAclOutput values.
@@ -888,17 +1031,28 @@ type GenericAclAclInput interface {
 }
 
 type GenericAclAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (GenericAclAclArgs) ElementType() reflect.Type {
@@ -978,46 +1132,57 @@ func (o GenericAclAclOutput) ToGenericAclAclPtrOutputWithContext(ctx context.Con
 	}).(GenericAclAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o GenericAclAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o GenericAclAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o GenericAclAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o GenericAclAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o GenericAclAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o GenericAclAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o GenericAclAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o GenericAclAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GenericAclAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o GenericAclAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o GenericAclAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GenericAclAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o GenericAclAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GenericAclAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -1046,6 +1211,7 @@ func (o GenericAclAclPtrOutput) Elem() GenericAclAclOutput {
 	}).(GenericAclAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o GenericAclAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *string {
 		if v == nil {
@@ -1055,6 +1221,7 @@ func (o GenericAclAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o GenericAclAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *bool {
 		if v == nil {
@@ -1064,6 +1231,7 @@ func (o GenericAclAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o GenericAclAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *bool {
 		if v == nil {
@@ -1073,6 +1241,7 @@ func (o GenericAclAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o GenericAclAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *bool {
 		if v == nil {
@@ -1082,6 +1251,7 @@ func (o GenericAclAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o GenericAclAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *bool {
 		if v == nil {
@@ -1091,6 +1261,7 @@ func (o GenericAclAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o GenericAclAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *bool {
 		if v == nil {
@@ -1100,6 +1271,7 @@ func (o GenericAclAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o GenericAclAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *string {
 		if v == nil {
@@ -1109,6 +1281,7 @@ func (o GenericAclAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o GenericAclAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GenericAclAcl) []string {
 		if v == nil {
@@ -1118,6 +1291,7 @@ func (o GenericAclAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o GenericAclAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *bool {
 		if v == nil {
@@ -1127,6 +1301,7 @@ func (o GenericAclAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o GenericAclAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GenericAclAcl) *string {
 		if v == nil {
@@ -1136,6 +1311,7 @@ func (o GenericAclAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o GenericAclAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GenericAclAcl) []string {
 		if v == nil {
@@ -1146,17 +1322,28 @@ func (o GenericAclAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type IndexesAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // IndexesAclInput is an input type that accepts IndexesAclArgs and IndexesAclOutput values.
@@ -1171,17 +1358,28 @@ type IndexesAclInput interface {
 }
 
 type IndexesAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (IndexesAclArgs) ElementType() reflect.Type {
@@ -1261,46 +1459,57 @@ func (o IndexesAclOutput) ToIndexesAclPtrOutputWithContext(ctx context.Context) 
 	}).(IndexesAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o IndexesAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o IndexesAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o IndexesAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o IndexesAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o IndexesAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o IndexesAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o IndexesAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o IndexesAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v IndexesAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o IndexesAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o IndexesAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexesAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o IndexesAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v IndexesAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -1329,6 +1538,7 @@ func (o IndexesAclPtrOutput) Elem() IndexesAclOutput {
 	}).(IndexesAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o IndexesAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *string {
 		if v == nil {
@@ -1338,6 +1548,7 @@ func (o IndexesAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o IndexesAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *bool {
 		if v == nil {
@@ -1347,6 +1558,7 @@ func (o IndexesAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o IndexesAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *bool {
 		if v == nil {
@@ -1356,6 +1568,7 @@ func (o IndexesAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o IndexesAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *bool {
 		if v == nil {
@@ -1365,6 +1578,7 @@ func (o IndexesAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o IndexesAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *bool {
 		if v == nil {
@@ -1374,6 +1588,7 @@ func (o IndexesAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o IndexesAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *bool {
 		if v == nil {
@@ -1383,6 +1598,7 @@ func (o IndexesAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o IndexesAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *string {
 		if v == nil {
@@ -1392,6 +1608,7 @@ func (o IndexesAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o IndexesAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IndexesAcl) []string {
 		if v == nil {
@@ -1401,6 +1618,7 @@ func (o IndexesAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o IndexesAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *bool {
 		if v == nil {
@@ -1410,6 +1628,7 @@ func (o IndexesAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o IndexesAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexesAcl) *string {
 		if v == nil {
@@ -1419,6 +1638,7 @@ func (o IndexesAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o IndexesAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IndexesAcl) []string {
 		if v == nil {
@@ -1429,17 +1649,28 @@ func (o IndexesAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type InputsHttpEventCollectorAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsHttpEventCollectorAclInput is an input type that accepts InputsHttpEventCollectorAclArgs and InputsHttpEventCollectorAclOutput values.
@@ -1454,17 +1685,28 @@ type InputsHttpEventCollectorAclInput interface {
 }
 
 type InputsHttpEventCollectorAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsHttpEventCollectorAclArgs) ElementType() reflect.Type {
@@ -1544,46 +1786,57 @@ func (o InputsHttpEventCollectorAclOutput) ToInputsHttpEventCollectorAclPtrOutpu
 	}).(InputsHttpEventCollectorAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsHttpEventCollectorAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsHttpEventCollectorAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsHttpEventCollectorAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsHttpEventCollectorAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsHttpEventCollectorAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsHttpEventCollectorAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsHttpEventCollectorAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsHttpEventCollectorAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsHttpEventCollectorAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsHttpEventCollectorAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsHttpEventCollectorAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsHttpEventCollectorAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -1612,6 +1865,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) Elem() InputsHttpEventCollectorAcl
 	}).(InputsHttpEventCollectorAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsHttpEventCollectorAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *string {
 		if v == nil {
@@ -1621,6 +1875,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsHttpEventCollectorAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *bool {
 		if v == nil {
@@ -1630,6 +1885,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) CanChangePerms() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsHttpEventCollectorAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *bool {
 		if v == nil {
@@ -1639,6 +1895,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsHttpEventCollectorAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *bool {
 		if v == nil {
@@ -1648,6 +1905,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsHttpEventCollectorAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *bool {
 		if v == nil {
@@ -1657,6 +1915,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) CanShareUser() pulumi.BoolPtrOutpu
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsHttpEventCollectorAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *bool {
 		if v == nil {
@@ -1666,6 +1925,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsHttpEventCollectorAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *string {
 		if v == nil {
@@ -1675,6 +1935,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsHttpEventCollectorAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) []string {
 		if v == nil {
@@ -1684,6 +1945,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsHttpEventCollectorAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *bool {
 		if v == nil {
@@ -1693,6 +1955,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsHttpEventCollectorAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) *string {
 		if v == nil {
@@ -1702,6 +1965,7 @@ func (o InputsHttpEventCollectorAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsHttpEventCollectorAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollectorAcl) []string {
 		if v == nil {
@@ -1712,17 +1976,28 @@ func (o InputsHttpEventCollectorAclPtrOutput) Writes() pulumi.StringArrayOutput 
 }
 
 type InputsMonitorAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsMonitorAclInput is an input type that accepts InputsMonitorAclArgs and InputsMonitorAclOutput values.
@@ -1737,17 +2012,28 @@ type InputsMonitorAclInput interface {
 }
 
 type InputsMonitorAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsMonitorAclArgs) ElementType() reflect.Type {
@@ -1827,46 +2113,57 @@ func (o InputsMonitorAclOutput) ToInputsMonitorAclPtrOutputWithContext(ctx conte
 	}).(InputsMonitorAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsMonitorAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsMonitorAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsMonitorAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsMonitorAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsMonitorAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsMonitorAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsMonitorAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsMonitorAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsMonitorAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsMonitorAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsMonitorAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsMonitorAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -1895,6 +2192,7 @@ func (o InputsMonitorAclPtrOutput) Elem() InputsMonitorAclOutput {
 	}).(InputsMonitorAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsMonitorAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *string {
 		if v == nil {
@@ -1904,6 +2202,7 @@ func (o InputsMonitorAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsMonitorAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *bool {
 		if v == nil {
@@ -1913,6 +2212,7 @@ func (o InputsMonitorAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsMonitorAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *bool {
 		if v == nil {
@@ -1922,6 +2222,7 @@ func (o InputsMonitorAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsMonitorAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *bool {
 		if v == nil {
@@ -1931,6 +2232,7 @@ func (o InputsMonitorAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsMonitorAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *bool {
 		if v == nil {
@@ -1940,6 +2242,7 @@ func (o InputsMonitorAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsMonitorAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *bool {
 		if v == nil {
@@ -1949,6 +2252,7 @@ func (o InputsMonitorAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsMonitorAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *string {
 		if v == nil {
@@ -1958,6 +2262,7 @@ func (o InputsMonitorAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsMonitorAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) []string {
 		if v == nil {
@@ -1967,6 +2272,7 @@ func (o InputsMonitorAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsMonitorAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *bool {
 		if v == nil {
@@ -1976,6 +2282,7 @@ func (o InputsMonitorAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsMonitorAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) *string {
 		if v == nil {
@@ -1985,6 +2292,7 @@ func (o InputsMonitorAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsMonitorAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsMonitorAcl) []string {
 		if v == nil {
@@ -1995,17 +2303,28 @@ func (o InputsMonitorAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type InputsScriptAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsScriptAclInput is an input type that accepts InputsScriptAclArgs and InputsScriptAclOutput values.
@@ -2020,17 +2339,28 @@ type InputsScriptAclInput interface {
 }
 
 type InputsScriptAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsScriptAclArgs) ElementType() reflect.Type {
@@ -2110,46 +2440,57 @@ func (o InputsScriptAclOutput) ToInputsScriptAclPtrOutputWithContext(ctx context
 	}).(InputsScriptAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsScriptAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsScriptAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsScriptAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsScriptAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsScriptAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsScriptAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsScriptAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsScriptAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsScriptAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsScriptAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsScriptAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsScriptAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsScriptAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsScriptAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -2178,6 +2519,7 @@ func (o InputsScriptAclPtrOutput) Elem() InputsScriptAclOutput {
 	}).(InputsScriptAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsScriptAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *string {
 		if v == nil {
@@ -2187,6 +2529,7 @@ func (o InputsScriptAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsScriptAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *bool {
 		if v == nil {
@@ -2196,6 +2539,7 @@ func (o InputsScriptAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsScriptAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *bool {
 		if v == nil {
@@ -2205,6 +2549,7 @@ func (o InputsScriptAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsScriptAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *bool {
 		if v == nil {
@@ -2214,6 +2559,7 @@ func (o InputsScriptAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsScriptAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *bool {
 		if v == nil {
@@ -2223,6 +2569,7 @@ func (o InputsScriptAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsScriptAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *bool {
 		if v == nil {
@@ -2232,6 +2579,7 @@ func (o InputsScriptAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsScriptAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *string {
 		if v == nil {
@@ -2241,6 +2589,7 @@ func (o InputsScriptAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsScriptAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) []string {
 		if v == nil {
@@ -2250,6 +2599,7 @@ func (o InputsScriptAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsScriptAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *bool {
 		if v == nil {
@@ -2259,6 +2609,7 @@ func (o InputsScriptAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsScriptAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) *string {
 		if v == nil {
@@ -2268,6 +2619,7 @@ func (o InputsScriptAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsScriptAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsScriptAcl) []string {
 		if v == nil {
@@ -2278,17 +2630,28 @@ func (o InputsScriptAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type InputsTcpCookedAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsTcpCookedAclInput is an input type that accepts InputsTcpCookedAclArgs and InputsTcpCookedAclOutput values.
@@ -2303,17 +2666,28 @@ type InputsTcpCookedAclInput interface {
 }
 
 type InputsTcpCookedAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsTcpCookedAclArgs) ElementType() reflect.Type {
@@ -2393,46 +2767,57 @@ func (o InputsTcpCookedAclOutput) ToInputsTcpCookedAclPtrOutputWithContext(ctx c
 	}).(InputsTcpCookedAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsTcpCookedAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsTcpCookedAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsTcpCookedAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsTcpCookedAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsTcpCookedAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsTcpCookedAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsTcpCookedAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsTcpCookedAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsTcpCookedAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsTcpCookedAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsTcpCookedAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsTcpCookedAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -2461,6 +2846,7 @@ func (o InputsTcpCookedAclPtrOutput) Elem() InputsTcpCookedAclOutput {
 	}).(InputsTcpCookedAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsTcpCookedAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *string {
 		if v == nil {
@@ -2470,6 +2856,7 @@ func (o InputsTcpCookedAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsTcpCookedAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *bool {
 		if v == nil {
@@ -2479,6 +2866,7 @@ func (o InputsTcpCookedAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsTcpCookedAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *bool {
 		if v == nil {
@@ -2488,6 +2876,7 @@ func (o InputsTcpCookedAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsTcpCookedAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *bool {
 		if v == nil {
@@ -2497,6 +2886,7 @@ func (o InputsTcpCookedAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsTcpCookedAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *bool {
 		if v == nil {
@@ -2506,6 +2896,7 @@ func (o InputsTcpCookedAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsTcpCookedAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *bool {
 		if v == nil {
@@ -2515,6 +2906,7 @@ func (o InputsTcpCookedAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsTcpCookedAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *string {
 		if v == nil {
@@ -2524,6 +2916,7 @@ func (o InputsTcpCookedAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsTcpCookedAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) []string {
 		if v == nil {
@@ -2533,6 +2926,7 @@ func (o InputsTcpCookedAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsTcpCookedAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *bool {
 		if v == nil {
@@ -2542,6 +2936,7 @@ func (o InputsTcpCookedAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsTcpCookedAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) *string {
 		if v == nil {
@@ -2551,6 +2946,7 @@ func (o InputsTcpCookedAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsTcpCookedAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsTcpCookedAcl) []string {
 		if v == nil {
@@ -2561,17 +2957,28 @@ func (o InputsTcpCookedAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type InputsTcpRawAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsTcpRawAclInput is an input type that accepts InputsTcpRawAclArgs and InputsTcpRawAclOutput values.
@@ -2586,17 +2993,28 @@ type InputsTcpRawAclInput interface {
 }
 
 type InputsTcpRawAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsTcpRawAclArgs) ElementType() reflect.Type {
@@ -2676,46 +3094,57 @@ func (o InputsTcpRawAclOutput) ToInputsTcpRawAclPtrOutputWithContext(ctx context
 	}).(InputsTcpRawAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsTcpRawAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsTcpRawAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsTcpRawAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsTcpRawAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsTcpRawAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsTcpRawAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsTcpRawAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsTcpRawAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsTcpRawAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsTcpRawAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsTcpRawAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsTcpRawAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -2744,6 +3173,7 @@ func (o InputsTcpRawAclPtrOutput) Elem() InputsTcpRawAclOutput {
 	}).(InputsTcpRawAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsTcpRawAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *string {
 		if v == nil {
@@ -2753,6 +3183,7 @@ func (o InputsTcpRawAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsTcpRawAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *bool {
 		if v == nil {
@@ -2762,6 +3193,7 @@ func (o InputsTcpRawAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsTcpRawAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *bool {
 		if v == nil {
@@ -2771,6 +3203,7 @@ func (o InputsTcpRawAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsTcpRawAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *bool {
 		if v == nil {
@@ -2780,6 +3213,7 @@ func (o InputsTcpRawAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsTcpRawAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *bool {
 		if v == nil {
@@ -2789,6 +3223,7 @@ func (o InputsTcpRawAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsTcpRawAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *bool {
 		if v == nil {
@@ -2798,6 +3233,7 @@ func (o InputsTcpRawAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsTcpRawAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *string {
 		if v == nil {
@@ -2807,6 +3243,7 @@ func (o InputsTcpRawAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsTcpRawAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) []string {
 		if v == nil {
@@ -2816,6 +3253,7 @@ func (o InputsTcpRawAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsTcpRawAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *bool {
 		if v == nil {
@@ -2825,6 +3263,7 @@ func (o InputsTcpRawAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsTcpRawAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) *string {
 		if v == nil {
@@ -2834,6 +3273,7 @@ func (o InputsTcpRawAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsTcpRawAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsTcpRawAcl) []string {
 		if v == nil {
@@ -2844,17 +3284,28 @@ func (o InputsTcpRawAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type InputsTcpSplunkTcpTokenAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsTcpSplunkTcpTokenAclInput is an input type that accepts InputsTcpSplunkTcpTokenAclArgs and InputsTcpSplunkTcpTokenAclOutput values.
@@ -2869,17 +3320,28 @@ type InputsTcpSplunkTcpTokenAclInput interface {
 }
 
 type InputsTcpSplunkTcpTokenAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsTcpSplunkTcpTokenAclArgs) ElementType() reflect.Type {
@@ -2959,46 +3421,57 @@ func (o InputsTcpSplunkTcpTokenAclOutput) ToInputsTcpSplunkTcpTokenAclPtrOutputW
 	}).(InputsTcpSplunkTcpTokenAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsTcpSplunkTcpTokenAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsTcpSplunkTcpTokenAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsTcpSplunkTcpTokenAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsTcpSplunkTcpTokenAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsTcpSplunkTcpTokenAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsTcpSplunkTcpTokenAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsTcpSplunkTcpTokenAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -3027,6 +3500,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) Elem() InputsTcpSplunkTcpTokenAclOu
 	}).(InputsTcpSplunkTcpTokenAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *string {
 		if v == nil {
@@ -3036,6 +3510,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *bool {
 		if v == nil {
@@ -3045,6 +3520,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *bool {
 		if v == nil {
@@ -3054,6 +3530,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *bool {
 		if v == nil {
@@ -3063,6 +3540,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *bool {
 		if v == nil {
@@ -3072,6 +3550,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *bool {
 		if v == nil {
@@ -3081,6 +3560,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *string {
 		if v == nil {
@@ -3090,6 +3570,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) []string {
 		if v == nil {
@@ -3099,6 +3580,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *bool {
 		if v == nil {
@@ -3108,6 +3590,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) *string {
 		if v == nil {
@@ -3117,6 +3600,7 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsTcpSplunkTcpTokenAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsTcpSplunkTcpTokenAcl) []string {
 		if v == nil {
@@ -3127,17 +3611,28 @@ func (o InputsTcpSplunkTcpTokenAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type InputsUdpAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // InputsUdpAclInput is an input type that accepts InputsUdpAclArgs and InputsUdpAclOutput values.
@@ -3152,17 +3647,28 @@ type InputsUdpAclInput interface {
 }
 
 type InputsUdpAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (InputsUdpAclArgs) ElementType() reflect.Type {
@@ -3242,46 +3748,57 @@ func (o InputsUdpAclOutput) ToInputsUdpAclPtrOutputWithContext(ctx context.Conte
 	}).(InputsUdpAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsUdpAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsUdpAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsUdpAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsUdpAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsUdpAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsUdpAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsUdpAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsUdpAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsUdpAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsUdpAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsUdpAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InputsUdpAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsUdpAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InputsUdpAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -3310,6 +3827,7 @@ func (o InputsUdpAclPtrOutput) Elem() InputsUdpAclOutput {
 	}).(InputsUdpAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o InputsUdpAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *string {
 		if v == nil {
@@ -3319,6 +3837,7 @@ func (o InputsUdpAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o InputsUdpAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *bool {
 		if v == nil {
@@ -3328,6 +3847,7 @@ func (o InputsUdpAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o InputsUdpAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *bool {
 		if v == nil {
@@ -3337,6 +3857,7 @@ func (o InputsUdpAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o InputsUdpAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *bool {
 		if v == nil {
@@ -3346,6 +3867,7 @@ func (o InputsUdpAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o InputsUdpAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *bool {
 		if v == nil {
@@ -3355,6 +3877,7 @@ func (o InputsUdpAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o InputsUdpAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *bool {
 		if v == nil {
@@ -3364,6 +3887,7 @@ func (o InputsUdpAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o InputsUdpAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *string {
 		if v == nil {
@@ -3373,6 +3897,7 @@ func (o InputsUdpAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o InputsUdpAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) []string {
 		if v == nil {
@@ -3382,6 +3907,7 @@ func (o InputsUdpAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o InputsUdpAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *bool {
 		if v == nil {
@@ -3391,6 +3917,7 @@ func (o InputsUdpAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o InputsUdpAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) *string {
 		if v == nil {
@@ -3400,6 +3927,7 @@ func (o InputsUdpAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o InputsUdpAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsUdpAcl) []string {
 		if v == nil {
@@ -3410,17 +3938,28 @@ func (o InputsUdpAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type OutputsTcpDefaultAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // OutputsTcpDefaultAclInput is an input type that accepts OutputsTcpDefaultAclArgs and OutputsTcpDefaultAclOutput values.
@@ -3435,17 +3974,28 @@ type OutputsTcpDefaultAclInput interface {
 }
 
 type OutputsTcpDefaultAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (OutputsTcpDefaultAclArgs) ElementType() reflect.Type {
@@ -3525,46 +4075,57 @@ func (o OutputsTcpDefaultAclOutput) ToOutputsTcpDefaultAclPtrOutputWithContext(c
 	}).(OutputsTcpDefaultAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpDefaultAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpDefaultAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpDefaultAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpDefaultAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpDefaultAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpDefaultAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpDefaultAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpDefaultAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpDefaultAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpDefaultAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpDefaultAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpDefaultAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -3593,6 +4154,7 @@ func (o OutputsTcpDefaultAclPtrOutput) Elem() OutputsTcpDefaultAclOutput {
 	}).(OutputsTcpDefaultAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpDefaultAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *string {
 		if v == nil {
@@ -3602,6 +4164,7 @@ func (o OutputsTcpDefaultAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpDefaultAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *bool {
 		if v == nil {
@@ -3611,6 +4174,7 @@ func (o OutputsTcpDefaultAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpDefaultAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *bool {
 		if v == nil {
@@ -3620,6 +4184,7 @@ func (o OutputsTcpDefaultAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpDefaultAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *bool {
 		if v == nil {
@@ -3629,6 +4194,7 @@ func (o OutputsTcpDefaultAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpDefaultAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *bool {
 		if v == nil {
@@ -3638,6 +4204,7 @@ func (o OutputsTcpDefaultAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpDefaultAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *bool {
 		if v == nil {
@@ -3647,6 +4214,7 @@ func (o OutputsTcpDefaultAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpDefaultAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *string {
 		if v == nil {
@@ -3656,6 +4224,7 @@ func (o OutputsTcpDefaultAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpDefaultAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) []string {
 		if v == nil {
@@ -3665,6 +4234,7 @@ func (o OutputsTcpDefaultAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpDefaultAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *bool {
 		if v == nil {
@@ -3674,6 +4244,7 @@ func (o OutputsTcpDefaultAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpDefaultAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) *string {
 		if v == nil {
@@ -3683,6 +4254,7 @@ func (o OutputsTcpDefaultAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpDefaultAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpDefaultAcl) []string {
 		if v == nil {
@@ -3693,17 +4265,28 @@ func (o OutputsTcpDefaultAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type OutputsTcpGroupAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // OutputsTcpGroupAclInput is an input type that accepts OutputsTcpGroupAclArgs and OutputsTcpGroupAclOutput values.
@@ -3718,17 +4301,28 @@ type OutputsTcpGroupAclInput interface {
 }
 
 type OutputsTcpGroupAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (OutputsTcpGroupAclArgs) ElementType() reflect.Type {
@@ -3808,46 +4402,57 @@ func (o OutputsTcpGroupAclOutput) ToOutputsTcpGroupAclPtrOutputWithContext(ctx c
 	}).(OutputsTcpGroupAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpGroupAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpGroupAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpGroupAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpGroupAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpGroupAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpGroupAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpGroupAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpGroupAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpGroupAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpGroupAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpGroupAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpGroupAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -3876,6 +4481,7 @@ func (o OutputsTcpGroupAclPtrOutput) Elem() OutputsTcpGroupAclOutput {
 	}).(OutputsTcpGroupAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpGroupAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *string {
 		if v == nil {
@@ -3885,6 +4491,7 @@ func (o OutputsTcpGroupAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpGroupAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *bool {
 		if v == nil {
@@ -3894,6 +4501,7 @@ func (o OutputsTcpGroupAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpGroupAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *bool {
 		if v == nil {
@@ -3903,6 +4511,7 @@ func (o OutputsTcpGroupAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpGroupAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *bool {
 		if v == nil {
@@ -3912,6 +4521,7 @@ func (o OutputsTcpGroupAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpGroupAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *bool {
 		if v == nil {
@@ -3921,6 +4531,7 @@ func (o OutputsTcpGroupAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpGroupAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *bool {
 		if v == nil {
@@ -3930,6 +4541,7 @@ func (o OutputsTcpGroupAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpGroupAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *string {
 		if v == nil {
@@ -3939,6 +4551,7 @@ func (o OutputsTcpGroupAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpGroupAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) []string {
 		if v == nil {
@@ -3948,6 +4561,7 @@ func (o OutputsTcpGroupAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpGroupAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *bool {
 		if v == nil {
@@ -3957,6 +4571,7 @@ func (o OutputsTcpGroupAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpGroupAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) *string {
 		if v == nil {
@@ -3966,6 +4581,7 @@ func (o OutputsTcpGroupAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpGroupAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpGroupAcl) []string {
 		if v == nil {
@@ -3976,17 +4592,28 @@ func (o OutputsTcpGroupAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type OutputsTcpServerAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // OutputsTcpServerAclInput is an input type that accepts OutputsTcpServerAclArgs and OutputsTcpServerAclOutput values.
@@ -4001,17 +4628,28 @@ type OutputsTcpServerAclInput interface {
 }
 
 type OutputsTcpServerAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (OutputsTcpServerAclArgs) ElementType() reflect.Type {
@@ -4091,46 +4729,57 @@ func (o OutputsTcpServerAclOutput) ToOutputsTcpServerAclPtrOutputWithContext(ctx
 	}).(OutputsTcpServerAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpServerAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpServerAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpServerAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpServerAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpServerAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpServerAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpServerAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpServerAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpServerAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpServerAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpServerAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpServerAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -4159,6 +4808,7 @@ func (o OutputsTcpServerAclPtrOutput) Elem() OutputsTcpServerAclOutput {
 	}).(OutputsTcpServerAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpServerAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *string {
 		if v == nil {
@@ -4168,6 +4818,7 @@ func (o OutputsTcpServerAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpServerAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *bool {
 		if v == nil {
@@ -4177,6 +4828,7 @@ func (o OutputsTcpServerAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpServerAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *bool {
 		if v == nil {
@@ -4186,6 +4838,7 @@ func (o OutputsTcpServerAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpServerAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *bool {
 		if v == nil {
@@ -4195,6 +4848,7 @@ func (o OutputsTcpServerAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpServerAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *bool {
 		if v == nil {
@@ -4204,6 +4858,7 @@ func (o OutputsTcpServerAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpServerAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *bool {
 		if v == nil {
@@ -4213,6 +4868,7 @@ func (o OutputsTcpServerAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpServerAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *string {
 		if v == nil {
@@ -4222,6 +4878,7 @@ func (o OutputsTcpServerAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpServerAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) []string {
 		if v == nil {
@@ -4231,6 +4888,7 @@ func (o OutputsTcpServerAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpServerAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *bool {
 		if v == nil {
@@ -4240,6 +4898,7 @@ func (o OutputsTcpServerAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpServerAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) *string {
 		if v == nil {
@@ -4249,6 +4908,7 @@ func (o OutputsTcpServerAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpServerAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpServerAcl) []string {
 		if v == nil {
@@ -4259,17 +4919,28 @@ func (o OutputsTcpServerAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type OutputsTcpSyslogAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // OutputsTcpSyslogAclInput is an input type that accepts OutputsTcpSyslogAclArgs and OutputsTcpSyslogAclOutput values.
@@ -4284,17 +4955,28 @@ type OutputsTcpSyslogAclInput interface {
 }
 
 type OutputsTcpSyslogAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (OutputsTcpSyslogAclArgs) ElementType() reflect.Type {
@@ -4374,46 +5056,57 @@ func (o OutputsTcpSyslogAclOutput) ToOutputsTcpSyslogAclPtrOutputWithContext(ctx
 	}).(OutputsTcpSyslogAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpSyslogAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpSyslogAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpSyslogAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpSyslogAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpSyslogAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpSyslogAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpSyslogAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpSyslogAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpSyslogAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpSyslogAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpSyslogAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v OutputsTcpSyslogAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -4442,6 +5135,7 @@ func (o OutputsTcpSyslogAclPtrOutput) Elem() OutputsTcpSyslogAclOutput {
 	}).(OutputsTcpSyslogAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o OutputsTcpSyslogAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *string {
 		if v == nil {
@@ -4451,6 +5145,7 @@ func (o OutputsTcpSyslogAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o OutputsTcpSyslogAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *bool {
 		if v == nil {
@@ -4460,6 +5155,7 @@ func (o OutputsTcpSyslogAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o OutputsTcpSyslogAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *bool {
 		if v == nil {
@@ -4469,6 +5165,7 @@ func (o OutputsTcpSyslogAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o OutputsTcpSyslogAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *bool {
 		if v == nil {
@@ -4478,6 +5175,7 @@ func (o OutputsTcpSyslogAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o OutputsTcpSyslogAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *bool {
 		if v == nil {
@@ -4487,6 +5185,7 @@ func (o OutputsTcpSyslogAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o OutputsTcpSyslogAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *bool {
 		if v == nil {
@@ -4496,6 +5195,7 @@ func (o OutputsTcpSyslogAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o OutputsTcpSyslogAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *string {
 		if v == nil {
@@ -4505,6 +5205,7 @@ func (o OutputsTcpSyslogAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o OutputsTcpSyslogAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) []string {
 		if v == nil {
@@ -4514,6 +5215,7 @@ func (o OutputsTcpSyslogAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o OutputsTcpSyslogAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *bool {
 		if v == nil {
@@ -4523,6 +5225,7 @@ func (o OutputsTcpSyslogAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o OutputsTcpSyslogAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) *string {
 		if v == nil {
@@ -4532,6 +5235,7 @@ func (o OutputsTcpSyslogAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o OutputsTcpSyslogAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *OutputsTcpSyslogAcl) []string {
 		if v == nil {
@@ -4542,17 +5246,28 @@ func (o OutputsTcpSyslogAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type SavedSearchesAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // SavedSearchesAclInput is an input type that accepts SavedSearchesAclArgs and SavedSearchesAclOutput values.
@@ -4567,17 +5282,28 @@ type SavedSearchesAclInput interface {
 }
 
 type SavedSearchesAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (SavedSearchesAclArgs) ElementType() reflect.Type {
@@ -4657,46 +5383,57 @@ func (o SavedSearchesAclOutput) ToSavedSearchesAclPtrOutputWithContext(ctx conte
 	}).(SavedSearchesAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o SavedSearchesAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o SavedSearchesAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o SavedSearchesAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o SavedSearchesAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o SavedSearchesAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o SavedSearchesAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o SavedSearchesAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o SavedSearchesAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o SavedSearchesAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o SavedSearchesAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o SavedSearchesAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v SavedSearchesAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -4725,6 +5462,7 @@ func (o SavedSearchesAclPtrOutput) Elem() SavedSearchesAclOutput {
 	}).(SavedSearchesAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o SavedSearchesAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *string {
 		if v == nil {
@@ -4734,6 +5472,7 @@ func (o SavedSearchesAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o SavedSearchesAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *bool {
 		if v == nil {
@@ -4743,6 +5482,7 @@ func (o SavedSearchesAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o SavedSearchesAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *bool {
 		if v == nil {
@@ -4752,6 +5492,7 @@ func (o SavedSearchesAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o SavedSearchesAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *bool {
 		if v == nil {
@@ -4761,6 +5502,7 @@ func (o SavedSearchesAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o SavedSearchesAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *bool {
 		if v == nil {
@@ -4770,6 +5512,7 @@ func (o SavedSearchesAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o SavedSearchesAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *bool {
 		if v == nil {
@@ -4779,6 +5522,7 @@ func (o SavedSearchesAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o SavedSearchesAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *string {
 		if v == nil {
@@ -4788,6 +5532,7 @@ func (o SavedSearchesAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o SavedSearchesAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) []string {
 		if v == nil {
@@ -4797,6 +5542,7 @@ func (o SavedSearchesAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o SavedSearchesAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *bool {
 		if v == nil {
@@ -4806,6 +5552,7 @@ func (o SavedSearchesAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o SavedSearchesAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) *string {
 		if v == nil {
@@ -4815,6 +5562,7 @@ func (o SavedSearchesAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o SavedSearchesAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SavedSearchesAcl) []string {
 		if v == nil {
@@ -4825,17 +5573,28 @@ func (o SavedSearchesAclPtrOutput) Writes() pulumi.StringArrayOutput {
 }
 
 type ShIndexesManagerAcl struct {
-	App            *string  `pulumi:"app"`
-	CanChangePerms *bool    `pulumi:"canChangePerms"`
-	CanShareApp    *bool    `pulumi:"canShareApp"`
-	CanShareGlobal *bool    `pulumi:"canShareGlobal"`
-	CanShareUser   *bool    `pulumi:"canShareUser"`
-	CanWrite       *bool    `pulumi:"canWrite"`
-	Owner          *string  `pulumi:"owner"`
-	Reads          []string `pulumi:"reads"`
-	Removable      *bool    `pulumi:"removable"`
-	Sharing        *string  `pulumi:"sharing"`
-	Writes         []string `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes []string `pulumi:"writes"`
 }
 
 // ShIndexesManagerAclInput is an input type that accepts ShIndexesManagerAclArgs and ShIndexesManagerAclOutput values.
@@ -4850,17 +5609,28 @@ type ShIndexesManagerAclInput interface {
 }
 
 type ShIndexesManagerAclArgs struct {
-	App            pulumi.StringPtrInput   `pulumi:"app"`
-	CanChangePerms pulumi.BoolPtrInput     `pulumi:"canChangePerms"`
-	CanShareApp    pulumi.BoolPtrInput     `pulumi:"canShareApp"`
-	CanShareGlobal pulumi.BoolPtrInput     `pulumi:"canShareGlobal"`
-	CanShareUser   pulumi.BoolPtrInput     `pulumi:"canShareUser"`
-	CanWrite       pulumi.BoolPtrInput     `pulumi:"canWrite"`
-	Owner          pulumi.StringPtrInput   `pulumi:"owner"`
-	Reads          pulumi.StringArrayInput `pulumi:"reads"`
-	Removable      pulumi.BoolPtrInput     `pulumi:"removable"`
-	Sharing        pulumi.StringPtrInput   `pulumi:"sharing"`
-	Writes         pulumi.StringArrayInput `pulumi:"writes"`
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate write permissions of the resource.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
 }
 
 func (ShIndexesManagerAclArgs) ElementType() reflect.Type {
@@ -4940,46 +5710,57 @@ func (o ShIndexesManagerAclOutput) ToShIndexesManagerAclPtrOutputWithContext(ctx
 	}).(ShIndexesManagerAclPtrOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o ShIndexesManagerAclOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.App }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o ShIndexesManagerAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o ShIndexesManagerAclOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o ShIndexesManagerAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o ShIndexesManagerAclOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o ShIndexesManagerAclOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o ShIndexesManagerAclOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o ShIndexesManagerAclOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o ShIndexesManagerAclOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o ShIndexesManagerAclOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o ShIndexesManagerAclOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ShIndexesManagerAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
 }
@@ -5008,6 +5789,7 @@ func (o ShIndexesManagerAclPtrOutput) Elem() ShIndexesManagerAclOutput {
 	}).(ShIndexesManagerAclOutput)
 }
 
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 func (o ShIndexesManagerAclPtrOutput) App() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *string {
 		if v == nil {
@@ -5017,6 +5799,7 @@ func (o ShIndexesManagerAclPtrOutput) App() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the active user can change permissions for this object. Defaults to true.
 func (o ShIndexesManagerAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
 		if v == nil {
@@ -5026,6 +5809,7 @@ func (o ShIndexesManagerAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to app level. Defaults to true.
 func (o ShIndexesManagerAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
 		if v == nil {
@@ -5035,6 +5819,7 @@ func (o ShIndexesManagerAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to system level. Defaults to true.
 func (o ShIndexesManagerAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
 		if v == nil {
@@ -5044,6 +5829,7 @@ func (o ShIndexesManagerAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can change sharing to user level. Defaults to true.
 func (o ShIndexesManagerAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
 		if v == nil {
@@ -5053,6 +5839,7 @@ func (o ShIndexesManagerAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates if the active user can edit this object. Defaults to true.
 func (o ShIndexesManagerAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
 		if v == nil {
@@ -5062,6 +5849,7 @@ func (o ShIndexesManagerAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
 func (o ShIndexesManagerAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *string {
 		if v == nil {
@@ -5071,6 +5859,7 @@ func (o ShIndexesManagerAclPtrOutput) Owner() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate resource read permissions.
 func (o ShIndexesManagerAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) []string {
 		if v == nil {
@@ -5080,6 +5869,7 @@ func (o ShIndexesManagerAclPtrOutput) Reads() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
 func (o ShIndexesManagerAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *bool {
 		if v == nil {
@@ -5089,6 +5879,7 @@ func (o ShIndexesManagerAclPtrOutput) Removable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
 func (o ShIndexesManagerAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) *string {
 		if v == nil {
@@ -5098,6 +5889,7 @@ func (o ShIndexesManagerAclPtrOutput) Sharing() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// Properties that indicate write permissions of the resource.
 func (o ShIndexesManagerAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ShIndexesManagerAcl) []string {
 		if v == nil {

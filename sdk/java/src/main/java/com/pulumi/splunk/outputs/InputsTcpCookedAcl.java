@@ -13,49 +13,137 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InputsTcpCookedAcl {
+    /**
+     * @return The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     * 
+     */
     private @Nullable String app;
+    /**
+     * @return Indicates if the active user can change permissions for this object. Defaults to true.
+     * 
+     */
     private @Nullable Boolean canChangePerms;
+    /**
+     * @return Indicates if the active user can change sharing to app level. Defaults to true.
+     * 
+     */
     private @Nullable Boolean canShareApp;
+    /**
+     * @return Indicates if the active user can change sharing to system level. Defaults to true.
+     * 
+     */
     private @Nullable Boolean canShareGlobal;
+    /**
+     * @return Indicates if the active user can change sharing to user level. Defaults to true.
+     * 
+     */
     private @Nullable Boolean canShareUser;
+    /**
+     * @return Indicates if the active user can edit this object. Defaults to true.
+     * 
+     */
     private @Nullable Boolean canWrite;
+    /**
+     * @return User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     * 
+     */
     private @Nullable String owner;
+    /**
+     * @return Properties that indicate resource read permissions.
+     * 
+     */
     private @Nullable List<String> reads;
+    /**
+     * @return Indicates whether an admin or user with sufficient permissions can delete the entity.
+     * 
+     */
     private @Nullable Boolean removable;
+    /**
+     * @return Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     * 
+     */
     private @Nullable String sharing;
+    /**
+     * @return Properties that indicate write permissions of the resource.
+     * 
+     */
     private @Nullable List<String> writes;
 
     private InputsTcpCookedAcl() {}
+    /**
+     * @return The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     * 
+     */
     public Optional<String> app() {
         return Optional.ofNullable(this.app);
     }
+    /**
+     * @return Indicates if the active user can change permissions for this object. Defaults to true.
+     * 
+     */
     public Optional<Boolean> canChangePerms() {
         return Optional.ofNullable(this.canChangePerms);
     }
+    /**
+     * @return Indicates if the active user can change sharing to app level. Defaults to true.
+     * 
+     */
     public Optional<Boolean> canShareApp() {
         return Optional.ofNullable(this.canShareApp);
     }
+    /**
+     * @return Indicates if the active user can change sharing to system level. Defaults to true.
+     * 
+     */
     public Optional<Boolean> canShareGlobal() {
         return Optional.ofNullable(this.canShareGlobal);
     }
+    /**
+     * @return Indicates if the active user can change sharing to user level. Defaults to true.
+     * 
+     */
     public Optional<Boolean> canShareUser() {
         return Optional.ofNullable(this.canShareUser);
     }
+    /**
+     * @return Indicates if the active user can edit this object. Defaults to true.
+     * 
+     */
     public Optional<Boolean> canWrite() {
         return Optional.ofNullable(this.canWrite);
     }
+    /**
+     * @return User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     * 
+     */
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
     }
+    /**
+     * @return Properties that indicate resource read permissions.
+     * 
+     */
     public List<String> reads() {
         return this.reads == null ? List.of() : this.reads;
     }
+    /**
+     * @return Indicates whether an admin or user with sufficient permissions can delete the entity.
+     * 
+     */
     public Optional<Boolean> removable() {
         return Optional.ofNullable(this.removable);
     }
+    /**
+     * @return Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     * 
+     */
     public Optional<String> sharing() {
         return Optional.ofNullable(this.sharing);
     }
+    /**
+     * @return Properties that indicate write permissions of the resource.
+     * 
+     */
     public List<String> writes() {
         return this.writes == null ? List.of() : this.writes;
     }
