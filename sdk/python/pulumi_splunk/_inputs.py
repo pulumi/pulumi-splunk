@@ -44,6 +44,19 @@ class AppsLocalAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -70,6 +83,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -79,6 +95,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -88,6 +107,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -97,6 +119,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -106,6 +131,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -115,6 +143,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -124,6 +155,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -133,6 +167,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -142,6 +179,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -151,6 +191,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -160,6 +203,9 @@ class AppsLocalAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -181,6 +227,19 @@ class ConfigsConfAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -207,6 +266,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -216,6 +278,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -225,6 +290,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -234,6 +302,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -243,6 +314,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -252,6 +326,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -261,6 +338,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -270,6 +350,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -279,6 +362,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -288,6 +374,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -297,6 +386,9 @@ class ConfigsConfAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -318,6 +410,19 @@ class DataUiViewsAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -344,6 +449,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -353,6 +461,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -362,6 +473,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -371,6 +485,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -380,6 +497,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -389,6 +509,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -398,6 +521,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -407,6 +533,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -416,6 +545,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -425,6 +557,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -434,6 +569,9 @@ class DataUiViewsAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -455,6 +593,19 @@ class GenericAclAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -481,6 +632,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -490,6 +644,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -499,6 +656,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -508,6 +668,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -517,6 +680,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -526,6 +692,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -535,6 +704,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -544,6 +716,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -553,6 +728,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -562,6 +740,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -571,6 +752,9 @@ class GenericAclAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -592,6 +776,19 @@ class IndexesAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -618,6 +815,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -627,6 +827,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -636,6 +839,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -645,6 +851,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -654,6 +863,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -663,6 +875,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -672,6 +887,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -681,6 +899,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -690,6 +911,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -699,6 +923,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -708,6 +935,9 @@ class IndexesAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -729,6 +959,19 @@ class InputsHttpEventCollectorAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -755,6 +998,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -764,6 +1010,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -773,6 +1022,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -782,6 +1034,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -791,6 +1046,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -800,6 +1058,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -809,6 +1070,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -818,6 +1082,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -827,6 +1094,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -836,6 +1106,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -845,6 +1118,9 @@ class InputsHttpEventCollectorAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -866,6 +1142,19 @@ class InputsMonitorAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -892,6 +1181,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -901,6 +1193,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -910,6 +1205,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -919,6 +1217,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -928,6 +1229,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -937,6 +1241,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -946,6 +1253,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -955,6 +1265,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -964,6 +1277,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -973,6 +1289,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -982,6 +1301,9 @@ class InputsMonitorAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1003,6 +1325,19 @@ class InputsScriptAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1029,6 +1364,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1038,6 +1376,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1047,6 +1388,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1056,6 +1400,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1065,6 +1412,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1074,6 +1424,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1083,6 +1436,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1092,6 +1448,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1101,6 +1460,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1110,6 +1472,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1119,6 +1484,9 @@ class InputsScriptAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1140,6 +1508,19 @@ class InputsTcpCookedAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1166,6 +1547,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1175,6 +1559,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1184,6 +1571,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1193,6 +1583,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1202,6 +1595,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1211,6 +1607,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1220,6 +1619,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1229,6 +1631,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1238,6 +1643,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1247,6 +1655,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1256,6 +1667,9 @@ class InputsTcpCookedAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1277,6 +1691,19 @@ class InputsTcpRawAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1303,6 +1730,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1312,6 +1742,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1321,6 +1754,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1330,6 +1766,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1339,6 +1778,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1348,6 +1790,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1357,6 +1802,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1366,6 +1814,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1375,6 +1826,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1384,6 +1838,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1393,6 +1850,9 @@ class InputsTcpRawAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1414,6 +1874,19 @@ class InputsTcpSplunkTcpTokenAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1440,6 +1913,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1449,6 +1925,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1458,6 +1937,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1467,6 +1949,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1476,6 +1961,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1485,6 +1973,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1494,6 +1985,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1503,6 +1997,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1512,6 +2009,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1521,6 +2021,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1530,6 +2033,9 @@ class InputsTcpSplunkTcpTokenAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1551,6 +2057,19 @@ class InputsUdpAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1577,6 +2096,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1586,6 +2108,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1595,6 +2120,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1604,6 +2132,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1613,6 +2144,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1622,6 +2156,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1631,6 +2168,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1640,6 +2180,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1649,6 +2192,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1658,6 +2204,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1667,6 +2216,9 @@ class InputsUdpAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1688,6 +2240,19 @@ class OutputsTcpDefaultAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1714,6 +2279,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1723,6 +2291,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1732,6 +2303,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1741,6 +2315,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1750,6 +2327,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1759,6 +2339,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1768,6 +2351,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1777,6 +2363,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1786,6 +2375,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1795,6 +2387,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1804,6 +2399,9 @@ class OutputsTcpDefaultAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1825,6 +2423,19 @@ class OutputsTcpGroupAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1851,6 +2462,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1860,6 +2474,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -1869,6 +2486,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -1878,6 +2498,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -1887,6 +2510,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -1896,6 +2522,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -1905,6 +2534,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -1914,6 +2546,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -1923,6 +2558,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -1932,6 +2570,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -1941,6 +2582,9 @@ class OutputsTcpGroupAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -1962,6 +2606,19 @@ class OutputsTcpServerAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -1988,6 +2645,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -1997,6 +2657,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -2006,6 +2669,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -2015,6 +2681,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -2024,6 +2693,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -2033,6 +2705,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -2042,6 +2717,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -2051,6 +2729,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -2060,6 +2741,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -2069,6 +2753,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -2078,6 +2765,9 @@ class OutputsTcpServerAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -2099,6 +2789,19 @@ class OutputsTcpSyslogAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -2125,6 +2828,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -2134,6 +2840,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -2143,6 +2852,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -2152,6 +2864,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -2161,6 +2876,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -2170,6 +2888,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -2179,6 +2900,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -2188,6 +2912,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -2197,6 +2924,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -2206,6 +2936,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -2215,6 +2948,9 @@ class OutputsTcpSyslogAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -2236,6 +2972,19 @@ class SavedSearchesAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -2262,6 +3011,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -2271,6 +3023,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -2280,6 +3035,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -2289,6 +3047,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -2298,6 +3059,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -2307,6 +3071,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -2316,6 +3083,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -2325,6 +3095,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -2334,6 +3107,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -2343,6 +3119,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -2352,6 +3131,9 @@ class SavedSearchesAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter
@@ -2373,6 +3155,19 @@ class ShIndexesManagerAclArgs:
                  removable: Optional[pulumi.Input[bool]] = None,
                  sharing: Optional[pulumi.Input[str]] = None,
                  writes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param pulumi.Input[bool] can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param pulumi.Input[bool] can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param pulumi.Input[bool] can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param pulumi.Input[bool] can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param pulumi.Input[bool] can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param pulumi.Input[str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] reads: Properties that indicate resource read permissions.
+        :param pulumi.Input[bool] removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param pulumi.Input[str] sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] writes: Properties that indicate write permissions of the resource.
+        """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if can_change_perms is not None:
@@ -2399,6 +3194,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input[str]]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -2408,6 +3206,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter(name="canChangePerms")
     def can_change_perms(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
         return pulumi.get(self, "can_change_perms")
 
     @can_change_perms.setter
@@ -2417,6 +3218,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter(name="canShareApp")
     def can_share_app(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_app")
 
     @can_share_app.setter
@@ -2426,6 +3230,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter(name="canShareGlobal")
     def can_share_global(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_global")
 
     @can_share_global.setter
@@ -2435,6 +3242,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter(name="canShareUser")
     def can_share_user(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
         return pulumi.get(self, "can_share_user")
 
     @can_share_user.setter
@@ -2444,6 +3254,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter(name="canWrite")
     def can_write(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
         return pulumi.get(self, "can_write")
 
     @can_write.setter
@@ -2453,6 +3266,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -2462,6 +3278,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter
     def reads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate resource read permissions.
+        """
         return pulumi.get(self, "reads")
 
     @reads.setter
@@ -2471,6 +3290,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter
     def removable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
         return pulumi.get(self, "removable")
 
     @removable.setter
@@ -2480,6 +3302,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter
     def sharing(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
         return pulumi.get(self, "sharing")
 
     @sharing.setter
@@ -2489,6 +3314,9 @@ class ShIndexesManagerAclArgs:
     @property
     @pulumi.getter
     def writes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Properties that indicate write permissions of the resource.
+        """
         return pulumi.get(self, "writes")
 
     @writes.setter

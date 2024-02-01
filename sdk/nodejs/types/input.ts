@@ -6,253 +6,847 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface AppsLocalAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ConfigsConfAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface DataUiViewsAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface GenericAclAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface IndexesAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsHttpEventCollectorAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsMonitorAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsScriptAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsTcpCookedAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsTcpRawAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsTcpSplunkTcpTokenAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface InputsUdpAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface OutputsTcpDefaultAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface OutputsTcpGroupAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface OutputsTcpServerAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface OutputsTcpSyslogAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface SavedSearchesAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ShIndexesManagerAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
     app?: pulumi.Input<string>;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
     canChangePerms?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
     canShareApp?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
     canShareGlobal?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
     canShareUser?: pulumi.Input<boolean>;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
     canWrite?: pulumi.Input<boolean>;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Properties that indicate resource read permissions.
+     */
     reads?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
     removable?: pulumi.Input<boolean>;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
     sharing?: pulumi.Input<string>;
+    /**
+     * Properties that indicate write permissions of the resource.
+     */
     writes?: pulumi.Input<pulumi.Input<string>[]>;
 }
