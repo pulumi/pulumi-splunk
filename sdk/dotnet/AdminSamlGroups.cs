@@ -41,7 +41,7 @@ namespace Pulumi.Splunk
     /// SAML groups can be imported using the id, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
+    /// $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/adminSamlGroups:AdminSamlGroups")]

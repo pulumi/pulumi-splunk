@@ -38,10 +38,10 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
+ * Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:
  *
  * ```sh
- *  $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl <owner>:<app>:<path>
+ * $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl <owner>:<app>:<path>
  * ```
  */
 export class GenericAcl extends pulumi.CustomResource {

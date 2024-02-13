@@ -121,7 +121,7 @@ class AdminSamlGroups(pulumi.CustomResource):
         SAML groups can be imported using the id, e.g.
 
         ```sh
-         $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
+        $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
         ```
 
         :param str resource_name: The name of the resource.
@@ -157,7 +157,7 @@ class AdminSamlGroups(pulumi.CustomResource):
         SAML groups can be imported using the id, e.g.
 
         ```sh
-         $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
+        $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
         ```
 
         :param str resource_name: The name of the resource.
