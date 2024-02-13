@@ -26,7 +26,7 @@ import * as utilities from "./utilities";
  * SAML groups can be imported using the id, e.g.
  *
  * ```sh
- *  $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
+ * $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
  * ```
  */
 export class AdminSamlGroups extends pulumi.CustomResource {

@@ -62,10 +62,10 @@ namespace Pulumi.Splunk
     /// 
     /// ## Import
     /// 
-    /// Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID
+    /// Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:
     /// 
     /// ```sh
-    ///  $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl &lt;owner&gt;:&lt;app&gt;:&lt;path&gt;
+    /// $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl &lt;owner&gt;:&lt;app&gt;:&lt;path&gt;
     /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/genericAcl:GenericAcl")]
