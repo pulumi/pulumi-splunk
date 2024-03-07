@@ -13,12 +13,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
  * const tcpServer = new splunk.OutputsTcpServer("tcpServer", {sslAltNameToCheck: "old-host"});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class OutputsTcpServer extends pulumi.CustomResource {
     /**

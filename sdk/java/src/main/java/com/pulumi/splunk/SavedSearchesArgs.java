@@ -1691,14 +1691,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+     * Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
      * 
      */
     @Import(name="alertThreshold")
     private @Nullable Output<String> alertThreshold;
 
     /**
-     * @return Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+     * @return Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
      * 
      */
     public Optional<Output<String>> alertThreshold() {
@@ -1826,14 +1826,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     @Import(name="autoSummarizeDispatchTimeFormat")
     private @Nullable Output<String> autoSummarizeDispatchTimeFormat;
 
     /**
-     * @return Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * @return Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     public Optional<Output<String>> autoSummarizeDispatchTimeFormat() {
@@ -2216,14 +2216,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     @Import(name="dispatchTimeFormat")
     private @Nullable Output<String> dispatchTimeFormat;
 
     /**
-     * @return A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * @return A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     public Optional<Output<String>> dispatchTimeFormat() {
@@ -4986,7 +4986,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertThreshold Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+         * @param alertThreshold Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
          * 
          * @return builder
          * 
@@ -4997,7 +4997,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertThreshold Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+         * @param alertThreshold Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
          * 
          * @return builder
          * 
@@ -5175,7 +5175,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSummarizeDispatchTimeFormat Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+         * @param autoSummarizeDispatchTimeFormat Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
          * 
          * @return builder
          * 
@@ -5186,7 +5186,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSummarizeDispatchTimeFormat Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+         * @param autoSummarizeDispatchTimeFormat Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
          * 
          * @return builder
          * 
@@ -5721,7 +5721,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchTimeFormat A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+         * @param dispatchTimeFormat A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
          * 
          * @return builder
          * 
@@ -5732,7 +5732,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchTimeFormat A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+         * @param dispatchTimeFormat A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
          * 
          * @return builder
          * 

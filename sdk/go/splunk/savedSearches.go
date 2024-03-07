@@ -18,6 +18,7 @@ import (
 //
 // ## Example Usage
 //
+// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,6 +58,7 @@ import (
 //	}
 //
 // ```
+// <!--End PulumiCodeChooser -->
 type SavedSearches struct {
 	pulumi.CustomResourceState
 
@@ -300,7 +302,7 @@ type SavedSearches struct {
 	AlertSuppressFields pulumi.StringOutput `pulumi:"alertSuppressFields"`
 	// Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
 	AlertSuppressPeriod pulumi.StringOutput `pulumi:"alertSuppressPeriod"`
-	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+	// Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold pulumi.StringOutput `pulumi:"alertThreshold"`
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
 	AlertTrack pulumi.BoolOutput `pulumi:"alertTrack"`
@@ -318,7 +320,7 @@ type SavedSearches struct {
 	AutoSummarizeDispatchEarliestTime pulumi.StringOutput `pulumi:"autoSummarizeDispatchEarliestTime"`
 	// A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchLatestTime pulumi.StringOutput `pulumi:"autoSummarizeDispatchLatestTime"`
-	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	AutoSummarizeDispatchTimeFormat pulumi.StringOutput `pulumi:"autoSummarizeDispatchTimeFormat"`
 	// Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
 	AutoSummarizeDispatchTtl pulumi.StringOutput `pulumi:"autoSummarizeDispatchTtl"`
@@ -370,7 +372,7 @@ type SavedSearches struct {
 	DispatchRtMaximumSpan pulumi.IntOutput `pulumi:"dispatchRtMaximumSpan"`
 	// Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
 	DispatchSpawnProcess pulumi.BoolOutput `pulumi:"dispatchSpawnProcess"`
-	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	DispatchTimeFormat pulumi.StringOutput `pulumi:"dispatchTimeFormat"`
 	// Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
 	DispatchTtl pulumi.StringOutput `pulumi:"dispatchTtl"`
@@ -679,7 +681,7 @@ type savedSearchesState struct {
 	AlertSuppressFields *string `pulumi:"alertSuppressFields"`
 	// Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
 	AlertSuppressPeriod *string `pulumi:"alertSuppressPeriod"`
-	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+	// Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold *string `pulumi:"alertThreshold"`
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
 	AlertTrack *bool `pulumi:"alertTrack"`
@@ -697,7 +699,7 @@ type savedSearchesState struct {
 	AutoSummarizeDispatchEarliestTime *string `pulumi:"autoSummarizeDispatchEarliestTime"`
 	// A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchLatestTime *string `pulumi:"autoSummarizeDispatchLatestTime"`
-	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	AutoSummarizeDispatchTimeFormat *string `pulumi:"autoSummarizeDispatchTimeFormat"`
 	// Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
 	AutoSummarizeDispatchTtl *string `pulumi:"autoSummarizeDispatchTtl"`
@@ -749,7 +751,7 @@ type savedSearchesState struct {
 	DispatchRtMaximumSpan *int `pulumi:"dispatchRtMaximumSpan"`
 	// Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
 	DispatchSpawnProcess *bool `pulumi:"dispatchSpawnProcess"`
-	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	DispatchTimeFormat *string `pulumi:"dispatchTimeFormat"`
 	// Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
 	DispatchTtl *string `pulumi:"dispatchTtl"`
@@ -1026,7 +1028,7 @@ type SavedSearchesState struct {
 	AlertSuppressFields pulumi.StringPtrInput
 	// Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
 	AlertSuppressPeriod pulumi.StringPtrInput
-	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+	// Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold pulumi.StringPtrInput
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
 	AlertTrack pulumi.BoolPtrInput
@@ -1044,7 +1046,7 @@ type SavedSearchesState struct {
 	AutoSummarizeDispatchEarliestTime pulumi.StringPtrInput
 	// A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchLatestTime pulumi.StringPtrInput
-	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	AutoSummarizeDispatchTimeFormat pulumi.StringPtrInput
 	// Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
 	AutoSummarizeDispatchTtl pulumi.StringPtrInput
@@ -1096,7 +1098,7 @@ type SavedSearchesState struct {
 	DispatchRtMaximumSpan pulumi.IntPtrInput
 	// Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
 	DispatchSpawnProcess pulumi.BoolPtrInput
-	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	DispatchTimeFormat pulumi.StringPtrInput
 	// Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
 	DispatchTtl pulumi.StringPtrInput
@@ -1367,7 +1369,7 @@ type savedSearchesArgs struct {
 	AlertSuppressFields *string `pulumi:"alertSuppressFields"`
 	// Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
 	AlertSuppressPeriod *string `pulumi:"alertSuppressPeriod"`
-	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+	// Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold *string `pulumi:"alertThreshold"`
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
 	AlertTrack *bool `pulumi:"alertTrack"`
@@ -1385,7 +1387,7 @@ type savedSearchesArgs struct {
 	AutoSummarizeDispatchEarliestTime *string `pulumi:"autoSummarizeDispatchEarliestTime"`
 	// A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchLatestTime *string `pulumi:"autoSummarizeDispatchLatestTime"`
-	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	AutoSummarizeDispatchTimeFormat *string `pulumi:"autoSummarizeDispatchTimeFormat"`
 	// Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
 	AutoSummarizeDispatchTtl *string `pulumi:"autoSummarizeDispatchTtl"`
@@ -1437,7 +1439,7 @@ type savedSearchesArgs struct {
 	DispatchRtMaximumSpan *int `pulumi:"dispatchRtMaximumSpan"`
 	// Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
 	DispatchSpawnProcess *bool `pulumi:"dispatchSpawnProcess"`
-	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	DispatchTimeFormat *string `pulumi:"dispatchTimeFormat"`
 	// Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
 	DispatchTtl *string `pulumi:"dispatchTtl"`
@@ -1705,7 +1707,7 @@ type SavedSearchesArgs struct {
 	AlertSuppressFields pulumi.StringPtrInput
 	// Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
 	AlertSuppressPeriod pulumi.StringPtrInput
-	// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+	// Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 	AlertThreshold pulumi.StringPtrInput
 	// Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
 	AlertTrack pulumi.BoolPtrInput
@@ -1723,7 +1725,7 @@ type SavedSearchesArgs struct {
 	AutoSummarizeDispatchEarliestTime pulumi.StringPtrInput
 	// A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchLatestTime pulumi.StringPtrInput
-	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	AutoSummarizeDispatchTimeFormat pulumi.StringPtrInput
 	// Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
 	AutoSummarizeDispatchTtl pulumi.StringPtrInput
@@ -1775,7 +1777,7 @@ type SavedSearchesArgs struct {
 	DispatchRtMaximumSpan pulumi.IntPtrInput
 	// Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
 	DispatchSpawnProcess pulumi.BoolPtrInput
-	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+	// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 	DispatchTimeFormat pulumi.StringPtrInput
 	// Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
 	DispatchTtl pulumi.StringPtrInput
@@ -2483,7 +2485,7 @@ func (o SavedSearchesOutput) AlertSuppressPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertSuppressPeriod }).(pulumi.StringOutput)
 }
 
-// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+// Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
 func (o SavedSearchesOutput) AlertThreshold() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AlertThreshold }).(pulumi.StringOutput)
 }
@@ -2528,7 +2530,7 @@ func (o SavedSearchesOutput) AutoSummarizeDispatchLatestTime() pulumi.StringOutp
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeDispatchLatestTime }).(pulumi.StringOutput)
 }
 
-// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+// Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 func (o SavedSearchesOutput) AutoSummarizeDispatchTimeFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeDispatchTimeFormat }).(pulumi.StringOutput)
 }
@@ -2658,7 +2660,7 @@ func (o SavedSearchesOutput) DispatchSpawnProcess() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.BoolOutput { return v.DispatchSpawnProcess }).(pulumi.BoolOutput)
 }
 
-// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+// A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
 func (o SavedSearchesOutput) DispatchTimeFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchTimeFormat }).(pulumi.StringOutput)
 }

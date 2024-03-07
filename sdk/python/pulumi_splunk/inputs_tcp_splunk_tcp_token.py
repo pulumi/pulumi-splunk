@@ -141,12 +141,14 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
 
         tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", token="D66C45B3-7C28-48A1-A13A-027914146501")
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -167,12 +169,14 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
 
         tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", token="D66C45B3-7C28-48A1-A13A-027914146501")
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param InputsTcpSplunkTcpTokenArgs args: The arguments to use to populate this resource's properties.

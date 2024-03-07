@@ -13,6 +13,26 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsScript
     /// 
     /// Create or update scripted inputs.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var script = new Splunk.InputsScript("script", new()
+    ///     {
+    ///         Interval = 360,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/inputsScript:InputsScript")]
     public partial class InputsScript : global::Pulumi.CustomResource

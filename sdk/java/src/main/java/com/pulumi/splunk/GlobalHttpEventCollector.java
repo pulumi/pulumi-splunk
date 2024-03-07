@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Update Global HTTP Event Collector input configuration.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -50,6 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/globalHttpEventCollector:GlobalHttpEventCollector")

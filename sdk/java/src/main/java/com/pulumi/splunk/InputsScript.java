@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * 
  * Create or update scripted inputs.
  * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.splunk.InputsScript;
+ * import com.pulumi.splunk.InputsScriptArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var script = new InputsScript(&#34;script&#34;, InputsScriptArgs.builder()        
+ *             .interval(360)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  */
 @ResourceType(type="splunk:index/inputsScript:InputsScript")
 public class InputsScript extends com.pulumi.resources.CustomResource {
