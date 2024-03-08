@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create and manage UDP data inputs.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -52,6 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/inputsUdp:InputsUdp")

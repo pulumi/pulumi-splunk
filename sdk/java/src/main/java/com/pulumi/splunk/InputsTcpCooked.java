@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * Create or update cooked TCP input information and create new containers for managing cooked data.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,6 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/inputsTcpCooked:InputsTcpCooked")

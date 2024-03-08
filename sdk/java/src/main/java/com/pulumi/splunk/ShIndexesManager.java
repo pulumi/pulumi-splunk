@@ -25,6 +25,8 @@ import javax.annotation.Nullable;
  * As of now there is no support to create indexes in user-specified workspaces on Splunk Cloud.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -55,6 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/shIndexesManager:ShIndexesManager")

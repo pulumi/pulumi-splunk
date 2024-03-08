@@ -24,6 +24,8 @@ import javax.annotation.Nullable;
  * Create and manage saved searches.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -69,6 +71,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/savedSearches:SavedSearches")
@@ -1704,14 +1707,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.alertSuppressPeriod;
     }
     /**
-     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+     * Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
      * 
      */
     @Export(name="alertThreshold", refs={String.class}, tree="[0]")
     private Output<String> alertThreshold;
 
     /**
-     * @return Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+     * @return Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
      * 
      */
     public Output<String> alertThreshold() {
@@ -1830,14 +1833,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeDispatchLatestTime;
     }
     /**
-     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     @Export(name="autoSummarizeDispatchTimeFormat", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeDispatchTimeFormat;
 
     /**
-     * @return Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * @return Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     public Output<String> autoSummarizeDispatchTimeFormat() {
@@ -2194,14 +2197,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.dispatchSpawnProcess;
     }
     /**
-     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     @Export(name="dispatchTimeFormat", refs={String.class}, tree="[0]")
     private Output<String> dispatchTimeFormat;
 
     /**
-     * @return A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * @return A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      * 
      */
     public Output<String> dispatchTimeFormat() {
