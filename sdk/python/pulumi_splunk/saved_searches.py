@@ -301,7 +301,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[bool] alert_suppress: Indicates whether alert suppression is enabled for this scheduled search.
         :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
-        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -310,7 +310,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
-        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] auto_summarize_dispatch_ttl: Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
         :param pulumi.Input[int] auto_summarize_max_disabled_buckets: The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
         :param pulumi.Input[float] auto_summarize_max_summary_ratio: The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
@@ -336,7 +336,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[bool] dispatch_rt_backfill: Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
         :param pulumi.Input[int] dispatch_rt_maximum_span: Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
         :param pulumi.Input[bool] dispatch_spawn_process: Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
-        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         :param pulumi.Input[bool] is_scheduled: Whether this search is to be run on a schedule
@@ -2023,7 +2023,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="alertThreshold")
     def alert_threshold(self) -> Optional[pulumi.Input[str]]:
         """
-        Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         """
         return pulumi.get(self, "alert_threshold")
 
@@ -2131,7 +2131,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="autoSummarizeDispatchTimeFormat")
     def auto_summarize_dispatch_time_format(self) -> Optional[pulumi.Input[str]]:
         """
-        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         """
         return pulumi.get(self, "auto_summarize_dispatch_time_format")
 
@@ -2443,7 +2443,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="dispatchTimeFormat")
     def dispatch_time_format(self) -> Optional[pulumi.Input[str]]:
         """
-        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         """
         return pulumi.get(self, "dispatch_time_format")
 
@@ -2929,7 +2929,7 @@ class _SavedSearchesState:
         :param pulumi.Input[bool] alert_suppress: Indicates whether alert suppression is enabled for this scheduled search.
         :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
-        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -2938,7 +2938,7 @@ class _SavedSearchesState:
         :param pulumi.Input[str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
-        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] auto_summarize_dispatch_ttl: Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
         :param pulumi.Input[int] auto_summarize_max_disabled_buckets: The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
         :param pulumi.Input[float] auto_summarize_max_summary_ratio: The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
@@ -2964,7 +2964,7 @@ class _SavedSearchesState:
         :param pulumi.Input[bool] dispatch_rt_backfill: Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
         :param pulumi.Input[int] dispatch_rt_maximum_span: Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
         :param pulumi.Input[bool] dispatch_spawn_process: Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
-        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         :param pulumi.Input[bool] is_scheduled: Whether this search is to be run on a schedule
@@ -4711,7 +4711,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="alertThreshold")
     def alert_threshold(self) -> Optional[pulumi.Input[str]]:
         """
-        Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         """
         return pulumi.get(self, "alert_threshold")
 
@@ -4819,7 +4819,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="autoSummarizeDispatchTimeFormat")
     def auto_summarize_dispatch_time_format(self) -> Optional[pulumi.Input[str]]:
         """
-        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         """
         return pulumi.get(self, "auto_summarize_dispatch_time_format")
 
@@ -5131,7 +5131,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="dispatchTimeFormat")
     def dispatch_time_format(self) -> Optional[pulumi.Input[str]]:
         """
-        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         """
         return pulumi.get(self, "dispatch_time_format")
 
@@ -5507,6 +5507,7 @@ class SavedSearches(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -5530,6 +5531,7 @@ class SavedSearches(pulumi.CustomResource):
             dispatch_latest_time="rt-0m",
             search="index=main")
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -5653,7 +5655,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] alert_suppress: Indicates whether alert suppression is enabled for this scheduled search.
         :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
-        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -5662,7 +5664,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
-        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] auto_summarize_dispatch_ttl: Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
         :param pulumi.Input[int] auto_summarize_max_disabled_buckets: The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
         :param pulumi.Input[float] auto_summarize_max_summary_ratio: The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
@@ -5688,7 +5690,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] dispatch_rt_backfill: Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
         :param pulumi.Input[int] dispatch_rt_maximum_span: Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
         :param pulumi.Input[bool] dispatch_spawn_process: Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
-        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         :param pulumi.Input[bool] is_scheduled: Whether this search is to be run on a schedule
@@ -5719,6 +5721,7 @@ class SavedSearches(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -5742,6 +5745,7 @@ class SavedSearches(pulumi.CustomResource):
             dispatch_latest_time="rt-0m",
             search="index=main")
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param SavedSearchesArgs args: The arguments to use to populate this resource's properties.
@@ -6407,7 +6411,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] alert_suppress: Indicates whether alert suppression is enabled for this scheduled search.
         :param pulumi.Input[str] alert_suppress_fields: Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         :param pulumi.Input[str] alert_suppress_period: Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
-        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        :param pulumi.Input[str] alert_threshold: Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         :param pulumi.Input[bool] alert_track: Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         :param pulumi.Input[str] alert_type: What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         :param pulumi.Input[str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
@@ -6416,7 +6420,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
-        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] auto_summarize_dispatch_ttl: Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
         :param pulumi.Input[int] auto_summarize_max_disabled_buckets: The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
         :param pulumi.Input[float] auto_summarize_max_summary_ratio: The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
@@ -6442,7 +6446,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] dispatch_rt_backfill: Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
         :param pulumi.Input[int] dispatch_rt_maximum_span: Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
         :param pulumi.Input[bool] dispatch_spawn_process: Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
-        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        :param pulumi.Input[str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         :param pulumi.Input[str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         :param pulumi.Input[bool] is_scheduled: Whether this search is to be run on a schedule
@@ -7567,7 +7571,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="alertThreshold")
     def alert_threshold(self) -> pulumi.Output[str]:
         """
-        Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         """
         return pulumi.get(self, "alert_threshold")
 
@@ -7639,7 +7643,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="autoSummarizeDispatchTimeFormat")
     def auto_summarize_dispatch_time_format(self) -> pulumi.Output[str]:
         """
-        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+        Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         """
         return pulumi.get(self, "auto_summarize_dispatch_time_format")
 
@@ -7847,7 +7851,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="dispatchTimeFormat")
     def dispatch_time_format(self) -> pulumi.Output[str]:
         """
-        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+        A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
         """
         return pulumi.get(self, "dispatch_time_format")
 

@@ -15,6 +15,7 @@ namespace Pulumi.Splunk
     /// Create and manage splunk dashboards/views.
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -35,6 +36,7 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/dataUiViews:DataUiViews")]
     public partial class DataUiViews : global::Pulumi.CustomResource

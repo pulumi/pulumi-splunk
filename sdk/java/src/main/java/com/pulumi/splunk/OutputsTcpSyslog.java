@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Access the configuration of a forwarded server configured to provide data in standard syslog format.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -51,6 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/outputsTcpSyslog:OutputsTcpSyslog")

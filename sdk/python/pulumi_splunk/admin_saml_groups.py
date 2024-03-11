@@ -106,6 +106,7 @@ class AdminSamlGroups(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -115,6 +116,7 @@ class AdminSamlGroups(pulumi.CustomResource):
             "power",
         ])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -142,6 +144,7 @@ class AdminSamlGroups(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -151,6 +154,7 @@ class AdminSamlGroups(pulumi.CustomResource):
             "power",
         ])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

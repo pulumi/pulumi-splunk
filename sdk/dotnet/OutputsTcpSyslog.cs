@@ -16,6 +16,7 @@ namespace Pulumi.Splunk
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,6 +33,7 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/outputsTcpSyslog:OutputsTcpSyslog")]
     public partial class OutputsTcpSyslog : global::Pulumi.CustomResource

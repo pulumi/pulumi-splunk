@@ -22,6 +22,54 @@ import javax.annotation.Nullable;
  * 
  * Create or update HTTP Event Collector input configuration tokens.
  * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.splunk.InputsHttpEventCollector;
+ * import com.pulumi.splunk.InputsHttpEventCollectorArgs;
+ * import com.pulumi.splunk.inputs.InputsHttpEventCollectorAclArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var hec_token_01 = new InputsHttpEventCollector(&#34;hec-token-01&#34;, InputsHttpEventCollectorArgs.builder()        
+ *             .acl(InputsHttpEventCollectorAclArgs.builder()
+ *                 .owner(&#34;user01&#34;)
+ *                 .reads(&#34;admin&#34;)
+ *                 .sharing(&#34;global&#34;)
+ *                 .writes(&#34;admin&#34;)
+ *                 .build())
+ *             .disabled(false)
+ *             .index(&#34;main&#34;)
+ *             .indexes(            
+ *                 &#34;main&#34;,
+ *                 &#34;history&#34;,
+ *                 &#34;summary&#34;)
+ *             .source(&#34;new:source&#34;)
+ *             .sourcetype(&#34;new:sourcetype&#34;)
+ *             .useAck(0)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  */
 @ResourceType(type="splunk:index/inputsHttpEventCollector:InputsHttpEventCollector")
 public class InputsHttpEventCollector extends com.pulumi.resources.CustomResource {

@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * Manage receiver access using tokens.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -48,6 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken")

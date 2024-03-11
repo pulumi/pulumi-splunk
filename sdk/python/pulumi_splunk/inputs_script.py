@@ -377,6 +377,17 @@ class InputsScript(pulumi.CustomResource):
 
         Create or update scripted inputs.
 
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        script = splunk.InputsScript("script", interval=360)
+        ```
+        <!--End PulumiCodeChooser -->
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsScriptAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -402,6 +413,17 @@ class InputsScript(pulumi.CustomResource):
         ## # Resource: InputsScript
 
         Create or update scripted inputs.
+
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        script = splunk.InputsScript("script", interval=360)
+        ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param InputsScriptArgs args: The arguments to use to populate this resource's properties.

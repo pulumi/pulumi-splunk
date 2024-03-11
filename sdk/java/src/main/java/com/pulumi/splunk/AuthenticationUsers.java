@@ -22,6 +22,8 @@ import javax.annotation.Nullable;
  * Create and update user information or delete the user.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -53,6 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/authenticationUsers:AuthenticationUsers")
