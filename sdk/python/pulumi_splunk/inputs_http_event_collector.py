@@ -370,6 +370,33 @@ class InputsHttpEventCollector(pulumi.CustomResource):
 
         Create or update HTTP Event Collector input configuration tokens.
 
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        hec_token_01 = splunk.InputsHttpEventCollector("hec-token-01",
+            acl=splunk.InputsHttpEventCollectorAclArgs(
+                owner="user01",
+                reads=["admin"],
+                sharing="global",
+                writes=["admin"],
+            ),
+            disabled=False,
+            index="main",
+            indexes=[
+                "main",
+                "history",
+                "summary",
+            ],
+            source="new:source",
+            sourcetype="new:sourcetype",
+            use_ack=0)
+        ```
+        <!--End PulumiCodeChooser -->
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['InputsHttpEventCollectorAclArgs']] acl: The app/user context that is the namespace for the resource
@@ -393,6 +420,33 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         ## # Resource: InputsHttpEventCollector
 
         Create or update HTTP Event Collector input configuration tokens.
+
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_splunk as splunk
+
+        hec_token_01 = splunk.InputsHttpEventCollector("hec-token-01",
+            acl=splunk.InputsHttpEventCollectorAclArgs(
+                owner="user01",
+                reads=["admin"],
+                sharing="global",
+                writes=["admin"],
+            ),
+            disabled=False,
+            index="main",
+            indexes=[
+                "main",
+                "history",
+                "summary",
+            ],
+            source="new:source",
+            sourcetype="new:sourcetype",
+            use_ack=0)
+        ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param InputsHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

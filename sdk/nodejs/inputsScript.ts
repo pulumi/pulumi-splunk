@@ -10,6 +10,17 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsScript
  *
  * Create or update scripted inputs.
+ *
+ * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const script = new splunk.InputsScript("script", {interval: 360});
+ * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class InputsScript extends pulumi.CustomResource {
     /**

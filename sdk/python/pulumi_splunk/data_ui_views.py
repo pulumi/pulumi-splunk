@@ -135,6 +135,7 @@ class DataUiViews(pulumi.CustomResource):
         Create and manage splunk dashboards/views.
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -146,6 +147,7 @@ class DataUiViews(pulumi.CustomResource):
             ),
             eai_data="<dashboard version=\\"1.1\\"><label>Terraform</label><description>Terraform operations</description><row><panel><chart><search><query>index=_internal sourcetype=splunkd_access useragent=\\"splunk-simple-go-client\\" | timechart fixedrange=f values(status) by uri_path</query><earliest>-24h@h</earliest><latest>now</latest><sampleRatio>1</sampleRatio></search><option name=\\"charting.axisLabelsX.majorLabelStyle.overflowMode\\">ellipsisNone</option><option name=\\"charting.axisLabelsX.majorLabelStyle.rotation\\">0</option><option name=\\"charting.axisTitleX.visibility\\">collapsed</option><option name=\\"charting.axisTitleY.text\\">HTTP status codes</option><option name=\\"charting.axisTitleY.visibility\\">visible</option><option name=\\"charting.axisTitleY2.visibility\\">visible</option><option name=\\"charting.axisX.abbreviation\\">none</option><option name=\\"charting.axisX.scale\\">linear</option><option name=\\"charting.axisY.abbreviation\\">none</option><option name=\\"charting.axisY.scale\\">linear</option><option name=\\"charting.axisY2.abbreviation\\">none</option><option name=\\"charting.axisY2.enabled\\">0</option><option name=\\"charting.axisY2.scale\\">inherit</option><option name=\\"charting.chart\\">column</option><option name=\\"charting.chart.bubbleMaximumSize\\">50</option><option name=\\"charting.chart.bubbleMinimumSize\\">10</option><option name=\\"charting.chart.bubbleSizeBy\\">area</option><option name=\\"charting.chart.nullValueMode\\">connect</option><option name=\\"charting.chart.showDataLabels\\">none</option><option name=\\"charting.chart.sliceCollapsingThreshold\\">0.01</option><option name=\\"charting.chart.stackMode\\">default</option><option name=\\"charting.chart.style\\">shiny</option><option name=\\"charting.drilldown\\">none</option><option name=\\"charting.layout.splitSeries\\">0</option><option name=\\"charting.layout.splitSeries.allowIndependentYRanges\\">0</option><option name=\\"charting.legend.labelStyle.overflowMode\\">ellipsisMiddle</option><option name=\\"charting.legend.mode\\">standard</option><option name=\\"charting.legend.placement\\">right</option><option name=\\"charting.lineWidth\\">2</option><option name=\\"trellis.enabled\\">0</option><option name=\\"trellis.scales.shared\\">1</option><option name=\\"trellis.size\\">small</option><option name=\\"trellis.splitBy\\">_aggregation</option></chart></panel></row></dashboard>")
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -165,6 +167,7 @@ class DataUiViews(pulumi.CustomResource):
         Create and manage splunk dashboards/views.
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -176,6 +179,7 @@ class DataUiViews(pulumi.CustomResource):
             ),
             eai_data="<dashboard version=\\"1.1\\"><label>Terraform</label><description>Terraform operations</description><row><panel><chart><search><query>index=_internal sourcetype=splunkd_access useragent=\\"splunk-simple-go-client\\" | timechart fixedrange=f values(status) by uri_path</query><earliest>-24h@h</earliest><latest>now</latest><sampleRatio>1</sampleRatio></search><option name=\\"charting.axisLabelsX.majorLabelStyle.overflowMode\\">ellipsisNone</option><option name=\\"charting.axisLabelsX.majorLabelStyle.rotation\\">0</option><option name=\\"charting.axisTitleX.visibility\\">collapsed</option><option name=\\"charting.axisTitleY.text\\">HTTP status codes</option><option name=\\"charting.axisTitleY.visibility\\">visible</option><option name=\\"charting.axisTitleY2.visibility\\">visible</option><option name=\\"charting.axisX.abbreviation\\">none</option><option name=\\"charting.axisX.scale\\">linear</option><option name=\\"charting.axisY.abbreviation\\">none</option><option name=\\"charting.axisY.scale\\">linear</option><option name=\\"charting.axisY2.abbreviation\\">none</option><option name=\\"charting.axisY2.enabled\\">0</option><option name=\\"charting.axisY2.scale\\">inherit</option><option name=\\"charting.chart\\">column</option><option name=\\"charting.chart.bubbleMaximumSize\\">50</option><option name=\\"charting.chart.bubbleMinimumSize\\">10</option><option name=\\"charting.chart.bubbleSizeBy\\">area</option><option name=\\"charting.chart.nullValueMode\\">connect</option><option name=\\"charting.chart.showDataLabels\\">none</option><option name=\\"charting.chart.sliceCollapsingThreshold\\">0.01</option><option name=\\"charting.chart.stackMode\\">default</option><option name=\\"charting.chart.style\\">shiny</option><option name=\\"charting.drilldown\\">none</option><option name=\\"charting.layout.splitSeries\\">0</option><option name=\\"charting.layout.splitSeries.allowIndependentYRanges\\">0</option><option name=\\"charting.legend.labelStyle.overflowMode\\">ellipsisMiddle</option><option name=\\"charting.legend.mode\\">standard</option><option name=\\"charting.legend.placement\\">right</option><option name=\\"charting.lineWidth\\">2</option><option name=\\"trellis.enabled\\">0</option><option name=\\"trellis.scales.shared\\">1</option><option name=\\"trellis.size\\">small</option><option name=\\"trellis.splitBy\\">_aggregation</option></chart></panel></row></dashboard>")
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param DataUiViewsArgs args: The arguments to use to populate this resource's properties.

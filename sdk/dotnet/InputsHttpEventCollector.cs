@@ -13,6 +13,49 @@ namespace Pulumi.Splunk
     /// ## # Resource: splunk.InputsHttpEventCollector
     /// 
     /// Create or update HTTP Event Collector input configuration tokens.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Splunk = Pulumi.Splunk;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var hec_token_01 = new Splunk.InputsHttpEventCollector("hec-token-01", new()
+    ///     {
+    ///         Acl = new Splunk.Inputs.InputsHttpEventCollectorAclArgs
+    ///         {
+    ///             Owner = "user01",
+    ///             Reads = new[]
+    ///             {
+    ///                 "admin",
+    ///             },
+    ///             Sharing = "global",
+    ///             Writes = new[]
+    ///             {
+    ///                 "admin",
+    ///             },
+    ///         },
+    ///         Disabled = false,
+    ///         Index = "main",
+    ///         Indexes = new[]
+    ///         {
+    ///             "main",
+    ///             "history",
+    ///             "summary",
+    ///         },
+    ///         Source = "new:source",
+    ///         Sourcetype = "new:sourcetype",
+    ///         UseAck = 0,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/inputsHttpEventCollector:InputsHttpEventCollector")]
     public partial class InputsHttpEventCollector : global::Pulumi.CustomResource

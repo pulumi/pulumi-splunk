@@ -275,6 +275,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -284,6 +285,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
             enable_ssl=True,
             port=8088)
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -309,6 +311,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -318,6 +321,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
             enable_ssl=True,
             port=8088)
         ```
+        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param GlobalHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

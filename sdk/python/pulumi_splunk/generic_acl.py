@@ -115,6 +115,7 @@ class GenericAcl(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -139,6 +140,7 @@ class GenericAcl(pulumi.CustomResource):
             ),
             path="data/ui/views/my_dashboard")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -165,6 +167,7 @@ class GenericAcl(pulumi.CustomResource):
         """
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -189,6 +192,7 @@ class GenericAcl(pulumi.CustomResource):
             ),
             path="data/ui/views/my_dashboard")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

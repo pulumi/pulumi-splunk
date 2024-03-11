@@ -15,6 +15,34 @@ import (
 // ## # Resource: InputsScript
 //
 // Create or update scripted inputs.
+//
+// ## Example Usage
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := splunk.NewInputsScript(ctx, "script", &splunk.InputsScriptArgs{
+//				Interval: pulumi.Int(360),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
 type InputsScript struct {
 	pulumi.CustomResourceState
 

@@ -10,6 +10,34 @@ import * as utilities from "./utilities";
  * ## # Resource: splunk.InputsHttpEventCollector
  *
  * Create or update HTTP Event Collector input configuration tokens.
+ *
+ * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as splunk from "@pulumi/splunk";
+ *
+ * const hec_token_01 = new splunk.InputsHttpEventCollector("hec-token-01", {
+ *     acl: {
+ *         owner: "user01",
+ *         reads: ["admin"],
+ *         sharing: "global",
+ *         writes: ["admin"],
+ *     },
+ *     disabled: false,
+ *     index: "main",
+ *     indexes: [
+ *         "main",
+ *         "history",
+ *         "summary",
+ *     ],
+ *     source: "new:source",
+ *     sourcetype: "new:sourcetype",
+ *     useAck: 0,
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class InputsHttpEventCollector extends pulumi.CustomResource {
     /**

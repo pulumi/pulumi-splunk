@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
  * Access to the configuration of a group of one or more data forwarding destinations.
  * 
  * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
  * ```java
  * package generated_program;
  * 
@@ -57,6 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
 @ResourceType(type="splunk:index/outputsTcpGroup:OutputsTcpGroup")

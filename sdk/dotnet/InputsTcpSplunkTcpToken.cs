@@ -16,6 +16,7 @@ namespace Pulumi.Splunk
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -31,6 +32,7 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken")]
     public partial class InputsTcpSplunkTcpToken : global::Pulumi.CustomResource

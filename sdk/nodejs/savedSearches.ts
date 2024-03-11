@@ -13,6 +13,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
@@ -37,6 +38,7 @@ import * as utilities from "./utilities";
  *     search: "index=main",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class SavedSearches extends pulumi.CustomResource {
     /**
@@ -537,7 +539,7 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     public readonly alertSuppressPeriod!: pulumi.Output<string>;
     /**
-     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+     * Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
     public readonly alertThreshold!: pulumi.Output<string>;
     /**
@@ -573,7 +575,7 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     public readonly autoSummarizeDispatchLatestTime!: pulumi.Output<string>;
     /**
-     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      */
     public readonly autoSummarizeDispatchTimeFormat!: pulumi.Output<string>;
     /**
@@ -677,7 +679,7 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     public readonly dispatchSpawnProcess!: pulumi.Output<boolean>;
     /**
-     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      */
     public readonly dispatchTimeFormat!: pulumi.Output<string>;
     /**
@@ -1578,7 +1580,7 @@ export interface SavedSearchesState {
      */
     alertSuppressPeriod?: pulumi.Input<string>;
     /**
-     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+     * Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
     alertThreshold?: pulumi.Input<string>;
     /**
@@ -1614,7 +1616,7 @@ export interface SavedSearchesState {
      */
     autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
     /**
-     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      */
     autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
     /**
@@ -1718,7 +1720,7 @@ export interface SavedSearchesState {
      */
     dispatchSpawnProcess?: pulumi.Input<boolean>;
     /**
-     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      */
     dispatchTimeFormat?: pulumi.Input<string>;
     /**
@@ -2242,7 +2244,7 @@ export interface SavedSearchesArgs {
      */
     alertSuppressPeriod?: pulumi.Input<string>;
     /**
-     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
+     * Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
     alertThreshold?: pulumi.Input<string>;
     /**
@@ -2278,7 +2280,7 @@ export interface SavedSearchesArgs {
      */
     autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
     /**
-     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      */
     autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
     /**
@@ -2382,7 +2384,7 @@ export interface SavedSearchesArgs {
      */
     dispatchSpawnProcess?: pulumi.Input<boolean>;
     /**
-     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
+     * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z
      */
     dispatchTimeFormat?: pulumi.Input<string>;
     /**
