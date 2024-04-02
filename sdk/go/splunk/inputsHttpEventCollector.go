@@ -18,48 +18,6 @@ import (
 // ## Example Usage
 //
 // <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-splunk/sdk/go/splunk"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsHttpEventCollector(ctx, "hec-token-01", &splunk.InputsHttpEventCollectorArgs{
-//				Acl: &splunk.InputsHttpEventCollectorAclArgs{
-//					Owner: pulumi.String("user01"),
-//					Reads: pulumi.StringArray{
-//						pulumi.String("admin"),
-//					},
-//					Sharing: pulumi.String("global"),
-//					Writes: pulumi.StringArray{
-//						pulumi.String("admin"),
-//					},
-//				},
-//				Disabled: pulumi.Bool(false),
-//				Index:    pulumi.String("main"),
-//				Indexes: pulumi.StringArray{
-//					pulumi.String("main"),
-//					pulumi.String("history"),
-//					pulumi.String("summary"),
-//				},
-//				Source:     pulumi.String("new:source"),
-//				Sourcetype: pulumi.String("new:sourcetype"),
-//				UseAck:     pulumi.Int(0),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 // <!--End PulumiCodeChooser -->
 type InputsHttpEventCollector struct {
 	pulumi.CustomResourceState
