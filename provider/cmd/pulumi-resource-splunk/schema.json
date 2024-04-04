@@ -4995,7 +4995,7 @@
                 },
                 "alertThreshold": {
                     "type": "string",
-                    "description": "Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
+                    "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
                 },
                 "alertTrack": {
                     "type": "boolean",
@@ -5031,7 +5031,7 @@
                 },
                 "autoSummarizeDispatchTimeFormat": {
                     "type": "string",
-                    "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z\n"
+                    "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z\n"
                 },
                 "autoSummarizeDispatchTtl": {
                     "type": "string",
@@ -5135,7 +5135,7 @@
                 },
                 "dispatchTimeFormat": {
                     "type": "string",
-                    "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z\n"
+                    "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z\n"
                 },
                 "dispatchTtl": {
                     "type": "string",
@@ -5790,7 +5790,7 @@
                 },
                 "alertThreshold": {
                     "type": "string",
-                    "description": "Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
+                    "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
                 },
                 "alertTrack": {
                     "type": "boolean",
@@ -5826,7 +5826,7 @@
                 },
                 "autoSummarizeDispatchTimeFormat": {
                     "type": "string",
-                    "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z\n"
+                    "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z\n"
                 },
                 "autoSummarizeDispatchTtl": {
                     "type": "string",
@@ -5930,7 +5930,7 @@
                 },
                 "dispatchTimeFormat": {
                     "type": "string",
-                    "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z\n"
+                    "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z\n"
                 },
                 "dispatchTtl": {
                     "type": "string",
@@ -6466,7 +6466,7 @@
                     },
                     "alertThreshold": {
                         "type": "string",
-                        "description": "Valid values are: Integer[%!](MISSING)Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
+                        "description": "Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.\n"
                     },
                     "alertTrack": {
                         "type": "boolean",
@@ -6502,7 +6502,7 @@
                     },
                     "autoSummarizeDispatchTimeFormat": {
                         "type": "string",
-                        "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z\n"
+                        "description": "Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z\n"
                     },
                     "autoSummarizeDispatchTtl": {
                         "type": "string",
@@ -6606,7 +6606,7 @@
                     },
                     "dispatchTimeFormat": {
                         "type": "string",
-                        "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %!F(MISSING)T%!T(MISSING).%!Q(MISSING)%!:(MISSING)z\n"
+                        "description": "A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z\n"
                     },
                     "dispatchTtl": {
                         "type": "string",
