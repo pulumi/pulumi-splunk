@@ -31,11 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewOutputsTcpGroup(ctx, "tcpGroup", &splunk.OutputsTcpGroupArgs{
+//			_, err := splunk.NewOutputsTcpGroup(ctx, "tcp_group", &splunk.OutputsTcpGroupArgs{
+//				Name:                  pulumi.String("tcp-group"),
 //				Disabled:              pulumi.Bool(false),
 //				DropEventsOnQueueFull: pulumi.Int(60),
-//				MaxQueueSize:          pulumi.String("100KB"),
 //				SendCookedData:        pulumi.Bool(true),
+//				MaxQueueSize:          pulumi.String("100KB"),
 //				Servers: pulumi.StringArray{
 //					pulumi.String("1.1.1.1:1234"),
 //					pulumi.String("2.2.2.2:1234"),

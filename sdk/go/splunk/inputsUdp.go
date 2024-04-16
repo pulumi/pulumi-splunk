@@ -31,10 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewInputsUdp(ctx, "udp", &splunk.InputsUdpArgs{
-//				Disabled:   pulumi.Bool(false),
+//				Name:       pulumi.String("41000"),
 //				Index:      pulumi.String("main"),
 //				Source:     pulumi.String("new"),
 //				Sourcetype: pulumi.String("new"),
+//				Disabled:   pulumi.Bool(false),
 //			})
 //			if err != nil {
 //				return err

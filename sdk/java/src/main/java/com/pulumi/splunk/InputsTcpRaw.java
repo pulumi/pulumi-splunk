@@ -46,11 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var tcpRaw = new InputsTcpRaw(&#34;tcpRaw&#34;, InputsTcpRawArgs.builder()        
- *             .disabled(false)
+ *             .name(&#34;41000&#34;)
  *             .index(&#34;main&#34;)
  *             .queue(&#34;indexQueue&#34;)
  *             .source(&#34;new&#34;)
  *             .sourcetype(&#34;new&#34;)
+ *             .disabled(false)
  *             .build());
  * 
  *     }

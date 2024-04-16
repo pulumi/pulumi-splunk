@@ -30,9 +30,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewAppsLocal(ctx, "amazonConnectApp", &splunk.AppsLocalArgs{
-//				ExplicitAppname: pulumi.String("amazon_connect_app_for_splunk"),
+//			_, err := splunk.NewAppsLocal(ctx, "amazon_connect_app", &splunk.AppsLocalArgs{
 //				Filename:        pulumi.Bool(true),
+//				Name:            pulumi.String("/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz"),
+//				ExplicitAppname: pulumi.String("amazon_connect_app_for_splunk"),
 //			})
 //			if err != nil {
 //				return err

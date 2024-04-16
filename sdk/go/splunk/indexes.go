@@ -36,6 +36,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewIndexes(ctx, "user01-index", &splunk.IndexesArgs{
+//				Name:               pulumi.String("user01-index"),
 //				MaxHotBuckets:      pulumi.Int(6),
 //				MaxTotalDataSizeMb: pulumi.Int(1000000),
 //			})

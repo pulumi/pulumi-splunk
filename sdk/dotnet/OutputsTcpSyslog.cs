@@ -25,10 +25,11 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpSyslog = new Splunk.OutputsTcpSyslog("tcpSyslog", new()
+    ///     var tcpSyslog = new Splunk.OutputsTcpSyslog("tcp_syslog", new()
     ///     {
-    ///         Priority = 5,
+    ///         Name = "new-syslog",
     ///         Server = "new-host-1:1234",
+    ///         Priority = 5,
     ///     });
     /// 
     /// });

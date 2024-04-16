@@ -18,7 +18,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpServer = new splunk.OutputsTcpServer("tcpServer", {sslAltNameToCheck: "old-host"});
+ * const tcpServer = new splunk.OutputsTcpServer("tcp_server", {
+ *     name: "new-host:1234",
+ *     sslAltNameToCheck: "old-host",
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  */

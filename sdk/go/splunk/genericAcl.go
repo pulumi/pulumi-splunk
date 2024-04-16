@@ -27,7 +27,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewGenericAcl(ctx, "myApp", &splunk.GenericAclArgs{
+//			_, err := splunk.NewGenericAcl(ctx, "my_app", &splunk.GenericAclArgs{
+//				Path: pulumi.String("apps/local/my_app"),
 //				Acl: &splunk.GenericAclAclArgs{
 //					App:   pulumi.String("system"),
 //					Owner: pulumi.String("nobody"),
@@ -39,12 +40,12 @@ import (
 //						pulumi.String("power"),
 //					},
 //				},
-//				Path: pulumi.String("apps/local/my_app"),
 //			})
 //			if err != nil {
 //				return err
 //			}
-//			_, err = splunk.NewGenericAcl(ctx, "myDashboard", &splunk.GenericAclArgs{
+//			_, err = splunk.NewGenericAcl(ctx, "my_dashboard", &splunk.GenericAclArgs{
+//				Path: pulumi.String("data/ui/views/my_dashboard"),
 //				Acl: &splunk.GenericAclAclArgs{
 //					App:   pulumi.String("my_app"),
 //					Owner: pulumi.String("joe_user"),
@@ -55,7 +56,6 @@ import (
 //						pulumi.String("team_joe"),
 //					},
 //				},
-//				Path: pulumi.String("data/ui/views/my_dashboard"),
 //			})
 //			if err != nil {
 //				return err

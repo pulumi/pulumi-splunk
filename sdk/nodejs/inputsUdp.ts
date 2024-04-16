@@ -19,10 +19,11 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const udp = new splunk.InputsUdp("udp", {
- *     disabled: false,
+ *     name: "41000",
  *     index: "main",
  *     source: "new",
  *     sourcetype: "new",
+ *     disabled: false,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

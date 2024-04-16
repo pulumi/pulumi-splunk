@@ -392,13 +392,14 @@ class OutputsTcpDefault(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_default = splunk.OutputsTcpDefault("tcpDefault",
-            default_group="test-indexers",
+        tcp_default = splunk.OutputsTcpDefault("tcp_default",
+            name="tcpout",
             disabled=False,
+            default_group="test-indexers",
             drop_events_on_queue_full=60,
             index_and_forward=True,
-            max_queue_size="100KB",
-            send_cooked_data=True)
+            send_cooked_data=True,
+            max_queue_size="100KB")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -444,13 +445,14 @@ class OutputsTcpDefault(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_default = splunk.OutputsTcpDefault("tcpDefault",
-            default_group="test-indexers",
+        tcp_default = splunk.OutputsTcpDefault("tcp_default",
+            name="tcpout",
             disabled=False,
+            default_group="test-indexers",
             drop_events_on_queue_full=60,
             index_and_forward=True,
-            max_queue_size="100KB",
-            send_cooked_data=True)
+            send_cooked_data=True,
+            max_queue_size="100KB")
         ```
         <!--End PulumiCodeChooser -->
 

@@ -30,9 +30,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsTcpCooked(ctx, "tcpCooked", &splunk.InputsTcpCookedArgs{
-//				ConnectionHost: pulumi.String("dns"),
+//			_, err := splunk.NewInputsTcpCooked(ctx, "tcp_cooked", &splunk.InputsTcpCookedArgs{
+//				Name:           pulumi.String("50000"),
 //				Disabled:       pulumi.Bool(false),
+//				ConnectionHost: pulumi.String("dns"),
 //				RestrictToHost: pulumi.String("splunk"),
 //			})
 //			if err != nil {

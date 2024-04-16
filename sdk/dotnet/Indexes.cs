@@ -32,6 +32,7 @@ namespace Pulumi.Splunk
     /// {
     ///     var user01_index = new Splunk.Indexes("user01-index", new()
     ///     {
+    ///         Name = "user01-index",
     ///         MaxHotBuckets = 6,
     ///         MaxTotalDataSizeMb = 1000000,
     ///     });

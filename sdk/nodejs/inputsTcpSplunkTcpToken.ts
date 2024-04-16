@@ -18,7 +18,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpSplunkTcpToken = new splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", {token: "D66C45B3-7C28-48A1-A13A-027914146501"});
+ * const tcpSplunkTcpToken = new splunk.InputsTcpSplunkTcpToken("tcp_splunk_tcp_token", {
+ *     name: "new-splunk-tcp-token",
+ *     token: "D66C45B3-7C28-48A1-A13A-027914146501",
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  */

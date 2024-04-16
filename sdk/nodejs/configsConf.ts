@@ -18,10 +18,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const new_conf_stanza = new splunk.ConfigsConf("new-conf-stanza", {variables: {
- *     disabled: "false",
- *     custom_key: "value",
- * }});
+ * const new_conf_stanza = new splunk.ConfigsConf("new-conf-stanza", {
+ *     name: "custom-conf/custom",
+ *     variables: {
+ *         disabled: "false",
+ *         custom_key: "value",
+ *     },
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  */

@@ -422,7 +422,9 @@ class OutputsTcpServer(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
+        tcp_server = splunk.OutputsTcpServer("tcp_server",
+            name="new-host:1234",
+            ssl_alt_name_to_check="old-host")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -461,7 +463,9 @@ class OutputsTcpServer(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
+        tcp_server = splunk.OutputsTcpServer("tcp_server",
+            name="new-host:1234",
+            ssl_alt_name_to_check="old-host")
         ```
         <!--End PulumiCodeChooser -->
 

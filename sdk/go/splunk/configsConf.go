@@ -31,6 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewConfigsConf(ctx, "new-conf-stanza", &splunk.ConfigsConfArgs{
+//				Name: pulumi.String("custom-conf/custom"),
 //				Variables: pulumi.StringMap{
 //					"disabled":   pulumi.String("false"),
 //					"custom_key": pulumi.String("value"),

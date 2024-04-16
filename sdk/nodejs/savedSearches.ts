@@ -18,24 +18,25 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const savedSearch = new splunk.SavedSearches("savedSearch", {
- *     acl: {
- *         app: "launcher",
- *         owner: "admin",
- *         sharing: "app",
- *     },
+ * const savedSearch = new splunk.SavedSearches("saved_search", {
+ *     name: "Test New Alert",
+ *     search: "index=main",
+ *     actions: "email",
  *     actionEmailFormat: "table",
- *     actionEmailMaxResults: 10,
  *     actionEmailMaxTime: "5m",
+ *     actionEmailMaxResults: 10,
  *     actionEmailSendResults: false,
  *     actionEmailSubject: "Splunk Alert: $name$",
  *     actionEmailTo: "splunk@splunk.com",
  *     actionEmailTrackAlert: true,
- *     actions: "email",
- *     cronSchedule: "*&#47;5 * * * *",
  *     dispatchEarliestTime: "rt-15m",
  *     dispatchLatestTime: "rt-0m",
- *     search: "index=main",
+ *     cronSchedule: "*&#47;5 * * * *",
+ *     acl: {
+ *         owner: "admin",
+ *         sharing: "app",
+ *         app: "launcher",
+ *     },
  * });
  * ```
  * <!--End PulumiCodeChooser -->

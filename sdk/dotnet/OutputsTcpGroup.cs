@@ -25,12 +25,13 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpGroup = new Splunk.OutputsTcpGroup("tcpGroup", new()
+    ///     var tcpGroup = new Splunk.OutputsTcpGroup("tcp_group", new()
     ///     {
+    ///         Name = "tcp-group",
     ///         Disabled = false,
     ///         DropEventsOnQueueFull = 60,
-    ///         MaxQueueSize = "100KB",
     ///         SendCookedData = true,
+    ///         MaxQueueSize = "100KB",
     ///         Servers = new[]
     ///         {
     ///             "1.1.1.1:1234",

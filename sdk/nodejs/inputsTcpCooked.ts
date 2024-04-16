@@ -18,9 +18,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpCooked = new splunk.InputsTcpCooked("tcpCooked", {
- *     connectionHost: "dns",
+ * const tcpCooked = new splunk.InputsTcpCooked("tcp_cooked", {
+ *     name: "50000",
  *     disabled: false,
+ *     connectionHost: "dns",
  *     restrictToHost: "splunk",
  * });
  * ```

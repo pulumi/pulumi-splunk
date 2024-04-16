@@ -46,6 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var monitor = new InputsMonitor(&#34;monitor&#34;, InputsMonitorArgs.builder()        
+ *             .name(&#34;opt/splunk/var/log/splunk/health.log&#34;)
  *             .recursive(true)
  *             .sourcetype(&#34;text&#34;)
  *             .build());

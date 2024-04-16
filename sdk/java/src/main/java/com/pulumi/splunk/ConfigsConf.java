@@ -45,6 +45,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var new_conf_stanza = new ConfigsConf(&#34;new-conf-stanza&#34;, ConfigsConfArgs.builder()        
+ *             .name(&#34;custom-conf/custom&#34;)
  *             .variables(Map.ofEntries(
  *                 Map.entry(&#34;disabled&#34;, &#34;false&#34;),
  *                 Map.entry(&#34;custom_key&#34;, &#34;value&#34;)

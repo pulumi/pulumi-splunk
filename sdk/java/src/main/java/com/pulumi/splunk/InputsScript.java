@@ -46,6 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var script = new InputsScript(&#34;script&#34;, InputsScriptArgs.builder()        
+ *             .name(&#34;opt/splunk/bin/scripts/readme.txt&#34;)
  *             .interval(360)
  *             .build());
  * 

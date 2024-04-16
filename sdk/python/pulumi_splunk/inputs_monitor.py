@@ -576,6 +576,7 @@ class InputsMonitor(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         monitor = splunk.InputsMonitor("monitor",
+            name="opt/splunk/var/log/splunk/health.log",
             recursive=True,
             sourcetype="text")
         ```
@@ -619,6 +620,7 @@ class InputsMonitor(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         monitor = splunk.InputsMonitor("monitor",
+            name="opt/splunk/var/log/splunk/health.log",
             recursive=True,
             sourcetype="text")
         ```

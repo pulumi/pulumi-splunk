@@ -217,6 +217,7 @@ class ShIndexesManager(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         tf_index = splunk.ShIndexesManager("tf-index",
+            name="tf-test-index-0",
             datatype="event",
             frozen_time_period_in_secs="94608000",
             max_global_raw_data_size_mb="100")
@@ -255,6 +256,7 @@ class ShIndexesManager(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         tf_index = splunk.ShIndexesManager("tf-index",
+            name="tf-test-index-0",
             datatype="event",
             frozen_time_period_in_secs="94608000",
             max_global_raw_data_size_mb="100")

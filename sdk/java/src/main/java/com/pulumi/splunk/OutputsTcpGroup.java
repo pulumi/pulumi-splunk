@@ -47,10 +47,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var tcpGroup = new OutputsTcpGroup(&#34;tcpGroup&#34;, OutputsTcpGroupArgs.builder()        
+ *             .name(&#34;tcp-group&#34;)
  *             .disabled(false)
  *             .dropEventsOnQueueFull(60)
- *             .maxQueueSize(&#34;100KB&#34;)
  *             .sendCookedData(true)
+ *             .maxQueueSize(&#34;100KB&#34;)
  *             .servers(            
  *                 &#34;1.1.1.1:1234&#34;,
  *                 &#34;2.2.2.2:1234&#34;)

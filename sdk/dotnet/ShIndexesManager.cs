@@ -31,6 +31,7 @@ namespace Pulumi.Splunk
     /// {
     ///     var tf_index = new Splunk.ShIndexesManager("tf-index", new()
     ///     {
+    ///         Name = "tf-test-index-0",
     ///         Datatype = "event",
     ///         FrozenTimePeriodInSecs = "94608000",
     ///         MaxGlobalRawDataSizeMb = "100",

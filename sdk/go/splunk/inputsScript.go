@@ -32,6 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewInputsScript(ctx, "script", &splunk.InputsScriptArgs{
+//				Name:     pulumi.String("opt/splunk/bin/scripts/readme.txt"),
 //				Interval: pulumi.Int(360),
 //			})
 //			if err != nil {

@@ -378,13 +378,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         hec_token_01 = splunk.InputsHttpEventCollector("hec-token-01",
-            acl=splunk.InputsHttpEventCollectorAclArgs(
-                owner="user01",
-                reads=["admin"],
-                sharing="global",
-                writes=["admin"],
-            ),
-            disabled=False,
+            name="hec-token-01",
             index="main",
             indexes=[
                 "main",
@@ -393,7 +387,14 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             ],
             source="new:source",
             sourcetype="new:sourcetype",
-            use_ack=0)
+            disabled=False,
+            use_ack=0,
+            acl=splunk.InputsHttpEventCollectorAclArgs(
+                owner="user01",
+                sharing="global",
+                reads=["admin"],
+                writes=["admin"],
+            ))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -429,13 +430,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         hec_token_01 = splunk.InputsHttpEventCollector("hec-token-01",
-            acl=splunk.InputsHttpEventCollectorAclArgs(
-                owner="user01",
-                reads=["admin"],
-                sharing="global",
-                writes=["admin"],
-            ),
-            disabled=False,
+            name="hec-token-01",
             index="main",
             indexes=[
                 "main",
@@ -444,7 +439,14 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             ],
             source="new:source",
             sourcetype="new:sourcetype",
-            use_ack=0)
+            disabled=False,
+            use_ack=0,
+            acl=splunk.InputsHttpEventCollectorAclArgs(
+                owner="user01",
+                sharing="global",
+                reads=["admin"],
+                writes=["admin"],
+            ))
         ```
         <!--End PulumiCodeChooser -->
 

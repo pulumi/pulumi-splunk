@@ -31,9 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewAuthenticationUsers(ctx, "user01", &splunk.AuthenticationUsersArgs{
+//				Name:            pulumi.String("user01"),
 //				Email:           pulumi.String("user01@example.com"),
-//				ForceChangePass: pulumi.Bool(false),
 //				Password:        pulumi.String("password01"),
+//				ForceChangePass: pulumi.Bool(false),
 //				Roles: pulumi.StringArray{
 //					pulumi.String("terraform-user01-role"),
 //				},

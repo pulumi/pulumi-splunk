@@ -30,12 +30,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsTcpRaw(ctx, "tcpRaw", &splunk.InputsTcpRawArgs{
-//				Disabled:   pulumi.Bool(false),
+//			_, err := splunk.NewInputsTcpRaw(ctx, "tcp_raw", &splunk.InputsTcpRawArgs{
+//				Name:       pulumi.String("41000"),
 //				Index:      pulumi.String("main"),
 //				Queue:      pulumi.String("indexQueue"),
 //				Source:     pulumi.String("new"),
 //				Sourcetype: pulumi.String("new"),
+//				Disabled:   pulumi.Bool(false),
 //			})
 //			if err != nil {
 //				return err

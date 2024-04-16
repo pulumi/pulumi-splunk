@@ -27,17 +27,18 @@ namespace Pulumi.Splunk
     /// {
     ///     var role01 = new Splunk.AuthorizationRoles("role01", new()
     ///     {
-    ///         Capabilities = new[]
-    ///         {
-    ///             "accelerate_datamodel",
-    ///             "change_authentication",
-    ///             "restart_splunkd",
-    ///         },
+    ///         Name = "terraform-user01-role",
     ///         DefaultApp = "search",
     ///         ImportedRoles = new[]
     ///         {
     ///             "power",
     ///             "user",
+    ///         },
+    ///         Capabilities = new[]
+    ///         {
+    ///             "accelerate_datamodel",
+    ///             "change_authentication",
+    ///             "restart_splunkd",
     ///         },
     ///         SearchIndexesAlloweds = new[]
     ///         {

@@ -18,12 +18,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpRaw = new splunk.InputsTcpRaw("tcpRaw", {
- *     disabled: false,
+ * const tcpRaw = new splunk.InputsTcpRaw("tcp_raw", {
+ *     name: "41000",
  *     index: "main",
  *     queue: "indexQueue",
  *     source: "new",
  *     sourcetype: "new",
+ *     disabled: false,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

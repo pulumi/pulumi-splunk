@@ -18,9 +18,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpSyslog = new splunk.OutputsTcpSyslog("tcpSyslog", {
- *     priority: 5,
+ * const tcpSyslog = new splunk.OutputsTcpSyslog("tcp_syslog", {
+ *     name: "new-syslog",
  *     server: "new-host-1:1234",
+ *     priority: 5,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

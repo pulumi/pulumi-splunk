@@ -30,7 +30,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewOutputsTcpServer(ctx, "tcpServer", &splunk.OutputsTcpServerArgs{
+//			_, err := splunk.NewOutputsTcpServer(ctx, "tcp_server", &splunk.OutputsTcpServerArgs{
+//				Name:              pulumi.String("new-host:1234"),
 //				SslAltNameToCheck: pulumi.String("old-host"),
 //			})
 //			if err != nil {

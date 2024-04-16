@@ -25,8 +25,9 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpSplunkTcpToken = new Splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", new()
+    ///     var tcpSplunkTcpToken = new Splunk.InputsTcpSplunkTcpToken("tcp_splunk_tcp_token", new()
     ///     {
+    ///         Name = "new-splunk-tcp-token",
     ///         Token = "D66C45B3-7C28-48A1-A13A-027914146501",
     ///     });
     /// 

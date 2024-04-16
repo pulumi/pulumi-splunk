@@ -27,6 +27,7 @@ namespace Pulumi.Splunk
     /// {
     ///     var monitor = new Splunk.InputsMonitor("monitor", new()
     ///     {
+    ///         Name = "opt/splunk/var/log/splunk/health.log",
     ///         Recursive = true,
     ///         Sourcetype = "text",
     ///     });

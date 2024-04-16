@@ -25,8 +25,9 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpServer = new Splunk.OutputsTcpServer("tcpServer", new()
+    ///     var tcpServer = new Splunk.OutputsTcpServer("tcp_server", new()
     ///     {
+    ///         Name = "new-host:1234",
     ///         SslAltNameToCheck = "old-host",
     ///     });
     /// 

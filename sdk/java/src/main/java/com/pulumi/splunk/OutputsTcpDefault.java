@@ -46,12 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var tcpDefault = new OutputsTcpDefault(&#34;tcpDefault&#34;, OutputsTcpDefaultArgs.builder()        
- *             .defaultGroup(&#34;test-indexers&#34;)
+ *             .name(&#34;tcpout&#34;)
  *             .disabled(false)
+ *             .defaultGroup(&#34;test-indexers&#34;)
  *             .dropEventsOnQueueFull(60)
  *             .indexAndForward(true)
- *             .maxQueueSize(&#34;100KB&#34;)
  *             .sendCookedData(true)
+ *             .maxQueueSize(&#34;100KB&#34;)
  *             .build());
  * 
  *     }

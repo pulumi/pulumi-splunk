@@ -458,12 +458,13 @@ class InputsTcpRaw(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_raw = splunk.InputsTcpRaw("tcpRaw",
-            disabled=False,
+        tcp_raw = splunk.InputsTcpRaw("tcp_raw",
+            name="41000",
             index="main",
             queue="indexQueue",
             source="new",
-            sourcetype="new")
+            sourcetype="new",
+            disabled=False)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -511,12 +512,13 @@ class InputsTcpRaw(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_raw = splunk.InputsTcpRaw("tcpRaw",
-            disabled=False,
+        tcp_raw = splunk.InputsTcpRaw("tcp_raw",
+            name="41000",
             index="main",
             queue="indexQueue",
             source="new",
-            sourcetype="new")
+            sourcetype="new",
+            disabled=False)
         ```
         <!--End PulumiCodeChooser -->
 
