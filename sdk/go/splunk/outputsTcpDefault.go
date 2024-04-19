@@ -30,13 +30,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewOutputsTcpDefault(ctx, "tcpDefault", &splunk.OutputsTcpDefaultArgs{
-//				DefaultGroup:          pulumi.String("test-indexers"),
+//			_, err := splunk.NewOutputsTcpDefault(ctx, "tcp_default", &splunk.OutputsTcpDefaultArgs{
+//				Name:                  pulumi.String("tcpout"),
 //				Disabled:              pulumi.Bool(false),
+//				DefaultGroup:          pulumi.String("test-indexers"),
 //				DropEventsOnQueueFull: pulumi.Int(60),
 //				IndexAndForward:       pulumi.Bool(true),
-//				MaxQueueSize:          pulumi.String("100KB"),
 //				SendCookedData:        pulumi.Bool(true),
+//				MaxQueueSize:          pulumi.String("100KB"),
 //			})
 //			if err != nil {
 //				return err

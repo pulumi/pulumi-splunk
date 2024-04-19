@@ -17,15 +17,16 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const role01 = new splunk.AuthorizationRoles("role01", {
- *     capabilities: [
- *         "accelerate_datamodel",
- *         "change_authentication",
- *         "restart_splunkd",
- *     ],
+ *     name: "terraform-user01-role",
  *     defaultApp: "search",
  *     importedRoles: [
  *         "power",
  *         "user",
+ *     ],
+ *     capabilities: [
+ *         "accelerate_datamodel",
+ *         "change_authentication",
+ *         "restart_splunkd",
  *     ],
  *     searchIndexesAlloweds: [
  *         "_audit",

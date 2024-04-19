@@ -46,14 +46,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var role01 = new AuthorizationRoles(&#34;role01&#34;, AuthorizationRolesArgs.builder()        
- *             .capabilities(            
- *                 &#34;accelerate_datamodel&#34;,
- *                 &#34;change_authentication&#34;,
- *                 &#34;restart_splunkd&#34;)
+ *             .name(&#34;terraform-user01-role&#34;)
  *             .defaultApp(&#34;search&#34;)
  *             .importedRoles(            
  *                 &#34;power&#34;,
  *                 &#34;user&#34;)
+ *             .capabilities(            
+ *                 &#34;accelerate_datamodel&#34;,
+ *                 &#34;change_authentication&#34;,
+ *                 &#34;restart_splunkd&#34;)
  *             .searchIndexesAlloweds(            
  *                 &#34;_audit&#34;,
  *                 &#34;_internal&#34;,

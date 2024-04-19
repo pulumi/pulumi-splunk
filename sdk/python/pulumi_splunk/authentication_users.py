@@ -343,9 +343,10 @@ class AuthenticationUsers(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         user01 = splunk.AuthenticationUsers("user01",
+            name="user01",
             email="user01@example.com",
-            force_change_pass=False,
             password="password01",
+            force_change_pass=False,
             roles=["terraform-user01-role"])
         ```
         <!--End PulumiCodeChooser -->
@@ -381,9 +382,10 @@ class AuthenticationUsers(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         user01 = splunk.AuthenticationUsers("user01",
+            name="user01",
             email="user01@example.com",
-            force_change_pass=False,
             password="password01",
+            force_change_pass=False,
             roles=["terraform-user01-role"])
         ```
         <!--End PulumiCodeChooser -->

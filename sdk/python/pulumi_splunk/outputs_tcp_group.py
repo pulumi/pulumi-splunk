@@ -449,11 +449,12 @@ class OutputsTcpGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_group = splunk.OutputsTcpGroup("tcpGroup",
+        tcp_group = splunk.OutputsTcpGroup("tcp_group",
+            name="tcp-group",
             disabled=False,
             drop_events_on_queue_full=60,
-            max_queue_size="100KB",
             send_cooked_data=True,
+            max_queue_size="100KB",
             servers=[
                 "1.1.1.1:1234",
                 "2.2.2.2:1234",
@@ -503,11 +504,12 @@ class OutputsTcpGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_group = splunk.OutputsTcpGroup("tcpGroup",
+        tcp_group = splunk.OutputsTcpGroup("tcp_group",
+            name="tcp-group",
             disabled=False,
             drop_events_on_queue_full=60,
-            max_queue_size="100KB",
             send_cooked_data=True,
+            max_queue_size="100KB",
             servers=[
                 "1.1.1.1:1234",
                 "2.2.2.2:1234",

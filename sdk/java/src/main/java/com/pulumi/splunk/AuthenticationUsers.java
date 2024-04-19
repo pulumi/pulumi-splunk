@@ -46,9 +46,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var user01 = new AuthenticationUsers(&#34;user01&#34;, AuthenticationUsersArgs.builder()        
+ *             .name(&#34;user01&#34;)
  *             .email(&#34;user01@example.com&#34;)
- *             .forceChangePass(false)
  *             .password(&#34;password01&#34;)
+ *             .forceChangePass(false)
  *             .roles(&#34;terraform-user01-role&#34;)
  *             .build());
  * 

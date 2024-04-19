@@ -31,6 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewAdminSamlGroups(ctx, "saml-group", &splunk.AdminSamlGroupsArgs{
+//				Name: pulumi.String("mygroup"),
 //				Roles: pulumi.StringArray{
 //					pulumi.String("admin"),
 //					pulumi.String("power"),

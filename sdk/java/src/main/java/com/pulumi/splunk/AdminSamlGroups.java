@@ -44,6 +44,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var saml_group = new AdminSamlGroups(&#34;saml-group&#34;, AdminSamlGroupsArgs.builder()        
+ *             .name(&#34;mygroup&#34;)
  *             .roles(            
  *                 &#34;admin&#34;,
  *                 &#34;power&#34;)

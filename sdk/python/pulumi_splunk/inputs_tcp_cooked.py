@@ -265,9 +265,10 @@ class InputsTcpCooked(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_cooked = splunk.InputsTcpCooked("tcpCooked",
-            connection_host="dns",
+        tcp_cooked = splunk.InputsTcpCooked("tcp_cooked",
+            name="50000",
             disabled=False,
+            connection_host="dns",
             restrict_to_host="splunk")
         ```
         <!--End PulumiCodeChooser -->
@@ -304,9 +305,10 @@ class InputsTcpCooked(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_cooked = splunk.InputsTcpCooked("tcpCooked",
-            connection_host="dns",
+        tcp_cooked = splunk.InputsTcpCooked("tcp_cooked",
+            name="50000",
             disabled=False,
+            connection_host="dns",
             restrict_to_host="splunk")
         ```
         <!--End PulumiCodeChooser -->

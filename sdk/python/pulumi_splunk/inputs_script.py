@@ -384,7 +384,9 @@ class InputsScript(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        script = splunk.InputsScript("script", interval=360)
+        script = splunk.InputsScript("script",
+            name="opt/splunk/bin/scripts/readme.txt",
+            interval=360)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -421,7 +423,9 @@ class InputsScript(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        script = splunk.InputsScript("script", interval=360)
+        script = splunk.InputsScript("script",
+            name="opt/splunk/bin/scripts/readme.txt",
+            interval=360)
         ```
         <!--End PulumiCodeChooser -->
 

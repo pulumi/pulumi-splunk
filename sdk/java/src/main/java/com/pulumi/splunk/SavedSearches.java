@@ -49,23 +49,24 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var savedSearch = new SavedSearches(&#34;savedSearch&#34;, SavedSearchesArgs.builder()        
- *             .acl(SavedSearchesAclArgs.builder()
- *                 .app(&#34;launcher&#34;)
- *                 .owner(&#34;admin&#34;)
- *                 .sharing(&#34;app&#34;)
- *                 .build())
+ *             .name(&#34;Test New Alert&#34;)
+ *             .search(&#34;index=main&#34;)
+ *             .actions(&#34;email&#34;)
  *             .actionEmailFormat(&#34;table&#34;)
- *             .actionEmailMaxResults(10)
  *             .actionEmailMaxTime(&#34;5m&#34;)
+ *             .actionEmailMaxResults(10)
  *             .actionEmailSendResults(false)
  *             .actionEmailSubject(&#34;Splunk Alert: $name$&#34;)
  *             .actionEmailTo(&#34;splunk@splunk.com&#34;)
  *             .actionEmailTrackAlert(true)
- *             .actions(&#34;email&#34;)
- *             .cronSchedule(&#34;*{@literal /}5 * * * *&#34;)
  *             .dispatchEarliestTime(&#34;rt-15m&#34;)
  *             .dispatchLatestTime(&#34;rt-0m&#34;)
- *             .search(&#34;index=main&#34;)
+ *             .cronSchedule(&#34;*{@literal /}5 * * * *&#34;)
+ *             .acl(SavedSearchesAclArgs.builder()
+ *                 .owner(&#34;admin&#34;)
+ *                 .sharing(&#34;app&#34;)
+ *                 .app(&#34;launcher&#34;)
+ *                 .build())
  *             .build());
  * 
  *     }

@@ -30,9 +30,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewOutputsTcpSyslog(ctx, "tcpSyslog", &splunk.OutputsTcpSyslogArgs{
-//				Priority: pulumi.Int(5),
+//			_, err := splunk.NewOutputsTcpSyslog(ctx, "tcp_syslog", &splunk.OutputsTcpSyslogArgs{
+//				Name:     pulumi.String("new-syslog"),
 //				Server:   pulumi.String("new-host-1:1234"),
+//				Priority: pulumi.Int(5),
 //			})
 //			if err != nil {
 //				return err

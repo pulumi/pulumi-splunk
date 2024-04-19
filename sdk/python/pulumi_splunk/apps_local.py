@@ -520,9 +520,10 @@ class AppsLocal(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        amazon_connect_app = splunk.AppsLocal("amazonConnectApp",
-            explicit_appname="amazon_connect_app_for_splunk",
-            filename=True)
+        amazon_connect_app = splunk.AppsLocal("amazon_connect_app",
+            filename=True,
+            name="/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz",
+            explicit_appname="amazon_connect_app_for_splunk")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -571,9 +572,10 @@ class AppsLocal(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        amazon_connect_app = splunk.AppsLocal("amazonConnectApp",
-            explicit_appname="amazon_connect_app_for_splunk",
-            filename=True)
+        amazon_connect_app = splunk.AppsLocal("amazon_connect_app",
+            filename=True,
+            name="/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz",
+            explicit_appname="amazon_connect_app_for_splunk")
         ```
         <!--End PulumiCodeChooser -->
 

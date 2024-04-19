@@ -17,9 +17,10 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const user01 = new splunk.AuthenticationUsers("user01", {
+ *     name: "user01",
  *     email: "user01@example.com",
- *     forceChangePass: false,
  *     password: "password01",
+ *     forceChangePass: false,
  *     roles: ["terraform-user01-role"],
  * });
  * ```

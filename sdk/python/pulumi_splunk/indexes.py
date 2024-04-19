@@ -1516,6 +1516,7 @@ class Indexes(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         user01_index = splunk.Indexes("user01-index",
+            name="user01-index",
             max_hot_buckets=6,
             max_total_data_size_mb=1000000)
         ```
@@ -1631,6 +1632,7 @@ class Indexes(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         user01_index = splunk.Indexes("user01-index",
+            name="user01-index",
             max_hot_buckets=6,
             max_total_data_size_mb=1000000)
         ```

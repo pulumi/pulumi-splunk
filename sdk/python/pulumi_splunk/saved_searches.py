@@ -5512,24 +5512,25 @@ class SavedSearches(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        saved_search = splunk.SavedSearches("savedSearch",
-            acl=splunk.SavedSearchesAclArgs(
-                app="launcher",
-                owner="admin",
-                sharing="app",
-            ),
+        saved_search = splunk.SavedSearches("saved_search",
+            name="Test New Alert",
+            search="index=main",
+            actions="email",
             action_email_format="table",
-            action_email_max_results=10,
             action_email_max_time="5m",
+            action_email_max_results=10,
             action_email_send_results=False,
             action_email_subject="Splunk Alert: $name$",
             action_email_to="splunk@splunk.com",
             action_email_track_alert=True,
-            actions="email",
-            cron_schedule="*/5 * * * *",
             dispatch_earliest_time="rt-15m",
             dispatch_latest_time="rt-0m",
-            search="index=main")
+            cron_schedule="*/5 * * * *",
+            acl=splunk.SavedSearchesAclArgs(
+                owner="admin",
+                sharing="app",
+                app="launcher",
+            ))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -5726,24 +5727,25 @@ class SavedSearches(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        saved_search = splunk.SavedSearches("savedSearch",
-            acl=splunk.SavedSearchesAclArgs(
-                app="launcher",
-                owner="admin",
-                sharing="app",
-            ),
+        saved_search = splunk.SavedSearches("saved_search",
+            name="Test New Alert",
+            search="index=main",
+            actions="email",
             action_email_format="table",
-            action_email_max_results=10,
             action_email_max_time="5m",
+            action_email_max_results=10,
             action_email_send_results=False,
             action_email_subject="Splunk Alert: $name$",
             action_email_to="splunk@splunk.com",
             action_email_track_alert=True,
-            actions="email",
-            cron_schedule="*/5 * * * *",
             dispatch_earliest_time="rt-15m",
             dispatch_latest_time="rt-0m",
-            search="index=main")
+            cron_schedule="*/5 * * * *",
+            acl=splunk.SavedSearchesAclArgs(
+                owner="admin",
+                sharing="app",
+                app="launcher",
+            ))
         ```
         <!--End PulumiCodeChooser -->
 

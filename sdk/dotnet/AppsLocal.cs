@@ -25,10 +25,11 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var amazonConnectApp = new Splunk.AppsLocal("amazonConnectApp", new()
+    ///     var amazonConnectApp = new Splunk.AppsLocal("amazon_connect_app", new()
     ///     {
-    ///         ExplicitAppname = "amazon_connect_app_for_splunk",
     ///         Filename = true,
+    ///         Name = "/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz",
+    ///         ExplicitAppname = "amazon_connect_app_for_splunk",
     ///     });
     /// 
     /// });

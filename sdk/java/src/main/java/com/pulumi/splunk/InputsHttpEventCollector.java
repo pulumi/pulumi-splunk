@@ -48,13 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var hec_token_01 = new InputsHttpEventCollector(&#34;hec-token-01&#34;, InputsHttpEventCollectorArgs.builder()        
- *             .acl(InputsHttpEventCollectorAclArgs.builder()
- *                 .owner(&#34;user01&#34;)
- *                 .reads(&#34;admin&#34;)
- *                 .sharing(&#34;global&#34;)
- *                 .writes(&#34;admin&#34;)
- *                 .build())
- *             .disabled(false)
+ *             .name(&#34;hec-token-01&#34;)
  *             .index(&#34;main&#34;)
  *             .indexes(            
  *                 &#34;main&#34;,
@@ -62,7 +56,14 @@ import javax.annotation.Nullable;
  *                 &#34;summary&#34;)
  *             .source(&#34;new:source&#34;)
  *             .sourcetype(&#34;new:sourcetype&#34;)
+ *             .disabled(false)
  *             .useAck(0)
+ *             .acl(InputsHttpEventCollectorAclArgs.builder()
+ *                 .owner(&#34;user01&#34;)
+ *                 .sharing(&#34;global&#34;)
+ *                 .reads(&#34;admin&#34;)
+ *                 .writes(&#34;admin&#34;)
+ *                 .build())
  *             .build());
  * 
  *     }

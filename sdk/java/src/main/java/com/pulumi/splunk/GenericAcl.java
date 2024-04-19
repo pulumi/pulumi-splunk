@@ -41,6 +41,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var myApp = new GenericAcl(&#34;myApp&#34;, GenericAclArgs.builder()        
+ *             .path(&#34;apps/local/my_app&#34;)
  *             .acl(GenericAclAclArgs.builder()
  *                 .app(&#34;system&#34;)
  *                 .owner(&#34;nobody&#34;)
@@ -49,17 +50,16 @@ import javax.annotation.Nullable;
  *                     &#34;admin&#34;,
  *                     &#34;power&#34;)
  *                 .build())
- *             .path(&#34;apps/local/my_app&#34;)
  *             .build());
  * 
  *         var myDashboard = new GenericAcl(&#34;myDashboard&#34;, GenericAclArgs.builder()        
+ *             .path(&#34;data/ui/views/my_dashboard&#34;)
  *             .acl(GenericAclAclArgs.builder()
  *                 .app(&#34;my_app&#34;)
  *                 .owner(&#34;joe_user&#34;)
  *                 .reads(&#34;team_joe&#34;)
  *                 .writes(&#34;team_joe&#34;)
  *                 .build())
- *             .path(&#34;data/ui/views/my_dashboard&#34;)
  *             .build());
  * 
  *     }

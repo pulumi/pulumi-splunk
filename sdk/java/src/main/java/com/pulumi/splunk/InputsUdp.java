@@ -45,10 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var udp = new InputsUdp(&#34;udp&#34;, InputsUdpArgs.builder()        
- *             .disabled(false)
+ *             .name(&#34;41000&#34;)
  *             .index(&#34;main&#34;)
  *             .source(&#34;new&#34;)
  *             .sourcetype(&#34;new&#34;)
+ *             .disabled(false)
  *             .build());
  * 
  *     }

@@ -31,6 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewInputsMonitor(ctx, "monitor", &splunk.InputsMonitorArgs{
+//				Name:       pulumi.String("opt/splunk/var/log/splunk/health.log"),
 //				Recursive:  pulumi.Bool(true),
 //				Sourcetype: pulumi.String("text"),
 //			})

@@ -25,14 +25,15 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpDefault = new Splunk.OutputsTcpDefault("tcpDefault", new()
+    ///     var tcpDefault = new Splunk.OutputsTcpDefault("tcp_default", new()
     ///     {
-    ///         DefaultGroup = "test-indexers",
+    ///         Name = "tcpout",
     ///         Disabled = false,
+    ///         DefaultGroup = "test-indexers",
     ///         DropEventsOnQueueFull = 60,
     ///         IndexAndForward = true,
-    ///         MaxQueueSize = "100KB",
     ///         SendCookedData = true,
+    ///         MaxQueueSize = "100KB",
     ///     });
     /// 
     /// });

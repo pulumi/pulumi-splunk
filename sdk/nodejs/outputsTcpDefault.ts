@@ -18,13 +18,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpDefault = new splunk.OutputsTcpDefault("tcpDefault", {
- *     defaultGroup: "test-indexers",
+ * const tcpDefault = new splunk.OutputsTcpDefault("tcp_default", {
+ *     name: "tcpout",
  *     disabled: false,
+ *     defaultGroup: "test-indexers",
  *     dropEventsOnQueueFull: 60,
  *     indexAndForward: true,
- *     maxQueueSize: "100KB",
  *     sendCookedData: true,
+ *     maxQueueSize: "100KB",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

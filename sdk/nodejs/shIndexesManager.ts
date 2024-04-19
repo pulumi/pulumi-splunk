@@ -23,6 +23,7 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const tf_index = new splunk.ShIndexesManager("tf-index", {
+ *     name: "tf-test-index-0",
  *     datatype: "event",
  *     frozenTimePeriodInSecs: "94608000",
  *     maxGlobalRawDataSizeMb: "100",

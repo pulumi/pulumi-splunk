@@ -146,7 +146,9 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", token="D66C45B3-7C28-48A1-A13A-027914146501")
+        tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcp_splunk_tcp_token",
+            name="new-splunk-tcp-token",
+            token="D66C45B3-7C28-48A1-A13A-027914146501")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -174,7 +176,9 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcpSplunkTcpToken", token="D66C45B3-7C28-48A1-A13A-027914146501")
+        tcp_splunk_tcp_token = splunk.InputsTcpSplunkTcpToken("tcp_splunk_tcp_token",
+            name="new-splunk-tcp-token",
+            token="D66C45B3-7C28-48A1-A13A-027914146501")
         ```
         <!--End PulumiCodeChooser -->
 

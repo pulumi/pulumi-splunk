@@ -46,8 +46,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var tcpSyslog = new OutputsTcpSyslog(&#34;tcpSyslog&#34;, OutputsTcpSyslogArgs.builder()        
- *             .priority(5)
+ *             .name(&#34;new-syslog&#34;)
  *             .server(&#34;new-host-1:1234&#34;)
+ *             .priority(5)
  *             .build());
  * 
  *     }

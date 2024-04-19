@@ -335,9 +335,10 @@ class OutputsTcpSyslog(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_syslog = splunk.OutputsTcpSyslog("tcpSyslog",
-            priority=5,
-            server="new-host-1:1234")
+        tcp_syslog = splunk.OutputsTcpSyslog("tcp_syslog",
+            name="new-syslog",
+            server="new-host-1:1234",
+            priority=5)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -376,9 +377,10 @@ class OutputsTcpSyslog(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        tcp_syslog = splunk.OutputsTcpSyslog("tcpSyslog",
-            priority=5,
-            server="new-host-1:1234")
+        tcp_syslog = splunk.OutputsTcpSyslog("tcp_syslog",
+            name="new-syslog",
+            server="new-host-1:1234",
+            priority=5)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -35,6 +35,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewShIndexesManager(ctx, "tf-index", &splunk.ShIndexesManagerArgs{
+//				Name:                   pulumi.String("tf-test-index-0"),
 //				Datatype:               pulumi.String("event"),
 //				FrozenTimePeriodInSecs: pulumi.String("94608000"),
 //				MaxGlobalRawDataSizeMb: pulumi.String("100"),

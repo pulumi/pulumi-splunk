@@ -25,13 +25,14 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpRaw = new Splunk.InputsTcpRaw("tcpRaw", new()
+    ///     var tcpRaw = new Splunk.InputsTcpRaw("tcp_raw", new()
     ///     {
-    ///         Disabled = false,
+    ///         Name = "41000",
     ///         Index = "main",
     ///         Queue = "indexQueue",
     ///         Source = "new",
     ///         Sourcetype = "new",
+    ///         Disabled = false,
     ///     });
     /// 
     /// });

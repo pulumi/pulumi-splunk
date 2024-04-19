@@ -18,9 +18,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const amazonConnectApp = new splunk.AppsLocal("amazonConnectApp", {
- *     explicitAppname: "amazon_connect_app_for_splunk",
+ * const amazonConnectApp = new splunk.AppsLocal("amazon_connect_app", {
  *     filename: true,
+ *     name: "/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz",
+ *     explicitAppname: "amazon_connect_app_for_splunk",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

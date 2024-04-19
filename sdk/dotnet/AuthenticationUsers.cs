@@ -27,9 +27,10 @@ namespace Pulumi.Splunk
     /// {
     ///     var user01 = new Splunk.AuthenticationUsers("user01", new()
     ///     {
+    ///         Name = "user01",
     ///         Email = "user01@example.com",
-    ///         ForceChangePass = false,
     ///         Password = "password01",
+    ///         ForceChangePass = false,
     ///         Roles = new[]
     ///         {
     ///             "terraform-user01-role",

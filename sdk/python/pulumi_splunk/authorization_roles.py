@@ -475,15 +475,16 @@ class AuthorizationRoles(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         role01 = splunk.AuthorizationRoles("role01",
-            capabilities=[
-                "accelerate_datamodel",
-                "change_authentication",
-                "restart_splunkd",
-            ],
+            name="terraform-user01-role",
             default_app="search",
             imported_roles=[
                 "power",
                 "user",
+            ],
+            capabilities=[
+                "accelerate_datamodel",
+                "change_authentication",
+                "restart_splunkd",
             ],
             search_indexes_alloweds=[
                 "_audit",
@@ -533,15 +534,16 @@ class AuthorizationRoles(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         role01 = splunk.AuthorizationRoles("role01",
-            capabilities=[
-                "accelerate_datamodel",
-                "change_authentication",
-                "restart_splunkd",
-            ],
+            name="terraform-user01-role",
             default_app="search",
             imported_roles=[
                 "power",
                 "user",
+            ],
+            capabilities=[
+                "accelerate_datamodel",
+                "change_authentication",
+                "restart_splunkd",
             ],
             search_indexes_alloweds=[
                 "_audit",

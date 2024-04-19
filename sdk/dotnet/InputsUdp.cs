@@ -27,10 +27,11 @@ namespace Pulumi.Splunk
     /// {
     ///     var udp = new Splunk.InputsUdp("udp", new()
     ///     {
-    ///         Disabled = false,
+    ///         Name = "41000",
     ///         Index = "main",
     ///         Source = "new",
     ///         Sourcetype = "new",
+    ///         Disabled = false,
     ///     });
     /// 
     /// });

@@ -30,7 +30,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := splunk.NewInputsTcpSplunkTcpToken(ctx, "tcpSplunkTcpToken", &splunk.InputsTcpSplunkTcpTokenArgs{
+//			_, err := splunk.NewInputsTcpSplunkTcpToken(ctx, "tcp_splunk_tcp_token", &splunk.InputsTcpSplunkTcpTokenArgs{
+//				Name:  pulumi.String("new-splunk-tcp-token"),
 //				Token: pulumi.String("D66C45B3-7C28-48A1-A13A-027914146501"),
 //			})
 //			if err != nil {

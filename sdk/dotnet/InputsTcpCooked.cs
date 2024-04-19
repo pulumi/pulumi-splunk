@@ -25,10 +25,11 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpCooked = new Splunk.InputsTcpCooked("tcpCooked", new()
+    ///     var tcpCooked = new Splunk.InputsTcpCooked("tcp_cooked", new()
     ///     {
-    ///         ConnectionHost = "dns",
+    ///         Name = "50000",
     ///         Disabled = false,
+    ///         ConnectionHost = "dns",
     ///         RestrictToHost = "splunk",
     ///     });
     /// 

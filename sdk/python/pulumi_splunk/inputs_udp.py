@@ -468,10 +468,11 @@ class InputsUdp(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         udp = splunk.InputsUdp("udp",
-            disabled=False,
+            name="41000",
             index="main",
             source="new",
-            sourcetype="new")
+            sourcetype="new",
+            disabled=False)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -515,10 +516,11 @@ class InputsUdp(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         udp = splunk.InputsUdp("udp",
-            disabled=False,
+            name="41000",
             index="main",
             source="new",
-            sourcetype="new")
+            sourcetype="new",
+            disabled=False)
         ```
         <!--End PulumiCodeChooser -->
 

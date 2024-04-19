@@ -45,8 +45,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var tcpCooked = new InputsTcpCooked(&#34;tcpCooked&#34;, InputsTcpCookedArgs.builder()        
- *             .connectionHost(&#34;dns&#34;)
+ *             .name(&#34;50000&#34;)
  *             .disabled(false)
+ *             .connectionHost(&#34;dns&#34;)
  *             .restrictToHost(&#34;splunk&#34;)
  *             .build());
  * 

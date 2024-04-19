@@ -31,15 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewAuthorizationRoles(ctx, "role01", &splunk.AuthorizationRolesArgs{
-//				Capabilities: pulumi.StringArray{
-//					pulumi.String("accelerate_datamodel"),
-//					pulumi.String("change_authentication"),
-//					pulumi.String("restart_splunkd"),
-//				},
+//				Name:       pulumi.String("terraform-user01-role"),
 //				DefaultApp: pulumi.String("search"),
 //				ImportedRoles: pulumi.StringArray{
 //					pulumi.String("power"),
 //					pulumi.String("user"),
+//				},
+//				Capabilities: pulumi.StringArray{
+//					pulumi.String("accelerate_datamodel"),
+//					pulumi.String("change_authentication"),
+//					pulumi.String("restart_splunkd"),
 //				},
 //				SearchIndexesAlloweds: pulumi.StringArray{
 //					pulumi.String("_audit"),

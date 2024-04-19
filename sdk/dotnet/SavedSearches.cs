@@ -25,26 +25,27 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var savedSearch = new Splunk.SavedSearches("savedSearch", new()
+    ///     var savedSearch = new Splunk.SavedSearches("saved_search", new()
     ///     {
-    ///         Acl = new Splunk.Inputs.SavedSearchesAclArgs
-    ///         {
-    ///             App = "launcher",
-    ///             Owner = "admin",
-    ///             Sharing = "app",
-    ///         },
+    ///         Name = "Test New Alert",
+    ///         Search = "index=main",
+    ///         Actions = "email",
     ///         ActionEmailFormat = "table",
-    ///         ActionEmailMaxResults = 10,
     ///         ActionEmailMaxTime = "5m",
+    ///         ActionEmailMaxResults = 10,
     ///         ActionEmailSendResults = false,
     ///         ActionEmailSubject = "Splunk Alert: $name$",
     ///         ActionEmailTo = "splunk@splunk.com",
     ///         ActionEmailTrackAlert = true,
-    ///         Actions = "email",
-    ///         CronSchedule = "*/5 * * * *",
     ///         DispatchEarliestTime = "rt-15m",
     ///         DispatchLatestTime = "rt-0m",
-    ///         Search = "index=main",
+    ///         CronSchedule = "*/5 * * * *",
+    ///         Acl = new Splunk.Inputs.SavedSearchesAclArgs
+    ///         {
+    ///             Owner = "admin",
+    ///             Sharing = "app",
+    ///             App = "launcher",
+    ///         },
     ///     });
     /// 
     /// });

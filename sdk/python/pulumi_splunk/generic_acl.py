@@ -120,7 +120,8 @@ class GenericAcl(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        my_app = splunk.GenericAcl("myApp",
+        my_app = splunk.GenericAcl("my_app",
+            path="apps/local/my_app",
             acl=splunk.GenericAclAclArgs(
                 app="system",
                 owner="nobody",
@@ -129,16 +130,15 @@ class GenericAcl(pulumi.CustomResource):
                     "admin",
                     "power",
                 ],
-            ),
-            path="apps/local/my_app")
-        my_dashboard = splunk.GenericAcl("myDashboard",
+            ))
+        my_dashboard = splunk.GenericAcl("my_dashboard",
+            path="data/ui/views/my_dashboard",
             acl=splunk.GenericAclAclArgs(
                 app="my_app",
                 owner="joe_user",
                 reads=["team_joe"],
                 writes=["team_joe"],
-            ),
-            path="data/ui/views/my_dashboard")
+            ))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -172,7 +172,8 @@ class GenericAcl(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        my_app = splunk.GenericAcl("myApp",
+        my_app = splunk.GenericAcl("my_app",
+            path="apps/local/my_app",
             acl=splunk.GenericAclAclArgs(
                 app="system",
                 owner="nobody",
@@ -181,16 +182,15 @@ class GenericAcl(pulumi.CustomResource):
                     "admin",
                     "power",
                 ],
-            ),
-            path="apps/local/my_app")
-        my_dashboard = splunk.GenericAcl("myDashboard",
+            ))
+        my_dashboard = splunk.GenericAcl("my_dashboard",
+            path="data/ui/views/my_dashboard",
             acl=splunk.GenericAclAclArgs(
                 app="my_app",
                 owner="joe_user",
                 reads=["team_joe"],
                 writes=["team_joe"],
-            ),
-            path="data/ui/views/my_dashboard")
+            ))
         ```
         <!--End PulumiCodeChooser -->
 

@@ -27,6 +27,7 @@ namespace Pulumi.Splunk
     /// {
     ///     var script = new Splunk.InputsScript("script", new()
     ///     {
+    ///         Name = "opt/splunk/bin/scripts/readme.txt",
     ///         Interval = 360,
     ///     });
     /// 

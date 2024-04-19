@@ -111,10 +111,12 @@ class AdminSamlGroups(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        saml_group = splunk.AdminSamlGroups("saml-group", roles=[
-            "admin",
-            "power",
-        ])
+        saml_group = splunk.AdminSamlGroups("saml-group",
+            name="mygroup",
+            roles=[
+                "admin",
+                "power",
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -149,10 +151,12 @@ class AdminSamlGroups(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        saml_group = splunk.AdminSamlGroups("saml-group", roles=[
-            "admin",
-            "power",
-        ])
+        saml_group = splunk.AdminSamlGroups("saml-group",
+            name="mygroup",
+            roles=[
+                "admin",
+                "power",
+            ])
         ```
         <!--End PulumiCodeChooser -->
 

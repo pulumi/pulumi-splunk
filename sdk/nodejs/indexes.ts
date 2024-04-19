@@ -24,6 +24,7 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const user01_index = new splunk.Indexes("user01-index", {
+ *     name: "user01-index",
  *     maxHotBuckets: 6,
  *     maxTotalDataSizeMb: 1000000,
  * });

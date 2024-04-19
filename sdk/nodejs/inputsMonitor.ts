@@ -19,6 +19,7 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const monitor = new splunk.InputsMonitor("monitor", {
+ *     name: "opt/splunk/var/log/splunk/health.log",
  *     recursive: true,
  *     sourcetype: "text",
  * });

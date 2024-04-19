@@ -18,11 +18,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
  *
- * const tcpGroup = new splunk.OutputsTcpGroup("tcpGroup", {
+ * const tcpGroup = new splunk.OutputsTcpGroup("tcp_group", {
+ *     name: "tcp-group",
  *     disabled: false,
  *     dropEventsOnQueueFull: 60,
- *     maxQueueSize: "100KB",
  *     sendCookedData: true,
+ *     maxQueueSize: "100KB",
  *     servers: [
  *         "1.1.1.1:1234",
  *         "2.2.2.2:1234",

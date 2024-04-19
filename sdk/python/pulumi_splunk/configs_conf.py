@@ -138,10 +138,12 @@ class ConfigsConf(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza", variables={
-            "disabled": "false",
-            "custom_key": "value",
-        })
+        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza",
+            name="custom-conf/custom",
+            variables={
+                "disabled": "false",
+                "custom_key": "value",
+            })
         ```
         <!--End PulumiCodeChooser -->
 
@@ -168,10 +170,12 @@ class ConfigsConf(pulumi.CustomResource):
         import pulumi
         import pulumi_splunk as splunk
 
-        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza", variables={
-            "disabled": "false",
-            "custom_key": "value",
-        })
+        new_conf_stanza = splunk.ConfigsConf("new-conf-stanza",
+            name="custom-conf/custom",
+            variables={
+                "disabled": "false",
+                "custom_key": "value",
+            })
         ```
         <!--End PulumiCodeChooser -->
 
