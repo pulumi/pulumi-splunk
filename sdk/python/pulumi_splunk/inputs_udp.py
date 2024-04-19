@@ -462,7 +462,6 @@ class InputsUdp(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -473,7 +472,6 @@ class InputsUdp(pulumi.CustomResource):
             source="new",
             sourcetype="new")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -509,7 +507,6 @@ class InputsUdp(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -520,7 +517,6 @@ class InputsUdp(pulumi.CustomResource):
             source="new",
             sourcetype="new")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param InputsUdpArgs args: The arguments to use to populate this resource's properties.

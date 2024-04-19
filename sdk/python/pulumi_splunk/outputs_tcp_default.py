@@ -387,7 +387,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -400,7 +399,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
             max_queue_size="100KB",
             send_cooked_data=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -439,7 +437,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -452,7 +449,6 @@ class OutputsTcpDefault(pulumi.CustomResource):
             max_queue_size="100KB",
             send_cooked_data=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpDefaultArgs args: The arguments to use to populate this resource's properties.

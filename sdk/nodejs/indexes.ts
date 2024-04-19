@@ -18,7 +18,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
@@ -28,7 +27,6 @@ import * as utilities from "./utilities";
  *     maxTotalDataSizeMb: 1000000,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class Indexes extends pulumi.CustomResource {
     /**

@@ -21,7 +21,6 @@ namespace Pulumi.Splunk
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/indexes:Indexes")]
     public partial class Indexes : global::Pulumi.CustomResource

@@ -417,14 +417,12 @@ class OutputsTcpServer(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
 
         tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -456,14 +454,12 @@ class OutputsTcpServer(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
 
         tcp_server = splunk.OutputsTcpServer("tcpServer", ssl_alt_name_to_check="old-host")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpServerArgs args: The arguments to use to populate this resource's properties.

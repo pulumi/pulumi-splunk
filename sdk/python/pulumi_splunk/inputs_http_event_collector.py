@@ -372,7 +372,6 @@ class InputsHttpEventCollector(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -395,7 +394,6 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             sourcetype="new:sourcetype",
             use_ack=0)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -423,7 +421,6 @@ class InputsHttpEventCollector(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -446,7 +443,6 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             sourcetype="new:sourcetype",
             use_ack=0)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param InputsHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

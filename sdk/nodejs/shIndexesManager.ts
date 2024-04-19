@@ -17,7 +17,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
@@ -28,7 +27,6 @@ import * as utilities from "./utilities";
  *     maxGlobalRawDataSizeMb: "100",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class ShIndexesManager extends pulumi.CustomResource {
     /**

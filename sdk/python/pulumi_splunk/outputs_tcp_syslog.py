@@ -330,7 +330,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -339,7 +338,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
             priority=5,
             server="new-host-1:1234")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -371,7 +369,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -380,7 +377,6 @@ class OutputsTcpSyslog(pulumi.CustomResource):
             priority=5,
             server="new-host-1:1234")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpSyslogArgs args: The arguments to use to populate this resource's properties.

@@ -570,7 +570,6 @@ class InputsMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -579,7 +578,6 @@ class InputsMonitor(pulumi.CustomResource):
             recursive=True,
             sourcetype="text")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -613,7 +611,6 @@ class InputsMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -622,7 +619,6 @@ class InputsMonitor(pulumi.CustomResource):
             recursive=True,
             sourcetype="text")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param InputsMonitorArgs args: The arguments to use to populate this resource's properties.
