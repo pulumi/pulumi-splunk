@@ -16,7 +16,6 @@ namespace Pulumi.Splunk
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/authenticationUsers:AuthenticationUsers")]
     public partial class AuthenticationUsers : global::Pulumi.CustomResource
