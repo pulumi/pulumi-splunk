@@ -13,7 +13,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
@@ -23,7 +22,6 @@ import * as utilities from "./utilities";
  *     token: "D66C45B3-7C28-48A1-A13A-027914146501",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
     /**

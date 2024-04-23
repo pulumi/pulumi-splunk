@@ -13,7 +13,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as splunk from "@pulumi/splunk";
@@ -28,7 +27,6 @@ import * as utilities from "./utilities";
  *     maxQueueSize: "100KB",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class OutputsTcpDefault extends pulumi.CustomResource {
     /**

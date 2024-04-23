@@ -17,7 +17,6 @@ import (
 // Create and manage splunk dashboards/views.
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 type DataUiViews struct {
 	pulumi.CustomResourceState
 
