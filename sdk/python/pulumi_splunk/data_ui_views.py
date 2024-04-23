@@ -135,7 +135,6 @@ class DataUiViews(pulumi.CustomResource):
         Create and manage splunk dashboards/views.
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -148,7 +147,6 @@ class DataUiViews(pulumi.CustomResource):
                 app="search",
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -168,7 +166,6 @@ class DataUiViews(pulumi.CustomResource):
         Create and manage splunk dashboards/views.
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -181,7 +178,6 @@ class DataUiViews(pulumi.CustomResource):
                 app="search",
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param DataUiViewsArgs args: The arguments to use to populate this resource's properties.

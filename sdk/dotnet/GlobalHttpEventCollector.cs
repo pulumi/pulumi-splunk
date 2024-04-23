@@ -16,7 +16,6 @@ namespace Pulumi.Splunk
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [SplunkResourceType("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector")]
     public partial class GlobalHttpEventCollector : global::Pulumi.CustomResource

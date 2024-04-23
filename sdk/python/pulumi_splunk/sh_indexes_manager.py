@@ -211,7 +211,6 @@ class ShIndexesManager(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -222,7 +221,6 @@ class ShIndexesManager(pulumi.CustomResource):
             frozen_time_period_in_secs="94608000",
             max_global_raw_data_size_mb="100")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -250,7 +248,6 @@ class ShIndexesManager(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_splunk as splunk
@@ -261,7 +258,6 @@ class ShIndexesManager(pulumi.CustomResource):
             frozen_time_period_in_secs="94608000",
             max_global_raw_data_size_mb="100")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param ShIndexesManagerArgs args: The arguments to use to populate this resource's properties.
