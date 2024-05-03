@@ -437,7 +437,7 @@ export class SavedSearches extends pulumi.CustomResource {
     /**
      * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
      * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-     * in the em_event table of ServiceNow.
+     * in the emEvent table of ServiceNow.
      */
     public readonly actionSnowEventParamCustomFields!: pulumi.Output<string>;
     /**
@@ -1478,7 +1478,7 @@ export interface SavedSearchesState {
     /**
      * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
      * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-     * in the em_event table of ServiceNow.
+     * in the emEvent table of ServiceNow.
      */
     actionSnowEventParamCustomFields?: pulumi.Input<string>;
     /**
@@ -2146,7 +2146,7 @@ export interface SavedSearchesArgs {
     /**
      * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
      * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-     * in the em_event table of ServiceNow.
+     * in the emEvent table of ServiceNow.
      */
     actionSnowEventParamCustomFields?: pulumi.Input<string>;
     /**
