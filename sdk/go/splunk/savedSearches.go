@@ -250,7 +250,7 @@ type SavedSearches struct {
 	ActionSnowEventParamCiIdentifier pulumi.StringOutput `pulumi:"actionSnowEventParamCiIdentifier"`
 	// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
 	// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-	// in the em_event table of ServiceNow.
+	// in the emEvent table of ServiceNow.
 	ActionSnowEventParamCustomFields pulumi.StringOutput `pulumi:"actionSnowEventParamCustomFields"`
 	// A brief description of the event.
 	ActionSnowEventParamDescription pulumi.StringOutput `pulumi:"actionSnowEventParamDescription"`
@@ -629,7 +629,7 @@ type savedSearchesState struct {
 	ActionSnowEventParamCiIdentifier *string `pulumi:"actionSnowEventParamCiIdentifier"`
 	// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
 	// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-	// in the em_event table of ServiceNow.
+	// in the emEvent table of ServiceNow.
 	ActionSnowEventParamCustomFields *string `pulumi:"actionSnowEventParamCustomFields"`
 	// A brief description of the event.
 	ActionSnowEventParamDescription *string `pulumi:"actionSnowEventParamDescription"`
@@ -976,7 +976,7 @@ type SavedSearchesState struct {
 	ActionSnowEventParamCiIdentifier pulumi.StringPtrInput
 	// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
 	// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-	// in the em_event table of ServiceNow.
+	// in the emEvent table of ServiceNow.
 	ActionSnowEventParamCustomFields pulumi.StringPtrInput
 	// A brief description of the event.
 	ActionSnowEventParamDescription pulumi.StringPtrInput
@@ -1319,7 +1319,7 @@ type savedSearchesArgs struct {
 	ActionSnowEventParamCiIdentifier *string `pulumi:"actionSnowEventParamCiIdentifier"`
 	// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
 	// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-	// in the em_event table of ServiceNow.
+	// in the emEvent table of ServiceNow.
 	ActionSnowEventParamCustomFields *string `pulumi:"actionSnowEventParamCustomFields"`
 	// A brief description of the event.
 	ActionSnowEventParamDescription *string `pulumi:"actionSnowEventParamDescription"`
@@ -1657,7 +1657,7 @@ type SavedSearchesArgs struct {
 	ActionSnowEventParamCiIdentifier pulumi.StringPtrInput
 	// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
 	// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-	// in the em_event table of ServiceNow.
+	// in the emEvent table of ServiceNow.
 	ActionSnowEventParamCustomFields pulumi.StringPtrInput
 	// A brief description of the event.
 	ActionSnowEventParamDescription pulumi.StringPtrInput
@@ -2358,7 +2358,7 @@ func (o SavedSearchesOutput) ActionSnowEventParamCiIdentifier() pulumi.StringOut
 
 // The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
 // the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-// in the em_event table of ServiceNow.
+// in the emEvent table of ServiceNow.
 func (o SavedSearchesOutput) ActionSnowEventParamCustomFields() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSnowEventParamCustomFields }).(pulumi.StringOutput)
 }
