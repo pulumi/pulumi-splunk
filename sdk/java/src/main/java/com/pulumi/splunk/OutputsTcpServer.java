@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpServer = new OutputsTcpServer(&#34;tcpServer&#34;, OutputsTcpServerArgs.builder()        
- *             .name(&#34;new-host:1234&#34;)
- *             .sslAltNameToCheck(&#34;old-host&#34;)
+ *         var tcpServer = new OutputsTcpServer("tcpServer", OutputsTcpServerArgs.builder()        
+ *             .name("new-host:1234")
+ *             .sslAltNameToCheck("old-host")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

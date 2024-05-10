@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,17 +45,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var udp = new InputsUdp(&#34;udp&#34;, InputsUdpArgs.builder()        
- *             .name(&#34;41000&#34;)
- *             .index(&#34;main&#34;)
- *             .source(&#34;new&#34;)
- *             .sourcetype(&#34;new&#34;)
+ *         var udp = new InputsUdp("udp", InputsUdpArgs.builder()        
+ *             .name("41000")
+ *             .index("main")
+ *             .source("new")
+ *             .sourcetype("new")
  *             .disabled(false)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

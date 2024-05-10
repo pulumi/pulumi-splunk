@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,29 +46,30 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var role01 = new AuthorizationRoles(&#34;role01&#34;, AuthorizationRolesArgs.builder()        
- *             .name(&#34;terraform-user01-role&#34;)
- *             .defaultApp(&#34;search&#34;)
+ *         var role01 = new AuthorizationRoles("role01", AuthorizationRolesArgs.builder()        
+ *             .name("terraform-user01-role")
+ *             .defaultApp("search")
  *             .importedRoles(            
- *                 &#34;power&#34;,
- *                 &#34;user&#34;)
+ *                 "power",
+ *                 "user")
  *             .capabilities(            
- *                 &#34;accelerate_datamodel&#34;,
- *                 &#34;change_authentication&#34;,
- *                 &#34;restart_splunkd&#34;)
+ *                 "accelerate_datamodel",
+ *                 "change_authentication",
+ *                 "restart_splunkd")
  *             .searchIndexesAlloweds(            
- *                 &#34;_audit&#34;,
- *                 &#34;_internal&#34;,
- *                 &#34;main&#34;)
+ *                 "_audit",
+ *                 "_internal",
+ *                 "main")
  *             .searchIndexesDefaults(            
- *                 &#34;_audit&#34;,
- *                 &#34;_internal&#34;,
- *                 &#34;main&#34;)
+ *                 "_audit",
+ *                 "_internal",
+ *                 "main")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

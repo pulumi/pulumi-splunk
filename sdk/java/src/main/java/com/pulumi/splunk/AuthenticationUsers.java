@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,17 +46,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var user01 = new AuthenticationUsers(&#34;user01&#34;, AuthenticationUsersArgs.builder()        
- *             .name(&#34;user01&#34;)
- *             .email(&#34;user01@example.com&#34;)
- *             .password(&#34;password01&#34;)
+ *         var user01 = new AuthenticationUsers("user01", AuthenticationUsersArgs.builder()        
+ *             .name("user01")
+ *             .email("user01{@literal @}example.com")
+ *             .password("password01")
  *             .forceChangePass(false)
- *             .roles(&#34;terraform-user01-role&#34;)
+ *             .roles("terraform-user01-role")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,17 +45,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var new_conf_stanza = new ConfigsConf(&#34;new-conf-stanza&#34;, ConfigsConfArgs.builder()        
- *             .name(&#34;custom-conf/custom&#34;)
+ *         var new_conf_stanza = new ConfigsConf("new-conf-stanza", ConfigsConfArgs.builder()        
+ *             .name("custom-conf/custom")
  *             .variables(Map.ofEntries(
- *                 Map.entry(&#34;disabled&#34;, &#34;false&#34;),
- *                 Map.entry(&#34;custom_key&#34;, &#34;value&#34;)
+ *                 Map.entry("disabled", "false"),
+ *                 Map.entry("custom_key", "value")
  *             ))
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

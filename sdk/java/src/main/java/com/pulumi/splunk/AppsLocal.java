@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,15 +46,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var amazonConnectApp = new AppsLocal(&#34;amazonConnectApp&#34;, AppsLocalArgs.builder()        
+ *         var amazonConnectApp = new AppsLocal("amazonConnectApp", AppsLocalArgs.builder()        
  *             .filename(true)
- *             .name(&#34;/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz&#34;)
- *             .explicitAppname(&#34;amazon_connect_app_for_splunk&#34;)
+ *             .name("/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz")
+ *             .explicitAppname("amazon_connect_app_for_splunk")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,18 +44,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var dashboard = new DataUiViews(&#34;dashboard&#34;, DataUiViewsArgs.builder()        
- *             .name(&#34;Terraform_Sample_Dashboard&#34;)
- *             .eaiData(&#34;&lt;dashboard version=\&#34;1.1\&#34;&gt;&lt;label&gt;Terraform&lt;/label&gt;&lt;description&gt;Terraform operations&lt;/description&gt;&lt;row&gt;&lt;panel&gt;&lt;chart&gt;&lt;search&gt;&lt;query&gt;index=_internal sourcetype=splunkd_access useragent=\&#34;splunk-simple-go-client\&#34; | timechart fixedrange=f values(status) by uri_path&lt;/query&gt;&lt;earliest&gt;-24h@h&lt;/earliest&gt;&lt;latest&gt;now&lt;/latest&gt;&lt;sampleRatio&gt;1&lt;/sampleRatio&gt;&lt;/search&gt;&lt;option name=\&#34;charting.axisLabelsX.majorLabelStyle.overflowMode\&#34;&gt;ellipsisNone&lt;/option&gt;&lt;option name=\&#34;charting.axisLabelsX.majorLabelStyle.rotation\&#34;&gt;0&lt;/option&gt;&lt;option name=\&#34;charting.axisTitleX.visibility\&#34;&gt;collapsed&lt;/option&gt;&lt;option name=\&#34;charting.axisTitleY.text\&#34;&gt;HTTP status codes&lt;/option&gt;&lt;option name=\&#34;charting.axisTitleY.visibility\&#34;&gt;visible&lt;/option&gt;&lt;option name=\&#34;charting.axisTitleY2.visibility\&#34;&gt;visible&lt;/option&gt;&lt;option name=\&#34;charting.axisX.abbreviation\&#34;&gt;none&lt;/option&gt;&lt;option name=\&#34;charting.axisX.scale\&#34;&gt;linear&lt;/option&gt;&lt;option name=\&#34;charting.axisY.abbreviation\&#34;&gt;none&lt;/option&gt;&lt;option name=\&#34;charting.axisY.scale\&#34;&gt;linear&lt;/option&gt;&lt;option name=\&#34;charting.axisY2.abbreviation\&#34;&gt;none&lt;/option&gt;&lt;option name=\&#34;charting.axisY2.enabled\&#34;&gt;0&lt;/option&gt;&lt;option name=\&#34;charting.axisY2.scale\&#34;&gt;inherit&lt;/option&gt;&lt;option name=\&#34;charting.chart\&#34;&gt;column&lt;/option&gt;&lt;option name=\&#34;charting.chart.bubbleMaximumSize\&#34;&gt;50&lt;/option&gt;&lt;option name=\&#34;charting.chart.bubbleMinimumSize\&#34;&gt;10&lt;/option&gt;&lt;option name=\&#34;charting.chart.bubbleSizeBy\&#34;&gt;area&lt;/option&gt;&lt;option name=\&#34;charting.chart.nullValueMode\&#34;&gt;connect&lt;/option&gt;&lt;option name=\&#34;charting.chart.showDataLabels\&#34;&gt;none&lt;/option&gt;&lt;option name=\&#34;charting.chart.sliceCollapsingThreshold\&#34;&gt;0.01&lt;/option&gt;&lt;option name=\&#34;charting.chart.stackMode\&#34;&gt;default&lt;/option&gt;&lt;option name=\&#34;charting.chart.style\&#34;&gt;shiny&lt;/option&gt;&lt;option name=\&#34;charting.drilldown\&#34;&gt;none&lt;/option&gt;&lt;option name=\&#34;charting.layout.splitSeries\&#34;&gt;0&lt;/option&gt;&lt;option name=\&#34;charting.layout.splitSeries.allowIndependentYRanges\&#34;&gt;0&lt;/option&gt;&lt;option name=\&#34;charting.legend.labelStyle.overflowMode\&#34;&gt;ellipsisMiddle&lt;/option&gt;&lt;option name=\&#34;charting.legend.mode\&#34;&gt;standard&lt;/option&gt;&lt;option name=\&#34;charting.legend.placement\&#34;&gt;right&lt;/option&gt;&lt;option name=\&#34;charting.lineWidth\&#34;&gt;2&lt;/option&gt;&lt;option name=\&#34;trellis.enabled\&#34;&gt;0&lt;/option&gt;&lt;option name=\&#34;trellis.scales.shared\&#34;&gt;1&lt;/option&gt;&lt;option name=\&#34;trellis.size\&#34;&gt;small&lt;/option&gt;&lt;option name=\&#34;trellis.splitBy\&#34;&gt;_aggregation&lt;/option&gt;&lt;/chart&gt;&lt;/panel&gt;&lt;/row&gt;&lt;/dashboard&gt;&#34;)
+ *         var dashboard = new DataUiViews("dashboard", DataUiViewsArgs.builder()        
+ *             .name("Terraform_Sample_Dashboard")
+ *             .eaiData("<dashboard version=\"1.1\"><label>Terraform</label><description>Terraform operations</description><row><panel><chart><search><query>index=_internal sourcetype=splunkd_access useragent=\"splunk-simple-go-client\" | timechart fixedrange=f values(status) by uri_path</query><earliest>-24h{@literal @}h</earliest><latest>now</latest><sampleRatio>1</sampleRatio></search><option name=\"charting.axisLabelsX.majorLabelStyle.overflowMode\">ellipsisNone</option><option name=\"charting.axisLabelsX.majorLabelStyle.rotation\">0</option><option name=\"charting.axisTitleX.visibility\">collapsed</option><option name=\"charting.axisTitleY.text\">HTTP status codes</option><option name=\"charting.axisTitleY.visibility\">visible</option><option name=\"charting.axisTitleY2.visibility\">visible</option><option name=\"charting.axisX.abbreviation\">none</option><option name=\"charting.axisX.scale\">linear</option><option name=\"charting.axisY.abbreviation\">none</option><option name=\"charting.axisY.scale\">linear</option><option name=\"charting.axisY2.abbreviation\">none</option><option name=\"charting.axisY2.enabled\">0</option><option name=\"charting.axisY2.scale\">inherit</option><option name=\"charting.chart\">column</option><option name=\"charting.chart.bubbleMaximumSize\">50</option><option name=\"charting.chart.bubbleMinimumSize\">10</option><option name=\"charting.chart.bubbleSizeBy\">area</option><option name=\"charting.chart.nullValueMode\">connect</option><option name=\"charting.chart.showDataLabels\">none</option><option name=\"charting.chart.sliceCollapsingThreshold\">0.01</option><option name=\"charting.chart.stackMode\">default</option><option name=\"charting.chart.style\">shiny</option><option name=\"charting.drilldown\">none</option><option name=\"charting.layout.splitSeries\">0</option><option name=\"charting.layout.splitSeries.allowIndependentYRanges\">0</option><option name=\"charting.legend.labelStyle.overflowMode\">ellipsisMiddle</option><option name=\"charting.legend.mode\">standard</option><option name=\"charting.legend.placement\">right</option><option name=\"charting.lineWidth\">2</option><option name=\"trellis.enabled\">0</option><option name=\"trellis.scales.shared\">1</option><option name=\"trellis.size\">small</option><option name=\"trellis.splitBy\">_aggregation</option></chart></panel></row></dashboard>")
  *             .acl(DataUiViewsAclArgs.builder()
- *                 .owner(&#34;admin&#34;)
- *                 .app(&#34;search&#34;)
+ *                 .owner("admin")
+ *                 .app("search")
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

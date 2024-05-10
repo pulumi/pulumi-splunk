@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -46,20 +47,21 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpGroup = new OutputsTcpGroup(&#34;tcpGroup&#34;, OutputsTcpGroupArgs.builder()        
- *             .name(&#34;tcp-group&#34;)
+ *         var tcpGroup = new OutputsTcpGroup("tcpGroup", OutputsTcpGroupArgs.builder()        
+ *             .name("tcp-group")
  *             .disabled(false)
  *             .dropEventsOnQueueFull(60)
  *             .sendCookedData(true)
- *             .maxQueueSize(&#34;100KB&#34;)
+ *             .maxQueueSize("100KB")
  *             .servers(            
- *                 &#34;1.1.1.1:1234&#34;,
- *                 &#34;2.2.2.2:1234&#34;)
+ *                 "1.1.1.1:1234",
+ *                 "2.2.2.2:1234")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

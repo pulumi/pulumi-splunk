@@ -275,14 +275,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+     * Email address from which the email action originates.Defaults to splunk{@literal @}$LOCALHOST or whatever value is set in alert_actions.conf.
      * 
      */
     @Import(name="actionEmailFrom")
     private @Nullable Output<String> actionEmailFrom;
 
     /**
-     * @return Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+     * @return Email address from which the email action originates.Defaults to splunk{@literal @}$LOCALHOST or whatever value is set in alert_actions.conf.
      * 
      */
     public Optional<Output<String>> actionEmailFrom() {
@@ -1265,14 +1265,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Slack channel to send the message to (Should start with # or @)
+     * Slack channel to send the message to (Should start with # or{@literal @})
      * 
      */
     @Import(name="actionSlackParamChannel")
     private @Nullable Output<String> actionSlackParamChannel;
 
     /**
-     * @return Slack channel to send the message to (Should start with # or @)
+     * @return Slack channel to send the message to (Should start with # or{@literal @})
      * 
      */
     public Optional<Output<String>> actionSlackParamChannel() {
@@ -3092,7 +3092,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailFrom Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+         * @param actionEmailFrom Email address from which the email action originates.Defaults to splunk{@literal @}$LOCALHOST or whatever value is set in alert_actions.conf.
          * 
          * @return builder
          * 
@@ -3103,7 +3103,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailFrom Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+         * @param actionEmailFrom Email address from which the email action originates.Defaults to splunk{@literal @}$LOCALHOST or whatever value is set in alert_actions.conf.
          * 
          * @return builder
          * 
@@ -4478,7 +4478,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or @)
+         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or{@literal @})
          * 
          * @return builder
          * 
@@ -4489,7 +4489,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or @)
+         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or{@literal @})
          * 
          * @return builder
          * 

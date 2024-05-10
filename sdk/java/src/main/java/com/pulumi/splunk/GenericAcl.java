@@ -18,7 +18,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -40,31 +41,32 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var myApp = new GenericAcl(&#34;myApp&#34;, GenericAclArgs.builder()        
- *             .path(&#34;apps/local/my_app&#34;)
+ *         var myApp = new GenericAcl("myApp", GenericAclArgs.builder()        
+ *             .path("apps/local/my_app")
  *             .acl(GenericAclAclArgs.builder()
- *                 .app(&#34;system&#34;)
- *                 .owner(&#34;nobody&#34;)
- *                 .reads(&#34;*&#34;)
+ *                 .app("system")
+ *                 .owner("nobody")
+ *                 .reads("*")
  *                 .writes(                
- *                     &#34;admin&#34;,
- *                     &#34;power&#34;)
+ *                     "admin",
+ *                     "power")
  *                 .build())
  *             .build());
  * 
- *         var myDashboard = new GenericAcl(&#34;myDashboard&#34;, GenericAclArgs.builder()        
- *             .path(&#34;data/ui/views/my_dashboard&#34;)
+ *         var myDashboard = new GenericAcl("myDashboard", GenericAclArgs.builder()        
+ *             .path("data/ui/views/my_dashboard")
  *             .acl(GenericAclAclArgs.builder()
- *                 .app(&#34;my_app&#34;)
- *                 .owner(&#34;joe_user&#34;)
- *                 .reads(&#34;team_joe&#34;)
- *                 .writes(&#34;team_joe&#34;)
+ *                 .app("my_app")
+ *                 .owner("joe_user")
+ *                 .reads("team_joe")
+ *                 .writes("team_joe")
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

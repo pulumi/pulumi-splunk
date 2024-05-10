@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -50,15 +51,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var user01_index = new Indexes(&#34;user01-index&#34;, IndexesArgs.builder()        
- *             .name(&#34;user01-index&#34;)
+ *         var user01_index = new Indexes("user01-index", IndexesArgs.builder()        
+ *             .name("user01-index")
  *             .maxHotBuckets(6)
  *             .maxTotalDataSizeMb(1000000)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
