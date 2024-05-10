@@ -23,7 +23,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -44,16 +45,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpCooked = new InputsTcpCooked(&#34;tcpCooked&#34;, InputsTcpCookedArgs.builder()        
- *             .name(&#34;50000&#34;)
+ *         var tcpCooked = new InputsTcpCooked("tcpCooked", InputsTcpCookedArgs.builder()        
+ *             .name("50000")
  *             .disabled(false)
- *             .connectionHost(&#34;dns&#34;)
- *             .restrictToHost(&#34;splunk&#34;)
+ *             .connectionHost("dns")
+ *             .restrictToHost("splunk")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

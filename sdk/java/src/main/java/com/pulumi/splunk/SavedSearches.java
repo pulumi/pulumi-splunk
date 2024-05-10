@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -48,30 +49,31 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var savedSearch = new SavedSearches(&#34;savedSearch&#34;, SavedSearchesArgs.builder()        
- *             .name(&#34;Test New Alert&#34;)
- *             .search(&#34;index=main&#34;)
- *             .actions(&#34;email&#34;)
- *             .actionEmailFormat(&#34;table&#34;)
- *             .actionEmailMaxTime(&#34;5m&#34;)
+ *         var savedSearch = new SavedSearches("savedSearch", SavedSearchesArgs.builder()        
+ *             .name("Test New Alert")
+ *             .search("index=main")
+ *             .actions("email")
+ *             .actionEmailFormat("table")
+ *             .actionEmailMaxTime("5m")
  *             .actionEmailMaxResults(10)
  *             .actionEmailSendResults(false)
- *             .actionEmailSubject(&#34;Splunk Alert: $name$&#34;)
- *             .actionEmailTo(&#34;splunk@splunk.com&#34;)
+ *             .actionEmailSubject("Splunk Alert: $name$")
+ *             .actionEmailTo("splunk{@literal @}splunk.com")
  *             .actionEmailTrackAlert(true)
- *             .dispatchEarliestTime(&#34;rt-15m&#34;)
- *             .dispatchLatestTime(&#34;rt-0m&#34;)
- *             .cronSchedule(&#34;*{@literal /}5 * * * *&#34;)
+ *             .dispatchEarliestTime("rt-15m")
+ *             .dispatchLatestTime("rt-0m")
+ *             .cronSchedule("*{@literal /}5 * * * *")
  *             .acl(SavedSearchesAclArgs.builder()
- *                 .owner(&#34;admin&#34;)
- *                 .sharing(&#34;app&#34;)
- *                 .app(&#34;launcher&#34;)
+ *                 .owner("admin")
+ *                 .sharing("app")
+ *                 .app("launcher")
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
@@ -316,14 +318,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionEmailFormat;
     }
     /**
-     * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+     * Email address from which the email action originates.Defaults to splunk{@literal @}$LOCALHOST or whatever value is set in alert_actions.conf.
      * 
      */
     @Export(name="actionEmailFrom", refs={String.class}, tree="[0]")
     private Output<String> actionEmailFrom;
 
     /**
-     * @return Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
+     * @return Email address from which the email action originates.Defaults to splunk{@literal @}$LOCALHOST or whatever value is set in alert_actions.conf.
      * 
      */
     public Output<String> actionEmailFrom() {
@@ -1240,14 +1242,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionSlackParamAttachment);
     }
     /**
-     * Slack channel to send the message to (Should start with # or @)
+     * Slack channel to send the message to (Should start with # or{@literal @})
      * 
      */
     @Export(name="actionSlackParamChannel", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamChannel;
 
     /**
-     * @return Slack channel to send the message to (Should start with # or @)
+     * @return Slack channel to send the message to (Should start with # or{@literal @})
      * 
      */
     public Output<Optional<String>> actionSlackParamChannel() {

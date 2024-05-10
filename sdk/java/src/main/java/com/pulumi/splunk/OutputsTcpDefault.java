@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,19 +46,20 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpDefault = new OutputsTcpDefault(&#34;tcpDefault&#34;, OutputsTcpDefaultArgs.builder()        
- *             .name(&#34;tcpout&#34;)
+ *         var tcpDefault = new OutputsTcpDefault("tcpDefault", OutputsTcpDefaultArgs.builder()        
+ *             .name("tcpout")
  *             .disabled(false)
- *             .defaultGroup(&#34;test-indexers&#34;)
+ *             .defaultGroup("test-indexers")
  *             .dropEventsOnQueueFull(60)
  *             .indexAndForward(true)
  *             .sendCookedData(true)
- *             .maxQueueSize(&#34;100KB&#34;)
+ *             .maxQueueSize("100KB")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

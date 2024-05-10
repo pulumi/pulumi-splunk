@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,18 +46,19 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpRaw = new InputsTcpRaw(&#34;tcpRaw&#34;, InputsTcpRawArgs.builder()        
- *             .name(&#34;41000&#34;)
- *             .index(&#34;main&#34;)
- *             .queue(&#34;indexQueue&#34;)
- *             .source(&#34;new&#34;)
- *             .sourcetype(&#34;new&#34;)
+ *         var tcpRaw = new InputsTcpRaw("tcpRaw", InputsTcpRawArgs.builder()        
+ *             .name("41000")
+ *             .index("main")
+ *             .queue("indexQueue")
+ *             .source("new")
+ *             .sourcetype("new")
  *             .disabled(false)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

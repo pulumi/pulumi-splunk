@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,15 +46,16 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpSyslog = new OutputsTcpSyslog(&#34;tcpSyslog&#34;, OutputsTcpSyslogArgs.builder()        
- *             .name(&#34;new-syslog&#34;)
- *             .server(&#34;new-host-1:1234&#34;)
+ *         var tcpSyslog = new OutputsTcpSyslog("tcpSyslog", OutputsTcpSyslogArgs.builder()        
+ *             .name("new-syslog")
+ *             .server("new-host-1:1234")
  *             .priority(5)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

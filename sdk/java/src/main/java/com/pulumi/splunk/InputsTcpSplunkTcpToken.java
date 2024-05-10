@@ -22,7 +22,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -43,14 +44,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpSplunkTcpToken = new InputsTcpSplunkTcpToken(&#34;tcpSplunkTcpToken&#34;, InputsTcpSplunkTcpTokenArgs.builder()        
- *             .name(&#34;new-splunk-tcp-token&#34;)
- *             .token(&#34;D66C45B3-7C28-48A1-A13A-027914146501&#34;)
+ *         var tcpSplunkTcpToken = new InputsTcpSplunkTcpToken("tcpSplunkTcpToken", InputsTcpSplunkTcpTokenArgs.builder()        
+ *             .name("new-splunk-tcp-token")
+ *             .token("D66C45B3-7C28-48A1-A13A-027914146501")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

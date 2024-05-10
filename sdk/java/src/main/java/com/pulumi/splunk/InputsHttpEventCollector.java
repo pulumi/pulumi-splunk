@@ -25,7 +25,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -47,28 +48,29 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var hec_token_01 = new InputsHttpEventCollector(&#34;hec-token-01&#34;, InputsHttpEventCollectorArgs.builder()        
- *             .name(&#34;hec-token-01&#34;)
- *             .index(&#34;main&#34;)
+ *         var hec_token_01 = new InputsHttpEventCollector("hec-token-01", InputsHttpEventCollectorArgs.builder()        
+ *             .name("hec-token-01")
+ *             .index("main")
  *             .indexes(            
- *                 &#34;main&#34;,
- *                 &#34;history&#34;,
- *                 &#34;summary&#34;)
- *             .source(&#34;new:source&#34;)
- *             .sourcetype(&#34;new:sourcetype&#34;)
+ *                 "main",
+ *                 "history",
+ *                 "summary")
+ *             .source("new:source")
+ *             .sourcetype("new:sourcetype")
  *             .disabled(false)
  *             .useAck(0)
  *             .acl(InputsHttpEventCollectorAclArgs.builder()
- *                 .owner(&#34;user01&#34;)
- *                 .sharing(&#34;global&#34;)
- *                 .reads(&#34;admin&#34;)
- *                 .writes(&#34;admin&#34;)
+ *                 .owner("user01")
+ *                 .sharing("global")
+ *                 .reads("admin")
+ *                 .writes("admin")
  *                 .build())
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */

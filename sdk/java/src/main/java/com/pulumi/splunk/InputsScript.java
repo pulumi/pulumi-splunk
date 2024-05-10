@@ -24,7 +24,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -45,14 +46,15 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var script = new InputsScript(&#34;script&#34;, InputsScriptArgs.builder()        
- *             .name(&#34;opt/splunk/bin/scripts/readme.txt&#34;)
+ *         var script = new InputsScript("script", InputsScriptArgs.builder()        
+ *             .name("opt/splunk/bin/scripts/readme.txt")
  *             .interval(360)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
