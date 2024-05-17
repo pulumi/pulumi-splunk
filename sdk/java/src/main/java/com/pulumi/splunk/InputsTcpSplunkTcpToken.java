@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpSplunkTcpToken = new InputsTcpSplunkTcpToken("tcpSplunkTcpToken", InputsTcpSplunkTcpTokenArgs.builder()        
+ *         var tcpSplunkTcpToken = new InputsTcpSplunkTcpToken("tcpSplunkTcpToken", InputsTcpSplunkTcpTokenArgs.builder()
  *             .name("new-splunk-tcp-token")
  *             .token("D66C45B3-7C28-48A1-A13A-027914146501")
  *             .build());

@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var myApp = new GenericAcl("myApp", GenericAclArgs.builder()        
+ *         var myApp = new GenericAcl("myApp", GenericAclArgs.builder()
  *             .path("apps/local/my_app")
  *             .acl(GenericAclAclArgs.builder()
  *                 .app("system")
@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .build());
  * 
- *         var myDashboard = new GenericAcl("myDashboard", GenericAclArgs.builder()        
+ *         var myDashboard = new GenericAcl("myDashboard", GenericAclArgs.builder()
  *             .path("data/ui/views/my_dashboard")
  *             .acl(GenericAclAclArgs.builder()
  *                 .app("my_app")

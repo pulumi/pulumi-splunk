@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpServer = new OutputsTcpServer("tcpServer", OutputsTcpServerArgs.builder()        
+ *         var tcpServer = new OutputsTcpServer("tcpServer", OutputsTcpServerArgs.builder()
  *             .name("new-host:1234")
  *             .sslAltNameToCheck("old-host")
  *             .build());

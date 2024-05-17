@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var savedSearch = new SavedSearches("savedSearch", SavedSearchesArgs.builder()        
+ *         var savedSearch = new SavedSearches("savedSearch", SavedSearchesArgs.builder()
  *             .name("Test New Alert")
  *             .search("index=main")
  *             .actions("email")

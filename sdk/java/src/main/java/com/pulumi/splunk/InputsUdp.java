@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var udp = new InputsUdp("udp", InputsUdpArgs.builder()        
+ *         var udp = new InputsUdp("udp", InputsUdpArgs.builder()
  *             .name("41000")
  *             .index("main")
  *             .source("new")
