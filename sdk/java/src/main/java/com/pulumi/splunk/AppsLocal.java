@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var amazonConnectApp = new AppsLocal("amazonConnectApp", AppsLocalArgs.builder()        
+ *         var amazonConnectApp = new AppsLocal("amazonConnectApp", AppsLocalArgs.builder()
  *             .filename(true)
  *             .name("/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz")
  *             .explicitAppname("amazon_connect_app_for_splunk")

@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpCooked = new InputsTcpCooked("tcpCooked", InputsTcpCookedArgs.builder()        
+ *         var tcpCooked = new InputsTcpCooked("tcpCooked", InputsTcpCookedArgs.builder()
  *             .name("50000")
  *             .disabled(false)
  *             .connectionHost("dns")
