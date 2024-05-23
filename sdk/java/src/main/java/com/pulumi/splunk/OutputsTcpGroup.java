@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpGroup = new OutputsTcpGroup("tcpGroup", OutputsTcpGroupArgs.builder()        
+ *         var tcpGroup = new OutputsTcpGroup("tcpGroup", OutputsTcpGroupArgs.builder()
  *             .name("tcp-group")
  *             .disabled(false)
  *             .dropEventsOnQueueFull(60)

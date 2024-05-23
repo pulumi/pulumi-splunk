@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var role01 = new AuthorizationRoles("role01", AuthorizationRolesArgs.builder()        
+ *         var role01 = new AuthorizationRoles("role01", AuthorizationRolesArgs.builder()
  *             .name("terraform-user01-role")
  *             .defaultApp("search")
  *             .importedRoles(            

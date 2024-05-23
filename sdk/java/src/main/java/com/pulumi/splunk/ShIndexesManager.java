@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tf_index = new ShIndexesManager("tf-index", ShIndexesManagerArgs.builder()        
+ *         var tf_index = new ShIndexesManager("tf-index", ShIndexesManagerArgs.builder()
  *             .name("tf-test-index-0")
  *             .datatype("event")
  *             .frozenTimePeriodInSecs("94608000")

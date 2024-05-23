@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var test = new InputsTcpSsl("test", InputsTcpSslArgs.builder()        
+ *         var test = new InputsTcpSsl("test", InputsTcpSslArgs.builder()
  *             .disabled(false)
  *             .requireClientCert(true)
  *             .build());
