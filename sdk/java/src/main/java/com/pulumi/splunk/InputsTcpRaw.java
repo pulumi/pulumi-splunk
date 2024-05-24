@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpRaw = new InputsTcpRaw("tcpRaw", InputsTcpRawArgs.builder()        
+ *         var tcpRaw = new InputsTcpRaw("tcpRaw", InputsTcpRawArgs.builder()
  *             .name("41000")
  *             .index("main")
  *             .queue("indexQueue")

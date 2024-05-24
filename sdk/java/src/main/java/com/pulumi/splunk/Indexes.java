@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var user01_index = new Indexes("user01-index", IndexesArgs.builder()        
+ *         var user01_index = new Indexes("user01-index", IndexesArgs.builder()
  *             .name("user01-index")
  *             .maxHotBuckets(6)
  *             .maxTotalDataSizeMb(1000000)
