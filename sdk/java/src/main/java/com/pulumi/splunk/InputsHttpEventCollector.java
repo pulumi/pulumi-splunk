@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var hec_token_01 = new InputsHttpEventCollector("hec-token-01", InputsHttpEventCollectorArgs.builder()        
+ *         var hec_token_01 = new InputsHttpEventCollector("hec-token-01", InputsHttpEventCollectorArgs.builder()
  *             .name("hec-token-01")
  *             .index("main")
  *             .indexes(            

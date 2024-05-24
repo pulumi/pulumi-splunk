@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var http = new GlobalHttpEventCollector("http", GlobalHttpEventCollectorArgs.builder()        
+ *         var http = new GlobalHttpEventCollector("http", GlobalHttpEventCollectorArgs.builder()
  *             .disabled(false)
  *             .enableSsl(true)
  *             .port(8088)

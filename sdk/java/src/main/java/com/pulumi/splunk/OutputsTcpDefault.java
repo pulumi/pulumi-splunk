@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var tcpDefault = new OutputsTcpDefault("tcpDefault", OutputsTcpDefaultArgs.builder()        
+ *         var tcpDefault = new OutputsTcpDefault("tcpDefault", OutputsTcpDefaultArgs.builder()
  *             .name("tcpout")
  *             .disabled(false)
  *             .defaultGroup("test-indexers")
