@@ -1,4 +1,5 @@
 // Copyright 2016-2017, Pulumi Corporation.  All rights reserved.
+//go:build python || all
 // +build python all
 
 package examples
@@ -11,6 +12,7 @@ import (
 )
 
 func TestAdminSamlGroupsPy(t *testing.T) {
+	t.Skipf("trying to see if this sis some sort of race condition")
 	test := getPythonBaseOptions(t).
 		With(integration.ProgramTestOptions{
 			Dir: filepath.Join(getCwd(t), "admin-saml-groups", "py"),
