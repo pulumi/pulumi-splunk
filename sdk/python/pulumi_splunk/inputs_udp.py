@@ -442,7 +442,7 @@ class InputsUdp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['InputsUdpAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
                  connection_host: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
                  host: Optional[pulumi.Input[str]] = None,
@@ -476,7 +476,7 @@ class InputsUdp(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['InputsUdpAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
                ip sets the host to the IP address of the remote server sending data.
@@ -535,7 +535,7 @@ class InputsUdp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['InputsUdpAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
                  connection_host: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
                  host: Optional[pulumi.Input[str]] = None,
@@ -578,7 +578,7 @@ class InputsUdp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[pulumi.InputType['InputsUdpAclArgs']]] = None,
+            acl: Optional[pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
             connection_host: Optional[pulumi.Input[str]] = None,
             disabled: Optional[pulumi.Input[bool]] = None,
             host: Optional[pulumi.Input[str]] = None,
@@ -597,7 +597,7 @@ class InputsUdp(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['InputsUdpAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
                ip sets the host to the IP address of the remote server sending data.

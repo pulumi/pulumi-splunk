@@ -109,7 +109,7 @@ class GenericAcl(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['GenericAclAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -121,23 +121,23 @@ class GenericAcl(pulumi.CustomResource):
 
         my_app = splunk.GenericAcl("my_app",
             path="apps/local/my_app",
-            acl=splunk.GenericAclAclArgs(
-                app="system",
-                owner="nobody",
-                reads=["*"],
-                writes=[
+            acl={
+                "app": "system",
+                "owner": "nobody",
+                "reads": ["*"],
+                "writes": [
                     "admin",
                     "power",
                 ],
-            ))
+            })
         my_dashboard = splunk.GenericAcl("my_dashboard",
             path="data/ui/views/my_dashboard",
-            acl=splunk.GenericAclAclArgs(
-                app="my_app",
-                owner="joe_user",
-                reads=["team_joe"],
-                writes=["team_joe"],
-            ))
+            acl={
+                "app": "my_app",
+                "owner": "joe_user",
+                "reads": ["team_joe"],
+                "writes": ["team_joe"],
+            })
         ```
 
         ## Import
@@ -150,7 +150,7 @@ class GenericAcl(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['GenericAclAclArgs']] acl: The ACL to apply to the object, including app/owner to properly identify the object.
+        :param pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']] acl: The ACL to apply to the object, including app/owner to properly identify the object.
                Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
                apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
                app and owner for objects that don't fit in the normal namespace.
@@ -171,23 +171,23 @@ class GenericAcl(pulumi.CustomResource):
 
         my_app = splunk.GenericAcl("my_app",
             path="apps/local/my_app",
-            acl=splunk.GenericAclAclArgs(
-                app="system",
-                owner="nobody",
-                reads=["*"],
-                writes=[
+            acl={
+                "app": "system",
+                "owner": "nobody",
+                "reads": ["*"],
+                "writes": [
                     "admin",
                     "power",
                 ],
-            ))
+            })
         my_dashboard = splunk.GenericAcl("my_dashboard",
             path="data/ui/views/my_dashboard",
-            acl=splunk.GenericAclAclArgs(
-                app="my_app",
-                owner="joe_user",
-                reads=["team_joe"],
-                writes=["team_joe"],
-            ))
+            acl={
+                "app": "my_app",
+                "owner": "joe_user",
+                "reads": ["team_joe"],
+                "writes": ["team_joe"],
+            })
         ```
 
         ## Import
@@ -213,7 +213,7 @@ class GenericAcl(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['GenericAclAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -238,7 +238,7 @@ class GenericAcl(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[pulumi.InputType['GenericAclAclArgs']]] = None,
+            acl: Optional[pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
             path: Optional[pulumi.Input[str]] = None) -> 'GenericAcl':
         """
         Get an existing GenericAcl resource's state with the given name, id, and optional extra
@@ -247,7 +247,7 @@ class GenericAcl(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['GenericAclAclArgs']] acl: The ACL to apply to the object, including app/owner to properly identify the object.
+        :param pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']] acl: The ACL to apply to the object, including app/owner to properly identify the object.
                Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
                apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
                app and owner for objects that don't fit in the normal namespace.

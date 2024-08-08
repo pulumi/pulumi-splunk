@@ -705,7 +705,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public Indexes(String name) {
+    public Indexes(java.lang.String name) {
         this(name, IndexesArgs.Empty);
     }
     /**
@@ -713,7 +713,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Indexes(String name, @Nullable IndexesArgs args) {
+    public Indexes(java.lang.String name, @Nullable IndexesArgs args) {
         this(name, args, null);
     }
     /**
@@ -722,15 +722,22 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Indexes(String name, @Nullable IndexesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/indexes:Indexes", name, args == null ? IndexesArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public Indexes(java.lang.String name, @Nullable IndexesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/indexes:Indexes", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private Indexes(String name, Output<String> id, @Nullable IndexesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/indexes:Indexes", name, state, makeResourceOptions(options, id));
+    private Indexes(java.lang.String name, Output<java.lang.String> id, @Nullable IndexesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/indexes:Indexes", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static IndexesArgs makeArgs(@Nullable IndexesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? IndexesArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -746,7 +753,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static Indexes get(String name, Output<String> id, @Nullable IndexesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static Indexes get(java.lang.String name, Output<java.lang.String> id, @Nullable IndexesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new Indexes(name, id, state, options);
     }
 }
