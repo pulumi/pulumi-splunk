@@ -270,7 +270,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AppsLocal(String name) {
+    public AppsLocal(java.lang.String name) {
         this(name, AppsLocalArgs.Empty);
     }
     /**
@@ -278,7 +278,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AppsLocal(String name, @Nullable AppsLocalArgs args) {
+    public AppsLocal(java.lang.String name, @Nullable AppsLocalArgs args) {
         this(name, args, null);
     }
     /**
@@ -287,15 +287,22 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AppsLocal(String name, @Nullable AppsLocalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/appsLocal:AppsLocal", name, args == null ? AppsLocalArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public AppsLocal(java.lang.String name, @Nullable AppsLocalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/appsLocal:AppsLocal", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AppsLocal(String name, Output<String> id, @Nullable AppsLocalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/appsLocal:AppsLocal", name, state, makeResourceOptions(options, id));
+    private AppsLocal(java.lang.String name, Output<java.lang.String> id, @Nullable AppsLocalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/appsLocal:AppsLocal", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static AppsLocalArgs makeArgs(@Nullable AppsLocalArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AppsLocalArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -311,7 +318,7 @@ public class AppsLocal extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AppsLocal get(String name, Output<String> id, @Nullable AppsLocalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AppsLocal get(java.lang.String name, Output<java.lang.String> id, @Nullable AppsLocalState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AppsLocal(name, id, state, options);
     }
 }

@@ -119,7 +119,7 @@ public class GenericAcl extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public GenericAcl(String name) {
+    public GenericAcl(java.lang.String name) {
         this(name, GenericAclArgs.Empty);
     }
     /**
@@ -127,7 +127,7 @@ public class GenericAcl extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public GenericAcl(String name, GenericAclArgs args) {
+    public GenericAcl(java.lang.String name, GenericAclArgs args) {
         this(name, args, null);
     }
     /**
@@ -136,15 +136,22 @@ public class GenericAcl extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public GenericAcl(String name, GenericAclArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/genericAcl:GenericAcl", name, args == null ? GenericAclArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public GenericAcl(java.lang.String name, GenericAclArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/genericAcl:GenericAcl", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private GenericAcl(String name, Output<String> id, @Nullable GenericAclState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/genericAcl:GenericAcl", name, state, makeResourceOptions(options, id));
+    private GenericAcl(java.lang.String name, Output<java.lang.String> id, @Nullable GenericAclState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/genericAcl:GenericAcl", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static GenericAclArgs makeArgs(GenericAclArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? GenericAclArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -160,7 +167,7 @@ public class GenericAcl extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static GenericAcl get(String name, Output<String> id, @Nullable GenericAclState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static GenericAcl get(java.lang.String name, Output<java.lang.String> id, @Nullable GenericAclState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new GenericAcl(name, id, state, options);
     }
 }

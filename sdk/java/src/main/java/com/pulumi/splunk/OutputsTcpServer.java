@@ -225,7 +225,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OutputsTcpServer(String name) {
+    public OutputsTcpServer(java.lang.String name) {
         this(name, OutputsTcpServerArgs.Empty);
     }
     /**
@@ -233,7 +233,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OutputsTcpServer(String name, @Nullable OutputsTcpServerArgs args) {
+    public OutputsTcpServer(java.lang.String name, @Nullable OutputsTcpServerArgs args) {
         this(name, args, null);
     }
     /**
@@ -242,15 +242,22 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OutputsTcpServer(String name, @Nullable OutputsTcpServerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/outputsTcpServer:OutputsTcpServer", name, args == null ? OutputsTcpServerArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public OutputsTcpServer(java.lang.String name, @Nullable OutputsTcpServerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/outputsTcpServer:OutputsTcpServer", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OutputsTcpServer(String name, Output<String> id, @Nullable OutputsTcpServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/outputsTcpServer:OutputsTcpServer", name, state, makeResourceOptions(options, id));
+    private OutputsTcpServer(java.lang.String name, Output<java.lang.String> id, @Nullable OutputsTcpServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/outputsTcpServer:OutputsTcpServer", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static OutputsTcpServerArgs makeArgs(@Nullable OutputsTcpServerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OutputsTcpServerArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -269,7 +276,7 @@ public class OutputsTcpServer extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OutputsTcpServer get(String name, Output<String> id, @Nullable OutputsTcpServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OutputsTcpServer get(java.lang.String name, Output<java.lang.String> id, @Nullable OutputsTcpServerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OutputsTcpServer(name, id, state, options);
     }
 }

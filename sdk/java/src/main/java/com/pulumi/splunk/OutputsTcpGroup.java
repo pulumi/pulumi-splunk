@@ -246,7 +246,7 @@ public class OutputsTcpGroup extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OutputsTcpGroup(String name) {
+    public OutputsTcpGroup(java.lang.String name) {
         this(name, OutputsTcpGroupArgs.Empty);
     }
     /**
@@ -254,7 +254,7 @@ public class OutputsTcpGroup extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OutputsTcpGroup(String name, OutputsTcpGroupArgs args) {
+    public OutputsTcpGroup(java.lang.String name, OutputsTcpGroupArgs args) {
         this(name, args, null);
     }
     /**
@@ -263,15 +263,22 @@ public class OutputsTcpGroup extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OutputsTcpGroup(String name, OutputsTcpGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/outputsTcpGroup:OutputsTcpGroup", name, args == null ? OutputsTcpGroupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public OutputsTcpGroup(java.lang.String name, OutputsTcpGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/outputsTcpGroup:OutputsTcpGroup", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OutputsTcpGroup(String name, Output<String> id, @Nullable OutputsTcpGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/outputsTcpGroup:OutputsTcpGroup", name, state, makeResourceOptions(options, id));
+    private OutputsTcpGroup(java.lang.String name, Output<java.lang.String> id, @Nullable OutputsTcpGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/outputsTcpGroup:OutputsTcpGroup", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static OutputsTcpGroupArgs makeArgs(OutputsTcpGroupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OutputsTcpGroupArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -287,7 +294,7 @@ public class OutputsTcpGroup extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OutputsTcpGroup get(String name, Output<String> id, @Nullable OutputsTcpGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OutputsTcpGroup get(java.lang.String name, Output<java.lang.String> id, @Nullable OutputsTcpGroupState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OutputsTcpGroup(name, id, state, options);
     }
 }

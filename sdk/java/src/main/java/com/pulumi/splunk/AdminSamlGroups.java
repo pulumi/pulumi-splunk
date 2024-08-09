@@ -101,7 +101,7 @@ public class AdminSamlGroups extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AdminSamlGroups(String name) {
+    public AdminSamlGroups(java.lang.String name) {
         this(name, AdminSamlGroupsArgs.Empty);
     }
     /**
@@ -109,7 +109,7 @@ public class AdminSamlGroups extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AdminSamlGroups(String name, @Nullable AdminSamlGroupsArgs args) {
+    public AdminSamlGroups(java.lang.String name, @Nullable AdminSamlGroupsArgs args) {
         this(name, args, null);
     }
     /**
@@ -118,15 +118,22 @@ public class AdminSamlGroups extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AdminSamlGroups(String name, @Nullable AdminSamlGroupsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/adminSamlGroups:AdminSamlGroups", name, args == null ? AdminSamlGroupsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public AdminSamlGroups(java.lang.String name, @Nullable AdminSamlGroupsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/adminSamlGroups:AdminSamlGroups", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AdminSamlGroups(String name, Output<String> id, @Nullable AdminSamlGroupsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/adminSamlGroups:AdminSamlGroups", name, state, makeResourceOptions(options, id));
+    private AdminSamlGroups(java.lang.String name, Output<java.lang.String> id, @Nullable AdminSamlGroupsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/adminSamlGroups:AdminSamlGroups", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static AdminSamlGroupsArgs makeArgs(@Nullable AdminSamlGroupsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AdminSamlGroupsArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -142,7 +149,7 @@ public class AdminSamlGroups extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AdminSamlGroups get(String name, Output<String> id, @Nullable AdminSamlGroupsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AdminSamlGroups get(java.lang.String name, Output<java.lang.String> id, @Nullable AdminSamlGroupsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AdminSamlGroups(name, id, state, options);
     }
 }

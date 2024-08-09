@@ -209,7 +209,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public InputsScript(String name) {
+    public InputsScript(java.lang.String name) {
         this(name, InputsScriptArgs.Empty);
     }
     /**
@@ -217,7 +217,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public InputsScript(String name, InputsScriptArgs args) {
+    public InputsScript(java.lang.String name, InputsScriptArgs args) {
         this(name, args, null);
     }
     /**
@@ -226,15 +226,22 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public InputsScript(String name, InputsScriptArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsScript:InputsScript", name, args == null ? InputsScriptArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public InputsScript(java.lang.String name, InputsScriptArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsScript:InputsScript", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private InputsScript(String name, Output<String> id, @Nullable InputsScriptState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsScript:InputsScript", name, state, makeResourceOptions(options, id));
+    private InputsScript(java.lang.String name, Output<java.lang.String> id, @Nullable InputsScriptState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsScript:InputsScript", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static InputsScriptArgs makeArgs(InputsScriptArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? InputsScriptArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -250,7 +257,7 @@ public class InputsScript extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static InputsScript get(String name, Output<String> id, @Nullable InputsScriptState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static InputsScript get(java.lang.String name, Output<java.lang.String> id, @Nullable InputsScriptState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new InputsScript(name, id, state, options);
     }
 }
