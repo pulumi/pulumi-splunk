@@ -105,7 +105,7 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public InputsTcpSplunkTcpToken(String name) {
+    public InputsTcpSplunkTcpToken(java.lang.String name) {
         this(name, InputsTcpSplunkTcpTokenArgs.Empty);
     }
     /**
@@ -113,7 +113,7 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public InputsTcpSplunkTcpToken(String name, @Nullable InputsTcpSplunkTcpTokenArgs args) {
+    public InputsTcpSplunkTcpToken(java.lang.String name, @Nullable InputsTcpSplunkTcpTokenArgs args) {
         this(name, args, null);
     }
     /**
@@ -122,15 +122,22 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public InputsTcpSplunkTcpToken(String name, @Nullable InputsTcpSplunkTcpTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", name, args == null ? InputsTcpSplunkTcpTokenArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public InputsTcpSplunkTcpToken(java.lang.String name, @Nullable InputsTcpSplunkTcpTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private InputsTcpSplunkTcpToken(String name, Output<String> id, @Nullable InputsTcpSplunkTcpTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", name, state, makeResourceOptions(options, id));
+    private InputsTcpSplunkTcpToken(java.lang.String name, Output<java.lang.String> id, @Nullable InputsTcpSplunkTcpTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static InputsTcpSplunkTcpTokenArgs makeArgs(@Nullable InputsTcpSplunkTcpTokenArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? InputsTcpSplunkTcpTokenArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -146,7 +153,7 @@ public class InputsTcpSplunkTcpToken extends com.pulumi.resources.CustomResource
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static InputsTcpSplunkTcpToken get(String name, Output<String> id, @Nullable InputsTcpSplunkTcpTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static InputsTcpSplunkTcpToken get(java.lang.String name, Output<java.lang.String> id, @Nullable InputsTcpSplunkTcpTokenState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new InputsTcpSplunkTcpToken(name, id, state, options);
     }
 }

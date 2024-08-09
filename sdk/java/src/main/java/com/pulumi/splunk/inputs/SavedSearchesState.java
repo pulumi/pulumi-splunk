@@ -1265,14 +1265,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Slack channel to send the message to (Should start with # or{@literal @})
+     * Slack channel to send the message to (Should start with # or {@literal @})
      * 
      */
     @Import(name="actionSlackParamChannel")
     private @Nullable Output<String> actionSlackParamChannel;
 
     /**
-     * @return Slack channel to send the message to (Should start with # or{@literal @})
+     * @return Slack channel to send the message to (Should start with # or {@literal @})
      * 
      */
     public Optional<Output<String>> actionSlackParamChannel() {
@@ -1855,14 +1855,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      * 
      */
     @Import(name="autoSummarizeCronSchedule")
     private @Nullable Output<String> autoSummarizeCronSchedule;
 
     /**
-     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
+     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      * 
      */
     public Optional<Output<String>> autoSummarizeCronSchedule() {
@@ -2020,14 +2020,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      * 
      */
     @Import(name="cronSchedule")
     private @Nullable Output<String> cronSchedule;
 
     /**
-     * @return Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
+     * @return Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      * 
      */
     public Optional<Output<String>> cronSchedule() {
@@ -4478,7 +4478,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or{@literal @})
+         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or {@literal @})
          * 
          * @return builder
          * 
@@ -4489,7 +4489,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or{@literal @})
+         * @param actionSlackParamChannel Slack channel to send the message to (Should start with # or {@literal @})
          * 
          * @return builder
          * 
@@ -5296,7 +5296,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
+         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
          * 
          * @return builder
          * 
@@ -5307,7 +5307,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
+         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
          * 
          * @return builder
          * 
@@ -5527,7 +5527,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
+         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
          * 
          * @return builder
          * 
@@ -5538,7 +5538,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
+         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
          * 
          * @return builder
          * 

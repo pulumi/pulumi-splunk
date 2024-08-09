@@ -5337,7 +5337,7 @@ class SavedSearches(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
                  action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
                  action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
                  action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
@@ -5525,16 +5525,16 @@ class SavedSearches(pulumi.CustomResource):
             dispatch_earliest_time="rt-15m",
             dispatch_latest_time="rt-0m",
             cron_schedule="*/5 * * * *",
-            acl=splunk.SavedSearchesAclArgs(
-                owner="admin",
-                sharing="app",
-                app="launcher",
-            ))
+            acl={
+                "owner": "admin",
+                "sharing": "app",
+                "app": "launcher",
+            })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         :param pulumi.Input[str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
         :param pulumi.Input[str] action_create_xsoar_incident_param_details: XSOAR incident description
@@ -5738,11 +5738,11 @@ class SavedSearches(pulumi.CustomResource):
             dispatch_earliest_time="rt-15m",
             dispatch_latest_time="rt-0m",
             cron_schedule="*/5 * * * *",
-            acl=splunk.SavedSearchesAclArgs(
-                owner="admin",
-                sharing="app",
-                app="launcher",
-            ))
+            acl={
+                "owner": "admin",
+                "sharing": "app",
+                "app": "launcher",
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -5760,7 +5760,7 @@ class SavedSearches(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
                  action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
                  action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
                  action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
@@ -6110,7 +6110,7 @@ class SavedSearches(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']]] = None,
+            acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
             action_create_xsoar_incident: Optional[pulumi.Input[str]] = None,
             action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[str]] = None,
             action_create_xsoar_incident_param_details: Optional[pulumi.Input[str]] = None,
@@ -6284,7 +6284,7 @@ class SavedSearches(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['SavedSearchesAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         :param pulumi.Input[str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
         :param pulumi.Input[str] action_create_xsoar_incident_param_details: XSOAR incident description

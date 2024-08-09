@@ -122,7 +122,7 @@ class ConfigsConf(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['ConfigsConfAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -190,7 +190,7 @@ class ConfigsConf(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['ConfigsConfAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -215,7 +215,7 @@ class ConfigsConf(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[pulumi.InputType['ConfigsConfAclArgs']]] = None,
+            acl: Optional[pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None) -> 'ConfigsConf':
         """

@@ -136,7 +136,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public ShIndexesManager(String name) {
+    public ShIndexesManager(java.lang.String name) {
         this(name, ShIndexesManagerArgs.Empty);
     }
     /**
@@ -144,7 +144,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public ShIndexesManager(String name, @Nullable ShIndexesManagerArgs args) {
+    public ShIndexesManager(java.lang.String name, @Nullable ShIndexesManagerArgs args) {
         this(name, args, null);
     }
     /**
@@ -153,15 +153,22 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public ShIndexesManager(String name, @Nullable ShIndexesManagerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/shIndexesManager:ShIndexesManager", name, args == null ? ShIndexesManagerArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public ShIndexesManager(java.lang.String name, @Nullable ShIndexesManagerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/shIndexesManager:ShIndexesManager", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private ShIndexesManager(String name, Output<String> id, @Nullable ShIndexesManagerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/shIndexesManager:ShIndexesManager", name, state, makeResourceOptions(options, id));
+    private ShIndexesManager(java.lang.String name, Output<java.lang.String> id, @Nullable ShIndexesManagerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/shIndexesManager:ShIndexesManager", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static ShIndexesManagerArgs makeArgs(@Nullable ShIndexesManagerArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? ShIndexesManagerArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -177,7 +184,7 @@ public class ShIndexesManager extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static ShIndexesManager get(String name, Output<String> id, @Nullable ShIndexesManagerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static ShIndexesManager get(java.lang.String name, Output<java.lang.String> id, @Nullable ShIndexesManagerState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new ShIndexesManager(name, id, state, options);
     }
 }

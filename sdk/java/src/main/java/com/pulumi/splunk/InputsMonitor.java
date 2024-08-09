@@ -290,7 +290,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public InputsMonitor(String name) {
+    public InputsMonitor(java.lang.String name) {
         this(name, InputsMonitorArgs.Empty);
     }
     /**
@@ -298,7 +298,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public InputsMonitor(String name, @Nullable InputsMonitorArgs args) {
+    public InputsMonitor(java.lang.String name, @Nullable InputsMonitorArgs args) {
         this(name, args, null);
     }
     /**
@@ -307,15 +307,22 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public InputsMonitor(String name, @Nullable InputsMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsMonitor:InputsMonitor", name, args == null ? InputsMonitorArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public InputsMonitor(java.lang.String name, @Nullable InputsMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsMonitor:InputsMonitor", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private InputsMonitor(String name, Output<String> id, @Nullable InputsMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsMonitor:InputsMonitor", name, state, makeResourceOptions(options, id));
+    private InputsMonitor(java.lang.String name, Output<java.lang.String> id, @Nullable InputsMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsMonitor:InputsMonitor", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static InputsMonitorArgs makeArgs(@Nullable InputsMonitorArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? InputsMonitorArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -331,7 +338,7 @@ public class InputsMonitor extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static InputsMonitor get(String name, Output<String> id, @Nullable InputsMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static InputsMonitor get(java.lang.String name, Output<java.lang.String> id, @Nullable InputsMonitorState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new InputsMonitor(name, id, state, options);
     }
 }

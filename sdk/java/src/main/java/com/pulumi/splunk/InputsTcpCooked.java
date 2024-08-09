@@ -160,7 +160,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public InputsTcpCooked(String name) {
+    public InputsTcpCooked(java.lang.String name) {
         this(name, InputsTcpCookedArgs.Empty);
     }
     /**
@@ -168,7 +168,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public InputsTcpCooked(String name, @Nullable InputsTcpCookedArgs args) {
+    public InputsTcpCooked(java.lang.String name, @Nullable InputsTcpCookedArgs args) {
         this(name, args, null);
     }
     /**
@@ -177,15 +177,22 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public InputsTcpCooked(String name, @Nullable InputsTcpCookedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsTcpCooked:InputsTcpCooked", name, args == null ? InputsTcpCookedArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public InputsTcpCooked(java.lang.String name, @Nullable InputsTcpCookedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsTcpCooked:InputsTcpCooked", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private InputsTcpCooked(String name, Output<String> id, @Nullable InputsTcpCookedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/inputsTcpCooked:InputsTcpCooked", name, state, makeResourceOptions(options, id));
+    private InputsTcpCooked(java.lang.String name, Output<java.lang.String> id, @Nullable InputsTcpCookedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/inputsTcpCooked:InputsTcpCooked", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static InputsTcpCookedArgs makeArgs(@Nullable InputsTcpCookedArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? InputsTcpCookedArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -201,7 +208,7 @@ public class InputsTcpCooked extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static InputsTcpCooked get(String name, Output<String> id, @Nullable InputsTcpCookedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static InputsTcpCooked get(java.lang.String name, Output<java.lang.String> id, @Nullable InputsTcpCookedState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new InputsTcpCooked(name, id, state, options);
     }
 }

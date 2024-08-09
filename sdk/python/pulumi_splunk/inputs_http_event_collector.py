@@ -354,7 +354,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['InputsHttpEventCollectorAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['InputsHttpEventCollectorAclArgs', 'InputsHttpEventCollectorAclArgsDict']]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
                  host: Optional[pulumi.Input[str]] = None,
                  index: Optional[pulumi.Input[str]] = None,
@@ -388,17 +388,17 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             sourcetype="new:sourcetype",
             disabled=False,
             use_ack=0,
-            acl=splunk.InputsHttpEventCollectorAclArgs(
-                owner="user01",
-                sharing="global",
-                reads=["admin"],
-                writes=["admin"],
-            ))
+            acl={
+                "owner": "user01",
+                "sharing": "global",
+                "reads": ["admin"],
+                "writes": ["admin"],
+            })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['InputsHttpEventCollectorAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsHttpEventCollectorAclArgs', 'InputsHttpEventCollectorAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[bool] disabled: Input disabled indicator
         :param pulumi.Input[str] host: Default host value for events with this token
         :param pulumi.Input[str] index: Index to store generated events
@@ -438,12 +438,12 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             sourcetype="new:sourcetype",
             disabled=False,
             use_ack=0,
-            acl=splunk.InputsHttpEventCollectorAclArgs(
-                owner="user01",
-                sharing="global",
-                reads=["admin"],
-                writes=["admin"],
-            ))
+            acl={
+                "owner": "user01",
+                "sharing": "global",
+                "reads": ["admin"],
+                "writes": ["admin"],
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -461,7 +461,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['InputsHttpEventCollectorAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['InputsHttpEventCollectorAclArgs', 'InputsHttpEventCollectorAclArgsDict']]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
                  host: Optional[pulumi.Input[str]] = None,
                  index: Optional[pulumi.Input[str]] = None,
@@ -500,7 +500,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[pulumi.InputType['InputsHttpEventCollectorAclArgs']]] = None,
+            acl: Optional[pulumi.Input[Union['InputsHttpEventCollectorAclArgs', 'InputsHttpEventCollectorAclArgsDict']]] = None,
             disabled: Optional[pulumi.Input[bool]] = None,
             host: Optional[pulumi.Input[str]] = None,
             index: Optional[pulumi.Input[str]] = None,
@@ -517,7 +517,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['InputsHttpEventCollectorAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsHttpEventCollectorAclArgs', 'InputsHttpEventCollectorAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[bool] disabled: Input disabled indicator
         :param pulumi.Input[str] host: Default host value for events with this token
         :param pulumi.Input[str] index: Index to store generated events

@@ -43,12 +43,12 @@ import javax.annotation.Nullable;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
  * 
- * public class App {
- *     public static void main(String[] args) {
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
- *     }
+ *     }}{@code
  * 
- *     public static void stack(Context ctx) {
+ *     public static void stack(Context ctx) }{{@code
  *         var savedSearch = new SavedSearches("savedSearch", SavedSearchesArgs.builder()
  *             .name("Test New Alert")
  *             .search("index=main")
@@ -58,11 +58,11 @@ import javax.annotation.Nullable;
  *             .actionEmailMaxResults(10)
  *             .actionEmailSendResults(false)
  *             .actionEmailSubject("Splunk Alert: $name$")
- *             .actionEmailTo("splunk{@literal @}splunk.com")
+ *             .actionEmailTo("splunk}{@literal @}{@code splunk.com")
  *             .actionEmailTrackAlert(true)
  *             .dispatchEarliestTime("rt-15m")
  *             .dispatchLatestTime("rt-0m")
- *             .cronSchedule("*{@literal /}5 * * * *")
+ *             .cronSchedule("*}&#47;{@code 5 * * * *")
  *             .acl(SavedSearchesAclArgs.builder()
  *                 .owner("admin")
  *                 .sharing("app")
@@ -70,8 +70,8 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .build());
  * 
- *     }
- * }
+ *     }}{@code
+ * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
@@ -1242,14 +1242,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionSlackParamAttachment);
     }
     /**
-     * Slack channel to send the message to (Should start with # or{@literal @})
+     * Slack channel to send the message to (Should start with # or {@literal @})
      * 
      */
     @Export(name="actionSlackParamChannel", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamChannel;
 
     /**
-     * @return Slack channel to send the message to (Should start with # or{@literal @})
+     * @return Slack channel to send the message to (Should start with # or {@literal @})
      * 
      */
     public Output<Optional<String>> actionSlackParamChannel() {
@@ -1794,14 +1794,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeCommand;
     }
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      * 
      */
     @Export(name="autoSummarizeCronSchedule", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeCronSchedule;
 
     /**
-     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is *{@literal /}10 * * * * and corresponds to \`every ten hours\`.
+     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      * 
      */
     public Output<String> autoSummarizeCronSchedule() {
@@ -1948,14 +1948,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeTimespan;
     }
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      * 
      */
     @Export(name="cronSchedule", refs={String.class}, tree="[0]")
     private Output<String> cronSchedule;
 
     /**
-     * @return Valid values: cron stringThe cron schedule to execute this search. For example: *{@literal /}5 * * * * causes the search to execute every 5 minutes.
+     * @return Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      * 
      */
     public Output<String> cronSchedule() {
@@ -2442,7 +2442,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public SavedSearches(String name) {
+    public SavedSearches(java.lang.String name) {
         this(name, SavedSearchesArgs.Empty);
     }
     /**
@@ -2450,7 +2450,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public SavedSearches(String name, SavedSearchesArgs args) {
+    public SavedSearches(java.lang.String name, SavedSearchesArgs args) {
         this(name, args, null);
     }
     /**
@@ -2459,15 +2459,22 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public SavedSearches(String name, SavedSearchesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/savedSearches:SavedSearches", name, args == null ? SavedSearchesArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public SavedSearches(java.lang.String name, SavedSearchesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/savedSearches:SavedSearches", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private SavedSearches(String name, Output<String> id, @Nullable SavedSearchesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/savedSearches:SavedSearches", name, state, makeResourceOptions(options, id));
+    private SavedSearches(java.lang.String name, Output<java.lang.String> id, @Nullable SavedSearchesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/savedSearches:SavedSearches", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static SavedSearchesArgs makeArgs(SavedSearchesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? SavedSearchesArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -2483,7 +2490,7 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static SavedSearches get(String name, Output<String> id, @Nullable SavedSearchesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static SavedSearches get(java.lang.String name, Output<java.lang.String> id, @Nullable SavedSearchesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new SavedSearches(name, id, state, options);
     }
 }
