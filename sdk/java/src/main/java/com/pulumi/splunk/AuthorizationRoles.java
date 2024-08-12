@@ -262,7 +262,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AuthorizationRoles(String name) {
+    public AuthorizationRoles(java.lang.String name) {
         this(name, AuthorizationRolesArgs.Empty);
     }
     /**
@@ -270,7 +270,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AuthorizationRoles(String name, @Nullable AuthorizationRolesArgs args) {
+    public AuthorizationRoles(java.lang.String name, @Nullable AuthorizationRolesArgs args) {
         this(name, args, null);
     }
     /**
@@ -279,15 +279,22 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AuthorizationRoles(String name, @Nullable AuthorizationRolesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/authorizationRoles:AuthorizationRoles", name, args == null ? AuthorizationRolesArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public AuthorizationRoles(java.lang.String name, @Nullable AuthorizationRolesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/authorizationRoles:AuthorizationRoles", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AuthorizationRoles(String name, Output<String> id, @Nullable AuthorizationRolesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/authorizationRoles:AuthorizationRoles", name, state, makeResourceOptions(options, id));
+    private AuthorizationRoles(java.lang.String name, Output<java.lang.String> id, @Nullable AuthorizationRolesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/authorizationRoles:AuthorizationRoles", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static AuthorizationRolesArgs makeArgs(@Nullable AuthorizationRolesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AuthorizationRolesArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -303,7 +310,7 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AuthorizationRoles get(String name, Output<String> id, @Nullable AuthorizationRolesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AuthorizationRoles get(java.lang.String name, Output<java.lang.String> id, @Nullable AuthorizationRolesState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AuthorizationRoles(name, id, state, options);
     }
 }

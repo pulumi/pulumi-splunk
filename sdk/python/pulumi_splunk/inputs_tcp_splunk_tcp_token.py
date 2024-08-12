@@ -130,7 +130,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['InputsTcpSplunkTcpTokenAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  token: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -152,7 +152,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['InputsTcpSplunkTcpTokenAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: Required. Name for the token to create.
         :param pulumi.Input[str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
         """
@@ -193,7 +193,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[pulumi.InputType['InputsTcpSplunkTcpTokenAclArgs']]] = None,
+                 acl: Optional[pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  token: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -218,7 +218,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[pulumi.InputType['InputsTcpSplunkTcpTokenAclArgs']]] = None,
+            acl: Optional[pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             token: Optional[pulumi.Input[str]] = None) -> 'InputsTcpSplunkTcpToken':
         """
@@ -228,7 +228,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['InputsTcpSplunkTcpTokenAclArgs']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[str] name: Required. Name for the token to create.
         :param pulumi.Input[str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
         """

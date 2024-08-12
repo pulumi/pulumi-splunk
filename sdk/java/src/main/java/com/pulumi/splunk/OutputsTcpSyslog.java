@@ -190,7 +190,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public OutputsTcpSyslog(String name) {
+    public OutputsTcpSyslog(java.lang.String name) {
         this(name, OutputsTcpSyslogArgs.Empty);
     }
     /**
@@ -198,7 +198,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public OutputsTcpSyslog(String name, @Nullable OutputsTcpSyslogArgs args) {
+    public OutputsTcpSyslog(java.lang.String name, @Nullable OutputsTcpSyslogArgs args) {
         this(name, args, null);
     }
     /**
@@ -207,15 +207,22 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public OutputsTcpSyslog(String name, @Nullable OutputsTcpSyslogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/outputsTcpSyslog:OutputsTcpSyslog", name, args == null ? OutputsTcpSyslogArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public OutputsTcpSyslog(java.lang.String name, @Nullable OutputsTcpSyslogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/outputsTcpSyslog:OutputsTcpSyslog", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private OutputsTcpSyslog(String name, Output<String> id, @Nullable OutputsTcpSyslogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/outputsTcpSyslog:OutputsTcpSyslog", name, state, makeResourceOptions(options, id));
+    private OutputsTcpSyslog(java.lang.String name, Output<java.lang.String> id, @Nullable OutputsTcpSyslogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/outputsTcpSyslog:OutputsTcpSyslog", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static OutputsTcpSyslogArgs makeArgs(@Nullable OutputsTcpSyslogArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? OutputsTcpSyslogArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .build();
@@ -231,7 +238,7 @@ public class OutputsTcpSyslog extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static OutputsTcpSyslog get(String name, Output<String> id, @Nullable OutputsTcpSyslogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static OutputsTcpSyslog get(java.lang.String name, Output<java.lang.String> id, @Nullable OutputsTcpSyslogState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new OutputsTcpSyslog(name, id, state, options);
     }
 }

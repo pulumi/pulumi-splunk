@@ -40,22 +40,22 @@ import javax.annotation.Nullable;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
  * 
- * public class App {
- *     public static void main(String[] args) {
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
- *     }
+ *     }}{@code
  * 
- *     public static void stack(Context ctx) {
+ *     public static void stack(Context ctx) }{{@code
  *         var user01 = new AuthenticationUsers("user01", AuthenticationUsersArgs.builder()
  *             .name("user01")
- *             .email("user01{@literal @}example.com")
+ *             .email("user01}{@literal @}{@code example.com")
  *             .password("password01")
  *             .forceChangePass(false)
  *             .roles("terraform-user01-role")
  *             .build());
  * 
- *     }
- * }
+ *     }}{@code
+ * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
@@ -194,7 +194,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public AuthenticationUsers(String name) {
+    public AuthenticationUsers(java.lang.String name) {
         this(name, AuthenticationUsersArgs.Empty);
     }
     /**
@@ -202,7 +202,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public AuthenticationUsers(String name, @Nullable AuthenticationUsersArgs args) {
+    public AuthenticationUsers(java.lang.String name, @Nullable AuthenticationUsersArgs args) {
         this(name, args, null);
     }
     /**
@@ -211,15 +211,22 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public AuthenticationUsers(String name, @Nullable AuthenticationUsersArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/authenticationUsers:AuthenticationUsers", name, args == null ? AuthenticationUsersArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public AuthenticationUsers(java.lang.String name, @Nullable AuthenticationUsersArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/authenticationUsers:AuthenticationUsers", name, makeArgs(args, options), makeResourceOptions(options, Codegen.empty()), false);
     }
 
-    private AuthenticationUsers(String name, Output<String> id, @Nullable AuthenticationUsersState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("splunk:index/authenticationUsers:AuthenticationUsers", name, state, makeResourceOptions(options, id));
+    private AuthenticationUsers(java.lang.String name, Output<java.lang.String> id, @Nullable AuthenticationUsersState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("splunk:index/authenticationUsers:AuthenticationUsers", name, state, makeResourceOptions(options, id), false);
     }
 
-    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
+    private static AuthenticationUsersArgs makeArgs(@Nullable AuthenticationUsersArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        if (options != null && options.getUrn().isPresent()) {
+            return null;
+        }
+        return args == null ? AuthenticationUsersArgs.Empty : args;
+    }
+
+    private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
@@ -238,7 +245,7 @@ public class AuthenticationUsers extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static AuthenticationUsers get(String name, Output<String> id, @Nullable AuthenticationUsersState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public static AuthenticationUsers get(java.lang.String name, Output<java.lang.String> id, @Nullable AuthenticationUsersState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         return new AuthenticationUsers(name, id, state, options);
     }
 }
