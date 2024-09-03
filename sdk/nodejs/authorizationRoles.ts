@@ -5,8 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.AuthorizationRoles
- *
+ * # Resource: splunk.AuthorizationRoles
  * Create and update role information.
  *
  * ## Example Usage
@@ -109,7 +108,7 @@ export class AuthorizationRoles extends pulumi.CustomResource {
      */
     public readonly searchIndexesAlloweds!: pulumi.Output<string[]>;
     /**
-     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
      */
     public readonly searchIndexesDefaults!: pulumi.Output<string[]>;
     /**
@@ -213,7 +212,7 @@ export interface AuthorizationRolesState {
      */
     searchIndexesAlloweds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
      */
     searchIndexesDefaults?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -271,7 +270,7 @@ export interface AuthorizationRolesArgs {
      */
     searchIndexesAlloweds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
      */
     searchIndexesDefaults?: pulumi.Input<pulumi.Input<string>[]>;
     /**

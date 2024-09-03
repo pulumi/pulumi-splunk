@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsTcpCooked
-    /// 
+    /// # Resource: splunk.InputsTcpCooked
     /// Create or update cooked TCP input information and create new containers for managing cooked data.
     /// 
     /// ## Example Usage

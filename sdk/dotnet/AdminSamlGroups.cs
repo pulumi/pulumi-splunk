@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.AdminSamlGroups
-    /// 
+    /// # Resource: splunk.AdminSamlGroups
     /// Manage external groups in an IdP response to internal Splunk roles.
     /// 
     /// ## Example Usage

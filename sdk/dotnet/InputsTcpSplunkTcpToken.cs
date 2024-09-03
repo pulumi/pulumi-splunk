@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsTcpSplunkTcpToken
-    /// 
+    /// # Resource: splunk.InputsTcpSplunkTcpToken
     /// Manage receiver access using tokens.
     /// 
     /// ## Example Usage

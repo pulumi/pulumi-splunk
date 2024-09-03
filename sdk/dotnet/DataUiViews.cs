@@ -10,9 +10,9 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.DataUiViews
-    /// 
+    /// # Resource: splunk.DataUiViews
     /// Create and manage splunk dashboards/views.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

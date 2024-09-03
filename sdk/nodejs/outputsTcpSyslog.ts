@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.OutputsTcpSyslog
- *
+ * # Resource: splunk.OutputsTcpSyslog
  * Access the configuration of a forwarded server configured to provide data in standard syslog format.
  *
  * ## Example Usage

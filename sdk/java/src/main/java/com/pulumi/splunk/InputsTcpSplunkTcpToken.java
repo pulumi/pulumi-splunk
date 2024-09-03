@@ -15,8 +15,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.InputsTcpSplunkTcpToken
- * 
+ * # Resource: splunk.InputsTcpSplunkTcpToken
  * Manage receiver access using tokens.
  * 
  * ## Example Usage

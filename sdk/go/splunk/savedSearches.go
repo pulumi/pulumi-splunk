@@ -12,8 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: SavedSearches
-//
+// # Resource: SavedSearches
 // Create and manage saved searches.
 //
 // ## Example Usage
@@ -185,7 +184,7 @@ type SavedSearches struct {
 	ActionPopulateLookupCommand pulumi.StringOutput `pulumi:"actionPopulateLookupCommand"`
 	// Lookup name of path of the lookup to populate
 	ActionPopulateLookupDest pulumi.StringOutput `pulumi:"actionPopulateLookupDest"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionPopulateLookupHostname pulumi.StringOutput `pulumi:"actionPopulateLookupHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionPopulateLookupMaxResults pulumi.IntOutput `pulumi:"actionPopulateLookupMaxResults"`
@@ -199,7 +198,7 @@ type SavedSearches struct {
 	ActionRss pulumi.BoolOutput `pulumi:"actionRss"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionRssCommand pulumi.StringOutput `pulumi:"actionRssCommand"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionRssHostname pulumi.StringOutput `pulumi:"actionRssHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionRssMaxResults pulumi.IntOutput `pulumi:"actionRssMaxResults"`
@@ -215,7 +214,7 @@ type SavedSearches struct {
 	ActionScriptCommand pulumi.StringOutput `pulumi:"actionScriptCommand"`
 	// File name of the script to call. Required if script action is enabled
 	ActionScriptFilename pulumi.StringOutput `pulumi:"actionScriptFilename"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionScriptHostname pulumi.StringOutput `pulumi:"actionScriptHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionScriptMaxResults pulumi.IntOutput `pulumi:"actionScriptMaxResults"`
@@ -267,7 +266,7 @@ type SavedSearches struct {
 	ActionSummaryIndex pulumi.BoolOutput `pulumi:"actionSummaryIndex"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionSummaryIndexCommand pulumi.StringOutput `pulumi:"actionSummaryIndexCommand"`
-	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionSummaryIndexHostname pulumi.StringOutput `pulumi:"actionSummaryIndexHostname"`
 	// Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
 	ActionSummaryIndexInline pulumi.BoolOutput `pulumi:"actionSummaryIndexInline"`
@@ -564,7 +563,7 @@ type savedSearchesState struct {
 	ActionPopulateLookupCommand *string `pulumi:"actionPopulateLookupCommand"`
 	// Lookup name of path of the lookup to populate
 	ActionPopulateLookupDest *string `pulumi:"actionPopulateLookupDest"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionPopulateLookupHostname *string `pulumi:"actionPopulateLookupHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionPopulateLookupMaxResults *int `pulumi:"actionPopulateLookupMaxResults"`
@@ -578,7 +577,7 @@ type savedSearchesState struct {
 	ActionRss *bool `pulumi:"actionRss"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionRssCommand *string `pulumi:"actionRssCommand"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionRssHostname *string `pulumi:"actionRssHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionRssMaxResults *int `pulumi:"actionRssMaxResults"`
@@ -594,7 +593,7 @@ type savedSearchesState struct {
 	ActionScriptCommand *string `pulumi:"actionScriptCommand"`
 	// File name of the script to call. Required if script action is enabled
 	ActionScriptFilename *string `pulumi:"actionScriptFilename"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionScriptHostname *string `pulumi:"actionScriptHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionScriptMaxResults *int `pulumi:"actionScriptMaxResults"`
@@ -646,7 +645,7 @@ type savedSearchesState struct {
 	ActionSummaryIndex *bool `pulumi:"actionSummaryIndex"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionSummaryIndexCommand *string `pulumi:"actionSummaryIndexCommand"`
-	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionSummaryIndexHostname *string `pulumi:"actionSummaryIndexHostname"`
 	// Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
 	ActionSummaryIndexInline *bool `pulumi:"actionSummaryIndexInline"`
@@ -911,7 +910,7 @@ type SavedSearchesState struct {
 	ActionPopulateLookupCommand pulumi.StringPtrInput
 	// Lookup name of path of the lookup to populate
 	ActionPopulateLookupDest pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionPopulateLookupHostname pulumi.StringPtrInput
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionPopulateLookupMaxResults pulumi.IntPtrInput
@@ -925,7 +924,7 @@ type SavedSearchesState struct {
 	ActionRss pulumi.BoolPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionRssCommand pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionRssHostname pulumi.StringPtrInput
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionRssMaxResults pulumi.IntPtrInput
@@ -941,7 +940,7 @@ type SavedSearchesState struct {
 	ActionScriptCommand pulumi.StringPtrInput
 	// File name of the script to call. Required if script action is enabled
 	ActionScriptFilename pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionScriptHostname pulumi.StringPtrInput
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionScriptMaxResults pulumi.IntPtrInput
@@ -993,7 +992,7 @@ type SavedSearchesState struct {
 	ActionSummaryIndex pulumi.BoolPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionSummaryIndexCommand pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionSummaryIndexHostname pulumi.StringPtrInput
 	// Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
 	ActionSummaryIndexInline pulumi.BoolPtrInput
@@ -1258,7 +1257,7 @@ type savedSearchesArgs struct {
 	ActionPopulateLookupCommand *string `pulumi:"actionPopulateLookupCommand"`
 	// Lookup name of path of the lookup to populate
 	ActionPopulateLookupDest *string `pulumi:"actionPopulateLookupDest"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionPopulateLookupHostname *string `pulumi:"actionPopulateLookupHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionPopulateLookupMaxResults *int `pulumi:"actionPopulateLookupMaxResults"`
@@ -1270,7 +1269,7 @@ type savedSearchesArgs struct {
 	ActionPopulateLookupTtl *string `pulumi:"actionPopulateLookupTtl"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionRssCommand *string `pulumi:"actionRssCommand"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionRssHostname *string `pulumi:"actionRssHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionRssMaxResults *int `pulumi:"actionRssMaxResults"`
@@ -1284,7 +1283,7 @@ type savedSearchesArgs struct {
 	ActionScriptCommand *string `pulumi:"actionScriptCommand"`
 	// File name of the script to call. Required if script action is enabled
 	ActionScriptFilename *string `pulumi:"actionScriptFilename"`
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionScriptHostname *string `pulumi:"actionScriptHostname"`
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionScriptMaxResults *int `pulumi:"actionScriptMaxResults"`
@@ -1334,7 +1333,7 @@ type savedSearchesArgs struct {
 	ActionSnowEventParamType *string `pulumi:"actionSnowEventParamType"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionSummaryIndexCommand *string `pulumi:"actionSummaryIndexCommand"`
-	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionSummaryIndexHostname *string `pulumi:"actionSummaryIndexHostname"`
 	// Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
 	ActionSummaryIndexInline *bool `pulumi:"actionSummaryIndexInline"`
@@ -1596,7 +1595,7 @@ type SavedSearchesArgs struct {
 	ActionPopulateLookupCommand pulumi.StringPtrInput
 	// Lookup name of path of the lookup to populate
 	ActionPopulateLookupDest pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionPopulateLookupHostname pulumi.StringPtrInput
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionPopulateLookupMaxResults pulumi.IntPtrInput
@@ -1608,7 +1607,7 @@ type SavedSearchesArgs struct {
 	ActionPopulateLookupTtl pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionRssCommand pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionRssHostname pulumi.StringPtrInput
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionRssMaxResults pulumi.IntPtrInput
@@ -1622,7 +1621,7 @@ type SavedSearchesArgs struct {
 	ActionScriptCommand pulumi.StringPtrInput
 	// File name of the script to call. Required if script action is enabled
 	ActionScriptFilename pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionScriptHostname pulumi.StringPtrInput
 	// Sets the maximum number of search results sent using alerts. Defaults to 100.
 	ActionScriptMaxResults pulumi.IntPtrInput
@@ -1672,7 +1671,7 @@ type SavedSearchesArgs struct {
 	ActionSnowEventParamType pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionSummaryIndexCommand pulumi.StringPtrInput
-	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+	// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 	ActionSummaryIndexHostname pulumi.StringPtrInput
 	// Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
 	ActionSummaryIndexInline pulumi.BoolPtrInput
@@ -2209,7 +2208,7 @@ func (o SavedSearchesOutput) ActionPopulateLookupDest() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPopulateLookupDest }).(pulumi.StringOutput)
 }
 
-// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 func (o SavedSearchesOutput) ActionPopulateLookupHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionPopulateLookupHostname }).(pulumi.StringOutput)
 }
@@ -2244,7 +2243,7 @@ func (o SavedSearchesOutput) ActionRssCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRssCommand }).(pulumi.StringOutput)
 }
 
-// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 func (o SavedSearchesOutput) ActionRssHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRssHostname }).(pulumi.StringOutput)
 }
@@ -2284,7 +2283,7 @@ func (o SavedSearchesOutput) ActionScriptFilename() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptFilename }).(pulumi.StringOutput)
 }
 
-// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 func (o SavedSearchesOutput) ActionScriptHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptHostname }).(pulumi.StringOutput)
 }
@@ -2399,7 +2398,7 @@ func (o SavedSearchesOutput) ActionSummaryIndexCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexCommand }).(pulumi.StringOutput)
 }
 
-// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
 func (o SavedSearchesOutput) ActionSummaryIndexHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexHostname }).(pulumi.StringOutput)
 }

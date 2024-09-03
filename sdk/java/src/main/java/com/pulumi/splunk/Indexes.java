@@ -17,8 +17,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.Indexes
- * 
+ * # Resource: splunk.Indexes
  * Create and manage data indexes.
  * 
  * ## Authorization and authentication

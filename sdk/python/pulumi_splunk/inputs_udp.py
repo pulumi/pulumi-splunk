@@ -456,8 +456,7 @@ class InputsUdp(pulumi.CustomResource):
                  sourcetype: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsTcpRaw
-
+        # Resource: InputsTcpRaw
         Create and manage UDP data inputs.
 
         ## Example Usage
@@ -502,8 +501,7 @@ class InputsUdp(pulumi.CustomResource):
                  args: Optional[InputsUdpArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsTcpRaw
-
+        # Resource: InputsTcpRaw
         Create and manage UDP data inputs.
 
         ## Example Usage

@@ -17,8 +17,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.AuthenticationUsers
- * 
+ * # Resource: splunk.AuthenticationUsers
  * Create and update user information or delete the user.
  * 
  * ## Example Usage

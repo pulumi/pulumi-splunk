@@ -100,8 +100,7 @@ class AdminSamlGroups(pulumi.CustomResource):
                  roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        ## # Resource: AdminSamlGroups
-
+        # Resource: AdminSamlGroups
         Manage external groups in an IdP response to internal Splunk roles.
 
         ## Example Usage
@@ -138,8 +137,7 @@ class AdminSamlGroups(pulumi.CustomResource):
                  args: Optional[AdminSamlGroupsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: AdminSamlGroups
-
+        # Resource: AdminSamlGroups
         Manage external groups in an IdP response to internal Splunk roles.
 
         ## Example Usage

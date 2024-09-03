@@ -17,8 +17,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.OutputsTcpDefault
- * 
+ * # Resource: splunk.OutputsTcpDefault
  * Manage to global tcpout properties.
  * 
  * ## Example Usage

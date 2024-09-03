@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsMonitor
-//
+// # Resource: InputsMonitor
 // Create or update a new file or directory monitor input.
 //
 // ## Example Usage

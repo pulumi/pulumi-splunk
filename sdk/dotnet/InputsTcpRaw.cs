@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsTcpRaw
-    /// 
+    /// # Resource: splunk.InputsTcpRaw
     /// Create or update raw TCP input information for managing raw tcp inputs from forwarders.
     /// 
     /// ## Example Usage

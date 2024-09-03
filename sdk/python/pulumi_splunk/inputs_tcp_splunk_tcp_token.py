@@ -135,8 +135,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
                  token: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsTcpSplunkTcpToken
-
+        # Resource: InputsTcpSplunkTcpToken
         Manage receiver access using tokens.
 
         ## Example Usage
@@ -163,8 +162,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
                  args: Optional[InputsTcpSplunkTcpTokenArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsTcpSplunkTcpToken
-
+        # Resource: InputsTcpSplunkTcpToken
         Manage receiver access using tokens.
 
         ## Example Usage

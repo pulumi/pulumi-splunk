@@ -331,8 +331,7 @@ class AuthenticationUsers(pulumi.CustomResource):
                  tz: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: AuthenticationUsers
-
+        # Resource: AuthenticationUsers
         Create and update user information or delete the user.
 
         ## Example Usage
@@ -368,8 +367,7 @@ class AuthenticationUsers(pulumi.CustomResource):
                  args: Optional[AuthenticationUsersArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: AuthenticationUsers
-
+        # Resource: AuthenticationUsers
         Create and update user information or delete the user.
 
         ## Example Usage

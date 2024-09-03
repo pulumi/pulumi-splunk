@@ -324,8 +324,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: OutputsTcpSyslog
-
+        # Resource: OutputsTcpSyslog
         Access the configuration of a forwarded server configured to provide data in standard syslog format.
 
         ## Example Usage
@@ -364,8 +363,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
                  args: Optional[OutputsTcpSyslogArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: OutputsTcpSyslog
-
+        # Resource: OutputsTcpSyslog
         Access the configuration of a forwarded server configured to provide data in standard syslog format.
 
         ## Example Usage

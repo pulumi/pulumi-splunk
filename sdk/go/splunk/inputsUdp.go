@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsTcpRaw
-//
+// # Resource: InputsTcpRaw
 // Create and manage UDP data inputs.
 //
 // ## Example Usage

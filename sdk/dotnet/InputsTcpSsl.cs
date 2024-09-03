@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsTcpSsl
-    /// 
+    /// # Resource: splunk.InputsTcpSsl
     /// Access or update the SSL configuration for the host.
     /// 
     /// ## Example Usage

@@ -127,8 +127,7 @@ class ConfigsConf(pulumi.CustomResource):
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        ## # Resource: ConfigsConf
-
+        # Resource: ConfigsConf
         Create and manage configuration file stanzas.
 
         ## Example Usage
@@ -157,8 +156,7 @@ class ConfigsConf(pulumi.CustomResource):
                  args: Optional[ConfigsConfArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: ConfigsConf
-
+        # Resource: ConfigsConf
         Create and manage configuration file stanzas.
 
         ## Example Usage

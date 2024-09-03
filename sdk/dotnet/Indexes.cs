@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.Indexes
-    /// 
+    /// # Resource: splunk.Indexes
     /// Create and manage data indexes.
     /// 
     /// ## Authorization and authentication

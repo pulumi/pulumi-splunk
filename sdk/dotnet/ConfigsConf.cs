@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.ConfigsConf
-    /// 
+    /// # Resource: splunk.ConfigsConf
     /// Create and manage configuration file stanzas.
     /// 
     /// ## Example Usage

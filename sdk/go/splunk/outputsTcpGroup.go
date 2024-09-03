@@ -12,8 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: OutputsTcpGroup
-//
+// # Resource: OutputsTcpGroup
 // Access to the configuration of a group of one or more data forwarding destinations.
 //
 // ## Example Usage

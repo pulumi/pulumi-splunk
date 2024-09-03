@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.AppsLocal
- *
+ * # Resource: splunk.AppsLocal
  * Create, install and manage apps on your Splunk instance
  *
  * ## Example Usage

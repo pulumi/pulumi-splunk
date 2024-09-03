@@ -15,9 +15,9 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.DataUiViews
- * 
+ * # Resource: splunk.DataUiViews
  * Create and manage splunk dashboards/views.
+ * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;

@@ -16,8 +16,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.ShIndexesManager
- * 
+ * # Resource: splunk.ShIndexesManager
  * Create indexes on Splunk Cloud instances. [BETA]
  * 
  * ## Authorization and authentication

@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.InputsTcpRaw
- *
+ * # Resource: splunk.InputsTcpRaw
  * Create and manage UDP data inputs.
  *
  * ## Example Usage

@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: GlobalHttpEventCollector
-//
+// # Resource: GlobalHttpEventCollector
 // Update Global HTTP Event Collector input configuration.
 //
 // ## Example Usage

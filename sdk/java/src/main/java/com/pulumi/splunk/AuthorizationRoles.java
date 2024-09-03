@@ -17,8 +17,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.AuthorizationRoles
- * 
+ * # Resource: splunk.AuthorizationRoles
  * Create and update role information.
  * 
  * ## Example Usage
@@ -216,14 +215,14 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
         return this.searchIndexesAlloweds;
     }
     /**
-     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
      * 
      */
     @Export(name="searchIndexesDefaults", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> searchIndexesDefaults;
 
     /**
-     * @return List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+     * @return List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
      * 
      */
     public Output<List<String>> searchIndexesDefaults() {

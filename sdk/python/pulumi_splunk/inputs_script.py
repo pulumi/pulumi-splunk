@@ -373,8 +373,7 @@ class InputsScript(pulumi.CustomResource):
                  sourcetype: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsScript
-
+        # Resource: InputsScript
         Create or update scripted inputs.
 
         ## Example Usage
@@ -410,8 +409,7 @@ class InputsScript(pulumi.CustomResource):
                  args: InputsScriptArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsScript
-
+        # Resource: InputsScript
         Create or update scripted inputs.
 
         ## Example Usage

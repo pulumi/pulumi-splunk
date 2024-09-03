@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.GlobalHttpEventCollector
-    /// 
+    /// # Resource: splunk.GlobalHttpEventCollector
     /// Update Global HTTP Event Collector input configuration.
     /// 
     /// ## Example Usage

@@ -16,8 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.InputsTcpCooked
- * 
+ * # Resource: splunk.InputsTcpCooked
  * Create or update cooked TCP input information and create new containers for managing cooked data.
  * 
  * ## Example Usage

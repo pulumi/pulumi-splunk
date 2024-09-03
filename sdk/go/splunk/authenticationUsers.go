@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: AuthenticationUsers
-//
+// # Resource: AuthenticationUsers
 // Create and update user information or delete the user.
 //
 // ## Example Usage

@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.OutputsTcpSyslog
-    /// 
+    /// # Resource: splunk.OutputsTcpSyslog
     /// Access the configuration of a forwarded server configured to provide data in standard syslog format.
     /// 
     /// ## Example Usage

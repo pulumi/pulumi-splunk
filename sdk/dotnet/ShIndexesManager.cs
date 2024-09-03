@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.ShIndexesManager
-    /// 
+    /// # Resource: splunk.ShIndexesManager
     /// Create indexes on Splunk Cloud instances. [BETA]
     /// 
     /// ## Authorization and authentication

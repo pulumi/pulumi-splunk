@@ -5,8 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.InputsTcpSsl
- *
+ * # Resource: splunk.InputsTcpSsl
  * Access or update the SSL configuration for the host.
  *
  * ## Example Usage

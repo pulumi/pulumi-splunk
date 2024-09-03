@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.InputsScript
- *
+ * # Resource: splunk.InputsScript
  * Create or update scripted inputs.
  *
  * ## Example Usage

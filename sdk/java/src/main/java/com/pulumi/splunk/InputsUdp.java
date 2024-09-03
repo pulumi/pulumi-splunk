@@ -16,8 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.InputsTcpRaw
- * 
+ * # Resource: splunk.InputsTcpRaw
  * Create and manage UDP data inputs.
  * 
  * ## Example Usage

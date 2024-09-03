@@ -5,8 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.AuthenticationUsers
- *
+ * # Resource: splunk.AuthenticationUsers
  * Create and update user information or delete the user.
  *
  * ## Example Usage

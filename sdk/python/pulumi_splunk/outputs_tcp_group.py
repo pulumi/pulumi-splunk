@@ -438,8 +438,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
                  token: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: OutputsTcpGroup
-
+        # Resource: OutputsTcpGroup
         Access to the configuration of a group of one or more data forwarding destinations.
 
         ## Example Usage
@@ -491,8 +490,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
                  args: OutputsTcpGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: OutputsTcpGroup
-
+        # Resource: OutputsTcpGroup
         Access to the configuration of a group of one or more data forwarding destinations.
 
         ## Example Usage

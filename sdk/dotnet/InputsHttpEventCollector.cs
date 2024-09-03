@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsHttpEventCollector
-    /// 
+    /// # Resource: splunk.InputsHttpEventCollector
     /// Create or update HTTP Event Collector input configuration tokens.
     /// 
     /// ## Example Usage

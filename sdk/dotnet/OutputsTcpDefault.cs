@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.OutputsTcpDefault
-    /// 
+    /// # Resource: splunk.OutputsTcpDefault
     /// Manage to global tcpout properties.
     /// 
     /// ## Example Usage

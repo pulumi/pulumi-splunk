@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsHttpEventCollector
-//
+// # Resource: InputsHttpEventCollector
 // Create or update HTTP Event Collector input configuration tokens.
 //
 // ## Example Usage

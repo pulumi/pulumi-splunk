@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.Indexes
- *
+ * # Resource: splunk.Indexes
  * Create and manage data indexes.
  *
  * ## Authorization and authentication

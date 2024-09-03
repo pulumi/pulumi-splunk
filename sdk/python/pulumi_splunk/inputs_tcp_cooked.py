@@ -254,8 +254,7 @@ class InputsTcpCooked(pulumi.CustomResource):
                  restrict_to_host: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsTcpCooked
-
+        # Resource: InputsTcpCooked
         Create or update cooked TCP input information and create new containers for managing cooked data.
 
         ## Example Usage
@@ -292,8 +291,7 @@ class InputsTcpCooked(pulumi.CustomResource):
                  args: Optional[InputsTcpCookedArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsTcpCooked
-
+        # Resource: InputsTcpCooked
         Create or update cooked TCP input information and create new containers for managing cooked data.
 
         ## Example Usage

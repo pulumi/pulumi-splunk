@@ -381,8 +381,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
                  send_cooked_data: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        ## # Resource: OutputsTcpDefault
-
+        # Resource: OutputsTcpDefault
         Manage to global tcpout properties.
 
         ## Example Usage
@@ -432,8 +431,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
                  args: Optional[OutputsTcpDefaultArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: OutputsTcpDefault
-
+        # Resource: OutputsTcpDefault
         Manage to global tcpout properties.
 
         ## Example Usage

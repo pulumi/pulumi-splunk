@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.InputsTcpSplunkTcpToken
- *
+ * # Resource: splunk.InputsTcpSplunkTcpToken
  * Manage receiver access using tokens.
  *
  * ## Example Usage

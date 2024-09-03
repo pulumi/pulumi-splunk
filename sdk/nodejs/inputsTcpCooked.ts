@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.InputsTcpCooked
- *
+ * # Resource: splunk.InputsTcpCooked
  * Create or update cooked TCP input information and create new containers for managing cooked data.
  *
  * ## Example Usage

@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: Indexes
-//
+// # Resource: Indexes
 // Create and manage data indexes.
 //
 // ## Authorization and authentication
