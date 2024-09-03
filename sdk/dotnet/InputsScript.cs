@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsScript
-    /// 
+    /// # Resource: splunk.InputsScript
     /// Create or update scripted inputs.
     /// 
     /// ## Example Usage

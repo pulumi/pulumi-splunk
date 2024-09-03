@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.ConfigsConf
- *
+ * # Resource: splunk.ConfigsConf
  * Create and manage configuration file stanzas.
  *
  * ## Example Usage

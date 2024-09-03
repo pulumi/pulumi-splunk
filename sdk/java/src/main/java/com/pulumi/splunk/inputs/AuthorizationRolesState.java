@@ -168,14 +168,14 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
     }
 
     /**
-     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+     * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
      * 
      */
     @Import(name="searchIndexesDefaults")
     private @Nullable Output<List<String>> searchIndexesDefaults;
 
     /**
-     * @return List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+     * @return List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
      * 
      */
     public Optional<Output<List<String>>> searchIndexesDefaults() {
@@ -489,7 +489,7 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param searchIndexesDefaults List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+         * @param searchIndexesDefaults List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param searchIndexesDefaults List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+         * @param searchIndexesDefaults List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param searchIndexesDefaults List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;_&#39;. All internal indexes are represented by &#39;_*&#39;. A user with this role can search other indexes using &#34;index= &#34;
+         * @param searchIndexesDefaults List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that &#39;*&#39; does not match internal indexes. To match internal indexes, start with &#39;*&#39;. All internal indexes are represented by &#39;**&#39;. A user with this role can search other indexes using &#34;index= &#34;
          * 
          * @return builder
          * 

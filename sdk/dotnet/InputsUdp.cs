@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsTcpRaw
-    /// 
+    /// # Resource: splunk.InputsTcpRaw
     /// Create and manage UDP data inputs.
     /// 
     /// ## Example Usage

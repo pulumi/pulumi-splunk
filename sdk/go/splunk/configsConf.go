@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: ConfigsConf
-//
+// # Resource: ConfigsConf
 // Create and manage configuration file stanzas.
 //
 // ## Example Usage

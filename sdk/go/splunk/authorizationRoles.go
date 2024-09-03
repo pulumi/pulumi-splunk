@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: AuthorizationRoles
-//
+// # Resource: AuthorizationRoles
 // Create and update role information.
 //
 // ## Example Usage
@@ -83,7 +82,7 @@ type AuthorizationRoles struct {
 	SearchFilter pulumi.StringOutput `pulumi:"searchFilter"`
 	// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
 	SearchIndexesAlloweds pulumi.StringArrayOutput `pulumi:"searchIndexesAlloweds"`
-	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
 	SearchIndexesDefaults pulumi.StringArrayOutput `pulumi:"searchIndexesDefaults"`
 	// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
 	SearchJobsQuota pulumi.IntPtrOutput `pulumi:"searchJobsQuota"`
@@ -141,7 +140,7 @@ type authorizationRolesState struct {
 	SearchFilter *string `pulumi:"searchFilter"`
 	// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
 	SearchIndexesAlloweds []string `pulumi:"searchIndexesAlloweds"`
-	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
 	SearchIndexesDefaults []string `pulumi:"searchIndexesDefaults"`
 	// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
 	SearchJobsQuota *int `pulumi:"searchJobsQuota"`
@@ -170,7 +169,7 @@ type AuthorizationRolesState struct {
 	SearchFilter pulumi.StringPtrInput
 	// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
 	SearchIndexesAlloweds pulumi.StringArrayInput
-	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
 	SearchIndexesDefaults pulumi.StringArrayInput
 	// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
 	SearchJobsQuota pulumi.IntPtrInput
@@ -203,7 +202,7 @@ type authorizationRolesArgs struct {
 	SearchFilter *string `pulumi:"searchFilter"`
 	// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
 	SearchIndexesAlloweds []string `pulumi:"searchIndexesAlloweds"`
-	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
 	SearchIndexesDefaults []string `pulumi:"searchIndexesDefaults"`
 	// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
 	SearchJobsQuota *int `pulumi:"searchJobsQuota"`
@@ -233,7 +232,7 @@ type AuthorizationRolesArgs struct {
 	SearchFilter pulumi.StringPtrInput
 	// List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
 	SearchIndexesAlloweds pulumi.StringArrayInput
-	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+	// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
 	SearchIndexesDefaults pulumi.StringArrayInput
 	// The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
 	SearchJobsQuota pulumi.IntPtrInput
@@ -378,7 +377,7 @@ func (o AuthorizationRolesOutput) SearchIndexesAlloweds() pulumi.StringArrayOutp
 	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.SearchIndexesAlloweds }).(pulumi.StringArrayOutput)
 }
 
-// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
 func (o AuthorizationRolesOutput) SearchIndexesDefaults() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.SearchIndexesDefaults }).(pulumi.StringArrayOutput)
 }

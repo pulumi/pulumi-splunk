@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsTcpCooked
-//
+// # Resource: InputsTcpCooked
 // Create or update cooked TCP input information and create new containers for managing cooked data.
 //
 // ## Example Usage

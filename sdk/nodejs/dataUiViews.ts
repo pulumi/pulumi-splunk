@@ -7,9 +7,9 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.DataUiViews
- *
+ * # Resource: splunk.DataUiViews
  * Create and manage splunk dashboards/views.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.OutputsTcpServer
-    /// 
+    /// # Resource: splunk.OutputsTcpServer
     /// Access data forwarding configurations.
     /// 
     /// ## Example Usage

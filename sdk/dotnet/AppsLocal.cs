@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.AppsLocal
-    /// 
+    /// # Resource: splunk.AppsLocal
     /// Create, install and manage apps on your Splunk instance
     /// 
     /// ## Example Usage

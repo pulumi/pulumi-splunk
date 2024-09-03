@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: OutputsTcpServer
-//
+// # Resource: OutputsTcpServer
 // Access data forwarding configurations.
 //
 // ## Example Usage

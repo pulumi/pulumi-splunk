@@ -12,9 +12,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: DataUiViews
-//
+// # Resource: DataUiViews
 // Create and manage splunk dashboards/views.
+//
 // ## Example Usage
 //
 // ```go

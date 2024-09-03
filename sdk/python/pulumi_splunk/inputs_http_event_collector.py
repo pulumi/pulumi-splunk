@@ -366,8 +366,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
                  use_ack: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsHttpEventCollector
-
+        # Resource: InputsHttpEventCollector
         Create or update HTTP Event Collector input configuration tokens.
 
         ## Example Usage
@@ -416,8 +415,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
                  args: Optional[InputsHttpEventCollectorArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsHttpEventCollector
-
+        # Resource: InputsHttpEventCollector
         Create or update HTTP Event Collector input configuration tokens.
 
         ## Example Usage

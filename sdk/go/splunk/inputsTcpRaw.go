@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsTcpRaw
-//
+// # Resource: InputsTcpRaw
 // Create or update raw TCP input information for managing raw tcp inputs from forwarders.
 //
 // ## Example Usage

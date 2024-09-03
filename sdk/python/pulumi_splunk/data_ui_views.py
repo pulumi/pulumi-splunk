@@ -130,9 +130,9 @@ class DataUiViews(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: DataUiViews
-
+        # Resource: DataUiViews
         Create and manage splunk dashboards/views.
+
         ## Example Usage
 
         ```python
@@ -161,9 +161,9 @@ class DataUiViews(pulumi.CustomResource):
                  args: DataUiViewsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: DataUiViews
-
+        # Resource: DataUiViews
         Create and manage splunk dashboards/views.
+
         ## Example Usage
 
         ```python

@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: OutputsTcpDefault
-//
+// # Resource: OutputsTcpDefault
 // Manage to global tcpout properties.
 //
 // ## Example Usage

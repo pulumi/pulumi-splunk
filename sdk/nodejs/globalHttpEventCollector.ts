@@ -5,8 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.GlobalHttpEventCollector
- *
+ * # Resource: splunk.GlobalHttpEventCollector
  * Update Global HTTP Event Collector input configuration.
  *
  * ## Example Usage

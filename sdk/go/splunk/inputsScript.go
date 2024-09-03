@@ -12,8 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsScript
-//
+// # Resource: InputsScript
 // Create or update scripted inputs.
 //
 // ## Example Usage

@@ -17,8 +17,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.OutputsTcpSyslog
- * 
+ * # Resource: splunk.OutputsTcpSyslog
  * Access the configuration of a forwarded server configured to provide data in standard syslog format.
  * 
  * ## Example Usage

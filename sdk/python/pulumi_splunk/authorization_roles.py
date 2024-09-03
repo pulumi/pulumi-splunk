@@ -39,7 +39,7 @@ class AuthorizationRolesArgs:
         :param pulumi.Input[int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_alloweds: List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         :param pulumi.Input[int] search_jobs_quota: The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         :param pulumi.Input[int] search_time_win: Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """
@@ -194,7 +194,7 @@ class AuthorizationRolesArgs:
     @pulumi.getter(name="searchIndexesDefaults")
     def search_indexes_defaults(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         """
         return pulumi.get(self, "search_indexes_defaults")
 
@@ -255,7 +255,7 @@ class _AuthorizationRolesState:
         :param pulumi.Input[int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_alloweds: List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         :param pulumi.Input[int] search_jobs_quota: The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         :param pulumi.Input[int] search_time_win: Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """
@@ -410,7 +410,7 @@ class _AuthorizationRolesState:
     @pulumi.getter(name="searchIndexesDefaults")
     def search_indexes_defaults(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         """
         return pulumi.get(self, "search_indexes_defaults")
 
@@ -463,8 +463,7 @@ class AuthorizationRoles(pulumi.CustomResource):
                  search_time_win: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        ## # Resource: AuthorizationRoles
-
+        # Resource: AuthorizationRoles
         Create and update role information.
 
         ## Example Usage
@@ -509,7 +508,7 @@ class AuthorizationRoles(pulumi.CustomResource):
         :param pulumi.Input[int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_alloweds: List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         :param pulumi.Input[int] search_jobs_quota: The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         :param pulumi.Input[int] search_time_win: Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """
@@ -520,8 +519,7 @@ class AuthorizationRoles(pulumi.CustomResource):
                  args: Optional[AuthorizationRolesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: AuthorizationRoles
-
+        # Resource: AuthorizationRoles
         Create and update role information.
 
         ## Example Usage
@@ -644,7 +642,7 @@ class AuthorizationRoles(pulumi.CustomResource):
         :param pulumi.Input[int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_alloweds: List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] search_indexes_defaults: List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         :param pulumi.Input[int] search_jobs_quota: The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
         :param pulumi.Input[int] search_time_win: Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
         """
@@ -751,7 +749,7 @@ class AuthorizationRoles(pulumi.CustomResource):
     @pulumi.getter(name="searchIndexesDefaults")
     def search_indexes_defaults(self) -> pulumi.Output[Sequence[str]]:
         """
-        List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         """
         return pulumi.get(self, "search_indexes_defaults")
 

@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.OutputsTcpDefault
- *
+ * # Resource: splunk.OutputsTcpDefault
  * Manage to global tcpout properties.
  *
  * ## Example Usage

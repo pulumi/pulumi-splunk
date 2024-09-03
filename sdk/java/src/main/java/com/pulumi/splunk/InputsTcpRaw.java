@@ -17,8 +17,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.InputsTcpRaw
- * 
+ * # Resource: splunk.InputsTcpRaw
  * Create or update raw TCP input information for managing raw tcp inputs from forwarders.
  * 
  * ## Example Usage

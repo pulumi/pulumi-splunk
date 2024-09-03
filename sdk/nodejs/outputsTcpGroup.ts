@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.OutputsTcpGroup
- *
+ * # Resource: splunk.OutputsTcpGroup
  * Access to the configuration of a group of one or more data forwarding destinations.
  *
  * ## Example Usage

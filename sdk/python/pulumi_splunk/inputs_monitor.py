@@ -564,8 +564,7 @@ class InputsMonitor(pulumi.CustomResource):
                  whitelist: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsMonitor
-
+        # Resource: InputsMonitor
         Create or update a new file or directory monitor input.
 
         ## Example Usage
@@ -606,8 +605,7 @@ class InputsMonitor(pulumi.CustomResource):
                  args: Optional[InputsMonitorArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsMonitor
-
+        # Resource: InputsMonitor
         Create or update a new file or directory monitor input.
 
         ## Example Usage

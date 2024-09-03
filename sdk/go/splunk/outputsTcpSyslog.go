@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: OutputsTcpSyslog
-//
+// # Resource: OutputsTcpSyslog
 // Access the configuration of a forwarded server configured to provide data in standard syslog format.
 //
 // ## Example Usage

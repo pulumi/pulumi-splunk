@@ -18,8 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.OutputsTcpGroup
- * 
+ * # Resource: splunk.OutputsTcpGroup
  * Access to the configuration of a group of one or more data forwarding destinations.
  * 
  * ## Example Usage

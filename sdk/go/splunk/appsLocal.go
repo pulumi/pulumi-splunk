@@ -11,9 +11,8 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: AppsLocal
-//
-// # Create, install and manage apps on your Splunk instance
+// # Resource: AppsLocal
+// Create, install and manage apps on your Splunk instance
 //
 // ## Example Usage
 //

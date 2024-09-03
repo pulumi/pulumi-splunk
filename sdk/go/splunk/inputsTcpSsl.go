@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsTcpSsl
-//
+// # Resource: InputsTcpSsl
 // Access or update the SSL configuration for the host.
 //
 // ## Example Usage

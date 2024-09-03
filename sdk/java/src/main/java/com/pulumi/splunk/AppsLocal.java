@@ -17,8 +17,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.AppsLocal
- * 
+ * # Resource: splunk.AppsLocal
  * Create, install and manage apps on your Splunk instance
  * 
  * ## Example Usage

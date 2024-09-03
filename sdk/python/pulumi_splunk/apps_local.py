@@ -509,8 +509,7 @@ class AppsLocal(pulumi.CustomResource):
                  visible: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        ## # Resource: AppsLocal
-
+        # Resource: AppsLocal
         Create, install and manage apps on your Splunk instance
 
         ## Example Usage
@@ -559,8 +558,7 @@ class AppsLocal(pulumi.CustomResource):
                  args: Optional[AppsLocalArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: AppsLocal
-
+        # Resource: AppsLocal
         Create, install and manage apps on your Splunk instance
 
         ## Example Usage

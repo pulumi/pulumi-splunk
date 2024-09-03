@@ -241,20 +241,20 @@ class SavedSearchesArgs:
         :param pulumi.Input[str] action_pagerduty_integration_url_override: The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
-        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_populate_lookup_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_populate_lookup_max_time: Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
         :param pulumi.Input[bool] action_populate_lookup_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_populate_lookup_ttl: Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
         :param pulumi.Input[str] action_rss_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_rss_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         :param pulumi.Input[str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_script_filename: File name of the script to call. Required if script action is enabled
-        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_script_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
@@ -284,7 +284,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
         :param pulumi.Input[int] action_summary_index_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_summary_index_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
@@ -1413,7 +1413,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionPopulateLookupHostname")
     def action_populate_lookup_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_populate_lookup_hostname")
 
@@ -1485,7 +1485,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionRssHostname")
     def action_rss_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_rss_hostname")
 
@@ -1569,7 +1569,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionScriptHostname")
     def action_script_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_script_hostname")
 
@@ -1819,7 +1819,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionSummaryIndexHostname")
     def action_summary_index_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_summary_index_hostname")
 
@@ -2866,14 +2866,14 @@ class _SavedSearchesState:
         :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
-        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_populate_lookup_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_populate_lookup_max_time: Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
         :param pulumi.Input[bool] action_populate_lookup_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_populate_lookup_ttl: Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
         :param pulumi.Input[bool] action_rss: The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_rss_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_rss_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
@@ -2881,7 +2881,7 @@ class _SavedSearchesState:
         :param pulumi.Input[bool] action_script: The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_script_filename: File name of the script to call. Required if script action is enabled
-        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_script_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
@@ -2912,7 +2912,7 @@ class _SavedSearchesState:
         :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
         :param pulumi.Input[int] action_summary_index_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_summary_index_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
@@ -4065,7 +4065,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionPopulateLookupHostname")
     def action_populate_lookup_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_populate_lookup_hostname")
 
@@ -4149,7 +4149,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionRssHostname")
     def action_rss_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_rss_hostname")
 
@@ -4245,7 +4245,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionScriptHostname")
     def action_script_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_script_hostname")
 
@@ -4507,7 +4507,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionSummaryIndexHostname")
     def action_summary_index_hostname(self) -> Optional[pulumi.Input[str]]:
         """
-        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_summary_index_hostname")
 
@@ -5501,8 +5501,7 @@ class SavedSearches(pulumi.CustomResource):
                  workload_pool: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: SavedSearches
-
+        # Resource: SavedSearches
         Create and manage saved searches.
 
         ## Example Usage
@@ -5594,20 +5593,20 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_pagerduty_integration_url_override: The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
-        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_populate_lookup_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_populate_lookup_max_time: Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
         :param pulumi.Input[bool] action_populate_lookup_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_populate_lookup_ttl: Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
         :param pulumi.Input[str] action_rss_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_rss_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         :param pulumi.Input[str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_script_filename: File name of the script to call. Required if script action is enabled
-        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_script_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
@@ -5637,7 +5636,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
         :param pulumi.Input[int] action_summary_index_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_summary_index_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
@@ -5714,8 +5713,7 @@ class SavedSearches(pulumi.CustomResource):
                  args: SavedSearchesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: SavedSearches
-
+        # Resource: SavedSearches
         Create and manage saved searches.
 
         ## Example Usage
@@ -6346,14 +6344,14 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] action_populate_lookup: The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_populate_lookup_command: The search command (or pipeline) which is responsible for executing the action.
         :param pulumi.Input[str] action_populate_lookup_dest: Lookup name of path of the lookup to populate
-        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_populate_lookup_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_populate_lookup_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_populate_lookup_max_time: Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
         :param pulumi.Input[bool] action_populate_lookup_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[str] action_populate_lookup_ttl: Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
         :param pulumi.Input[bool] action_rss: The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_rss_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_rss_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_rss_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
@@ -6361,7 +6359,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] action_script: The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[str] action_script_filename: File name of the script to call. Required if script action is enabled
-        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[int] action_script_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
@@ -6392,7 +6390,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
-        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        :param pulumi.Input[str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         :param pulumi.Input[bool] action_summary_index_inline: Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
         :param pulumi.Input[int] action_summary_index_max_results: Sets the maximum number of search results sent using alerts. Defaults to 100.
         :param pulumi.Input[int] action_summary_index_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
@@ -7135,7 +7133,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionPopulateLookupHostname")
     def action_populate_lookup_hostname(self) -> pulumi.Output[str]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_populate_lookup_hostname")
 
@@ -7191,7 +7189,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionRssHostname")
     def action_rss_hostname(self) -> pulumi.Output[str]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_rss_hostname")
 
@@ -7255,7 +7253,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionScriptHostname")
     def action_script_hostname(self) -> pulumi.Output[str]:
         """
-        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_script_hostname")
 
@@ -7433,7 +7431,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionSummaryIndexHostname")
     def action_summary_index_hostname(self) -> pulumi.Output[str]:
         """
-        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, <https://splunkserver.example.com:443>)
         """
         return pulumi.get(self, "action_summary_index_hostname")
 

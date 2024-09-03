@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.ShIndexesManager
- *
+ * # Resource: splunk.ShIndexesManager
  * Create indexes on Splunk Cloud instances. [BETA]
  *
  * ## Authorization and authentication

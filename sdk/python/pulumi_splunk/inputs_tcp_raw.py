@@ -447,8 +447,7 @@ class InputsTcpRaw(pulumi.CustomResource):
                  sourcetype: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsTcpRaw
-
+        # Resource: InputsTcpRaw
         Create or update raw TCP input information for managing raw tcp inputs from forwarders.
 
         ## Example Usage
@@ -499,8 +498,7 @@ class InputsTcpRaw(pulumi.CustomResource):
                  args: Optional[InputsTcpRawArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsTcpRaw
-
+        # Resource: InputsTcpRaw
         Create or update raw TCP input information for managing raw tcp inputs from forwarders.
 
         ## Example Usage

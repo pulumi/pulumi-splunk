@@ -1499,8 +1499,7 @@ class Indexes(pulumi.CustomResource):
                  warm_to_cold_script: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: Indexes
-
+        # Resource: Indexes
         Create and manage data indexes.
 
         ## Authorization and authentication
@@ -1613,8 +1612,7 @@ class Indexes(pulumi.CustomResource):
                  args: Optional[IndexesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: Indexes
-
+        # Resource: Indexes
         Create and manage data indexes.
 
         ## Authorization and authentication

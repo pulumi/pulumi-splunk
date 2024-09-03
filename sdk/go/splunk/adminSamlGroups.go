@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: AdminSamlGroups
-//
+// # Resource: AdminSamlGroups
 // Manage external groups in an IdP response to internal Splunk roles.
 //
 // ## Example Usage

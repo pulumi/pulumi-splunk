@@ -15,8 +15,7 @@ import java.lang.Integer;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.GlobalHttpEventCollector
- * 
+ * # Resource: splunk.GlobalHttpEventCollector
  * Update Global HTTP Event Collector input configuration.
  * 
  * ## Example Usage

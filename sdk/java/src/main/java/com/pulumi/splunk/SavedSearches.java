@@ -19,8 +19,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.SavedSearches
- * 
+ * # Resource: splunk.SavedSearches
  * Create and manage saved searches.
  * 
  * ## Example Usage
@@ -948,14 +947,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionPopulateLookupDest;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     @Export(name="actionPopulateLookupHostname", refs={String.class}, tree="[0]")
     private Output<String> actionPopulateLookupHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     public Output<String> actionPopulateLookupHostname() {
@@ -1046,14 +1045,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionRssCommand;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     @Export(name="actionRssHostname", refs={String.class}, tree="[0]")
     private Output<String> actionRssHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     public Output<String> actionRssHostname() {
@@ -1158,14 +1157,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionScriptFilename;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     @Export(name="actionScriptHostname", refs={String.class}, tree="[0]")
     private Output<String> actionScriptHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     public Output<String> actionScriptHostname() {
@@ -1472,14 +1471,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionSummaryIndexCommand;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     @Export(name="actionSummaryIndexHostname", refs={String.class}, tree="[0]")
     private Output<String> actionSummaryIndexHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
      * 
      */
     public Output<String> actionSummaryIndexHostname() {

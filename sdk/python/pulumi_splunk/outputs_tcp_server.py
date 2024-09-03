@@ -411,8 +411,7 @@ class OutputsTcpServer(pulumi.CustomResource):
                  ssl_verify_server_cert: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        ## # Resource: OutputsTcpServer
-
+        # Resource: OutputsTcpServer
         Access data forwarding configurations.
 
         ## Example Usage
@@ -450,8 +449,7 @@ class OutputsTcpServer(pulumi.CustomResource):
                  args: Optional[OutputsTcpServerArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: OutputsTcpServer
-
+        # Resource: OutputsTcpServer
         Access data forwarding configurations.
 
         ## Example Usage

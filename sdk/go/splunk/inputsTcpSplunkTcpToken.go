@@ -11,8 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## # Resource: InputsTcpSplunkTcpToken
-//
+// # Resource: InputsTcpSplunkTcpToken
 // Manage receiver access using tokens.
 //
 // ## Example Usage

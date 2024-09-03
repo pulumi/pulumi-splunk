@@ -199,8 +199,7 @@ class InputsTcpSsl(pulumi.CustomResource):
                  server_cert: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: InputsTcpSsl
-
+        # Resource: InputsTcpSsl
         Access or update the SSL configuration for the host.
 
         ## Example Usage
@@ -229,8 +228,7 @@ class InputsTcpSsl(pulumi.CustomResource):
                  args: Optional[InputsTcpSslArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: InputsTcpSsl
-
+        # Resource: InputsTcpSsl
         Access or update the SSL configuration for the host.
 
         ## Example Usage

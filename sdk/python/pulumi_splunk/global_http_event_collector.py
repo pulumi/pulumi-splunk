@@ -269,8 +269,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
                  use_deployment_server: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        ## # Resource: GlobalHttpEventCollector
-
+        # Resource: GlobalHttpEventCollector
         Update Global HTTP Event Collector input configuration.
 
         ## Example Usage
@@ -303,8 +302,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
                  args: Optional[GlobalHttpEventCollectorArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: GlobalHttpEventCollector
-
+        # Resource: GlobalHttpEventCollector
         Update Global HTTP Event Collector input configuration.
 
         ## Example Usage

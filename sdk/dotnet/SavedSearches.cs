@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.SavedSearches
-    /// 
+    /// # Resource: splunk.SavedSearches
     /// Create and manage saved searches.
     /// 
     /// ## Example Usage
@@ -426,7 +425,7 @@ namespace Pulumi.Splunk
         public Output<string> ActionPopulateLookupDest { get; private set; } = null!;
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Output("actionPopulateLookupHostname")]
         public Output<string> ActionPopulateLookupHostname { get; private set; } = null!;
@@ -468,7 +467,7 @@ namespace Pulumi.Splunk
         public Output<string> ActionRssCommand { get; private set; } = null!;
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Output("actionRssHostname")]
         public Output<string> ActionRssHostname { get; private set; } = null!;
@@ -516,7 +515,7 @@ namespace Pulumi.Splunk
         public Output<string> ActionScriptFilename { get; private set; } = null!;
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Output("actionScriptHostname")]
         public Output<string> ActionScriptHostname { get; private set; } = null!;
@@ -652,7 +651,7 @@ namespace Pulumi.Splunk
         public Output<string> ActionSummaryIndexCommand { get; private set; } = null!;
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Output("actionSummaryIndexHostname")]
         public Output<string> ActionSummaryIndexHostname { get; private set; } = null!;
@@ -1472,7 +1471,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionPopulateLookupDest { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionPopulateLookupHostname")]
         public Input<string>? ActionPopulateLookupHostname { get; set; }
@@ -1508,7 +1507,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionRssCommand { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionRssHostname")]
         public Input<string>? ActionRssHostname { get; set; }
@@ -1550,7 +1549,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionScriptFilename { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionScriptHostname")]
         public Input<string>? ActionScriptHostname { get; set; }
@@ -1680,7 +1679,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSummaryIndexCommand { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionSummaryIndexHostname")]
         public Input<string>? ActionSummaryIndexHostname { get; set; }
@@ -2474,7 +2473,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionPopulateLookupDest { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionPopulateLookupHostname")]
         public Input<string>? ActionPopulateLookupHostname { get; set; }
@@ -2516,7 +2515,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionRssCommand { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionRssHostname")]
         public Input<string>? ActionRssHostname { get; set; }
@@ -2564,7 +2563,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionScriptFilename { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionScriptHostname")]
         public Input<string>? ActionScriptHostname { get; set; }
@@ -2700,7 +2699,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSummaryIndexCommand { get; set; }
 
         /// <summary>
-        /// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+        /// Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, &lt;https://splunkserver.example.com:443&gt;)
         /// </summary>
         [Input("actionSummaryIndexHostname")]
         public Input<string>? ActionSummaryIndexHostname { get; set; }

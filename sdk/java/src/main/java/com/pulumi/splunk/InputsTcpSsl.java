@@ -16,8 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.InputsTcpSsl
- * 
+ * # Resource: splunk.InputsTcpSsl
  * Access or update the SSL configuration for the host.
  * 
  * ## Example Usage

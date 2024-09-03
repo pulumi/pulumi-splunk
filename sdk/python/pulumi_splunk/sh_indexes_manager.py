@@ -201,8 +201,7 @@ class ShIndexesManager(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## # Resource: ShIndexesManager
-
+        # Resource: ShIndexesManager
         Create indexes on Splunk Cloud instances. [BETA]
 
         ## Authorization and authentication
@@ -238,8 +237,7 @@ class ShIndexesManager(pulumi.CustomResource):
                  args: Optional[ShIndexesManagerArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## # Resource: ShIndexesManager
-
+        # Resource: ShIndexesManager
         Create indexes on Splunk Cloud instances. [BETA]
 
         ## Authorization and authentication

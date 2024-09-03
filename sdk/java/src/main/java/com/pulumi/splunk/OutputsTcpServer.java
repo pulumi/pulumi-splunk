@@ -17,8 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.OutputsTcpServer
- * 
+ * # Resource: splunk.OutputsTcpServer
  * Access data forwarding configurations.
  * 
  * ## Example Usage

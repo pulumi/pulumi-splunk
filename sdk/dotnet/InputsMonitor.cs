@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.InputsMonitor
-    /// 
+    /// # Resource: splunk.InputsMonitor
     /// Create or update a new file or directory monitor input.
     /// 
     /// ## Example Usage

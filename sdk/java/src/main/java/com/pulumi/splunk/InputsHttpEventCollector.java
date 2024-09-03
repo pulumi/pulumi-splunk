@@ -18,8 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ## # Resource: splunk.InputsHttpEventCollector
- * 
+ * # Resource: splunk.InputsHttpEventCollector
  * Create or update HTTP Event Collector input configuration tokens.
  * 
  * ## Example Usage

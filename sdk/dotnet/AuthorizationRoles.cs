@@ -10,8 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Splunk
 {
     /// <summary>
-    /// ## # Resource: splunk.AuthorizationRoles
-    /// 
+    /// # Resource: splunk.AuthorizationRoles
     /// Create and update role information.
     /// 
     /// ## Example Usage
@@ -120,7 +119,7 @@ namespace Pulumi.Splunk
         public Output<ImmutableArray<string>> SearchIndexesAlloweds { get; private set; } = null!;
 
         /// <summary>
-        /// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        /// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         /// </summary>
         [Output("searchIndexesDefaults")]
         public Output<ImmutableArray<string>> SearchIndexesDefaults { get; private set; } = null!;
@@ -265,7 +264,7 @@ namespace Pulumi.Splunk
         private InputList<string>? _searchIndexesDefaults;
 
         /// <summary>
-        /// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        /// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         /// </summary>
         public InputList<string> SearchIndexesDefaults
         {
@@ -375,7 +374,7 @@ namespace Pulumi.Splunk
         private InputList<string>? _searchIndexesDefaults;
 
         /// <summary>
-        /// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
+        /// List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '*'. All internal indexes are represented by '**'. A user with this role can search other indexes using "index= "
         /// </summary>
         public InputList<string> SearchIndexesDefaults
         {

@@ -7,8 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * ## # Resource: splunk.OutputsTcpServer
- *
+ * # Resource: splunk.OutputsTcpServer
  * Access data forwarding configurations.
  *
  * ## Example Usage
