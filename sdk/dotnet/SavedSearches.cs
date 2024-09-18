@@ -348,6 +348,12 @@ namespace Pulumi.Splunk
         public Output<string?> ActionJiraServiceDeskParamAccount { get; private set; } = null!;
 
         /// <summary>
+        /// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraCustomfields")]
+        public Output<string?> ActionJiraServiceDeskParamJiraCustomfields { get; private set; } = null!;
+
+        /// <summary>
         /// Jira issue description
         /// </summary>
         [Output("actionJiraServiceDeskParamJiraDescription")]
@@ -1400,6 +1406,12 @@ namespace Pulumi.Splunk
         public Input<string>? ActionJiraServiceDeskParamAccount { get; set; }
 
         /// <summary>
+        /// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraCustomfields")]
+        public Input<string>? ActionJiraServiceDeskParamJiraCustomfields { get; set; }
+
+        /// <summary>
         /// Jira issue description
         /// </summary>
         [Input("actionJiraServiceDeskParamJiraDescription")]
@@ -2394,6 +2406,12 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionJiraServiceDeskParamAccount")]
         public Input<string>? ActionJiraServiceDeskParamAccount { get; set; }
+
+        /// <summary>
+        /// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraCustomfields")]
+        public Input<string>? ActionJiraServiceDeskParamJiraCustomfields { get; set; }
 
         /// <summary>
         /// Jira issue description

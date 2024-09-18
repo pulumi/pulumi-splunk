@@ -741,6 +741,21 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+     * 
+     */
+    @Import(name="actionJiraServiceDeskParamJiraCustomfields")
+    private @Nullable Output<String> actionJiraServiceDeskParamJiraCustomfields;
+
+    /**
+     * @return Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+     * 
+     */
+    public Optional<Output<String>> actionJiraServiceDeskParamJiraCustomfields() {
+        return Optional.ofNullable(this.actionJiraServiceDeskParamJiraCustomfields);
+    }
+
+    /**
      * Jira issue description
      * 
      */
@@ -2521,6 +2536,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionEmailUseTls = $.actionEmailUseTls;
         this.actionEmailWidthSortColumns = $.actionEmailWidthSortColumns;
         this.actionJiraServiceDeskParamAccount = $.actionJiraServiceDeskParamAccount;
+        this.actionJiraServiceDeskParamJiraCustomfields = $.actionJiraServiceDeskParamJiraCustomfields;
         this.actionJiraServiceDeskParamJiraDescription = $.actionJiraServiceDeskParamJiraDescription;
         this.actionJiraServiceDeskParamJiraIssueType = $.actionJiraServiceDeskParamJiraIssueType;
         this.actionJiraServiceDeskParamJiraPriority = $.actionJiraServiceDeskParamJiraPriority;
@@ -3661,6 +3677,27 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionJiraServiceDeskParamAccount(String actionJiraServiceDeskParamAccount) {
             return actionJiraServiceDeskParamAccount(Output.of(actionJiraServiceDeskParamAccount));
+        }
+
+        /**
+         * @param actionJiraServiceDeskParamJiraCustomfields Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionJiraServiceDeskParamJiraCustomfields(@Nullable Output<String> actionJiraServiceDeskParamJiraCustomfields) {
+            $.actionJiraServiceDeskParamJiraCustomfields = actionJiraServiceDeskParamJiraCustomfields;
+            return this;
+        }
+
+        /**
+         * @param actionJiraServiceDeskParamJiraCustomfields Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionJiraServiceDeskParamJiraCustomfields(String actionJiraServiceDeskParamJiraCustomfields) {
+            return actionJiraServiceDeskParamJiraCustomfields(Output.of(actionJiraServiceDeskParamJiraCustomfields));
         }
 
         /**
