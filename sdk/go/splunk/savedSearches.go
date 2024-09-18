@@ -159,6 +159,8 @@ type SavedSearches struct {
 	ActionEmailWidthSortColumns pulumi.BoolOutput `pulumi:"actionEmailWidthSortColumns"`
 	// Jira Service Desk account name
 	ActionJiraServiceDeskParamAccount pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+	ActionJiraServiceDeskParamJiraCustomfields pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraCustomfields"`
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraDescription"`
 	// Jira issue type name
@@ -538,6 +540,8 @@ type savedSearchesState struct {
 	ActionEmailWidthSortColumns *bool `pulumi:"actionEmailWidthSortColumns"`
 	// Jira Service Desk account name
 	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+	ActionJiraServiceDeskParamJiraCustomfields *string `pulumi:"actionJiraServiceDeskParamJiraCustomfields"`
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
 	// Jira issue type name
@@ -885,6 +889,8 @@ type SavedSearchesState struct {
 	ActionEmailWidthSortColumns pulumi.BoolPtrInput
 	// Jira Service Desk account name
 	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
+	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+	ActionJiraServiceDeskParamJiraCustomfields pulumi.StringPtrInput
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
 	// Jira issue type name
@@ -1234,6 +1240,8 @@ type savedSearchesArgs struct {
 	ActionEmailWidthSortColumns *bool `pulumi:"actionEmailWidthSortColumns"`
 	// Jira Service Desk account name
 	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
+	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+	ActionJiraServiceDeskParamJiraCustomfields *string `pulumi:"actionJiraServiceDeskParamJiraCustomfields"`
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
 	// Jira issue type name
@@ -1572,6 +1580,8 @@ type SavedSearchesArgs struct {
 	ActionEmailWidthSortColumns pulumi.BoolPtrInput
 	// Jira Service Desk account name
 	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
+	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+	ActionJiraServiceDeskParamJiraCustomfields pulumi.StringPtrInput
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
 	// Jira issue type name
@@ -2142,6 +2152,11 @@ func (o SavedSearchesOutput) ActionEmailWidthSortColumns() pulumi.BoolOutput {
 // Jira Service Desk account name
 func (o SavedSearchesOutput) ActionJiraServiceDeskParamAccount() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamAccount }).(pulumi.StringPtrOutput)
+}
+
+// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraCustomfields() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraCustomfields }).(pulumi.StringPtrOutput)
 }
 
 // Jira issue description

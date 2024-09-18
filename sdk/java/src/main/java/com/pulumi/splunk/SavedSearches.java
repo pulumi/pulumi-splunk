@@ -766,6 +766,20 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionJiraServiceDeskParamAccount);
     }
     /**
+     * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+     * 
+     */
+    @Export(name="actionJiraServiceDeskParamJiraCustomfields", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraCustomfields;
+
+    /**
+     * @return Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+     * 
+     */
+    public Output<Optional<String>> actionJiraServiceDeskParamJiraCustomfields() {
+        return Codegen.optional(this.actionJiraServiceDeskParamJiraCustomfields);
+    }
+    /**
      * Jira issue description
      * 
      */

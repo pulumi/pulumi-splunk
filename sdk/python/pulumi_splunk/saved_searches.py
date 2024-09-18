@@ -65,6 +65,7 @@ class SavedSearchesArgs:
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
                  action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
@@ -229,6 +230,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -450,6 +452,8 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
         if action_jira_service_desk_param_account is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
+        if action_jira_service_desk_param_jira_customfields is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_customfields", action_jira_service_desk_param_jira_customfields)
         if action_jira_service_desk_param_jira_description is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
         if action_jira_service_desk_param_jira_issue_type is not None:
@@ -1264,6 +1268,18 @@ class SavedSearchesArgs:
     @action_jira_service_desk_param_account.setter
     def action_jira_service_desk_param_account(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_jira_service_desk_param_account", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraCustomfields")
+    def action_jira_service_desk_param_jira_customfields(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_customfields")
+
+    @action_jira_service_desk_param_jira_customfields.setter
+    def action_jira_service_desk_param_jira_customfields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_customfields", value)
 
     @property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
@@ -2684,6 +2700,7 @@ class _SavedSearchesState:
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
                  action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
@@ -2853,6 +2870,7 @@ class _SavedSearchesState:
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -3080,6 +3098,8 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_email_width_sort_columns", action_email_width_sort_columns)
         if action_jira_service_desk_param_account is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
+        if action_jira_service_desk_param_jira_customfields is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_customfields", action_jira_service_desk_param_jira_customfields)
         if action_jira_service_desk_param_jira_description is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
         if action_jira_service_desk_param_jira_issue_type is not None:
@@ -3904,6 +3924,18 @@ class _SavedSearchesState:
     @action_jira_service_desk_param_account.setter
     def action_jira_service_desk_param_account(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_jira_service_desk_param_account", value)
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraCustomfields")
+    def action_jira_service_desk_param_jira_customfields(self) -> Optional[pulumi.Input[str]]:
+        """
+        Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_customfields")
+
+    @action_jira_service_desk_param_jira_customfields.setter
+    def action_jira_service_desk_param_jira_customfields(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_customfields", value)
 
     @property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
@@ -5385,6 +5417,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
                  action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
@@ -5582,6 +5615,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -5808,6 +5842,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_email_use_tls: Optional[pulumi.Input[bool]] = None,
                  action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
                  action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
@@ -5979,6 +6014,7 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_email_use_tls"] = action_email_use_tls
             __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
             __props__.__dict__["action_jira_service_desk_param_account"] = action_jira_service_desk_param_account
+            __props__.__dict__["action_jira_service_desk_param_jira_customfields"] = action_jira_service_desk_param_jira_customfields
             __props__.__dict__["action_jira_service_desk_param_jira_description"] = action_jira_service_desk_param_jira_description
             __props__.__dict__["action_jira_service_desk_param_jira_issue_type"] = action_jira_service_desk_param_jira_issue_type
             __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
@@ -6159,6 +6195,7 @@ class SavedSearches(pulumi.CustomResource):
             action_email_use_tls: Optional[pulumi.Input[bool]] = None,
             action_email_width_sort_columns: Optional[pulumi.Input[bool]] = None,
             action_jira_service_desk_param_account: Optional[pulumi.Input[str]] = None,
+            action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[str]] = None,
             action_jira_service_desk_param_jira_description: Optional[pulumi.Input[str]] = None,
             action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[str]] = None,
             action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[str]] = None,
@@ -6333,6 +6370,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[bool] action_email_use_tls: Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         :param pulumi.Input[bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[str] action_jira_service_desk_param_account: Jira Service Desk account name
+        :param pulumi.Input[str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         :param pulumi.Input[str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -6515,6 +6553,7 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_email_use_tls"] = action_email_use_tls
         __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
         __props__.__dict__["action_jira_service_desk_param_account"] = action_jira_service_desk_param_account
+        __props__.__dict__["action_jira_service_desk_param_jira_customfields"] = action_jira_service_desk_param_jira_customfields
         __props__.__dict__["action_jira_service_desk_param_jira_description"] = action_jira_service_desk_param_jira_description
         __props__.__dict__["action_jira_service_desk_param_jira_issue_type"] = action_jira_service_desk_param_jira_issue_type
         __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
@@ -7026,6 +7065,14 @@ class SavedSearches(pulumi.CustomResource):
         Jira Service Desk account name
         """
         return pulumi.get(self, "action_jira_service_desk_param_account")
+
+    @property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraCustomfields")
+    def action_jira_service_desk_param_jira_customfields(self) -> pulumi.Output[Optional[str]]:
+        """
+        Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_customfields")
 
     @property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")

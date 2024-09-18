@@ -4733,6 +4733,10 @@
                     "type": "string",
                     "description": "Jira Service Desk account name\n"
                 },
+                "actionJiraServiceDeskParamJiraCustomfields": {
+                    "type": "string",
+                    "description": "Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)\n"
+                },
                 "actionJiraServiceDeskParamJiraDescription": {
                     "type": "string",
                     "description": "Jira issue description\n"
@@ -5544,6 +5548,10 @@
                     "type": "string",
                     "description": "Jira Service Desk account name\n"
                 },
+                "actionJiraServiceDeskParamJiraCustomfields": {
+                    "type": "string",
+                    "description": "Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)\n"
+                },
                 "actionJiraServiceDeskParamJiraDescription": {
                     "type": "string",
                     "description": "Jira issue description\n"
@@ -6203,6 +6211,10 @@
                     "actionJiraServiceDeskParamAccount": {
                         "type": "string",
                         "description": "Jira Service Desk account name\n"
+                    },
+                    "actionJiraServiceDeskParamJiraCustomfields": {
+                        "type": "string",
+                        "description": "Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)\n"
                     },
                     "actionJiraServiceDeskParamJiraDescription": {
                         "type": "string",
