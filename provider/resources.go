@@ -15,6 +15,7 @@
 package splunk
 
 import (
+	"bytes"
 	"fmt"
 	"path/filepath"
 	"unicode"
@@ -245,4 +246,20 @@ func Provider() tfbridge.ProviderInfo {
 	prov.SetAutonaming(255, "-")
 
 	return prov
+}
+func editRules(defaults []tfbridge.DocsEdit) []tfbridge.DocsEdit {
+	return append(
+		defaults,
+		tfbridge.DocsEdit{
+			Path: "index.md",
+			Edit: func(_ string, content []byte) ([]byte, error) {
+				b := bytes.ReplaceAll(
+					content,
+					[]byte("```\nprovider \"splunk\" {"),
+					[]byte("```hcl\nprovider \"splunk\" {"),
+				)
+				return b, nil
+			},
+		},
+	)
 }
