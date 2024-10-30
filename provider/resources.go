@@ -17,6 +17,7 @@ package splunk
 import (
 	"bytes"
 	"fmt"
+	"os"
 	"path/filepath"
 	"unicode"
 
@@ -78,6 +79,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository:  "https://github.com/pulumi/pulumi-splunk",
 		GitHubOrg:   "splunk",
 		Config:      map[string]*tfbridge.SchemaInfo{},
+		DocRules:    &tfbridge.DocRuleInfo{EditRules: docEditRules},
 		Resources: map[string]*tfbridge.ResourceInfo{
 			"splunk_admin_saml_groups": {
 				Tok: makeResource(mainMod, "AdminSamlGroups"),
@@ -247,19 +249,36 @@ func Provider() tfbridge.ProviderInfo {
 
 	return prov
 }
-func editRules(defaults []tfbridge.DocsEdit) []tfbridge.DocsEdit {
+func docEditRules(defaults []tfbridge.DocsEdit) []tfbridge.DocsEdit {
 	return append(
 		defaults,
-		tfbridge.DocsEdit{
-			Path: "index.md",
-			Edit: func(_ string, content []byte) ([]byte, error) {
-				b := bytes.ReplaceAll(
-					content,
-					[]byte("```\nprovider \"splunk\" {"),
-					[]byte("```hcl\nprovider \"splunk\" {"),
-				)
-				return b, nil
-			},
-		},
+		cleanUpExample,
 	)
+}
+
+var cleanUpExample = tfbridge.DocsEdit{
+	Path: "index.md",
+	Edit: func(_ string, content []byte) ([]byte, error) {
+		replacesDir := "docs/index-md-replaces/"
+
+		input, err := os.ReadFile(replacesDir + "examples-input.md")
+		if err != nil {
+			return nil, err
+		}
+		desired, err := os.ReadFile(replacesDir + "examples-desired.md")
+		if err != nil {
+			return nil, err
+		}
+		if bytes.Contains(content, input) {
+			content = bytes.ReplaceAll(
+				content,
+				input,
+				desired)
+		} else {
+			// Hard error to ensure we keep this content up to date
+			return nil, fmt.Errorf("could not find text in upstream index.md, "+
+				"please verify file content at %s\n*****\n%s\n*****\n", replacesDir+"overview-input.md", string(input))
+		}
+		return content, nil
+	},
 }
