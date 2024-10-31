@@ -249,6 +249,7 @@ func Provider() tfbridge.ProviderInfo {
 
 	return prov
 }
+
 func docEditRules(defaults []tfbridge.DocsEdit) []tfbridge.DocsEdit {
 	return append(
 		defaults,
