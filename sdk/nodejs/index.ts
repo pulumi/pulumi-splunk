@@ -90,6 +90,11 @@ export type InputsUdp = import("./inputsUdp").InputsUdp;
 export const InputsUdp: typeof import("./inputsUdp").InputsUdp = null as any;
 utilities.lazyLoad(exports, ["InputsUdp"], () => require("./inputsUdp"));
 
+export { LookupTableFileArgs, LookupTableFileState } from "./lookupTableFile";
+export type LookupTableFile = import("./lookupTableFile").LookupTableFile;
+export const LookupTableFile: typeof import("./lookupTableFile").LookupTableFile = null as any;
+utilities.lazyLoad(exports, ["LookupTableFile"], () => require("./lookupTableFile"));
+
 export { OutputsTcpDefaultArgs, OutputsTcpDefaultState } from "./outputsTcpDefault";
 export type OutputsTcpDefault = import("./outputsTcpDefault").OutputsTcpDefault;
 export const OutputsTcpDefault: typeof import("./outputsTcpDefault").OutputsTcpDefault = null as any;
@@ -173,6 +178,8 @@ const _module = {
                 return new InputsTcpSsl(name, <any>undefined, { urn })
             case "splunk:index/inputsUdp:InputsUdp":
                 return new InputsUdp(name, <any>undefined, { urn })
+            case "splunk:index/lookupTableFile:LookupTableFile":
+                return new LookupTableFile(name, <any>undefined, { urn })
             case "splunk:index/outputsTcpDefault:OutputsTcpDefault":
                 return new OutputsTcpDefault(name, <any>undefined, { urn })
             case "splunk:index/outputsTcpGroup:OutputsTcpGroup":
@@ -207,6 +214,7 @@ pulumi.runtime.registerResourceModule("splunk", "index/inputsTcpRaw", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/inputsTcpSplunkTcpToken", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/inputsTcpSsl", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/inputsUdp", _module)
+pulumi.runtime.registerResourceModule("splunk", "index/lookupTableFile", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpDefault", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpGroup", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpServer", _module)

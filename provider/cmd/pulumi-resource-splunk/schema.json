@@ -3946,6 +3946,103 @@
                 "type": "object"
             }
         },
+        "splunk:index/lookupTableFile:LookupTableFile": {
+            "description": "## # Resource: splunk.LookupTableFile\n\nCreate and manage lookup table files.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst lookupTableFile = new splunk.LookupTableFile(\"lookup_table_file\", {\n    app: \"search\",\n    owner: \"nobody\",\n    fileName: \"lookup.csv\",\n    fileContents: [\n        [\n            \"status\",\n            \"status_description\",\n            \"status_type\",\n        ],\n        [\n            \"100\",\n            \"Continue\",\n            \"Informational\",\n        ],\n        [\n            \"101\",\n            \"Switching Protocols\",\n            \"Informational\",\n        ],\n        [\n            \"200\",\n            \"OK\",\n            \"Successful\",\n        ],\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nlookup_table_file = splunk.LookupTableFile(\"lookup_table_file\",\n    app=\"search\",\n    owner=\"nobody\",\n    file_name=\"lookup.csv\",\n    file_contents=[\n        [\n            \"status\",\n            \"status_description\",\n            \"status_type\",\n        ],\n        [\n            \"100\",\n            \"Continue\",\n            \"Informational\",\n        ],\n        [\n            \"101\",\n            \"Switching Protocols\",\n            \"Informational\",\n        ],\n        [\n            \"200\",\n            \"OK\",\n            \"Successful\",\n        ],\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var lookupTableFile = new Splunk.LookupTableFile(\"lookup_table_file\", new()\n    {\n        App = \"search\",\n        Owner = \"nobody\",\n        FileName = \"lookup.csv\",\n        FileContents = new[]\n        {\n            new[]\n            {\n                \"status\",\n                \"status_description\",\n                \"status_type\",\n            },\n            new[]\n            {\n                \"100\",\n                \"Continue\",\n                \"Informational\",\n            },\n            new[]\n            {\n                \"101\",\n                \"Switching Protocols\",\n                \"Informational\",\n            },\n            new[]\n            {\n                \"200\",\n                \"OK\",\n                \"Successful\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewLookupTableFile(ctx, \"lookup_table_file\", \u0026splunk.LookupTableFileArgs{\n\t\t\tApp:      pulumi.String(\"search\"),\n\t\t\tOwner:    pulumi.String(\"nobody\"),\n\t\t\tFileName: pulumi.String(\"lookup.csv\"),\n\t\t\tFileContents: pulumi.StringArrayArray{\n\t\t\t\tpulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"status\"),\n\t\t\t\t\tpulumi.String(\"status_description\"),\n\t\t\t\t\tpulumi.String(\"status_type\"),\n\t\t\t\t},\n\t\t\t\tpulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"100\"),\n\t\t\t\t\tpulumi.String(\"Continue\"),\n\t\t\t\t\tpulumi.String(\"Informational\"),\n\t\t\t\t},\n\t\t\t\tpulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"101\"),\n\t\t\t\t\tpulumi.String(\"Switching Protocols\"),\n\t\t\t\t\tpulumi.String(\"Informational\"),\n\t\t\t\t},\n\t\t\t\tpulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"200\"),\n\t\t\t\t\tpulumi.String(\"OK\"),\n\t\t\t\t\tpulumi.String(\"Successful\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.LookupTableFile;\nimport com.pulumi.splunk.LookupTableFileArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var lookupTableFile = new LookupTableFile(\"lookupTableFile\", LookupTableFileArgs.builder()\n            .app(\"search\")\n            .owner(\"nobody\")\n            .fileName(\"lookup.csv\")\n            .fileContents(            \n                                \n                    \"status\",\n                    \"status_description\",\n                    \"status_type\",\n                                \n                    \"100\",\n                    \"Continue\",\n                    \"Informational\",\n                                \n                    \"101\",\n                    \"Switching Protocols\",\n                    \"Informational\",\n                                \n                    \"200\",\n                    \"OK\",\n                    \"Successful\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  lookupTableFile:\n    type: splunk:LookupTableFile\n    name: lookup_table_file\n    properties:\n      app: search\n      owner: nobody\n      fileName: lookup.csv\n      fileContents:\n        - - status\n          - status_description\n          - status_type\n        - - '100'\n          - Continue\n          - Informational\n        - - '101'\n          - Switching Protocols\n          - Informational\n        - - '200'\n          - OK\n          - Successful\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "properties": {
+                "app": {
+                    "type": "string",
+                    "description": "The app context for the resource.\n"
+                },
+                "fileContents": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "The column header and row value contents for the lookup table file.\n"
+                },
+                "fileName": {
+                    "type": "string",
+                    "description": "A name for the lookup table file. Generally ends with \".csv\"\n"
+                },
+                "owner": {
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.\n"
+                }
+            },
+            "required": [
+                "app",
+                "fileContents",
+                "fileName",
+                "owner"
+            ],
+            "inputProperties": {
+                "app": {
+                    "type": "string",
+                    "description": "The app context for the resource.\n",
+                    "willReplaceOnChanges": true
+                },
+                "fileContents": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "The column header and row value contents for the lookup table file.\n"
+                },
+                "fileName": {
+                    "type": "string",
+                    "description": "A name for the lookup table file. Generally ends with \".csv\"\n",
+                    "willReplaceOnChanges": true
+                },
+                "owner": {
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "app",
+                "fileContents",
+                "fileName",
+                "owner"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering LookupTableFile resources.\n",
+                "properties": {
+                    "app": {
+                        "type": "string",
+                        "description": "The app context for the resource.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "fileContents": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "The column header and row value contents for the lookup table file.\n"
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "description": "A name for the lookup table file. Generally ends with \".csv\"\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "owner": {
+                        "type": "string",
+                        "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.\n",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
         "splunk:index/outputsTcpDefault:OutputsTcpDefault": {
             "description": "## # Resource: splunk.OutputsTcpDefault\n\nManage to global tcpout properties.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst tcpDefault = new splunk.OutputsTcpDefault(\"tcp_default\", {\n    name: \"tcpout\",\n    disabled: false,\n    defaultGroup: \"test-indexers\",\n    dropEventsOnQueueFull: 60,\n    indexAndForward: true,\n    sendCookedData: true,\n    maxQueueSize: \"100KB\",\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\ntcp_default = splunk.OutputsTcpDefault(\"tcp_default\",\n    name=\"tcpout\",\n    disabled=False,\n    default_group=\"test-indexers\",\n    drop_events_on_queue_full=60,\n    index_and_forward=True,\n    send_cooked_data=True,\n    max_queue_size=\"100KB\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var tcpDefault = new Splunk.OutputsTcpDefault(\"tcp_default\", new()\n    {\n        Name = \"tcpout\",\n        Disabled = false,\n        DefaultGroup = \"test-indexers\",\n        DropEventsOnQueueFull = 60,\n        IndexAndForward = true,\n        SendCookedData = true,\n        MaxQueueSize = \"100KB\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewOutputsTcpDefault(ctx, \"tcp_default\", \u0026splunk.OutputsTcpDefaultArgs{\n\t\t\tName:                  pulumi.String(\"tcpout\"),\n\t\t\tDisabled:              pulumi.Bool(false),\n\t\t\tDefaultGroup:          pulumi.String(\"test-indexers\"),\n\t\t\tDropEventsOnQueueFull: pulumi.Int(60),\n\t\t\tIndexAndForward:       pulumi.Bool(true),\n\t\t\tSendCookedData:        pulumi.Bool(true),\n\t\t\tMaxQueueSize:          pulumi.String(\"100KB\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.OutputsTcpDefault;\nimport com.pulumi.splunk.OutputsTcpDefaultArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var tcpDefault = new OutputsTcpDefault(\"tcpDefault\", OutputsTcpDefaultArgs.builder()\n            .name(\"tcpout\")\n            .disabled(false)\n            .defaultGroup(\"test-indexers\")\n            .dropEventsOnQueueFull(60)\n            .indexAndForward(true)\n            .sendCookedData(true)\n            .maxQueueSize(\"100KB\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  tcpDefault:\n    type: splunk:OutputsTcpDefault\n    name: tcp_default\n    properties:\n      name: tcpout\n      disabled: false\n      defaultGroup: test-indexers\n      dropEventsOnQueueFull: 60\n      indexAndForward: true\n      sendCookedData: true\n      maxQueueSize: 100KB\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "properties": {
