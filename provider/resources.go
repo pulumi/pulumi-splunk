@@ -25,6 +25,7 @@ import (
 	"github.com/splunk/terraform-provider-splunk/splunk"
 
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
+	tks "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shimv1 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v1"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 
@@ -246,6 +247,8 @@ func Provider() tfbridge.ProviderInfo {
 	}
 
 	prov.SetAutonaming(255, "-")
+
+	prov.MustComputeTokens(tks.SingleModule("splunk_", mainMod, tks.MakeStandard(mainPkg)))
 
 	return prov
 }
