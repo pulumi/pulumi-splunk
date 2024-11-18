@@ -54,7 +54,7 @@ namespace Pulumi.Splunk.Outputs
         /// </summary>
         public readonly string? Sharing;
         /// <summary>
-        /// Properties that indicate write permissions of the resource.
+        /// Properties that indicate resource write permissions.
         /// </summary>
         public readonly ImmutableArray<string> Writes;
 

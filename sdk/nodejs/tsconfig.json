@@ -33,6 +33,7 @@
         "inputsTcpSplunkTcpToken.ts",
         "inputsTcpSsl.ts",
         "inputsUdp.ts",
+        "lookupDefinition.ts",
         "lookupTableFile.ts",
         "outputsTcpDefault.ts",
         "outputsTcpGroup.ts",

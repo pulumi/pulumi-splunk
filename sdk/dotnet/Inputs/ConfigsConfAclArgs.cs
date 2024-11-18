@@ -82,7 +82,7 @@ namespace Pulumi.Splunk.Inputs
         private InputList<string>? _writes;
 
         /// <summary>
-        /// Properties that indicate write permissions of the resource.
+        /// Properties that indicate resource write permissions.
         /// </summary>
         public InputList<string> Writes
         {
