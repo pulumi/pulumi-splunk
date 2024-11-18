@@ -64,7 +64,7 @@ public final class AppsLocalAcl {
      */
     private @Nullable String sharing;
     /**
-     * @return Properties that indicate write permissions of the resource.
+     * @return Properties that indicate resource write permissions.
      * 
      */
     private @Nullable List<String> writes;
@@ -141,7 +141,7 @@ public final class AppsLocalAcl {
         return Optional.ofNullable(this.sharing);
     }
     /**
-     * @return Properties that indicate write permissions of the resource.
+     * @return Properties that indicate resource write permissions.
      * 
      */
     public List<String> writes() {
