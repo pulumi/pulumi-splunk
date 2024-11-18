@@ -128,14 +128,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -201,14 +202,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -274,14 +276,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -347,14 +350,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -420,14 +424,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -493,14 +498,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -566,14 +572,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -639,14 +646,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -712,14 +720,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -785,14 +794,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -858,14 +868,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -931,14 +942,89 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "app",
+                        "canChangePerms",
+                        "canShareApp",
+                        "canShareGlobal",
+                        "canShareUser",
+                        "canWrite",
+                        "owner",
+                        "reads",
+                        "removable",
+                        "sharing",
+                        "writes"
+                    ]
+                }
+            }
+        },
+        "splunk:index/LookupDefinitionAcl:LookupDefinitionAcl": {
+            "properties": {
+                "app": {
+                    "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
+                    "willReplaceOnChanges": true
+                },
+                "canChangePerms": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
+                },
+                "canShareApp": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
+                },
+                "canShareGlobal": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
+                },
+                "canShareUser": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
+                },
+                "canWrite": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
+                },
+                "owner": {
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
+                },
+                "reads": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
+                },
+                "removable": {
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
+                },
+                "sharing": {
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
+                },
+                "writes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -1004,14 +1090,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -1077,14 +1164,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -1150,14 +1238,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -1223,14 +1312,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -1296,14 +1386,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -1369,14 +1460,15 @@
                 },
                 "sharing": {
                     "type": "string",
-                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n"
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
                 },
                 "writes": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
-                    "description": "Properties that indicate write permissions of the resource.\n"
+                    "description": "Properties that indicate resource write permissions.\n"
                 }
             },
             "type": "object",
@@ -3941,6 +4033,66 @@
                     "sourcetype": {
                         "type": "string",
                         "description": "The value to populate in the sourcetype field for incoming events.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "splunk:index/lookupDefinition:LookupDefinition": {
+            "description": "## \n\n# Resource: splunk.LookupDefinition\n\nManage lookup definitions in Splunk. For more information on lookup definitions, refer to the official Splunk documentation: https://docs.splunk.com/Documentation/Splunk/latest/Knowledge/Aboutlookupsandfieldactions\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst example = new splunk.LookupDefinition(\"example\", {\n    name: \"example_lookup_definition\",\n    filename: \"example_lookup_file.csv\",\n    acl: {\n        owner: \"admin\",\n        app: \"search\",\n        sharing: \"app\",\n        reads: [\"*\"],\n        writes: [\"admin\"],\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nexample = splunk.LookupDefinition(\"example\",\n    name=\"example_lookup_definition\",\n    filename=\"example_lookup_file.csv\",\n    acl={\n        \"owner\": \"admin\",\n        \"app\": \"search\",\n        \"sharing\": \"app\",\n        \"reads\": [\"*\"],\n        \"writes\": [\"admin\"],\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Splunk.LookupDefinition(\"example\", new()\n    {\n        Name = \"example_lookup_definition\",\n        Filename = \"example_lookup_file.csv\",\n        Acl = new Splunk.Inputs.LookupDefinitionAclArgs\n        {\n            Owner = \"admin\",\n            App = \"search\",\n            Sharing = \"app\",\n            Reads = new[]\n            {\n                \"*\",\n            },\n            Writes = new[]\n            {\n                \"admin\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewLookupDefinition(ctx, \"example\", \u0026splunk.LookupDefinitionArgs{\n\t\t\tName:     pulumi.String(\"example_lookup_definition\"),\n\t\t\tFilename: pulumi.String(\"example_lookup_file.csv\"),\n\t\t\tAcl: \u0026splunk.LookupDefinitionAclArgs{\n\t\t\t\tOwner:   pulumi.String(\"admin\"),\n\t\t\t\tApp:     pulumi.String(\"search\"),\n\t\t\t\tSharing: pulumi.String(\"app\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"*\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"admin\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.LookupDefinition;\nimport com.pulumi.splunk.LookupDefinitionArgs;\nimport com.pulumi.splunk.inputs.LookupDefinitionAclArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new LookupDefinition(\"example\", LookupDefinitionArgs.builder()\n            .name(\"example_lookup_definition\")\n            .filename(\"example_lookup_file.csv\")\n            .acl(LookupDefinitionAclArgs.builder()\n                .owner(\"admin\")\n                .app(\"search\")\n                .sharing(\"app\")\n                .reads(\"*\")\n                .writes(\"admin\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: splunk:LookupDefinition\n    properties:\n      name: example_lookup_definition\n      filename: example_lookup_file.csv\n      acl:\n        owner: admin\n        app: search\n        sharing: app\n        reads:\n          - '*'\n        writes:\n          - admin\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Validation Rules\n\nWhen `acl.sharing` is set to `user`, the `acl.read` and `acl.write` fields must not be explicitly set. Setting them will trigger a validation error.\n",
+            "properties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/LookupDefinitionAcl:LookupDefinitionAcl",
+                    "description": "Defines the access control list (ACL) for the lookup definition. See acl.md for more details.\n"
+                },
+                "filename": {
+                    "type": "string",
+                    "description": "The filename for the lookup table, usually ending in `.csv`.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A unique name for the lookup definition within the app context.\n"
+                }
+            },
+            "required": [
+                "acl",
+                "filename",
+                "name"
+            ],
+            "inputProperties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/LookupDefinitionAcl:LookupDefinitionAcl",
+                    "description": "Defines the access control list (ACL) for the lookup definition. See acl.md for more details.\n"
+                },
+                "filename": {
+                    "type": "string",
+                    "description": "The filename for the lookup table, usually ending in `.csv`.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A unique name for the lookup definition within the app context.\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "filename",
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering LookupDefinition resources.\n",
+                "properties": {
+                    "acl": {
+                        "$ref": "#/types/splunk:index/LookupDefinitionAcl:LookupDefinitionAcl",
+                        "description": "Defines the access control list (ACL) for the lookup definition. See acl.md for more details.\n"
+                    },
+                    "filename": {
+                        "type": "string",
+                        "description": "The filename for the lookup table, usually ending in `.csv`.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "A unique name for the lookup definition within the app context.\n",
+                        "willReplaceOnChanges": true
                     }
                 },
                 "type": "object"
