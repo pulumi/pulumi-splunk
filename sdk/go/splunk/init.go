@@ -55,6 +55,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &InputsTcpSsl{}
 	case "splunk:index/inputsUdp:InputsUdp":
 		r = &InputsUdp{}
+	case "splunk:index/lookupDefinition:LookupDefinition":
+		r = &LookupDefinition{}
 	case "splunk:index/lookupTableFile:LookupTableFile":
 		r = &LookupTableFile{}
 	case "splunk:index/outputsTcpDefault:OutputsTcpDefault":
@@ -183,6 +185,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"splunk",
 		"index/inputsUdp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"splunk",
+		"index/lookupDefinition",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

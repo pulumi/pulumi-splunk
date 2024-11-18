@@ -22,6 +22,7 @@ from .inputs_tcp_raw import *
 from .inputs_tcp_splunk_tcp_token import *
 from .inputs_tcp_ssl import *
 from .inputs_udp import *
+from .lookup_definition import *
 from .lookup_table_file import *
 from .outputs_tcp_default import *
 from .outputs_tcp_group import *
@@ -177,6 +178,14 @@ _utilities.register(
   "fqn": "pulumi_splunk",
   "classes": {
    "splunk:index/inputsUdp:InputsUdp": "InputsUdp"
+  }
+ },
+ {
+  "pkg": "splunk",
+  "mod": "index/lookupDefinition",
+  "fqn": "pulumi_splunk",
+  "classes": {
+   "splunk:index/lookupDefinition:LookupDefinition": "LookupDefinition"
   }
  },
  {

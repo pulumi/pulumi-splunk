@@ -168,14 +168,14 @@ public final class IndexesAclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Properties that indicate write permissions of the resource.
+     * Properties that indicate resource write permissions.
      * 
      */
     @Import(name="writes")
     private @Nullable Output<List<String>> writes;
 
     /**
-     * @return Properties that indicate write permissions of the resource.
+     * @return Properties that indicate resource write permissions.
      * 
      */
     public Optional<Output<List<String>>> writes() {
@@ -437,7 +437,7 @@ public final class IndexesAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param writes Properties that indicate write permissions of the resource.
+         * @param writes Properties that indicate resource write permissions.
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class IndexesAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param writes Properties that indicate write permissions of the resource.
+         * @param writes Properties that indicate resource write permissions.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class IndexesAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param writes Properties that indicate write permissions of the resource.
+         * @param writes Properties that indicate resource write permissions.
          * 
          * @return builder
          * 
