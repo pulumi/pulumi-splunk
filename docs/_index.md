@@ -6,7 +6,7 @@ layout: package
 ---
 ## Installation
 
-The splunk provider is available as a package in all Pulumi languages:
+The Splunk provider is available as a package in all Pulumi languages:
 
 * JavaScript/TypeScript: [`@pulumi/splunk`](https://www.npmjs.com/package/@pulumi/splunk)
 * Python: [`pulumi-splunk`](https://pypi.org/project/pulumi-splunk/)
