@@ -6,7 +6,7 @@ toolchain go1.22.7
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk v1.15.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.100.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.101.0
 	github.com/pulumi/pulumi/sdk/v3 v3.145.0
 	github.com/splunk/terraform-provider-splunk v1.4.29
 )
