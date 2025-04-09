@@ -6,7 +6,7 @@ toolchain go1.22.7
 
 require (
 	github.com/hashicorp/terraform-plugin-sdk v1.15.0
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.106.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.106.1-0.20250409190246-b733e4cbd1fb
 	github.com/pulumi/pulumi/sdk/v3 v3.160.0
 	github.com/splunk/terraform-provider-splunk v1.4.30
 )
@@ -92,6 +92,7 @@ require (
 	github.com/hashicorp/hcl/v2 v2.23.0 // indirect
 	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
 	github.com/hashicorp/logutils v1.0.0 // indirect
+	github.com/hashicorp/terraform-plugin-go v0.26.0 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.9.0 // indirect
 	github.com/hashicorp/terraform-svchost v0.1.1 // indirect
 	github.com/huandu/xstrings v1.3.3 // indirect
