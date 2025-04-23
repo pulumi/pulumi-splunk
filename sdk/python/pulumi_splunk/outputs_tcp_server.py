@@ -400,6 +400,9 @@ class _OutputsTcpServerState:
 
 
 class OutputsTcpServer(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/outputsTcpServer:OutputsTcpServer"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

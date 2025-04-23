@@ -124,6 +124,9 @@ class _ConfigsConfState:
 
 
 class ConfigsConf(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/configsConf:ConfigsConf"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

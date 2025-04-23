@@ -111,6 +111,9 @@ class _GenericAclState:
 
 
 class GenericAcl(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/genericAcl:GenericAcl"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

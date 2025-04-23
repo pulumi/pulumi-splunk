@@ -262,6 +262,9 @@ class _GlobalHttpEventCollectorState:
 
 
 class GlobalHttpEventCollector(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

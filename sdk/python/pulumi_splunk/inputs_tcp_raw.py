@@ -436,6 +436,9 @@ class _InputsTcpRawState:
 
 
 class InputsTcpRaw(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/inputsTcpRaw:InputsTcpRaw"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

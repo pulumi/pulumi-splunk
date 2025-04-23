@@ -356,6 +356,9 @@ class _InputsHttpEventCollectorState:
 
 
 class InputsHttpEventCollector(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/inputsHttpEventCollector:InputsHttpEventCollector"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
