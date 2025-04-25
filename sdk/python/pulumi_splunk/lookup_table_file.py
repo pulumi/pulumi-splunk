@@ -158,6 +158,9 @@ class _LookupTableFileState:
 
 
 class LookupTableFile(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/lookupTableFile:LookupTableFile"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

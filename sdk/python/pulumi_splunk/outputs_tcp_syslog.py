@@ -316,6 +316,9 @@ class _OutputsTcpSyslogState:
 
 
 class OutputsTcpSyslog(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/outputsTcpSyslog:OutputsTcpSyslog"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

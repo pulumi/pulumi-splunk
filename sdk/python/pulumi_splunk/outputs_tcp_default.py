@@ -372,6 +372,9 @@ class _OutputsTcpDefaultState:
 
 
 class OutputsTcpDefault(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/outputsTcpDefault:OutputsTcpDefault"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

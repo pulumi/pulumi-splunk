@@ -5371,6 +5371,9 @@ class _SavedSearchesState:
 
 
 class SavedSearches(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/savedSearches:SavedSearches"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
