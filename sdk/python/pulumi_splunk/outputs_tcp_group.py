@@ -427,6 +427,9 @@ class _OutputsTcpGroupState:
 
 
 class OutputsTcpGroup(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/outputsTcpGroup:OutputsTcpGroup"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

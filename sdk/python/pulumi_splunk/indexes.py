@@ -1460,6 +1460,9 @@ class _IndexesState:
 
 
 class Indexes(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/indexes:Indexes"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

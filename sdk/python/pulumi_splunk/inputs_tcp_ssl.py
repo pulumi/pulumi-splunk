@@ -194,6 +194,9 @@ class _InputsTcpSslState:
 
 
 class InputsTcpSsl(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/inputsTcpSsl:InputsTcpSsl"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

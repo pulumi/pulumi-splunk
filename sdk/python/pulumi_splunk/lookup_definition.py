@@ -130,6 +130,9 @@ class _LookupDefinitionState:
 
 
 class LookupDefinition(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/lookupDefinition:LookupDefinition"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

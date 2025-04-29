@@ -196,6 +196,9 @@ class _ShIndexesManagerState:
 
 
 class ShIndexesManager(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/shIndexesManager:ShIndexesManager"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

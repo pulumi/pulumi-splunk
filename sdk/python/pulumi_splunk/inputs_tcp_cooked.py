@@ -248,6 +248,9 @@ class _InputsTcpCookedState:
 
 
 class InputsTcpCooked(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/inputsTcpCooked:InputsTcpCooked"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
