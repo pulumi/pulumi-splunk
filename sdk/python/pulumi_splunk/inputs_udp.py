@@ -444,6 +444,9 @@ class _InputsUdpState:
 
 
 class InputsUdp(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/inputsUdp:InputsUdp"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

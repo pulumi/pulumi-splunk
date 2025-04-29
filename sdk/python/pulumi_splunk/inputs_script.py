@@ -363,6 +363,9 @@ class _InputsScriptState:
 
 
 class InputsScript(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/inputsScript:InputsScript"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

@@ -496,6 +496,9 @@ class _AppsLocalState:
 
 
 class AppsLocal(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/appsLocal:AppsLocal"
+
     @overload
     def __init__(__self__,
                  resource_name: str,

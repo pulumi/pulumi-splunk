@@ -322,6 +322,9 @@ class _AuthenticationUsersState:
 
 
 class AuthenticationUsers(pulumi.CustomResource):
+
+    pulumi_type = "splunk:index/authenticationUsers:AuthenticationUsers"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
