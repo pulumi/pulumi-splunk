@@ -261,10 +261,8 @@ class _GlobalHttpEventCollectorState:
         pulumi.set(self, "use_deployment_server", value)
 
 
+@pulumi.type_token("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector")
 class GlobalHttpEventCollector(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

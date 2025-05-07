@@ -362,10 +362,8 @@ class _InputsScriptState:
         pulumi.set(self, "sourcetype", value)
 
 
+@pulumi.type_token("splunk:index/inputsScript:InputsScript")
 class InputsScript(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/inputsScript:InputsScript"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
