@@ -5370,10 +5370,8 @@ class _SavedSearchesState:
         pulumi.set(self, "workload_pool", value)
 
 
+@pulumi.type_token("splunk:index/savedSearches:SavedSearches")
 class SavedSearches(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/savedSearches:SavedSearches"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

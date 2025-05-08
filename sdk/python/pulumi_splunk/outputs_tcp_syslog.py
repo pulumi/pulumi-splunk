@@ -315,10 +315,8 @@ class _OutputsTcpSyslogState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("splunk:index/outputsTcpSyslog:OutputsTcpSyslog")
 class OutputsTcpSyslog(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/outputsTcpSyslog:OutputsTcpSyslog"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

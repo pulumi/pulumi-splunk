@@ -1550,7 +1550,10 @@
         },
         "requiredInputs": [
             "url"
-        ]
+        ],
+        "methods": {
+            "terraformConfig": "pulumi:providers:splunk/terraformConfig"
+        }
     },
     "resources": {
         "splunk:index/adminSamlGroups:AdminSamlGroups": {
@@ -7016,6 +7019,37 @@
                         "willReplaceOnChanges": true
                     }
                 },
+                "type": "object"
+            }
+        }
+    },
+    "functions": {
+        "pulumi:providers:splunk/terraformConfig": {
+            "description": "This function returns a Terraform config object with terraform-namecased keys,to be used with the Terraform Module Provider.",
+            "inputs": {
+                "properties": {
+                    "__self__": {
+                        "type": "ref",
+                        "$ref": "#/resources/pulumi:providers:splunk"
+                    }
+                },
+                "type": "pulumi:providers:splunk/terraformConfig",
+                "required": [
+                    "__self__"
+                ]
+            },
+            "outputs": {
+                "properties": {
+                    "result": {
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        },
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "result"
+                ],
                 "type": "object"
             }
         }

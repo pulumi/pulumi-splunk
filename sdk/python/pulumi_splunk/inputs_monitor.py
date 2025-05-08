@@ -547,10 +547,8 @@ class _InputsMonitorState:
         pulumi.set(self, "whitelist", value)
 
 
+@pulumi.type_token("splunk:index/inputsMonitor:InputsMonitor")
 class InputsMonitor(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/inputsMonitor:InputsMonitor"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

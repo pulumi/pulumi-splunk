@@ -126,10 +126,8 @@ class _DataUiViewsState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("splunk:index/dataUiViews:DataUiViews")
 class DataUiViews(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/dataUiViews:DataUiViews"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

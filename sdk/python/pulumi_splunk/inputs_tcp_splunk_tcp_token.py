@@ -131,10 +131,8 @@ class _InputsTcpSplunkTcpTokenState:
         pulumi.set(self, "token", value)
 
 
+@pulumi.type_token("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken")
 class InputsTcpSplunkTcpToken(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
