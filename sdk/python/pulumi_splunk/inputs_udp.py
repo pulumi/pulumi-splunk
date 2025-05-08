@@ -443,10 +443,8 @@ class _InputsUdpState:
         pulumi.set(self, "sourcetype", value)
 
 
+@pulumi.type_token("splunk:index/inputsUdp:InputsUdp")
 class InputsUdp(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/inputsUdp:InputsUdp"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

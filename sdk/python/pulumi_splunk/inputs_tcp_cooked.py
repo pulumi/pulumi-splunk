@@ -247,10 +247,8 @@ class _InputsTcpCookedState:
         pulumi.set(self, "restrict_to_host", value)
 
 
+@pulumi.type_token("splunk:index/inputsTcpCooked:InputsTcpCooked")
 class InputsTcpCooked(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/inputsTcpCooked:InputsTcpCooked"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

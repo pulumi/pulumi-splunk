@@ -97,10 +97,8 @@ class _AdminSamlGroupsState:
         pulumi.set(self, "roles", value)
 
 
+@pulumi.type_token("splunk:index/adminSamlGroups:AdminSamlGroups")
 class AdminSamlGroups(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/adminSamlGroups:AdminSamlGroups"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

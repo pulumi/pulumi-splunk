@@ -449,10 +449,8 @@ class _AuthorizationRolesState:
         pulumi.set(self, "search_time_win", value)
 
 
+@pulumi.type_token("splunk:index/authorizationRoles:AuthorizationRoles")
 class AuthorizationRoles(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/authorizationRoles:AuthorizationRoles"
-
     @overload
     def __init__(__self__,
                  resource_name: str,

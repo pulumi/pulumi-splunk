@@ -371,10 +371,8 @@ class _OutputsTcpDefaultState:
         pulumi.set(self, "send_cooked_data", value)
 
 
+@pulumi.type_token("splunk:index/outputsTcpDefault:OutputsTcpDefault")
 class OutputsTcpDefault(pulumi.CustomResource):
-
-    pulumi_type = "splunk:index/outputsTcpDefault:OutputsTcpDefault"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
