@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"errors"
 	"github.com/pulumi/pulumi-splunk/sdk/go/splunk/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -25,7 +24,7 @@ type Provider struct {
 	// Splunk instance password
 	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// Splunk instance URL
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
 	// Splunk instance admin username
 	Username pulumi.StringPtrOutput `pulumi:"username"`
 }
@@ -34,12 +33,9 @@ type Provider struct {
 func NewProvider(ctx *pulumi.Context,
 	name string, args *ProviderArgs, opts ...pulumi.ResourceOption) (*Provider, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &ProviderArgs{}
 	}
 
-	if args.Url == nil {
-		return nil, errors.New("invalid value for required argument 'Url'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:splunk", name, args, &resource, opts...)
@@ -60,7 +56,7 @@ type providerArgs struct {
 	// Timeout when making calls to Splunk server. Defaults to 60 seconds
 	Timeout *int `pulumi:"timeout"`
 	// Splunk instance URL
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 	// Splunk instance admin username
 	Username *string `pulumi:"username"`
 }
@@ -77,7 +73,7 @@ type ProviderArgs struct {
 	// Timeout when making calls to Splunk server. Defaults to 60 seconds
 	Timeout pulumi.IntPtrInput
 	// Splunk instance URL
-	Url pulumi.StringInput
+	Url pulumi.StringPtrInput
 	// Splunk instance admin username
 	Username pulumi.StringPtrInput
 }
@@ -154,8 +150,8 @@ func (o ProviderOutput) Password() pulumi.StringPtrOutput {
 }
 
 // Splunk instance URL
-func (o ProviderOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *Provider) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o ProviderOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 // Splunk instance admin username

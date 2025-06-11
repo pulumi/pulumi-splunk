@@ -37,7 +37,7 @@ export class Provider extends pulumi.ProviderResource {
     /**
      * Splunk instance URL
      */
-    public readonly url!: pulumi.Output<string>;
+    public readonly url!: pulumi.Output<string | undefined>;
     /**
      * Splunk instance admin username
      */
@@ -50,13 +50,10 @@ export class Provider extends pulumi.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
+    constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            if ((!args || args.url === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'url'");
-            }
             resourceInputs["authToken"] = args ? args.authToken : undefined;
             resourceInputs["insecureSkipVerify"] = pulumi.output(args ? args.insecureSkipVerify : undefined).apply(JSON.stringify);
             resourceInputs["password"] = args ? args.password : undefined;
@@ -102,7 +99,7 @@ export interface ProviderArgs {
     /**
      * Splunk instance URL
      */
-    url: pulumi.Input<string>;
+    url?: pulumi.Input<string>;
     /**
      * Splunk instance admin username
      */
