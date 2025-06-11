@@ -35,7 +35,7 @@ namespace Pulumi.Splunk
         /// Splunk instance URL
         /// </summary>
         [Output("url")]
-        public Output<string> Url { get; private set; } = null!;
+        public Output<string?> Url { get; private set; } = null!;
 
         /// <summary>
         /// Splunk instance admin username
@@ -51,7 +51,7 @@ namespace Pulumi.Splunk
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Provider(string name, ProviderArgs args, CustomResourceOptions? options = null)
+        public Provider(string name, ProviderArgs? args = null, CustomResourceOptions? options = null)
             : base("splunk", name, args ?? new ProviderArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -105,8 +105,8 @@ namespace Pulumi.Splunk
         /// <summary>
         /// Splunk instance URL
         /// </summary>
-        [Input("url", required: true)]
-        public Input<string> Url { get; set; } = null!;
+        [Input("url")]
+        public Input<string>? Url { get; set; }
 
         /// <summary>
         /// Splunk instance admin username
