@@ -1519,9 +1519,6 @@
                 "description": "Splunk instance admin username\n"
             }
         },
-        "required": [
-            "url"
-        ],
         "inputProperties": {
             "authToken": {
                 "type": "string",
@@ -1548,9 +1545,6 @@
                 "description": "Splunk instance admin username\n"
             }
         },
-        "requiredInputs": [
-            "url"
-        ],
         "methods": {
             "terraformConfig": "pulumi:providers:splunk/terraformConfig"
         }

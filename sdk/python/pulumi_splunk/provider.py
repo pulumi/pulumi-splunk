@@ -20,23 +20,22 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 url: pulumi.Input[builtins.str],
                  auth_token: Optional[pulumi.Input[builtins.str]] = None,
                  insecure_skip_verify: Optional[pulumi.Input[builtins.bool]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  timeout: Optional[pulumi.Input[builtins.int]] = None,
+                 url: Optional[pulumi.Input[builtins.str]] = None,
                  username: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[builtins.str] url: Splunk instance URL
         :param pulumi.Input[builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
                the Splunk platform
         :param pulumi.Input[builtins.bool] insecure_skip_verify: insecure skip verification flag
         :param pulumi.Input[builtins.str] password: Splunk instance password
         :param pulumi.Input[builtins.int] timeout: Timeout when making calls to Splunk server. Defaults to 60 seconds
+        :param pulumi.Input[builtins.str] url: Splunk instance URL
         :param pulumi.Input[builtins.str] username: Splunk instance admin username
         """
-        pulumi.set(__self__, "url", url)
         if auth_token is not None:
             pulumi.set(__self__, "auth_token", auth_token)
         if insecure_skip_verify is not None:
@@ -45,20 +44,10 @@ class ProviderArgs:
             pulumi.set(__self__, "password", password)
         if timeout is not None:
             pulumi.set(__self__, "timeout", timeout)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
         if username is not None:
             pulumi.set(__self__, "username", username)
-
-    @property
-    @pulumi.getter
-    def url(self) -> pulumi.Input[builtins.str]:
-        """
-        Splunk instance URL
-        """
-        return pulumi.get(self, "url")
-
-    @url.setter
-    def url(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "url", value)
 
     @property
     @pulumi.getter(name="authToken")
@@ -111,6 +100,18 @@ class ProviderArgs:
 
     @property
     @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Splunk instance URL
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "url", value)
+
+    @property
+    @pulumi.getter
     def username(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         Splunk instance admin username
@@ -155,7 +156,7 @@ class Provider(pulumi.ProviderResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: ProviderArgs,
+                 args: Optional[ProviderArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         The provider type for the splunk package. By default, resources use package-wide configuration
@@ -197,8 +198,6 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["insecure_skip_verify"] = pulumi.Output.from_input(insecure_skip_verify).apply(pulumi.runtime.to_json) if insecure_skip_verify is not None else None
             __props__.__dict__["password"] = password
             __props__.__dict__["timeout"] = pulumi.Output.from_input(timeout).apply(pulumi.runtime.to_json) if timeout is not None else None
-            if url is None and not opts.urn:
-                raise TypeError("Missing required property 'url'")
             __props__.__dict__["url"] = url
             __props__.__dict__["username"] = username
         super(Provider, __self__).__init__(
@@ -226,7 +225,7 @@ class Provider(pulumi.ProviderResource):
 
     @property
     @pulumi.getter
-    def url(self) -> pulumi.Output[builtins.str]:
+    def url(self) -> pulumi.Output[Optional[builtins.str]]:
         """
         Splunk instance URL
         """
