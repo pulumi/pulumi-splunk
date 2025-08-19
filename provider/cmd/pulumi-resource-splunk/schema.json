@@ -7024,7 +7024,7 @@
                 "properties": {
                     "__self__": {
                         "type": "ref",
-                        "$ref": "#/resources/pulumi:providers:splunk"
+                        "$ref": "#/provider"
                     }
                 },
                 "type": "pulumi:providers:splunk/terraformConfig",
