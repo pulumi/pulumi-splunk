@@ -63,11 +63,11 @@ export class AdminSamlGroups extends pulumi.CustomResource {
     /**
      * The name of the external group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * List of internal roles assigned to the group.
      */
-    public readonly roles!: pulumi.Output<string[]>;
+    declare public readonly roles: pulumi.Output<string[]>;
 
     /**
      * Create a AdminSamlGroups resource with the given unique name, arguments, and options.
@@ -82,12 +82,12 @@ export class AdminSamlGroups extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AdminSamlGroupsState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["roles"] = state?.roles;
         } else {
             const args = argsOrState as AdminSamlGroupsArgs | undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["roles"] = args?.roles;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AdminSamlGroups.__pulumiType, name, resourceInputs, opts);

@@ -18,8 +18,7 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-	// the Splunk platform
+	// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 	AuthToken pulumi.StringPtrOutput `pulumi:"authToken"`
 	// Splunk instance password
 	Password pulumi.StringPtrOutput `pulumi:"password"`
@@ -46,8 +45,7 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-	// the Splunk platform
+	// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 	AuthToken *string `pulumi:"authToken"`
 	// insecure skip verification flag
 	InsecureSkipVerify *bool `pulumi:"insecureSkipVerify"`
@@ -63,8 +61,7 @@ type providerArgs struct {
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-	// the Splunk platform
+	// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 	AuthToken pulumi.StringPtrInput
 	// insecure skip verification flag
 	InsecureSkipVerify pulumi.BoolPtrInput
@@ -138,8 +135,7 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
-// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-// the Splunk platform
+// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 func (o ProviderOutput) AuthToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AuthToken }).(pulumi.StringPtrOutput)
 }

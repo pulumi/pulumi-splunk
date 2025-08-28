@@ -54,50 +54,50 @@ export class OutputsTcpServer extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.OutputsTcpServerAcl>;
+    declare public readonly acl: pulumi.Output<outputs.OutputsTcpServerAcl>;
     /**
      * If true, disables the group.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Valid values: (clone | balance | autobalance)
      * The data distribution method used when two or more servers exist in the same forwarder group.
      */
-    public readonly method!: pulumi.Output<string>;
+    declare public readonly method: pulumi.Output<string>;
     /**
      * <host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The alternate name to match in the remote server's SSL certificate.
      */
-    public readonly sslAltNameToCheck!: pulumi.Output<string>;
+    declare public readonly sslAltNameToCheck: pulumi.Output<string>;
     /**
      * Path to the client certificate. If specified, connection uses SSL.
      */
-    public readonly sslCertPath!: pulumi.Output<string>;
+    declare public readonly sslCertPath: pulumi.Output<string>;
     /**
      * SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
      */
-    public readonly sslCipher!: pulumi.Output<string>;
+    declare public readonly sslCipher: pulumi.Output<string>;
     /**
      * Check the common name of the server's certificate against this name.
      * If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
      */
-    public readonly sslCommonNameToCheck!: pulumi.Output<string>;
+    declare public readonly sslCommonNameToCheck: pulumi.Output<string>;
     /**
      * The password associated with the CAcert.
      * The default Splunk Enterprise CAcert uses the password "password."
      */
-    public readonly sslPassword!: pulumi.Output<string>;
+    declare public readonly sslPassword: pulumi.Output<string>;
     /**
      * The path to the root certificate authority file.
      */
-    public readonly sslRootCaPath!: pulumi.Output<string>;
+    declare public readonly sslRootCaPath: pulumi.Output<string>;
     /**
      * If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
      */
-    public readonly sslVerifyServerCert!: pulumi.Output<boolean>;
+    declare public readonly sslVerifyServerCert: pulumi.Output<boolean>;
 
     /**
      * Create a OutputsTcpServer resource with the given unique name, arguments, and options.
@@ -112,30 +112,30 @@ export class OutputsTcpServer extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpServerState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["method"] = state ? state.method : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["sslAltNameToCheck"] = state ? state.sslAltNameToCheck : undefined;
-            resourceInputs["sslCertPath"] = state ? state.sslCertPath : undefined;
-            resourceInputs["sslCipher"] = state ? state.sslCipher : undefined;
-            resourceInputs["sslCommonNameToCheck"] = state ? state.sslCommonNameToCheck : undefined;
-            resourceInputs["sslPassword"] = state ? state.sslPassword : undefined;
-            resourceInputs["sslRootCaPath"] = state ? state.sslRootCaPath : undefined;
-            resourceInputs["sslVerifyServerCert"] = state ? state.sslVerifyServerCert : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["method"] = state?.method;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["sslAltNameToCheck"] = state?.sslAltNameToCheck;
+            resourceInputs["sslCertPath"] = state?.sslCertPath;
+            resourceInputs["sslCipher"] = state?.sslCipher;
+            resourceInputs["sslCommonNameToCheck"] = state?.sslCommonNameToCheck;
+            resourceInputs["sslPassword"] = state?.sslPassword;
+            resourceInputs["sslRootCaPath"] = state?.sslRootCaPath;
+            resourceInputs["sslVerifyServerCert"] = state?.sslVerifyServerCert;
         } else {
             const args = argsOrState as OutputsTcpServerArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["method"] = args ? args.method : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["sslAltNameToCheck"] = args ? args.sslAltNameToCheck : undefined;
-            resourceInputs["sslCertPath"] = args ? args.sslCertPath : undefined;
-            resourceInputs["sslCipher"] = args ? args.sslCipher : undefined;
-            resourceInputs["sslCommonNameToCheck"] = args ? args.sslCommonNameToCheck : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["method"] = args?.method;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["sslAltNameToCheck"] = args?.sslAltNameToCheck;
+            resourceInputs["sslCertPath"] = args?.sslCertPath;
+            resourceInputs["sslCipher"] = args?.sslCipher;
+            resourceInputs["sslCommonNameToCheck"] = args?.sslCommonNameToCheck;
             resourceInputs["sslPassword"] = args?.sslPassword ? pulumi.secret(args.sslPassword) : undefined;
-            resourceInputs["sslRootCaPath"] = args ? args.sslRootCaPath : undefined;
-            resourceInputs["sslVerifyServerCert"] = args ? args.sslVerifyServerCert : undefined;
+            resourceInputs["sslRootCaPath"] = args?.sslRootCaPath;
+            resourceInputs["sslVerifyServerCert"] = args?.sslVerifyServerCert;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["sslPassword"] };

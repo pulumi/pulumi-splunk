@@ -8,8 +8,7 @@ declare var exports: any;
 const __config = new pulumi.Config("splunk");
 
 /**
- * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
- * the Splunk platform
+ * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
  */
 export declare const authToken: string | undefined;
 Object.defineProperty(exports, "authToken", {

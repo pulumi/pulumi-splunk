@@ -16,8 +16,7 @@ from .. import _utilities
 
 authToken: Optional[str]
 """
-Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-the Splunk platform
+Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 """
 
 insecureSkipVerify: Optional[bool]

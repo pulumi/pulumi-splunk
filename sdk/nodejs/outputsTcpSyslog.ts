@@ -55,23 +55,23 @@ export class OutputsTcpSyslog extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.OutputsTcpSyslogAcl>;
+    declare public readonly acl: pulumi.Output<outputs.OutputsTcpSyslogAcl>;
     /**
      * If true, disables global syslog settings.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      */
-    public readonly priority!: pulumi.Output<number>;
+    declare public readonly priority: pulumi.Output<number>;
     /**
      * host:port of the server where syslog data should be sent
      */
-    public readonly server!: pulumi.Output<string>;
+    declare public readonly server: pulumi.Output<string>;
     /**
      * Specifies a rule for handling data in addition to that provided by the "syslog" sourcetype. By default, there is no value for syslogSourceType.
      * <br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string "syslog" receives this special treatment.
@@ -80,16 +80,16 @@ export class OutputsTcpSyslog extends pulumi.CustomResource {
      * Data that is "syslog" or matches this setting is assumed to already be in syslog format.
      * Data that does not match the rules has a header, potentially a timestamp, and a hostname added to the front of the event. This is how Splunk software causes arbitrary log data to match syslog expectations.
      */
-    public readonly syslogSourcetype!: pulumi.Output<string>;
+    declare public readonly syslogSourcetype: pulumi.Output<string>;
     /**
      * Format of timestamp to add at start of the events to be forwarded.
      * The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      */
-    public readonly timestampFormat!: pulumi.Output<string>;
+    declare public readonly timestampFormat: pulumi.Output<string>;
     /**
      * Protocol to use to send syslog data. Valid values: (tcp | udp ).
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a OutputsTcpSyslog resource with the given unique name, arguments, and options.
@@ -104,24 +104,24 @@ export class OutputsTcpSyslog extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpSyslogState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
-            resourceInputs["server"] = state ? state.server : undefined;
-            resourceInputs["syslogSourcetype"] = state ? state.syslogSourcetype : undefined;
-            resourceInputs["timestampFormat"] = state ? state.timestampFormat : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["server"] = state?.server;
+            resourceInputs["syslogSourcetype"] = state?.syslogSourcetype;
+            resourceInputs["timestampFormat"] = state?.timestampFormat;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as OutputsTcpSyslogArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["priority"] = args ? args.priority : undefined;
-            resourceInputs["server"] = args ? args.server : undefined;
-            resourceInputs["syslogSourcetype"] = args ? args.syslogSourcetype : undefined;
-            resourceInputs["timestampFormat"] = args ? args.timestampFormat : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["priority"] = args?.priority;
+            resourceInputs["server"] = args?.server;
+            resourceInputs["syslogSourcetype"] = args?.syslogSourcetype;
+            resourceInputs["timestampFormat"] = args?.timestampFormat;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OutputsTcpSyslog.__pulumiType, name, resourceInputs, opts);

@@ -56,7 +56,7 @@ export class InputsTcpCooked extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.InputsTcpCookedAcl>;
+    declare public readonly acl: pulumi.Output<outputs.InputsTcpCookedAcl>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -65,23 +65,23 @@ export class InputsTcpCooked extends pulumi.CustomResource {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    public readonly connectionHost!: pulumi.Output<string>;
+    declare public readonly connectionHost: pulumi.Output<string>;
     /**
      * Indicates if input is disabled.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Host from which the indexer gets data.
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * The port number of this input.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Restrict incoming connections on this port to the host specified here.
      */
-    public readonly restrictToHost!: pulumi.Output<string>;
+    declare public readonly restrictToHost: pulumi.Output<string>;
 
     /**
      * Create a InputsTcpCooked resource with the given unique name, arguments, and options.
@@ -96,20 +96,20 @@ export class InputsTcpCooked extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpCookedState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["connectionHost"] = state ? state.connectionHost : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["restrictToHost"] = state ? state.restrictToHost : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["connectionHost"] = state?.connectionHost;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["restrictToHost"] = state?.restrictToHost;
         } else {
             const args = argsOrState as InputsTcpCookedArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["connectionHost"] = args ? args.connectionHost : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["restrictToHost"] = args ? args.restrictToHost : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["connectionHost"] = args?.connectionHost;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["restrictToHost"] = args?.restrictToHost;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsTcpCooked.__pulumiType, name, resourceInputs, opts);

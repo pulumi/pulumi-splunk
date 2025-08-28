@@ -78,11 +78,11 @@ export class GenericAcl extends pulumi.CustomResource {
      * apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
      * app and owner for objects that don't fit in the normal namespace.
      */
-    public readonly acl!: pulumi.Output<outputs.GenericAclAcl>;
+    declare public readonly acl: pulumi.Output<outputs.GenericAclAcl>;
     /**
      * REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
      */
-    public readonly path!: pulumi.Output<string>;
+    declare public readonly path: pulumi.Output<string>;
 
     /**
      * Create a GenericAcl resource with the given unique name, arguments, and options.
@@ -97,15 +97,15 @@ export class GenericAcl extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GenericAclState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["path"] = state ? state.path : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["path"] = state?.path;
         } else {
             const args = argsOrState as GenericAclArgs | undefined;
-            if ((!args || args.path === undefined) && !opts.urn) {
+            if (args?.path === undefined && !opts.urn) {
                 throw new Error("Missing required property 'path'");
             }
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["path"] = args ? args.path : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["path"] = args?.path;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GenericAcl.__pulumiType, name, resourceInputs, opts);

@@ -11,8 +11,7 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-// the Splunk platform
+// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 func GetAuthToken(ctx *pulumi.Context) string {
 	return config.Get(ctx, "splunk:authToken")
 }

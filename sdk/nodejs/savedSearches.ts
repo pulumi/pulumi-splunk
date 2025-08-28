@@ -70,685 +70,675 @@ export class SavedSearches extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.SavedSearchesAcl>;
+    declare public readonly acl: pulumi.Output<outputs.SavedSearchesAcl>;
     /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      */
-    public readonly actionCreateXsoarIncident!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncident: pulumi.Output<string | undefined>;
     /**
      * XSOAR custom incident fields (should be a comma separated list)
      */
-    public readonly actionCreateXsoarIncidentParamCustomFields!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamCustomFields: pulumi.Output<string | undefined>;
     /**
      * XSOAR incident description
      */
-    public readonly actionCreateXsoarIncidentParamDetails!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamDetails: pulumi.Output<string | undefined>;
     /**
      * XSOAR incident name
      */
-    public readonly actionCreateXsoarIncidentParamIncidentName!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamIncidentName: pulumi.Output<string | undefined>;
     /**
      * XSOAR incident time
      */
-    public readonly actionCreateXsoarIncidentParamOccurred!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamOccurred: pulumi.Output<string | undefined>;
     /**
      * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
      */
-    public readonly actionCreateXsoarIncidentParamSendAllServers!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamSendAllServers: pulumi.Output<string | undefined>;
     /**
      * XSOAR Server instance URL (Should start with https:// || http://)
      */
-    public readonly actionCreateXsoarIncidentParamServerUrl!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamServerUrl: pulumi.Output<string | undefined>;
     /**
      * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
      */
-    public readonly actionCreateXsoarIncidentParamSeverity!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamSeverity: pulumi.Output<string | undefined>;
     /**
      * XSOAR incident type
      */
-    public readonly actionCreateXsoarIncidentParamType!: pulumi.Output<string | undefined>;
+    declare public readonly actionCreateXsoarIncidentParamType: pulumi.Output<string | undefined>;
     /**
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    public /*out*/ readonly actionEmail!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly actionEmail: pulumi.Output<boolean>;
     /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      */
-    public readonly actionEmailAuthPassword!: pulumi.Output<string>;
+    declare public readonly actionEmailAuthPassword: pulumi.Output<string>;
     /**
      * The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
      */
-    public readonly actionEmailAuthUsername!: pulumi.Output<string>;
+    declare public readonly actionEmailAuthUsername: pulumi.Output<string>;
     /**
      * BCC email address to use if action.email is enabled.
      */
-    public readonly actionEmailBcc!: pulumi.Output<string>;
+    declare public readonly actionEmailBcc: pulumi.Output<string>;
     /**
      * CC email address to use if action.email is enabled.
      */
-    public readonly actionEmailCc!: pulumi.Output<string>;
+    declare public readonly actionEmailCc: pulumi.Output<string>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    public readonly actionEmailCommand!: pulumi.Output<string>;
+    declare public readonly actionEmailCommand: pulumi.Output<string>;
     /**
      * Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
      */
-    public readonly actionEmailFormat!: pulumi.Output<string>;
+    declare public readonly actionEmailFormat: pulumi.Output<string>;
     /**
      * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
      */
-    public readonly actionEmailFrom!: pulumi.Output<string>;
+    declare public readonly actionEmailFrom: pulumi.Output<string>;
     /**
      * Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
      */
-    public readonly actionEmailHostname!: pulumi.Output<string>;
+    declare public readonly actionEmailHostname: pulumi.Output<string>;
     /**
      * Specify whether to include a link to the results. Defaults to 0.
      */
-    public readonly actionEmailIncludeResultsLink!: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeResultsLink: pulumi.Output<number>;
     /**
      * Specify whether to include the search that caused an email to be sent. Defaults to 0.
      */
-    public readonly actionEmailIncludeSearch!: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeSearch: pulumi.Output<number>;
     /**
      * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
      */
-    public readonly actionEmailIncludeTrigger!: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeTrigger: pulumi.Output<number>;
     /**
      * Specify whether to show the time that the alert was fired. Defaults to 0.
      */
-    public readonly actionEmailIncludeTriggerTime!: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeTriggerTime: pulumi.Output<number>;
     /**
      * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
      */
-    public readonly actionEmailIncludeViewLink!: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeViewLink: pulumi.Output<number>;
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      */
-    public readonly actionEmailInline!: pulumi.Output<boolean>;
+    declare public readonly actionEmailInline: pulumi.Output<boolean>;
     /**
      * Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
      */
-    public readonly actionEmailMailserver!: pulumi.Output<string>;
+    declare public readonly actionEmailMailserver: pulumi.Output<string>;
     /**
      * Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
      */
-    public readonly actionEmailMaxResults!: pulumi.Output<number>;
+    declare public readonly actionEmailMaxResults: pulumi.Output<number>;
     /**
      * Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
      */
-    public readonly actionEmailMaxTime!: pulumi.Output<string>;
+    declare public readonly actionEmailMaxTime: pulumi.Output<string>;
     /**
      * Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
      */
-    public readonly actionEmailMessageAlert!: pulumi.Output<string>;
+    declare public readonly actionEmailMessageAlert: pulumi.Output<string>;
     /**
      * Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
      */
-    public readonly actionEmailMessageReport!: pulumi.Output<string>;
+    declare public readonly actionEmailMessageReport: pulumi.Output<string>;
     /**
      * The name of the view to deliver if sendpdf is enabled
      */
-    public readonly actionEmailPdfview!: pulumi.Output<string>;
+    declare public readonly actionEmailPdfview: pulumi.Output<string>;
     /**
      * Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
      */
-    public readonly actionEmailPreprocessResults!: pulumi.Output<string>;
+    declare public readonly actionEmailPreprocessResults: pulumi.Output<string>;
     /**
      * Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
      */
-    public readonly actionEmailReportCidFontList!: pulumi.Output<string>;
+    declare public readonly actionEmailReportCidFontList: pulumi.Output<string>;
     /**
      * Indicates whether to include the Splunk logo with the report.
      */
-    public readonly actionEmailReportIncludeSplunkLogo!: pulumi.Output<boolean>;
+    declare public readonly actionEmailReportIncludeSplunkLogo: pulumi.Output<boolean>;
     /**
      * Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
      */
-    public readonly actionEmailReportPaperOrientation!: pulumi.Output<string>;
+    declare public readonly actionEmailReportPaperOrientation: pulumi.Output<string>;
     /**
      * Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
      */
-    public readonly actionEmailReportPaperSize!: pulumi.Output<string>;
+    declare public readonly actionEmailReportPaperSize: pulumi.Output<string>;
     /**
      * No Supported
      */
-    public readonly actionEmailReportServerEnabled!: pulumi.Output<boolean>;
+    declare public readonly actionEmailReportServerEnabled: pulumi.Output<boolean>;
     /**
      * Not supported.For a default locally installed report server, the URL is http://localhost:8091/
      */
-    public readonly actionEmailReportServerUrl!: pulumi.Output<string>;
+    declare public readonly actionEmailReportServerUrl: pulumi.Output<string>;
     /**
      * Specify whether to send results as a CSV file. Defaults to 0.
      */
-    public readonly actionEmailSendCsv!: pulumi.Output<number>;
+    declare public readonly actionEmailSendCsv: pulumi.Output<number>;
     /**
      * Indicates whether to create and send the results as a PDF. Defaults to false.
      */
-    public readonly actionEmailSendPdf!: pulumi.Output<boolean>;
+    declare public readonly actionEmailSendPdf: pulumi.Output<boolean>;
     /**
      * Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
      */
-    public readonly actionEmailSendResults!: pulumi.Output<boolean>;
+    declare public readonly actionEmailSendResults: pulumi.Output<boolean>;
     /**
      * Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
      */
-    public readonly actionEmailSubject!: pulumi.Output<string>;
+    declare public readonly actionEmailSubject: pulumi.Output<string>;
     /**
      * A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
      */
-    public readonly actionEmailTo!: pulumi.Output<string>;
+    declare public readonly actionEmailTo: pulumi.Output<string>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    public readonly actionEmailTrackAlert!: pulumi.Output<boolean>;
+    declare public readonly actionEmailTrackAlert: pulumi.Output<boolean>;
     /**
      * Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
      */
-    public readonly actionEmailTtl!: pulumi.Output<string>;
+    declare public readonly actionEmailTtl: pulumi.Output<string>;
     /**
      * Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
      */
-    public readonly actionEmailUseSsl!: pulumi.Output<boolean>;
+    declare public readonly actionEmailUseSsl: pulumi.Output<boolean>;
     /**
      * Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
      */
-    public readonly actionEmailUseTls!: pulumi.Output<boolean>;
+    declare public readonly actionEmailUseTls: pulumi.Output<boolean>;
     /**
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
-    public readonly actionEmailWidthSortColumns!: pulumi.Output<boolean>;
+    declare public readonly actionEmailWidthSortColumns: pulumi.Output<boolean>;
     /**
      * Jira Service Desk account name
      */
-    public readonly actionJiraServiceDeskParamAccount!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamAccount: pulumi.Output<string | undefined>;
     /**
      * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
      */
-    public readonly actionJiraServiceDeskParamJiraCustomfields!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamJiraCustomfields: pulumi.Output<string | undefined>;
     /**
      * Jira issue description
      */
-    public readonly actionJiraServiceDeskParamJiraDescription!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamJiraDescription: pulumi.Output<string | undefined>;
     /**
      * Jira issue type name
      */
-    public readonly actionJiraServiceDeskParamJiraIssueType!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamJiraIssueType: pulumi.Output<string | undefined>;
     /**
      * Jira priority of issue
      */
-    public readonly actionJiraServiceDeskParamJiraPriority!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamJiraPriority: pulumi.Output<string | undefined>;
     /**
      * Jira Project name
      */
-    public readonly actionJiraServiceDeskParamJiraProject!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamJiraProject: pulumi.Output<string | undefined>;
     /**
      * Jira issue title/summary
      */
-    public readonly actionJiraServiceDeskParamJiraSummary!: pulumi.Output<string | undefined>;
+    declare public readonly actionJiraServiceDeskParamJiraSummary: pulumi.Output<string | undefined>;
     /**
      * The PagerDuty custom details information.
      */
-    public readonly actionPagerdutyCustomDetails!: pulumi.Output<string>;
+    declare public readonly actionPagerdutyCustomDetails: pulumi.Output<string>;
     /**
      * The PagerDuty integration Key.
      */
-    public readonly actionPagerdutyIntegrationKey!: pulumi.Output<string>;
+    declare public readonly actionPagerdutyIntegrationKey: pulumi.Output<string>;
     /**
      * The PagerDuty integration Key override.
      */
-    public readonly actionPagerdutyIntegrationKeyOverride!: pulumi.Output<string>;
+    declare public readonly actionPagerdutyIntegrationKeyOverride: pulumi.Output<string>;
     /**
      * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
-    public readonly actionPagerdutyIntegrationUrl!: pulumi.Output<string | undefined>;
+    declare public readonly actionPagerdutyIntegrationUrl: pulumi.Output<string | undefined>;
     /**
      * The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
-    public readonly actionPagerdutyIntegrationUrlOverride!: pulumi.Output<string | undefined>;
+    declare public readonly actionPagerdutyIntegrationUrlOverride: pulumi.Output<string | undefined>;
     /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    public /*out*/ readonly actionPopulateLookup!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly actionPopulateLookup: pulumi.Output<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */
-    public readonly actionPopulateLookupCommand!: pulumi.Output<string>;
+    declare public readonly actionPopulateLookupCommand: pulumi.Output<string>;
     /**
      * Lookup name of path of the lookup to populate
      */
-    public readonly actionPopulateLookupDest!: pulumi.Output<string>;
+    declare public readonly actionPopulateLookupDest: pulumi.Output<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    public readonly actionPopulateLookupHostname!: pulumi.Output<string>;
+    declare public readonly actionPopulateLookupHostname: pulumi.Output<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    public readonly actionPopulateLookupMaxResults!: pulumi.Output<number>;
+    declare public readonly actionPopulateLookupMaxResults: pulumi.Output<number>;
     /**
      * Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
      */
-    public readonly actionPopulateLookupMaxTime!: pulumi.Output<number>;
+    declare public readonly actionPopulateLookupMaxTime: pulumi.Output<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    public readonly actionPopulateLookupTrackAlert!: pulumi.Output<boolean>;
+    declare public readonly actionPopulateLookupTrackAlert: pulumi.Output<boolean>;
     /**
      * Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
      */
-    public readonly actionPopulateLookupTtl!: pulumi.Output<string>;
+    declare public readonly actionPopulateLookupTtl: pulumi.Output<string>;
     /**
      * The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    public /*out*/ readonly actionRss!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly actionRss: pulumi.Output<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    public readonly actionRssCommand!: pulumi.Output<string>;
+    declare public readonly actionRssCommand: pulumi.Output<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    public readonly actionRssHostname!: pulumi.Output<string>;
+    declare public readonly actionRssHostname: pulumi.Output<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    public readonly actionRssMaxResults!: pulumi.Output<number>;
+    declare public readonly actionRssMaxResults: pulumi.Output<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    public readonly actionRssMaxTime!: pulumi.Output<number>;
+    declare public readonly actionRssMaxTime: pulumi.Output<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    public readonly actionRssTrackAlert!: pulumi.Output<boolean>;
+    declare public readonly actionRssTrackAlert: pulumi.Output<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    public readonly actionRssTtl!: pulumi.Output<string>;
+    declare public readonly actionRssTtl: pulumi.Output<string>;
     /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    public /*out*/ readonly actionScript!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly actionScript: pulumi.Output<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    public readonly actionScriptCommand!: pulumi.Output<string>;
+    declare public readonly actionScriptCommand: pulumi.Output<string>;
     /**
      * File name of the script to call. Required if script action is enabled
      */
-    public readonly actionScriptFilename!: pulumi.Output<string>;
+    declare public readonly actionScriptFilename: pulumi.Output<string>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    public readonly actionScriptHostname!: pulumi.Output<string>;
+    declare public readonly actionScriptHostname: pulumi.Output<string>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    public readonly actionScriptMaxResults!: pulumi.Output<number>;
+    declare public readonly actionScriptMaxResults: pulumi.Output<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    public readonly actionScriptMaxTime!: pulumi.Output<number>;
+    declare public readonly actionScriptMaxTime: pulumi.Output<number>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    public readonly actionScriptTrackAlert!: pulumi.Output<boolean>;
+    declare public readonly actionScriptTrackAlert: pulumi.Output<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    public readonly actionScriptTtl!: pulumi.Output<string>;
+    declare public readonly actionScriptTtl: pulumi.Output<string>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
-    public readonly actionSlackParamAttachment!: pulumi.Output<string | undefined>;
+    declare public readonly actionSlackParamAttachment: pulumi.Output<string | undefined>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    public readonly actionSlackParamChannel!: pulumi.Output<string | undefined>;
+    declare public readonly actionSlackParamChannel: pulumi.Output<string | undefined>;
     /**
      * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
      */
-    public readonly actionSlackParamFields!: pulumi.Output<string | undefined>;
+    declare public readonly actionSlackParamFields: pulumi.Output<string | undefined>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
      */
-    public readonly actionSlackParamMessage!: pulumi.Output<string | undefined>;
+    declare public readonly actionSlackParamMessage: pulumi.Output<string | undefined>;
     /**
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
-    public readonly actionSlackParamWebhookUrlOverride!: pulumi.Output<string | undefined>;
+    declare public readonly actionSlackParamWebhookUrlOverride: pulumi.Output<string | undefined>;
     /**
      * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
      */
-    public readonly actionSnowEventParamAccount!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamAccount: pulumi.Output<string>;
     /**
-     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-     * other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
      */
-    public readonly actionSnowEventParamAdditionalInfo!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamAdditionalInfo: pulumi.Output<string>;
     /**
-     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-     * example, k1=v1||k2=v2.
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
      */
-    public readonly actionSnowEventParamCiIdentifier!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamCiIdentifier: pulumi.Output<string>;
     /**
-     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-     * in the emEvent table of ServiceNow.
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      */
-    public readonly actionSnowEventParamCustomFields!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamCustomFields: pulumi.Output<string>;
     /**
      * A brief description of the event.
      */
-    public readonly actionSnowEventParamDescription!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamDescription: pulumi.Output<string>;
     /**
-     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-     * same host name, the event is automatically assigned to the matching CI.
+     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
      */
-    public readonly actionSnowEventParamNode!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamNode: pulumi.Output<string>;
     /**
      * The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
      */
-    public readonly actionSnowEventParamResource!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamResource: pulumi.Output<string>;
     /**
      * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
      */
-    public readonly actionSnowEventParamSeverity!: pulumi.Output<number>;
+    declare public readonly actionSnowEventParamSeverity: pulumi.Output<number>;
     /**
      * The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
      */
-    public readonly actionSnowEventParamType!: pulumi.Output<string>;
+    declare public readonly actionSnowEventParamType: pulumi.Output<string>;
     /**
      * The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    public /*out*/ readonly actionSummaryIndex!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly actionSummaryIndex: pulumi.Output<boolean>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    public readonly actionSummaryIndexCommand!: pulumi.Output<string>;
+    declare public readonly actionSummaryIndexCommand: pulumi.Output<string>;
     /**
      * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    public readonly actionSummaryIndexHostname!: pulumi.Output<string>;
+    declare public readonly actionSummaryIndexHostname: pulumi.Output<string>;
     /**
      * Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
      */
-    public readonly actionSummaryIndexInline!: pulumi.Output<boolean>;
+    declare public readonly actionSummaryIndexInline: pulumi.Output<boolean>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    public readonly actionSummaryIndexMaxResults!: pulumi.Output<number>;
+    declare public readonly actionSummaryIndexMaxResults: pulumi.Output<number>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    public readonly actionSummaryIndexMaxTime!: pulumi.Output<number>;
+    declare public readonly actionSummaryIndexMaxTime: pulumi.Output<number>;
     /**
      * Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
      */
-    public readonly actionSummaryIndexName!: pulumi.Output<string>;
+    declare public readonly actionSummaryIndexName: pulumi.Output<string>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    public readonly actionSummaryIndexTrackAlert!: pulumi.Output<boolean>;
+    declare public readonly actionSummaryIndexTrackAlert: pulumi.Output<boolean>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    public readonly actionSummaryIndexTtl!: pulumi.Output<string>;
+    declare public readonly actionSummaryIndexTtl: pulumi.Output<string>;
     /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
-    public readonly actionWebhookParamUrl!: pulumi.Output<string | undefined>;
+    declare public readonly actionWebhookParamUrl: pulumi.Output<string | undefined>;
     /**
      * A comma-separated list of actions to enable. For example: rss,email
      */
-    public readonly actions!: pulumi.Output<string>;
+    declare public readonly actions: pulumi.Output<string>;
     /**
      * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      */
-    public readonly alertComparator!: pulumi.Output<string>;
+    declare public readonly alertComparator: pulumi.Output<string>;
     /**
      * Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
      */
-    public readonly alertCondition!: pulumi.Output<string>;
+    declare public readonly alertCondition: pulumi.Output<string>;
     /**
      * Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
      */
-    public readonly alertDigestMode!: pulumi.Output<boolean>;
+    declare public readonly alertDigestMode: pulumi.Output<boolean>;
     /**
      * Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    public readonly alertExpires!: pulumi.Output<string>;
+    declare public readonly alertExpires: pulumi.Output<string>;
     /**
      * Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
      */
-    public readonly alertSeverity!: pulumi.Output<number>;
+    declare public readonly alertSeverity: pulumi.Output<number>;
     /**
      * Indicates whether alert suppression is enabled for this scheduled search.
      */
-    public readonly alertSuppress!: pulumi.Output<boolean>;
+    declare public readonly alertSuppress: pulumi.Output<boolean>;
     /**
      * Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
      */
-    public readonly alertSuppressFields!: pulumi.Output<string>;
+    declare public readonly alertSuppressFields: pulumi.Output<string>;
     /**
      * Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    public readonly alertSuppressPeriod!: pulumi.Output<string>;
+    declare public readonly alertSuppressPeriod: pulumi.Output<string>;
     /**
      * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
-    public readonly alertThreshold!: pulumi.Output<string>;
+    declare public readonly alertThreshold: pulumi.Output<string>;
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    public readonly alertTrack!: pulumi.Output<boolean>;
+    declare public readonly alertTrack: pulumi.Output<boolean>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
-    public readonly alertType!: pulumi.Output<string>;
+    declare public readonly alertType: pulumi.Output<string>;
     /**
      * Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
      */
-    public readonly allowSkew!: pulumi.Output<string>;
+    declare public readonly allowSkew: pulumi.Output<string>;
     /**
      * Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
      */
-    public readonly autoSummarize!: pulumi.Output<boolean>;
+    declare public readonly autoSummarize: pulumi.Output<boolean>;
     /**
      * An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
      */
-    public readonly autoSummarizeCommand!: pulumi.Output<string>;
+    declare public readonly autoSummarizeCommand: pulumi.Output<string>;
     /**
      * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
      */
-    public readonly autoSummarizeCronSchedule!: pulumi.Output<string>;
+    declare public readonly autoSummarizeCronSchedule: pulumi.Output<string>;
     /**
      * A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly autoSummarizeDispatchEarliestTime!: pulumi.Output<string>;
+    declare public readonly autoSummarizeDispatchEarliestTime: pulumi.Output<string>;
     /**
      * A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly autoSummarizeDispatchLatestTime!: pulumi.Output<string>;
+    declare public readonly autoSummarizeDispatchLatestTime: pulumi.Output<string>;
     /**
      * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    public readonly autoSummarizeDispatchTimeFormat!: pulumi.Output<string>;
+    declare public readonly autoSummarizeDispatchTimeFormat: pulumi.Output<string>;
     /**
      * Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
      */
-    public readonly autoSummarizeDispatchTtl!: pulumi.Output<string>;
+    declare public readonly autoSummarizeDispatchTtl: pulumi.Output<string>;
     /**
      * The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
      */
-    public readonly autoSummarizeMaxDisabledBuckets!: pulumi.Output<number>;
+    declare public readonly autoSummarizeMaxDisabledBuckets: pulumi.Output<number>;
     /**
      * The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
      */
-    public readonly autoSummarizeMaxSummaryRatio!: pulumi.Output<number>;
+    declare public readonly autoSummarizeMaxSummaryRatio: pulumi.Output<number>;
     /**
      * The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
      */
-    public readonly autoSummarizeMaxSummarySize!: pulumi.Output<number>;
+    declare public readonly autoSummarizeMaxSummarySize: pulumi.Output<number>;
     /**
      * Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
      */
-    public readonly autoSummarizeMaxTime!: pulumi.Output<number>;
+    declare public readonly autoSummarizeMaxTime: pulumi.Output<number>;
     /**
      * Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
      */
-    public readonly autoSummarizeSuspendPeriod!: pulumi.Output<string>;
+    declare public readonly autoSummarizeSuspendPeriod: pulumi.Output<string>;
     /**
      * The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
      */
-    public readonly autoSummarizeTimespan!: pulumi.Output<string>;
+    declare public readonly autoSummarizeTimespan: pulumi.Output<string>;
     /**
      * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
      */
-    public readonly cronSchedule!: pulumi.Output<string>;
+    declare public readonly cronSchedule: pulumi.Output<string>;
     /**
      * Human-readable description of this saved search. Defaults to empty string.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * The maximum number of timeline buckets. Defaults to 0.
      */
-    public readonly dispatchBuckets!: pulumi.Output<number>;
+    declare public readonly dispatchBuckets: pulumi.Output<number>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly dispatchEarliestTime!: pulumi.Output<string>;
+    declare public readonly dispatchEarliestTime: pulumi.Output<string>;
     /**
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly dispatchIndexEarliest!: pulumi.Output<string>;
+    declare public readonly dispatchIndexEarliest: pulumi.Output<string>;
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly dispatchIndexLatest!: pulumi.Output<string>;
+    declare public readonly dispatchIndexLatest: pulumi.Output<string>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly dispatchIndexedRealtime!: pulumi.Output<boolean>;
+    declare public readonly dispatchIndexedRealtime: pulumi.Output<boolean>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    public readonly dispatchIndexedRealtimeMinspan!: pulumi.Output<number>;
+    declare public readonly dispatchIndexedRealtimeMinspan: pulumi.Output<number>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    public readonly dispatchIndexedRealtimeOffset!: pulumi.Output<number>;
+    declare public readonly dispatchIndexedRealtimeOffset: pulumi.Output<number>;
     /**
      * A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    public readonly dispatchLatestTime!: pulumi.Output<string>;
+    declare public readonly dispatchLatestTime: pulumi.Output<string>;
     /**
      * Enables or disables the lookups for this search. Defaults to 1.
      */
-    public readonly dispatchLookups!: pulumi.Output<boolean>;
+    declare public readonly dispatchLookups: pulumi.Output<boolean>;
     /**
      * The maximum number of results before finalizing the search. Defaults to 500000.
      */
-    public readonly dispatchMaxCount!: pulumi.Output<number>;
+    declare public readonly dispatchMaxCount: pulumi.Output<number>;
     /**
      * Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
      */
-    public readonly dispatchMaxTime!: pulumi.Output<number>;
+    declare public readonly dispatchMaxTime: pulumi.Output<number>;
     /**
      * Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
      */
-    public readonly dispatchReduceFreq!: pulumi.Output<number>;
+    declare public readonly dispatchReduceFreq: pulumi.Output<number>;
     /**
      * Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
      */
-    public readonly dispatchRtBackfill!: pulumi.Output<boolean>;
+    declare public readonly dispatchRtBackfill: pulumi.Output<boolean>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      */
-    public readonly dispatchRtMaximumSpan!: pulumi.Output<number>;
+    declare public readonly dispatchRtMaximumSpan: pulumi.Output<number>;
     /**
      * Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
      */
-    public readonly dispatchSpawnProcess!: pulumi.Output<boolean>;
+    declare public readonly dispatchSpawnProcess: pulumi.Output<boolean>;
     /**
      * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    public readonly dispatchTimeFormat!: pulumi.Output<string>;
+    declare public readonly dispatchTimeFormat: pulumi.Output<string>;
     /**
      * Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
      */
-    public readonly dispatchTtl!: pulumi.Output<string>;
+    declare public readonly dispatchTtl: pulumi.Output<string>;
     /**
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
-    public readonly displayView!: pulumi.Output<string>;
+    declare public readonly displayView: pulumi.Output<string>;
     /**
      * Whether this search is to be run on a schedule
      */
-    public readonly isScheduled!: pulumi.Output<boolean>;
+    declare public readonly isScheduled: pulumi.Output<boolean>;
     /**
      * Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
      */
-    public readonly isVisible!: pulumi.Output<boolean | undefined>;
+    declare public readonly isVisible: pulumi.Output<boolean | undefined>;
     /**
      * The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
      */
-    public readonly maxConcurrent!: pulumi.Output<number>;
+    declare public readonly maxConcurrent: pulumi.Output<number>;
     /**
      * A name for the search.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
      */
-    public readonly realtimeSchedule!: pulumi.Output<boolean>;
+    declare public readonly realtimeSchedule: pulumi.Output<boolean>;
     /**
      * Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
      */
-    public readonly requestUiDispatchApp!: pulumi.Output<string>;
+    declare public readonly requestUiDispatchApp: pulumi.Output<string>;
     /**
      * Specifies a field used by Splunk Web to denote the view this search should be displayed in.
      */
-    public readonly requestUiDispatchView!: pulumi.Output<string>;
+    declare public readonly requestUiDispatchView: pulumi.Output<string>;
     /**
      * Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
      */
-    public readonly restartOnSearchpeerAdd!: pulumi.Output<boolean>;
+    declare public readonly restartOnSearchpeerAdd: pulumi.Output<boolean>;
     /**
      * Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
      */
-    public readonly runOnStartup!: pulumi.Output<boolean>;
+    declare public readonly runOnStartup: pulumi.Output<boolean>;
     /**
      * Raises the scheduling priority of the named search. Defaults to Default
      */
-    public readonly schedulePriority!: pulumi.Output<string>;
+    declare public readonly schedulePriority: pulumi.Output<string>;
     /**
      * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      */
-    public readonly scheduleWindow!: pulumi.Output<string>;
+    declare public readonly scheduleWindow: pulumi.Output<string>;
     /**
      * Required when creating a new search.
      */
-    public readonly search!: pulumi.Output<string>;
+    declare public readonly search: pulumi.Output<string>;
     /**
      * Defines the viewstate id associated with the UI view listed in 'displayview'.
      */
-    public readonly vsid!: pulumi.Output<string>;
+    declare public readonly vsid: pulumi.Output<string>;
     /**
      * Specifies the new workload pool where the existing running search will be placed.`
      */
-    public readonly workloadPool!: pulumi.Output<string>;
+    declare public readonly workloadPool: pulumi.Output<string>;
 
     /**
      * Create a SavedSearches resource with the given unique name, arguments, and options.
@@ -763,342 +753,342 @@ export class SavedSearches extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SavedSearchesState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["actionCreateXsoarIncident"] = state ? state.actionCreateXsoarIncident : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = state ? state.actionCreateXsoarIncidentParamCustomFields : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamDetails"] = state ? state.actionCreateXsoarIncidentParamDetails : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamIncidentName"] = state ? state.actionCreateXsoarIncidentParamIncidentName : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamOccurred"] = state ? state.actionCreateXsoarIncidentParamOccurred : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamSendAllServers"] = state ? state.actionCreateXsoarIncidentParamSendAllServers : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = state ? state.actionCreateXsoarIncidentParamServerUrl : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamSeverity"] = state ? state.actionCreateXsoarIncidentParamSeverity : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamType"] = state ? state.actionCreateXsoarIncidentParamType : undefined;
-            resourceInputs["actionEmail"] = state ? state.actionEmail : undefined;
-            resourceInputs["actionEmailAuthPassword"] = state ? state.actionEmailAuthPassword : undefined;
-            resourceInputs["actionEmailAuthUsername"] = state ? state.actionEmailAuthUsername : undefined;
-            resourceInputs["actionEmailBcc"] = state ? state.actionEmailBcc : undefined;
-            resourceInputs["actionEmailCc"] = state ? state.actionEmailCc : undefined;
-            resourceInputs["actionEmailCommand"] = state ? state.actionEmailCommand : undefined;
-            resourceInputs["actionEmailFormat"] = state ? state.actionEmailFormat : undefined;
-            resourceInputs["actionEmailFrom"] = state ? state.actionEmailFrom : undefined;
-            resourceInputs["actionEmailHostname"] = state ? state.actionEmailHostname : undefined;
-            resourceInputs["actionEmailIncludeResultsLink"] = state ? state.actionEmailIncludeResultsLink : undefined;
-            resourceInputs["actionEmailIncludeSearch"] = state ? state.actionEmailIncludeSearch : undefined;
-            resourceInputs["actionEmailIncludeTrigger"] = state ? state.actionEmailIncludeTrigger : undefined;
-            resourceInputs["actionEmailIncludeTriggerTime"] = state ? state.actionEmailIncludeTriggerTime : undefined;
-            resourceInputs["actionEmailIncludeViewLink"] = state ? state.actionEmailIncludeViewLink : undefined;
-            resourceInputs["actionEmailInline"] = state ? state.actionEmailInline : undefined;
-            resourceInputs["actionEmailMailserver"] = state ? state.actionEmailMailserver : undefined;
-            resourceInputs["actionEmailMaxResults"] = state ? state.actionEmailMaxResults : undefined;
-            resourceInputs["actionEmailMaxTime"] = state ? state.actionEmailMaxTime : undefined;
-            resourceInputs["actionEmailMessageAlert"] = state ? state.actionEmailMessageAlert : undefined;
-            resourceInputs["actionEmailMessageReport"] = state ? state.actionEmailMessageReport : undefined;
-            resourceInputs["actionEmailPdfview"] = state ? state.actionEmailPdfview : undefined;
-            resourceInputs["actionEmailPreprocessResults"] = state ? state.actionEmailPreprocessResults : undefined;
-            resourceInputs["actionEmailReportCidFontList"] = state ? state.actionEmailReportCidFontList : undefined;
-            resourceInputs["actionEmailReportIncludeSplunkLogo"] = state ? state.actionEmailReportIncludeSplunkLogo : undefined;
-            resourceInputs["actionEmailReportPaperOrientation"] = state ? state.actionEmailReportPaperOrientation : undefined;
-            resourceInputs["actionEmailReportPaperSize"] = state ? state.actionEmailReportPaperSize : undefined;
-            resourceInputs["actionEmailReportServerEnabled"] = state ? state.actionEmailReportServerEnabled : undefined;
-            resourceInputs["actionEmailReportServerUrl"] = state ? state.actionEmailReportServerUrl : undefined;
-            resourceInputs["actionEmailSendCsv"] = state ? state.actionEmailSendCsv : undefined;
-            resourceInputs["actionEmailSendPdf"] = state ? state.actionEmailSendPdf : undefined;
-            resourceInputs["actionEmailSendResults"] = state ? state.actionEmailSendResults : undefined;
-            resourceInputs["actionEmailSubject"] = state ? state.actionEmailSubject : undefined;
-            resourceInputs["actionEmailTo"] = state ? state.actionEmailTo : undefined;
-            resourceInputs["actionEmailTrackAlert"] = state ? state.actionEmailTrackAlert : undefined;
-            resourceInputs["actionEmailTtl"] = state ? state.actionEmailTtl : undefined;
-            resourceInputs["actionEmailUseSsl"] = state ? state.actionEmailUseSsl : undefined;
-            resourceInputs["actionEmailUseTls"] = state ? state.actionEmailUseTls : undefined;
-            resourceInputs["actionEmailWidthSortColumns"] = state ? state.actionEmailWidthSortColumns : undefined;
-            resourceInputs["actionJiraServiceDeskParamAccount"] = state ? state.actionJiraServiceDeskParamAccount : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraCustomfields"] = state ? state.actionJiraServiceDeskParamJiraCustomfields : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraDescription"] = state ? state.actionJiraServiceDeskParamJiraDescription : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = state ? state.actionJiraServiceDeskParamJiraIssueType : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state ? state.actionJiraServiceDeskParamJiraPriority : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraProject"] = state ? state.actionJiraServiceDeskParamJiraProject : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraSummary"] = state ? state.actionJiraServiceDeskParamJiraSummary : undefined;
-            resourceInputs["actionPagerdutyCustomDetails"] = state ? state.actionPagerdutyCustomDetails : undefined;
-            resourceInputs["actionPagerdutyIntegrationKey"] = state ? state.actionPagerdutyIntegrationKey : undefined;
-            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = state ? state.actionPagerdutyIntegrationKeyOverride : undefined;
-            resourceInputs["actionPagerdutyIntegrationUrl"] = state ? state.actionPagerdutyIntegrationUrl : undefined;
-            resourceInputs["actionPagerdutyIntegrationUrlOverride"] = state ? state.actionPagerdutyIntegrationUrlOverride : undefined;
-            resourceInputs["actionPopulateLookup"] = state ? state.actionPopulateLookup : undefined;
-            resourceInputs["actionPopulateLookupCommand"] = state ? state.actionPopulateLookupCommand : undefined;
-            resourceInputs["actionPopulateLookupDest"] = state ? state.actionPopulateLookupDest : undefined;
-            resourceInputs["actionPopulateLookupHostname"] = state ? state.actionPopulateLookupHostname : undefined;
-            resourceInputs["actionPopulateLookupMaxResults"] = state ? state.actionPopulateLookupMaxResults : undefined;
-            resourceInputs["actionPopulateLookupMaxTime"] = state ? state.actionPopulateLookupMaxTime : undefined;
-            resourceInputs["actionPopulateLookupTrackAlert"] = state ? state.actionPopulateLookupTrackAlert : undefined;
-            resourceInputs["actionPopulateLookupTtl"] = state ? state.actionPopulateLookupTtl : undefined;
-            resourceInputs["actionRss"] = state ? state.actionRss : undefined;
-            resourceInputs["actionRssCommand"] = state ? state.actionRssCommand : undefined;
-            resourceInputs["actionRssHostname"] = state ? state.actionRssHostname : undefined;
-            resourceInputs["actionRssMaxResults"] = state ? state.actionRssMaxResults : undefined;
-            resourceInputs["actionRssMaxTime"] = state ? state.actionRssMaxTime : undefined;
-            resourceInputs["actionRssTrackAlert"] = state ? state.actionRssTrackAlert : undefined;
-            resourceInputs["actionRssTtl"] = state ? state.actionRssTtl : undefined;
-            resourceInputs["actionScript"] = state ? state.actionScript : undefined;
-            resourceInputs["actionScriptCommand"] = state ? state.actionScriptCommand : undefined;
-            resourceInputs["actionScriptFilename"] = state ? state.actionScriptFilename : undefined;
-            resourceInputs["actionScriptHostname"] = state ? state.actionScriptHostname : undefined;
-            resourceInputs["actionScriptMaxResults"] = state ? state.actionScriptMaxResults : undefined;
-            resourceInputs["actionScriptMaxTime"] = state ? state.actionScriptMaxTime : undefined;
-            resourceInputs["actionScriptTrackAlert"] = state ? state.actionScriptTrackAlert : undefined;
-            resourceInputs["actionScriptTtl"] = state ? state.actionScriptTtl : undefined;
-            resourceInputs["actionSlackParamAttachment"] = state ? state.actionSlackParamAttachment : undefined;
-            resourceInputs["actionSlackParamChannel"] = state ? state.actionSlackParamChannel : undefined;
-            resourceInputs["actionSlackParamFields"] = state ? state.actionSlackParamFields : undefined;
-            resourceInputs["actionSlackParamMessage"] = state ? state.actionSlackParamMessage : undefined;
-            resourceInputs["actionSlackParamWebhookUrlOverride"] = state ? state.actionSlackParamWebhookUrlOverride : undefined;
-            resourceInputs["actionSnowEventParamAccount"] = state ? state.actionSnowEventParamAccount : undefined;
-            resourceInputs["actionSnowEventParamAdditionalInfo"] = state ? state.actionSnowEventParamAdditionalInfo : undefined;
-            resourceInputs["actionSnowEventParamCiIdentifier"] = state ? state.actionSnowEventParamCiIdentifier : undefined;
-            resourceInputs["actionSnowEventParamCustomFields"] = state ? state.actionSnowEventParamCustomFields : undefined;
-            resourceInputs["actionSnowEventParamDescription"] = state ? state.actionSnowEventParamDescription : undefined;
-            resourceInputs["actionSnowEventParamNode"] = state ? state.actionSnowEventParamNode : undefined;
-            resourceInputs["actionSnowEventParamResource"] = state ? state.actionSnowEventParamResource : undefined;
-            resourceInputs["actionSnowEventParamSeverity"] = state ? state.actionSnowEventParamSeverity : undefined;
-            resourceInputs["actionSnowEventParamType"] = state ? state.actionSnowEventParamType : undefined;
-            resourceInputs["actionSummaryIndex"] = state ? state.actionSummaryIndex : undefined;
-            resourceInputs["actionSummaryIndexCommand"] = state ? state.actionSummaryIndexCommand : undefined;
-            resourceInputs["actionSummaryIndexHostname"] = state ? state.actionSummaryIndexHostname : undefined;
-            resourceInputs["actionSummaryIndexInline"] = state ? state.actionSummaryIndexInline : undefined;
-            resourceInputs["actionSummaryIndexMaxResults"] = state ? state.actionSummaryIndexMaxResults : undefined;
-            resourceInputs["actionSummaryIndexMaxTime"] = state ? state.actionSummaryIndexMaxTime : undefined;
-            resourceInputs["actionSummaryIndexName"] = state ? state.actionSummaryIndexName : undefined;
-            resourceInputs["actionSummaryIndexTrackAlert"] = state ? state.actionSummaryIndexTrackAlert : undefined;
-            resourceInputs["actionSummaryIndexTtl"] = state ? state.actionSummaryIndexTtl : undefined;
-            resourceInputs["actionWebhookParamUrl"] = state ? state.actionWebhookParamUrl : undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["alertComparator"] = state ? state.alertComparator : undefined;
-            resourceInputs["alertCondition"] = state ? state.alertCondition : undefined;
-            resourceInputs["alertDigestMode"] = state ? state.alertDigestMode : undefined;
-            resourceInputs["alertExpires"] = state ? state.alertExpires : undefined;
-            resourceInputs["alertSeverity"] = state ? state.alertSeverity : undefined;
-            resourceInputs["alertSuppress"] = state ? state.alertSuppress : undefined;
-            resourceInputs["alertSuppressFields"] = state ? state.alertSuppressFields : undefined;
-            resourceInputs["alertSuppressPeriod"] = state ? state.alertSuppressPeriod : undefined;
-            resourceInputs["alertThreshold"] = state ? state.alertThreshold : undefined;
-            resourceInputs["alertTrack"] = state ? state.alertTrack : undefined;
-            resourceInputs["alertType"] = state ? state.alertType : undefined;
-            resourceInputs["allowSkew"] = state ? state.allowSkew : undefined;
-            resourceInputs["autoSummarize"] = state ? state.autoSummarize : undefined;
-            resourceInputs["autoSummarizeCommand"] = state ? state.autoSummarizeCommand : undefined;
-            resourceInputs["autoSummarizeCronSchedule"] = state ? state.autoSummarizeCronSchedule : undefined;
-            resourceInputs["autoSummarizeDispatchEarliestTime"] = state ? state.autoSummarizeDispatchEarliestTime : undefined;
-            resourceInputs["autoSummarizeDispatchLatestTime"] = state ? state.autoSummarizeDispatchLatestTime : undefined;
-            resourceInputs["autoSummarizeDispatchTimeFormat"] = state ? state.autoSummarizeDispatchTimeFormat : undefined;
-            resourceInputs["autoSummarizeDispatchTtl"] = state ? state.autoSummarizeDispatchTtl : undefined;
-            resourceInputs["autoSummarizeMaxDisabledBuckets"] = state ? state.autoSummarizeMaxDisabledBuckets : undefined;
-            resourceInputs["autoSummarizeMaxSummaryRatio"] = state ? state.autoSummarizeMaxSummaryRatio : undefined;
-            resourceInputs["autoSummarizeMaxSummarySize"] = state ? state.autoSummarizeMaxSummarySize : undefined;
-            resourceInputs["autoSummarizeMaxTime"] = state ? state.autoSummarizeMaxTime : undefined;
-            resourceInputs["autoSummarizeSuspendPeriod"] = state ? state.autoSummarizeSuspendPeriod : undefined;
-            resourceInputs["autoSummarizeTimespan"] = state ? state.autoSummarizeTimespan : undefined;
-            resourceInputs["cronSchedule"] = state ? state.cronSchedule : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["dispatchBuckets"] = state ? state.dispatchBuckets : undefined;
-            resourceInputs["dispatchEarliestTime"] = state ? state.dispatchEarliestTime : undefined;
-            resourceInputs["dispatchIndexEarliest"] = state ? state.dispatchIndexEarliest : undefined;
-            resourceInputs["dispatchIndexLatest"] = state ? state.dispatchIndexLatest : undefined;
-            resourceInputs["dispatchIndexedRealtime"] = state ? state.dispatchIndexedRealtime : undefined;
-            resourceInputs["dispatchIndexedRealtimeMinspan"] = state ? state.dispatchIndexedRealtimeMinspan : undefined;
-            resourceInputs["dispatchIndexedRealtimeOffset"] = state ? state.dispatchIndexedRealtimeOffset : undefined;
-            resourceInputs["dispatchLatestTime"] = state ? state.dispatchLatestTime : undefined;
-            resourceInputs["dispatchLookups"] = state ? state.dispatchLookups : undefined;
-            resourceInputs["dispatchMaxCount"] = state ? state.dispatchMaxCount : undefined;
-            resourceInputs["dispatchMaxTime"] = state ? state.dispatchMaxTime : undefined;
-            resourceInputs["dispatchReduceFreq"] = state ? state.dispatchReduceFreq : undefined;
-            resourceInputs["dispatchRtBackfill"] = state ? state.dispatchRtBackfill : undefined;
-            resourceInputs["dispatchRtMaximumSpan"] = state ? state.dispatchRtMaximumSpan : undefined;
-            resourceInputs["dispatchSpawnProcess"] = state ? state.dispatchSpawnProcess : undefined;
-            resourceInputs["dispatchTimeFormat"] = state ? state.dispatchTimeFormat : undefined;
-            resourceInputs["dispatchTtl"] = state ? state.dispatchTtl : undefined;
-            resourceInputs["displayView"] = state ? state.displayView : undefined;
-            resourceInputs["isScheduled"] = state ? state.isScheduled : undefined;
-            resourceInputs["isVisible"] = state ? state.isVisible : undefined;
-            resourceInputs["maxConcurrent"] = state ? state.maxConcurrent : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["realtimeSchedule"] = state ? state.realtimeSchedule : undefined;
-            resourceInputs["requestUiDispatchApp"] = state ? state.requestUiDispatchApp : undefined;
-            resourceInputs["requestUiDispatchView"] = state ? state.requestUiDispatchView : undefined;
-            resourceInputs["restartOnSearchpeerAdd"] = state ? state.restartOnSearchpeerAdd : undefined;
-            resourceInputs["runOnStartup"] = state ? state.runOnStartup : undefined;
-            resourceInputs["schedulePriority"] = state ? state.schedulePriority : undefined;
-            resourceInputs["scheduleWindow"] = state ? state.scheduleWindow : undefined;
-            resourceInputs["search"] = state ? state.search : undefined;
-            resourceInputs["vsid"] = state ? state.vsid : undefined;
-            resourceInputs["workloadPool"] = state ? state.workloadPool : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["actionCreateXsoarIncident"] = state?.actionCreateXsoarIncident;
+            resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = state?.actionCreateXsoarIncidentParamCustomFields;
+            resourceInputs["actionCreateXsoarIncidentParamDetails"] = state?.actionCreateXsoarIncidentParamDetails;
+            resourceInputs["actionCreateXsoarIncidentParamIncidentName"] = state?.actionCreateXsoarIncidentParamIncidentName;
+            resourceInputs["actionCreateXsoarIncidentParamOccurred"] = state?.actionCreateXsoarIncidentParamOccurred;
+            resourceInputs["actionCreateXsoarIncidentParamSendAllServers"] = state?.actionCreateXsoarIncidentParamSendAllServers;
+            resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = state?.actionCreateXsoarIncidentParamServerUrl;
+            resourceInputs["actionCreateXsoarIncidentParamSeverity"] = state?.actionCreateXsoarIncidentParamSeverity;
+            resourceInputs["actionCreateXsoarIncidentParamType"] = state?.actionCreateXsoarIncidentParamType;
+            resourceInputs["actionEmail"] = state?.actionEmail;
+            resourceInputs["actionEmailAuthPassword"] = state?.actionEmailAuthPassword;
+            resourceInputs["actionEmailAuthUsername"] = state?.actionEmailAuthUsername;
+            resourceInputs["actionEmailBcc"] = state?.actionEmailBcc;
+            resourceInputs["actionEmailCc"] = state?.actionEmailCc;
+            resourceInputs["actionEmailCommand"] = state?.actionEmailCommand;
+            resourceInputs["actionEmailFormat"] = state?.actionEmailFormat;
+            resourceInputs["actionEmailFrom"] = state?.actionEmailFrom;
+            resourceInputs["actionEmailHostname"] = state?.actionEmailHostname;
+            resourceInputs["actionEmailIncludeResultsLink"] = state?.actionEmailIncludeResultsLink;
+            resourceInputs["actionEmailIncludeSearch"] = state?.actionEmailIncludeSearch;
+            resourceInputs["actionEmailIncludeTrigger"] = state?.actionEmailIncludeTrigger;
+            resourceInputs["actionEmailIncludeTriggerTime"] = state?.actionEmailIncludeTriggerTime;
+            resourceInputs["actionEmailIncludeViewLink"] = state?.actionEmailIncludeViewLink;
+            resourceInputs["actionEmailInline"] = state?.actionEmailInline;
+            resourceInputs["actionEmailMailserver"] = state?.actionEmailMailserver;
+            resourceInputs["actionEmailMaxResults"] = state?.actionEmailMaxResults;
+            resourceInputs["actionEmailMaxTime"] = state?.actionEmailMaxTime;
+            resourceInputs["actionEmailMessageAlert"] = state?.actionEmailMessageAlert;
+            resourceInputs["actionEmailMessageReport"] = state?.actionEmailMessageReport;
+            resourceInputs["actionEmailPdfview"] = state?.actionEmailPdfview;
+            resourceInputs["actionEmailPreprocessResults"] = state?.actionEmailPreprocessResults;
+            resourceInputs["actionEmailReportCidFontList"] = state?.actionEmailReportCidFontList;
+            resourceInputs["actionEmailReportIncludeSplunkLogo"] = state?.actionEmailReportIncludeSplunkLogo;
+            resourceInputs["actionEmailReportPaperOrientation"] = state?.actionEmailReportPaperOrientation;
+            resourceInputs["actionEmailReportPaperSize"] = state?.actionEmailReportPaperSize;
+            resourceInputs["actionEmailReportServerEnabled"] = state?.actionEmailReportServerEnabled;
+            resourceInputs["actionEmailReportServerUrl"] = state?.actionEmailReportServerUrl;
+            resourceInputs["actionEmailSendCsv"] = state?.actionEmailSendCsv;
+            resourceInputs["actionEmailSendPdf"] = state?.actionEmailSendPdf;
+            resourceInputs["actionEmailSendResults"] = state?.actionEmailSendResults;
+            resourceInputs["actionEmailSubject"] = state?.actionEmailSubject;
+            resourceInputs["actionEmailTo"] = state?.actionEmailTo;
+            resourceInputs["actionEmailTrackAlert"] = state?.actionEmailTrackAlert;
+            resourceInputs["actionEmailTtl"] = state?.actionEmailTtl;
+            resourceInputs["actionEmailUseSsl"] = state?.actionEmailUseSsl;
+            resourceInputs["actionEmailUseTls"] = state?.actionEmailUseTls;
+            resourceInputs["actionEmailWidthSortColumns"] = state?.actionEmailWidthSortColumns;
+            resourceInputs["actionJiraServiceDeskParamAccount"] = state?.actionJiraServiceDeskParamAccount;
+            resourceInputs["actionJiraServiceDeskParamJiraCustomfields"] = state?.actionJiraServiceDeskParamJiraCustomfields;
+            resourceInputs["actionJiraServiceDeskParamJiraDescription"] = state?.actionJiraServiceDeskParamJiraDescription;
+            resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = state?.actionJiraServiceDeskParamJiraIssueType;
+            resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state?.actionJiraServiceDeskParamJiraPriority;
+            resourceInputs["actionJiraServiceDeskParamJiraProject"] = state?.actionJiraServiceDeskParamJiraProject;
+            resourceInputs["actionJiraServiceDeskParamJiraSummary"] = state?.actionJiraServiceDeskParamJiraSummary;
+            resourceInputs["actionPagerdutyCustomDetails"] = state?.actionPagerdutyCustomDetails;
+            resourceInputs["actionPagerdutyIntegrationKey"] = state?.actionPagerdutyIntegrationKey;
+            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = state?.actionPagerdutyIntegrationKeyOverride;
+            resourceInputs["actionPagerdutyIntegrationUrl"] = state?.actionPagerdutyIntegrationUrl;
+            resourceInputs["actionPagerdutyIntegrationUrlOverride"] = state?.actionPagerdutyIntegrationUrlOverride;
+            resourceInputs["actionPopulateLookup"] = state?.actionPopulateLookup;
+            resourceInputs["actionPopulateLookupCommand"] = state?.actionPopulateLookupCommand;
+            resourceInputs["actionPopulateLookupDest"] = state?.actionPopulateLookupDest;
+            resourceInputs["actionPopulateLookupHostname"] = state?.actionPopulateLookupHostname;
+            resourceInputs["actionPopulateLookupMaxResults"] = state?.actionPopulateLookupMaxResults;
+            resourceInputs["actionPopulateLookupMaxTime"] = state?.actionPopulateLookupMaxTime;
+            resourceInputs["actionPopulateLookupTrackAlert"] = state?.actionPopulateLookupTrackAlert;
+            resourceInputs["actionPopulateLookupTtl"] = state?.actionPopulateLookupTtl;
+            resourceInputs["actionRss"] = state?.actionRss;
+            resourceInputs["actionRssCommand"] = state?.actionRssCommand;
+            resourceInputs["actionRssHostname"] = state?.actionRssHostname;
+            resourceInputs["actionRssMaxResults"] = state?.actionRssMaxResults;
+            resourceInputs["actionRssMaxTime"] = state?.actionRssMaxTime;
+            resourceInputs["actionRssTrackAlert"] = state?.actionRssTrackAlert;
+            resourceInputs["actionRssTtl"] = state?.actionRssTtl;
+            resourceInputs["actionScript"] = state?.actionScript;
+            resourceInputs["actionScriptCommand"] = state?.actionScriptCommand;
+            resourceInputs["actionScriptFilename"] = state?.actionScriptFilename;
+            resourceInputs["actionScriptHostname"] = state?.actionScriptHostname;
+            resourceInputs["actionScriptMaxResults"] = state?.actionScriptMaxResults;
+            resourceInputs["actionScriptMaxTime"] = state?.actionScriptMaxTime;
+            resourceInputs["actionScriptTrackAlert"] = state?.actionScriptTrackAlert;
+            resourceInputs["actionScriptTtl"] = state?.actionScriptTtl;
+            resourceInputs["actionSlackParamAttachment"] = state?.actionSlackParamAttachment;
+            resourceInputs["actionSlackParamChannel"] = state?.actionSlackParamChannel;
+            resourceInputs["actionSlackParamFields"] = state?.actionSlackParamFields;
+            resourceInputs["actionSlackParamMessage"] = state?.actionSlackParamMessage;
+            resourceInputs["actionSlackParamWebhookUrlOverride"] = state?.actionSlackParamWebhookUrlOverride;
+            resourceInputs["actionSnowEventParamAccount"] = state?.actionSnowEventParamAccount;
+            resourceInputs["actionSnowEventParamAdditionalInfo"] = state?.actionSnowEventParamAdditionalInfo;
+            resourceInputs["actionSnowEventParamCiIdentifier"] = state?.actionSnowEventParamCiIdentifier;
+            resourceInputs["actionSnowEventParamCustomFields"] = state?.actionSnowEventParamCustomFields;
+            resourceInputs["actionSnowEventParamDescription"] = state?.actionSnowEventParamDescription;
+            resourceInputs["actionSnowEventParamNode"] = state?.actionSnowEventParamNode;
+            resourceInputs["actionSnowEventParamResource"] = state?.actionSnowEventParamResource;
+            resourceInputs["actionSnowEventParamSeverity"] = state?.actionSnowEventParamSeverity;
+            resourceInputs["actionSnowEventParamType"] = state?.actionSnowEventParamType;
+            resourceInputs["actionSummaryIndex"] = state?.actionSummaryIndex;
+            resourceInputs["actionSummaryIndexCommand"] = state?.actionSummaryIndexCommand;
+            resourceInputs["actionSummaryIndexHostname"] = state?.actionSummaryIndexHostname;
+            resourceInputs["actionSummaryIndexInline"] = state?.actionSummaryIndexInline;
+            resourceInputs["actionSummaryIndexMaxResults"] = state?.actionSummaryIndexMaxResults;
+            resourceInputs["actionSummaryIndexMaxTime"] = state?.actionSummaryIndexMaxTime;
+            resourceInputs["actionSummaryIndexName"] = state?.actionSummaryIndexName;
+            resourceInputs["actionSummaryIndexTrackAlert"] = state?.actionSummaryIndexTrackAlert;
+            resourceInputs["actionSummaryIndexTtl"] = state?.actionSummaryIndexTtl;
+            resourceInputs["actionWebhookParamUrl"] = state?.actionWebhookParamUrl;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["alertComparator"] = state?.alertComparator;
+            resourceInputs["alertCondition"] = state?.alertCondition;
+            resourceInputs["alertDigestMode"] = state?.alertDigestMode;
+            resourceInputs["alertExpires"] = state?.alertExpires;
+            resourceInputs["alertSeverity"] = state?.alertSeverity;
+            resourceInputs["alertSuppress"] = state?.alertSuppress;
+            resourceInputs["alertSuppressFields"] = state?.alertSuppressFields;
+            resourceInputs["alertSuppressPeriod"] = state?.alertSuppressPeriod;
+            resourceInputs["alertThreshold"] = state?.alertThreshold;
+            resourceInputs["alertTrack"] = state?.alertTrack;
+            resourceInputs["alertType"] = state?.alertType;
+            resourceInputs["allowSkew"] = state?.allowSkew;
+            resourceInputs["autoSummarize"] = state?.autoSummarize;
+            resourceInputs["autoSummarizeCommand"] = state?.autoSummarizeCommand;
+            resourceInputs["autoSummarizeCronSchedule"] = state?.autoSummarizeCronSchedule;
+            resourceInputs["autoSummarizeDispatchEarliestTime"] = state?.autoSummarizeDispatchEarliestTime;
+            resourceInputs["autoSummarizeDispatchLatestTime"] = state?.autoSummarizeDispatchLatestTime;
+            resourceInputs["autoSummarizeDispatchTimeFormat"] = state?.autoSummarizeDispatchTimeFormat;
+            resourceInputs["autoSummarizeDispatchTtl"] = state?.autoSummarizeDispatchTtl;
+            resourceInputs["autoSummarizeMaxDisabledBuckets"] = state?.autoSummarizeMaxDisabledBuckets;
+            resourceInputs["autoSummarizeMaxSummaryRatio"] = state?.autoSummarizeMaxSummaryRatio;
+            resourceInputs["autoSummarizeMaxSummarySize"] = state?.autoSummarizeMaxSummarySize;
+            resourceInputs["autoSummarizeMaxTime"] = state?.autoSummarizeMaxTime;
+            resourceInputs["autoSummarizeSuspendPeriod"] = state?.autoSummarizeSuspendPeriod;
+            resourceInputs["autoSummarizeTimespan"] = state?.autoSummarizeTimespan;
+            resourceInputs["cronSchedule"] = state?.cronSchedule;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["dispatchBuckets"] = state?.dispatchBuckets;
+            resourceInputs["dispatchEarliestTime"] = state?.dispatchEarliestTime;
+            resourceInputs["dispatchIndexEarliest"] = state?.dispatchIndexEarliest;
+            resourceInputs["dispatchIndexLatest"] = state?.dispatchIndexLatest;
+            resourceInputs["dispatchIndexedRealtime"] = state?.dispatchIndexedRealtime;
+            resourceInputs["dispatchIndexedRealtimeMinspan"] = state?.dispatchIndexedRealtimeMinspan;
+            resourceInputs["dispatchIndexedRealtimeOffset"] = state?.dispatchIndexedRealtimeOffset;
+            resourceInputs["dispatchLatestTime"] = state?.dispatchLatestTime;
+            resourceInputs["dispatchLookups"] = state?.dispatchLookups;
+            resourceInputs["dispatchMaxCount"] = state?.dispatchMaxCount;
+            resourceInputs["dispatchMaxTime"] = state?.dispatchMaxTime;
+            resourceInputs["dispatchReduceFreq"] = state?.dispatchReduceFreq;
+            resourceInputs["dispatchRtBackfill"] = state?.dispatchRtBackfill;
+            resourceInputs["dispatchRtMaximumSpan"] = state?.dispatchRtMaximumSpan;
+            resourceInputs["dispatchSpawnProcess"] = state?.dispatchSpawnProcess;
+            resourceInputs["dispatchTimeFormat"] = state?.dispatchTimeFormat;
+            resourceInputs["dispatchTtl"] = state?.dispatchTtl;
+            resourceInputs["displayView"] = state?.displayView;
+            resourceInputs["isScheduled"] = state?.isScheduled;
+            resourceInputs["isVisible"] = state?.isVisible;
+            resourceInputs["maxConcurrent"] = state?.maxConcurrent;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["realtimeSchedule"] = state?.realtimeSchedule;
+            resourceInputs["requestUiDispatchApp"] = state?.requestUiDispatchApp;
+            resourceInputs["requestUiDispatchView"] = state?.requestUiDispatchView;
+            resourceInputs["restartOnSearchpeerAdd"] = state?.restartOnSearchpeerAdd;
+            resourceInputs["runOnStartup"] = state?.runOnStartup;
+            resourceInputs["schedulePriority"] = state?.schedulePriority;
+            resourceInputs["scheduleWindow"] = state?.scheduleWindow;
+            resourceInputs["search"] = state?.search;
+            resourceInputs["vsid"] = state?.vsid;
+            resourceInputs["workloadPool"] = state?.workloadPool;
         } else {
             const args = argsOrState as SavedSearchesArgs | undefined;
-            if ((!args || args.search === undefined) && !opts.urn) {
+            if (args?.search === undefined && !opts.urn) {
                 throw new Error("Missing required property 'search'");
             }
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["actionCreateXsoarIncident"] = args ? args.actionCreateXsoarIncident : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = args ? args.actionCreateXsoarIncidentParamCustomFields : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamDetails"] = args ? args.actionCreateXsoarIncidentParamDetails : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamIncidentName"] = args ? args.actionCreateXsoarIncidentParamIncidentName : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamOccurred"] = args ? args.actionCreateXsoarIncidentParamOccurred : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamSendAllServers"] = args ? args.actionCreateXsoarIncidentParamSendAllServers : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = args ? args.actionCreateXsoarIncidentParamServerUrl : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamSeverity"] = args ? args.actionCreateXsoarIncidentParamSeverity : undefined;
-            resourceInputs["actionCreateXsoarIncidentParamType"] = args ? args.actionCreateXsoarIncidentParamType : undefined;
-            resourceInputs["actionEmailAuthPassword"] = args ? args.actionEmailAuthPassword : undefined;
-            resourceInputs["actionEmailAuthUsername"] = args ? args.actionEmailAuthUsername : undefined;
-            resourceInputs["actionEmailBcc"] = args ? args.actionEmailBcc : undefined;
-            resourceInputs["actionEmailCc"] = args ? args.actionEmailCc : undefined;
-            resourceInputs["actionEmailCommand"] = args ? args.actionEmailCommand : undefined;
-            resourceInputs["actionEmailFormat"] = args ? args.actionEmailFormat : undefined;
-            resourceInputs["actionEmailFrom"] = args ? args.actionEmailFrom : undefined;
-            resourceInputs["actionEmailHostname"] = args ? args.actionEmailHostname : undefined;
-            resourceInputs["actionEmailIncludeResultsLink"] = args ? args.actionEmailIncludeResultsLink : undefined;
-            resourceInputs["actionEmailIncludeSearch"] = args ? args.actionEmailIncludeSearch : undefined;
-            resourceInputs["actionEmailIncludeTrigger"] = args ? args.actionEmailIncludeTrigger : undefined;
-            resourceInputs["actionEmailIncludeTriggerTime"] = args ? args.actionEmailIncludeTriggerTime : undefined;
-            resourceInputs["actionEmailIncludeViewLink"] = args ? args.actionEmailIncludeViewLink : undefined;
-            resourceInputs["actionEmailInline"] = args ? args.actionEmailInline : undefined;
-            resourceInputs["actionEmailMailserver"] = args ? args.actionEmailMailserver : undefined;
-            resourceInputs["actionEmailMaxResults"] = args ? args.actionEmailMaxResults : undefined;
-            resourceInputs["actionEmailMaxTime"] = args ? args.actionEmailMaxTime : undefined;
-            resourceInputs["actionEmailMessageAlert"] = args ? args.actionEmailMessageAlert : undefined;
-            resourceInputs["actionEmailMessageReport"] = args ? args.actionEmailMessageReport : undefined;
-            resourceInputs["actionEmailPdfview"] = args ? args.actionEmailPdfview : undefined;
-            resourceInputs["actionEmailPreprocessResults"] = args ? args.actionEmailPreprocessResults : undefined;
-            resourceInputs["actionEmailReportCidFontList"] = args ? args.actionEmailReportCidFontList : undefined;
-            resourceInputs["actionEmailReportIncludeSplunkLogo"] = args ? args.actionEmailReportIncludeSplunkLogo : undefined;
-            resourceInputs["actionEmailReportPaperOrientation"] = args ? args.actionEmailReportPaperOrientation : undefined;
-            resourceInputs["actionEmailReportPaperSize"] = args ? args.actionEmailReportPaperSize : undefined;
-            resourceInputs["actionEmailReportServerEnabled"] = args ? args.actionEmailReportServerEnabled : undefined;
-            resourceInputs["actionEmailReportServerUrl"] = args ? args.actionEmailReportServerUrl : undefined;
-            resourceInputs["actionEmailSendCsv"] = args ? args.actionEmailSendCsv : undefined;
-            resourceInputs["actionEmailSendPdf"] = args ? args.actionEmailSendPdf : undefined;
-            resourceInputs["actionEmailSendResults"] = args ? args.actionEmailSendResults : undefined;
-            resourceInputs["actionEmailSubject"] = args ? args.actionEmailSubject : undefined;
-            resourceInputs["actionEmailTo"] = args ? args.actionEmailTo : undefined;
-            resourceInputs["actionEmailTrackAlert"] = args ? args.actionEmailTrackAlert : undefined;
-            resourceInputs["actionEmailTtl"] = args ? args.actionEmailTtl : undefined;
-            resourceInputs["actionEmailUseSsl"] = args ? args.actionEmailUseSsl : undefined;
-            resourceInputs["actionEmailUseTls"] = args ? args.actionEmailUseTls : undefined;
-            resourceInputs["actionEmailWidthSortColumns"] = args ? args.actionEmailWidthSortColumns : undefined;
-            resourceInputs["actionJiraServiceDeskParamAccount"] = args ? args.actionJiraServiceDeskParamAccount : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraCustomfields"] = args ? args.actionJiraServiceDeskParamJiraCustomfields : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraDescription"] = args ? args.actionJiraServiceDeskParamJiraDescription : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = args ? args.actionJiraServiceDeskParamJiraIssueType : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args ? args.actionJiraServiceDeskParamJiraPriority : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraProject"] = args ? args.actionJiraServiceDeskParamJiraProject : undefined;
-            resourceInputs["actionJiraServiceDeskParamJiraSummary"] = args ? args.actionJiraServiceDeskParamJiraSummary : undefined;
-            resourceInputs["actionPagerdutyCustomDetails"] = args ? args.actionPagerdutyCustomDetails : undefined;
-            resourceInputs["actionPagerdutyIntegrationKey"] = args ? args.actionPagerdutyIntegrationKey : undefined;
-            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = args ? args.actionPagerdutyIntegrationKeyOverride : undefined;
-            resourceInputs["actionPagerdutyIntegrationUrl"] = args ? args.actionPagerdutyIntegrationUrl : undefined;
-            resourceInputs["actionPagerdutyIntegrationUrlOverride"] = args ? args.actionPagerdutyIntegrationUrlOverride : undefined;
-            resourceInputs["actionPopulateLookupCommand"] = args ? args.actionPopulateLookupCommand : undefined;
-            resourceInputs["actionPopulateLookupDest"] = args ? args.actionPopulateLookupDest : undefined;
-            resourceInputs["actionPopulateLookupHostname"] = args ? args.actionPopulateLookupHostname : undefined;
-            resourceInputs["actionPopulateLookupMaxResults"] = args ? args.actionPopulateLookupMaxResults : undefined;
-            resourceInputs["actionPopulateLookupMaxTime"] = args ? args.actionPopulateLookupMaxTime : undefined;
-            resourceInputs["actionPopulateLookupTrackAlert"] = args ? args.actionPopulateLookupTrackAlert : undefined;
-            resourceInputs["actionPopulateLookupTtl"] = args ? args.actionPopulateLookupTtl : undefined;
-            resourceInputs["actionRssCommand"] = args ? args.actionRssCommand : undefined;
-            resourceInputs["actionRssHostname"] = args ? args.actionRssHostname : undefined;
-            resourceInputs["actionRssMaxResults"] = args ? args.actionRssMaxResults : undefined;
-            resourceInputs["actionRssMaxTime"] = args ? args.actionRssMaxTime : undefined;
-            resourceInputs["actionRssTrackAlert"] = args ? args.actionRssTrackAlert : undefined;
-            resourceInputs["actionRssTtl"] = args ? args.actionRssTtl : undefined;
-            resourceInputs["actionScriptCommand"] = args ? args.actionScriptCommand : undefined;
-            resourceInputs["actionScriptFilename"] = args ? args.actionScriptFilename : undefined;
-            resourceInputs["actionScriptHostname"] = args ? args.actionScriptHostname : undefined;
-            resourceInputs["actionScriptMaxResults"] = args ? args.actionScriptMaxResults : undefined;
-            resourceInputs["actionScriptMaxTime"] = args ? args.actionScriptMaxTime : undefined;
-            resourceInputs["actionScriptTrackAlert"] = args ? args.actionScriptTrackAlert : undefined;
-            resourceInputs["actionScriptTtl"] = args ? args.actionScriptTtl : undefined;
-            resourceInputs["actionSlackParamAttachment"] = args ? args.actionSlackParamAttachment : undefined;
-            resourceInputs["actionSlackParamChannel"] = args ? args.actionSlackParamChannel : undefined;
-            resourceInputs["actionSlackParamFields"] = args ? args.actionSlackParamFields : undefined;
-            resourceInputs["actionSlackParamMessage"] = args ? args.actionSlackParamMessage : undefined;
-            resourceInputs["actionSlackParamWebhookUrlOverride"] = args ? args.actionSlackParamWebhookUrlOverride : undefined;
-            resourceInputs["actionSnowEventParamAccount"] = args ? args.actionSnowEventParamAccount : undefined;
-            resourceInputs["actionSnowEventParamAdditionalInfo"] = args ? args.actionSnowEventParamAdditionalInfo : undefined;
-            resourceInputs["actionSnowEventParamCiIdentifier"] = args ? args.actionSnowEventParamCiIdentifier : undefined;
-            resourceInputs["actionSnowEventParamCustomFields"] = args ? args.actionSnowEventParamCustomFields : undefined;
-            resourceInputs["actionSnowEventParamDescription"] = args ? args.actionSnowEventParamDescription : undefined;
-            resourceInputs["actionSnowEventParamNode"] = args ? args.actionSnowEventParamNode : undefined;
-            resourceInputs["actionSnowEventParamResource"] = args ? args.actionSnowEventParamResource : undefined;
-            resourceInputs["actionSnowEventParamSeverity"] = args ? args.actionSnowEventParamSeverity : undefined;
-            resourceInputs["actionSnowEventParamType"] = args ? args.actionSnowEventParamType : undefined;
-            resourceInputs["actionSummaryIndexCommand"] = args ? args.actionSummaryIndexCommand : undefined;
-            resourceInputs["actionSummaryIndexHostname"] = args ? args.actionSummaryIndexHostname : undefined;
-            resourceInputs["actionSummaryIndexInline"] = args ? args.actionSummaryIndexInline : undefined;
-            resourceInputs["actionSummaryIndexMaxResults"] = args ? args.actionSummaryIndexMaxResults : undefined;
-            resourceInputs["actionSummaryIndexMaxTime"] = args ? args.actionSummaryIndexMaxTime : undefined;
-            resourceInputs["actionSummaryIndexName"] = args ? args.actionSummaryIndexName : undefined;
-            resourceInputs["actionSummaryIndexTrackAlert"] = args ? args.actionSummaryIndexTrackAlert : undefined;
-            resourceInputs["actionSummaryIndexTtl"] = args ? args.actionSummaryIndexTtl : undefined;
-            resourceInputs["actionWebhookParamUrl"] = args ? args.actionWebhookParamUrl : undefined;
-            resourceInputs["actions"] = args ? args.actions : undefined;
-            resourceInputs["alertComparator"] = args ? args.alertComparator : undefined;
-            resourceInputs["alertCondition"] = args ? args.alertCondition : undefined;
-            resourceInputs["alertDigestMode"] = args ? args.alertDigestMode : undefined;
-            resourceInputs["alertExpires"] = args ? args.alertExpires : undefined;
-            resourceInputs["alertSeverity"] = args ? args.alertSeverity : undefined;
-            resourceInputs["alertSuppress"] = args ? args.alertSuppress : undefined;
-            resourceInputs["alertSuppressFields"] = args ? args.alertSuppressFields : undefined;
-            resourceInputs["alertSuppressPeriod"] = args ? args.alertSuppressPeriod : undefined;
-            resourceInputs["alertThreshold"] = args ? args.alertThreshold : undefined;
-            resourceInputs["alertTrack"] = args ? args.alertTrack : undefined;
-            resourceInputs["alertType"] = args ? args.alertType : undefined;
-            resourceInputs["allowSkew"] = args ? args.allowSkew : undefined;
-            resourceInputs["autoSummarize"] = args ? args.autoSummarize : undefined;
-            resourceInputs["autoSummarizeCommand"] = args ? args.autoSummarizeCommand : undefined;
-            resourceInputs["autoSummarizeCronSchedule"] = args ? args.autoSummarizeCronSchedule : undefined;
-            resourceInputs["autoSummarizeDispatchEarliestTime"] = args ? args.autoSummarizeDispatchEarliestTime : undefined;
-            resourceInputs["autoSummarizeDispatchLatestTime"] = args ? args.autoSummarizeDispatchLatestTime : undefined;
-            resourceInputs["autoSummarizeDispatchTimeFormat"] = args ? args.autoSummarizeDispatchTimeFormat : undefined;
-            resourceInputs["autoSummarizeDispatchTtl"] = args ? args.autoSummarizeDispatchTtl : undefined;
-            resourceInputs["autoSummarizeMaxDisabledBuckets"] = args ? args.autoSummarizeMaxDisabledBuckets : undefined;
-            resourceInputs["autoSummarizeMaxSummaryRatio"] = args ? args.autoSummarizeMaxSummaryRatio : undefined;
-            resourceInputs["autoSummarizeMaxSummarySize"] = args ? args.autoSummarizeMaxSummarySize : undefined;
-            resourceInputs["autoSummarizeMaxTime"] = args ? args.autoSummarizeMaxTime : undefined;
-            resourceInputs["autoSummarizeSuspendPeriod"] = args ? args.autoSummarizeSuspendPeriod : undefined;
-            resourceInputs["autoSummarizeTimespan"] = args ? args.autoSummarizeTimespan : undefined;
-            resourceInputs["cronSchedule"] = args ? args.cronSchedule : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["dispatchBuckets"] = args ? args.dispatchBuckets : undefined;
-            resourceInputs["dispatchEarliestTime"] = args ? args.dispatchEarliestTime : undefined;
-            resourceInputs["dispatchIndexEarliest"] = args ? args.dispatchIndexEarliest : undefined;
-            resourceInputs["dispatchIndexLatest"] = args ? args.dispatchIndexLatest : undefined;
-            resourceInputs["dispatchIndexedRealtime"] = args ? args.dispatchIndexedRealtime : undefined;
-            resourceInputs["dispatchIndexedRealtimeMinspan"] = args ? args.dispatchIndexedRealtimeMinspan : undefined;
-            resourceInputs["dispatchIndexedRealtimeOffset"] = args ? args.dispatchIndexedRealtimeOffset : undefined;
-            resourceInputs["dispatchLatestTime"] = args ? args.dispatchLatestTime : undefined;
-            resourceInputs["dispatchLookups"] = args ? args.dispatchLookups : undefined;
-            resourceInputs["dispatchMaxCount"] = args ? args.dispatchMaxCount : undefined;
-            resourceInputs["dispatchMaxTime"] = args ? args.dispatchMaxTime : undefined;
-            resourceInputs["dispatchReduceFreq"] = args ? args.dispatchReduceFreq : undefined;
-            resourceInputs["dispatchRtBackfill"] = args ? args.dispatchRtBackfill : undefined;
-            resourceInputs["dispatchRtMaximumSpan"] = args ? args.dispatchRtMaximumSpan : undefined;
-            resourceInputs["dispatchSpawnProcess"] = args ? args.dispatchSpawnProcess : undefined;
-            resourceInputs["dispatchTimeFormat"] = args ? args.dispatchTimeFormat : undefined;
-            resourceInputs["dispatchTtl"] = args ? args.dispatchTtl : undefined;
-            resourceInputs["displayView"] = args ? args.displayView : undefined;
-            resourceInputs["isScheduled"] = args ? args.isScheduled : undefined;
-            resourceInputs["isVisible"] = args ? args.isVisible : undefined;
-            resourceInputs["maxConcurrent"] = args ? args.maxConcurrent : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["realtimeSchedule"] = args ? args.realtimeSchedule : undefined;
-            resourceInputs["requestUiDispatchApp"] = args ? args.requestUiDispatchApp : undefined;
-            resourceInputs["requestUiDispatchView"] = args ? args.requestUiDispatchView : undefined;
-            resourceInputs["restartOnSearchpeerAdd"] = args ? args.restartOnSearchpeerAdd : undefined;
-            resourceInputs["runOnStartup"] = args ? args.runOnStartup : undefined;
-            resourceInputs["schedulePriority"] = args ? args.schedulePriority : undefined;
-            resourceInputs["scheduleWindow"] = args ? args.scheduleWindow : undefined;
-            resourceInputs["search"] = args ? args.search : undefined;
-            resourceInputs["vsid"] = args ? args.vsid : undefined;
-            resourceInputs["workloadPool"] = args ? args.workloadPool : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["actionCreateXsoarIncident"] = args?.actionCreateXsoarIncident;
+            resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = args?.actionCreateXsoarIncidentParamCustomFields;
+            resourceInputs["actionCreateXsoarIncidentParamDetails"] = args?.actionCreateXsoarIncidentParamDetails;
+            resourceInputs["actionCreateXsoarIncidentParamIncidentName"] = args?.actionCreateXsoarIncidentParamIncidentName;
+            resourceInputs["actionCreateXsoarIncidentParamOccurred"] = args?.actionCreateXsoarIncidentParamOccurred;
+            resourceInputs["actionCreateXsoarIncidentParamSendAllServers"] = args?.actionCreateXsoarIncidentParamSendAllServers;
+            resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = args?.actionCreateXsoarIncidentParamServerUrl;
+            resourceInputs["actionCreateXsoarIncidentParamSeverity"] = args?.actionCreateXsoarIncidentParamSeverity;
+            resourceInputs["actionCreateXsoarIncidentParamType"] = args?.actionCreateXsoarIncidentParamType;
+            resourceInputs["actionEmailAuthPassword"] = args?.actionEmailAuthPassword;
+            resourceInputs["actionEmailAuthUsername"] = args?.actionEmailAuthUsername;
+            resourceInputs["actionEmailBcc"] = args?.actionEmailBcc;
+            resourceInputs["actionEmailCc"] = args?.actionEmailCc;
+            resourceInputs["actionEmailCommand"] = args?.actionEmailCommand;
+            resourceInputs["actionEmailFormat"] = args?.actionEmailFormat;
+            resourceInputs["actionEmailFrom"] = args?.actionEmailFrom;
+            resourceInputs["actionEmailHostname"] = args?.actionEmailHostname;
+            resourceInputs["actionEmailIncludeResultsLink"] = args?.actionEmailIncludeResultsLink;
+            resourceInputs["actionEmailIncludeSearch"] = args?.actionEmailIncludeSearch;
+            resourceInputs["actionEmailIncludeTrigger"] = args?.actionEmailIncludeTrigger;
+            resourceInputs["actionEmailIncludeTriggerTime"] = args?.actionEmailIncludeTriggerTime;
+            resourceInputs["actionEmailIncludeViewLink"] = args?.actionEmailIncludeViewLink;
+            resourceInputs["actionEmailInline"] = args?.actionEmailInline;
+            resourceInputs["actionEmailMailserver"] = args?.actionEmailMailserver;
+            resourceInputs["actionEmailMaxResults"] = args?.actionEmailMaxResults;
+            resourceInputs["actionEmailMaxTime"] = args?.actionEmailMaxTime;
+            resourceInputs["actionEmailMessageAlert"] = args?.actionEmailMessageAlert;
+            resourceInputs["actionEmailMessageReport"] = args?.actionEmailMessageReport;
+            resourceInputs["actionEmailPdfview"] = args?.actionEmailPdfview;
+            resourceInputs["actionEmailPreprocessResults"] = args?.actionEmailPreprocessResults;
+            resourceInputs["actionEmailReportCidFontList"] = args?.actionEmailReportCidFontList;
+            resourceInputs["actionEmailReportIncludeSplunkLogo"] = args?.actionEmailReportIncludeSplunkLogo;
+            resourceInputs["actionEmailReportPaperOrientation"] = args?.actionEmailReportPaperOrientation;
+            resourceInputs["actionEmailReportPaperSize"] = args?.actionEmailReportPaperSize;
+            resourceInputs["actionEmailReportServerEnabled"] = args?.actionEmailReportServerEnabled;
+            resourceInputs["actionEmailReportServerUrl"] = args?.actionEmailReportServerUrl;
+            resourceInputs["actionEmailSendCsv"] = args?.actionEmailSendCsv;
+            resourceInputs["actionEmailSendPdf"] = args?.actionEmailSendPdf;
+            resourceInputs["actionEmailSendResults"] = args?.actionEmailSendResults;
+            resourceInputs["actionEmailSubject"] = args?.actionEmailSubject;
+            resourceInputs["actionEmailTo"] = args?.actionEmailTo;
+            resourceInputs["actionEmailTrackAlert"] = args?.actionEmailTrackAlert;
+            resourceInputs["actionEmailTtl"] = args?.actionEmailTtl;
+            resourceInputs["actionEmailUseSsl"] = args?.actionEmailUseSsl;
+            resourceInputs["actionEmailUseTls"] = args?.actionEmailUseTls;
+            resourceInputs["actionEmailWidthSortColumns"] = args?.actionEmailWidthSortColumns;
+            resourceInputs["actionJiraServiceDeskParamAccount"] = args?.actionJiraServiceDeskParamAccount;
+            resourceInputs["actionJiraServiceDeskParamJiraCustomfields"] = args?.actionJiraServiceDeskParamJiraCustomfields;
+            resourceInputs["actionJiraServiceDeskParamJiraDescription"] = args?.actionJiraServiceDeskParamJiraDescription;
+            resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = args?.actionJiraServiceDeskParamJiraIssueType;
+            resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args?.actionJiraServiceDeskParamJiraPriority;
+            resourceInputs["actionJiraServiceDeskParamJiraProject"] = args?.actionJiraServiceDeskParamJiraProject;
+            resourceInputs["actionJiraServiceDeskParamJiraSummary"] = args?.actionJiraServiceDeskParamJiraSummary;
+            resourceInputs["actionPagerdutyCustomDetails"] = args?.actionPagerdutyCustomDetails;
+            resourceInputs["actionPagerdutyIntegrationKey"] = args?.actionPagerdutyIntegrationKey;
+            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = args?.actionPagerdutyIntegrationKeyOverride;
+            resourceInputs["actionPagerdutyIntegrationUrl"] = args?.actionPagerdutyIntegrationUrl;
+            resourceInputs["actionPagerdutyIntegrationUrlOverride"] = args?.actionPagerdutyIntegrationUrlOverride;
+            resourceInputs["actionPopulateLookupCommand"] = args?.actionPopulateLookupCommand;
+            resourceInputs["actionPopulateLookupDest"] = args?.actionPopulateLookupDest;
+            resourceInputs["actionPopulateLookupHostname"] = args?.actionPopulateLookupHostname;
+            resourceInputs["actionPopulateLookupMaxResults"] = args?.actionPopulateLookupMaxResults;
+            resourceInputs["actionPopulateLookupMaxTime"] = args?.actionPopulateLookupMaxTime;
+            resourceInputs["actionPopulateLookupTrackAlert"] = args?.actionPopulateLookupTrackAlert;
+            resourceInputs["actionPopulateLookupTtl"] = args?.actionPopulateLookupTtl;
+            resourceInputs["actionRssCommand"] = args?.actionRssCommand;
+            resourceInputs["actionRssHostname"] = args?.actionRssHostname;
+            resourceInputs["actionRssMaxResults"] = args?.actionRssMaxResults;
+            resourceInputs["actionRssMaxTime"] = args?.actionRssMaxTime;
+            resourceInputs["actionRssTrackAlert"] = args?.actionRssTrackAlert;
+            resourceInputs["actionRssTtl"] = args?.actionRssTtl;
+            resourceInputs["actionScriptCommand"] = args?.actionScriptCommand;
+            resourceInputs["actionScriptFilename"] = args?.actionScriptFilename;
+            resourceInputs["actionScriptHostname"] = args?.actionScriptHostname;
+            resourceInputs["actionScriptMaxResults"] = args?.actionScriptMaxResults;
+            resourceInputs["actionScriptMaxTime"] = args?.actionScriptMaxTime;
+            resourceInputs["actionScriptTrackAlert"] = args?.actionScriptTrackAlert;
+            resourceInputs["actionScriptTtl"] = args?.actionScriptTtl;
+            resourceInputs["actionSlackParamAttachment"] = args?.actionSlackParamAttachment;
+            resourceInputs["actionSlackParamChannel"] = args?.actionSlackParamChannel;
+            resourceInputs["actionSlackParamFields"] = args?.actionSlackParamFields;
+            resourceInputs["actionSlackParamMessage"] = args?.actionSlackParamMessage;
+            resourceInputs["actionSlackParamWebhookUrlOverride"] = args?.actionSlackParamWebhookUrlOverride;
+            resourceInputs["actionSnowEventParamAccount"] = args?.actionSnowEventParamAccount;
+            resourceInputs["actionSnowEventParamAdditionalInfo"] = args?.actionSnowEventParamAdditionalInfo;
+            resourceInputs["actionSnowEventParamCiIdentifier"] = args?.actionSnowEventParamCiIdentifier;
+            resourceInputs["actionSnowEventParamCustomFields"] = args?.actionSnowEventParamCustomFields;
+            resourceInputs["actionSnowEventParamDescription"] = args?.actionSnowEventParamDescription;
+            resourceInputs["actionSnowEventParamNode"] = args?.actionSnowEventParamNode;
+            resourceInputs["actionSnowEventParamResource"] = args?.actionSnowEventParamResource;
+            resourceInputs["actionSnowEventParamSeverity"] = args?.actionSnowEventParamSeverity;
+            resourceInputs["actionSnowEventParamType"] = args?.actionSnowEventParamType;
+            resourceInputs["actionSummaryIndexCommand"] = args?.actionSummaryIndexCommand;
+            resourceInputs["actionSummaryIndexHostname"] = args?.actionSummaryIndexHostname;
+            resourceInputs["actionSummaryIndexInline"] = args?.actionSummaryIndexInline;
+            resourceInputs["actionSummaryIndexMaxResults"] = args?.actionSummaryIndexMaxResults;
+            resourceInputs["actionSummaryIndexMaxTime"] = args?.actionSummaryIndexMaxTime;
+            resourceInputs["actionSummaryIndexName"] = args?.actionSummaryIndexName;
+            resourceInputs["actionSummaryIndexTrackAlert"] = args?.actionSummaryIndexTrackAlert;
+            resourceInputs["actionSummaryIndexTtl"] = args?.actionSummaryIndexTtl;
+            resourceInputs["actionWebhookParamUrl"] = args?.actionWebhookParamUrl;
+            resourceInputs["actions"] = args?.actions;
+            resourceInputs["alertComparator"] = args?.alertComparator;
+            resourceInputs["alertCondition"] = args?.alertCondition;
+            resourceInputs["alertDigestMode"] = args?.alertDigestMode;
+            resourceInputs["alertExpires"] = args?.alertExpires;
+            resourceInputs["alertSeverity"] = args?.alertSeverity;
+            resourceInputs["alertSuppress"] = args?.alertSuppress;
+            resourceInputs["alertSuppressFields"] = args?.alertSuppressFields;
+            resourceInputs["alertSuppressPeriod"] = args?.alertSuppressPeriod;
+            resourceInputs["alertThreshold"] = args?.alertThreshold;
+            resourceInputs["alertTrack"] = args?.alertTrack;
+            resourceInputs["alertType"] = args?.alertType;
+            resourceInputs["allowSkew"] = args?.allowSkew;
+            resourceInputs["autoSummarize"] = args?.autoSummarize;
+            resourceInputs["autoSummarizeCommand"] = args?.autoSummarizeCommand;
+            resourceInputs["autoSummarizeCronSchedule"] = args?.autoSummarizeCronSchedule;
+            resourceInputs["autoSummarizeDispatchEarliestTime"] = args?.autoSummarizeDispatchEarliestTime;
+            resourceInputs["autoSummarizeDispatchLatestTime"] = args?.autoSummarizeDispatchLatestTime;
+            resourceInputs["autoSummarizeDispatchTimeFormat"] = args?.autoSummarizeDispatchTimeFormat;
+            resourceInputs["autoSummarizeDispatchTtl"] = args?.autoSummarizeDispatchTtl;
+            resourceInputs["autoSummarizeMaxDisabledBuckets"] = args?.autoSummarizeMaxDisabledBuckets;
+            resourceInputs["autoSummarizeMaxSummaryRatio"] = args?.autoSummarizeMaxSummaryRatio;
+            resourceInputs["autoSummarizeMaxSummarySize"] = args?.autoSummarizeMaxSummarySize;
+            resourceInputs["autoSummarizeMaxTime"] = args?.autoSummarizeMaxTime;
+            resourceInputs["autoSummarizeSuspendPeriod"] = args?.autoSummarizeSuspendPeriod;
+            resourceInputs["autoSummarizeTimespan"] = args?.autoSummarizeTimespan;
+            resourceInputs["cronSchedule"] = args?.cronSchedule;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["dispatchBuckets"] = args?.dispatchBuckets;
+            resourceInputs["dispatchEarliestTime"] = args?.dispatchEarliestTime;
+            resourceInputs["dispatchIndexEarliest"] = args?.dispatchIndexEarliest;
+            resourceInputs["dispatchIndexLatest"] = args?.dispatchIndexLatest;
+            resourceInputs["dispatchIndexedRealtime"] = args?.dispatchIndexedRealtime;
+            resourceInputs["dispatchIndexedRealtimeMinspan"] = args?.dispatchIndexedRealtimeMinspan;
+            resourceInputs["dispatchIndexedRealtimeOffset"] = args?.dispatchIndexedRealtimeOffset;
+            resourceInputs["dispatchLatestTime"] = args?.dispatchLatestTime;
+            resourceInputs["dispatchLookups"] = args?.dispatchLookups;
+            resourceInputs["dispatchMaxCount"] = args?.dispatchMaxCount;
+            resourceInputs["dispatchMaxTime"] = args?.dispatchMaxTime;
+            resourceInputs["dispatchReduceFreq"] = args?.dispatchReduceFreq;
+            resourceInputs["dispatchRtBackfill"] = args?.dispatchRtBackfill;
+            resourceInputs["dispatchRtMaximumSpan"] = args?.dispatchRtMaximumSpan;
+            resourceInputs["dispatchSpawnProcess"] = args?.dispatchSpawnProcess;
+            resourceInputs["dispatchTimeFormat"] = args?.dispatchTimeFormat;
+            resourceInputs["dispatchTtl"] = args?.dispatchTtl;
+            resourceInputs["displayView"] = args?.displayView;
+            resourceInputs["isScheduled"] = args?.isScheduled;
+            resourceInputs["isVisible"] = args?.isVisible;
+            resourceInputs["maxConcurrent"] = args?.maxConcurrent;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["realtimeSchedule"] = args?.realtimeSchedule;
+            resourceInputs["requestUiDispatchApp"] = args?.requestUiDispatchApp;
+            resourceInputs["requestUiDispatchView"] = args?.requestUiDispatchView;
+            resourceInputs["restartOnSearchpeerAdd"] = args?.restartOnSearchpeerAdd;
+            resourceInputs["runOnStartup"] = args?.runOnStartup;
+            resourceInputs["schedulePriority"] = args?.schedulePriority;
+            resourceInputs["scheduleWindow"] = args?.scheduleWindow;
+            resourceInputs["search"] = args?.search;
+            resourceInputs["vsid"] = args?.vsid;
+            resourceInputs["workloadPool"] = args?.workloadPool;
             resourceInputs["actionEmail"] = undefined /*out*/;
             resourceInputs["actionPopulateLookup"] = undefined /*out*/;
             resourceInputs["actionRss"] = undefined /*out*/;
@@ -1471,24 +1461,15 @@ export interface SavedSearchesState {
      */
     actionSnowEventParamAccount?: pulumi.Input<string>;
     /**
-     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-     * other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
      */
     actionSnowEventParamAdditionalInfo?: pulumi.Input<string>;
     /**
-     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-     * example, k1=v1||k2=v2.
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
      */
     actionSnowEventParamCiIdentifier?: pulumi.Input<string>;
     /**
-     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-     * in the emEvent table of ServiceNow.
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      */
     actionSnowEventParamCustomFields?: pulumi.Input<string>;
     /**
@@ -1496,8 +1477,7 @@ export interface SavedSearchesState {
      */
     actionSnowEventParamDescription?: pulumi.Input<string>;
     /**
-     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-     * same host name, the event is automatically assigned to the matching CI.
+     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
      */
     actionSnowEventParamNode?: pulumi.Input<string>;
     /**
@@ -2143,24 +2123,15 @@ export interface SavedSearchesArgs {
      */
     actionSnowEventParamAccount?: pulumi.Input<string>;
     /**
-     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-     * your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-     * create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-     * resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-     * event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-     * snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-     * other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+     * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
      */
     actionSnowEventParamAdditionalInfo?: pulumi.Input<string>;
     /**
-     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-     * example, k1=v1||k2=v2.
+     * String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
      */
     actionSnowEventParamCiIdentifier?: pulumi.Input<string>;
     /**
-     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-     * the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-     * in the emEvent table of ServiceNow.
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      */
     actionSnowEventParamCustomFields?: pulumi.Input<string>;
     /**
@@ -2168,8 +2139,7 @@ export interface SavedSearchesArgs {
      */
     actionSnowEventParamDescription?: pulumi.Input<string>;
     /**
-     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-     * same host name, the event is automatically assigned to the matching CI.
+     * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
      */
     actionSnowEventParamNode?: pulumi.Input<string>;
     /**

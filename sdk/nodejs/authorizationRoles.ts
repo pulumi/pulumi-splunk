@@ -71,55 +71,55 @@ export class AuthorizationRoles extends pulumi.CustomResource {
     /**
      * List of capabilities assigned to role.
      */
-    public readonly capabilities!: pulumi.Output<string[]>;
+    declare public readonly capabilities: pulumi.Output<string[]>;
     /**
      * Maximum number of concurrently running real-time searches that all members of this role can have.
      */
-    public readonly cumulativeRealtimeSearchJobsQuota!: pulumi.Output<number | undefined>;
+    declare public readonly cumulativeRealtimeSearchJobsQuota: pulumi.Output<number | undefined>;
     /**
      * Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
      */
-    public readonly cumulativeSearchJobsQuota!: pulumi.Output<number | undefined>;
+    declare public readonly cumulativeSearchJobsQuota: pulumi.Output<number | undefined>;
     /**
      * Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
      */
-    public readonly defaultApp!: pulumi.Output<string>;
+    declare public readonly defaultApp: pulumi.Output<string>;
     /**
      * List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
      */
-    public readonly importedRoles!: pulumi.Output<string[]>;
+    declare public readonly importedRoles: pulumi.Output<string[]>;
     /**
      * The name of the user role to create.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
      */
-    public readonly realtimeSearchJobsQuota!: pulumi.Output<number | undefined>;
+    declare public readonly realtimeSearchJobsQuota: pulumi.Output<number | undefined>;
     /**
      * Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
      */
-    public readonly searchDiskQuota!: pulumi.Output<number | undefined>;
+    declare public readonly searchDiskQuota: pulumi.Output<number | undefined>;
     /**
      * Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
      */
-    public readonly searchFilter!: pulumi.Output<string>;
+    declare public readonly searchFilter: pulumi.Output<string>;
     /**
      * List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
      */
-    public readonly searchIndexesAlloweds!: pulumi.Output<string[]>;
+    declare public readonly searchIndexesAlloweds: pulumi.Output<string[]>;
     /**
      * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
      */
-    public readonly searchIndexesDefaults!: pulumi.Output<string[]>;
+    declare public readonly searchIndexesDefaults: pulumi.Output<string[]>;
     /**
      * The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
      */
-    public readonly searchJobsQuota!: pulumi.Output<number | undefined>;
+    declare public readonly searchJobsQuota: pulumi.Output<number | undefined>;
     /**
      * Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
      */
-    public readonly searchTimeWin!: pulumi.Output<number | undefined>;
+    declare public readonly searchTimeWin: pulumi.Output<number | undefined>;
 
     /**
      * Create a AuthorizationRoles resource with the given unique name, arguments, and options.
@@ -134,34 +134,34 @@ export class AuthorizationRoles extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuthorizationRolesState | undefined;
-            resourceInputs["capabilities"] = state ? state.capabilities : undefined;
-            resourceInputs["cumulativeRealtimeSearchJobsQuota"] = state ? state.cumulativeRealtimeSearchJobsQuota : undefined;
-            resourceInputs["cumulativeSearchJobsQuota"] = state ? state.cumulativeSearchJobsQuota : undefined;
-            resourceInputs["defaultApp"] = state ? state.defaultApp : undefined;
-            resourceInputs["importedRoles"] = state ? state.importedRoles : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["realtimeSearchJobsQuota"] = state ? state.realtimeSearchJobsQuota : undefined;
-            resourceInputs["searchDiskQuota"] = state ? state.searchDiskQuota : undefined;
-            resourceInputs["searchFilter"] = state ? state.searchFilter : undefined;
-            resourceInputs["searchIndexesAlloweds"] = state ? state.searchIndexesAlloweds : undefined;
-            resourceInputs["searchIndexesDefaults"] = state ? state.searchIndexesDefaults : undefined;
-            resourceInputs["searchJobsQuota"] = state ? state.searchJobsQuota : undefined;
-            resourceInputs["searchTimeWin"] = state ? state.searchTimeWin : undefined;
+            resourceInputs["capabilities"] = state?.capabilities;
+            resourceInputs["cumulativeRealtimeSearchJobsQuota"] = state?.cumulativeRealtimeSearchJobsQuota;
+            resourceInputs["cumulativeSearchJobsQuota"] = state?.cumulativeSearchJobsQuota;
+            resourceInputs["defaultApp"] = state?.defaultApp;
+            resourceInputs["importedRoles"] = state?.importedRoles;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["realtimeSearchJobsQuota"] = state?.realtimeSearchJobsQuota;
+            resourceInputs["searchDiskQuota"] = state?.searchDiskQuota;
+            resourceInputs["searchFilter"] = state?.searchFilter;
+            resourceInputs["searchIndexesAlloweds"] = state?.searchIndexesAlloweds;
+            resourceInputs["searchIndexesDefaults"] = state?.searchIndexesDefaults;
+            resourceInputs["searchJobsQuota"] = state?.searchJobsQuota;
+            resourceInputs["searchTimeWin"] = state?.searchTimeWin;
         } else {
             const args = argsOrState as AuthorizationRolesArgs | undefined;
-            resourceInputs["capabilities"] = args ? args.capabilities : undefined;
-            resourceInputs["cumulativeRealtimeSearchJobsQuota"] = args ? args.cumulativeRealtimeSearchJobsQuota : undefined;
-            resourceInputs["cumulativeSearchJobsQuota"] = args ? args.cumulativeSearchJobsQuota : undefined;
-            resourceInputs["defaultApp"] = args ? args.defaultApp : undefined;
-            resourceInputs["importedRoles"] = args ? args.importedRoles : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["realtimeSearchJobsQuota"] = args ? args.realtimeSearchJobsQuota : undefined;
-            resourceInputs["searchDiskQuota"] = args ? args.searchDiskQuota : undefined;
-            resourceInputs["searchFilter"] = args ? args.searchFilter : undefined;
-            resourceInputs["searchIndexesAlloweds"] = args ? args.searchIndexesAlloweds : undefined;
-            resourceInputs["searchIndexesDefaults"] = args ? args.searchIndexesDefaults : undefined;
-            resourceInputs["searchJobsQuota"] = args ? args.searchJobsQuota : undefined;
-            resourceInputs["searchTimeWin"] = args ? args.searchTimeWin : undefined;
+            resourceInputs["capabilities"] = args?.capabilities;
+            resourceInputs["cumulativeRealtimeSearchJobsQuota"] = args?.cumulativeRealtimeSearchJobsQuota;
+            resourceInputs["cumulativeSearchJobsQuota"] = args?.cumulativeSearchJobsQuota;
+            resourceInputs["defaultApp"] = args?.defaultApp;
+            resourceInputs["importedRoles"] = args?.importedRoles;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["realtimeSearchJobsQuota"] = args?.realtimeSearchJobsQuota;
+            resourceInputs["searchDiskQuota"] = args?.searchDiskQuota;
+            resourceInputs["searchFilter"] = args?.searchFilter;
+            resourceInputs["searchIndexesAlloweds"] = args?.searchIndexesAlloweds;
+            resourceInputs["searchIndexesDefaults"] = args?.searchIndexesDefaults;
+            resourceInputs["searchJobsQuota"] = args?.searchJobsQuota;
+            resourceInputs["searchTimeWin"] = args?.searchTimeWin;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AuthorizationRoles.__pulumiType, name, resourceInputs, opts);
