@@ -56,27 +56,27 @@
         "variables": {
             "authToken": {
                 "type": "string",
-                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into\nthe Splunk platform\n"
+                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
             },
             "insecureSkipVerify": {
                 "type": "boolean",
-                "description": "insecure skip verification flag\n"
+                "description": "insecure skip verification flag"
             },
             "password": {
                 "type": "string",
-                "description": "Splunk instance password\n"
+                "description": "Splunk instance password"
             },
             "timeout": {
                 "type": "integer",
-                "description": "Timeout when making calls to Splunk server. Defaults to 60 seconds\n"
+                "description": "Timeout when making calls to Splunk server. Defaults to 60 seconds"
             },
             "url": {
                 "type": "string",
-                "description": "Splunk instance URL\n"
+                "description": "Splunk instance URL"
             },
             "username": {
                 "type": "string",
-                "description": "Splunk instance admin username\n"
+                "description": "Splunk instance admin username"
             }
         },
         "defaults": [
@@ -1496,53 +1496,53 @@
         "properties": {
             "authToken": {
                 "type": "string",
-                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into\nthe Splunk platform\n"
+                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
             },
             "insecureSkipVerify": {
                 "type": "boolean",
-                "description": "insecure skip verification flag\n"
+                "description": "insecure skip verification flag"
             },
             "password": {
                 "type": "string",
-                "description": "Splunk instance password\n"
+                "description": "Splunk instance password"
             },
             "timeout": {
                 "type": "integer",
-                "description": "Timeout when making calls to Splunk server. Defaults to 60 seconds\n"
+                "description": "Timeout when making calls to Splunk server. Defaults to 60 seconds"
             },
             "url": {
                 "type": "string",
-                "description": "Splunk instance URL\n"
+                "description": "Splunk instance URL"
             },
             "username": {
                 "type": "string",
-                "description": "Splunk instance admin username\n"
+                "description": "Splunk instance admin username"
             }
         },
         "inputProperties": {
             "authToken": {
                 "type": "string",
-                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into\nthe Splunk platform\n"
+                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
             },
             "insecureSkipVerify": {
                 "type": "boolean",
-                "description": "insecure skip verification flag\n"
+                "description": "insecure skip verification flag"
             },
             "password": {
                 "type": "string",
-                "description": "Splunk instance password\n"
+                "description": "Splunk instance password"
             },
             "timeout": {
                 "type": "integer",
-                "description": "Timeout when making calls to Splunk server. Defaults to 60 seconds\n"
+                "description": "Timeout when making calls to Splunk server. Defaults to 60 seconds"
             },
             "url": {
                 "type": "string",
-                "description": "Splunk instance URL\n"
+                "description": "Splunk instance URL"
             },
             "username": {
                 "type": "string",
-                "description": "Splunk instance admin username\n"
+                "description": "Splunk instance admin username"
             }
         },
         "methods": {
@@ -2211,7 +2211,7 @@
                 },
                 "eaiData": {
                     "type": "string",
-                    "description": "Dashboard XML definition.\n"
+                    "description": "Dashboard XML definition."
                 },
                 "name": {
                     "type": "string",
@@ -2229,7 +2229,7 @@
                 },
                 "eaiData": {
                     "type": "string",
-                    "description": "Dashboard XML definition.\n"
+                    "description": "Dashboard XML definition."
                 },
                 "name": {
                     "type": "string",
@@ -2248,7 +2248,7 @@
                     },
                     "eaiData": {
                         "type": "string",
-                        "description": "Dashboard XML definition.\n"
+                        "description": "Dashboard XML definition."
                     },
                     "name": {
                         "type": "string",
@@ -5137,39 +5137,39 @@
                 },
                 "actionSnowEventParamAccount": {
                     "type": "string",
-                    "description": "Account(s) for which the event is/ are to be created across ServiceNow instance(s).\n"
+                    "description": "Account(s) for which the event is/ are to be created across ServiceNow instance(s)."
                 },
                 "actionSnowEventParamAdditionalInfo": {
                     "type": "string",
-                    "description": "You can pass additional information that might be of use to the user. This field can also be used to supply the URL of\nyour Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to\ncreate a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the\nresulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the\nevent page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or\nsnoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=\u003cvalue\u003e. You can also pass\nother fields and their values by || separated key-value format. For example, url=\u003cvalue\u003e||k1=v1||k2=v2||....\n"
+                    "description": "You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=\u003cvalue\u003e. You can also pass other fields and their values by || separated key-value format. For example, url=\u003cvalue\u003e||k1=v1||k2=v2||...."
                 },
                 "actionSnowEventParamCiIdentifier": {
                     "type": "string",
-                    "description": "String that represents a configuration item in your network. You can pass value as || separated key-value format. For\nexample, k1=v1||k2=v2.\n"
+                    "description": "String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2."
                 },
                 "actionSnowEventParamCustomFields": {
                     "type": "string",
-                    "description": "The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in\nthe || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present\nin the em_event table of ServiceNow.\n"
+                    "description": "The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow."
                 },
                 "actionSnowEventParamDescription": {
                     "type": "string",
-                    "description": "A brief description of the event.\n"
+                    "description": "A brief description of the event."
                 },
                 "actionSnowEventParamNode": {
                     "type": "string",
-                    "description": "The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the\nsame host name, the event is automatically assigned to the matching CI.\n"
+                    "description": "The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI."
                 },
                 "actionSnowEventParamResource": {
                     "type": "string",
-                    "description": "The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.\n"
+                    "description": "The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'."
                 },
                 "actionSnowEventParamSeverity": {
                     "type": "integer",
-                    "description": "The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning\n"
+                    "description": "The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning"
                 },
                 "actionSnowEventParamType": {
                     "type": "string",
-                    "description": "The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.\n"
+                    "description": "The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'."
                 },
                 "actionSummaryIndex": {
                     "type": "boolean",
@@ -5940,39 +5940,39 @@
                 },
                 "actionSnowEventParamAccount": {
                     "type": "string",
-                    "description": "Account(s) for which the event is/ are to be created across ServiceNow instance(s).\n"
+                    "description": "Account(s) for which the event is/ are to be created across ServiceNow instance(s)."
                 },
                 "actionSnowEventParamAdditionalInfo": {
                     "type": "string",
-                    "description": "You can pass additional information that might be of use to the user. This field can also be used to supply the URL of\nyour Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to\ncreate a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the\nresulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the\nevent page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or\nsnoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=\u003cvalue\u003e. You can also pass\nother fields and their values by || separated key-value format. For example, url=\u003cvalue\u003e||k1=v1||k2=v2||....\n"
+                    "description": "You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=\u003cvalue\u003e. You can also pass other fields and their values by || separated key-value format. For example, url=\u003cvalue\u003e||k1=v1||k2=v2||...."
                 },
                 "actionSnowEventParamCiIdentifier": {
                     "type": "string",
-                    "description": "String that represents a configuration item in your network. You can pass value as || separated key-value format. For\nexample, k1=v1||k2=v2.\n"
+                    "description": "String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2."
                 },
                 "actionSnowEventParamCustomFields": {
                     "type": "string",
-                    "description": "The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in\nthe || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present\nin the em_event table of ServiceNow.\n"
+                    "description": "The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow."
                 },
                 "actionSnowEventParamDescription": {
                     "type": "string",
-                    "description": "A brief description of the event.\n"
+                    "description": "A brief description of the event."
                 },
                 "actionSnowEventParamNode": {
                     "type": "string",
-                    "description": "The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the\nsame host name, the event is automatically assigned to the matching CI.\n"
+                    "description": "The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI."
                 },
                 "actionSnowEventParamResource": {
                     "type": "string",
-                    "description": "The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.\n"
+                    "description": "The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'."
                 },
                 "actionSnowEventParamSeverity": {
                     "type": "integer",
-                    "description": "The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning\n"
+                    "description": "The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning"
                 },
                 "actionSnowEventParamType": {
                     "type": "string",
-                    "description": "The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.\n"
+                    "description": "The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'."
                 },
                 "actionSummaryIndexCommand": {
                     "type": "string",
@@ -6616,39 +6616,39 @@
                     },
                     "actionSnowEventParamAccount": {
                         "type": "string",
-                        "description": "Account(s) for which the event is/ are to be created across ServiceNow instance(s).\n"
+                        "description": "Account(s) for which the event is/ are to be created across ServiceNow instance(s)."
                     },
                     "actionSnowEventParamAdditionalInfo": {
                         "type": "string",
-                        "description": "You can pass additional information that might be of use to the user. This field can also be used to supply the URL of\nyour Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to\ncreate a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the\nresulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the\nevent page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or\nsnoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=\u003cvalue\u003e. You can also pass\nother fields and their values by || separated key-value format. For example, url=\u003cvalue\u003e||k1=v1||k2=v2||....\n"
+                        "description": "You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=\u003cvalue\u003e. You can also pass other fields and their values by || separated key-value format. For example, url=\u003cvalue\u003e||k1=v1||k2=v2||...."
                     },
                     "actionSnowEventParamCiIdentifier": {
                         "type": "string",
-                        "description": "String that represents a configuration item in your network. You can pass value as || separated key-value format. For\nexample, k1=v1||k2=v2.\n"
+                        "description": "String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2."
                     },
                     "actionSnowEventParamCustomFields": {
                         "type": "string",
-                        "description": "The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in\nthe || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present\nin the em_event table of ServiceNow.\n"
+                        "description": "The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow."
                     },
                     "actionSnowEventParamDescription": {
                         "type": "string",
-                        "description": "A brief description of the event.\n"
+                        "description": "A brief description of the event."
                     },
                     "actionSnowEventParamNode": {
                         "type": "string",
-                        "description": "The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the\nsame host name, the event is automatically assigned to the matching CI.\n"
+                        "description": "The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI."
                     },
                     "actionSnowEventParamResource": {
                         "type": "string",
-                        "description": "The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.\n"
+                        "description": "The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'."
                     },
                     "actionSnowEventParamSeverity": {
                         "type": "integer",
-                        "description": "The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning\n"
+                        "description": "The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning"
                     },
                     "actionSnowEventParamType": {
                         "type": "string",
-                        "description": "The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.\n"
+                        "description": "The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'."
                     },
                     "actionSummaryIndex": {
                         "type": "boolean",
