@@ -588,28 +588,19 @@ namespace Pulumi.Splunk
         public Output<string> ActionSnowEventParamAccount { get; private set; } = null!;
 
         /// <summary>
-        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-        /// your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-        /// create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-        /// resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-        /// event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-        /// snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
-        /// other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
         /// </summary>
         [Output("actionSnowEventParamAdditionalInfo")]
         public Output<string> ActionSnowEventParamAdditionalInfo { get; private set; } = null!;
 
         /// <summary>
-        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-        /// example, k1=v1||k2=v2.
+        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         /// </summary>
         [Output("actionSnowEventParamCiIdentifier")]
         public Output<string> ActionSnowEventParamCiIdentifier { get; private set; } = null!;
 
         /// <summary>
-        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-        /// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-        /// in the em_event table of ServiceNow.
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         /// </summary>
         [Output("actionSnowEventParamCustomFields")]
         public Output<string> ActionSnowEventParamCustomFields { get; private set; } = null!;
@@ -621,8 +612,7 @@ namespace Pulumi.Splunk
         public Output<string> ActionSnowEventParamDescription { get; private set; } = null!;
 
         /// <summary>
-        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-        /// same host name, the event is automatically assigned to the matching CI.
+        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         /// </summary>
         [Output("actionSnowEventParamNode")]
         public Output<string> ActionSnowEventParamNode { get; private set; } = null!;
@@ -1628,28 +1618,19 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamAccount { get; set; }
 
         /// <summary>
-        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-        /// your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-        /// create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-        /// resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-        /// event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-        /// snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
-        /// other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
         /// </summary>
         [Input("actionSnowEventParamAdditionalInfo")]
         public Input<string>? ActionSnowEventParamAdditionalInfo { get; set; }
 
         /// <summary>
-        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-        /// example, k1=v1||k2=v2.
+        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         /// </summary>
         [Input("actionSnowEventParamCiIdentifier")]
         public Input<string>? ActionSnowEventParamCiIdentifier { get; set; }
 
         /// <summary>
-        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-        /// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-        /// in the em_event table of ServiceNow.
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         /// </summary>
         [Input("actionSnowEventParamCustomFields")]
         public Input<string>? ActionSnowEventParamCustomFields { get; set; }
@@ -1661,8 +1642,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamDescription { get; set; }
 
         /// <summary>
-        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-        /// same host name, the event is automatically assigned to the matching CI.
+        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         /// </summary>
         [Input("actionSnowEventParamNode")]
         public Input<string>? ActionSnowEventParamNode { get; set; }
@@ -2648,28 +2628,19 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamAccount { get; set; }
 
         /// <summary>
-        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-        /// your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-        /// create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-        /// resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-        /// event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-        /// snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass
-        /// other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
+        /// You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=&lt;value&gt;. You can also pass other fields and their values by || separated key-value format. For example, url=&lt;value&gt;||k1=v1||k2=v2||....
         /// </summary>
         [Input("actionSnowEventParamAdditionalInfo")]
         public Input<string>? ActionSnowEventParamAdditionalInfo { get; set; }
 
         /// <summary>
-        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-        /// example, k1=v1||k2=v2.
+        /// String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         /// </summary>
         [Input("actionSnowEventParamCiIdentifier")]
         public Input<string>? ActionSnowEventParamCiIdentifier { get; set; }
 
         /// <summary>
-        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-        /// the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-        /// in the em_event table of ServiceNow.
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         /// </summary>
         [Input("actionSnowEventParamCustomFields")]
         public Input<string>? ActionSnowEventParamCustomFields { get; set; }
@@ -2681,8 +2652,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamDescription { get; set; }
 
         /// <summary>
-        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-        /// same host name, the event is automatically assigned to the matching CI.
+        /// The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         /// </summary>
         [Input("actionSnowEventParamNode")]
         public Input<string>? ActionSnowEventParamNode { get; set; }

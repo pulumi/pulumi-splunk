@@ -272,21 +272,11 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
-        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
-        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-               example, k1=v1||k2=v2.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-               in the em_event table of ServiceNow.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
         :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
@@ -1722,13 +1712,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
     def action_snow_event_param_additional_info(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-        your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-        create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-        resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-        event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-        snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-        other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
         """
         return pulumi.get(self, "action_snow_event_param_additional_info")
 
@@ -1740,8 +1724,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionSnowEventParamCiIdentifier")
     def action_snow_event_param_ci_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-        example, k1=v1||k2=v2.
+        String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         """
         return pulumi.get(self, "action_snow_event_param_ci_identifier")
 
@@ -1753,9 +1736,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionSnowEventParamCustomFields")
     def action_snow_event_param_custom_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-        the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-        in the em_event table of ServiceNow.
+        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         """
         return pulumi.get(self, "action_snow_event_param_custom_fields")
 
@@ -1779,8 +1760,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionSnowEventParamNode")
     def action_snow_event_param_node(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-        same host name, the event is automatically assigned to the matching CI.
+        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         """
         return pulumi.get(self, "action_snow_event_param_node")
 
@@ -2915,21 +2895,11 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
-        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
-        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-               example, k1=v1||k2=v2.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-               in the em_event table of ServiceNow.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
         :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
@@ -4414,13 +4384,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
     def action_snow_event_param_additional_info(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-        your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-        create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-        resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-        event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-        snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-        other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
         """
         return pulumi.get(self, "action_snow_event_param_additional_info")
 
@@ -4432,8 +4396,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionSnowEventParamCiIdentifier")
     def action_snow_event_param_ci_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-        example, k1=v1||k2=v2.
+        String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         """
         return pulumi.get(self, "action_snow_event_param_ci_identifier")
 
@@ -4445,9 +4408,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionSnowEventParamCustomFields")
     def action_snow_event_param_custom_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-        the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-        in the em_event table of ServiceNow.
+        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         """
         return pulumi.get(self, "action_snow_event_param_custom_fields")
 
@@ -4471,8 +4432,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionSnowEventParamNode")
     def action_snow_event_param_node(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-        same host name, the event is automatically assigned to the matching CI.
+        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         """
         return pulumi.get(self, "action_snow_event_param_node")
 
@@ -5658,21 +5618,11 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
-        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
-        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-               example, k1=v1||k2=v2.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-               in the em_event table of ServiceNow.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
         :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
@@ -6416,21 +6366,11 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
-        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-               your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-               create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-               resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-               event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-               snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-               other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
-        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-               example, k1=v1||k2=v2.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-               the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-               in the em_event table of ServiceNow.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_additional_info: You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        :param pulumi.Input[_builtins.str] action_snow_event_param_ci_identifier: String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_custom_fields: The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
-        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-               same host name, the event is automatically assigned to the matching CI.
+        :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
         :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
@@ -7396,13 +7336,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
     def action_snow_event_param_additional_info(self) -> pulumi.Output[_builtins.str]:
         """
-        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of
-        your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to
-        create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the
-        resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the
-        event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or
-        snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass
-        other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
+        You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
         """
         return pulumi.get(self, "action_snow_event_param_additional_info")
 
@@ -7410,8 +7344,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionSnowEventParamCiIdentifier")
     def action_snow_event_param_ci_identifier(self) -> pulumi.Output[_builtins.str]:
         """
-        String that represents a configuration item in your network. You can pass value as || separated key-value format. For
-        example, k1=v1||k2=v2.
+        String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         """
         return pulumi.get(self, "action_snow_event_param_ci_identifier")
 
@@ -7419,9 +7352,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionSnowEventParamCustomFields")
     def action_snow_event_param_custom_fields(self) -> pulumi.Output[_builtins.str]:
         """
-        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in
-        the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present
-        in the em_event table of ServiceNow.
+        The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         """
         return pulumi.get(self, "action_snow_event_param_custom_fields")
 
@@ -7437,8 +7368,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionSnowEventParamNode")
     def action_snow_event_param_node(self) -> pulumi.Output[_builtins.str]:
         """
-        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the
-        same host name, the event is automatically assigned to the matching CI.
+        The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         """
         return pulumi.get(self, "action_snow_event_param_node")
 

@@ -54,16 +54,16 @@ export class DataUiViews extends pulumi.CustomResource {
         return obj['__pulumiType'] === DataUiViews.__pulumiType;
     }
 
-    public readonly acl!: pulumi.Output<outputs.DataUiViewsAcl>;
+    declare public readonly acl: pulumi.Output<outputs.DataUiViewsAcl>;
     /**
      * Dashboard XML definition.
      */
-    public readonly eaiData!: pulumi.Output<string>;
+    declare public readonly eaiData: pulumi.Output<string>;
     /**
      * Dashboard name.
      * * `eai:data` - (Required) Dashboard XML definition.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a DataUiViews resource with the given unique name, arguments, and options.
@@ -78,17 +78,17 @@ export class DataUiViews extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DataUiViewsState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["eaiData"] = state ? state.eaiData : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["eaiData"] = state?.eaiData;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as DataUiViewsArgs | undefined;
-            if ((!args || args.eaiData === undefined) && !opts.urn) {
+            if (args?.eaiData === undefined && !opts.urn) {
                 throw new Error("Missing required property 'eaiData'");
             }
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["eaiData"] = args ? args.eaiData : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["eaiData"] = args?.eaiData;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DataUiViews.__pulumiType, name, resourceInputs, opts);

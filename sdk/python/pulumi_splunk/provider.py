@@ -27,8 +27,7 @@ class ProviderArgs:
                  username: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[_builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-               the Splunk platform
+        :param pulumi.Input[_builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         :param pulumi.Input[_builtins.bool] insecure_skip_verify: insecure skip verification flag
         :param pulumi.Input[_builtins.str] password: Splunk instance password
         :param pulumi.Input[_builtins.int] timeout: Timeout when making calls to Splunk server. Defaults to 60 seconds
@@ -52,8 +51,7 @@ class ProviderArgs:
     @pulumi.getter(name="authToken")
     def auth_token(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-        the Splunk platform
+        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         """
         return pulumi.get(self, "auth_token")
 
@@ -143,8 +141,7 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-               the Splunk platform
+        :param pulumi.Input[_builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         :param pulumi.Input[_builtins.bool] insecure_skip_verify: insecure skip verification flag
         :param pulumi.Input[_builtins.str] password: Splunk instance password
         :param pulumi.Input[_builtins.int] timeout: Timeout when making calls to Splunk server. Defaults to 60 seconds
@@ -209,8 +206,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="authToken")
     def auth_token(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-        the Splunk platform
+        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         """
         return pulumi.get(self, "auth_token")
 

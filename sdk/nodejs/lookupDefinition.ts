@@ -67,15 +67,15 @@ export class LookupDefinition extends pulumi.CustomResource {
     /**
      * Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
      */
-    public readonly acl!: pulumi.Output<outputs.LookupDefinitionAcl>;
+    declare public readonly acl: pulumi.Output<outputs.LookupDefinitionAcl>;
     /**
      * The filename for the lookup table, usually ending in `.csv`.
      */
-    public readonly filename!: pulumi.Output<string>;
+    declare public readonly filename: pulumi.Output<string>;
     /**
      * A unique name for the lookup definition within the app context.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a LookupDefinition resource with the given unique name, arguments, and options.
@@ -90,20 +90,20 @@ export class LookupDefinition extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LookupDefinitionState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["filename"] = state ? state.filename : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["filename"] = state?.filename;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as LookupDefinitionArgs | undefined;
-            if ((!args || args.filename === undefined) && !opts.urn) {
+            if (args?.filename === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filename'");
             }
-            if ((!args || args.name === undefined) && !opts.urn) {
+            if (args?.name === undefined && !opts.urn) {
                 throw new Error("Missing required property 'name'");
             }
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["filename"] = args ? args.filename : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["filename"] = args?.filename;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LookupDefinition.__pulumiType, name, resourceInputs, opts);

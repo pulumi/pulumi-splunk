@@ -18,16 +18,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
-     * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-     * the Splunk platform
+     * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      * 
      */
     @Import(name="authToken")
     private @Nullable Output<String> authToken;
 
     /**
-     * @return Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-     * the Splunk platform
+     * @return Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      * 
      */
     public Optional<Output<String>> authToken() {
@@ -139,8 +137,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authToken Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-         * the Splunk platform
+         * @param authToken Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
          * 
          * @return builder
          * 
@@ -151,8 +148,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authToken Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-         * the Splunk platform
+         * @param authToken Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
          * 
          * @return builder
          * 

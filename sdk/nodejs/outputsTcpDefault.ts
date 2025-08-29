@@ -59,33 +59,33 @@ export class OutputsTcpDefault extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.OutputsTcpDefaultAcl>;
+    declare public readonly acl: pulumi.Output<outputs.OutputsTcpDefaultAcl>;
     /**
      * Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
      * The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
      */
-    public readonly defaultGroup!: pulumi.Output<string>;
+    declare public readonly defaultGroup: pulumi.Output<string>;
     /**
      * Disables default tcpout settings
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
      * <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
      * Setting this to -1 or 0 causes the output queue to block when it gets full, which causes further blocking up the processing chain. If any target group queue is blocked, no more data reaches any other target group.
      * Using auto load-balancing is the best way to minimize this condition, because, in that case, multiple receivers must be down (or jammed up) before queue blocking can occur.
      */
-    public readonly dropEventsOnQueueFull!: pulumi.Output<number>;
+    declare public readonly dropEventsOnQueueFull: pulumi.Output<number>;
     /**
      * How often (in seconds) to send a heartbeat packet to the receiving server.
      * Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
      */
-    public readonly heartbeatFrequency!: pulumi.Output<number>;
+    declare public readonly heartbeatFrequency: pulumi.Output<number>;
     /**
      * Specifies whether to index all data locally, in addition to forwarding it. Defaults to false.
      * This is known as an "index-and-forward" configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
      */
-    public readonly indexAndForward!: pulumi.Output<boolean>;
+    declare public readonly indexAndForward: pulumi.Output<boolean>;
     /**
      * Specify an integer or integer[KB|MB|GB].
      * <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
@@ -94,16 +94,16 @@ export class OutputsTcpDefault extends pulumi.CustomResource {
      * If specified as a lone integer (for example, maxQueueSize=100), maxQueueSize indicates the maximum number of queued events (for parsed data) or blocks of data (for unparsed data). A block of data is approximately 64KB. For non-parsing forwarders, such as universal forwarders, that send unparsed data, maxQueueSize is the maximum number of data blocks.
      * If specified as an integer followed by KB, MB, or GB (for example, maxQueueSize=100MB), maxQueueSize indicates the maximum RAM allocated to the queue buffer. Defaults to 500KB (which means a maximum size of 500KB for the output queue and 1500KB for the wait queue, if any).
      */
-    public readonly maxQueueSize!: pulumi.Output<string>;
+    declare public readonly maxQueueSize: pulumi.Output<string>;
     /**
      * Configuration to be edited. The only valid value is "tcpout".
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
      * Set to false if you are sending to a third-party system.
      */
-    public readonly sendCookedData!: pulumi.Output<boolean>;
+    declare public readonly sendCookedData: pulumi.Output<boolean>;
 
     /**
      * Create a OutputsTcpDefault resource with the given unique name, arguments, and options.
@@ -118,26 +118,26 @@ export class OutputsTcpDefault extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as OutputsTcpDefaultState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["defaultGroup"] = state ? state.defaultGroup : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["dropEventsOnQueueFull"] = state ? state.dropEventsOnQueueFull : undefined;
-            resourceInputs["heartbeatFrequency"] = state ? state.heartbeatFrequency : undefined;
-            resourceInputs["indexAndForward"] = state ? state.indexAndForward : undefined;
-            resourceInputs["maxQueueSize"] = state ? state.maxQueueSize : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["sendCookedData"] = state ? state.sendCookedData : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["defaultGroup"] = state?.defaultGroup;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["dropEventsOnQueueFull"] = state?.dropEventsOnQueueFull;
+            resourceInputs["heartbeatFrequency"] = state?.heartbeatFrequency;
+            resourceInputs["indexAndForward"] = state?.indexAndForward;
+            resourceInputs["maxQueueSize"] = state?.maxQueueSize;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["sendCookedData"] = state?.sendCookedData;
         } else {
             const args = argsOrState as OutputsTcpDefaultArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["defaultGroup"] = args ? args.defaultGroup : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["dropEventsOnQueueFull"] = args ? args.dropEventsOnQueueFull : undefined;
-            resourceInputs["heartbeatFrequency"] = args ? args.heartbeatFrequency : undefined;
-            resourceInputs["indexAndForward"] = args ? args.indexAndForward : undefined;
-            resourceInputs["maxQueueSize"] = args ? args.maxQueueSize : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["sendCookedData"] = args ? args.sendCookedData : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["defaultGroup"] = args?.defaultGroup;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["dropEventsOnQueueFull"] = args?.dropEventsOnQueueFull;
+            resourceInputs["heartbeatFrequency"] = args?.heartbeatFrequency;
+            resourceInputs["indexAndForward"] = args?.indexAndForward;
+            resourceInputs["maxQueueSize"] = args?.maxQueueSize;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["sendCookedData"] = args?.sendCookedData;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(OutputsTcpDefault.__pulumiType, name, resourceInputs, opts);

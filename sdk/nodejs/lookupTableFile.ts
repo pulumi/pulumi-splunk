@@ -75,19 +75,19 @@ export class LookupTableFile extends pulumi.CustomResource {
     /**
      * The app context for the resource.
      */
-    public readonly app!: pulumi.Output<string>;
+    declare public readonly app: pulumi.Output<string>;
     /**
      * The column header and row value contents for the lookup table file.
      */
-    public readonly fileContents!: pulumi.Output<string[][]>;
+    declare public readonly fileContents: pulumi.Output<string[][]>;
     /**
      * A name for the lookup table file. Generally ends with ".csv"
      */
-    public readonly fileName!: pulumi.Output<string>;
+    declare public readonly fileName: pulumi.Output<string>;
     /**
      * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
      */
-    public readonly owner!: pulumi.Output<string>;
+    declare public readonly owner: pulumi.Output<string>;
 
     /**
      * Create a LookupTableFile resource with the given unique name, arguments, and options.
@@ -102,28 +102,28 @@ export class LookupTableFile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LookupTableFileState | undefined;
-            resourceInputs["app"] = state ? state.app : undefined;
-            resourceInputs["fileContents"] = state ? state.fileContents : undefined;
-            resourceInputs["fileName"] = state ? state.fileName : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
+            resourceInputs["app"] = state?.app;
+            resourceInputs["fileContents"] = state?.fileContents;
+            resourceInputs["fileName"] = state?.fileName;
+            resourceInputs["owner"] = state?.owner;
         } else {
             const args = argsOrState as LookupTableFileArgs | undefined;
-            if ((!args || args.app === undefined) && !opts.urn) {
+            if (args?.app === undefined && !opts.urn) {
                 throw new Error("Missing required property 'app'");
             }
-            if ((!args || args.fileContents === undefined) && !opts.urn) {
+            if (args?.fileContents === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileContents'");
             }
-            if ((!args || args.fileName === undefined) && !opts.urn) {
+            if (args?.fileName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileName'");
             }
-            if ((!args || args.owner === undefined) && !opts.urn) {
+            if (args?.owner === undefined && !opts.urn) {
                 throw new Error("Missing required property 'owner'");
             }
-            resourceInputs["app"] = args ? args.app : undefined;
-            resourceInputs["fileContents"] = args ? args.fileContents : undefined;
-            resourceInputs["fileName"] = args ? args.fileName : undefined;
-            resourceInputs["owner"] = args ? args.owner : undefined;
+            resourceInputs["app"] = args?.app;
+            resourceInputs["fileContents"] = args?.fileContents;
+            resourceInputs["fileName"] = args?.fileName;
+            resourceInputs["owner"] = args?.owner;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LookupTableFile.__pulumiType, name, resourceInputs, opts);

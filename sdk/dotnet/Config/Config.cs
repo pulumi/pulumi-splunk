@@ -34,8 +34,7 @@ namespace Pulumi.Splunk
 
         private static readonly __Value<string?> _authToken = new __Value<string?>(() => __config.Get("authToken"));
         /// <summary>
-        /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-        /// the Splunk platform
+        /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         /// </summary>
         public static string? AuthToken
         {

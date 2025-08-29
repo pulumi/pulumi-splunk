@@ -54,15 +54,15 @@ export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.InputsTcpSplunkTcpTokenAcl>;
+    declare public readonly acl: pulumi.Output<outputs.InputsTcpSplunkTcpTokenAcl>;
     /**
      * Required. Name for the token to create.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Optional. Token value to use. If unspecified, a token is generated automatically.
      */
-    public readonly token!: pulumi.Output<string>;
+    declare public readonly token: pulumi.Output<string>;
 
     /**
      * Create a InputsTcpSplunkTcpToken resource with the given unique name, arguments, and options.
@@ -77,14 +77,14 @@ export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpSplunkTcpTokenState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["token"] = state?.token;
         } else {
             const args = argsOrState as InputsTcpSplunkTcpTokenArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["token"] = args ? args.token : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["token"] = args?.token;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsTcpSplunkTcpToken.__pulumiType, name, resourceInputs, opts);
