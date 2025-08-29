@@ -23,8 +23,7 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def auth_token(self) -> Optional[str]:
         """
-        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-        the Splunk platform
+        Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         """
         return __config__.get('authToken')
 

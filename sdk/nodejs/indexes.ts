@@ -60,11 +60,11 @@ export class Indexes extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.IndexesAcl>;
+    declare public readonly acl: pulumi.Output<outputs.IndexesAcl>;
     /**
      * Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
      */
-    public readonly blockSignSize!: pulumi.Output<number>;
+    declare public readonly blockSignSize: pulumi.Output<number>;
     /**
      * Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
      * <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.
@@ -74,11 +74,11 @@ export class Indexes extends pulumi.CustomResource {
      * more than 8GB RAM = 268435456 (256MB) tsidx<br>
      * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
      */
-    public readonly bucketRebuildMemoryHint!: pulumi.Output<string>;
+    declare public readonly bucketRebuildMemoryHint: pulumi.Output<string>;
     /**
      * An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
      */
-    public readonly coldPath!: pulumi.Output<string>;
+    declare public readonly coldPath: pulumi.Output<string>;
     /**
      * Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
      * <br>
@@ -89,174 +89,174 @@ export class Indexes extends pulumi.CustomResource {
      * To thaw, gunzip the zipped files and move the bucket into the thawed directory<br>
      * If both coldToFrozenDir and coldToFrozenScript are specified, coldToFrozenDir takes precedence
      */
-    public readonly coldToFrozenDir!: pulumi.Output<string>;
+    declare public readonly coldToFrozenDir: pulumi.Output<string>;
     /**
      * Path to the archiving script.
      * <br>If your script requires a program to run it (for example, python), specify the program followed by the path. The script must be in $SPLUNK_HOME/bin or one of its subdirectories.
      * <br>Splunk software ships with an example archiving script in $SPLUNK_HOME/bin called coldToFrozenExample.py. DO NOT use this example script directly. It uses a default path, and if modified in place any changes are overwritten on upgrade.
      * <br>It is best to copy the example script to a new file in bin and modify it for your system. Most importantly, change the default archive path to an existing directory that fits your needs.
      */
-    public readonly coldToFrozenScript!: pulumi.Output<string>;
+    declare public readonly coldToFrozenScript: pulumi.Output<string>;
     /**
      * This parameter is ignored. The splunkd process always compresses raw data.
      */
-    public readonly compressRawdata!: pulumi.Output<boolean>;
+    declare public readonly compressRawdata: pulumi.Output<boolean>;
     /**
      * Valid values: (event | metric). Specifies the type of index.
      */
-    public readonly datatype!: pulumi.Output<string>;
+    declare public readonly datatype: pulumi.Output<string>;
     /**
      * Enables asynchronous "online fsck" bucket repair, which runs concurrently with Splunk software.
      * When enabled, you do not have to wait until buckets are repaired to start the Splunk platform. However, you might observe a slight performance degratation.
      */
-    public readonly enableOnlineBucketRepair!: pulumi.Output<boolean>;
+    declare public readonly enableOnlineBucketRepair: pulumi.Output<boolean>;
     /**
      * Number of seconds after which indexed data rolls to frozen.
      * Defaults to 188697600 (6 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      */
-    public readonly frozenTimePeriodInSecs!: pulumi.Output<number>;
+    declare public readonly frozenTimePeriodInSecs: pulumi.Output<number>;
     /**
      * An absolute path that contains the hot and warm buckets for the index.
      * Required. Splunk software does not start if an index lacks a valid homePath.
      * <br>Caution: The path must be readable and writable.
      */
-    public readonly homePath!: pulumi.Output<string>;
+    declare public readonly homePath: pulumi.Output<string>;
     /**
      * Valid values are: Integer[m|s|h|d].
      * <br>If a warm or cold bucket is older than the specified age, do not create or rebuild its bloomfilter. Specify 0 to never rebuild bloomfilters.
      */
-    public readonly maxBloomBackfillBucketAge!: pulumi.Output<string>;
+    declare public readonly maxBloomBackfillBucketAge: pulumi.Output<string>;
     /**
      * The number of concurrent optimize processes that can run against a hot bucket.
      * This number should be increased if instructed by Splunk Support. Typically the default value should suffice.
      */
-    public readonly maxConcurrentOptimizes!: pulumi.Output<number>;
+    declare public readonly maxConcurrentOptimizes: pulumi.Output<number>;
     /**
      * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "autoHighVolume" causes Splunk software to autotune this parameter (recommended).
      * Use "autoHighVolume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
      */
-    public readonly maxDataSize!: pulumi.Output<string>;
+    declare public readonly maxDataSize: pulumi.Output<string>;
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
      */
-    public readonly maxHotBuckets!: pulumi.Output<number>;
+    declare public readonly maxHotBuckets: pulumi.Output<number>;
     /**
      * Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
      */
-    public readonly maxHotIdleSecs!: pulumi.Output<number>;
+    declare public readonly maxHotIdleSecs: pulumi.Output<number>;
     /**
      * Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
      */
-    public readonly maxHotSpanSecs!: pulumi.Output<number>;
+    declare public readonly maxHotSpanSecs: pulumi.Output<number>;
     /**
      * The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
      */
-    public readonly maxMemMb!: pulumi.Output<number>;
+    declare public readonly maxMemMb: pulumi.Output<number>;
     /**
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored. If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies. Highest legal value is 2147483647. To disable this parameter, set to 0.
      */
-    public readonly maxMetaEntries!: pulumi.Output<number>;
+    declare public readonly maxMetaEntries: pulumi.Output<number>;
     /**
      * Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored.
      * If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies.
      * Highest legal value is 2147483647. To disable this parameter, set to 0.
      */
-    public readonly maxTimeUnreplicatedNoAcks!: pulumi.Output<number>;
+    declare public readonly maxTimeUnreplicatedNoAcks: pulumi.Output<number>;
     /**
      * Upper limit, in seconds, on how long events can sit unacknowledged in a raw slice. Applies only if you have enabled acks on forwarders and have replication enabled (with clustering).
      * Note: This is an advanced parameter. Make sure you understand the settings on all forwarders before changing this. This number should not exceed ack timeout configured on any forwarder, and should actually be set to at most half of the minimum value of that timeout. You can find this setting in outputs.conf readTimeout setting under the tcpout stanza.
      * To disable, set to 0, but this is NOT recommended. Highest legal value is 2147483647.
      */
-    public readonly maxTimeUnreplicatedWithAcks!: pulumi.Output<number>;
+    declare public readonly maxTimeUnreplicatedWithAcks: pulumi.Output<number>;
     /**
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      */
-    public readonly maxTotalDataSizeMb!: pulumi.Output<number>;
+    declare public readonly maxTotalDataSizeMb: pulumi.Output<number>;
     /**
      * The maximum number of warm buckets. If this number is exceeded, the warm bucket/s with the lowest value for their latest times is moved to cold.
      */
-    public readonly maxWarmDbCount!: pulumi.Output<number>;
+    declare public readonly maxWarmDbCount: pulumi.Output<number>;
     /**
      * Specify an integer (or "disable") for this parameter.
      * This parameter sets how frequently splunkd forces a filesystem sync while compressing journal slices.
      * During this period, uncompressed slices are left on disk even after they are compressed. Then splunkd forces a filesystem sync of the compressed journal and removes the accumulated uncompressed files.
      * If 0 is specified, splunkd forces a filesystem sync after every slice completes compressing. Specifying "disable" disables syncing entirely: uncompressed slices are removed as soon as compression is complete.
      */
-    public readonly minRawFileSyncSecs!: pulumi.Output<string>;
+    declare public readonly minRawFileSyncSecs: pulumi.Output<string>;
     /**
      * Minimum size of the queue that stores events in memory before committing them to a tsidx file.
      */
-    public readonly minStreamGroupQueueSize!: pulumi.Output<number>;
+    declare public readonly minStreamGroupQueueSize: pulumi.Output<number>;
     /**
      * The name of the index to create.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Related to serviceMetaPeriod. If set, it enables metadata sync every <integer> seconds, but only for records where the sync can be done efficiently in-place, without requiring a full re-write of the metadata file. Records that require full re-write are be sync'ed at serviceMetaPeriod.
      * partialServiceMetaPeriod specifies, in seconds, how frequently it should sync. Zero means that this feature is turned off and serviceMetaPeriod is the only time when metadata sync happens.
      * If the value of partialServiceMetaPeriod is greater than serviceMetaPeriod, this setting has no effect.
      * By default it is turned off (zero).
      */
-    public readonly partialServiceMetaPeriod!: pulumi.Output<number>;
+    declare public readonly partialServiceMetaPeriod: pulumi.Output<number>;
     /**
      * Specifies, in seconds, how often the indexer checks the status of the child OS processes it launched to see if it can launch new processes for queued requests. Defaults to 15.
      * If set to 0, the indexer checks child process status every second.
      * Highest legal value is 4294967295.
      */
-    public readonly processTrackerServiceInterval!: pulumi.Output<number>;
+    declare public readonly processTrackerServiceInterval: pulumi.Output<number>;
     /**
      * Events with timestamp of quarantineFutureSecs newer than "now" are dropped into quarantine bucket. Defaults to 2592000 (30 days).
      * This is a mechanism to prevent main hot buckets from being polluted with fringe events.
      */
-    public readonly quarantineFutureSecs!: pulumi.Output<number>;
+    declare public readonly quarantineFutureSecs: pulumi.Output<number>;
     /**
      * Events with timestamp of quarantinePastSecs older than "now" are dropped into quarantine bucket. Defaults to 77760000 (900 days). This is a mechanism to prevent the main hot buckets from being polluted with fringe events.
      */
-    public readonly quarantinePastSecs!: pulumi.Output<number>;
+    declare public readonly quarantinePastSecs: pulumi.Output<number>;
     /**
      * Target uncompressed size in bytes for individual raw slice in the rawdata journal of the index. Defaults to 131072 (128KB). 0 is not a valid value. If 0 is specified, rawChunkSizeBytes is set to the default value.
      */
-    public readonly rawChunkSizeBytes!: pulumi.Output<number>;
+    declare public readonly rawChunkSizeBytes: pulumi.Output<number>;
     /**
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
      */
-    public readonly repFactor!: pulumi.Output<string>;
+    declare public readonly repFactor: pulumi.Output<string>;
     /**
      * How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
      */
-    public readonly rotatePeriodInSecs!: pulumi.Output<number>;
+    declare public readonly rotatePeriodInSecs: pulumi.Output<number>;
     /**
      * Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
      * You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
      */
-    public readonly serviceMetaPeriod!: pulumi.Output<number>;
+    declare public readonly serviceMetaPeriod: pulumi.Output<number>;
     /**
      * When true, a sync operation is called before file descriptor is closed on metadata file updates. This functionality improves integrity of metadata files, especially in regards to operating system crashes/machine failures.
      */
-    public readonly syncMeta!: pulumi.Output<boolean>;
+    declare public readonly syncMeta: pulumi.Output<boolean>;
     /**
      * An absolute path that contains the thawed (resurrected) databases for the index.
      * Cannot be defined in terms of a volume definition.
      * Required. Splunk software does not start if an index lacks a valid thawedPath.
      */
-    public readonly thawedPath!: pulumi.Output<string>;
+    declare public readonly thawedPath: pulumi.Output<string>;
     /**
      * Defines how frequently Splunk software checks for index throttling condition, in seconds. Defaults to 15 (seconds).
      */
-    public readonly throttleCheckPeriod!: pulumi.Output<number>;
+    declare public readonly throttleCheckPeriod: pulumi.Output<number>;
     /**
      * Location to store datamodel acceleration TSIDX data for this index. Restart splunkd after changing this parameter.
      * If specified, it must be defined in terms of a volume definition.
      */
-    public readonly tstatsHomePath!: pulumi.Output<string>;
+    declare public readonly tstatsHomePath: pulumi.Output<string>;
     /**
      * Path to a script to run when moving data from warm to cold.
      * This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
      */
-    public readonly warmToColdScript!: pulumi.Output<string>;
+    declare public readonly warmToColdScript: pulumi.Output<string>;
 
     /**
      * Create a Indexes resource with the given unique name, arguments, and options.
@@ -271,86 +271,86 @@ export class Indexes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IndexesState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["blockSignSize"] = state ? state.blockSignSize : undefined;
-            resourceInputs["bucketRebuildMemoryHint"] = state ? state.bucketRebuildMemoryHint : undefined;
-            resourceInputs["coldPath"] = state ? state.coldPath : undefined;
-            resourceInputs["coldToFrozenDir"] = state ? state.coldToFrozenDir : undefined;
-            resourceInputs["coldToFrozenScript"] = state ? state.coldToFrozenScript : undefined;
-            resourceInputs["compressRawdata"] = state ? state.compressRawdata : undefined;
-            resourceInputs["datatype"] = state ? state.datatype : undefined;
-            resourceInputs["enableOnlineBucketRepair"] = state ? state.enableOnlineBucketRepair : undefined;
-            resourceInputs["frozenTimePeriodInSecs"] = state ? state.frozenTimePeriodInSecs : undefined;
-            resourceInputs["homePath"] = state ? state.homePath : undefined;
-            resourceInputs["maxBloomBackfillBucketAge"] = state ? state.maxBloomBackfillBucketAge : undefined;
-            resourceInputs["maxConcurrentOptimizes"] = state ? state.maxConcurrentOptimizes : undefined;
-            resourceInputs["maxDataSize"] = state ? state.maxDataSize : undefined;
-            resourceInputs["maxHotBuckets"] = state ? state.maxHotBuckets : undefined;
-            resourceInputs["maxHotIdleSecs"] = state ? state.maxHotIdleSecs : undefined;
-            resourceInputs["maxHotSpanSecs"] = state ? state.maxHotSpanSecs : undefined;
-            resourceInputs["maxMemMb"] = state ? state.maxMemMb : undefined;
-            resourceInputs["maxMetaEntries"] = state ? state.maxMetaEntries : undefined;
-            resourceInputs["maxTimeUnreplicatedNoAcks"] = state ? state.maxTimeUnreplicatedNoAcks : undefined;
-            resourceInputs["maxTimeUnreplicatedWithAcks"] = state ? state.maxTimeUnreplicatedWithAcks : undefined;
-            resourceInputs["maxTotalDataSizeMb"] = state ? state.maxTotalDataSizeMb : undefined;
-            resourceInputs["maxWarmDbCount"] = state ? state.maxWarmDbCount : undefined;
-            resourceInputs["minRawFileSyncSecs"] = state ? state.minRawFileSyncSecs : undefined;
-            resourceInputs["minStreamGroupQueueSize"] = state ? state.minStreamGroupQueueSize : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["partialServiceMetaPeriod"] = state ? state.partialServiceMetaPeriod : undefined;
-            resourceInputs["processTrackerServiceInterval"] = state ? state.processTrackerServiceInterval : undefined;
-            resourceInputs["quarantineFutureSecs"] = state ? state.quarantineFutureSecs : undefined;
-            resourceInputs["quarantinePastSecs"] = state ? state.quarantinePastSecs : undefined;
-            resourceInputs["rawChunkSizeBytes"] = state ? state.rawChunkSizeBytes : undefined;
-            resourceInputs["repFactor"] = state ? state.repFactor : undefined;
-            resourceInputs["rotatePeriodInSecs"] = state ? state.rotatePeriodInSecs : undefined;
-            resourceInputs["serviceMetaPeriod"] = state ? state.serviceMetaPeriod : undefined;
-            resourceInputs["syncMeta"] = state ? state.syncMeta : undefined;
-            resourceInputs["thawedPath"] = state ? state.thawedPath : undefined;
-            resourceInputs["throttleCheckPeriod"] = state ? state.throttleCheckPeriod : undefined;
-            resourceInputs["tstatsHomePath"] = state ? state.tstatsHomePath : undefined;
-            resourceInputs["warmToColdScript"] = state ? state.warmToColdScript : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["blockSignSize"] = state?.blockSignSize;
+            resourceInputs["bucketRebuildMemoryHint"] = state?.bucketRebuildMemoryHint;
+            resourceInputs["coldPath"] = state?.coldPath;
+            resourceInputs["coldToFrozenDir"] = state?.coldToFrozenDir;
+            resourceInputs["coldToFrozenScript"] = state?.coldToFrozenScript;
+            resourceInputs["compressRawdata"] = state?.compressRawdata;
+            resourceInputs["datatype"] = state?.datatype;
+            resourceInputs["enableOnlineBucketRepair"] = state?.enableOnlineBucketRepair;
+            resourceInputs["frozenTimePeriodInSecs"] = state?.frozenTimePeriodInSecs;
+            resourceInputs["homePath"] = state?.homePath;
+            resourceInputs["maxBloomBackfillBucketAge"] = state?.maxBloomBackfillBucketAge;
+            resourceInputs["maxConcurrentOptimizes"] = state?.maxConcurrentOptimizes;
+            resourceInputs["maxDataSize"] = state?.maxDataSize;
+            resourceInputs["maxHotBuckets"] = state?.maxHotBuckets;
+            resourceInputs["maxHotIdleSecs"] = state?.maxHotIdleSecs;
+            resourceInputs["maxHotSpanSecs"] = state?.maxHotSpanSecs;
+            resourceInputs["maxMemMb"] = state?.maxMemMb;
+            resourceInputs["maxMetaEntries"] = state?.maxMetaEntries;
+            resourceInputs["maxTimeUnreplicatedNoAcks"] = state?.maxTimeUnreplicatedNoAcks;
+            resourceInputs["maxTimeUnreplicatedWithAcks"] = state?.maxTimeUnreplicatedWithAcks;
+            resourceInputs["maxTotalDataSizeMb"] = state?.maxTotalDataSizeMb;
+            resourceInputs["maxWarmDbCount"] = state?.maxWarmDbCount;
+            resourceInputs["minRawFileSyncSecs"] = state?.minRawFileSyncSecs;
+            resourceInputs["minStreamGroupQueueSize"] = state?.minStreamGroupQueueSize;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["partialServiceMetaPeriod"] = state?.partialServiceMetaPeriod;
+            resourceInputs["processTrackerServiceInterval"] = state?.processTrackerServiceInterval;
+            resourceInputs["quarantineFutureSecs"] = state?.quarantineFutureSecs;
+            resourceInputs["quarantinePastSecs"] = state?.quarantinePastSecs;
+            resourceInputs["rawChunkSizeBytes"] = state?.rawChunkSizeBytes;
+            resourceInputs["repFactor"] = state?.repFactor;
+            resourceInputs["rotatePeriodInSecs"] = state?.rotatePeriodInSecs;
+            resourceInputs["serviceMetaPeriod"] = state?.serviceMetaPeriod;
+            resourceInputs["syncMeta"] = state?.syncMeta;
+            resourceInputs["thawedPath"] = state?.thawedPath;
+            resourceInputs["throttleCheckPeriod"] = state?.throttleCheckPeriod;
+            resourceInputs["tstatsHomePath"] = state?.tstatsHomePath;
+            resourceInputs["warmToColdScript"] = state?.warmToColdScript;
         } else {
             const args = argsOrState as IndexesArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["blockSignSize"] = args ? args.blockSignSize : undefined;
-            resourceInputs["bucketRebuildMemoryHint"] = args ? args.bucketRebuildMemoryHint : undefined;
-            resourceInputs["coldPath"] = args ? args.coldPath : undefined;
-            resourceInputs["coldToFrozenDir"] = args ? args.coldToFrozenDir : undefined;
-            resourceInputs["coldToFrozenScript"] = args ? args.coldToFrozenScript : undefined;
-            resourceInputs["compressRawdata"] = args ? args.compressRawdata : undefined;
-            resourceInputs["datatype"] = args ? args.datatype : undefined;
-            resourceInputs["enableOnlineBucketRepair"] = args ? args.enableOnlineBucketRepair : undefined;
-            resourceInputs["frozenTimePeriodInSecs"] = args ? args.frozenTimePeriodInSecs : undefined;
-            resourceInputs["homePath"] = args ? args.homePath : undefined;
-            resourceInputs["maxBloomBackfillBucketAge"] = args ? args.maxBloomBackfillBucketAge : undefined;
-            resourceInputs["maxConcurrentOptimizes"] = args ? args.maxConcurrentOptimizes : undefined;
-            resourceInputs["maxDataSize"] = args ? args.maxDataSize : undefined;
-            resourceInputs["maxHotBuckets"] = args ? args.maxHotBuckets : undefined;
-            resourceInputs["maxHotIdleSecs"] = args ? args.maxHotIdleSecs : undefined;
-            resourceInputs["maxHotSpanSecs"] = args ? args.maxHotSpanSecs : undefined;
-            resourceInputs["maxMemMb"] = args ? args.maxMemMb : undefined;
-            resourceInputs["maxMetaEntries"] = args ? args.maxMetaEntries : undefined;
-            resourceInputs["maxTimeUnreplicatedNoAcks"] = args ? args.maxTimeUnreplicatedNoAcks : undefined;
-            resourceInputs["maxTimeUnreplicatedWithAcks"] = args ? args.maxTimeUnreplicatedWithAcks : undefined;
-            resourceInputs["maxTotalDataSizeMb"] = args ? args.maxTotalDataSizeMb : undefined;
-            resourceInputs["maxWarmDbCount"] = args ? args.maxWarmDbCount : undefined;
-            resourceInputs["minRawFileSyncSecs"] = args ? args.minRawFileSyncSecs : undefined;
-            resourceInputs["minStreamGroupQueueSize"] = args ? args.minStreamGroupQueueSize : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["partialServiceMetaPeriod"] = args ? args.partialServiceMetaPeriod : undefined;
-            resourceInputs["processTrackerServiceInterval"] = args ? args.processTrackerServiceInterval : undefined;
-            resourceInputs["quarantineFutureSecs"] = args ? args.quarantineFutureSecs : undefined;
-            resourceInputs["quarantinePastSecs"] = args ? args.quarantinePastSecs : undefined;
-            resourceInputs["rawChunkSizeBytes"] = args ? args.rawChunkSizeBytes : undefined;
-            resourceInputs["repFactor"] = args ? args.repFactor : undefined;
-            resourceInputs["rotatePeriodInSecs"] = args ? args.rotatePeriodInSecs : undefined;
-            resourceInputs["serviceMetaPeriod"] = args ? args.serviceMetaPeriod : undefined;
-            resourceInputs["syncMeta"] = args ? args.syncMeta : undefined;
-            resourceInputs["thawedPath"] = args ? args.thawedPath : undefined;
-            resourceInputs["throttleCheckPeriod"] = args ? args.throttleCheckPeriod : undefined;
-            resourceInputs["tstatsHomePath"] = args ? args.tstatsHomePath : undefined;
-            resourceInputs["warmToColdScript"] = args ? args.warmToColdScript : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["blockSignSize"] = args?.blockSignSize;
+            resourceInputs["bucketRebuildMemoryHint"] = args?.bucketRebuildMemoryHint;
+            resourceInputs["coldPath"] = args?.coldPath;
+            resourceInputs["coldToFrozenDir"] = args?.coldToFrozenDir;
+            resourceInputs["coldToFrozenScript"] = args?.coldToFrozenScript;
+            resourceInputs["compressRawdata"] = args?.compressRawdata;
+            resourceInputs["datatype"] = args?.datatype;
+            resourceInputs["enableOnlineBucketRepair"] = args?.enableOnlineBucketRepair;
+            resourceInputs["frozenTimePeriodInSecs"] = args?.frozenTimePeriodInSecs;
+            resourceInputs["homePath"] = args?.homePath;
+            resourceInputs["maxBloomBackfillBucketAge"] = args?.maxBloomBackfillBucketAge;
+            resourceInputs["maxConcurrentOptimizes"] = args?.maxConcurrentOptimizes;
+            resourceInputs["maxDataSize"] = args?.maxDataSize;
+            resourceInputs["maxHotBuckets"] = args?.maxHotBuckets;
+            resourceInputs["maxHotIdleSecs"] = args?.maxHotIdleSecs;
+            resourceInputs["maxHotSpanSecs"] = args?.maxHotSpanSecs;
+            resourceInputs["maxMemMb"] = args?.maxMemMb;
+            resourceInputs["maxMetaEntries"] = args?.maxMetaEntries;
+            resourceInputs["maxTimeUnreplicatedNoAcks"] = args?.maxTimeUnreplicatedNoAcks;
+            resourceInputs["maxTimeUnreplicatedWithAcks"] = args?.maxTimeUnreplicatedWithAcks;
+            resourceInputs["maxTotalDataSizeMb"] = args?.maxTotalDataSizeMb;
+            resourceInputs["maxWarmDbCount"] = args?.maxWarmDbCount;
+            resourceInputs["minRawFileSyncSecs"] = args?.minRawFileSyncSecs;
+            resourceInputs["minStreamGroupQueueSize"] = args?.minStreamGroupQueueSize;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["partialServiceMetaPeriod"] = args?.partialServiceMetaPeriod;
+            resourceInputs["processTrackerServiceInterval"] = args?.processTrackerServiceInterval;
+            resourceInputs["quarantineFutureSecs"] = args?.quarantineFutureSecs;
+            resourceInputs["quarantinePastSecs"] = args?.quarantinePastSecs;
+            resourceInputs["rawChunkSizeBytes"] = args?.rawChunkSizeBytes;
+            resourceInputs["repFactor"] = args?.repFactor;
+            resourceInputs["rotatePeriodInSecs"] = args?.rotatePeriodInSecs;
+            resourceInputs["serviceMetaPeriod"] = args?.serviceMetaPeriod;
+            resourceInputs["syncMeta"] = args?.syncMeta;
+            resourceInputs["thawedPath"] = args?.thawedPath;
+            resourceInputs["throttleCheckPeriod"] = args?.throttleCheckPeriod;
+            resourceInputs["tstatsHomePath"] = args?.tstatsHomePath;
+            resourceInputs["warmToColdScript"] = args?.warmToColdScript;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Indexes.__pulumiType, name, resourceInputs, opts);

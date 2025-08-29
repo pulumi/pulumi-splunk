@@ -54,45 +54,45 @@ export class InputsScript extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.InputsScriptAcl>;
+    declare public readonly acl: pulumi.Output<outputs.InputsScriptAcl>;
     /**
      * Specifies whether the input script is disabled.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Sets the host for events from this input. Defaults to whatever host sent the event.
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * Sets the index for events from this input. Defaults to the main index.
      */
-    public readonly index!: pulumi.Output<string>;
+    declare public readonly index: pulumi.Output<string>;
     /**
      * Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
      */
-    public readonly interval!: pulumi.Output<number>;
+    declare public readonly interval: pulumi.Output<number>;
     /**
      * Specify the name of the scripted input.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
      */
-    public readonly passauth!: pulumi.Output<string>;
+    declare public readonly passauth: pulumi.Output<string>;
     /**
      * Specify a new name for the source field for the script.
      */
-    public readonly renameSource!: pulumi.Output<string>;
+    declare public readonly renameSource: pulumi.Output<string>;
     /**
      * Sets the source key/field for events from this input. Defaults to the input file path.
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
      * Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
      */
-    public readonly sourcetype!: pulumi.Output<string>;
+    declare public readonly sourcetype: pulumi.Output<string>;
 
     /**
      * Create a InputsScript resource with the given unique name, arguments, and options.
@@ -107,31 +107,31 @@ export class InputsScript extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsScriptState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["index"] = state ? state.index : undefined;
-            resourceInputs["interval"] = state ? state.interval : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["passauth"] = state ? state.passauth : undefined;
-            resourceInputs["renameSource"] = state ? state.renameSource : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["index"] = state?.index;
+            resourceInputs["interval"] = state?.interval;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["passauth"] = state?.passauth;
+            resourceInputs["renameSource"] = state?.renameSource;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourcetype"] = state?.sourcetype;
         } else {
             const args = argsOrState as InputsScriptArgs | undefined;
-            if ((!args || args.interval === undefined) && !opts.urn) {
+            if (args?.interval === undefined && !opts.urn) {
                 throw new Error("Missing required property 'interval'");
             }
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["index"] = args ? args.index : undefined;
-            resourceInputs["interval"] = args ? args.interval : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["passauth"] = args ? args.passauth : undefined;
-            resourceInputs["renameSource"] = args ? args.renameSource : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["index"] = args?.index;
+            resourceInputs["interval"] = args?.interval;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["passauth"] = args?.passauth;
+            resourceInputs["renameSource"] = args?.renameSource;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourcetype"] = args?.sourcetype;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsScript.__pulumiType, name, resourceInputs, opts);

@@ -23,16 +23,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:splunk")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
-     * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-     * the Splunk platform
+     * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      * 
      */
     @Export(name="authToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authToken;
 
     /**
-     * @return Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
-     * the Splunk platform
+     * @return Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      * 
      */
     public Output<Optional<String>> authToken() {

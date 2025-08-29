@@ -52,23 +52,23 @@ export class InputsTcpSsl extends pulumi.CustomResource {
     /**
      * Indicates if input is disabled.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Server certificate password, if any.
      */
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * Determines whether a client must authenticate.
      */
-    public readonly requireClientCert!: pulumi.Output<boolean>;
+    declare public readonly requireClientCert: pulumi.Output<boolean>;
     /**
      * Certificate authority list (root file)
      */
-    public readonly rootCa!: pulumi.Output<string>;
+    declare public readonly rootCa: pulumi.Output<string>;
     /**
      * Full path to the server certificate.
      */
-    public readonly serverCert!: pulumi.Output<string>;
+    declare public readonly serverCert: pulumi.Output<string>;
 
     /**
      * Create a InputsTcpSsl resource with the given unique name, arguments, and options.
@@ -83,18 +83,18 @@ export class InputsTcpSsl extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpSslState | undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["requireClientCert"] = state ? state.requireClientCert : undefined;
-            resourceInputs["rootCa"] = state ? state.rootCa : undefined;
-            resourceInputs["serverCert"] = state ? state.serverCert : undefined;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["requireClientCert"] = state?.requireClientCert;
+            resourceInputs["rootCa"] = state?.rootCa;
+            resourceInputs["serverCert"] = state?.serverCert;
         } else {
             const args = argsOrState as InputsTcpSslArgs | undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["disabled"] = args?.disabled;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["requireClientCert"] = args ? args.requireClientCert : undefined;
-            resourceInputs["rootCa"] = args ? args.rootCa : undefined;
-            resourceInputs["serverCert"] = args ? args.serverCert : undefined;
+            resourceInputs["requireClientCert"] = args?.requireClientCert;
+            resourceInputs["rootCa"] = args?.rootCa;
+            resourceInputs["serverCert"] = args?.serverCert;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

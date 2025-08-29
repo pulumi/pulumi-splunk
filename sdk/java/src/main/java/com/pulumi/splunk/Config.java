@@ -13,8 +13,7 @@ public final class Config {
 
     private static final com.pulumi.Config config = com.pulumi.Config.of("splunk");
 /**
- * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into
- * the Splunk platform
+ * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
  * 
  */
     public Optional<String> authToken() {

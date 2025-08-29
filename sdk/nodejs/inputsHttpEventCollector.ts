@@ -69,43 +69,43 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.InputsHttpEventCollectorAcl>;
+    declare public readonly acl: pulumi.Output<outputs.InputsHttpEventCollectorAcl>;
     /**
      * Input disabled indicator
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Default host value for events with this token
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * Index to store generated events
      */
-    public readonly index!: pulumi.Output<string>;
+    declare public readonly index: pulumi.Output<string>;
     /**
      * Set of indexes allowed for events with this token
      */
-    public readonly indexes!: pulumi.Output<string[]>;
+    declare public readonly indexes: pulumi.Output<string[]>;
     /**
      * Token name (inputs.conf key)
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Default source for events with this token
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * Default source type for events with this token
      */
-    public readonly sourcetype!: pulumi.Output<string>;
+    declare public readonly sourcetype: pulumi.Output<string>;
     /**
      * Token value for sending data to collector/event endpoint
      */
-    public readonly token!: pulumi.Output<string>;
+    declare public readonly token: pulumi.Output<string>;
     /**
      * Indexer acknowledgement for this token
      */
-    public readonly useAck!: pulumi.Output<number>;
+    declare public readonly useAck: pulumi.Output<number>;
 
     /**
      * Create a InputsHttpEventCollector resource with the given unique name, arguments, and options.
@@ -120,28 +120,28 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsHttpEventCollectorState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["index"] = state ? state.index : undefined;
-            resourceInputs["indexes"] = state ? state.indexes : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
-            resourceInputs["useAck"] = state ? state.useAck : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["index"] = state?.index;
+            resourceInputs["indexes"] = state?.indexes;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourcetype"] = state?.sourcetype;
+            resourceInputs["token"] = state?.token;
+            resourceInputs["useAck"] = state?.useAck;
         } else {
             const args = argsOrState as InputsHttpEventCollectorArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["index"] = args ? args.index : undefined;
-            resourceInputs["indexes"] = args ? args.indexes : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
-            resourceInputs["token"] = args ? args.token : undefined;
-            resourceInputs["useAck"] = args ? args.useAck : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["index"] = args?.index;
+            resourceInputs["indexes"] = args?.indexes;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourcetype"] = args?.sourcetype;
+            resourceInputs["token"] = args?.token;
+            resourceInputs["useAck"] = args?.useAck;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsHttpEventCollector.__pulumiType, name, resourceInputs, opts);

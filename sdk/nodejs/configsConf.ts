@@ -54,15 +54,15 @@ export class ConfigsConf extends pulumi.CustomResource {
         return obj['__pulumiType'] === ConfigsConf.__pulumiType;
     }
 
-    public readonly acl!: pulumi.Output<outputs.ConfigsConfAcl>;
+    declare public readonly acl: pulumi.Output<outputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A map of key value pairs for a stanza.
      */
-    public readonly variables!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly variables: pulumi.Output<{[key: string]: string}>;
 
     /**
      * Create a ConfigsConf resource with the given unique name, arguments, and options.
@@ -77,14 +77,14 @@ export class ConfigsConf extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConfigsConfState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["variables"] = state ? state.variables : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["variables"] = state?.variables;
         } else {
             const args = argsOrState as ConfigsConfArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["variables"] = args ? args.variables : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["variables"] = args?.variables;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ConfigsConf.__pulumiType, name, resourceInputs, opts);

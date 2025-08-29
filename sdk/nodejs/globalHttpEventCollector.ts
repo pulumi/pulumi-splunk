@@ -53,32 +53,32 @@ export class GlobalHttpEventCollector extends pulumi.CustomResource {
     /**
      * Number of threads used by HTTP Input server.
      */
-    public readonly dedicatedIoThreads!: pulumi.Output<number>;
+    declare public readonly dedicatedIoThreads: pulumi.Output<number>;
     /**
      * Input disabled indicator.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
      */
-    public readonly enableSsl!: pulumi.Output<boolean>;
+    declare public readonly enableSsl: pulumi.Output<boolean>;
     /**
      * Maximum number of simultaneous HTTP connections accepted. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
      */
-    public readonly maxSockets!: pulumi.Output<number>;
+    declare public readonly maxSockets: pulumi.Output<number>;
     /**
      * Maximum number of threads that can be used by active HTTP transactions. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
      */
-    public readonly maxThreads!: pulumi.Output<number>;
+    declare public readonly maxThreads: pulumi.Output<number>;
     /**
      * HTTP data input IP port.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
      * Copy the full contents of the splunkHttpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunkHttpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
      */
-    public readonly useDeploymentServer!: pulumi.Output<number>;
+    declare public readonly useDeploymentServer: pulumi.Output<number>;
 
     /**
      * Create a GlobalHttpEventCollector resource with the given unique name, arguments, and options.
@@ -93,22 +93,22 @@ export class GlobalHttpEventCollector extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GlobalHttpEventCollectorState | undefined;
-            resourceInputs["dedicatedIoThreads"] = state ? state.dedicatedIoThreads : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["enableSsl"] = state ? state.enableSsl : undefined;
-            resourceInputs["maxSockets"] = state ? state.maxSockets : undefined;
-            resourceInputs["maxThreads"] = state ? state.maxThreads : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["useDeploymentServer"] = state ? state.useDeploymentServer : undefined;
+            resourceInputs["dedicatedIoThreads"] = state?.dedicatedIoThreads;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["enableSsl"] = state?.enableSsl;
+            resourceInputs["maxSockets"] = state?.maxSockets;
+            resourceInputs["maxThreads"] = state?.maxThreads;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["useDeploymentServer"] = state?.useDeploymentServer;
         } else {
             const args = argsOrState as GlobalHttpEventCollectorArgs | undefined;
-            resourceInputs["dedicatedIoThreads"] = args ? args.dedicatedIoThreads : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["enableSsl"] = args ? args.enableSsl : undefined;
-            resourceInputs["maxSockets"] = args ? args.maxSockets : undefined;
-            resourceInputs["maxThreads"] = args ? args.maxThreads : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["useDeploymentServer"] = args ? args.useDeploymentServer : undefined;
+            resourceInputs["dedicatedIoThreads"] = args?.dedicatedIoThreads;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["enableSsl"] = args?.enableSsl;
+            resourceInputs["maxSockets"] = args?.maxSockets;
+            resourceInputs["maxThreads"] = args?.maxThreads;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["useDeploymentServer"] = args?.useDeploymentServer;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GlobalHttpEventCollector.__pulumiType, name, resourceInputs, opts);

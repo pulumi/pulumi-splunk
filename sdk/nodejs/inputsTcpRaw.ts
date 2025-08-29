@@ -58,7 +58,7 @@ export class InputsTcpRaw extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.InputsTcpRawAcl>;
+    declare public readonly acl: pulumi.Output<outputs.InputsTcpRawAcl>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -67,50 +67,50 @@ export class InputsTcpRaw extends pulumi.CustomResource {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    public readonly connectionHost!: pulumi.Output<string>;
+    declare public readonly connectionHost: pulumi.Output<string>;
     /**
      * Indicates if input is disabled.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * Host from which the indexer gets data.
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * Index to store generated events. Defaults to default.
      */
-    public readonly index!: pulumi.Output<string>;
+    declare public readonly index: pulumi.Output<string>;
     /**
      * The input port which receives raw data.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Valid values: (parsingQueue | indexQueue)
      * Specifies where the input processor should deposit the events it reads. Defaults to parsingQueue.
      * Set queue to parsingQueue to apply props.conf and other parsing rules to your data. For more information about props.conf and rules for timestamping and linebreaking, refer to props.conf and the online documentation at "Monitor files and directories with inputs.conf"
      * Set queue to indexQueue to send your data directly into the index.
      */
-    public readonly queue!: pulumi.Output<string>;
+    declare public readonly queue: pulumi.Output<string>;
     /**
      * Specifies in seconds the timeout value for adding a Done-key. Default value is 10 seconds.
      * If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
      */
-    public readonly rawTcpDoneTimeout!: pulumi.Output<number>;
+    declare public readonly rawTcpDoneTimeout: pulumi.Output<number>;
     /**
      * Allows for restricting this input to only accept data from the host specified here.
      */
-    public readonly restrictToHost!: pulumi.Output<string>;
+    declare public readonly restrictToHost: pulumi.Output<string>;
     /**
      * Sets the source key/field for events from this input. Defaults to the input file path.
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
      * Set the source type for events from this input.
      * "sourcetype=" is automatically prepended to <string>.
      * Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
      */
-    public readonly sourcetype!: pulumi.Output<string>;
+    declare public readonly sourcetype: pulumi.Output<string>;
 
     /**
      * Create a InputsTcpRaw resource with the given unique name, arguments, and options.
@@ -125,30 +125,30 @@ export class InputsTcpRaw extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsTcpRawState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["connectionHost"] = state ? state.connectionHost : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["index"] = state ? state.index : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["queue"] = state ? state.queue : undefined;
-            resourceInputs["rawTcpDoneTimeout"] = state ? state.rawTcpDoneTimeout : undefined;
-            resourceInputs["restrictToHost"] = state ? state.restrictToHost : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["connectionHost"] = state?.connectionHost;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["index"] = state?.index;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["queue"] = state?.queue;
+            resourceInputs["rawTcpDoneTimeout"] = state?.rawTcpDoneTimeout;
+            resourceInputs["restrictToHost"] = state?.restrictToHost;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourcetype"] = state?.sourcetype;
         } else {
             const args = argsOrState as InputsTcpRawArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["connectionHost"] = args ? args.connectionHost : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["index"] = args ? args.index : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["queue"] = args ? args.queue : undefined;
-            resourceInputs["rawTcpDoneTimeout"] = args ? args.rawTcpDoneTimeout : undefined;
-            resourceInputs["restrictToHost"] = args ? args.restrictToHost : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["connectionHost"] = args?.connectionHost;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["index"] = args?.index;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["queue"] = args?.queue;
+            resourceInputs["rawTcpDoneTimeout"] = args?.rawTcpDoneTimeout;
+            resourceInputs["restrictToHost"] = args?.restrictToHost;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["sourcetype"] = args?.sourcetype;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsTcpRaw.__pulumiType, name, resourceInputs, opts);

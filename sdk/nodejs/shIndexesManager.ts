@@ -57,25 +57,25 @@ export class ShIndexesManager extends pulumi.CustomResource {
         return obj['__pulumiType'] === ShIndexesManager.__pulumiType;
     }
 
-    public readonly acl!: pulumi.Output<outputs.ShIndexesManagerAcl>;
+    declare public readonly acl: pulumi.Output<outputs.ShIndexesManagerAcl>;
     /**
      * Valid values: (event | metric). Specifies the type of index.
      */
-    public readonly datatype!: pulumi.Output<string>;
+    declare public readonly datatype: pulumi.Output<string>;
     /**
      * Number of seconds after which indexed data rolls to frozen.
      * Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      */
-    public readonly frozenTimePeriodInSecs!: pulumi.Output<string | undefined>;
+    declare public readonly frozenTimePeriodInSecs: pulumi.Output<string | undefined>;
     /**
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      * Defaults to 100 MB.
      */
-    public readonly maxGlobalRawDataSizeMb!: pulumi.Output<string | undefined>;
+    declare public readonly maxGlobalRawDataSizeMb: pulumi.Output<string | undefined>;
     /**
      * The name of the index to create.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a ShIndexesManager resource with the given unique name, arguments, and options.
@@ -90,18 +90,18 @@ export class ShIndexesManager extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ShIndexesManagerState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["datatype"] = state ? state.datatype : undefined;
-            resourceInputs["frozenTimePeriodInSecs"] = state ? state.frozenTimePeriodInSecs : undefined;
-            resourceInputs["maxGlobalRawDataSizeMb"] = state ? state.maxGlobalRawDataSizeMb : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["datatype"] = state?.datatype;
+            resourceInputs["frozenTimePeriodInSecs"] = state?.frozenTimePeriodInSecs;
+            resourceInputs["maxGlobalRawDataSizeMb"] = state?.maxGlobalRawDataSizeMb;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as ShIndexesManagerArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["datatype"] = args ? args.datatype : undefined;
-            resourceInputs["frozenTimePeriodInSecs"] = args ? args.frozenTimePeriodInSecs : undefined;
-            resourceInputs["maxGlobalRawDataSizeMb"] = args ? args.maxGlobalRawDataSizeMb : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["datatype"] = args?.datatype;
+            resourceInputs["frozenTimePeriodInSecs"] = args?.frozenTimePeriodInSecs;
+            resourceInputs["maxGlobalRawDataSizeMb"] = args?.maxGlobalRawDataSizeMb;
+            resourceInputs["name"] = args?.name;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ShIndexesManager.__pulumiType, name, resourceInputs, opts);

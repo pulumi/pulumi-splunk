@@ -55,66 +55,66 @@ export class AppsLocal extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.AppsLocalAcl>;
+    declare public readonly acl: pulumi.Output<outputs.AppsLocalAcl>;
     /**
      * Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
      */
-    public readonly auth!: pulumi.Output<string | undefined>;
+    declare public readonly auth: pulumi.Output<string | undefined>;
     /**
      * For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
      */
-    public readonly author!: pulumi.Output<string>;
+    declare public readonly author: pulumi.Output<string>;
     /**
      * Custom setup complete indication:
      * <br>true = Custom app setup complete.
      * <br>false = Custom app setup not complete.
      */
-    public readonly configured!: pulumi.Output<boolean>;
+    declare public readonly configured: pulumi.Output<boolean>;
     /**
      * Short app description also displayed below the app title in Splunk Web Launcher.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
      */
-    public readonly explicitAppname!: pulumi.Output<string | undefined>;
+    declare public readonly explicitAppname: pulumi.Output<string | undefined>;
     /**
      * Indicates whether to use the name value as the app source location.
      * <br>true indicates that name is a path to a file to install.
      * <br>false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      */
-    public readonly filename!: pulumi.Output<boolean | undefined>;
+    declare public readonly filename: pulumi.Output<boolean | undefined>;
     /**
      * App name displayed in Splunk Web, from five to eighty characters excluding the prefix "Splunk for".
      */
-    public readonly label!: pulumi.Output<string>;
+    declare public readonly label: pulumi.Output<string>;
     /**
      * Literal app name or path for the file to install, depending on the value of filename.
      * <br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
      * <br>filename = true indicates that name is the URL or path to the local .tar, .tgz or .spl file. If name is the Splunkbase URL, set auth or session to authenticate the request.
      * The app folder name cannot include spaces or special characters.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
      */
-    public readonly session!: pulumi.Output<string | undefined>;
+    declare public readonly session: pulumi.Output<string | undefined>;
     /**
      * File-based update indication:
      * <br>true specifies that filename should be used to update an existing app. If not specified, update defaults to
      * <br>false, which indicates that filename should not be used to update an existing app.
      */
-    public readonly update!: pulumi.Output<boolean | undefined>;
+    declare public readonly update: pulumi.Output<boolean | undefined>;
     /**
      * App version.
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
     /**
      * Indicates whether the app is visible and navigable from Splunk Web.
      * <br>true = App is visible and navigable.
      * <br>false = App is not visible or navigable.
      */
-    public readonly visible!: pulumi.Output<boolean>;
+    declare public readonly visible: pulumi.Output<boolean>;
 
     /**
      * Create a AppsLocal resource with the given unique name, arguments, and options.
@@ -129,34 +129,34 @@ export class AppsLocal extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppsLocalState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["auth"] = state ? state.auth : undefined;
-            resourceInputs["author"] = state ? state.author : undefined;
-            resourceInputs["configured"] = state ? state.configured : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["explicitAppname"] = state ? state.explicitAppname : undefined;
-            resourceInputs["filename"] = state ? state.filename : undefined;
-            resourceInputs["label"] = state ? state.label : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["session"] = state ? state.session : undefined;
-            resourceInputs["update"] = state ? state.update : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["visible"] = state ? state.visible : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["auth"] = state?.auth;
+            resourceInputs["author"] = state?.author;
+            resourceInputs["configured"] = state?.configured;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["explicitAppname"] = state?.explicitAppname;
+            resourceInputs["filename"] = state?.filename;
+            resourceInputs["label"] = state?.label;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["session"] = state?.session;
+            resourceInputs["update"] = state?.update;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["visible"] = state?.visible;
         } else {
             const args = argsOrState as AppsLocalArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["auth"] = args ? args.auth : undefined;
-            resourceInputs["author"] = args ? args.author : undefined;
-            resourceInputs["configured"] = args ? args.configured : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["explicitAppname"] = args ? args.explicitAppname : undefined;
-            resourceInputs["filename"] = args ? args.filename : undefined;
-            resourceInputs["label"] = args ? args.label : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["session"] = args ? args.session : undefined;
-            resourceInputs["update"] = args ? args.update : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
-            resourceInputs["visible"] = args ? args.visible : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["auth"] = args?.auth;
+            resourceInputs["author"] = args?.author;
+            resourceInputs["configured"] = args?.configured;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["explicitAppname"] = args?.explicitAppname;
+            resourceInputs["filename"] = args?.filename;
+            resourceInputs["label"] = args?.label;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["session"] = args?.session;
+            resourceInputs["update"] = args?.update;
+            resourceInputs["version"] = args?.version;
+            resourceInputs["visible"] = args?.visible;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppsLocal.__pulumiType, name, resourceInputs, opts);

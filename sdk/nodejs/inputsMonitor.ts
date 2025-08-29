@@ -55,67 +55,67 @@ export class InputsMonitor extends pulumi.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
      */
-    public readonly acl!: pulumi.Output<outputs.InputsMonitorAcl>;
+    declare public readonly acl: pulumi.Output<outputs.InputsMonitorAcl>;
     /**
      * Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
      */
-    public readonly blacklist!: pulumi.Output<string>;
+    declare public readonly blacklist: pulumi.Output<string>;
     /**
      * A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
      */
-    public readonly crcSalt!: pulumi.Output<string>;
+    declare public readonly crcSalt: pulumi.Output<string>;
     /**
      * Indicates if input monitoring is disabled.
      */
-    public readonly disabled!: pulumi.Output<boolean>;
+    declare public readonly disabled: pulumi.Output<boolean>;
     /**
      * If set to true, files that are seen for the first time is read from the end.
      */
-    public readonly followTail!: pulumi.Output<boolean>;
+    declare public readonly followTail: pulumi.Output<boolean>;
     /**
      * The value to populate in the host field for events from this data input.
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
      */
-    public readonly hostRegex!: pulumi.Output<string>;
+    declare public readonly hostRegex: pulumi.Output<string>;
     /**
      * Use the specified slash-separate segment of the filepath as the host field value.
      */
-    public readonly hostSegment!: pulumi.Output<number>;
+    declare public readonly hostSegment: pulumi.Output<number>;
     /**
      * Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
      */
-    public readonly ignoreOlderThan!: pulumi.Output<string>;
+    declare public readonly ignoreOlderThan: pulumi.Output<string>;
     /**
      * Which index events from this input should be stored in. Defaults to default.
      */
-    public readonly index!: pulumi.Output<string>;
+    declare public readonly index: pulumi.Output<string>;
     /**
      * The file or directory path to monitor on the system.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Setting this to false prevents monitoring of any subdirectories encountered within this data input.
      */
-    public readonly recursive!: pulumi.Output<boolean>;
+    declare public readonly recursive: pulumi.Output<boolean>;
     /**
      * The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
      */
-    public readonly renameSource!: pulumi.Output<string>;
+    declare public readonly renameSource: pulumi.Output<string>;
     /**
      * The value to populate in the sourcetype field for incoming events.
      */
-    public readonly sourcetype!: pulumi.Output<string>;
+    declare public readonly sourcetype: pulumi.Output<string>;
     /**
      * When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
      */
-    public readonly timeBeforeClose!: pulumi.Output<number>;
+    declare public readonly timeBeforeClose: pulumi.Output<number>;
     /**
      * Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
      */
-    public readonly whitelist!: pulumi.Output<string>;
+    declare public readonly whitelist: pulumi.Output<string>;
 
     /**
      * Create a InputsMonitor resource with the given unique name, arguments, and options.
@@ -130,40 +130,40 @@ export class InputsMonitor extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InputsMonitorState | undefined;
-            resourceInputs["acl"] = state ? state.acl : undefined;
-            resourceInputs["blacklist"] = state ? state.blacklist : undefined;
-            resourceInputs["crcSalt"] = state ? state.crcSalt : undefined;
-            resourceInputs["disabled"] = state ? state.disabled : undefined;
-            resourceInputs["followTail"] = state ? state.followTail : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["hostRegex"] = state ? state.hostRegex : undefined;
-            resourceInputs["hostSegment"] = state ? state.hostSegment : undefined;
-            resourceInputs["ignoreOlderThan"] = state ? state.ignoreOlderThan : undefined;
-            resourceInputs["index"] = state ? state.index : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["recursive"] = state ? state.recursive : undefined;
-            resourceInputs["renameSource"] = state ? state.renameSource : undefined;
-            resourceInputs["sourcetype"] = state ? state.sourcetype : undefined;
-            resourceInputs["timeBeforeClose"] = state ? state.timeBeforeClose : undefined;
-            resourceInputs["whitelist"] = state ? state.whitelist : undefined;
+            resourceInputs["acl"] = state?.acl;
+            resourceInputs["blacklist"] = state?.blacklist;
+            resourceInputs["crcSalt"] = state?.crcSalt;
+            resourceInputs["disabled"] = state?.disabled;
+            resourceInputs["followTail"] = state?.followTail;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["hostRegex"] = state?.hostRegex;
+            resourceInputs["hostSegment"] = state?.hostSegment;
+            resourceInputs["ignoreOlderThan"] = state?.ignoreOlderThan;
+            resourceInputs["index"] = state?.index;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["recursive"] = state?.recursive;
+            resourceInputs["renameSource"] = state?.renameSource;
+            resourceInputs["sourcetype"] = state?.sourcetype;
+            resourceInputs["timeBeforeClose"] = state?.timeBeforeClose;
+            resourceInputs["whitelist"] = state?.whitelist;
         } else {
             const args = argsOrState as InputsMonitorArgs | undefined;
-            resourceInputs["acl"] = args ? args.acl : undefined;
-            resourceInputs["blacklist"] = args ? args.blacklist : undefined;
-            resourceInputs["crcSalt"] = args ? args.crcSalt : undefined;
-            resourceInputs["disabled"] = args ? args.disabled : undefined;
-            resourceInputs["followTail"] = args ? args.followTail : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["hostRegex"] = args ? args.hostRegex : undefined;
-            resourceInputs["hostSegment"] = args ? args.hostSegment : undefined;
-            resourceInputs["ignoreOlderThan"] = args ? args.ignoreOlderThan : undefined;
-            resourceInputs["index"] = args ? args.index : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["recursive"] = args ? args.recursive : undefined;
-            resourceInputs["renameSource"] = args ? args.renameSource : undefined;
-            resourceInputs["sourcetype"] = args ? args.sourcetype : undefined;
-            resourceInputs["timeBeforeClose"] = args ? args.timeBeforeClose : undefined;
-            resourceInputs["whitelist"] = args ? args.whitelist : undefined;
+            resourceInputs["acl"] = args?.acl;
+            resourceInputs["blacklist"] = args?.blacklist;
+            resourceInputs["crcSalt"] = args?.crcSalt;
+            resourceInputs["disabled"] = args?.disabled;
+            resourceInputs["followTail"] = args?.followTail;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["hostRegex"] = args?.hostRegex;
+            resourceInputs["hostSegment"] = args?.hostSegment;
+            resourceInputs["ignoreOlderThan"] = args?.ignoreOlderThan;
+            resourceInputs["index"] = args?.index;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["recursive"] = args?.recursive;
+            resourceInputs["renameSource"] = args?.renameSource;
+            resourceInputs["sourcetype"] = args?.sourcetype;
+            resourceInputs["timeBeforeClose"] = args?.timeBeforeClose;
+            resourceInputs["whitelist"] = args?.whitelist;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(InputsMonitor.__pulumiType, name, resourceInputs, opts);
