@@ -8,7 +8,7 @@ require (
 	github.com/hashicorp/terraform-plugin-sdk v1.15.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.114.0
 	github.com/pulumi/pulumi/sdk/v3 v3.190.0
-	github.com/splunk/terraform-provider-splunk v1.4.31
+	github.com/splunk/terraform-provider-splunk v1.4.32
 )
 
 // tfinstall was removed from terraform-exec in v0.16.0.
