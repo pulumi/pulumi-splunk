@@ -5003,6 +5003,30 @@
                     "type": "string",
                     "description": "Jira issue title/summary\n"
                 },
+                "actionLogevent": {
+                    "type": "string",
+                    "description": "Enable log event action (Should be 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionLogeventParamEvent": {
+                    "type": "string",
+                    "description": "Specific event text for the logged event.\n"
+                },
+                "actionLogeventParamHost": {
+                    "type": "string",
+                    "description": "Value for the host field of the logged event.\n"
+                },
+                "actionLogeventParamIndex": {
+                    "type": "string",
+                    "description": "Destination index where to store the logged event.\n"
+                },
+                "actionLogeventParamSource": {
+                    "type": "string",
+                    "description": "Value for the source field of the logged event.\n"
+                },
+                "actionLogeventParamSourcetype": {
+                    "type": "string",
+                    "description": "Destination sourcetype where to store the logged event.\n"
+                },
                 "actionPagerdutyCustomDetails": {
                     "type": "string",
                     "description": "The PagerDuty custom details information.\n"
@@ -5496,6 +5520,12 @@
                 "actionEmailUseSsl",
                 "actionEmailUseTls",
                 "actionEmailWidthSortColumns",
+                "actionLogevent",
+                "actionLogeventParamEvent",
+                "actionLogeventParamHost",
+                "actionLogeventParamIndex",
+                "actionLogeventParamSource",
+                "actionLogeventParamSourcetype",
                 "actionPagerdutyCustomDetails",
                 "actionPagerdutyIntegrationKey",
                 "actionPagerdutyIntegrationKeyOverride",
@@ -5817,6 +5847,30 @@
                 "actionJiraServiceDeskParamJiraSummary": {
                     "type": "string",
                     "description": "Jira issue title/summary\n"
+                },
+                "actionLogevent": {
+                    "type": "string",
+                    "description": "Enable log event action (Should be 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionLogeventParamEvent": {
+                    "type": "string",
+                    "description": "Specific event text for the logged event.\n"
+                },
+                "actionLogeventParamHost": {
+                    "type": "string",
+                    "description": "Value for the host field of the logged event.\n"
+                },
+                "actionLogeventParamIndex": {
+                    "type": "string",
+                    "description": "Destination index where to store the logged event.\n"
+                },
+                "actionLogeventParamSource": {
+                    "type": "string",
+                    "description": "Value for the source field of the logged event.\n"
+                },
+                "actionLogeventParamSourcetype": {
+                    "type": "string",
+                    "description": "Destination sourcetype where to store the logged event.\n"
                 },
                 "actionPagerdutyCustomDetails": {
                     "type": "string",
@@ -6481,6 +6535,30 @@
                     "actionJiraServiceDeskParamJiraSummary": {
                         "type": "string",
                         "description": "Jira issue title/summary\n"
+                    },
+                    "actionLogevent": {
+                        "type": "string",
+                        "description": "Enable log event action (Should be 1 (Enabled) or 0 (Disabled))\n"
+                    },
+                    "actionLogeventParamEvent": {
+                        "type": "string",
+                        "description": "Specific event text for the logged event.\n"
+                    },
+                    "actionLogeventParamHost": {
+                        "type": "string",
+                        "description": "Value for the host field of the logged event.\n"
+                    },
+                    "actionLogeventParamIndex": {
+                        "type": "string",
+                        "description": "Destination index where to store the logged event.\n"
+                    },
+                    "actionLogeventParamSource": {
+                        "type": "string",
+                        "description": "Value for the source field of the logged event.\n"
+                    },
+                    "actionLogeventParamSourcetype": {
+                        "type": "string",
+                        "description": "Destination sourcetype where to store the logged event.\n"
                     },
                     "actionPagerdutyCustomDetails": {
                         "type": "string",

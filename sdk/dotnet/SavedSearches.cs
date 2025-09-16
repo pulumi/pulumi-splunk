@@ -384,6 +384,42 @@ namespace Pulumi.Splunk
         public Output<string?> ActionJiraServiceDeskParamJiraSummary { get; private set; } = null!;
 
         /// <summary>
+        /// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Output("actionLogevent")]
+        public Output<string> ActionLogevent { get; private set; } = null!;
+
+        /// <summary>
+        /// Specific event text for the logged event.
+        /// </summary>
+        [Output("actionLogeventParamEvent")]
+        public Output<string> ActionLogeventParamEvent { get; private set; } = null!;
+
+        /// <summary>
+        /// Value for the host field of the logged event.
+        /// </summary>
+        [Output("actionLogeventParamHost")]
+        public Output<string> ActionLogeventParamHost { get; private set; } = null!;
+
+        /// <summary>
+        /// Destination index where to store the logged event.
+        /// </summary>
+        [Output("actionLogeventParamIndex")]
+        public Output<string> ActionLogeventParamIndex { get; private set; } = null!;
+
+        /// <summary>
+        /// Value for the source field of the logged event.
+        /// </summary>
+        [Output("actionLogeventParamSource")]
+        public Output<string> ActionLogeventParamSource { get; private set; } = null!;
+
+        /// <summary>
+        /// Destination sourcetype where to store the logged event.
+        /// </summary>
+        [Output("actionLogeventParamSourcetype")]
+        public Output<string> ActionLogeventParamSourcetype { get; private set; } = null!;
+
+        /// <summary>
         /// The PagerDuty custom details information.
         /// </summary>
         [Output("actionPagerdutyCustomDetails")]
@@ -1432,6 +1468,42 @@ namespace Pulumi.Splunk
         public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
 
         /// <summary>
+        /// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionLogevent")]
+        public Input<string>? ActionLogevent { get; set; }
+
+        /// <summary>
+        /// Specific event text for the logged event.
+        /// </summary>
+        [Input("actionLogeventParamEvent")]
+        public Input<string>? ActionLogeventParamEvent { get; set; }
+
+        /// <summary>
+        /// Value for the host field of the logged event.
+        /// </summary>
+        [Input("actionLogeventParamHost")]
+        public Input<string>? ActionLogeventParamHost { get; set; }
+
+        /// <summary>
+        /// Destination index where to store the logged event.
+        /// </summary>
+        [Input("actionLogeventParamIndex")]
+        public Input<string>? ActionLogeventParamIndex { get; set; }
+
+        /// <summary>
+        /// Value for the source field of the logged event.
+        /// </summary>
+        [Input("actionLogeventParamSource")]
+        public Input<string>? ActionLogeventParamSource { get; set; }
+
+        /// <summary>
+        /// Destination sourcetype where to store the logged event.
+        /// </summary>
+        [Input("actionLogeventParamSourcetype")]
+        public Input<string>? ActionLogeventParamSourcetype { get; set; }
+
+        /// <summary>
         /// The PagerDuty custom details information.
         /// </summary>
         [Input("actionPagerdutyCustomDetails")]
@@ -2422,6 +2494,42 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionJiraServiceDeskParamJiraSummary")]
         public Input<string>? ActionJiraServiceDeskParamJiraSummary { get; set; }
+
+        /// <summary>
+        /// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionLogevent")]
+        public Input<string>? ActionLogevent { get; set; }
+
+        /// <summary>
+        /// Specific event text for the logged event.
+        /// </summary>
+        [Input("actionLogeventParamEvent")]
+        public Input<string>? ActionLogeventParamEvent { get; set; }
+
+        /// <summary>
+        /// Value for the host field of the logged event.
+        /// </summary>
+        [Input("actionLogeventParamHost")]
+        public Input<string>? ActionLogeventParamHost { get; set; }
+
+        /// <summary>
+        /// Destination index where to store the logged event.
+        /// </summary>
+        [Input("actionLogeventParamIndex")]
+        public Input<string>? ActionLogeventParamIndex { get; set; }
+
+        /// <summary>
+        /// Value for the source field of the logged event.
+        /// </summary>
+        [Input("actionLogeventParamSource")]
+        public Input<string>? ActionLogeventParamSource { get; set; }
+
+        /// <summary>
+        /// Destination sourcetype where to store the logged event.
+        /// </summary>
+        [Input("actionLogeventParamSourcetype")]
+        public Input<string>? ActionLogeventParamSourcetype { get; set; }
 
         /// <summary>
         /// The PagerDuty custom details information.

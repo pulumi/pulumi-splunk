@@ -850,6 +850,90 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionJiraServiceDeskParamJiraSummary);
     }
     /**
+     * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Export(name="actionLogevent", refs={String.class}, tree="[0]")
+    private Output<String> actionLogevent;
+
+    /**
+     * @return Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Output<String> actionLogevent() {
+        return this.actionLogevent;
+    }
+    /**
+     * Specific event text for the logged event.
+     * 
+     */
+    @Export(name="actionLogeventParamEvent", refs={String.class}, tree="[0]")
+    private Output<String> actionLogeventParamEvent;
+
+    /**
+     * @return Specific event text for the logged event.
+     * 
+     */
+    public Output<String> actionLogeventParamEvent() {
+        return this.actionLogeventParamEvent;
+    }
+    /**
+     * Value for the host field of the logged event.
+     * 
+     */
+    @Export(name="actionLogeventParamHost", refs={String.class}, tree="[0]")
+    private Output<String> actionLogeventParamHost;
+
+    /**
+     * @return Value for the host field of the logged event.
+     * 
+     */
+    public Output<String> actionLogeventParamHost() {
+        return this.actionLogeventParamHost;
+    }
+    /**
+     * Destination index where to store the logged event.
+     * 
+     */
+    @Export(name="actionLogeventParamIndex", refs={String.class}, tree="[0]")
+    private Output<String> actionLogeventParamIndex;
+
+    /**
+     * @return Destination index where to store the logged event.
+     * 
+     */
+    public Output<String> actionLogeventParamIndex() {
+        return this.actionLogeventParamIndex;
+    }
+    /**
+     * Value for the source field of the logged event.
+     * 
+     */
+    @Export(name="actionLogeventParamSource", refs={String.class}, tree="[0]")
+    private Output<String> actionLogeventParamSource;
+
+    /**
+     * @return Value for the source field of the logged event.
+     * 
+     */
+    public Output<String> actionLogeventParamSource() {
+        return this.actionLogeventParamSource;
+    }
+    /**
+     * Destination sourcetype where to store the logged event.
+     * 
+     */
+    @Export(name="actionLogeventParamSourcetype", refs={String.class}, tree="[0]")
+    private Output<String> actionLogeventParamSourcetype;
+
+    /**
+     * @return Destination sourcetype where to store the logged event.
+     * 
+     */
+    public Output<String> actionLogeventParamSourcetype() {
+        return this.actionLogeventParamSourcetype;
+    }
+    /**
      * The PagerDuty custom details information.
      * 
      */

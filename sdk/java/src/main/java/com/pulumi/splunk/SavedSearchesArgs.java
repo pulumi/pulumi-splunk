@@ -831,6 +831,96 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Import(name="actionLogevent")
+    private @Nullable Output<String> actionLogevent;
+
+    /**
+     * @return Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Optional<Output<String>> actionLogevent() {
+        return Optional.ofNullable(this.actionLogevent);
+    }
+
+    /**
+     * Specific event text for the logged event.
+     * 
+     */
+    @Import(name="actionLogeventParamEvent")
+    private @Nullable Output<String> actionLogeventParamEvent;
+
+    /**
+     * @return Specific event text for the logged event.
+     * 
+     */
+    public Optional<Output<String>> actionLogeventParamEvent() {
+        return Optional.ofNullable(this.actionLogeventParamEvent);
+    }
+
+    /**
+     * Value for the host field of the logged event.
+     * 
+     */
+    @Import(name="actionLogeventParamHost")
+    private @Nullable Output<String> actionLogeventParamHost;
+
+    /**
+     * @return Value for the host field of the logged event.
+     * 
+     */
+    public Optional<Output<String>> actionLogeventParamHost() {
+        return Optional.ofNullable(this.actionLogeventParamHost);
+    }
+
+    /**
+     * Destination index where to store the logged event.
+     * 
+     */
+    @Import(name="actionLogeventParamIndex")
+    private @Nullable Output<String> actionLogeventParamIndex;
+
+    /**
+     * @return Destination index where to store the logged event.
+     * 
+     */
+    public Optional<Output<String>> actionLogeventParamIndex() {
+        return Optional.ofNullable(this.actionLogeventParamIndex);
+    }
+
+    /**
+     * Value for the source field of the logged event.
+     * 
+     */
+    @Import(name="actionLogeventParamSource")
+    private @Nullable Output<String> actionLogeventParamSource;
+
+    /**
+     * @return Value for the source field of the logged event.
+     * 
+     */
+    public Optional<Output<String>> actionLogeventParamSource() {
+        return Optional.ofNullable(this.actionLogeventParamSource);
+    }
+
+    /**
+     * Destination sourcetype where to store the logged event.
+     * 
+     */
+    @Import(name="actionLogeventParamSourcetype")
+    private @Nullable Output<String> actionLogeventParamSourcetype;
+
+    /**
+     * @return Destination sourcetype where to store the logged event.
+     * 
+     */
+    public Optional<Output<String>> actionLogeventParamSourcetype() {
+        return Optional.ofNullable(this.actionLogeventParamSourcetype);
+    }
+
+    /**
      * The PagerDuty custom details information.
      * 
      */
@@ -2522,6 +2612,12 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionJiraServiceDeskParamJiraPriority = $.actionJiraServiceDeskParamJiraPriority;
         this.actionJiraServiceDeskParamJiraProject = $.actionJiraServiceDeskParamJiraProject;
         this.actionJiraServiceDeskParamJiraSummary = $.actionJiraServiceDeskParamJiraSummary;
+        this.actionLogevent = $.actionLogevent;
+        this.actionLogeventParamEvent = $.actionLogeventParamEvent;
+        this.actionLogeventParamHost = $.actionLogeventParamHost;
+        this.actionLogeventParamIndex = $.actionLogeventParamIndex;
+        this.actionLogeventParamSource = $.actionLogeventParamSource;
+        this.actionLogeventParamSourcetype = $.actionLogeventParamSourcetype;
         this.actionPagerdutyCustomDetails = $.actionPagerdutyCustomDetails;
         this.actionPagerdutyIntegrationKey = $.actionPagerdutyIntegrationKey;
         this.actionPagerdutyIntegrationKeyOverride = $.actionPagerdutyIntegrationKeyOverride;
@@ -3783,6 +3879,132 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionJiraServiceDeskParamJiraSummary(String actionJiraServiceDeskParamJiraSummary) {
             return actionJiraServiceDeskParamJiraSummary(Output.of(actionJiraServiceDeskParamJiraSummary));
+        }
+
+        /**
+         * @param actionLogevent Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogevent(@Nullable Output<String> actionLogevent) {
+            $.actionLogevent = actionLogevent;
+            return this;
+        }
+
+        /**
+         * @param actionLogevent Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogevent(String actionLogevent) {
+            return actionLogevent(Output.of(actionLogevent));
+        }
+
+        /**
+         * @param actionLogeventParamEvent Specific event text for the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamEvent(@Nullable Output<String> actionLogeventParamEvent) {
+            $.actionLogeventParamEvent = actionLogeventParamEvent;
+            return this;
+        }
+
+        /**
+         * @param actionLogeventParamEvent Specific event text for the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamEvent(String actionLogeventParamEvent) {
+            return actionLogeventParamEvent(Output.of(actionLogeventParamEvent));
+        }
+
+        /**
+         * @param actionLogeventParamHost Value for the host field of the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamHost(@Nullable Output<String> actionLogeventParamHost) {
+            $.actionLogeventParamHost = actionLogeventParamHost;
+            return this;
+        }
+
+        /**
+         * @param actionLogeventParamHost Value for the host field of the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamHost(String actionLogeventParamHost) {
+            return actionLogeventParamHost(Output.of(actionLogeventParamHost));
+        }
+
+        /**
+         * @param actionLogeventParamIndex Destination index where to store the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamIndex(@Nullable Output<String> actionLogeventParamIndex) {
+            $.actionLogeventParamIndex = actionLogeventParamIndex;
+            return this;
+        }
+
+        /**
+         * @param actionLogeventParamIndex Destination index where to store the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamIndex(String actionLogeventParamIndex) {
+            return actionLogeventParamIndex(Output.of(actionLogeventParamIndex));
+        }
+
+        /**
+         * @param actionLogeventParamSource Value for the source field of the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamSource(@Nullable Output<String> actionLogeventParamSource) {
+            $.actionLogeventParamSource = actionLogeventParamSource;
+            return this;
+        }
+
+        /**
+         * @param actionLogeventParamSource Value for the source field of the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamSource(String actionLogeventParamSource) {
+            return actionLogeventParamSource(Output.of(actionLogeventParamSource));
+        }
+
+        /**
+         * @param actionLogeventParamSourcetype Destination sourcetype where to store the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamSourcetype(@Nullable Output<String> actionLogeventParamSourcetype) {
+            $.actionLogeventParamSourcetype = actionLogeventParamSourcetype;
+            return this;
+        }
+
+        /**
+         * @param actionLogeventParamSourcetype Destination sourcetype where to store the logged event.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionLogeventParamSourcetype(String actionLogeventParamSourcetype) {
+            return actionLogeventParamSourcetype(Output.of(actionLogeventParamSourcetype));
         }
 
         /**
