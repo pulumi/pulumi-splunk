@@ -171,6 +171,18 @@ type SavedSearches struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+	ActionLogevent pulumi.StringOutput `pulumi:"actionLogevent"`
+	// Specific event text for the logged event.
+	ActionLogeventParamEvent pulumi.StringOutput `pulumi:"actionLogeventParamEvent"`
+	// Value for the host field of the logged event.
+	ActionLogeventParamHost pulumi.StringOutput `pulumi:"actionLogeventParamHost"`
+	// Destination index where to store the logged event.
+	ActionLogeventParamIndex pulumi.StringOutput `pulumi:"actionLogeventParamIndex"`
+	// Value for the source field of the logged event.
+	ActionLogeventParamSource pulumi.StringOutput `pulumi:"actionLogeventParamSource"`
+	// Destination sourcetype where to store the logged event.
+	ActionLogeventParamSourcetype pulumi.StringOutput `pulumi:"actionLogeventParamSourcetype"`
 	// The PagerDuty custom details information.
 	ActionPagerdutyCustomDetails pulumi.StringOutput `pulumi:"actionPagerdutyCustomDetails"`
 	// The PagerDuty integration Key.
@@ -542,6 +554,18 @@ type savedSearchesState struct {
 	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+	ActionLogevent *string `pulumi:"actionLogevent"`
+	// Specific event text for the logged event.
+	ActionLogeventParamEvent *string `pulumi:"actionLogeventParamEvent"`
+	// Value for the host field of the logged event.
+	ActionLogeventParamHost *string `pulumi:"actionLogeventParamHost"`
+	// Destination index where to store the logged event.
+	ActionLogeventParamIndex *string `pulumi:"actionLogeventParamIndex"`
+	// Value for the source field of the logged event.
+	ActionLogeventParamSource *string `pulumi:"actionLogeventParamSource"`
+	// Destination sourcetype where to store the logged event.
+	ActionLogeventParamSourcetype *string `pulumi:"actionLogeventParamSourcetype"`
 	// The PagerDuty custom details information.
 	ActionPagerdutyCustomDetails *string `pulumi:"actionPagerdutyCustomDetails"`
 	// The PagerDuty integration Key.
@@ -881,6 +905,18 @@ type SavedSearchesState struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
+	// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+	ActionLogevent pulumi.StringPtrInput
+	// Specific event text for the logged event.
+	ActionLogeventParamEvent pulumi.StringPtrInput
+	// Value for the host field of the logged event.
+	ActionLogeventParamHost pulumi.StringPtrInput
+	// Destination index where to store the logged event.
+	ActionLogeventParamIndex pulumi.StringPtrInput
+	// Value for the source field of the logged event.
+	ActionLogeventParamSource pulumi.StringPtrInput
+	// Destination sourcetype where to store the logged event.
+	ActionLogeventParamSourcetype pulumi.StringPtrInput
 	// The PagerDuty custom details information.
 	ActionPagerdutyCustomDetails pulumi.StringPtrInput
 	// The PagerDuty integration Key.
@@ -1222,6 +1258,18 @@ type savedSearchesArgs struct {
 	ActionJiraServiceDeskParamJiraProject *string `pulumi:"actionJiraServiceDeskParamJiraProject"`
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary *string `pulumi:"actionJiraServiceDeskParamJiraSummary"`
+	// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+	ActionLogevent *string `pulumi:"actionLogevent"`
+	// Specific event text for the logged event.
+	ActionLogeventParamEvent *string `pulumi:"actionLogeventParamEvent"`
+	// Value for the host field of the logged event.
+	ActionLogeventParamHost *string `pulumi:"actionLogeventParamHost"`
+	// Destination index where to store the logged event.
+	ActionLogeventParamIndex *string `pulumi:"actionLogeventParamIndex"`
+	// Value for the source field of the logged event.
+	ActionLogeventParamSource *string `pulumi:"actionLogeventParamSource"`
+	// Destination sourcetype where to store the logged event.
+	ActionLogeventParamSourcetype *string `pulumi:"actionLogeventParamSourcetype"`
 	// The PagerDuty custom details information.
 	ActionPagerdutyCustomDetails *string `pulumi:"actionPagerdutyCustomDetails"`
 	// The PagerDuty integration Key.
@@ -1552,6 +1600,18 @@ type SavedSearchesArgs struct {
 	ActionJiraServiceDeskParamJiraProject pulumi.StringPtrInput
 	// Jira issue title/summary
 	ActionJiraServiceDeskParamJiraSummary pulumi.StringPtrInput
+	// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+	ActionLogevent pulumi.StringPtrInput
+	// Specific event text for the logged event.
+	ActionLogeventParamEvent pulumi.StringPtrInput
+	// Value for the host field of the logged event.
+	ActionLogeventParamHost pulumi.StringPtrInput
+	// Destination index where to store the logged event.
+	ActionLogeventParamIndex pulumi.StringPtrInput
+	// Value for the source field of the logged event.
+	ActionLogeventParamSource pulumi.StringPtrInput
+	// Destination sourcetype where to store the logged event.
+	ActionLogeventParamSourcetype pulumi.StringPtrInput
 	// The PagerDuty custom details information.
 	ActionPagerdutyCustomDetails pulumi.StringPtrInput
 	// The PagerDuty integration Key.
@@ -2132,6 +2192,36 @@ func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraProject() pulumi.Stri
 // Jira issue title/summary
 func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraSummary() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraSummary }).(pulumi.StringPtrOutput)
+}
+
+// Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+func (o SavedSearchesOutput) ActionLogevent() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionLogevent }).(pulumi.StringOutput)
+}
+
+// Specific event text for the logged event.
+func (o SavedSearchesOutput) ActionLogeventParamEvent() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionLogeventParamEvent }).(pulumi.StringOutput)
+}
+
+// Value for the host field of the logged event.
+func (o SavedSearchesOutput) ActionLogeventParamHost() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionLogeventParamHost }).(pulumi.StringOutput)
+}
+
+// Destination index where to store the logged event.
+func (o SavedSearchesOutput) ActionLogeventParamIndex() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionLogeventParamIndex }).(pulumi.StringOutput)
+}
+
+// Value for the source field of the logged event.
+func (o SavedSearchesOutput) ActionLogeventParamSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionLogeventParamSource }).(pulumi.StringOutput)
+}
+
+// Destination sourcetype where to store the logged event.
+func (o SavedSearchesOutput) ActionLogeventParamSourcetype() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionLogeventParamSourcetype }).(pulumi.StringOutput)
 }
 
 // The PagerDuty custom details information.

@@ -76,6 +76,12 @@ class SavedSearchesArgs:
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
@@ -241,6 +247,12 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[_builtins.str] action_logevent: Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_logevent_param_event: Specific event text for the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_host: Value for the host field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_index: Destination index where to store the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_source: Value for the source field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_sourcetype: Destination sourcetype where to store the logged event.
         :param pulumi.Input[_builtins.str] action_pagerduty_custom_details: The PagerDuty custom details information.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key: The PagerDuty integration Key.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
@@ -459,6 +471,18 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
         if action_jira_service_desk_param_jira_summary is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
+        if action_logevent is not None:
+            pulumi.set(__self__, "action_logevent", action_logevent)
+        if action_logevent_param_event is not None:
+            pulumi.set(__self__, "action_logevent_param_event", action_logevent_param_event)
+        if action_logevent_param_host is not None:
+            pulumi.set(__self__, "action_logevent_param_host", action_logevent_param_host)
+        if action_logevent_param_index is not None:
+            pulumi.set(__self__, "action_logevent_param_index", action_logevent_param_index)
+        if action_logevent_param_source is not None:
+            pulumi.set(__self__, "action_logevent_param_source", action_logevent_param_source)
+        if action_logevent_param_sourcetype is not None:
+            pulumi.set(__self__, "action_logevent_param_sourcetype", action_logevent_param_sourcetype)
         if action_pagerduty_custom_details is not None:
             pulumi.set(__self__, "action_pagerduty_custom_details", action_pagerduty_custom_details)
         if action_pagerduty_integration_key is not None:
@@ -1335,6 +1359,78 @@ class SavedSearchesArgs:
     @action_jira_service_desk_param_jira_summary.setter
     def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogevent")
+    def action_logevent(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_logevent")
+
+    @action_logevent.setter
+    def action_logevent(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamEvent")
+    def action_logevent_param_event(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specific event text for the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_event")
+
+    @action_logevent_param_event.setter
+    def action_logevent_param_event(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_event", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamHost")
+    def action_logevent_param_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Value for the host field of the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_host")
+
+    @action_logevent_param_host.setter
+    def action_logevent_param_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_host", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamIndex")
+    def action_logevent_param_index(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Destination index where to store the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_index")
+
+    @action_logevent_param_index.setter
+    def action_logevent_param_index(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_index", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamSource")
+    def action_logevent_param_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Value for the source field of the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_source")
+
+    @action_logevent_param_source.setter
+    def action_logevent_param_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamSourcetype")
+    def action_logevent_param_sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Destination sourcetype where to store the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_sourcetype")
+
+    @action_logevent_param_sourcetype.setter
+    def action_logevent_param_sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyCustomDetails")
@@ -2691,6 +2787,12 @@ class _SavedSearchesState:
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2861,6 +2963,12 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[_builtins.str] action_logevent: Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_logevent_param_event: Specific event text for the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_host: Value for the host field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_index: Destination index where to store the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_source: Value for the source field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_sourcetype: Destination sourcetype where to store the logged event.
         :param pulumi.Input[_builtins.str] action_pagerduty_custom_details: The PagerDuty custom details information.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key: The PagerDuty integration Key.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
@@ -3085,6 +3193,18 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_project", action_jira_service_desk_param_jira_project)
         if action_jira_service_desk_param_jira_summary is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_summary", action_jira_service_desk_param_jira_summary)
+        if action_logevent is not None:
+            pulumi.set(__self__, "action_logevent", action_logevent)
+        if action_logevent_param_event is not None:
+            pulumi.set(__self__, "action_logevent_param_event", action_logevent_param_event)
+        if action_logevent_param_host is not None:
+            pulumi.set(__self__, "action_logevent_param_host", action_logevent_param_host)
+        if action_logevent_param_index is not None:
+            pulumi.set(__self__, "action_logevent_param_index", action_logevent_param_index)
+        if action_logevent_param_source is not None:
+            pulumi.set(__self__, "action_logevent_param_source", action_logevent_param_source)
+        if action_logevent_param_sourcetype is not None:
+            pulumi.set(__self__, "action_logevent_param_sourcetype", action_logevent_param_sourcetype)
         if action_pagerduty_custom_details is not None:
             pulumi.set(__self__, "action_pagerduty_custom_details", action_pagerduty_custom_details)
         if action_pagerduty_integration_key is not None:
@@ -3971,6 +4091,78 @@ class _SavedSearchesState:
     @action_jira_service_desk_param_jira_summary.setter
     def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogevent")
+    def action_logevent(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_logevent")
+
+    @action_logevent.setter
+    def action_logevent(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamEvent")
+    def action_logevent_param_event(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specific event text for the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_event")
+
+    @action_logevent_param_event.setter
+    def action_logevent_param_event(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_event", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamHost")
+    def action_logevent_param_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Value for the host field of the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_host")
+
+    @action_logevent_param_host.setter
+    def action_logevent_param_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_host", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamIndex")
+    def action_logevent_param_index(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Destination index where to store the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_index")
+
+    @action_logevent_param_index.setter
+    def action_logevent_param_index(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_index", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamSource")
+    def action_logevent_param_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Value for the source field of the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_source")
+
+    @action_logevent_param_source.setter
+    def action_logevent_param_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamSourcetype")
+    def action_logevent_param_sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Destination sourcetype where to store the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_sourcetype")
+
+    @action_logevent_param_sourcetype.setter
+    def action_logevent_param_sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_logevent_param_sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyCustomDetails")
@@ -5389,6 +5581,12 @@ class SavedSearches(pulumi.CustomResource):
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
@@ -5587,6 +5785,12 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[_builtins.str] action_logevent: Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_logevent_param_event: Specific event text for the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_host: Value for the host field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_index: Destination index where to store the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_source: Value for the source field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_sourcetype: Destination sourcetype where to store the logged event.
         :param pulumi.Input[_builtins.str] action_pagerduty_custom_details: The PagerDuty custom details information.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key: The PagerDuty integration Key.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
@@ -5804,6 +6008,12 @@ class SavedSearches(pulumi.CustomResource):
                  action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
                  action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
@@ -5976,6 +6186,12 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
             __props__.__dict__["action_jira_service_desk_param_jira_project"] = action_jira_service_desk_param_jira_project
             __props__.__dict__["action_jira_service_desk_param_jira_summary"] = action_jira_service_desk_param_jira_summary
+            __props__.__dict__["action_logevent"] = action_logevent
+            __props__.__dict__["action_logevent_param_event"] = action_logevent_param_event
+            __props__.__dict__["action_logevent_param_host"] = action_logevent_param_host
+            __props__.__dict__["action_logevent_param_index"] = action_logevent_param_index
+            __props__.__dict__["action_logevent_param_source"] = action_logevent_param_source
+            __props__.__dict__["action_logevent_param_sourcetype"] = action_logevent_param_sourcetype
             __props__.__dict__["action_pagerduty_custom_details"] = action_pagerduty_custom_details
             __props__.__dict__["action_pagerduty_integration_key"] = action_pagerduty_integration_key
             __props__.__dict__["action_pagerduty_integration_key_override"] = action_pagerduty_integration_key_override
@@ -6157,6 +6373,12 @@ class SavedSearches(pulumi.CustomResource):
             action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
             action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
             action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
+            action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
+            action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
+            action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
+            action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
+            action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
+            action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
             action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
             action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
             action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6332,6 +6554,12 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_project: Jira Project name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_summary: Jira issue title/summary
+        :param pulumi.Input[_builtins.str] action_logevent: Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_logevent_param_event: Specific event text for the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_host: Value for the host field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_index: Destination index where to store the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_source: Value for the source field of the logged event.
+        :param pulumi.Input[_builtins.str] action_logevent_param_sourcetype: Destination sourcetype where to store the logged event.
         :param pulumi.Input[_builtins.str] action_pagerduty_custom_details: The PagerDuty custom details information.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key: The PagerDuty integration Key.
         :param pulumi.Input[_builtins.str] action_pagerduty_integration_key_override: The PagerDuty integration Key override.
@@ -6505,6 +6733,12 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
         __props__.__dict__["action_jira_service_desk_param_jira_project"] = action_jira_service_desk_param_jira_project
         __props__.__dict__["action_jira_service_desk_param_jira_summary"] = action_jira_service_desk_param_jira_summary
+        __props__.__dict__["action_logevent"] = action_logevent
+        __props__.__dict__["action_logevent_param_event"] = action_logevent_param_event
+        __props__.__dict__["action_logevent_param_host"] = action_logevent_param_host
+        __props__.__dict__["action_logevent_param_index"] = action_logevent_param_index
+        __props__.__dict__["action_logevent_param_source"] = action_logevent_param_source
+        __props__.__dict__["action_logevent_param_sourcetype"] = action_logevent_param_sourcetype
         __props__.__dict__["action_pagerduty_custom_details"] = action_pagerduty_custom_details
         __props__.__dict__["action_pagerduty_integration_key"] = action_pagerduty_integration_key
         __props__.__dict__["action_pagerduty_integration_key_override"] = action_pagerduty_integration_key_override
@@ -7059,6 +7293,54 @@ class SavedSearches(pulumi.CustomResource):
         Jira issue title/summary
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogevent")
+    def action_logevent(self) -> pulumi.Output[_builtins.str]:
+        """
+        Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_logevent")
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamEvent")
+    def action_logevent_param_event(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specific event text for the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_event")
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamHost")
+    def action_logevent_param_host(self) -> pulumi.Output[_builtins.str]:
+        """
+        Value for the host field of the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_host")
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamIndex")
+    def action_logevent_param_index(self) -> pulumi.Output[_builtins.str]:
+        """
+        Destination index where to store the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_index")
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamSource")
+    def action_logevent_param_source(self) -> pulumi.Output[_builtins.str]:
+        """
+        Value for the source field of the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_source")
+
+    @_builtins.property
+    @pulumi.getter(name="actionLogeventParamSourcetype")
+    def action_logevent_param_sourcetype(self) -> pulumi.Output[_builtins.str]:
+        """
+        Destination sourcetype where to store the logged event.
+        """
+        return pulumi.get(self, "action_logevent_param_sourcetype")
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyCustomDetails")

@@ -288,6 +288,30 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionJiraServiceDeskParamJiraSummary: pulumi.Output<string | undefined>;
     /**
+     * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    declare public readonly actionLogevent: pulumi.Output<string>;
+    /**
+     * Specific event text for the logged event.
+     */
+    declare public readonly actionLogeventParamEvent: pulumi.Output<string>;
+    /**
+     * Value for the host field of the logged event.
+     */
+    declare public readonly actionLogeventParamHost: pulumi.Output<string>;
+    /**
+     * Destination index where to store the logged event.
+     */
+    declare public readonly actionLogeventParamIndex: pulumi.Output<string>;
+    /**
+     * Value for the source field of the logged event.
+     */
+    declare public readonly actionLogeventParamSource: pulumi.Output<string>;
+    /**
+     * Destination sourcetype where to store the logged event.
+     */
+    declare public readonly actionLogeventParamSourcetype: pulumi.Output<string>;
+    /**
      * The PagerDuty custom details information.
      */
     declare public readonly actionPagerdutyCustomDetails: pulumi.Output<string>;
@@ -808,6 +832,12 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state?.actionJiraServiceDeskParamJiraPriority;
             resourceInputs["actionJiraServiceDeskParamJiraProject"] = state?.actionJiraServiceDeskParamJiraProject;
             resourceInputs["actionJiraServiceDeskParamJiraSummary"] = state?.actionJiraServiceDeskParamJiraSummary;
+            resourceInputs["actionLogevent"] = state?.actionLogevent;
+            resourceInputs["actionLogeventParamEvent"] = state?.actionLogeventParamEvent;
+            resourceInputs["actionLogeventParamHost"] = state?.actionLogeventParamHost;
+            resourceInputs["actionLogeventParamIndex"] = state?.actionLogeventParamIndex;
+            resourceInputs["actionLogeventParamSource"] = state?.actionLogeventParamSource;
+            resourceInputs["actionLogeventParamSourcetype"] = state?.actionLogeventParamSourcetype;
             resourceInputs["actionPagerdutyCustomDetails"] = state?.actionPagerdutyCustomDetails;
             resourceInputs["actionPagerdutyIntegrationKey"] = state?.actionPagerdutyIntegrationKey;
             resourceInputs["actionPagerdutyIntegrationKeyOverride"] = state?.actionPagerdutyIntegrationKeyOverride;
@@ -980,6 +1010,12 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args?.actionJiraServiceDeskParamJiraPriority;
             resourceInputs["actionJiraServiceDeskParamJiraProject"] = args?.actionJiraServiceDeskParamJiraProject;
             resourceInputs["actionJiraServiceDeskParamJiraSummary"] = args?.actionJiraServiceDeskParamJiraSummary;
+            resourceInputs["actionLogevent"] = args?.actionLogevent;
+            resourceInputs["actionLogeventParamEvent"] = args?.actionLogeventParamEvent;
+            resourceInputs["actionLogeventParamHost"] = args?.actionLogeventParamHost;
+            resourceInputs["actionLogeventParamIndex"] = args?.actionLogeventParamIndex;
+            resourceInputs["actionLogeventParamSource"] = args?.actionLogeventParamSource;
+            resourceInputs["actionLogeventParamSourcetype"] = args?.actionLogeventParamSourcetype;
             resourceInputs["actionPagerdutyCustomDetails"] = args?.actionPagerdutyCustomDetails;
             resourceInputs["actionPagerdutyIntegrationKey"] = args?.actionPagerdutyIntegrationKey;
             resourceInputs["actionPagerdutyIntegrationKeyOverride"] = args?.actionPagerdutyIntegrationKeyOverride;
@@ -1324,6 +1360,30 @@ export interface SavedSearchesState {
      * Jira issue title/summary
      */
     actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    /**
+     * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    actionLogevent?: pulumi.Input<string>;
+    /**
+     * Specific event text for the logged event.
+     */
+    actionLogeventParamEvent?: pulumi.Input<string>;
+    /**
+     * Value for the host field of the logged event.
+     */
+    actionLogeventParamHost?: pulumi.Input<string>;
+    /**
+     * Destination index where to store the logged event.
+     */
+    actionLogeventParamIndex?: pulumi.Input<string>;
+    /**
+     * Value for the source field of the logged event.
+     */
+    actionLogeventParamSource?: pulumi.Input<string>;
+    /**
+     * Destination sourcetype where to store the logged event.
+     */
+    actionLogeventParamSourcetype?: pulumi.Input<string>;
     /**
      * The PagerDuty custom details information.
      */
@@ -1998,6 +2058,30 @@ export interface SavedSearchesArgs {
      * Jira issue title/summary
      */
     actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    /**
+     * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    actionLogevent?: pulumi.Input<string>;
+    /**
+     * Specific event text for the logged event.
+     */
+    actionLogeventParamEvent?: pulumi.Input<string>;
+    /**
+     * Value for the host field of the logged event.
+     */
+    actionLogeventParamHost?: pulumi.Input<string>;
+    /**
+     * Destination index where to store the logged event.
+     */
+    actionLogeventParamIndex?: pulumi.Input<string>;
+    /**
+     * Value for the source field of the logged event.
+     */
+    actionLogeventParamSource?: pulumi.Input<string>;
+    /**
+     * Destination sourcetype where to store the logged event.
+     */
+    actionLogeventParamSourcetype?: pulumi.Input<string>;
     /**
      * The PagerDuty custom details information.
      */
