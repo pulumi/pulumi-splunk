@@ -636,7 +636,7 @@ namespace Pulumi.Splunk
         public Output<string> ActionSnowEventParamCiIdentifier { get; private set; } = null!;
 
         /// <summary>
-        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the EmEvent table of ServiceNow.
         /// </summary>
         [Output("actionSnowEventParamCustomFields")]
         public Output<string> ActionSnowEventParamCustomFields { get; private set; } = null!;
@@ -738,7 +738,7 @@ namespace Pulumi.Splunk
         public Output<string> Actions { get; private set; } = null!;
 
         /// <summary>
-        /// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+        /// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with AlertThreshold to trigger alert actions.
         /// </summary>
         [Output("alertComparator")]
         public Output<string> AlertComparator { get; private set; } = null!;
@@ -786,7 +786,7 @@ namespace Pulumi.Splunk
         public Output<string> AlertSuppressPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        /// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when AlertComparator is set to rises by perc or drops by perc.
         /// </summary>
         [Output("alertThreshold")]
         public Output<string> AlertThreshold { get; private set; } = null!;
@@ -798,7 +798,7 @@ namespace Pulumi.Splunk
         public Output<bool> AlertTrack { get; private set; } = null!;
 
         /// <summary>
-        /// What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+        /// What to base the alert on, overriden by AlertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         /// </summary>
         [Output("alertType")]
         public Output<string> AlertType { get; private set; } = null!;
@@ -936,13 +936,13 @@ namespace Pulumi.Splunk
         public Output<bool> DispatchIndexedRealtime { get; private set; } = null!;
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeDiskSyncDelay setting in limits.conf.
         /// </summary>
         [Output("dispatchIndexedRealtimeMinspan")]
         public Output<int> DispatchIndexedRealtimeMinspan { get; private set; } = null!;
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeDiskSyncDelay setting in limits.conf.
         /// </summary>
         [Output("dispatchIndexedRealtimeOffset")]
         public Output<int> DispatchIndexedRealtimeOffset { get; private set; } = null!;
@@ -984,7 +984,7 @@ namespace Pulumi.Splunk
         public Output<bool> DispatchRtBackfill { get; private set; } = null!;
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeMaximumSpan setting in limits.conf.
         /// </summary>
         [Output("dispatchRtMaximumSpan")]
         public Output<int> DispatchRtMaximumSpan { get; private set; } = null!;
@@ -1074,7 +1074,7 @@ namespace Pulumi.Splunk
         public Output<string> SchedulePriority { get; private set; } = null!;
 
         /// <summary>
-        /// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+        /// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the EditSearchScheduleWindow capability to override auto.
         /// </summary>
         [Output("scheduleWindow")]
         public Output<string> ScheduleWindow { get; private set; } = null!;
@@ -1702,7 +1702,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamCiIdentifier { get; set; }
 
         /// <summary>
-        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the EmEvent table of ServiceNow.
         /// </summary>
         [Input("actionSnowEventParamCustomFields")]
         public Input<string>? ActionSnowEventParamCustomFields { get; set; }
@@ -1798,7 +1798,7 @@ namespace Pulumi.Splunk
         public Input<string>? Actions { get; set; }
 
         /// <summary>
-        /// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+        /// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with AlertThreshold to trigger alert actions.
         /// </summary>
         [Input("alertComparator")]
         public Input<string>? AlertComparator { get; set; }
@@ -1846,7 +1846,7 @@ namespace Pulumi.Splunk
         public Input<string>? AlertSuppressPeriod { get; set; }
 
         /// <summary>
-        /// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        /// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when AlertComparator is set to rises by perc or drops by perc.
         /// </summary>
         [Input("alertThreshold")]
         public Input<string>? AlertThreshold { get; set; }
@@ -1858,7 +1858,7 @@ namespace Pulumi.Splunk
         public Input<bool>? AlertTrack { get; set; }
 
         /// <summary>
-        /// What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+        /// What to base the alert on, overriden by AlertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         /// </summary>
         [Input("alertType")]
         public Input<string>? AlertType { get; set; }
@@ -1996,13 +1996,13 @@ namespace Pulumi.Splunk
         public Input<bool>? DispatchIndexedRealtime { get; set; }
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeDiskSyncDelay setting in limits.conf.
         /// </summary>
         [Input("dispatchIndexedRealtimeMinspan")]
         public Input<int>? DispatchIndexedRealtimeMinspan { get; set; }
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeDiskSyncDelay setting in limits.conf.
         /// </summary>
         [Input("dispatchIndexedRealtimeOffset")]
         public Input<int>? DispatchIndexedRealtimeOffset { get; set; }
@@ -2044,7 +2044,7 @@ namespace Pulumi.Splunk
         public Input<bool>? DispatchRtBackfill { get; set; }
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeMaximumSpan setting in limits.conf.
         /// </summary>
         [Input("dispatchRtMaximumSpan")]
         public Input<int>? DispatchRtMaximumSpan { get; set; }
@@ -2134,7 +2134,7 @@ namespace Pulumi.Splunk
         public Input<string>? SchedulePriority { get; set; }
 
         /// <summary>
-        /// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+        /// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the EditSearchScheduleWindow capability to override auto.
         /// </summary>
         [Input("scheduleWindow")]
         public Input<string>? ScheduleWindow { get; set; }
@@ -2748,7 +2748,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamCiIdentifier { get; set; }
 
         /// <summary>
-        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+        /// The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the EmEvent table of ServiceNow.
         /// </summary>
         [Input("actionSnowEventParamCustomFields")]
         public Input<string>? ActionSnowEventParamCustomFields { get; set; }
@@ -2850,7 +2850,7 @@ namespace Pulumi.Splunk
         public Input<string>? Actions { get; set; }
 
         /// <summary>
-        /// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+        /// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with AlertThreshold to trigger alert actions.
         /// </summary>
         [Input("alertComparator")]
         public Input<string>? AlertComparator { get; set; }
@@ -2898,7 +2898,7 @@ namespace Pulumi.Splunk
         public Input<string>? AlertSuppressPeriod { get; set; }
 
         /// <summary>
-        /// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+        /// Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when AlertComparator is set to rises by perc or drops by perc.
         /// </summary>
         [Input("alertThreshold")]
         public Input<string>? AlertThreshold { get; set; }
@@ -2910,7 +2910,7 @@ namespace Pulumi.Splunk
         public Input<bool>? AlertTrack { get; set; }
 
         /// <summary>
-        /// What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+        /// What to base the alert on, overriden by AlertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         /// </summary>
         [Input("alertType")]
         public Input<string>? AlertType { get; set; }
@@ -3048,13 +3048,13 @@ namespace Pulumi.Splunk
         public Input<bool>? DispatchIndexedRealtime { get; set; }
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeDiskSyncDelay setting in limits.conf.
         /// </summary>
         [Input("dispatchIndexedRealtimeMinspan")]
         public Input<int>? DispatchIndexedRealtimeMinspan { get; set; }
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeDiskSyncDelay setting in limits.conf.
         /// </summary>
         [Input("dispatchIndexedRealtimeOffset")]
         public Input<int>? DispatchIndexedRealtimeOffset { get; set; }
@@ -3096,7 +3096,7 @@ namespace Pulumi.Splunk
         public Input<bool>? DispatchRtBackfill { get; set; }
 
         /// <summary>
-        /// Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+        /// Allows for a per-job override of the [search] IndexedRealtimeMaximumSpan setting in limits.conf.
         /// </summary>
         [Input("dispatchRtMaximumSpan")]
         public Input<int>? DispatchRtMaximumSpan { get; set; }
@@ -3186,7 +3186,7 @@ namespace Pulumi.Splunk
         public Input<string>? SchedulePriority { get; set; }
 
         /// <summary>
-        /// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+        /// Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the EditSearchScheduleWindow capability to override auto.
         /// </summary>
         [Input("scheduleWindow")]
         public Input<string>? ScheduleWindow { get; set; }

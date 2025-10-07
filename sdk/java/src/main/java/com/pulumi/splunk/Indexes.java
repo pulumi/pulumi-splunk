@@ -23,8 +23,8 @@ import javax.annotation.Nullable;
  * 
  * ## Authorization and authentication
  * 
- * By default, all users can list all indexes. However, if the indexes_list_all capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
- * To enable indexes_list_all capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
+ * By default, all users can list all indexes. However, if the indexesListAll capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
+ * To enable indexesListAll capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
  * 
  * ## Example Usage
  * 
@@ -291,16 +291,16 @@ public class Indexes extends com.pulumi.resources.CustomResource {
         return this.maxConcurrentOptimizes;
     }
     /**
-     * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;auto_high_volume&#34; causes Splunk software to autotune this parameter (recommended).
-     * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
+     * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;autoHighVolume&#34; causes Splunk software to autotune this parameter (recommended).
+     * Use &#34;autoHighVolume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
      * 
      */
     @Export(name="maxDataSize", refs={String.class}, tree="[0]")
     private Output<String> maxDataSize;
 
     /**
-     * @return The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;auto_high_volume&#34; causes Splunk software to autotune this parameter (recommended).
-     * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
+     * @return The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;autoHighVolume&#34; causes Splunk software to autotune this parameter (recommended).
+     * Use &#34;autoHighVolume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
      * 
      */
     public Output<String> maxDataSize() {
