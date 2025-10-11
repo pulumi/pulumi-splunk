@@ -51,7 +51,7 @@ namespace Pulumi.Splunk
     /// 
     /// ## Validation Rules
     /// 
-    /// When `acl.sharing` is set to `user`, the `acl.read` and `acl.write` fields must not be explicitly set. Setting them will trigger a validation error.
+    /// When `acl.sharing` is set to `User`, the `acl.read` and `acl.write` fields must not be explicitly set. Setting them will trigger a validation error.
     /// </summary>
     [SplunkResourceType("splunk:index/lookupDefinition:LookupDefinition")]
     public partial class LookupDefinition : global::Pulumi.CustomResource

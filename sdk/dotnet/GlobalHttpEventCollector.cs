@@ -50,7 +50,7 @@ namespace Pulumi.Splunk
         public Output<bool> Disabled { get; private set; } = null!;
 
         /// <summary>
-        /// Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
+        /// Enable SSL protocol for HTTP data input. `True` = SSL enabled, `False` = SSL disabled.
         /// </summary>
         [Output("enableSsl")]
         public Output<bool> EnableSsl { get; private set; } = null!;
@@ -75,7 +75,7 @@ namespace Pulumi.Splunk
 
         /// <summary>
         /// Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
-        /// Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
+        /// Copy the full contents of the SplunkHttpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the SplunkHttpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
         /// </summary>
         [Output("useDeploymentServer")]
         public Output<int> UseDeploymentServer { get; private set; } = null!;
@@ -139,7 +139,7 @@ namespace Pulumi.Splunk
         public Input<bool>? Disabled { get; set; }
 
         /// <summary>
-        /// Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
+        /// Enable SSL protocol for HTTP data input. `True` = SSL enabled, `False` = SSL disabled.
         /// </summary>
         [Input("enableSsl")]
         public Input<bool>? EnableSsl { get; set; }
@@ -164,7 +164,7 @@ namespace Pulumi.Splunk
 
         /// <summary>
         /// Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
-        /// Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
+        /// Copy the full contents of the SplunkHttpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the SplunkHttpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
         /// </summary>
         [Input("useDeploymentServer")]
         public Input<int>? UseDeploymentServer { get; set; }
@@ -190,7 +190,7 @@ namespace Pulumi.Splunk
         public Input<bool>? Disabled { get; set; }
 
         /// <summary>
-        /// Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
+        /// Enable SSL protocol for HTTP data input. `True` = SSL enabled, `False` = SSL disabled.
         /// </summary>
         [Input("enableSsl")]
         public Input<bool>? EnableSsl { get; set; }
@@ -215,7 +215,7 @@ namespace Pulumi.Splunk
 
         /// <summary>
         /// Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
-        /// Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
+        /// Copy the full contents of the SplunkHttpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the SplunkHttpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
         /// </summary>
         [Input("useDeploymentServer")]
         public Input<int>? UseDeploymentServer { get; set; }
