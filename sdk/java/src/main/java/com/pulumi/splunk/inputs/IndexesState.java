@@ -258,16 +258,16 @@ public final class IndexesState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;auto_high_volume&#34; causes Splunk software to autotune this parameter (recommended).
-     * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
+     * The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;autoHighVolume&#34; causes Splunk software to autotune this parameter (recommended).
+     * Use &#34;autoHighVolume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
      * 
      */
     @Import(name="maxDataSize")
     private @Nullable Output<String> maxDataSize;
 
     /**
-     * @return The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;auto_high_volume&#34; causes Splunk software to autotune this parameter (recommended).
-     * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
+     * @return The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;autoHighVolume&#34; causes Splunk software to autotune this parameter (recommended).
+     * Use &#34;autoHighVolume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
      * 
      */
     public Optional<Output<String>> maxDataSize() {
@@ -1071,8 +1071,8 @@ public final class IndexesState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxDataSize The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;auto_high_volume&#34; causes Splunk software to autotune this parameter (recommended).
-         * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
+         * @param maxDataSize The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;autoHighVolume&#34; causes Splunk software to autotune this parameter (recommended).
+         * Use &#34;autoHighVolume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
          * 
          * @return builder
          * 
@@ -1083,8 +1083,8 @@ public final class IndexesState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxDataSize The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;auto_high_volume&#34; causes Splunk software to autotune this parameter (recommended).
-         * Use &#34;auto_high_volume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
+         * @param maxDataSize The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying &#34;auto&#34; or &#34;autoHighVolume&#34; causes Splunk software to autotune this parameter (recommended).
+         * Use &#34;autoHighVolume&#34; for high volume indexes (such as the main index); otherwise, use &#34;auto&#34;. A &#34;high volume index&#34; would typically be considered one that gets over 10GB of data per day.
          * 
          * @return builder
          * 

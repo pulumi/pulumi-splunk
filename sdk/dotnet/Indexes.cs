@@ -16,8 +16,8 @@ namespace Pulumi.Splunk
     /// 
     /// ## Authorization and authentication
     /// 
-    /// By default, all users can list all indexes. However, if the indexes_list_all capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
-    /// To enable indexes_list_all capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
+    /// By default, all users can list all indexes. However, if the IndexesListAll capability is enabled in authorize.conf, access to all indexes is limited to only those roles with this capability.
+    /// To enable IndexesListAll capability restrictions on the data/indexes endpoint, create a [capability::indexes_list_all] stanza in authorize.conf. Specify indexes_list_all=enabled for any role permitted to list all indexes from this endpoint.
     /// 
     /// ## Example Usage
     /// 
@@ -143,8 +143,8 @@ namespace Pulumi.Splunk
         public Output<int> MaxConcurrentOptimizes { get; private set; } = null!;
 
         /// <summary>
-        /// The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "auto_high_volume" causes Splunk software to autotune this parameter (recommended).
-        /// Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
+        /// The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "AutoHighVolume" causes Splunk software to autotune this parameter (recommended).
+        /// Use "AutoHighVolume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         /// </summary>
         [Output("maxDataSize")]
         public Output<string> MaxDataSize { get; private set; } = null!;
@@ -467,8 +467,8 @@ namespace Pulumi.Splunk
         public Input<int>? MaxConcurrentOptimizes { get; set; }
 
         /// <summary>
-        /// The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "auto_high_volume" causes Splunk software to autotune this parameter (recommended).
-        /// Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
+        /// The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "AutoHighVolume" causes Splunk software to autotune this parameter (recommended).
+        /// Use "AutoHighVolume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         /// </summary>
         [Input("maxDataSize")]
         public Input<string>? MaxDataSize { get; set; }
@@ -753,8 +753,8 @@ namespace Pulumi.Splunk
         public Input<int>? MaxConcurrentOptimizes { get; set; }
 
         /// <summary>
-        /// The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "auto_high_volume" causes Splunk software to autotune this parameter (recommended).
-        /// Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
+        /// The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "AutoHighVolume" causes Splunk software to autotune this parameter (recommended).
+        /// Use "AutoHighVolume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         /// </summary>
         [Input("maxDataSize")]
         public Input<string>? MaxDataSize { get; set; }

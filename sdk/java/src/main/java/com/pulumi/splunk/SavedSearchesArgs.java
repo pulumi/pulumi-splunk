@@ -1416,14 +1416,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+     * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      * 
      */
     @Import(name="actionSnowEventParamCustomFields")
     private @Nullable Output<String> actionSnowEventParamCustomFields;
 
     /**
-     * @return The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+     * @return The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      * 
      */
     public Optional<Output<String>> actionSnowEventParamCustomFields() {
@@ -1656,14 +1656,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+     * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      * 
      */
     @Import(name="alertComparator")
     private @Nullable Output<String> alertComparator;
 
     /**
-     * @return One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+     * @return One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      * 
      */
     public Optional<Output<String>> alertComparator() {
@@ -1776,14 +1776,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+     * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      * 
      */
     @Import(name="alertThreshold")
     private @Nullable Output<String> alertThreshold;
 
     /**
-     * @return Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+     * @return Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      * 
      */
     public Optional<Output<String>> alertThreshold() {
@@ -1806,14 +1806,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+     * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      * 
      */
     @Import(name="alertType")
     private @Nullable Output<String> alertType;
 
     /**
-     * @return What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+     * @return What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      * 
      */
     public Optional<Output<String>> alertType() {
@@ -2151,14 +2151,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+     * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      * 
      */
     @Import(name="dispatchIndexedRealtimeMinspan")
     private @Nullable Output<Integer> dispatchIndexedRealtimeMinspan;
 
     /**
-     * @return Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+     * @return Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      * 
      */
     public Optional<Output<Integer>> dispatchIndexedRealtimeMinspan() {
@@ -2166,14 +2166,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+     * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      * 
      */
     @Import(name="dispatchIndexedRealtimeOffset")
     private @Nullable Output<Integer> dispatchIndexedRealtimeOffset;
 
     /**
-     * @return Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+     * @return Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      * 
      */
     public Optional<Output<Integer>> dispatchIndexedRealtimeOffset() {
@@ -2271,14 +2271,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+     * Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      * 
      */
     @Import(name="dispatchRtMaximumSpan")
     private @Nullable Output<Integer> dispatchRtMaximumSpan;
 
     /**
-     * @return Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+     * @return Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      * 
      */
     public Optional<Output<Integer>> dispatchRtMaximumSpan() {
@@ -2496,14 +2496,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+     * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      * 
      */
     @Import(name="scheduleWindow")
     private @Nullable Output<String> scheduleWindow;
 
     /**
-     * @return Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+     * @return Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      * 
      */
     public Optional<Output<String>> scheduleWindow() {
@@ -4701,7 +4701,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionSnowEventParamCustomFields The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+         * @param actionSnowEventParamCustomFields The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
          * 
          * @return builder
          * 
@@ -4712,7 +4712,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionSnowEventParamCustomFields The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
+         * @param actionSnowEventParamCustomFields The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
          * 
          * @return builder
          * 
@@ -5037,7 +5037,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertComparator One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+         * @param alertComparator One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
          * 
          * @return builder
          * 
@@ -5048,7 +5048,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertComparator One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
+         * @param alertComparator One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
          * 
          * @return builder
          * 
@@ -5205,7 +5205,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertThreshold Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+         * @param alertThreshold Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
          * 
          * @return builder
          * 
@@ -5216,7 +5216,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertThreshold Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
+         * @param alertThreshold Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
          * 
          * @return builder
          * 
@@ -5247,7 +5247,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertType What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+         * @param alertType What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
          * 
          * @return builder
          * 
@@ -5258,7 +5258,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param alertType What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
+         * @param alertType What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
          * 
          * @return builder
          * 
@@ -5730,7 +5730,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchIndexedRealtimeMinspan Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+         * @param dispatchIndexedRealtimeMinspan Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
          * 
          * @return builder
          * 
@@ -5741,7 +5741,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchIndexedRealtimeMinspan Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+         * @param dispatchIndexedRealtimeMinspan Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
          * 
          * @return builder
          * 
@@ -5751,7 +5751,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchIndexedRealtimeOffset Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+         * @param dispatchIndexedRealtimeOffset Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
          * 
          * @return builder
          * 
@@ -5762,7 +5762,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchIndexedRealtimeOffset Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
+         * @param dispatchIndexedRealtimeOffset Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
          * 
          * @return builder
          * 
@@ -5898,7 +5898,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchRtMaximumSpan Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+         * @param dispatchRtMaximumSpan Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
          * 
          * @return builder
          * 
@@ -5909,7 +5909,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dispatchRtMaximumSpan Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
+         * @param dispatchRtMaximumSpan Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
          * 
          * @return builder
          * 
@@ -6213,7 +6213,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduleWindow Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+         * @param scheduleWindow Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
          * 
          * @return builder
          * 
@@ -6224,7 +6224,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduleWindow Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
+         * @param scheduleWindow Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
          * 
          * @return builder
          * 
