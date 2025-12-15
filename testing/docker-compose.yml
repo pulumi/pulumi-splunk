@@ -1,7 +1,9 @@
 services:
   splunk:
     image: splunk/splunk:9.4
+    platform: linux/amd64
     environment:
+      - SPLUNK_GENERAL_TERMS=--accept-sgt-current-at-splunk-com
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_PASSWORD=password
     ports:
