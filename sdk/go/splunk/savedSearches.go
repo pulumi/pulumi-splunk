@@ -63,6 +63,14 @@ type SavedSearches struct {
 
 	// The app/user context that is the namespace for the resource
 	Acl SavedSearchesAclOutput `pulumi:"acl"`
+	// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+	ActionBetterWebhookParamBodyFormat pulumi.StringPtrOutput `pulumi:"actionBetterWebhookParamBodyFormat"`
+	// Name of the Splunk stored credential to use for authentication
+	ActionBetterWebhookParamCredential pulumi.StringPtrOutput `pulumi:"actionBetterWebhookParamCredential"`
+	// Use the credentials defined in the webhook URL
+	ActionBetterWebhookParamCredentials pulumi.StringPtrOutput `pulumi:"actionBetterWebhookParamCredentials"`
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionBetterWebhookParamUrl pulumi.StringPtrOutput `pulumi:"actionBetterWebhookParamUrl"`
 	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
 	ActionCreateXsoarIncident pulumi.StringPtrOutput `pulumi:"actionCreateXsoarIncident"`
 	// XSOAR custom incident fields (should be a comma separated list)
@@ -243,7 +251,7 @@ type SavedSearches struct {
 	ActionSlackParamAttachment pulumi.StringPtrOutput `pulumi:"actionSlackParamAttachment"`
 	// Slack channel to send the message to (Should start with # or @)
 	ActionSlackParamChannel pulumi.StringPtrOutput `pulumi:"actionSlackParamChannel"`
-	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
 	ActionSlackParamFields pulumi.StringPtrOutput `pulumi:"actionSlackParamFields"`
 	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
 	ActionSlackParamMessage pulumi.StringPtrOutput `pulumi:"actionSlackParamMessage"`
@@ -285,6 +293,24 @@ type SavedSearches struct {
 	ActionSummaryIndexTrackAlert pulumi.BoolOutput `pulumi:"actionSummaryIndexTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl pulumi.StringOutput `pulumi:"actionSummaryIndexTtl"`
+	// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+	ActionVictoropsParamEnableRecovery pulumi.StringPtrOutput `pulumi:"actionVictoropsParamEnableRecovery"`
+	// Unique identifier for the affected system or service
+	ActionVictoropsParamEntityId pulumi.StringPtrOutput `pulumi:"actionVictoropsParamEntityId"`
+	// Number of inactive polls before sending a recovery message
+	ActionVictoropsParamInactivePolls pulumi.StringPtrOutput `pulumi:"actionVictoropsParamInactivePolls"`
+	// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+	ActionVictoropsParamMessageType pulumi.StringPtrOutput `pulumi:"actionVictoropsParamMessageType"`
+	// Name of the monitoring tool sending the alert
+	ActionVictoropsParamMonitoringTool pulumi.StringPtrOutput `pulumi:"actionVictoropsParamMonitoringTool"`
+	// Polling interval for checking the status of the alert (in minutes)
+	ActionVictoropsParamPollInterval pulumi.StringPtrOutput `pulumi:"actionVictoropsParamPollInterval"`
+	// Identifier used to correlate related alerts
+	ActionVictoropsParamRecordId pulumi.StringPtrOutput `pulumi:"actionVictoropsParamRecordId"`
+	// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+	ActionVictoropsParamRoutingKeyOverride pulumi.StringPtrOutput `pulumi:"actionVictoropsParamRoutingKeyOverride"`
+	// Description of the alert condition
+	ActionVictoropsParamStateMessage pulumi.StringPtrOutput `pulumi:"actionVictoropsParamStateMessage"`
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl pulumi.StringPtrOutput `pulumi:"actionWebhookParamUrl"`
 	// A comma-separated list of actions to enable. For example: rss,email
@@ -317,7 +343,7 @@ type SavedSearches struct {
 	AutoSummarize pulumi.BoolOutput `pulumi:"autoSummarize"`
 	// An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
 	AutoSummarizeCommand pulumi.StringOutput `pulumi:"autoSummarizeCommand"`
-	// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+	// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
 	AutoSummarizeCronSchedule pulumi.StringOutput `pulumi:"autoSummarizeCronSchedule"`
 	// A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchEarliestTime pulumi.StringOutput `pulumi:"autoSummarizeDispatchEarliestTime"`
@@ -339,7 +365,7 @@ type SavedSearches struct {
 	AutoSummarizeSuspendPeriod pulumi.StringOutput `pulumi:"autoSummarizeSuspendPeriod"`
 	// The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
 	AutoSummarizeTimespan pulumi.StringOutput `pulumi:"autoSummarizeTimespan"`
-	// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+	// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
 	CronSchedule pulumi.StringOutput `pulumi:"cronSchedule"`
 	// Human-readable description of this saved search. Defaults to empty string.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -446,6 +472,14 @@ func GetSavedSearches(ctx *pulumi.Context,
 type savedSearchesState struct {
 	// The app/user context that is the namespace for the resource
 	Acl *SavedSearchesAcl `pulumi:"acl"`
+	// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+	ActionBetterWebhookParamBodyFormat *string `pulumi:"actionBetterWebhookParamBodyFormat"`
+	// Name of the Splunk stored credential to use for authentication
+	ActionBetterWebhookParamCredential *string `pulumi:"actionBetterWebhookParamCredential"`
+	// Use the credentials defined in the webhook URL
+	ActionBetterWebhookParamCredentials *string `pulumi:"actionBetterWebhookParamCredentials"`
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionBetterWebhookParamUrl *string `pulumi:"actionBetterWebhookParamUrl"`
 	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
 	ActionCreateXsoarIncident *string `pulumi:"actionCreateXsoarIncident"`
 	// XSOAR custom incident fields (should be a comma separated list)
@@ -626,7 +660,7 @@ type savedSearchesState struct {
 	ActionSlackParamAttachment *string `pulumi:"actionSlackParamAttachment"`
 	// Slack channel to send the message to (Should start with # or @)
 	ActionSlackParamChannel *string `pulumi:"actionSlackParamChannel"`
-	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
 	ActionSlackParamFields *string `pulumi:"actionSlackParamFields"`
 	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
 	ActionSlackParamMessage *string `pulumi:"actionSlackParamMessage"`
@@ -668,6 +702,24 @@ type savedSearchesState struct {
 	ActionSummaryIndexTrackAlert *bool `pulumi:"actionSummaryIndexTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl *string `pulumi:"actionSummaryIndexTtl"`
+	// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+	ActionVictoropsParamEnableRecovery *string `pulumi:"actionVictoropsParamEnableRecovery"`
+	// Unique identifier for the affected system or service
+	ActionVictoropsParamEntityId *string `pulumi:"actionVictoropsParamEntityId"`
+	// Number of inactive polls before sending a recovery message
+	ActionVictoropsParamInactivePolls *string `pulumi:"actionVictoropsParamInactivePolls"`
+	// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+	ActionVictoropsParamMessageType *string `pulumi:"actionVictoropsParamMessageType"`
+	// Name of the monitoring tool sending the alert
+	ActionVictoropsParamMonitoringTool *string `pulumi:"actionVictoropsParamMonitoringTool"`
+	// Polling interval for checking the status of the alert (in minutes)
+	ActionVictoropsParamPollInterval *string `pulumi:"actionVictoropsParamPollInterval"`
+	// Identifier used to correlate related alerts
+	ActionVictoropsParamRecordId *string `pulumi:"actionVictoropsParamRecordId"`
+	// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+	ActionVictoropsParamRoutingKeyOverride *string `pulumi:"actionVictoropsParamRoutingKeyOverride"`
+	// Description of the alert condition
+	ActionVictoropsParamStateMessage *string `pulumi:"actionVictoropsParamStateMessage"`
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl *string `pulumi:"actionWebhookParamUrl"`
 	// A comma-separated list of actions to enable. For example: rss,email
@@ -700,7 +752,7 @@ type savedSearchesState struct {
 	AutoSummarize *bool `pulumi:"autoSummarize"`
 	// An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
 	AutoSummarizeCommand *string `pulumi:"autoSummarizeCommand"`
-	// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+	// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
 	AutoSummarizeCronSchedule *string `pulumi:"autoSummarizeCronSchedule"`
 	// A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchEarliestTime *string `pulumi:"autoSummarizeDispatchEarliestTime"`
@@ -722,7 +774,7 @@ type savedSearchesState struct {
 	AutoSummarizeSuspendPeriod *string `pulumi:"autoSummarizeSuspendPeriod"`
 	// The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
 	AutoSummarizeTimespan *string `pulumi:"autoSummarizeTimespan"`
-	// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+	// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
 	CronSchedule *string `pulumi:"cronSchedule"`
 	// Human-readable description of this saved search. Defaults to empty string.
 	Description *string `pulumi:"description"`
@@ -797,6 +849,14 @@ type savedSearchesState struct {
 type SavedSearchesState struct {
 	// The app/user context that is the namespace for the resource
 	Acl SavedSearchesAclPtrInput
+	// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+	ActionBetterWebhookParamBodyFormat pulumi.StringPtrInput
+	// Name of the Splunk stored credential to use for authentication
+	ActionBetterWebhookParamCredential pulumi.StringPtrInput
+	// Use the credentials defined in the webhook URL
+	ActionBetterWebhookParamCredentials pulumi.StringPtrInput
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionBetterWebhookParamUrl pulumi.StringPtrInput
 	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
 	ActionCreateXsoarIncident pulumi.StringPtrInput
 	// XSOAR custom incident fields (should be a comma separated list)
@@ -977,7 +1037,7 @@ type SavedSearchesState struct {
 	ActionSlackParamAttachment pulumi.StringPtrInput
 	// Slack channel to send the message to (Should start with # or @)
 	ActionSlackParamChannel pulumi.StringPtrInput
-	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
 	ActionSlackParamFields pulumi.StringPtrInput
 	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
 	ActionSlackParamMessage pulumi.StringPtrInput
@@ -1019,6 +1079,24 @@ type SavedSearchesState struct {
 	ActionSummaryIndexTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl pulumi.StringPtrInput
+	// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+	ActionVictoropsParamEnableRecovery pulumi.StringPtrInput
+	// Unique identifier for the affected system or service
+	ActionVictoropsParamEntityId pulumi.StringPtrInput
+	// Number of inactive polls before sending a recovery message
+	ActionVictoropsParamInactivePolls pulumi.StringPtrInput
+	// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+	ActionVictoropsParamMessageType pulumi.StringPtrInput
+	// Name of the monitoring tool sending the alert
+	ActionVictoropsParamMonitoringTool pulumi.StringPtrInput
+	// Polling interval for checking the status of the alert (in minutes)
+	ActionVictoropsParamPollInterval pulumi.StringPtrInput
+	// Identifier used to correlate related alerts
+	ActionVictoropsParamRecordId pulumi.StringPtrInput
+	// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+	ActionVictoropsParamRoutingKeyOverride pulumi.StringPtrInput
+	// Description of the alert condition
+	ActionVictoropsParamStateMessage pulumi.StringPtrInput
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl pulumi.StringPtrInput
 	// A comma-separated list of actions to enable. For example: rss,email
@@ -1051,7 +1129,7 @@ type SavedSearchesState struct {
 	AutoSummarize pulumi.BoolPtrInput
 	// An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
 	AutoSummarizeCommand pulumi.StringPtrInput
-	// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+	// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
 	AutoSummarizeCronSchedule pulumi.StringPtrInput
 	// A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchEarliestTime pulumi.StringPtrInput
@@ -1073,7 +1151,7 @@ type SavedSearchesState struct {
 	AutoSummarizeSuspendPeriod pulumi.StringPtrInput
 	// The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
 	AutoSummarizeTimespan pulumi.StringPtrInput
-	// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+	// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
 	CronSchedule pulumi.StringPtrInput
 	// Human-readable description of this saved search. Defaults to empty string.
 	Description pulumi.StringPtrInput
@@ -1152,6 +1230,14 @@ func (SavedSearchesState) ElementType() reflect.Type {
 type savedSearchesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *SavedSearchesAcl `pulumi:"acl"`
+	// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+	ActionBetterWebhookParamBodyFormat *string `pulumi:"actionBetterWebhookParamBodyFormat"`
+	// Name of the Splunk stored credential to use for authentication
+	ActionBetterWebhookParamCredential *string `pulumi:"actionBetterWebhookParamCredential"`
+	// Use the credentials defined in the webhook URL
+	ActionBetterWebhookParamCredentials *string `pulumi:"actionBetterWebhookParamCredentials"`
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionBetterWebhookParamUrl *string `pulumi:"actionBetterWebhookParamUrl"`
 	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
 	ActionCreateXsoarIncident *string `pulumi:"actionCreateXsoarIncident"`
 	// XSOAR custom incident fields (should be a comma separated list)
@@ -1324,7 +1410,7 @@ type savedSearchesArgs struct {
 	ActionSlackParamAttachment *string `pulumi:"actionSlackParamAttachment"`
 	// Slack channel to send the message to (Should start with # or @)
 	ActionSlackParamChannel *string `pulumi:"actionSlackParamChannel"`
-	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
 	ActionSlackParamFields *string `pulumi:"actionSlackParamFields"`
 	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
 	ActionSlackParamMessage *string `pulumi:"actionSlackParamMessage"`
@@ -1364,6 +1450,24 @@ type savedSearchesArgs struct {
 	ActionSummaryIndexTrackAlert *bool `pulumi:"actionSummaryIndexTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl *string `pulumi:"actionSummaryIndexTtl"`
+	// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+	ActionVictoropsParamEnableRecovery *string `pulumi:"actionVictoropsParamEnableRecovery"`
+	// Unique identifier for the affected system or service
+	ActionVictoropsParamEntityId *string `pulumi:"actionVictoropsParamEntityId"`
+	// Number of inactive polls before sending a recovery message
+	ActionVictoropsParamInactivePolls *string `pulumi:"actionVictoropsParamInactivePolls"`
+	// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+	ActionVictoropsParamMessageType *string `pulumi:"actionVictoropsParamMessageType"`
+	// Name of the monitoring tool sending the alert
+	ActionVictoropsParamMonitoringTool *string `pulumi:"actionVictoropsParamMonitoringTool"`
+	// Polling interval for checking the status of the alert (in minutes)
+	ActionVictoropsParamPollInterval *string `pulumi:"actionVictoropsParamPollInterval"`
+	// Identifier used to correlate related alerts
+	ActionVictoropsParamRecordId *string `pulumi:"actionVictoropsParamRecordId"`
+	// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+	ActionVictoropsParamRoutingKeyOverride *string `pulumi:"actionVictoropsParamRoutingKeyOverride"`
+	// Description of the alert condition
+	ActionVictoropsParamStateMessage *string `pulumi:"actionVictoropsParamStateMessage"`
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl *string `pulumi:"actionWebhookParamUrl"`
 	// A comma-separated list of actions to enable. For example: rss,email
@@ -1396,7 +1500,7 @@ type savedSearchesArgs struct {
 	AutoSummarize *bool `pulumi:"autoSummarize"`
 	// An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
 	AutoSummarizeCommand *string `pulumi:"autoSummarizeCommand"`
-	// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+	// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
 	AutoSummarizeCronSchedule *string `pulumi:"autoSummarizeCronSchedule"`
 	// A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchEarliestTime *string `pulumi:"autoSummarizeDispatchEarliestTime"`
@@ -1418,7 +1522,7 @@ type savedSearchesArgs struct {
 	AutoSummarizeSuspendPeriod *string `pulumi:"autoSummarizeSuspendPeriod"`
 	// The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
 	AutoSummarizeTimespan *string `pulumi:"autoSummarizeTimespan"`
-	// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+	// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
 	CronSchedule *string `pulumi:"cronSchedule"`
 	// Human-readable description of this saved search. Defaults to empty string.
 	Description *string `pulumi:"description"`
@@ -1494,6 +1598,14 @@ type savedSearchesArgs struct {
 type SavedSearchesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl SavedSearchesAclPtrInput
+	// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+	ActionBetterWebhookParamBodyFormat pulumi.StringPtrInput
+	// Name of the Splunk stored credential to use for authentication
+	ActionBetterWebhookParamCredential pulumi.StringPtrInput
+	// Use the credentials defined in the webhook URL
+	ActionBetterWebhookParamCredentials pulumi.StringPtrInput
+	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+	ActionBetterWebhookParamUrl pulumi.StringPtrInput
 	// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
 	ActionCreateXsoarIncident pulumi.StringPtrInput
 	// XSOAR custom incident fields (should be a comma separated list)
@@ -1666,7 +1778,7 @@ type SavedSearchesArgs struct {
 	ActionSlackParamAttachment pulumi.StringPtrInput
 	// Slack channel to send the message to (Should start with # or @)
 	ActionSlackParamChannel pulumi.StringPtrInput
-	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+	// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
 	ActionSlackParamFields pulumi.StringPtrInput
 	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
 	ActionSlackParamMessage pulumi.StringPtrInput
@@ -1706,6 +1818,24 @@ type SavedSearchesArgs struct {
 	ActionSummaryIndexTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionSummaryIndexTtl pulumi.StringPtrInput
+	// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+	ActionVictoropsParamEnableRecovery pulumi.StringPtrInput
+	// Unique identifier for the affected system or service
+	ActionVictoropsParamEntityId pulumi.StringPtrInput
+	// Number of inactive polls before sending a recovery message
+	ActionVictoropsParamInactivePolls pulumi.StringPtrInput
+	// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+	ActionVictoropsParamMessageType pulumi.StringPtrInput
+	// Name of the monitoring tool sending the alert
+	ActionVictoropsParamMonitoringTool pulumi.StringPtrInput
+	// Polling interval for checking the status of the alert (in minutes)
+	ActionVictoropsParamPollInterval pulumi.StringPtrInput
+	// Identifier used to correlate related alerts
+	ActionVictoropsParamRecordId pulumi.StringPtrInput
+	// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+	ActionVictoropsParamRoutingKeyOverride pulumi.StringPtrInput
+	// Description of the alert condition
+	ActionVictoropsParamStateMessage pulumi.StringPtrInput
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl pulumi.StringPtrInput
 	// A comma-separated list of actions to enable. For example: rss,email
@@ -1738,7 +1868,7 @@ type SavedSearchesArgs struct {
 	AutoSummarize pulumi.BoolPtrInput
 	// An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
 	AutoSummarizeCommand pulumi.StringPtrInput
-	// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+	// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
 	AutoSummarizeCronSchedule pulumi.StringPtrInput
 	// A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
 	AutoSummarizeDispatchEarliestTime pulumi.StringPtrInput
@@ -1760,7 +1890,7 @@ type SavedSearchesArgs struct {
 	AutoSummarizeSuspendPeriod pulumi.StringPtrInput
 	// The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
 	AutoSummarizeTimespan pulumi.StringPtrInput
-	// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+	// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
 	CronSchedule pulumi.StringPtrInput
 	// Human-readable description of this saved search. Defaults to empty string.
 	Description pulumi.StringPtrInput
@@ -1922,6 +2052,26 @@ func (o SavedSearchesOutput) ToSavedSearchesOutputWithContext(ctx context.Contex
 // The app/user context that is the namespace for the resource
 func (o SavedSearchesOutput) Acl() SavedSearchesAclOutput {
 	return o.ApplyT(func(v *SavedSearches) SavedSearchesAclOutput { return v.Acl }).(SavedSearchesAclOutput)
+}
+
+// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+func (o SavedSearchesOutput) ActionBetterWebhookParamBodyFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionBetterWebhookParamBodyFormat }).(pulumi.StringPtrOutput)
+}
+
+// Name of the Splunk stored credential to use for authentication
+func (o SavedSearchesOutput) ActionBetterWebhookParamCredential() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionBetterWebhookParamCredential }).(pulumi.StringPtrOutput)
+}
+
+// Use the credentials defined in the webhook URL
+func (o SavedSearchesOutput) ActionBetterWebhookParamCredentials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionBetterWebhookParamCredentials }).(pulumi.StringPtrOutput)
+}
+
+// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+func (o SavedSearchesOutput) ActionBetterWebhookParamUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionBetterWebhookParamUrl }).(pulumi.StringPtrOutput)
 }
 
 // Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
@@ -2374,7 +2524,7 @@ func (o SavedSearchesOutput) ActionSlackParamChannel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamChannel }).(pulumi.StringPtrOutput)
 }
 
-// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
 func (o SavedSearchesOutput) ActionSlackParamFields() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackParamFields }).(pulumi.StringPtrOutput)
 }
@@ -2479,6 +2629,51 @@ func (o SavedSearchesOutput) ActionSummaryIndexTtl() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSummaryIndexTtl }).(pulumi.StringOutput)
 }
 
+// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+func (o SavedSearchesOutput) ActionVictoropsParamEnableRecovery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamEnableRecovery }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier for the affected system or service
+func (o SavedSearchesOutput) ActionVictoropsParamEntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamEntityId }).(pulumi.StringPtrOutput)
+}
+
+// Number of inactive polls before sending a recovery message
+func (o SavedSearchesOutput) ActionVictoropsParamInactivePolls() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamInactivePolls }).(pulumi.StringPtrOutput)
+}
+
+// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+func (o SavedSearchesOutput) ActionVictoropsParamMessageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamMessageType }).(pulumi.StringPtrOutput)
+}
+
+// Name of the monitoring tool sending the alert
+func (o SavedSearchesOutput) ActionVictoropsParamMonitoringTool() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamMonitoringTool }).(pulumi.StringPtrOutput)
+}
+
+// Polling interval for checking the status of the alert (in minutes)
+func (o SavedSearchesOutput) ActionVictoropsParamPollInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamPollInterval }).(pulumi.StringPtrOutput)
+}
+
+// Identifier used to correlate related alerts
+func (o SavedSearchesOutput) ActionVictoropsParamRecordId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamRecordId }).(pulumi.StringPtrOutput)
+}
+
+// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+func (o SavedSearchesOutput) ActionVictoropsParamRoutingKeyOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamRoutingKeyOverride }).(pulumi.StringPtrOutput)
+}
+
+// Description of the alert condition
+func (o SavedSearchesOutput) ActionVictoropsParamStateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionVictoropsParamStateMessage }).(pulumi.StringPtrOutput)
+}
+
 // URL to send the HTTP POST request to. Must be accessible from the Splunk server
 func (o SavedSearchesOutput) ActionWebhookParamUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionWebhookParamUrl }).(pulumi.StringPtrOutput)
@@ -2559,7 +2754,7 @@ func (o SavedSearchesOutput) AutoSummarizeCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeCommand }).(pulumi.StringOutput)
 }
 
-// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
 func (o SavedSearchesOutput) AutoSummarizeCronSchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeCronSchedule }).(pulumi.StringOutput)
 }
@@ -2614,7 +2809,7 @@ func (o SavedSearchesOutput) AutoSummarizeTimespan() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.AutoSummarizeTimespan }).(pulumi.StringOutput)
 }
 
-// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
 func (o SavedSearchesOutput) CronSchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.CronSchedule }).(pulumi.StringOutput)
 }

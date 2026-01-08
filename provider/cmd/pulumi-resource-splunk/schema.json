@@ -4787,6 +4787,22 @@
                     "$ref": "#/types/splunk:index/SavedSearchesAcl:SavedSearchesAcl",
                     "description": "The app/user context that is the namespace for the resource\n"
                 },
+                "actionBetterWebhookParamBodyFormat": {
+                    "type": "string",
+                    "description": "Format of the body content. Valid values are json, xml, form-urlencoded, or raw\n"
+                },
+                "actionBetterWebhookParamCredential": {
+                    "type": "string",
+                    "description": "Name of the Splunk stored credential to use for authentication\n"
+                },
+                "actionBetterWebhookParamCredentials": {
+                    "type": "string",
+                    "description": "Use the credentials defined in the webhook URL\n"
+                },
+                "actionBetterWebhookParamUrl": {
+                    "type": "string",
+                    "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
+                },
                 "actionCreateXsoarIncident": {
                     "type": "string",
                     "description": "Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))\n"
@@ -5149,7 +5165,7 @@
                 },
                 "actionSlackParamFields": {
                     "type": "string",
-                    "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*\n"
+                    "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*\n"
                 },
                 "actionSlackParamMessage": {
                     "type": "string",
@@ -5231,6 +5247,42 @@
                     "type": "string",
                     "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).\n"
                 },
+                "actionVictoropsParamEnableRecovery": {
+                    "type": "string",
+                    "description": "Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionVictoropsParamEntityId": {
+                    "type": "string",
+                    "description": "Unique identifier for the affected system or service\n"
+                },
+                "actionVictoropsParamInactivePolls": {
+                    "type": "string",
+                    "description": "Number of inactive polls before sending a recovery message\n"
+                },
+                "actionVictoropsParamMessageType": {
+                    "type": "string",
+                    "description": "Type of VictorOps message. Valid values are info, warning, critical, recovery, ack\n"
+                },
+                "actionVictoropsParamMonitoringTool": {
+                    "type": "string",
+                    "description": "Name of the monitoring tool sending the alert\n"
+                },
+                "actionVictoropsParamPollInterval": {
+                    "type": "string",
+                    "description": "Polling interval for checking the status of the alert (in minutes)\n"
+                },
+                "actionVictoropsParamRecordId": {
+                    "type": "string",
+                    "description": "Identifier used to correlate related alerts\n"
+                },
+                "actionVictoropsParamRoutingKeyOverride": {
+                    "type": "string",
+                    "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n"
+                },
+                "actionVictoropsParamStateMessage": {
+                    "type": "string",
+                    "description": "Description of the alert condition\n"
+                },
                 "actionWebhookParamUrl": {
                     "type": "string",
                     "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
@@ -5297,7 +5349,7 @@
                 },
                 "autoSummarizeCronSchedule": {
                     "type": "string",
-                    "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.\n"
+                    "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.\n"
                 },
                 "autoSummarizeDispatchEarliestTime": {
                     "type": "string",
@@ -5341,7 +5393,7 @@
                 },
                 "cronSchedule": {
                     "type": "string",
-                    "description": "Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.\n"
+                    "description": "Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.\n"
                 },
                 "description": {
                     "type": "string",
@@ -5635,6 +5687,22 @@
                 "acl": {
                     "$ref": "#/types/splunk:index/SavedSearchesAcl:SavedSearchesAcl",
                     "description": "The app/user context that is the namespace for the resource\n"
+                },
+                "actionBetterWebhookParamBodyFormat": {
+                    "type": "string",
+                    "description": "Format of the body content. Valid values are json, xml, form-urlencoded, or raw\n"
+                },
+                "actionBetterWebhookParamCredential": {
+                    "type": "string",
+                    "description": "Name of the Splunk stored credential to use for authentication\n"
+                },
+                "actionBetterWebhookParamCredentials": {
+                    "type": "string",
+                    "description": "Use the credentials defined in the webhook URL\n"
+                },
+                "actionBetterWebhookParamUrl": {
+                    "type": "string",
+                    "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
                 },
                 "actionCreateXsoarIncident": {
                     "type": "string",
@@ -5982,7 +6050,7 @@
                 },
                 "actionSlackParamFields": {
                     "type": "string",
-                    "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*\n"
+                    "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*\n"
                 },
                 "actionSlackParamMessage": {
                     "type": "string",
@@ -6060,6 +6128,42 @@
                     "type": "string",
                     "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).\n"
                 },
+                "actionVictoropsParamEnableRecovery": {
+                    "type": "string",
+                    "description": "Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionVictoropsParamEntityId": {
+                    "type": "string",
+                    "description": "Unique identifier for the affected system or service\n"
+                },
+                "actionVictoropsParamInactivePolls": {
+                    "type": "string",
+                    "description": "Number of inactive polls before sending a recovery message\n"
+                },
+                "actionVictoropsParamMessageType": {
+                    "type": "string",
+                    "description": "Type of VictorOps message. Valid values are info, warning, critical, recovery, ack\n"
+                },
+                "actionVictoropsParamMonitoringTool": {
+                    "type": "string",
+                    "description": "Name of the monitoring tool sending the alert\n"
+                },
+                "actionVictoropsParamPollInterval": {
+                    "type": "string",
+                    "description": "Polling interval for checking the status of the alert (in minutes)\n"
+                },
+                "actionVictoropsParamRecordId": {
+                    "type": "string",
+                    "description": "Identifier used to correlate related alerts\n"
+                },
+                "actionVictoropsParamRoutingKeyOverride": {
+                    "type": "string",
+                    "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n"
+                },
+                "actionVictoropsParamStateMessage": {
+                    "type": "string",
+                    "description": "Description of the alert condition\n"
+                },
                 "actionWebhookParamUrl": {
                     "type": "string",
                     "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
@@ -6126,7 +6230,7 @@
                 },
                 "autoSummarizeCronSchedule": {
                     "type": "string",
-                    "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.\n"
+                    "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.\n"
                 },
                 "autoSummarizeDispatchEarliestTime": {
                     "type": "string",
@@ -6170,7 +6274,7 @@
                 },
                 "cronSchedule": {
                     "type": "string",
-                    "description": "Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.\n"
+                    "description": "Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.\n"
                 },
                 "description": {
                     "type": "string",
@@ -6319,6 +6423,22 @@
                     "acl": {
                         "$ref": "#/types/splunk:index/SavedSearchesAcl:SavedSearchesAcl",
                         "description": "The app/user context that is the namespace for the resource\n"
+                    },
+                    "actionBetterWebhookParamBodyFormat": {
+                        "type": "string",
+                        "description": "Format of the body content. Valid values are json, xml, form-urlencoded, or raw\n"
+                    },
+                    "actionBetterWebhookParamCredential": {
+                        "type": "string",
+                        "description": "Name of the Splunk stored credential to use for authentication\n"
+                    },
+                    "actionBetterWebhookParamCredentials": {
+                        "type": "string",
+                        "description": "Use the credentials defined in the webhook URL\n"
+                    },
+                    "actionBetterWebhookParamUrl": {
+                        "type": "string",
+                        "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
                     },
                     "actionCreateXsoarIncident": {
                         "type": "string",
@@ -6682,7 +6802,7 @@
                     },
                     "actionSlackParamFields": {
                         "type": "string",
-                        "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*\n"
+                        "description": "Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*\n"
                     },
                     "actionSlackParamMessage": {
                         "type": "string",
@@ -6764,6 +6884,42 @@
                         "type": "string",
                         "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).\n"
                     },
+                    "actionVictoropsParamEnableRecovery": {
+                        "type": "string",
+                        "description": "Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))\n"
+                    },
+                    "actionVictoropsParamEntityId": {
+                        "type": "string",
+                        "description": "Unique identifier for the affected system or service\n"
+                    },
+                    "actionVictoropsParamInactivePolls": {
+                        "type": "string",
+                        "description": "Number of inactive polls before sending a recovery message\n"
+                    },
+                    "actionVictoropsParamMessageType": {
+                        "type": "string",
+                        "description": "Type of VictorOps message. Valid values are info, warning, critical, recovery, ack\n"
+                    },
+                    "actionVictoropsParamMonitoringTool": {
+                        "type": "string",
+                        "description": "Name of the monitoring tool sending the alert\n"
+                    },
+                    "actionVictoropsParamPollInterval": {
+                        "type": "string",
+                        "description": "Polling interval for checking the status of the alert (in minutes)\n"
+                    },
+                    "actionVictoropsParamRecordId": {
+                        "type": "string",
+                        "description": "Identifier used to correlate related alerts\n"
+                    },
+                    "actionVictoropsParamRoutingKeyOverride": {
+                        "type": "string",
+                        "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n"
+                    },
+                    "actionVictoropsParamStateMessage": {
+                        "type": "string",
+                        "description": "Description of the alert condition\n"
+                    },
                     "actionWebhookParamUrl": {
                         "type": "string",
                         "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
@@ -6830,7 +6986,7 @@
                     },
                     "autoSummarizeCronSchedule": {
                         "type": "string",
-                        "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.\n"
+                        "description": "Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.\n"
                     },
                     "autoSummarizeDispatchEarliestTime": {
                         "type": "string",
@@ -6874,7 +7030,7 @@
                     },
                     "cronSchedule": {
                         "type": "string",
-                        "description": "Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.\n"
+                        "description": "Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.\n"
                     },
                     "description": {
                         "type": "string",
