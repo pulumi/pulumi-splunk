@@ -92,6 +92,62 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.acl;
     }
     /**
+     * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     * 
+     */
+    @Export(name="actionBetterWebhookParamBodyFormat", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionBetterWebhookParamBodyFormat;
+
+    /**
+     * @return Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     * 
+     */
+    public Output<Optional<String>> actionBetterWebhookParamBodyFormat() {
+        return Codegen.optional(this.actionBetterWebhookParamBodyFormat);
+    }
+    /**
+     * Name of the Splunk stored credential to use for authentication
+     * 
+     */
+    @Export(name="actionBetterWebhookParamCredential", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionBetterWebhookParamCredential;
+
+    /**
+     * @return Name of the Splunk stored credential to use for authentication
+     * 
+     */
+    public Output<Optional<String>> actionBetterWebhookParamCredential() {
+        return Codegen.optional(this.actionBetterWebhookParamCredential);
+    }
+    /**
+     * Use the credentials defined in the webhook URL
+     * 
+     */
+    @Export(name="actionBetterWebhookParamCredentials", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionBetterWebhookParamCredentials;
+
+    /**
+     * @return Use the credentials defined in the webhook URL
+     * 
+     */
+    public Output<Optional<String>> actionBetterWebhookParamCredentials() {
+        return Codegen.optional(this.actionBetterWebhookParamCredentials);
+    }
+    /**
+     * URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     * 
+     */
+    @Export(name="actionBetterWebhookParamUrl", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionBetterWebhookParamUrl;
+
+    /**
+     * @return URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     * 
+     */
+    public Output<Optional<String>> actionBetterWebhookParamUrl() {
+        return Codegen.optional(this.actionBetterWebhookParamUrl);
+    }
+    /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      * 
      */
@@ -1352,14 +1408,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionSlackParamChannel);
     }
     /**
-     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      * 
      */
     @Export(name="actionSlackParamFields", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamFields;
 
     /**
-     * @return Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * @return Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      * 
      */
     public Output<Optional<String>> actionSlackParamFields() {
@@ -1646,6 +1702,132 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionSummaryIndexTtl;
     }
     /**
+     * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Export(name="actionVictoropsParamEnableRecovery", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamEnableRecovery;
+
+    /**
+     * @return Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamEnableRecovery() {
+        return Codegen.optional(this.actionVictoropsParamEnableRecovery);
+    }
+    /**
+     * Unique identifier for the affected system or service
+     * 
+     */
+    @Export(name="actionVictoropsParamEntityId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamEntityId;
+
+    /**
+     * @return Unique identifier for the affected system or service
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamEntityId() {
+        return Codegen.optional(this.actionVictoropsParamEntityId);
+    }
+    /**
+     * Number of inactive polls before sending a recovery message
+     * 
+     */
+    @Export(name="actionVictoropsParamInactivePolls", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamInactivePolls;
+
+    /**
+     * @return Number of inactive polls before sending a recovery message
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamInactivePolls() {
+        return Codegen.optional(this.actionVictoropsParamInactivePolls);
+    }
+    /**
+     * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     * 
+     */
+    @Export(name="actionVictoropsParamMessageType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamMessageType;
+
+    /**
+     * @return Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamMessageType() {
+        return Codegen.optional(this.actionVictoropsParamMessageType);
+    }
+    /**
+     * Name of the monitoring tool sending the alert
+     * 
+     */
+    @Export(name="actionVictoropsParamMonitoringTool", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamMonitoringTool;
+
+    /**
+     * @return Name of the monitoring tool sending the alert
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamMonitoringTool() {
+        return Codegen.optional(this.actionVictoropsParamMonitoringTool);
+    }
+    /**
+     * Polling interval for checking the status of the alert (in minutes)
+     * 
+     */
+    @Export(name="actionVictoropsParamPollInterval", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamPollInterval;
+
+    /**
+     * @return Polling interval for checking the status of the alert (in minutes)
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamPollInterval() {
+        return Codegen.optional(this.actionVictoropsParamPollInterval);
+    }
+    /**
+     * Identifier used to correlate related alerts
+     * 
+     */
+    @Export(name="actionVictoropsParamRecordId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamRecordId;
+
+    /**
+     * @return Identifier used to correlate related alerts
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamRecordId() {
+        return Codegen.optional(this.actionVictoropsParamRecordId);
+    }
+    /**
+     * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     * 
+     */
+    @Export(name="actionVictoropsParamRoutingKeyOverride", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamRoutingKeyOverride;
+
+    /**
+     * @return You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamRoutingKeyOverride() {
+        return Codegen.optional(this.actionVictoropsParamRoutingKeyOverride);
+    }
+    /**
+     * Description of the alert condition
+     * 
+     */
+    @Export(name="actionVictoropsParamStateMessage", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionVictoropsParamStateMessage;
+
+    /**
+     * @return Description of the alert condition
+     * 
+     */
+    public Output<Optional<String>> actionVictoropsParamStateMessage() {
+        return Codegen.optional(this.actionVictoropsParamStateMessage);
+    }
+    /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      * 
      */
@@ -1870,14 +2052,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeCommand;
     }
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      * 
      */
     @Export(name="autoSummarizeCronSchedule", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeCronSchedule;
 
     /**
-     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      * 
      */
     public Output<String> autoSummarizeCronSchedule() {
@@ -2024,14 +2206,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeTimespan;
     }
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      * 
      */
     @Export(name="cronSchedule", refs={String.class}, tree="[0]")
     private Output<String> cronSchedule;
 
     /**
-     * @return Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * @return Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      * 
      */
     public Output<String> cronSchedule() {

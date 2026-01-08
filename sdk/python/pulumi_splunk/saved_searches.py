@@ -23,6 +23,10 @@ class SavedSearchesArgs:
     def __init__(__self__, *,
                  search: pulumi.Input[_builtins.str],
                  acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -129,6 +133,15 @@ class SavedSearchesArgs:
                  action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  actions: Optional[pulumi.Input[_builtins.str]] = None,
                  alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
@@ -194,6 +207,10 @@ class SavedSearchesArgs:
         The set of arguments for constructing a SavedSearches resource.
         :param pulumi.Input[_builtins.str] search: Required when creating a new search.
         :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credentials: Use the credentials defined in the webhook URL
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_details: XSOAR incident description
@@ -280,7 +297,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
-        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
@@ -300,6 +317,15 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[_builtins.bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_victorops_param_enable_recovery: Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_victorops_param_entity_id: Unique identifier for the affected system or service
+        :param pulumi.Input[_builtins.str] action_victorops_param_inactive_polls: Number of inactive polls before sending a recovery message
+        :param pulumi.Input[_builtins.str] action_victorops_param_message_type: Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        :param pulumi.Input[_builtins.str] action_victorops_param_monitoring_tool: Name of the monitoring tool sending the alert
+        :param pulumi.Input[_builtins.str] action_victorops_param_poll_interval: Polling interval for checking the status of the alert (in minutes)
+        :param pulumi.Input[_builtins.str] action_victorops_param_record_id: Identifier used to correlate related alerts
+        :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
@@ -316,7 +342,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         :param pulumi.Input[_builtins.bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
         :param pulumi.Input[_builtins.str] auto_summarize_command: An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
-        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
@@ -327,7 +353,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.int] auto_summarize_max_time: Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
         :param pulumi.Input[_builtins.str] auto_summarize_suspend_period: Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
         :param pulumi.Input[_builtins.str] auto_summarize_timespan: The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
-        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         :param pulumi.Input[_builtins.str] description: Human-readable description of this saved search. Defaults to empty string.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
         :param pulumi.Input[_builtins.int] dispatch_buckets: The maximum number of timeline buckets. Defaults to 0.
@@ -365,6 +391,14 @@ class SavedSearchesArgs:
         pulumi.set(__self__, "search", search)
         if acl is not None:
             pulumi.set(__self__, "acl", acl)
+        if action_better_webhook_param_body_format is not None:
+            pulumi.set(__self__, "action_better_webhook_param_body_format", action_better_webhook_param_body_format)
+        if action_better_webhook_param_credential is not None:
+            pulumi.set(__self__, "action_better_webhook_param_credential", action_better_webhook_param_credential)
+        if action_better_webhook_param_credentials is not None:
+            pulumi.set(__self__, "action_better_webhook_param_credentials", action_better_webhook_param_credentials)
+        if action_better_webhook_param_url is not None:
+            pulumi.set(__self__, "action_better_webhook_param_url", action_better_webhook_param_url)
         if action_create_xsoar_incident is not None:
             pulumi.set(__self__, "action_create_xsoar_incident", action_create_xsoar_incident)
         if action_create_xsoar_incident_param_custom_fields is not None:
@@ -577,6 +611,24 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
         if action_summary_index_ttl is not None:
             pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+        if action_victorops_param_enable_recovery is not None:
+            pulumi.set(__self__, "action_victorops_param_enable_recovery", action_victorops_param_enable_recovery)
+        if action_victorops_param_entity_id is not None:
+            pulumi.set(__self__, "action_victorops_param_entity_id", action_victorops_param_entity_id)
+        if action_victorops_param_inactive_polls is not None:
+            pulumi.set(__self__, "action_victorops_param_inactive_polls", action_victorops_param_inactive_polls)
+        if action_victorops_param_message_type is not None:
+            pulumi.set(__self__, "action_victorops_param_message_type", action_victorops_param_message_type)
+        if action_victorops_param_monitoring_tool is not None:
+            pulumi.set(__self__, "action_victorops_param_monitoring_tool", action_victorops_param_monitoring_tool)
+        if action_victorops_param_poll_interval is not None:
+            pulumi.set(__self__, "action_victorops_param_poll_interval", action_victorops_param_poll_interval)
+        if action_victorops_param_record_id is not None:
+            pulumi.set(__self__, "action_victorops_param_record_id", action_victorops_param_record_id)
+        if action_victorops_param_routing_key_override is not None:
+            pulumi.set(__self__, "action_victorops_param_routing_key_override", action_victorops_param_routing_key_override)
+        if action_victorops_param_state_message is not None:
+            pulumi.set(__self__, "action_victorops_param_state_message", action_victorops_param_state_message)
         if action_webhook_param_url is not None:
             pulumi.set(__self__, "action_webhook_param_url", action_webhook_param_url)
         if actions is not None:
@@ -723,6 +775,54 @@ class SavedSearchesArgs:
     @acl.setter
     def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
         pulumi.set(self, "acl", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamBodyFormat")
+    def action_better_webhook_param_body_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        """
+        return pulumi.get(self, "action_better_webhook_param_body_format")
+
+    @action_better_webhook_param_body_format.setter
+    def action_better_webhook_param_body_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_body_format", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamCredential")
+    def action_better_webhook_param_credential(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the Splunk stored credential to use for authentication
+        """
+        return pulumi.get(self, "action_better_webhook_param_credential")
+
+    @action_better_webhook_param_credential.setter
+    def action_better_webhook_param_credential(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_credential", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamCredentials")
+    def action_better_webhook_param_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Use the credentials defined in the webhook URL
+        """
+        return pulumi.get(self, "action_better_webhook_param_credentials")
+
+    @action_better_webhook_param_credentials.setter
+    def action_better_webhook_param_credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_credentials", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamUrl")
+    def action_better_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        """
+        return pulumi.get(self, "action_better_webhook_param_url")
+
+    @action_better_webhook_param_url.setter
+    def action_better_webhook_param_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncident")
@@ -1760,7 +1860,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionSlackParamFields")
     def action_slack_param_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         """
         return pulumi.get(self, "action_slack_param_fields")
 
@@ -1997,6 +2097,114 @@ class SavedSearchesArgs:
         pulumi.set(self, "action_summary_index_ttl", value)
 
     @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamEnableRecovery")
+    def action_victorops_param_enable_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_victorops_param_enable_recovery")
+
+    @action_victorops_param_enable_recovery.setter
+    def action_victorops_param_enable_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_enable_recovery", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamEntityId")
+    def action_victorops_param_entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Unique identifier for the affected system or service
+        """
+        return pulumi.get(self, "action_victorops_param_entity_id")
+
+    @action_victorops_param_entity_id.setter
+    def action_victorops_param_entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_entity_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamInactivePolls")
+    def action_victorops_param_inactive_polls(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Number of inactive polls before sending a recovery message
+        """
+        return pulumi.get(self, "action_victorops_param_inactive_polls")
+
+    @action_victorops_param_inactive_polls.setter
+    def action_victorops_param_inactive_polls(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_inactive_polls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamMessageType")
+    def action_victorops_param_message_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        """
+        return pulumi.get(self, "action_victorops_param_message_type")
+
+    @action_victorops_param_message_type.setter
+    def action_victorops_param_message_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_message_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamMonitoringTool")
+    def action_victorops_param_monitoring_tool(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the monitoring tool sending the alert
+        """
+        return pulumi.get(self, "action_victorops_param_monitoring_tool")
+
+    @action_victorops_param_monitoring_tool.setter
+    def action_victorops_param_monitoring_tool(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_monitoring_tool", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamPollInterval")
+    def action_victorops_param_poll_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Polling interval for checking the status of the alert (in minutes)
+        """
+        return pulumi.get(self, "action_victorops_param_poll_interval")
+
+    @action_victorops_param_poll_interval.setter
+    def action_victorops_param_poll_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_poll_interval", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamRecordId")
+    def action_victorops_param_record_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Identifier used to correlate related alerts
+        """
+        return pulumi.get(self, "action_victorops_param_record_id")
+
+    @action_victorops_param_record_id.setter
+    def action_victorops_param_record_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_record_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamRoutingKeyOverride")
+    def action_victorops_param_routing_key_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        """
+        return pulumi.get(self, "action_victorops_param_routing_key_override")
+
+    @action_victorops_param_routing_key_override.setter
+    def action_victorops_param_routing_key_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_routing_key_override", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamStateMessage")
+    def action_victorops_param_state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Description of the alert condition
+        """
+        return pulumi.get(self, "action_victorops_param_state_message")
+
+    @action_victorops_param_state_message.setter
+    def action_victorops_param_state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_state_message", value)
+
+    @_builtins.property
     @pulumi.getter(name="actionWebhookParamUrl")
     def action_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -2192,7 +2400,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="autoSummarizeCronSchedule")
     def auto_summarize_cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         """
         return pulumi.get(self, "auto_summarize_cron_schedule")
 
@@ -2324,7 +2532,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="cronSchedule")
     def cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         """
         return pulumi.get(self, "cron_schedule")
 
@@ -2733,6 +2941,10 @@ class SavedSearchesArgs:
 class _SavedSearchesState:
     def __init__(__self__, *,
                  acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
+                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2844,6 +3056,15 @@ class _SavedSearchesState:
                  action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  actions: Optional[pulumi.Input[_builtins.str]] = None,
                  alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2909,6 +3130,10 @@ class _SavedSearchesState:
         """
         Input properties used for looking up and filtering SavedSearches resources.
         :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credentials: Use the credentials defined in the webhook URL
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_details: XSOAR incident description
@@ -2999,7 +3224,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
-        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
@@ -3020,6 +3245,15 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[_builtins.bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_victorops_param_enable_recovery: Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_victorops_param_entity_id: Unique identifier for the affected system or service
+        :param pulumi.Input[_builtins.str] action_victorops_param_inactive_polls: Number of inactive polls before sending a recovery message
+        :param pulumi.Input[_builtins.str] action_victorops_param_message_type: Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        :param pulumi.Input[_builtins.str] action_victorops_param_monitoring_tool: Name of the monitoring tool sending the alert
+        :param pulumi.Input[_builtins.str] action_victorops_param_poll_interval: Polling interval for checking the status of the alert (in minutes)
+        :param pulumi.Input[_builtins.str] action_victorops_param_record_id: Identifier used to correlate related alerts
+        :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
@@ -3036,7 +3270,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         :param pulumi.Input[_builtins.bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
         :param pulumi.Input[_builtins.str] auto_summarize_command: An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
-        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
@@ -3047,7 +3281,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.int] auto_summarize_max_time: Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
         :param pulumi.Input[_builtins.str] auto_summarize_suspend_period: Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
         :param pulumi.Input[_builtins.str] auto_summarize_timespan: The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
-        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         :param pulumi.Input[_builtins.str] description: Human-readable description of this saved search. Defaults to empty string.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
         :param pulumi.Input[_builtins.int] dispatch_buckets: The maximum number of timeline buckets. Defaults to 0.
@@ -3085,6 +3319,14 @@ class _SavedSearchesState:
         """
         if acl is not None:
             pulumi.set(__self__, "acl", acl)
+        if action_better_webhook_param_body_format is not None:
+            pulumi.set(__self__, "action_better_webhook_param_body_format", action_better_webhook_param_body_format)
+        if action_better_webhook_param_credential is not None:
+            pulumi.set(__self__, "action_better_webhook_param_credential", action_better_webhook_param_credential)
+        if action_better_webhook_param_credentials is not None:
+            pulumi.set(__self__, "action_better_webhook_param_credentials", action_better_webhook_param_credentials)
+        if action_better_webhook_param_url is not None:
+            pulumi.set(__self__, "action_better_webhook_param_url", action_better_webhook_param_url)
         if action_create_xsoar_incident is not None:
             pulumi.set(__self__, "action_create_xsoar_incident", action_create_xsoar_incident)
         if action_create_xsoar_incident_param_custom_fields is not None:
@@ -3307,6 +3549,24 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_summary_index_track_alert", action_summary_index_track_alert)
         if action_summary_index_ttl is not None:
             pulumi.set(__self__, "action_summary_index_ttl", action_summary_index_ttl)
+        if action_victorops_param_enable_recovery is not None:
+            pulumi.set(__self__, "action_victorops_param_enable_recovery", action_victorops_param_enable_recovery)
+        if action_victorops_param_entity_id is not None:
+            pulumi.set(__self__, "action_victorops_param_entity_id", action_victorops_param_entity_id)
+        if action_victorops_param_inactive_polls is not None:
+            pulumi.set(__self__, "action_victorops_param_inactive_polls", action_victorops_param_inactive_polls)
+        if action_victorops_param_message_type is not None:
+            pulumi.set(__self__, "action_victorops_param_message_type", action_victorops_param_message_type)
+        if action_victorops_param_monitoring_tool is not None:
+            pulumi.set(__self__, "action_victorops_param_monitoring_tool", action_victorops_param_monitoring_tool)
+        if action_victorops_param_poll_interval is not None:
+            pulumi.set(__self__, "action_victorops_param_poll_interval", action_victorops_param_poll_interval)
+        if action_victorops_param_record_id is not None:
+            pulumi.set(__self__, "action_victorops_param_record_id", action_victorops_param_record_id)
+        if action_victorops_param_routing_key_override is not None:
+            pulumi.set(__self__, "action_victorops_param_routing_key_override", action_victorops_param_routing_key_override)
+        if action_victorops_param_state_message is not None:
+            pulumi.set(__self__, "action_victorops_param_state_message", action_victorops_param_state_message)
         if action_webhook_param_url is not None:
             pulumi.set(__self__, "action_webhook_param_url", action_webhook_param_url)
         if actions is not None:
@@ -3443,6 +3703,54 @@ class _SavedSearchesState:
     @acl.setter
     def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
         pulumi.set(self, "acl", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamBodyFormat")
+    def action_better_webhook_param_body_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        """
+        return pulumi.get(self, "action_better_webhook_param_body_format")
+
+    @action_better_webhook_param_body_format.setter
+    def action_better_webhook_param_body_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_body_format", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamCredential")
+    def action_better_webhook_param_credential(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the Splunk stored credential to use for authentication
+        """
+        return pulumi.get(self, "action_better_webhook_param_credential")
+
+    @action_better_webhook_param_credential.setter
+    def action_better_webhook_param_credential(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_credential", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamCredentials")
+    def action_better_webhook_param_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Use the credentials defined in the webhook URL
+        """
+        return pulumi.get(self, "action_better_webhook_param_credentials")
+
+    @action_better_webhook_param_credentials.setter
+    def action_better_webhook_param_credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_credentials", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamUrl")
+    def action_better_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        """
+        return pulumi.get(self, "action_better_webhook_param_url")
+
+    @action_better_webhook_param_url.setter
+    def action_better_webhook_param_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_better_webhook_param_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncident")
@@ -4528,7 +4836,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionSlackParamFields")
     def action_slack_param_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         """
         return pulumi.get(self, "action_slack_param_fields")
 
@@ -4777,6 +5085,114 @@ class _SavedSearchesState:
         pulumi.set(self, "action_summary_index_ttl", value)
 
     @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamEnableRecovery")
+    def action_victorops_param_enable_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_victorops_param_enable_recovery")
+
+    @action_victorops_param_enable_recovery.setter
+    def action_victorops_param_enable_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_enable_recovery", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamEntityId")
+    def action_victorops_param_entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Unique identifier for the affected system or service
+        """
+        return pulumi.get(self, "action_victorops_param_entity_id")
+
+    @action_victorops_param_entity_id.setter
+    def action_victorops_param_entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_entity_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamInactivePolls")
+    def action_victorops_param_inactive_polls(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Number of inactive polls before sending a recovery message
+        """
+        return pulumi.get(self, "action_victorops_param_inactive_polls")
+
+    @action_victorops_param_inactive_polls.setter
+    def action_victorops_param_inactive_polls(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_inactive_polls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamMessageType")
+    def action_victorops_param_message_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        """
+        return pulumi.get(self, "action_victorops_param_message_type")
+
+    @action_victorops_param_message_type.setter
+    def action_victorops_param_message_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_message_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamMonitoringTool")
+    def action_victorops_param_monitoring_tool(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the monitoring tool sending the alert
+        """
+        return pulumi.get(self, "action_victorops_param_monitoring_tool")
+
+    @action_victorops_param_monitoring_tool.setter
+    def action_victorops_param_monitoring_tool(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_monitoring_tool", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamPollInterval")
+    def action_victorops_param_poll_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Polling interval for checking the status of the alert (in minutes)
+        """
+        return pulumi.get(self, "action_victorops_param_poll_interval")
+
+    @action_victorops_param_poll_interval.setter
+    def action_victorops_param_poll_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_poll_interval", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamRecordId")
+    def action_victorops_param_record_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Identifier used to correlate related alerts
+        """
+        return pulumi.get(self, "action_victorops_param_record_id")
+
+    @action_victorops_param_record_id.setter
+    def action_victorops_param_record_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_record_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamRoutingKeyOverride")
+    def action_victorops_param_routing_key_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        """
+        return pulumi.get(self, "action_victorops_param_routing_key_override")
+
+    @action_victorops_param_routing_key_override.setter
+    def action_victorops_param_routing_key_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_routing_key_override", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamStateMessage")
+    def action_victorops_param_state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Description of the alert condition
+        """
+        return pulumi.get(self, "action_victorops_param_state_message")
+
+    @action_victorops_param_state_message.setter
+    def action_victorops_param_state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_victorops_param_state_message", value)
+
+    @_builtins.property
     @pulumi.getter(name="actionWebhookParamUrl")
     def action_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -4972,7 +5388,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="autoSummarizeCronSchedule")
     def auto_summarize_cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         """
         return pulumi.get(self, "auto_summarize_cron_schedule")
 
@@ -5104,7 +5520,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="cronSchedule")
     def cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         """
         return pulumi.get(self, "cron_schedule")
 
@@ -5528,6 +5944,10 @@ class SavedSearches(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -5634,6 +6054,15 @@ class SavedSearches(pulumi.CustomResource):
                  action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  actions: Optional[pulumi.Input[_builtins.str]] = None,
                  alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
@@ -5732,6 +6161,10 @@ class SavedSearches(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credentials: Use the credentials defined in the webhook URL
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_details: XSOAR incident description
@@ -5818,7 +6251,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
-        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
@@ -5838,6 +6271,15 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[_builtins.bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_victorops_param_enable_recovery: Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_victorops_param_entity_id: Unique identifier for the affected system or service
+        :param pulumi.Input[_builtins.str] action_victorops_param_inactive_polls: Number of inactive polls before sending a recovery message
+        :param pulumi.Input[_builtins.str] action_victorops_param_message_type: Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        :param pulumi.Input[_builtins.str] action_victorops_param_monitoring_tool: Name of the monitoring tool sending the alert
+        :param pulumi.Input[_builtins.str] action_victorops_param_poll_interval: Polling interval for checking the status of the alert (in minutes)
+        :param pulumi.Input[_builtins.str] action_victorops_param_record_id: Identifier used to correlate related alerts
+        :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
@@ -5854,7 +6296,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         :param pulumi.Input[_builtins.bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
         :param pulumi.Input[_builtins.str] auto_summarize_command: An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
-        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
@@ -5865,7 +6307,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] auto_summarize_max_time: Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
         :param pulumi.Input[_builtins.str] auto_summarize_suspend_period: Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
         :param pulumi.Input[_builtins.str] auto_summarize_timespan: The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
-        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         :param pulumi.Input[_builtins.str] description: Human-readable description of this saved search. Defaults to empty string.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
         :param pulumi.Input[_builtins.int] dispatch_buckets: The maximum number of timeline buckets. Defaults to 0.
@@ -5955,6 +6397,10 @@ class SavedSearches(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
                  action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6061,6 +6507,15 @@ class SavedSearches(pulumi.CustomResource):
                  action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
                  action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
                  actions: Optional[pulumi.Input[_builtins.str]] = None,
                  alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6133,6 +6588,10 @@ class SavedSearches(pulumi.CustomResource):
             __props__ = SavedSearchesArgs.__new__(SavedSearchesArgs)
 
             __props__.__dict__["acl"] = acl
+            __props__.__dict__["action_better_webhook_param_body_format"] = action_better_webhook_param_body_format
+            __props__.__dict__["action_better_webhook_param_credential"] = action_better_webhook_param_credential
+            __props__.__dict__["action_better_webhook_param_credentials"] = action_better_webhook_param_credentials
+            __props__.__dict__["action_better_webhook_param_url"] = action_better_webhook_param_url
             __props__.__dict__["action_create_xsoar_incident"] = action_create_xsoar_incident
             __props__.__dict__["action_create_xsoar_incident_param_custom_fields"] = action_create_xsoar_incident_param_custom_fields
             __props__.__dict__["action_create_xsoar_incident_param_details"] = action_create_xsoar_incident_param_details
@@ -6239,6 +6698,15 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_summary_index_name"] = action_summary_index_name
             __props__.__dict__["action_summary_index_track_alert"] = action_summary_index_track_alert
             __props__.__dict__["action_summary_index_ttl"] = action_summary_index_ttl
+            __props__.__dict__["action_victorops_param_enable_recovery"] = action_victorops_param_enable_recovery
+            __props__.__dict__["action_victorops_param_entity_id"] = action_victorops_param_entity_id
+            __props__.__dict__["action_victorops_param_inactive_polls"] = action_victorops_param_inactive_polls
+            __props__.__dict__["action_victorops_param_message_type"] = action_victorops_param_message_type
+            __props__.__dict__["action_victorops_param_monitoring_tool"] = action_victorops_param_monitoring_tool
+            __props__.__dict__["action_victorops_param_poll_interval"] = action_victorops_param_poll_interval
+            __props__.__dict__["action_victorops_param_record_id"] = action_victorops_param_record_id
+            __props__.__dict__["action_victorops_param_routing_key_override"] = action_victorops_param_routing_key_override
+            __props__.__dict__["action_victorops_param_state_message"] = action_victorops_param_state_message
             __props__.__dict__["action_webhook_param_url"] = action_webhook_param_url
             __props__.__dict__["actions"] = actions
             __props__.__dict__["alert_comparator"] = alert_comparator
@@ -6319,6 +6787,10 @@ class SavedSearches(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+            action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
+            action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
+            action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
+            action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
             action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
             action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
             action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6430,6 +6902,15 @@ class SavedSearches(pulumi.CustomResource):
             action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
             action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
             action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
+            action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
             action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
             actions: Optional[pulumi.Input[_builtins.str]] = None,
             alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6500,6 +6981,10 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_credentials: Use the credentials defined in the webhook URL
+        :param pulumi.Input[_builtins.str] action_better_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident: Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_custom_fields: XSOAR custom incident fields (should be a comma separated list)
         :param pulumi.Input[_builtins.str] action_create_xsoar_incident_param_details: XSOAR incident description
@@ -6590,7 +7075,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
-        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         :param pulumi.Input[_builtins.str] action_slack_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         :param pulumi.Input[_builtins.str] action_slack_param_webhook_url_override: You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         :param pulumi.Input[_builtins.str] action_snow_event_param_account: Account(s) for which the event is/ are to be created across ServiceNow instance(s).
@@ -6611,6 +7096,15 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_summary_index_name: Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         :param pulumi.Input[_builtins.bool] action_summary_index_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_summary_index_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_victorops_param_enable_recovery: Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_victorops_param_entity_id: Unique identifier for the affected system or service
+        :param pulumi.Input[_builtins.str] action_victorops_param_inactive_polls: Number of inactive polls before sending a recovery message
+        :param pulumi.Input[_builtins.str] action_victorops_param_message_type: Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        :param pulumi.Input[_builtins.str] action_victorops_param_monitoring_tool: Name of the monitoring tool sending the alert
+        :param pulumi.Input[_builtins.str] action_victorops_param_poll_interval: Polling interval for checking the status of the alert (in minutes)
+        :param pulumi.Input[_builtins.str] action_victorops_param_record_id: Identifier used to correlate related alerts
+        :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
         :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
@@ -6627,7 +7121,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] allow_skew: Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         :param pulumi.Input[_builtins.bool] auto_summarize: Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
         :param pulumi.Input[_builtins.str] auto_summarize_command: An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
-        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        :param pulumi.Input[_builtins.str] auto_summarize_cron_schedule: Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_earliest_time: A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_latest_time: A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         :param pulumi.Input[_builtins.str] auto_summarize_dispatch_time_format: Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
@@ -6638,7 +7132,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] auto_summarize_max_time: Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
         :param pulumi.Input[_builtins.str] auto_summarize_suspend_period: Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
         :param pulumi.Input[_builtins.str] auto_summarize_timespan: The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
-        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        :param pulumi.Input[_builtins.str] cron_schedule: Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         :param pulumi.Input[_builtins.str] description: Human-readable description of this saved search. Defaults to empty string.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
         :param pulumi.Input[_builtins.int] dispatch_buckets: The maximum number of timeline buckets. Defaults to 0.
@@ -6679,6 +7173,10 @@ class SavedSearches(pulumi.CustomResource):
         __props__ = _SavedSearchesState.__new__(_SavedSearchesState)
 
         __props__.__dict__["acl"] = acl
+        __props__.__dict__["action_better_webhook_param_body_format"] = action_better_webhook_param_body_format
+        __props__.__dict__["action_better_webhook_param_credential"] = action_better_webhook_param_credential
+        __props__.__dict__["action_better_webhook_param_credentials"] = action_better_webhook_param_credentials
+        __props__.__dict__["action_better_webhook_param_url"] = action_better_webhook_param_url
         __props__.__dict__["action_create_xsoar_incident"] = action_create_xsoar_incident
         __props__.__dict__["action_create_xsoar_incident_param_custom_fields"] = action_create_xsoar_incident_param_custom_fields
         __props__.__dict__["action_create_xsoar_incident_param_details"] = action_create_xsoar_incident_param_details
@@ -6790,6 +7288,15 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_summary_index_name"] = action_summary_index_name
         __props__.__dict__["action_summary_index_track_alert"] = action_summary_index_track_alert
         __props__.__dict__["action_summary_index_ttl"] = action_summary_index_ttl
+        __props__.__dict__["action_victorops_param_enable_recovery"] = action_victorops_param_enable_recovery
+        __props__.__dict__["action_victorops_param_entity_id"] = action_victorops_param_entity_id
+        __props__.__dict__["action_victorops_param_inactive_polls"] = action_victorops_param_inactive_polls
+        __props__.__dict__["action_victorops_param_message_type"] = action_victorops_param_message_type
+        __props__.__dict__["action_victorops_param_monitoring_tool"] = action_victorops_param_monitoring_tool
+        __props__.__dict__["action_victorops_param_poll_interval"] = action_victorops_param_poll_interval
+        __props__.__dict__["action_victorops_param_record_id"] = action_victorops_param_record_id
+        __props__.__dict__["action_victorops_param_routing_key_override"] = action_victorops_param_routing_key_override
+        __props__.__dict__["action_victorops_param_state_message"] = action_victorops_param_state_message
         __props__.__dict__["action_webhook_param_url"] = action_webhook_param_url
         __props__.__dict__["actions"] = actions
         __props__.__dict__["alert_comparator"] = alert_comparator
@@ -6861,6 +7368,38 @@ class SavedSearches(pulumi.CustomResource):
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamBodyFormat")
+    def action_better_webhook_param_body_format(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        """
+        return pulumi.get(self, "action_better_webhook_param_body_format")
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamCredential")
+    def action_better_webhook_param_credential(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Name of the Splunk stored credential to use for authentication
+        """
+        return pulumi.get(self, "action_better_webhook_param_credential")
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamCredentials")
+    def action_better_webhook_param_credentials(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Use the credentials defined in the webhook URL
+        """
+        return pulumi.get(self, "action_better_webhook_param_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="actionBetterWebhookParamUrl")
+    def action_better_webhook_param_url(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        """
+        return pulumi.get(self, "action_better_webhook_param_url")
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncident")
@@ -7586,7 +8125,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionSlackParamFields")
     def action_slack_param_fields(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         """
         return pulumi.get(self, "action_slack_param_fields")
 
@@ -7751,6 +8290,78 @@ class SavedSearches(pulumi.CustomResource):
         return pulumi.get(self, "action_summary_index_ttl")
 
     @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamEnableRecovery")
+    def action_victorops_param_enable_recovery(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_victorops_param_enable_recovery")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamEntityId")
+    def action_victorops_param_entity_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Unique identifier for the affected system or service
+        """
+        return pulumi.get(self, "action_victorops_param_entity_id")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamInactivePolls")
+    def action_victorops_param_inactive_polls(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Number of inactive polls before sending a recovery message
+        """
+        return pulumi.get(self, "action_victorops_param_inactive_polls")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamMessageType")
+    def action_victorops_param_message_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        """
+        return pulumi.get(self, "action_victorops_param_message_type")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamMonitoringTool")
+    def action_victorops_param_monitoring_tool(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Name of the monitoring tool sending the alert
+        """
+        return pulumi.get(self, "action_victorops_param_monitoring_tool")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamPollInterval")
+    def action_victorops_param_poll_interval(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Polling interval for checking the status of the alert (in minutes)
+        """
+        return pulumi.get(self, "action_victorops_param_poll_interval")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamRecordId")
+    def action_victorops_param_record_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Identifier used to correlate related alerts
+        """
+        return pulumi.get(self, "action_victorops_param_record_id")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamRoutingKeyOverride")
+    def action_victorops_param_routing_key_override(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        """
+        return pulumi.get(self, "action_victorops_param_routing_key_override")
+
+    @_builtins.property
+    @pulumi.getter(name="actionVictoropsParamStateMessage")
+    def action_victorops_param_state_message(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Description of the alert condition
+        """
+        return pulumi.get(self, "action_victorops_param_state_message")
+
+    @_builtins.property
     @pulumi.getter(name="actionWebhookParamUrl")
     def action_webhook_param_url(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
@@ -7882,7 +8493,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="autoSummarizeCronSchedule")
     def auto_summarize_cron_schedule(self) -> pulumi.Output[_builtins.str]:
         """
-        Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \\`every ten hours\\`.
+        Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         """
         return pulumi.get(self, "auto_summarize_cron_schedule")
 
@@ -7970,7 +8581,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="cronSchedule")
     def cron_schedule(self) -> pulumi.Output[_builtins.str]:
         """
-        Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         """
         return pulumi.get(self, "cron_schedule")
 

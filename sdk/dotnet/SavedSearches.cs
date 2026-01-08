@@ -60,6 +60,30 @@ namespace Pulumi.Splunk
         public Output<Outputs.SavedSearchesAcl> Acl { get; private set; } = null!;
 
         /// <summary>
+        /// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        /// </summary>
+        [Output("actionBetterWebhookParamBodyFormat")]
+        public Output<string?> ActionBetterWebhookParamBodyFormat { get; private set; } = null!;
+
+        /// <summary>
+        /// Name of the Splunk stored credential to use for authentication
+        /// </summary>
+        [Output("actionBetterWebhookParamCredential")]
+        public Output<string?> ActionBetterWebhookParamCredential { get; private set; } = null!;
+
+        /// <summary>
+        /// Use the credentials defined in the webhook URL
+        /// </summary>
+        [Output("actionBetterWebhookParamCredentials")]
+        public Output<string?> ActionBetterWebhookParamCredentials { get; private set; } = null!;
+
+        /// <summary>
+        /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        /// </summary>
+        [Output("actionBetterWebhookParamUrl")]
+        public Output<string?> ActionBetterWebhookParamUrl { get; private set; } = null!;
+
+        /// <summary>
         /// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         /// </summary>
         [Output("actionCreateXsoarIncident")]
@@ -600,7 +624,7 @@ namespace Pulumi.Splunk
         public Output<string?> ActionSlackParamChannel { get; private set; } = null!;
 
         /// <summary>
-        /// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        /// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
         /// </summary>
         [Output("actionSlackParamFields")]
         public Output<string?> ActionSlackParamFields { get; private set; } = null!;
@@ -726,6 +750,60 @@ namespace Pulumi.Splunk
         public Output<string> ActionSummaryIndexTtl { get; private set; } = null!;
 
         /// <summary>
+        /// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Output("actionVictoropsParamEnableRecovery")]
+        public Output<string?> ActionVictoropsParamEnableRecovery { get; private set; } = null!;
+
+        /// <summary>
+        /// Unique identifier for the affected system or service
+        /// </summary>
+        [Output("actionVictoropsParamEntityId")]
+        public Output<string?> ActionVictoropsParamEntityId { get; private set; } = null!;
+
+        /// <summary>
+        /// Number of inactive polls before sending a recovery message
+        /// </summary>
+        [Output("actionVictoropsParamInactivePolls")]
+        public Output<string?> ActionVictoropsParamInactivePolls { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        /// </summary>
+        [Output("actionVictoropsParamMessageType")]
+        public Output<string?> ActionVictoropsParamMessageType { get; private set; } = null!;
+
+        /// <summary>
+        /// Name of the monitoring tool sending the alert
+        /// </summary>
+        [Output("actionVictoropsParamMonitoringTool")]
+        public Output<string?> ActionVictoropsParamMonitoringTool { get; private set; } = null!;
+
+        /// <summary>
+        /// Polling interval for checking the status of the alert (in minutes)
+        /// </summary>
+        [Output("actionVictoropsParamPollInterval")]
+        public Output<string?> ActionVictoropsParamPollInterval { get; private set; } = null!;
+
+        /// <summary>
+        /// Identifier used to correlate related alerts
+        /// </summary>
+        [Output("actionVictoropsParamRecordId")]
+        public Output<string?> ActionVictoropsParamRecordId { get; private set; } = null!;
+
+        /// <summary>
+        /// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        /// </summary>
+        [Output("actionVictoropsParamRoutingKeyOverride")]
+        public Output<string?> ActionVictoropsParamRoutingKeyOverride { get; private set; } = null!;
+
+        /// <summary>
+        /// Description of the alert condition
+        /// </summary>
+        [Output("actionVictoropsParamStateMessage")]
+        public Output<string?> ActionVictoropsParamStateMessage { get; private set; } = null!;
+
+        /// <summary>
         /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
         /// </summary>
         [Output("actionWebhookParamUrl")]
@@ -822,7 +900,7 @@ namespace Pulumi.Splunk
         public Output<string> AutoSummarizeCommand { get; private set; } = null!;
 
         /// <summary>
-        /// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+        /// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
         /// </summary>
         [Output("autoSummarizeCronSchedule")]
         public Output<string> AutoSummarizeCronSchedule { get; private set; } = null!;
@@ -888,7 +966,7 @@ namespace Pulumi.Splunk
         public Output<string> AutoSummarizeTimespan { get; private set; } = null!;
 
         /// <summary>
-        /// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        /// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
         /// </summary>
         [Output("cronSchedule")]
         public Output<string> CronSchedule { get; private set; } = null!;
@@ -1148,6 +1226,30 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("acl")]
         public Input<Inputs.SavedSearchesAclArgs>? Acl { get; set; }
+
+        /// <summary>
+        /// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        /// </summary>
+        [Input("actionBetterWebhookParamBodyFormat")]
+        public Input<string>? ActionBetterWebhookParamBodyFormat { get; set; }
+
+        /// <summary>
+        /// Name of the Splunk stored credential to use for authentication
+        /// </summary>
+        [Input("actionBetterWebhookParamCredential")]
+        public Input<string>? ActionBetterWebhookParamCredential { get; set; }
+
+        /// <summary>
+        /// Use the credentials defined in the webhook URL
+        /// </summary>
+        [Input("actionBetterWebhookParamCredentials")]
+        public Input<string>? ActionBetterWebhookParamCredentials { get; set; }
+
+        /// <summary>
+        /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        /// </summary>
+        [Input("actionBetterWebhookParamUrl")]
+        public Input<string>? ActionBetterWebhookParamUrl { get; set; }
 
         /// <summary>
         /// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
@@ -1666,7 +1768,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSlackParamChannel { get; set; }
 
         /// <summary>
-        /// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        /// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
         /// </summary>
         [Input("actionSlackParamFields")]
         public Input<string>? ActionSlackParamFields { get; set; }
@@ -1786,6 +1888,60 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSummaryIndexTtl { get; set; }
 
         /// <summary>
+        /// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionVictoropsParamEnableRecovery")]
+        public Input<string>? ActionVictoropsParamEnableRecovery { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the affected system or service
+        /// </summary>
+        [Input("actionVictoropsParamEntityId")]
+        public Input<string>? ActionVictoropsParamEntityId { get; set; }
+
+        /// <summary>
+        /// Number of inactive polls before sending a recovery message
+        /// </summary>
+        [Input("actionVictoropsParamInactivePolls")]
+        public Input<string>? ActionVictoropsParamInactivePolls { get; set; }
+
+        /// <summary>
+        /// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        /// </summary>
+        [Input("actionVictoropsParamMessageType")]
+        public Input<string>? ActionVictoropsParamMessageType { get; set; }
+
+        /// <summary>
+        /// Name of the monitoring tool sending the alert
+        /// </summary>
+        [Input("actionVictoropsParamMonitoringTool")]
+        public Input<string>? ActionVictoropsParamMonitoringTool { get; set; }
+
+        /// <summary>
+        /// Polling interval for checking the status of the alert (in minutes)
+        /// </summary>
+        [Input("actionVictoropsParamPollInterval")]
+        public Input<string>? ActionVictoropsParamPollInterval { get; set; }
+
+        /// <summary>
+        /// Identifier used to correlate related alerts
+        /// </summary>
+        [Input("actionVictoropsParamRecordId")]
+        public Input<string>? ActionVictoropsParamRecordId { get; set; }
+
+        /// <summary>
+        /// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        /// </summary>
+        [Input("actionVictoropsParamRoutingKeyOverride")]
+        public Input<string>? ActionVictoropsParamRoutingKeyOverride { get; set; }
+
+        /// <summary>
+        /// Description of the alert condition
+        /// </summary>
+        [Input("actionVictoropsParamStateMessage")]
+        public Input<string>? ActionVictoropsParamStateMessage { get; set; }
+
+        /// <summary>
         /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
         /// </summary>
         [Input("actionWebhookParamUrl")]
@@ -1882,7 +2038,7 @@ namespace Pulumi.Splunk
         public Input<string>? AutoSummarizeCommand { get; set; }
 
         /// <summary>
-        /// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+        /// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
         /// </summary>
         [Input("autoSummarizeCronSchedule")]
         public Input<string>? AutoSummarizeCronSchedule { get; set; }
@@ -1948,7 +2104,7 @@ namespace Pulumi.Splunk
         public Input<string>? AutoSummarizeTimespan { get; set; }
 
         /// <summary>
-        /// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        /// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
         /// </summary>
         [Input("cronSchedule")]
         public Input<string>? CronSchedule { get; set; }
@@ -2170,6 +2326,30 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("acl")]
         public Input<Inputs.SavedSearchesAclGetArgs>? Acl { get; set; }
+
+        /// <summary>
+        /// Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+        /// </summary>
+        [Input("actionBetterWebhookParamBodyFormat")]
+        public Input<string>? ActionBetterWebhookParamBodyFormat { get; set; }
+
+        /// <summary>
+        /// Name of the Splunk stored credential to use for authentication
+        /// </summary>
+        [Input("actionBetterWebhookParamCredential")]
+        public Input<string>? ActionBetterWebhookParamCredential { get; set; }
+
+        /// <summary>
+        /// Use the credentials defined in the webhook URL
+        /// </summary>
+        [Input("actionBetterWebhookParamCredentials")]
+        public Input<string>? ActionBetterWebhookParamCredentials { get; set; }
+
+        /// <summary>
+        /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
+        /// </summary>
+        [Input("actionBetterWebhookParamUrl")]
+        public Input<string>? ActionBetterWebhookParamUrl { get; set; }
 
         /// <summary>
         /// Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
@@ -2712,7 +2892,7 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSlackParamChannel { get; set; }
 
         /// <summary>
-        /// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+        /// Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
         /// </summary>
         [Input("actionSlackParamFields")]
         public Input<string>? ActionSlackParamFields { get; set; }
@@ -2838,6 +3018,60 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSummaryIndexTtl { get; set; }
 
         /// <summary>
+        /// Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionVictoropsParamEnableRecovery")]
+        public Input<string>? ActionVictoropsParamEnableRecovery { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the affected system or service
+        /// </summary>
+        [Input("actionVictoropsParamEntityId")]
+        public Input<string>? ActionVictoropsParamEntityId { get; set; }
+
+        /// <summary>
+        /// Number of inactive polls before sending a recovery message
+        /// </summary>
+        [Input("actionVictoropsParamInactivePolls")]
+        public Input<string>? ActionVictoropsParamInactivePolls { get; set; }
+
+        /// <summary>
+        /// Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+        /// </summary>
+        [Input("actionVictoropsParamMessageType")]
+        public Input<string>? ActionVictoropsParamMessageType { get; set; }
+
+        /// <summary>
+        /// Name of the monitoring tool sending the alert
+        /// </summary>
+        [Input("actionVictoropsParamMonitoringTool")]
+        public Input<string>? ActionVictoropsParamMonitoringTool { get; set; }
+
+        /// <summary>
+        /// Polling interval for checking the status of the alert (in minutes)
+        /// </summary>
+        [Input("actionVictoropsParamPollInterval")]
+        public Input<string>? ActionVictoropsParamPollInterval { get; set; }
+
+        /// <summary>
+        /// Identifier used to correlate related alerts
+        /// </summary>
+        [Input("actionVictoropsParamRecordId")]
+        public Input<string>? ActionVictoropsParamRecordId { get; set; }
+
+        /// <summary>
+        /// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+        /// </summary>
+        [Input("actionVictoropsParamRoutingKeyOverride")]
+        public Input<string>? ActionVictoropsParamRoutingKeyOverride { get; set; }
+
+        /// <summary>
+        /// Description of the alert condition
+        /// </summary>
+        [Input("actionVictoropsParamStateMessage")]
+        public Input<string>? ActionVictoropsParamStateMessage { get; set; }
+
+        /// <summary>
         /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
         /// </summary>
         [Input("actionWebhookParamUrl")]
@@ -2934,7 +3168,7 @@ namespace Pulumi.Splunk
         public Input<string>? AutoSummarizeCommand { get; set; }
 
         /// <summary>
-        /// Cron schedule that probes and generates the summaries for this saved search.The default value is */10 * * * * and corresponds to \`every ten hours\`.
+        /// Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
         /// </summary>
         [Input("autoSummarizeCronSchedule")]
         public Input<string>? AutoSummarizeCronSchedule { get; set; }
@@ -3000,7 +3234,7 @@ namespace Pulumi.Splunk
         public Input<string>? AutoSummarizeTimespan { get; set; }
 
         /// <summary>
-        /// Valid values: cron stringThe cron schedule to execute this search. For example: */5 * * * * causes the search to execute every 5 minutes.
+        /// Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
         /// </summary>
         [Input("cronSchedule")]
         public Input<string>? CronSchedule { get; set; }

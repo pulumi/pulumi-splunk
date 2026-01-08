@@ -72,6 +72,22 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly acl: pulumi.Output<outputs.SavedSearchesAcl>;
     /**
+     * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     */
+    declare public readonly actionBetterWebhookParamBodyFormat: pulumi.Output<string | undefined>;
+    /**
+     * Name of the Splunk stored credential to use for authentication
+     */
+    declare public readonly actionBetterWebhookParamCredential: pulumi.Output<string | undefined>;
+    /**
+     * Use the credentials defined in the webhook URL
+     */
+    declare public readonly actionBetterWebhookParamCredentials: pulumi.Output<string | undefined>;
+    /**
+     * URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     */
+    declare public readonly actionBetterWebhookParamUrl: pulumi.Output<string | undefined>;
+    /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      */
     declare public readonly actionCreateXsoarIncident: pulumi.Output<string | undefined>;
@@ -432,7 +448,7 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionSlackParamChannel: pulumi.Output<string | undefined>;
     /**
-     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      */
     declare public readonly actionSlackParamFields: pulumi.Output<string | undefined>;
     /**
@@ -516,6 +532,42 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionSummaryIndexTtl: pulumi.Output<string>;
     /**
+     * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    declare public readonly actionVictoropsParamEnableRecovery: pulumi.Output<string | undefined>;
+    /**
+     * Unique identifier for the affected system or service
+     */
+    declare public readonly actionVictoropsParamEntityId: pulumi.Output<string | undefined>;
+    /**
+     * Number of inactive polls before sending a recovery message
+     */
+    declare public readonly actionVictoropsParamInactivePolls: pulumi.Output<string | undefined>;
+    /**
+     * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     */
+    declare public readonly actionVictoropsParamMessageType: pulumi.Output<string | undefined>;
+    /**
+     * Name of the monitoring tool sending the alert
+     */
+    declare public readonly actionVictoropsParamMonitoringTool: pulumi.Output<string | undefined>;
+    /**
+     * Polling interval for checking the status of the alert (in minutes)
+     */
+    declare public readonly actionVictoropsParamPollInterval: pulumi.Output<string | undefined>;
+    /**
+     * Identifier used to correlate related alerts
+     */
+    declare public readonly actionVictoropsParamRecordId: pulumi.Output<string | undefined>;
+    /**
+     * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     */
+    declare public readonly actionVictoropsParamRoutingKeyOverride: pulumi.Output<string | undefined>;
+    /**
+     * Description of the alert condition
+     */
+    declare public readonly actionVictoropsParamStateMessage: pulumi.Output<string | undefined>;
+    /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
     declare public readonly actionWebhookParamUrl: pulumi.Output<string | undefined>;
@@ -580,7 +632,7 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly autoSummarizeCommand: pulumi.Output<string>;
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      */
     declare public readonly autoSummarizeCronSchedule: pulumi.Output<string>;
     /**
@@ -624,7 +676,7 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly autoSummarizeTimespan: pulumi.Output<string>;
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      */
     declare public readonly cronSchedule: pulumi.Output<string>;
     /**
@@ -778,6 +830,10 @@ export class SavedSearches extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SavedSearchesState | undefined;
             resourceInputs["acl"] = state?.acl;
+            resourceInputs["actionBetterWebhookParamBodyFormat"] = state?.actionBetterWebhookParamBodyFormat;
+            resourceInputs["actionBetterWebhookParamCredential"] = state?.actionBetterWebhookParamCredential;
+            resourceInputs["actionBetterWebhookParamCredentials"] = state?.actionBetterWebhookParamCredentials;
+            resourceInputs["actionBetterWebhookParamUrl"] = state?.actionBetterWebhookParamUrl;
             resourceInputs["actionCreateXsoarIncident"] = state?.actionCreateXsoarIncident;
             resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = state?.actionCreateXsoarIncidentParamCustomFields;
             resourceInputs["actionCreateXsoarIncidentParamDetails"] = state?.actionCreateXsoarIncidentParamDetails;
@@ -889,6 +945,15 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionSummaryIndexName"] = state?.actionSummaryIndexName;
             resourceInputs["actionSummaryIndexTrackAlert"] = state?.actionSummaryIndexTrackAlert;
             resourceInputs["actionSummaryIndexTtl"] = state?.actionSummaryIndexTtl;
+            resourceInputs["actionVictoropsParamEnableRecovery"] = state?.actionVictoropsParamEnableRecovery;
+            resourceInputs["actionVictoropsParamEntityId"] = state?.actionVictoropsParamEntityId;
+            resourceInputs["actionVictoropsParamInactivePolls"] = state?.actionVictoropsParamInactivePolls;
+            resourceInputs["actionVictoropsParamMessageType"] = state?.actionVictoropsParamMessageType;
+            resourceInputs["actionVictoropsParamMonitoringTool"] = state?.actionVictoropsParamMonitoringTool;
+            resourceInputs["actionVictoropsParamPollInterval"] = state?.actionVictoropsParamPollInterval;
+            resourceInputs["actionVictoropsParamRecordId"] = state?.actionVictoropsParamRecordId;
+            resourceInputs["actionVictoropsParamRoutingKeyOverride"] = state?.actionVictoropsParamRoutingKeyOverride;
+            resourceInputs["actionVictoropsParamStateMessage"] = state?.actionVictoropsParamStateMessage;
             resourceInputs["actionWebhookParamUrl"] = state?.actionWebhookParamUrl;
             resourceInputs["actions"] = state?.actions;
             resourceInputs["alertComparator"] = state?.alertComparator;
@@ -957,6 +1022,10 @@ export class SavedSearches extends pulumi.CustomResource {
                 throw new Error("Missing required property 'search'");
             }
             resourceInputs["acl"] = args?.acl;
+            resourceInputs["actionBetterWebhookParamBodyFormat"] = args?.actionBetterWebhookParamBodyFormat;
+            resourceInputs["actionBetterWebhookParamCredential"] = args?.actionBetterWebhookParamCredential;
+            resourceInputs["actionBetterWebhookParamCredentials"] = args?.actionBetterWebhookParamCredentials;
+            resourceInputs["actionBetterWebhookParamUrl"] = args?.actionBetterWebhookParamUrl;
             resourceInputs["actionCreateXsoarIncident"] = args?.actionCreateXsoarIncident;
             resourceInputs["actionCreateXsoarIncidentParamCustomFields"] = args?.actionCreateXsoarIncidentParamCustomFields;
             resourceInputs["actionCreateXsoarIncidentParamDetails"] = args?.actionCreateXsoarIncidentParamDetails;
@@ -1063,6 +1132,15 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionSummaryIndexName"] = args?.actionSummaryIndexName;
             resourceInputs["actionSummaryIndexTrackAlert"] = args?.actionSummaryIndexTrackAlert;
             resourceInputs["actionSummaryIndexTtl"] = args?.actionSummaryIndexTtl;
+            resourceInputs["actionVictoropsParamEnableRecovery"] = args?.actionVictoropsParamEnableRecovery;
+            resourceInputs["actionVictoropsParamEntityId"] = args?.actionVictoropsParamEntityId;
+            resourceInputs["actionVictoropsParamInactivePolls"] = args?.actionVictoropsParamInactivePolls;
+            resourceInputs["actionVictoropsParamMessageType"] = args?.actionVictoropsParamMessageType;
+            resourceInputs["actionVictoropsParamMonitoringTool"] = args?.actionVictoropsParamMonitoringTool;
+            resourceInputs["actionVictoropsParamPollInterval"] = args?.actionVictoropsParamPollInterval;
+            resourceInputs["actionVictoropsParamRecordId"] = args?.actionVictoropsParamRecordId;
+            resourceInputs["actionVictoropsParamRoutingKeyOverride"] = args?.actionVictoropsParamRoutingKeyOverride;
+            resourceInputs["actionVictoropsParamStateMessage"] = args?.actionVictoropsParamStateMessage;
             resourceInputs["actionWebhookParamUrl"] = args?.actionWebhookParamUrl;
             resourceInputs["actions"] = args?.actions;
             resourceInputs["alertComparator"] = args?.alertComparator;
@@ -1144,6 +1222,22 @@ export interface SavedSearchesState {
      * The app/user context that is the namespace for the resource
      */
     acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    /**
+     * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     */
+    actionBetterWebhookParamBodyFormat?: pulumi.Input<string>;
+    /**
+     * Name of the Splunk stored credential to use for authentication
+     */
+    actionBetterWebhookParamCredential?: pulumi.Input<string>;
+    /**
+     * Use the credentials defined in the webhook URL
+     */
+    actionBetterWebhookParamCredentials?: pulumi.Input<string>;
+    /**
+     * URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     */
+    actionBetterWebhookParamUrl?: pulumi.Input<string>;
     /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      */
@@ -1505,7 +1599,7 @@ export interface SavedSearchesState {
      */
     actionSlackParamChannel?: pulumi.Input<string>;
     /**
-     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      */
     actionSlackParamFields?: pulumi.Input<string>;
     /**
@@ -1589,6 +1683,42 @@ export interface SavedSearchesState {
      */
     actionSummaryIndexTtl?: pulumi.Input<string>;
     /**
+     * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    actionVictoropsParamEnableRecovery?: pulumi.Input<string>;
+    /**
+     * Unique identifier for the affected system or service
+     */
+    actionVictoropsParamEntityId?: pulumi.Input<string>;
+    /**
+     * Number of inactive polls before sending a recovery message
+     */
+    actionVictoropsParamInactivePolls?: pulumi.Input<string>;
+    /**
+     * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     */
+    actionVictoropsParamMessageType?: pulumi.Input<string>;
+    /**
+     * Name of the monitoring tool sending the alert
+     */
+    actionVictoropsParamMonitoringTool?: pulumi.Input<string>;
+    /**
+     * Polling interval for checking the status of the alert (in minutes)
+     */
+    actionVictoropsParamPollInterval?: pulumi.Input<string>;
+    /**
+     * Identifier used to correlate related alerts
+     */
+    actionVictoropsParamRecordId?: pulumi.Input<string>;
+    /**
+     * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     */
+    actionVictoropsParamRoutingKeyOverride?: pulumi.Input<string>;
+    /**
+     * Description of the alert condition
+     */
+    actionVictoropsParamStateMessage?: pulumi.Input<string>;
+    /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
     actionWebhookParamUrl?: pulumi.Input<string>;
@@ -1653,7 +1783,7 @@ export interface SavedSearchesState {
      */
     autoSummarizeCommand?: pulumi.Input<string>;
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      */
     autoSummarizeCronSchedule?: pulumi.Input<string>;
     /**
@@ -1697,7 +1827,7 @@ export interface SavedSearchesState {
      */
     autoSummarizeTimespan?: pulumi.Input<string>;
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      */
     cronSchedule?: pulumi.Input<string>;
     /**
@@ -1846,6 +1976,22 @@ export interface SavedSearchesArgs {
      * The app/user context that is the namespace for the resource
      */
     acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    /**
+     * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     */
+    actionBetterWebhookParamBodyFormat?: pulumi.Input<string>;
+    /**
+     * Name of the Splunk stored credential to use for authentication
+     */
+    actionBetterWebhookParamCredential?: pulumi.Input<string>;
+    /**
+     * Use the credentials defined in the webhook URL
+     */
+    actionBetterWebhookParamCredentials?: pulumi.Input<string>;
+    /**
+     * URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     */
+    actionBetterWebhookParamUrl?: pulumi.Input<string>;
     /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      */
@@ -2191,7 +2337,7 @@ export interface SavedSearchesArgs {
      */
     actionSlackParamChannel?: pulumi.Input<string>;
     /**
-     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      */
     actionSlackParamFields?: pulumi.Input<string>;
     /**
@@ -2271,6 +2417,42 @@ export interface SavedSearchesArgs {
      */
     actionSummaryIndexTtl?: pulumi.Input<string>;
     /**
+     * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    actionVictoropsParamEnableRecovery?: pulumi.Input<string>;
+    /**
+     * Unique identifier for the affected system or service
+     */
+    actionVictoropsParamEntityId?: pulumi.Input<string>;
+    /**
+     * Number of inactive polls before sending a recovery message
+     */
+    actionVictoropsParamInactivePolls?: pulumi.Input<string>;
+    /**
+     * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     */
+    actionVictoropsParamMessageType?: pulumi.Input<string>;
+    /**
+     * Name of the monitoring tool sending the alert
+     */
+    actionVictoropsParamMonitoringTool?: pulumi.Input<string>;
+    /**
+     * Polling interval for checking the status of the alert (in minutes)
+     */
+    actionVictoropsParamPollInterval?: pulumi.Input<string>;
+    /**
+     * Identifier used to correlate related alerts
+     */
+    actionVictoropsParamRecordId?: pulumi.Input<string>;
+    /**
+     * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     */
+    actionVictoropsParamRoutingKeyOverride?: pulumi.Input<string>;
+    /**
+     * Description of the alert condition
+     */
+    actionVictoropsParamStateMessage?: pulumi.Input<string>;
+    /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
     actionWebhookParamUrl?: pulumi.Input<string>;
@@ -2335,7 +2517,7 @@ export interface SavedSearchesArgs {
      */
     autoSummarizeCommand?: pulumi.Input<string>;
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      */
     autoSummarizeCronSchedule?: pulumi.Input<string>;
     /**
@@ -2379,7 +2561,7 @@ export interface SavedSearchesArgs {
      */
     autoSummarizeTimespan?: pulumi.Input<string>;
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      */
     cronSchedule?: pulumi.Input<string>;
     /**

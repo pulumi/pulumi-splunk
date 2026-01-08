@@ -36,6 +36,66 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     * 
+     */
+    @Import(name="actionBetterWebhookParamBodyFormat")
+    private @Nullable Output<String> actionBetterWebhookParamBodyFormat;
+
+    /**
+     * @return Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+     * 
+     */
+    public Optional<Output<String>> actionBetterWebhookParamBodyFormat() {
+        return Optional.ofNullable(this.actionBetterWebhookParamBodyFormat);
+    }
+
+    /**
+     * Name of the Splunk stored credential to use for authentication
+     * 
+     */
+    @Import(name="actionBetterWebhookParamCredential")
+    private @Nullable Output<String> actionBetterWebhookParamCredential;
+
+    /**
+     * @return Name of the Splunk stored credential to use for authentication
+     * 
+     */
+    public Optional<Output<String>> actionBetterWebhookParamCredential() {
+        return Optional.ofNullable(this.actionBetterWebhookParamCredential);
+    }
+
+    /**
+     * Use the credentials defined in the webhook URL
+     * 
+     */
+    @Import(name="actionBetterWebhookParamCredentials")
+    private @Nullable Output<String> actionBetterWebhookParamCredentials;
+
+    /**
+     * @return Use the credentials defined in the webhook URL
+     * 
+     */
+    public Optional<Output<String>> actionBetterWebhookParamCredentials() {
+        return Optional.ofNullable(this.actionBetterWebhookParamCredentials);
+    }
+
+    /**
+     * URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     * 
+     */
+    @Import(name="actionBetterWebhookParamUrl")
+    private @Nullable Output<String> actionBetterWebhookParamUrl;
+
+    /**
+     * @return URL to send the HTTP POST request to. Must be accessible from the Splunk server
+     * 
+     */
+    public Optional<Output<String>> actionBetterWebhookParamUrl() {
+        return Optional.ofNullable(this.actionBetterWebhookParamUrl);
+    }
+
+    /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      * 
      */
@@ -1326,14 +1386,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      * 
      */
     @Import(name="actionSlackParamFields")
     private @Nullable Output<String> actionSlackParamFields;
 
     /**
-     * @return Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+     * @return Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      * 
      */
     public Optional<Output<String>> actionSlackParamFields() {
@@ -1626,6 +1686,141 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Import(name="actionVictoropsParamEnableRecovery")
+    private @Nullable Output<String> actionVictoropsParamEnableRecovery;
+
+    /**
+     * @return Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamEnableRecovery() {
+        return Optional.ofNullable(this.actionVictoropsParamEnableRecovery);
+    }
+
+    /**
+     * Unique identifier for the affected system or service
+     * 
+     */
+    @Import(name="actionVictoropsParamEntityId")
+    private @Nullable Output<String> actionVictoropsParamEntityId;
+
+    /**
+     * @return Unique identifier for the affected system or service
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamEntityId() {
+        return Optional.ofNullable(this.actionVictoropsParamEntityId);
+    }
+
+    /**
+     * Number of inactive polls before sending a recovery message
+     * 
+     */
+    @Import(name="actionVictoropsParamInactivePolls")
+    private @Nullable Output<String> actionVictoropsParamInactivePolls;
+
+    /**
+     * @return Number of inactive polls before sending a recovery message
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamInactivePolls() {
+        return Optional.ofNullable(this.actionVictoropsParamInactivePolls);
+    }
+
+    /**
+     * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     * 
+     */
+    @Import(name="actionVictoropsParamMessageType")
+    private @Nullable Output<String> actionVictoropsParamMessageType;
+
+    /**
+     * @return Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamMessageType() {
+        return Optional.ofNullable(this.actionVictoropsParamMessageType);
+    }
+
+    /**
+     * Name of the monitoring tool sending the alert
+     * 
+     */
+    @Import(name="actionVictoropsParamMonitoringTool")
+    private @Nullable Output<String> actionVictoropsParamMonitoringTool;
+
+    /**
+     * @return Name of the monitoring tool sending the alert
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamMonitoringTool() {
+        return Optional.ofNullable(this.actionVictoropsParamMonitoringTool);
+    }
+
+    /**
+     * Polling interval for checking the status of the alert (in minutes)
+     * 
+     */
+    @Import(name="actionVictoropsParamPollInterval")
+    private @Nullable Output<String> actionVictoropsParamPollInterval;
+
+    /**
+     * @return Polling interval for checking the status of the alert (in minutes)
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamPollInterval() {
+        return Optional.ofNullable(this.actionVictoropsParamPollInterval);
+    }
+
+    /**
+     * Identifier used to correlate related alerts
+     * 
+     */
+    @Import(name="actionVictoropsParamRecordId")
+    private @Nullable Output<String> actionVictoropsParamRecordId;
+
+    /**
+     * @return Identifier used to correlate related alerts
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamRecordId() {
+        return Optional.ofNullable(this.actionVictoropsParamRecordId);
+    }
+
+    /**
+     * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     * 
+     */
+    @Import(name="actionVictoropsParamRoutingKeyOverride")
+    private @Nullable Output<String> actionVictoropsParamRoutingKeyOverride;
+
+    /**
+     * @return You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamRoutingKeyOverride() {
+        return Optional.ofNullable(this.actionVictoropsParamRoutingKeyOverride);
+    }
+
+    /**
+     * Description of the alert condition
+     * 
+     */
+    @Import(name="actionVictoropsParamStateMessage")
+    private @Nullable Output<String> actionVictoropsParamStateMessage;
+
+    /**
+     * @return Description of the alert condition
+     * 
+     */
+    public Optional<Output<String>> actionVictoropsParamStateMessage() {
+        return Optional.ofNullable(this.actionVictoropsParamStateMessage);
+    }
+
+    /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      * 
      */
@@ -1866,14 +2061,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      * 
      */
     @Import(name="autoSummarizeCronSchedule")
     private @Nullable Output<String> autoSummarizeCronSchedule;
 
     /**
-     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      * 
      */
     public Optional<Output<String>> autoSummarizeCronSchedule() {
@@ -2031,14 +2226,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      * 
      */
     @Import(name="cronSchedule")
     private @Nullable Output<String> cronSchedule;
 
     /**
-     * @return Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+     * @return Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      * 
      */
     public Optional<Output<String>> cronSchedule() {
@@ -2559,6 +2754,10 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
 
     private SavedSearchesArgs(SavedSearchesArgs $) {
         this.acl = $.acl;
+        this.actionBetterWebhookParamBodyFormat = $.actionBetterWebhookParamBodyFormat;
+        this.actionBetterWebhookParamCredential = $.actionBetterWebhookParamCredential;
+        this.actionBetterWebhookParamCredentials = $.actionBetterWebhookParamCredentials;
+        this.actionBetterWebhookParamUrl = $.actionBetterWebhookParamUrl;
         this.actionCreateXsoarIncident = $.actionCreateXsoarIncident;
         this.actionCreateXsoarIncidentParamCustomFields = $.actionCreateXsoarIncidentParamCustomFields;
         this.actionCreateXsoarIncidentParamDetails = $.actionCreateXsoarIncidentParamDetails;
@@ -2665,6 +2864,15 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionSummaryIndexName = $.actionSummaryIndexName;
         this.actionSummaryIndexTrackAlert = $.actionSummaryIndexTrackAlert;
         this.actionSummaryIndexTtl = $.actionSummaryIndexTtl;
+        this.actionVictoropsParamEnableRecovery = $.actionVictoropsParamEnableRecovery;
+        this.actionVictoropsParamEntityId = $.actionVictoropsParamEntityId;
+        this.actionVictoropsParamInactivePolls = $.actionVictoropsParamInactivePolls;
+        this.actionVictoropsParamMessageType = $.actionVictoropsParamMessageType;
+        this.actionVictoropsParamMonitoringTool = $.actionVictoropsParamMonitoringTool;
+        this.actionVictoropsParamPollInterval = $.actionVictoropsParamPollInterval;
+        this.actionVictoropsParamRecordId = $.actionVictoropsParamRecordId;
+        this.actionVictoropsParamRoutingKeyOverride = $.actionVictoropsParamRoutingKeyOverride;
+        this.actionVictoropsParamStateMessage = $.actionVictoropsParamStateMessage;
         this.actionWebhookParamUrl = $.actionWebhookParamUrl;
         this.actions = $.actions;
         this.alertComparator = $.alertComparator;
@@ -2766,6 +2974,90 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder acl(SavedSearchesAclArgs acl) {
             return acl(Output.of(acl));
+        }
+
+        /**
+         * @param actionBetterWebhookParamBodyFormat Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamBodyFormat(@Nullable Output<String> actionBetterWebhookParamBodyFormat) {
+            $.actionBetterWebhookParamBodyFormat = actionBetterWebhookParamBodyFormat;
+            return this;
+        }
+
+        /**
+         * @param actionBetterWebhookParamBodyFormat Format of the body content. Valid values are json, xml, form-urlencoded, or raw
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamBodyFormat(String actionBetterWebhookParamBodyFormat) {
+            return actionBetterWebhookParamBodyFormat(Output.of(actionBetterWebhookParamBodyFormat));
+        }
+
+        /**
+         * @param actionBetterWebhookParamCredential Name of the Splunk stored credential to use for authentication
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamCredential(@Nullable Output<String> actionBetterWebhookParamCredential) {
+            $.actionBetterWebhookParamCredential = actionBetterWebhookParamCredential;
+            return this;
+        }
+
+        /**
+         * @param actionBetterWebhookParamCredential Name of the Splunk stored credential to use for authentication
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamCredential(String actionBetterWebhookParamCredential) {
+            return actionBetterWebhookParamCredential(Output.of(actionBetterWebhookParamCredential));
+        }
+
+        /**
+         * @param actionBetterWebhookParamCredentials Use the credentials defined in the webhook URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamCredentials(@Nullable Output<String> actionBetterWebhookParamCredentials) {
+            $.actionBetterWebhookParamCredentials = actionBetterWebhookParamCredentials;
+            return this;
+        }
+
+        /**
+         * @param actionBetterWebhookParamCredentials Use the credentials defined in the webhook URL
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamCredentials(String actionBetterWebhookParamCredentials) {
+            return actionBetterWebhookParamCredentials(Output.of(actionBetterWebhookParamCredentials));
+        }
+
+        /**
+         * @param actionBetterWebhookParamUrl URL to send the HTTP POST request to. Must be accessible from the Splunk server
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamUrl(@Nullable Output<String> actionBetterWebhookParamUrl) {
+            $.actionBetterWebhookParamUrl = actionBetterWebhookParamUrl;
+            return this;
+        }
+
+        /**
+         * @param actionBetterWebhookParamUrl URL to send the HTTP POST request to. Must be accessible from the Splunk server
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionBetterWebhookParamUrl(String actionBetterWebhookParamUrl) {
+            return actionBetterWebhookParamUrl(Output.of(actionBetterWebhookParamUrl));
         }
 
         /**
@@ -4575,7 +4867,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionSlackParamFields Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+         * @param actionSlackParamFields Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
          * 
          * @return builder
          * 
@@ -4586,7 +4878,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionSlackParamFields Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source*
+         * @param actionSlackParamFields Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
          * 
          * @return builder
          * 
@@ -4995,6 +5287,195 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param actionVictoropsParamEnableRecovery Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamEnableRecovery(@Nullable Output<String> actionVictoropsParamEnableRecovery) {
+            $.actionVictoropsParamEnableRecovery = actionVictoropsParamEnableRecovery;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamEnableRecovery Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamEnableRecovery(String actionVictoropsParamEnableRecovery) {
+            return actionVictoropsParamEnableRecovery(Output.of(actionVictoropsParamEnableRecovery));
+        }
+
+        /**
+         * @param actionVictoropsParamEntityId Unique identifier for the affected system or service
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamEntityId(@Nullable Output<String> actionVictoropsParamEntityId) {
+            $.actionVictoropsParamEntityId = actionVictoropsParamEntityId;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamEntityId Unique identifier for the affected system or service
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamEntityId(String actionVictoropsParamEntityId) {
+            return actionVictoropsParamEntityId(Output.of(actionVictoropsParamEntityId));
+        }
+
+        /**
+         * @param actionVictoropsParamInactivePolls Number of inactive polls before sending a recovery message
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamInactivePolls(@Nullable Output<String> actionVictoropsParamInactivePolls) {
+            $.actionVictoropsParamInactivePolls = actionVictoropsParamInactivePolls;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamInactivePolls Number of inactive polls before sending a recovery message
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamInactivePolls(String actionVictoropsParamInactivePolls) {
+            return actionVictoropsParamInactivePolls(Output.of(actionVictoropsParamInactivePolls));
+        }
+
+        /**
+         * @param actionVictoropsParamMessageType Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamMessageType(@Nullable Output<String> actionVictoropsParamMessageType) {
+            $.actionVictoropsParamMessageType = actionVictoropsParamMessageType;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamMessageType Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamMessageType(String actionVictoropsParamMessageType) {
+            return actionVictoropsParamMessageType(Output.of(actionVictoropsParamMessageType));
+        }
+
+        /**
+         * @param actionVictoropsParamMonitoringTool Name of the monitoring tool sending the alert
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamMonitoringTool(@Nullable Output<String> actionVictoropsParamMonitoringTool) {
+            $.actionVictoropsParamMonitoringTool = actionVictoropsParamMonitoringTool;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamMonitoringTool Name of the monitoring tool sending the alert
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamMonitoringTool(String actionVictoropsParamMonitoringTool) {
+            return actionVictoropsParamMonitoringTool(Output.of(actionVictoropsParamMonitoringTool));
+        }
+
+        /**
+         * @param actionVictoropsParamPollInterval Polling interval for checking the status of the alert (in minutes)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamPollInterval(@Nullable Output<String> actionVictoropsParamPollInterval) {
+            $.actionVictoropsParamPollInterval = actionVictoropsParamPollInterval;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamPollInterval Polling interval for checking the status of the alert (in minutes)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamPollInterval(String actionVictoropsParamPollInterval) {
+            return actionVictoropsParamPollInterval(Output.of(actionVictoropsParamPollInterval));
+        }
+
+        /**
+         * @param actionVictoropsParamRecordId Identifier used to correlate related alerts
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamRecordId(@Nullable Output<String> actionVictoropsParamRecordId) {
+            $.actionVictoropsParamRecordId = actionVictoropsParamRecordId;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamRecordId Identifier used to correlate related alerts
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamRecordId(String actionVictoropsParamRecordId) {
+            return actionVictoropsParamRecordId(Output.of(actionVictoropsParamRecordId));
+        }
+
+        /**
+         * @param actionVictoropsParamRoutingKeyOverride You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamRoutingKeyOverride(@Nullable Output<String> actionVictoropsParamRoutingKeyOverride) {
+            $.actionVictoropsParamRoutingKeyOverride = actionVictoropsParamRoutingKeyOverride;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamRoutingKeyOverride You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamRoutingKeyOverride(String actionVictoropsParamRoutingKeyOverride) {
+            return actionVictoropsParamRoutingKeyOverride(Output.of(actionVictoropsParamRoutingKeyOverride));
+        }
+
+        /**
+         * @param actionVictoropsParamStateMessage Description of the alert condition
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamStateMessage(@Nullable Output<String> actionVictoropsParamStateMessage) {
+            $.actionVictoropsParamStateMessage = actionVictoropsParamStateMessage;
+            return this;
+        }
+
+        /**
+         * @param actionVictoropsParamStateMessage Description of the alert condition
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionVictoropsParamStateMessage(String actionVictoropsParamStateMessage) {
+            return actionVictoropsParamStateMessage(Output.of(actionVictoropsParamStateMessage));
+        }
+
+        /**
          * @param actionWebhookParamUrl URL to send the HTTP POST request to. Must be accessible from the Splunk server
          * 
          * @return builder
@@ -5331,7 +5812,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
          * 
          * @return builder
          * 
@@ -5342,7 +5823,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is *&#47;10 * * * * and corresponds to \`every ten hours\`.
+         * @param autoSummarizeCronSchedule Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
          * 
          * @return builder
          * 
@@ -5562,7 +6043,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
          * 
          * @return builder
          * 
@@ -5573,7 +6054,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: *&#47;5 * * * * causes the search to execute every 5 minutes.
+         * @param cronSchedule Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
          * 
          * @return builder
          * 
