@@ -111,6 +111,11 @@ class SavedSearchesArgs:
                  action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
                  action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
@@ -295,6 +300,11 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_auto_join_channel: Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_bot_username: The bot username that will post the message
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_channel: Slack channel to send the message to (Should start with # or @)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_emoji: Emoji icon to use as the bot's avatar (Should start and end with :)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
         :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
@@ -567,6 +577,16 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_script_track_alert", action_script_track_alert)
         if action_script_ttl is not None:
             pulumi.set(__self__, "action_script_ttl", action_script_ttl)
+        if action_slack_app_alert_integration_param_auto_join_channel is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_auto_join_channel", action_slack_app_alert_integration_param_auto_join_channel)
+        if action_slack_app_alert_integration_param_bot_username is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_bot_username", action_slack_app_alert_integration_param_bot_username)
+        if action_slack_app_alert_integration_param_channel is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_channel", action_slack_app_alert_integration_param_channel)
+        if action_slack_app_alert_integration_param_emoji is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_emoji", action_slack_app_alert_integration_param_emoji)
+        if action_slack_app_alert_integration_param_message is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_message", action_slack_app_alert_integration_param_message)
         if action_slack_param_attachment is not None:
             pulumi.set(__self__, "action_slack_param_attachment", action_slack_param_attachment)
         if action_slack_param_channel is not None:
@@ -1833,6 +1853,66 @@ class SavedSearchesArgs:
         pulumi.set(self, "action_script_ttl", value)
 
     @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamAutoJoinChannel")
+    def action_slack_app_alert_integration_param_auto_join_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_auto_join_channel")
+
+    @action_slack_app_alert_integration_param_auto_join_channel.setter
+    def action_slack_app_alert_integration_param_auto_join_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_auto_join_channel", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamBotUsername")
+    def action_slack_app_alert_integration_param_bot_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The bot username that will post the message
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_bot_username")
+
+    @action_slack_app_alert_integration_param_bot_username.setter
+    def action_slack_app_alert_integration_param_bot_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_bot_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamChannel")
+    def action_slack_app_alert_integration_param_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Slack channel to send the message to (Should start with # or @)
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_channel")
+
+    @action_slack_app_alert_integration_param_channel.setter
+    def action_slack_app_alert_integration_param_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_channel", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamEmoji")
+    def action_slack_app_alert_integration_param_emoji(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Emoji icon to use as the bot's avatar (Should start and end with :)
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_emoji")
+
+    @action_slack_app_alert_integration_param_emoji.setter
+    def action_slack_app_alert_integration_param_emoji(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_emoji", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamMessage")
+    def action_slack_app_alert_integration_param_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_message")
+
+    @action_slack_app_alert_integration_param_message.setter
+    def action_slack_app_alert_integration_param_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_message", value)
+
+    @_builtins.property
     @pulumi.getter(name="actionSlackParamAttachment")
     def action_slack_param_attachment(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -3033,6 +3113,11 @@ class _SavedSearchesState:
                  action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
                  action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
@@ -3222,6 +3307,11 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_auto_join_channel: Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_bot_username: The bot username that will post the message
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_channel: Slack channel to send the message to (Should start with # or @)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_emoji: Emoji icon to use as the bot's avatar (Should start and end with :)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
         :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
@@ -3503,6 +3593,16 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_script_track_alert", action_script_track_alert)
         if action_script_ttl is not None:
             pulumi.set(__self__, "action_script_ttl", action_script_ttl)
+        if action_slack_app_alert_integration_param_auto_join_channel is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_auto_join_channel", action_slack_app_alert_integration_param_auto_join_channel)
+        if action_slack_app_alert_integration_param_bot_username is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_bot_username", action_slack_app_alert_integration_param_bot_username)
+        if action_slack_app_alert_integration_param_channel is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_channel", action_slack_app_alert_integration_param_channel)
+        if action_slack_app_alert_integration_param_emoji is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_emoji", action_slack_app_alert_integration_param_emoji)
+        if action_slack_app_alert_integration_param_message is not None:
+            pulumi.set(__self__, "action_slack_app_alert_integration_param_message", action_slack_app_alert_integration_param_message)
         if action_slack_param_attachment is not None:
             pulumi.set(__self__, "action_slack_param_attachment", action_slack_param_attachment)
         if action_slack_param_channel is not None:
@@ -4809,6 +4909,66 @@ class _SavedSearchesState:
         pulumi.set(self, "action_script_ttl", value)
 
     @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamAutoJoinChannel")
+    def action_slack_app_alert_integration_param_auto_join_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_auto_join_channel")
+
+    @action_slack_app_alert_integration_param_auto_join_channel.setter
+    def action_slack_app_alert_integration_param_auto_join_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_auto_join_channel", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamBotUsername")
+    def action_slack_app_alert_integration_param_bot_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The bot username that will post the message
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_bot_username")
+
+    @action_slack_app_alert_integration_param_bot_username.setter
+    def action_slack_app_alert_integration_param_bot_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_bot_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamChannel")
+    def action_slack_app_alert_integration_param_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Slack channel to send the message to (Should start with # or @)
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_channel")
+
+    @action_slack_app_alert_integration_param_channel.setter
+    def action_slack_app_alert_integration_param_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_channel", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamEmoji")
+    def action_slack_app_alert_integration_param_emoji(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Emoji icon to use as the bot's avatar (Should start and end with :)
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_emoji")
+
+    @action_slack_app_alert_integration_param_emoji.setter
+    def action_slack_app_alert_integration_param_emoji(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_emoji", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamMessage")
+    def action_slack_app_alert_integration_param_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_message")
+
+    @action_slack_app_alert_integration_param_message.setter
+    def action_slack_app_alert_integration_param_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_slack_app_alert_integration_param_message", value)
+
+    @_builtins.property
     @pulumi.getter(name="actionSlackParamAttachment")
     def action_slack_param_attachment(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -6032,6 +6192,11 @@ class SavedSearches(pulumi.CustomResource):
                  action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
                  action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6249,6 +6414,11 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_auto_join_channel: Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_bot_username: The bot username that will post the message
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_channel: Slack channel to send the message to (Should start with # or @)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_emoji: Emoji icon to use as the bot's avatar (Should start and end with :)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
         :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
@@ -6485,6 +6655,11 @@ class SavedSearches(pulumi.CustomResource):
                  action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
                  action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
                  action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
                  action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
@@ -6676,6 +6851,11 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_script_max_time"] = action_script_max_time
             __props__.__dict__["action_script_track_alert"] = action_script_track_alert
             __props__.__dict__["action_script_ttl"] = action_script_ttl
+            __props__.__dict__["action_slack_app_alert_integration_param_auto_join_channel"] = action_slack_app_alert_integration_param_auto_join_channel
+            __props__.__dict__["action_slack_app_alert_integration_param_bot_username"] = action_slack_app_alert_integration_param_bot_username
+            __props__.__dict__["action_slack_app_alert_integration_param_channel"] = action_slack_app_alert_integration_param_channel
+            __props__.__dict__["action_slack_app_alert_integration_param_emoji"] = action_slack_app_alert_integration_param_emoji
+            __props__.__dict__["action_slack_app_alert_integration_param_message"] = action_slack_app_alert_integration_param_message
             __props__.__dict__["action_slack_param_attachment"] = action_slack_param_attachment
             __props__.__dict__["action_slack_param_channel"] = action_slack_param_channel
             __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
@@ -6879,6 +7059,11 @@ class SavedSearches(pulumi.CustomResource):
             action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
             action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
             action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
             action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
             action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
             action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
@@ -7073,6 +7258,11 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] action_script_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_script_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_script_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_auto_join_channel: Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_bot_username: The bot username that will post the message
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_channel: Slack channel to send the message to (Should start with # or @)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_emoji: Emoji icon to use as the bot's avatar (Should start and end with :)
+        :param pulumi.Input[_builtins.str] action_slack_app_alert_integration_param_message: Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
         :param pulumi.Input[_builtins.str] action_slack_param_attachment: Include a message attachment. Valid values are message, none, or alert_link
         :param pulumi.Input[_builtins.str] action_slack_param_channel: Slack channel to send the message to (Should start with # or @)
         :param pulumi.Input[_builtins.str] action_slack_param_fields: Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
@@ -7265,6 +7455,11 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_script_max_time"] = action_script_max_time
         __props__.__dict__["action_script_track_alert"] = action_script_track_alert
         __props__.__dict__["action_script_ttl"] = action_script_ttl
+        __props__.__dict__["action_slack_app_alert_integration_param_auto_join_channel"] = action_slack_app_alert_integration_param_auto_join_channel
+        __props__.__dict__["action_slack_app_alert_integration_param_bot_username"] = action_slack_app_alert_integration_param_bot_username
+        __props__.__dict__["action_slack_app_alert_integration_param_channel"] = action_slack_app_alert_integration_param_channel
+        __props__.__dict__["action_slack_app_alert_integration_param_emoji"] = action_slack_app_alert_integration_param_emoji
+        __props__.__dict__["action_slack_app_alert_integration_param_message"] = action_slack_app_alert_integration_param_message
         __props__.__dict__["action_slack_param_attachment"] = action_slack_param_attachment
         __props__.__dict__["action_slack_param_channel"] = action_slack_param_channel
         __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
@@ -8104,6 +8299,46 @@ class SavedSearches(pulumi.CustomResource):
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_script_ttl")
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamAutoJoinChannel")
+    def action_slack_app_alert_integration_param_auto_join_channel(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_auto_join_channel")
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamBotUsername")
+    def action_slack_app_alert_integration_param_bot_username(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The bot username that will post the message
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_bot_username")
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamChannel")
+    def action_slack_app_alert_integration_param_channel(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Slack channel to send the message to (Should start with # or @)
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_channel")
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamEmoji")
+    def action_slack_app_alert_integration_param_emoji(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Emoji icon to use as the bot's avatar (Should start and end with :)
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_emoji")
+
+    @_builtins.property
+    @pulumi.getter(name="actionSlackAppAlertIntegrationParamMessage")
+    def action_slack_app_alert_integration_param_message(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+        """
+        return pulumi.get(self, "action_slack_app_alert_integration_param_message")
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamAttachment")

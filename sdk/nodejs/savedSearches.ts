@@ -440,6 +440,26 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionScriptTtl: pulumi.Output<string>;
     /**
+     * Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    declare public readonly actionSlackAppAlertIntegrationParamAutoJoinChannel: pulumi.Output<string | undefined>;
+    /**
+     * The bot username that will post the message
+     */
+    declare public readonly actionSlackAppAlertIntegrationParamBotUsername: pulumi.Output<string | undefined>;
+    /**
+     * Slack channel to send the message to (Should start with # or @)
+     */
+    declare public readonly actionSlackAppAlertIntegrationParamChannel: pulumi.Output<string | undefined>;
+    /**
+     * Emoji icon to use as the bot's avatar (Should start and end with :)
+     */
+    declare public readonly actionSlackAppAlertIntegrationParamEmoji: pulumi.Output<string | undefined>;
+    /**
+     * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+     */
+    declare public readonly actionSlackAppAlertIntegrationParamMessage: pulumi.Output<string | undefined>;
+    /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
     declare public readonly actionSlackParamAttachment: pulumi.Output<string | undefined>;
@@ -922,6 +942,11 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionScriptMaxTime"] = state?.actionScriptMaxTime;
             resourceInputs["actionScriptTrackAlert"] = state?.actionScriptTrackAlert;
             resourceInputs["actionScriptTtl"] = state?.actionScriptTtl;
+            resourceInputs["actionSlackAppAlertIntegrationParamAutoJoinChannel"] = state?.actionSlackAppAlertIntegrationParamAutoJoinChannel;
+            resourceInputs["actionSlackAppAlertIntegrationParamBotUsername"] = state?.actionSlackAppAlertIntegrationParamBotUsername;
+            resourceInputs["actionSlackAppAlertIntegrationParamChannel"] = state?.actionSlackAppAlertIntegrationParamChannel;
+            resourceInputs["actionSlackAppAlertIntegrationParamEmoji"] = state?.actionSlackAppAlertIntegrationParamEmoji;
+            resourceInputs["actionSlackAppAlertIntegrationParamMessage"] = state?.actionSlackAppAlertIntegrationParamMessage;
             resourceInputs["actionSlackParamAttachment"] = state?.actionSlackParamAttachment;
             resourceInputs["actionSlackParamChannel"] = state?.actionSlackParamChannel;
             resourceInputs["actionSlackParamFields"] = state?.actionSlackParamFields;
@@ -1110,6 +1135,11 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionScriptMaxTime"] = args?.actionScriptMaxTime;
             resourceInputs["actionScriptTrackAlert"] = args?.actionScriptTrackAlert;
             resourceInputs["actionScriptTtl"] = args?.actionScriptTtl;
+            resourceInputs["actionSlackAppAlertIntegrationParamAutoJoinChannel"] = args?.actionSlackAppAlertIntegrationParamAutoJoinChannel;
+            resourceInputs["actionSlackAppAlertIntegrationParamBotUsername"] = args?.actionSlackAppAlertIntegrationParamBotUsername;
+            resourceInputs["actionSlackAppAlertIntegrationParamChannel"] = args?.actionSlackAppAlertIntegrationParamChannel;
+            resourceInputs["actionSlackAppAlertIntegrationParamEmoji"] = args?.actionSlackAppAlertIntegrationParamEmoji;
+            resourceInputs["actionSlackAppAlertIntegrationParamMessage"] = args?.actionSlackAppAlertIntegrationParamMessage;
             resourceInputs["actionSlackParamAttachment"] = args?.actionSlackParamAttachment;
             resourceInputs["actionSlackParamChannel"] = args?.actionSlackParamChannel;
             resourceInputs["actionSlackParamFields"] = args?.actionSlackParamFields;
@@ -1590,6 +1620,26 @@ export interface SavedSearchesState {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
     actionScriptTtl?: pulumi.Input<string>;
+    /**
+     * Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    actionSlackAppAlertIntegrationParamAutoJoinChannel?: pulumi.Input<string>;
+    /**
+     * The bot username that will post the message
+     */
+    actionSlackAppAlertIntegrationParamBotUsername?: pulumi.Input<string>;
+    /**
+     * Slack channel to send the message to (Should start with # or @)
+     */
+    actionSlackAppAlertIntegrationParamChannel?: pulumi.Input<string>;
+    /**
+     * Emoji icon to use as the bot's avatar (Should start and end with :)
+     */
+    actionSlackAppAlertIntegrationParamEmoji?: pulumi.Input<string>;
+    /**
+     * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+     */
+    actionSlackAppAlertIntegrationParamMessage?: pulumi.Input<string>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
@@ -2328,6 +2378,26 @@ export interface SavedSearchesArgs {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
     actionScriptTtl?: pulumi.Input<string>;
+    /**
+     * Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+     */
+    actionSlackAppAlertIntegrationParamAutoJoinChannel?: pulumi.Input<string>;
+    /**
+     * The bot username that will post the message
+     */
+    actionSlackAppAlertIntegrationParamBotUsername?: pulumi.Input<string>;
+    /**
+     * Slack channel to send the message to (Should start with # or @)
+     */
+    actionSlackAppAlertIntegrationParamChannel?: pulumi.Input<string>;
+    /**
+     * Emoji icon to use as the bot's avatar (Should start and end with :)
+     */
+    actionSlackAppAlertIntegrationParamEmoji?: pulumi.Input<string>;
+    /**
+     * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+     */
+    actionSlackAppAlertIntegrationParamMessage?: pulumi.Input<string>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
