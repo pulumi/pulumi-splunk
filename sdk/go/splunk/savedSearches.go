@@ -247,6 +247,16 @@ type SavedSearches struct {
 	ActionScriptTrackAlert pulumi.BoolOutput `pulumi:"actionScriptTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionScriptTtl pulumi.StringOutput `pulumi:"actionScriptTtl"`
+	// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+	ActionSlackAppAlertIntegrationParamAutoJoinChannel pulumi.StringPtrOutput `pulumi:"actionSlackAppAlertIntegrationParamAutoJoinChannel"`
+	// The bot username that will post the message
+	ActionSlackAppAlertIntegrationParamBotUsername pulumi.StringPtrOutput `pulumi:"actionSlackAppAlertIntegrationParamBotUsername"`
+	// Slack channel to send the message to (Should start with # or @)
+	ActionSlackAppAlertIntegrationParamChannel pulumi.StringPtrOutput `pulumi:"actionSlackAppAlertIntegrationParamChannel"`
+	// Emoji icon to use as the bot's avatar (Should start and end with :)
+	ActionSlackAppAlertIntegrationParamEmoji pulumi.StringPtrOutput `pulumi:"actionSlackAppAlertIntegrationParamEmoji"`
+	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+	ActionSlackAppAlertIntegrationParamMessage pulumi.StringPtrOutput `pulumi:"actionSlackAppAlertIntegrationParamMessage"`
 	// Include a message attachment. Valid values are message, none, or alert_link
 	ActionSlackParamAttachment pulumi.StringPtrOutput `pulumi:"actionSlackParamAttachment"`
 	// Slack channel to send the message to (Should start with # or @)
@@ -656,6 +666,16 @@ type savedSearchesState struct {
 	ActionScriptTrackAlert *bool `pulumi:"actionScriptTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionScriptTtl *string `pulumi:"actionScriptTtl"`
+	// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+	ActionSlackAppAlertIntegrationParamAutoJoinChannel *string `pulumi:"actionSlackAppAlertIntegrationParamAutoJoinChannel"`
+	// The bot username that will post the message
+	ActionSlackAppAlertIntegrationParamBotUsername *string `pulumi:"actionSlackAppAlertIntegrationParamBotUsername"`
+	// Slack channel to send the message to (Should start with # or @)
+	ActionSlackAppAlertIntegrationParamChannel *string `pulumi:"actionSlackAppAlertIntegrationParamChannel"`
+	// Emoji icon to use as the bot's avatar (Should start and end with :)
+	ActionSlackAppAlertIntegrationParamEmoji *string `pulumi:"actionSlackAppAlertIntegrationParamEmoji"`
+	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+	ActionSlackAppAlertIntegrationParamMessage *string `pulumi:"actionSlackAppAlertIntegrationParamMessage"`
 	// Include a message attachment. Valid values are message, none, or alert_link
 	ActionSlackParamAttachment *string `pulumi:"actionSlackParamAttachment"`
 	// Slack channel to send the message to (Should start with # or @)
@@ -1033,6 +1053,16 @@ type SavedSearchesState struct {
 	ActionScriptTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionScriptTtl pulumi.StringPtrInput
+	// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+	ActionSlackAppAlertIntegrationParamAutoJoinChannel pulumi.StringPtrInput
+	// The bot username that will post the message
+	ActionSlackAppAlertIntegrationParamBotUsername pulumi.StringPtrInput
+	// Slack channel to send the message to (Should start with # or @)
+	ActionSlackAppAlertIntegrationParamChannel pulumi.StringPtrInput
+	// Emoji icon to use as the bot's avatar (Should start and end with :)
+	ActionSlackAppAlertIntegrationParamEmoji pulumi.StringPtrInput
+	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+	ActionSlackAppAlertIntegrationParamMessage pulumi.StringPtrInput
 	// Include a message attachment. Valid values are message, none, or alert_link
 	ActionSlackParamAttachment pulumi.StringPtrInput
 	// Slack channel to send the message to (Should start with # or @)
@@ -1406,6 +1436,16 @@ type savedSearchesArgs struct {
 	ActionScriptTrackAlert *bool `pulumi:"actionScriptTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionScriptTtl *string `pulumi:"actionScriptTtl"`
+	// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+	ActionSlackAppAlertIntegrationParamAutoJoinChannel *string `pulumi:"actionSlackAppAlertIntegrationParamAutoJoinChannel"`
+	// The bot username that will post the message
+	ActionSlackAppAlertIntegrationParamBotUsername *string `pulumi:"actionSlackAppAlertIntegrationParamBotUsername"`
+	// Slack channel to send the message to (Should start with # or @)
+	ActionSlackAppAlertIntegrationParamChannel *string `pulumi:"actionSlackAppAlertIntegrationParamChannel"`
+	// Emoji icon to use as the bot's avatar (Should start and end with :)
+	ActionSlackAppAlertIntegrationParamEmoji *string `pulumi:"actionSlackAppAlertIntegrationParamEmoji"`
+	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+	ActionSlackAppAlertIntegrationParamMessage *string `pulumi:"actionSlackAppAlertIntegrationParamMessage"`
 	// Include a message attachment. Valid values are message, none, or alert_link
 	ActionSlackParamAttachment *string `pulumi:"actionSlackParamAttachment"`
 	// Slack channel to send the message to (Should start with # or @)
@@ -1774,6 +1814,16 @@ type SavedSearchesArgs struct {
 	ActionScriptTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionScriptTtl pulumi.StringPtrInput
+	// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+	ActionSlackAppAlertIntegrationParamAutoJoinChannel pulumi.StringPtrInput
+	// The bot username that will post the message
+	ActionSlackAppAlertIntegrationParamBotUsername pulumi.StringPtrInput
+	// Slack channel to send the message to (Should start with # or @)
+	ActionSlackAppAlertIntegrationParamChannel pulumi.StringPtrInput
+	// Emoji icon to use as the bot's avatar (Should start and end with :)
+	ActionSlackAppAlertIntegrationParamEmoji pulumi.StringPtrInput
+	// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+	ActionSlackAppAlertIntegrationParamMessage pulumi.StringPtrInput
 	// Include a message attachment. Valid values are message, none, or alert_link
 	ActionSlackParamAttachment pulumi.StringPtrInput
 	// Slack channel to send the message to (Should start with # or @)
@@ -2512,6 +2562,33 @@ func (o SavedSearchesOutput) ActionScriptTrackAlert() pulumi.BoolOutput {
 // Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 func (o SavedSearchesOutput) ActionScriptTtl() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionScriptTtl }).(pulumi.StringOutput)
+}
+
+// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+func (o SavedSearchesOutput) ActionSlackAppAlertIntegrationParamAutoJoinChannel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput {
+		return v.ActionSlackAppAlertIntegrationParamAutoJoinChannel
+	}).(pulumi.StringPtrOutput)
+}
+
+// The bot username that will post the message
+func (o SavedSearchesOutput) ActionSlackAppAlertIntegrationParamBotUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackAppAlertIntegrationParamBotUsername }).(pulumi.StringPtrOutput)
+}
+
+// Slack channel to send the message to (Should start with # or @)
+func (o SavedSearchesOutput) ActionSlackAppAlertIntegrationParamChannel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackAppAlertIntegrationParamChannel }).(pulumi.StringPtrOutput)
+}
+
+// Emoji icon to use as the bot's avatar (Should start and end with :)
+func (o SavedSearchesOutput) ActionSlackAppAlertIntegrationParamEmoji() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackAppAlertIntegrationParamEmoji }).(pulumi.StringPtrOutput)
+}
+
+// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+func (o SavedSearchesOutput) ActionSlackAppAlertIntegrationParamMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionSlackAppAlertIntegrationParamMessage }).(pulumi.StringPtrOutput)
 }
 
 // Include a message attachment. Valid values are message, none, or alert_link

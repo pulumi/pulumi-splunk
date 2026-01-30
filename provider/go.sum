@@ -2485,8 +2485,8 @@ github.com/spf13/pflag v1.0.9/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An
 github.com/spf13/pflag v1.0.10 h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk=
 github.com/spf13/pflag v1.0.10/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
 github.com/spiffe/go-spiffe/v2 v2.5.0/go.mod h1:P+NxobPc6wXhVtINNtFjNWGBTreew1GBUCwT2wPmb7g=
-github.com/splunk/terraform-provider-splunk v1.4.33 h1:yRBEhZb9TamEyg1BuaP2s7Dqk3FWjuiErDSojyUseqQ=
-github.com/splunk/terraform-provider-splunk v1.4.33/go.mod h1:BBQgS4FK7oM2pF1ZNa8S+UirfG3UtzMSWs8wpx6AmYo=
+github.com/splunk/terraform-provider-splunk v1.4.34 h1:U0zQ6Kdg7VC6kaNZolwDHOsKkmc7qoMdhQU2W0wGNt8=
+github.com/splunk/terraform-provider-splunk v1.4.34/go.mod h1:BBQgS4FK7oM2pF1ZNa8S+UirfG3UtzMSWs8wpx6AmYo=
 github.com/stoewer/go-strcase v1.3.0/go.mod h1:fAH5hQ5pehh+j3nZfvwdk2RgEgQjAoM8wodgtPmh1xo=
 github.com/streadway/amqp v0.0.0-20190404075320-75d898a42a94/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=
 github.com/streadway/amqp v0.0.0-20190827072141-edfb9018d271/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=

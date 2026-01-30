@@ -5155,6 +5155,26 @@
                     "type": "string",
                     "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).\n"
                 },
+                "actionSlackAppAlertIntegrationParamAutoJoinChannel": {
+                    "type": "string",
+                    "description": "Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionSlackAppAlertIntegrationParamBotUsername": {
+                    "type": "string",
+                    "description": "The bot username that will post the message\n"
+                },
+                "actionSlackAppAlertIntegrationParamChannel": {
+                    "type": "string",
+                    "description": "Slack channel to send the message to (Should start with # or @)\n"
+                },
+                "actionSlackAppAlertIntegrationParamEmoji": {
+                    "type": "string",
+                    "description": "Emoji icon to use as the bot's avatar (Should start and end with :)\n"
+                },
+                "actionSlackAppAlertIntegrationParamMessage": {
+                    "type": "string",
+                    "description": "Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the\n"
+                },
                 "actionSlackParamAttachment": {
                     "type": "string",
                     "description": "Include a message attachment. Valid values are message, none, or alert_link\n"
@@ -6040,6 +6060,26 @@
                     "type": "string",
                     "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).\n"
                 },
+                "actionSlackAppAlertIntegrationParamAutoJoinChannel": {
+                    "type": "string",
+                    "description": "Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))\n"
+                },
+                "actionSlackAppAlertIntegrationParamBotUsername": {
+                    "type": "string",
+                    "description": "The bot username that will post the message\n"
+                },
+                "actionSlackAppAlertIntegrationParamChannel": {
+                    "type": "string",
+                    "description": "Slack channel to send the message to (Should start with # or @)\n"
+                },
+                "actionSlackAppAlertIntegrationParamEmoji": {
+                    "type": "string",
+                    "description": "Emoji icon to use as the bot's avatar (Should start and end with :)\n"
+                },
+                "actionSlackAppAlertIntegrationParamMessage": {
+                    "type": "string",
+                    "description": "Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the\n"
+                },
                 "actionSlackParamAttachment": {
                     "type": "string",
                     "description": "Include a message attachment. Valid values are message, none, or alert_link\n"
@@ -6791,6 +6831,26 @@
                     "actionScriptTtl": {
                         "type": "string",
                         "description": "Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).\n"
+                    },
+                    "actionSlackAppAlertIntegrationParamAutoJoinChannel": {
+                        "type": "string",
+                        "description": "Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))\n"
+                    },
+                    "actionSlackAppAlertIntegrationParamBotUsername": {
+                        "type": "string",
+                        "description": "The bot username that will post the message\n"
+                    },
+                    "actionSlackAppAlertIntegrationParamChannel": {
+                        "type": "string",
+                        "description": "Slack channel to send the message to (Should start with # or @)\n"
+                    },
+                    "actionSlackAppAlertIntegrationParamEmoji": {
+                        "type": "string",
+                        "description": "Emoji icon to use as the bot's avatar (Should start and end with :)\n"
+                    },
+                    "actionSlackAppAlertIntegrationParamMessage": {
+                        "type": "string",
+                        "description": "Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the\n"
                     },
                     "actionSlackParamAttachment": {
                         "type": "string",

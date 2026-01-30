@@ -1356,6 +1356,81 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    @Import(name="actionSlackAppAlertIntegrationParamAutoJoinChannel")
+    private @Nullable Output<String> actionSlackAppAlertIntegrationParamAutoJoinChannel;
+
+    /**
+     * @return Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+     * 
+     */
+    public Optional<Output<String>> actionSlackAppAlertIntegrationParamAutoJoinChannel() {
+        return Optional.ofNullable(this.actionSlackAppAlertIntegrationParamAutoJoinChannel);
+    }
+
+    /**
+     * The bot username that will post the message
+     * 
+     */
+    @Import(name="actionSlackAppAlertIntegrationParamBotUsername")
+    private @Nullable Output<String> actionSlackAppAlertIntegrationParamBotUsername;
+
+    /**
+     * @return The bot username that will post the message
+     * 
+     */
+    public Optional<Output<String>> actionSlackAppAlertIntegrationParamBotUsername() {
+        return Optional.ofNullable(this.actionSlackAppAlertIntegrationParamBotUsername);
+    }
+
+    /**
+     * Slack channel to send the message to (Should start with # or {@literal @})
+     * 
+     */
+    @Import(name="actionSlackAppAlertIntegrationParamChannel")
+    private @Nullable Output<String> actionSlackAppAlertIntegrationParamChannel;
+
+    /**
+     * @return Slack channel to send the message to (Should start with # or {@literal @})
+     * 
+     */
+    public Optional<Output<String>> actionSlackAppAlertIntegrationParamChannel() {
+        return Optional.ofNullable(this.actionSlackAppAlertIntegrationParamChannel);
+    }
+
+    /**
+     * Emoji icon to use as the bot&#39;s avatar (Should start and end with :)
+     * 
+     */
+    @Import(name="actionSlackAppAlertIntegrationParamEmoji")
+    private @Nullable Output<String> actionSlackAppAlertIntegrationParamEmoji;
+
+    /**
+     * @return Emoji icon to use as the bot&#39;s avatar (Should start and end with :)
+     * 
+     */
+    public Optional<Output<String>> actionSlackAppAlertIntegrationParamEmoji() {
+        return Optional.ofNullable(this.actionSlackAppAlertIntegrationParamEmoji);
+    }
+
+    /**
+     * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+     * 
+     */
+    @Import(name="actionSlackAppAlertIntegrationParamMessage")
+    private @Nullable Output<String> actionSlackAppAlertIntegrationParamMessage;
+
+    /**
+     * @return Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+     * 
+     */
+    public Optional<Output<String>> actionSlackAppAlertIntegrationParamMessage() {
+        return Optional.ofNullable(this.actionSlackAppAlertIntegrationParamMessage);
+    }
+
+    /**
      * Include a message attachment. Valid values are message, none, or alert_link
      * 
      */
@@ -2842,6 +2917,11 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionScriptMaxTime = $.actionScriptMaxTime;
         this.actionScriptTrackAlert = $.actionScriptTrackAlert;
         this.actionScriptTtl = $.actionScriptTtl;
+        this.actionSlackAppAlertIntegrationParamAutoJoinChannel = $.actionSlackAppAlertIntegrationParamAutoJoinChannel;
+        this.actionSlackAppAlertIntegrationParamBotUsername = $.actionSlackAppAlertIntegrationParamBotUsername;
+        this.actionSlackAppAlertIntegrationParamChannel = $.actionSlackAppAlertIntegrationParamChannel;
+        this.actionSlackAppAlertIntegrationParamEmoji = $.actionSlackAppAlertIntegrationParamEmoji;
+        this.actionSlackAppAlertIntegrationParamMessage = $.actionSlackAppAlertIntegrationParamMessage;
         this.actionSlackParamAttachment = $.actionSlackParamAttachment;
         this.actionSlackParamChannel = $.actionSlackParamChannel;
         this.actionSlackParamFields = $.actionSlackParamFields;
@@ -4822,6 +4902,111 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionScriptTtl(String actionScriptTtl) {
             return actionScriptTtl(Output.of(actionScriptTtl));
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamAutoJoinChannel Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamAutoJoinChannel(@Nullable Output<String> actionSlackAppAlertIntegrationParamAutoJoinChannel) {
+            $.actionSlackAppAlertIntegrationParamAutoJoinChannel = actionSlackAppAlertIntegrationParamAutoJoinChannel;
+            return this;
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamAutoJoinChannel Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamAutoJoinChannel(String actionSlackAppAlertIntegrationParamAutoJoinChannel) {
+            return actionSlackAppAlertIntegrationParamAutoJoinChannel(Output.of(actionSlackAppAlertIntegrationParamAutoJoinChannel));
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamBotUsername The bot username that will post the message
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamBotUsername(@Nullable Output<String> actionSlackAppAlertIntegrationParamBotUsername) {
+            $.actionSlackAppAlertIntegrationParamBotUsername = actionSlackAppAlertIntegrationParamBotUsername;
+            return this;
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamBotUsername The bot username that will post the message
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamBotUsername(String actionSlackAppAlertIntegrationParamBotUsername) {
+            return actionSlackAppAlertIntegrationParamBotUsername(Output.of(actionSlackAppAlertIntegrationParamBotUsername));
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamChannel Slack channel to send the message to (Should start with # or {@literal @})
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamChannel(@Nullable Output<String> actionSlackAppAlertIntegrationParamChannel) {
+            $.actionSlackAppAlertIntegrationParamChannel = actionSlackAppAlertIntegrationParamChannel;
+            return this;
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamChannel Slack channel to send the message to (Should start with # or {@literal @})
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamChannel(String actionSlackAppAlertIntegrationParamChannel) {
+            return actionSlackAppAlertIntegrationParamChannel(Output.of(actionSlackAppAlertIntegrationParamChannel));
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamEmoji Emoji icon to use as the bot&#39;s avatar (Should start and end with :)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamEmoji(@Nullable Output<String> actionSlackAppAlertIntegrationParamEmoji) {
+            $.actionSlackAppAlertIntegrationParamEmoji = actionSlackAppAlertIntegrationParamEmoji;
+            return this;
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamEmoji Emoji icon to use as the bot&#39;s avatar (Should start and end with :)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamEmoji(String actionSlackAppAlertIntegrationParamEmoji) {
+            return actionSlackAppAlertIntegrationParamEmoji(Output.of(actionSlackAppAlertIntegrationParamEmoji));
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamMessage Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamMessage(@Nullable Output<String> actionSlackAppAlertIntegrationParamMessage) {
+            $.actionSlackAppAlertIntegrationParamMessage = actionSlackAppAlertIntegrationParamMessage;
+            return this;
+        }
+
+        /**
+         * @param actionSlackAppAlertIntegrationParamMessage Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionSlackAppAlertIntegrationParamMessage(String actionSlackAppAlertIntegrationParamMessage) {
+            return actionSlackAppAlertIntegrationParamMessage(Output.of(actionSlackAppAlertIntegrationParamMessage));
         }
 
         /**

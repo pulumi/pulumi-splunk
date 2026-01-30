@@ -612,6 +612,36 @@ namespace Pulumi.Splunk
         public Output<string> ActionScriptTtl { get; private set; } = null!;
 
         /// <summary>
+        /// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Output("actionSlackAppAlertIntegrationParamAutoJoinChannel")]
+        public Output<string?> ActionSlackAppAlertIntegrationParamAutoJoinChannel { get; private set; } = null!;
+
+        /// <summary>
+        /// The bot username that will post the message
+        /// </summary>
+        [Output("actionSlackAppAlertIntegrationParamBotUsername")]
+        public Output<string?> ActionSlackAppAlertIntegrationParamBotUsername { get; private set; } = null!;
+
+        /// <summary>
+        /// Slack channel to send the message to (Should start with # or @)
+        /// </summary>
+        [Output("actionSlackAppAlertIntegrationParamChannel")]
+        public Output<string?> ActionSlackAppAlertIntegrationParamChannel { get; private set; } = null!;
+
+        /// <summary>
+        /// Emoji icon to use as the bot's avatar (Should start and end with :)
+        /// </summary>
+        [Output("actionSlackAppAlertIntegrationParamEmoji")]
+        public Output<string?> ActionSlackAppAlertIntegrationParamEmoji { get; private set; } = null!;
+
+        /// <summary>
+        /// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+        /// </summary>
+        [Output("actionSlackAppAlertIntegrationParamMessage")]
+        public Output<string?> ActionSlackAppAlertIntegrationParamMessage { get; private set; } = null!;
+
+        /// <summary>
         /// Include a message attachment. Valid values are message, none, or alert_link
         /// </summary>
         [Output("actionSlackParamAttachment")]
@@ -1756,6 +1786,36 @@ namespace Pulumi.Splunk
         public Input<string>? ActionScriptTtl { get; set; }
 
         /// <summary>
+        /// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamAutoJoinChannel")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamAutoJoinChannel { get; set; }
+
+        /// <summary>
+        /// The bot username that will post the message
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamBotUsername")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamBotUsername { get; set; }
+
+        /// <summary>
+        /// Slack channel to send the message to (Should start with # or @)
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamChannel")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamChannel { get; set; }
+
+        /// <summary>
+        /// Emoji icon to use as the bot's avatar (Should start and end with :)
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamEmoji")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamEmoji { get; set; }
+
+        /// <summary>
+        /// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamMessage")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamMessage { get; set; }
+
+        /// <summary>
         /// Include a message attachment. Valid values are message, none, or alert_link
         /// </summary>
         [Input("actionSlackParamAttachment")]
@@ -2878,6 +2938,36 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionScriptTtl")]
         public Input<string>? ActionScriptTtl { get; set; }
+
+        /// <summary>
+        /// Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamAutoJoinChannel")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamAutoJoinChannel { get; set; }
+
+        /// <summary>
+        /// The bot username that will post the message
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamBotUsername")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamBotUsername { get; set; }
+
+        /// <summary>
+        /// Slack channel to send the message to (Should start with # or @)
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamChannel")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamChannel { get; set; }
+
+        /// <summary>
+        /// Emoji icon to use as the bot's avatar (Should start and end with :)
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamEmoji")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamEmoji { get; set; }
+
+        /// <summary>
+        /// Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
+        /// </summary>
+        [Input("actionSlackAppAlertIntegrationParamMessage")]
+        public Input<string>? ActionSlackAppAlertIntegrationParamMessage { get; set; }
 
         /// <summary>
         /// Include a message attachment. Valid values are message, none, or alert_link
