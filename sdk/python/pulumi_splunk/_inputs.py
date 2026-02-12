@@ -55,56 +55,51 @@ __all__ = [
     'ShIndexesManagerAclArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AppsLocalAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    AppsLocalAclArgsDict: TypeAlias = Mapping[str, Any]
+class AppsLocalAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class AppsLocalAclArgs:
@@ -289,54 +284,51 @@ class AppsLocalAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class ConfigsConfAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    ConfigsConfAclArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigsConfAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class ConfigsConfAclArgs:
@@ -521,54 +513,51 @@ class ConfigsConfAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class DataUiViewsAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    DataUiViewsAclArgsDict: TypeAlias = Mapping[str, Any]
+class DataUiViewsAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class DataUiViewsAclArgs:
@@ -753,54 +742,51 @@ class DataUiViewsAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class GenericAclAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    GenericAclAclArgsDict: TypeAlias = Mapping[str, Any]
+class GenericAclAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class GenericAclAclArgs:
@@ -985,54 +971,51 @@ class GenericAclAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class IndexesAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    IndexesAclArgsDict: TypeAlias = Mapping[str, Any]
+class IndexesAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class IndexesAclArgs:
@@ -1217,54 +1200,51 @@ class IndexesAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsHttpEventCollectorAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsHttpEventCollectorAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsHttpEventCollectorAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsHttpEventCollectorAclArgs:
@@ -1449,54 +1429,51 @@ class InputsHttpEventCollectorAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsMonitorAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsMonitorAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsMonitorAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsMonitorAclArgs:
@@ -1681,54 +1658,51 @@ class InputsMonitorAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsScriptAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsScriptAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsScriptAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsScriptAclArgs:
@@ -1913,54 +1887,51 @@ class InputsScriptAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsTcpCookedAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsTcpCookedAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsTcpCookedAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsTcpCookedAclArgs:
@@ -2145,54 +2116,51 @@ class InputsTcpCookedAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsTcpRawAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsTcpRawAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsTcpRawAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsTcpRawAclArgs:
@@ -2377,54 +2345,51 @@ class InputsTcpRawAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsTcpSplunkTcpTokenAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsTcpSplunkTcpTokenAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsTcpSplunkTcpTokenAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsTcpSplunkTcpTokenAclArgs:
@@ -2609,54 +2574,51 @@ class InputsTcpSplunkTcpTokenAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class InputsUdpAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    InputsUdpAclArgsDict: TypeAlias = Mapping[str, Any]
+class InputsUdpAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class InputsUdpAclArgs:
@@ -2841,54 +2803,51 @@ class InputsUdpAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class LookupDefinitionAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    LookupDefinitionAclArgsDict: TypeAlias = Mapping[str, Any]
+class LookupDefinitionAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class LookupDefinitionAclArgs:
@@ -3073,54 +3032,51 @@ class LookupDefinitionAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class OutputsTcpDefaultAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    OutputsTcpDefaultAclArgsDict: TypeAlias = Mapping[str, Any]
+class OutputsTcpDefaultAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class OutputsTcpDefaultAclArgs:
@@ -3305,54 +3261,51 @@ class OutputsTcpDefaultAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class OutputsTcpGroupAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    OutputsTcpGroupAclArgsDict: TypeAlias = Mapping[str, Any]
+class OutputsTcpGroupAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class OutputsTcpGroupAclArgs:
@@ -3537,54 +3490,51 @@ class OutputsTcpGroupAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class OutputsTcpServerAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    OutputsTcpServerAclArgsDict: TypeAlias = Mapping[str, Any]
+class OutputsTcpServerAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class OutputsTcpServerAclArgs:
@@ -3769,54 +3719,51 @@ class OutputsTcpServerAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class OutputsTcpSyslogAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    OutputsTcpSyslogAclArgsDict: TypeAlias = Mapping[str, Any]
+class OutputsTcpSyslogAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class OutputsTcpSyslogAclArgs:
@@ -4001,54 +3948,51 @@ class OutputsTcpSyslogAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class SavedSearchesAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    SavedSearchesAclArgsDict: TypeAlias = Mapping[str, Any]
+class SavedSearchesAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class SavedSearchesAclArgs:
@@ -4233,54 +4177,51 @@ class SavedSearchesAclArgs:
         pulumi.set(self, "writes", value)
 
 
-if not MYPY:
-    class ShIndexesManagerAclArgsDict(TypedDict):
-        app: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
-        """
-        can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change permissions for this object. Defaults to true.
-        """
-        can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to app level. Defaults to true.
-        """
-        can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to system level. Defaults to true.
-        """
-        can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can change sharing to user level. Defaults to true.
-        """
-        can_write: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates if the active user can edit this object. Defaults to true.
-        """
-        owner: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
-        """
-        reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource read permissions.
-        """
-        removable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether an admin or user with sufficient permissions can delete the entity.
-        """
-        sharing: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
-        """
-        writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Properties that indicate resource write permissions.
-        """
-elif False:
-    ShIndexesManagerAclArgsDict: TypeAlias = Mapping[str, Any]
+class ShIndexesManagerAclArgsDict(TypedDict):
+    app: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+    """
+    can_change_perms: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change permissions for this object. Defaults to true.
+    """
+    can_share_app: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to app level. Defaults to true.
+    """
+    can_share_global: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to system level. Defaults to true.
+    """
+    can_share_user: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can change sharing to user level. Defaults to true.
+    """
+    can_write: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates if the active user can edit this object. Defaults to true.
+    """
+    owner: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+    """
+    reads: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource read permissions.
+    """
+    removable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether an admin or user with sufficient permissions can delete the entity.
+    """
+    sharing: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+    """
+    writes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Properties that indicate resource write permissions.
+    """
 
 @pulumi.input_type
 class ShIndexesManagerAclArgs:

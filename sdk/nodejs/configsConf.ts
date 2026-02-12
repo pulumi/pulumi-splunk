@@ -54,6 +54,11 @@ export class ConfigsConf extends pulumi.CustomResource {
         return obj['__pulumiType'] === ConfigsConf.__pulumiType;
     }
 
+    /**
+     * The app/user context that is the namespace for the resource
+     *
+     * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
+     */
     declare public readonly acl: pulumi.Output<outputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -95,6 +100,11 @@ export class ConfigsConf extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ConfigsConf resources.
  */
 export interface ConfigsConfState {
+    /**
+     * The app/user context that is the namespace for the resource
+     *
+     * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
+     */
     acl?: pulumi.Input<inputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -110,6 +120,11 @@ export interface ConfigsConfState {
  * The set of arguments for constructing a ConfigsConf resource.
  */
 export interface ConfigsConfArgs {
+    /**
+     * The app/user context that is the namespace for the resource
+     *
+     * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
+     */
     acl?: pulumi.Input<inputs.ConfigsConfAcl>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza

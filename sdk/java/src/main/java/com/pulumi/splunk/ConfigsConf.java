@@ -60,9 +60,21 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="splunk:index/configsConf:ConfigsConf")
 public class ConfigsConf extends com.pulumi.resources.CustomResource {
+    /**
+     * The app/user context that is the namespace for the resource
+     * 
+     * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
+     * 
+     */
     @Export(name="acl", refs={ConfigsConfAcl.class}, tree="[0]")
     private Output<ConfigsConfAcl> acl;
 
+    /**
+     * @return The app/user context that is the namespace for the resource
+     * 
+     * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
+     * 
+     */
     public Output<ConfigsConfAcl> acl() {
         return this.acl;
     }

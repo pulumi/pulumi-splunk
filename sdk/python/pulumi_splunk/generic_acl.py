@@ -119,6 +119,14 @@ class GenericAcl(pulumi.CustomResource):
                  path: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        ## # Resource: GenericAcl
+
+        Manage the ACL of any Splunk object not already managed in Terraform. To define the ACL of an object that is itself
+        managed in Terraform, use the `acl` block on that configured resource instead of using a `GenericAcl` resource.
+
+        Note: This resource doesn't actually create any remote resources, because ACLs can only exist (and always exist) for
+        knowledge objects. They can, however, be managed separately.
+
         ## Example Usage
 
         ```python
@@ -151,7 +159,7 @@ class GenericAcl(pulumi.CustomResource):
         Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:
 
         ```sh
-        $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl <owner>:<app>:<path>
+        terraform import splunk_generic_acl <owner>:<app>:<path>
         ```
 
         :param str resource_name: The name of the resource.
@@ -169,6 +177,14 @@ class GenericAcl(pulumi.CustomResource):
                  args: GenericAclArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        ## # Resource: GenericAcl
+
+        Manage the ACL of any Splunk object not already managed in Terraform. To define the ACL of an object that is itself
+        managed in Terraform, use the `acl` block on that configured resource instead of using a `GenericAcl` resource.
+
+        Note: This resource doesn't actually create any remote resources, because ACLs can only exist (and always exist) for
+        knowledge objects. They can, however, be managed separately.
+
         ## Example Usage
 
         ```python
@@ -201,7 +217,7 @@ class GenericAcl(pulumi.CustomResource):
         Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:
 
         ```sh
-        $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl <owner>:<app>:<path>
+        terraform import splunk_generic_acl <owner>:<app>:<path>
         ```
 
         :param str resource_name: The name of the resource.
