@@ -15,6 +15,14 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * ## # Resource: splunk.GenericAcl
+ * 
+ * Manage the ACL of any Splunk object not already managed in Terraform. To define the ACL of an object that is itself
+ * managed in Terraform, use the `acl` block on that configured resource instead of using a `splunk.GenericAcl` resource.
+ * 
+ * Note: This resource doesn&#39;t actually create any remote resources, because ACLs can only exist (and always exist) for
+ * knowledge objects. They can, however, be managed separately.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -72,7 +80,7 @@ import javax.annotation.Nullable;
  * Generic ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:
  * 
  * ```sh
- * $ pulumi import splunk:index/genericAcl:GenericAcl splunk_generic_acl &lt;owner&gt;:&lt;app&gt;:&lt;path&gt;
+ * terraform import splunk_generic_acl &lt;owner&gt;:&lt;app&gt;:&lt;path&gt;
  * ```
  * 
  */

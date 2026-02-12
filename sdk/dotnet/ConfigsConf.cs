@@ -40,6 +40,11 @@ namespace Pulumi.Splunk
     [SplunkResourceType("splunk:index/configsConf:ConfigsConf")]
     public partial class ConfigsConf : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The app/user context that is the namespace for the resource
+        /// 
+        /// **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `ConfigsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
+        /// </summary>
         [Output("acl")]
         public Output<Outputs.ConfigsConfAcl> Acl { get; private set; } = null!;
 
@@ -101,6 +106,11 @@ namespace Pulumi.Splunk
 
     public sealed class ConfigsConfArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The app/user context that is the namespace for the resource
+        /// 
+        /// **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `ConfigsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
+        /// </summary>
         [Input("acl")]
         public Input<Inputs.ConfigsConfAclArgs>? Acl { get; set; }
 
@@ -130,6 +140,11 @@ namespace Pulumi.Splunk
 
     public sealed class ConfigsConfState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The app/user context that is the namespace for the resource
+        /// 
+        /// **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `ConfigsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
+        /// </summary>
         [Input("acl")]
         public Input<Inputs.ConfigsConfAclGetArgs>? Acl { get; set; }
 

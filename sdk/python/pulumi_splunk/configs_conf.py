@@ -26,6 +26,9 @@ class ConfigsConfArgs:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ConfigsConf resource.
+        :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
+               
+               **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
         :param pulumi.Input[_builtins.str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] variables: A map of key value pairs for a stanza.
         """
@@ -39,6 +42,11 @@ class ConfigsConfArgs:
     @_builtins.property
     @pulumi.getter
     def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+
+        **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
+        """
         return pulumi.get(self, "acl")
 
     @acl.setter
@@ -78,6 +86,9 @@ class _ConfigsConfState:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ConfigsConf resources.
+        :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
+               
+               **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
         :param pulumi.Input[_builtins.str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] variables: A map of key value pairs for a stanza.
         """
@@ -91,6 +102,11 @@ class _ConfigsConfState:
     @_builtins.property
     @pulumi.getter
     def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
+        """
+        The app/user context that is the namespace for the resource
+
+        **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
+        """
         return pulumi.get(self, "acl")
 
     @acl.setter
@@ -153,6 +169,9 @@ class ConfigsConf(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']] acl: The app/user context that is the namespace for the resource
+               
+               **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
         :param pulumi.Input[_builtins.str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] variables: A map of key value pairs for a stanza.
         """
@@ -231,6 +250,9 @@ class ConfigsConf(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']] acl: The app/user context that is the namespace for the resource
+               
+               **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
         :param pulumi.Input[_builtins.str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] variables: A map of key value pairs for a stanza.
         """
@@ -246,6 +268,11 @@ class ConfigsConf(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.ConfigsConfAcl']:
+        """
+        The app/user context that is the namespace for the resource
+
+        **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
+        """
         return pulumi.get(self, "acl")
 
     @_builtins.property
