@@ -280,7 +280,7 @@ var cleanUpExample = tfbridge.DocsEdit{
 				desired)
 		} else {
 			// Hard error to ensure we keep this content up to date
-			return nil, fmt.Errorf("could not find text in upstream index.md, "+
+			return nil, fmt.Errorf("could not find text in upstream index.md, "+ //nolint:staticcheck,lll // user-facing error message
 				"please verify file content at %s\n*****\n%s\n*****\n", replacesDir+"overview-input.md", string(input))
 		}
 		return content, nil
