@@ -31,6 +31,7 @@ class OutputsTcpSyslogArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OutputsTcpSyslog resource.
+
         :param pulumi.Input['OutputsTcpSyslogAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables global syslog settings.
         :param pulumi.Input[_builtins.str] name: Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
@@ -179,6 +180,7 @@ class _OutputsTcpSyslogState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpSyslog resources.
+
         :param pulumi.Input['OutputsTcpSyslogAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables global syslog settings.
         :param pulumi.Input[_builtins.str] name: Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
@@ -346,6 +348,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
             priority=5)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -385,6 +388,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
             server="new-host-1:1234",
             priority=5)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpSyslogArgs args: The arguments to use to populate this resource's properties.

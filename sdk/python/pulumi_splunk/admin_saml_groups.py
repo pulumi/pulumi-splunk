@@ -23,6 +23,7 @@ class AdminSamlGroupsArgs:
                  roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a AdminSamlGroups resource.
+
         :param pulumi.Input[_builtins.str] name: The name of the external group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: List of internal roles assigned to the group.
         """
@@ -63,6 +64,7 @@ class _AdminSamlGroupsState:
                  roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering AdminSamlGroups resources.
+
         :param pulumi.Input[_builtins.str] name: The name of the external group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: List of internal roles assigned to the group.
         """
@@ -132,6 +134,7 @@ class AdminSamlGroups(pulumi.CustomResource):
         $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] name: The name of the external group.
@@ -169,6 +172,7 @@ class AdminSamlGroups(pulumi.CustomResource):
         ```sh
         $ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AdminSamlGroupsArgs args: The arguments to use to populate this resource's properties.

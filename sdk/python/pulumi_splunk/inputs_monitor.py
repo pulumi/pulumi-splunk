@@ -39,6 +39,7 @@ class InputsMonitorArgs:
                  whitelist: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsMonitor resource.
+
         :param pulumi.Input['InputsMonitorAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] blacklist: Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
         :param pulumi.Input[_builtins.str] crc_salt: A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
@@ -303,6 +304,7 @@ class _InputsMonitorState:
                  whitelist: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsMonitor resources.
+
         :param pulumi.Input['InputsMonitorAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] blacklist: Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
         :param pulumi.Input[_builtins.str] crc_salt: A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
@@ -586,6 +588,7 @@ class InputsMonitor(pulumi.CustomResource):
             sourcetype="text")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -627,6 +630,7 @@ class InputsMonitor(pulumi.CustomResource):
             recursive=True,
             sourcetype="text")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsMonitorArgs args: The arguments to use to populate this resource's properties.

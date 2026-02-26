@@ -26,6 +26,7 @@ class InputsTcpSslArgs:
                  server_cert: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpSsl resource.
+
         :param pulumi.Input[_builtins.bool] disabled: Indicates if input is disabled.
         :param pulumi.Input[_builtins.str] password: Server certificate password, if any.
         :param pulumi.Input[_builtins.bool] require_client_cert: Determines whether a client must authenticate.
@@ -114,6 +115,7 @@ class _InputsTcpSslState:
                  server_cert: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpSsl resources.
+
         :param pulumi.Input[_builtins.bool] disabled: Indicates if input is disabled.
         :param pulumi.Input[_builtins.str] password: Server certificate password, if any.
         :param pulumi.Input[_builtins.bool] require_client_cert: Determines whether a client must authenticate.
@@ -220,6 +222,7 @@ class InputsTcpSsl(pulumi.CustomResource):
             require_client_cert=True)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if input is disabled.
@@ -249,6 +252,7 @@ class InputsTcpSsl(pulumi.CustomResource):
             disabled=False,
             require_client_cert=True)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsTcpSslArgs args: The arguments to use to populate this resource's properties.

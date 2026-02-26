@@ -33,6 +33,7 @@ class InputsHttpEventCollectorArgs:
                  use_ack: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a InputsHttpEventCollector resource.
+
         :param pulumi.Input['InputsHttpEventCollectorAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator
         :param pulumi.Input[_builtins.str] host: Default host value for events with this token
@@ -201,6 +202,7 @@ class _InputsHttpEventCollectorState:
                  use_ack: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering InputsHttpEventCollector resources.
+
         :param pulumi.Input['InputsHttpEventCollectorAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator
         :param pulumi.Input[_builtins.str] host: Default host value for events with this token
@@ -402,6 +404,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsHttpEventCollectorAclArgs', 'InputsHttpEventCollectorAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -451,6 +454,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
                 "writes": ["admin"],
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

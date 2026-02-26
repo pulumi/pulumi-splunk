@@ -26,6 +26,7 @@ class InputsTcpSplunkTcpTokenArgs:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpSplunkTcpToken resource.
+
         :param pulumi.Input['InputsTcpSplunkTcpTokenAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] name: Required. Name for the token to create.
         :param pulumi.Input[_builtins.str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
@@ -82,6 +83,7 @@ class _InputsTcpSplunkTcpTokenState:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpSplunkTcpToken resources.
+
         :param pulumi.Input['InputsTcpSplunkTcpTokenAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] name: Required. Name for the token to create.
         :param pulumi.Input[_builtins.str] token: Optional. Token value to use. If unspecified, a token is generated automatically.
@@ -156,6 +158,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
             token="D66C45B3-7C28-48A1-A13A-027914146501")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -183,6 +186,7 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
             name="new-splunk-tcp-token",
             token="D66C45B3-7C28-48A1-A13A-027914146501")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsTcpSplunkTcpTokenArgs args: The arguments to use to populate this resource's properties.

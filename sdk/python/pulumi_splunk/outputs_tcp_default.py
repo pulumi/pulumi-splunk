@@ -32,6 +32,7 @@ class OutputsTcpDefaultArgs:
                  send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a OutputsTcpDefault resource.
+
         :param pulumi.Input['OutputsTcpDefaultAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] default_group: Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
                The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
@@ -208,6 +209,7 @@ class _OutputsTcpDefaultState:
                  send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpDefault resources.
+
         :param pulumi.Input['OutputsTcpDefaultAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] default_group: Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
                The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
@@ -407,6 +409,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
             max_queue_size="100KB")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -457,6 +460,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
             send_cooked_data=True,
             max_queue_size="100KB")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpDefaultArgs args: The arguments to use to populate this resource's properties.

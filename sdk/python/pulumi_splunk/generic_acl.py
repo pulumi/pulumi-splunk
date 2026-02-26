@@ -25,6 +25,7 @@ class GenericAclArgs:
                  acl: Optional[pulumi.Input['GenericAclAclArgs']] = None):
         """
         The set of arguments for constructing a GenericAcl resource.
+
         :param pulumi.Input[_builtins.str] path: REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
         :param pulumi.Input['GenericAclAclArgs'] acl: The ACL to apply to the object, including app/owner to properly identify the object.
                Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
@@ -70,6 +71,7 @@ class _GenericAclState:
                  path: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GenericAcl resources.
+
         :param pulumi.Input['GenericAclAclArgs'] acl: The ACL to apply to the object, including app/owner to properly identify the object.
                Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
                apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
@@ -162,6 +164,7 @@ class GenericAcl(pulumi.CustomResource):
         terraform import splunk_generic_acl <owner>:<app>:<path>
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']] acl: The ACL to apply to the object, including app/owner to properly identify the object.
@@ -219,6 +222,7 @@ class GenericAcl(pulumi.CustomResource):
         ```sh
         terraform import splunk_generic_acl <owner>:<app>:<path>
         ```
+
 
         :param str resource_name: The name of the resource.
         :param GenericAclArgs args: The arguments to use to populate this resource's properties.

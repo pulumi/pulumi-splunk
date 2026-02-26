@@ -33,6 +33,7 @@ class InputsScriptArgs:
                  sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsScript resource.
+
         :param pulumi.Input[_builtins.int] interval: Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
         :param pulumi.Input['InputsScriptAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: Specifies whether the input script is disabled.
@@ -204,6 +205,7 @@ class _InputsScriptState:
                  sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsScript resources.
+
         :param pulumi.Input['InputsScriptAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: Specifies whether the input script is disabled.
         :param pulumi.Input[_builtins.str] host: Sets the host for events from this input. Defaults to whatever host sent the event.
@@ -394,6 +396,7 @@ class InputsScript(pulumi.CustomResource):
             interval=360)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -430,6 +433,7 @@ class InputsScript(pulumi.CustomResource):
             name="opt/splunk/bin/scripts/readme.txt",
             interval=360)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsScriptArgs args: The arguments to use to populate this resource's properties.

@@ -34,6 +34,7 @@ class OutputsTcpServerArgs:
                  ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a OutputsTcpServer resource.
+
         :param pulumi.Input['OutputsTcpServerAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
         :param pulumi.Input[_builtins.str] method: Valid values: (clone | balance | autobalance)
@@ -224,6 +225,7 @@ class _OutputsTcpServerState:
                  ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpServer resources.
+
         :param pulumi.Input['OutputsTcpServerAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
         :param pulumi.Input[_builtins.str] method: Valid values: (clone | balance | autobalance)
@@ -432,6 +434,7 @@ class OutputsTcpServer(pulumi.CustomResource):
             ssl_alt_name_to_check="old-host")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -470,6 +473,7 @@ class OutputsTcpServer(pulumi.CustomResource):
             name="new-host:1234",
             ssl_alt_name_to_check="old-host")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpServerArgs args: The arguments to use to populate this resource's properties.

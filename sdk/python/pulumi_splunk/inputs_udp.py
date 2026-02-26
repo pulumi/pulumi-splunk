@@ -35,6 +35,7 @@ class InputsUdpArgs:
                  sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsUdp resource.
+
         :param pulumi.Input['InputsUdpAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -247,6 +248,7 @@ class _InputsUdpState:
                  sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsUdp resources.
+
         :param pulumi.Input['InputsUdpAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -480,6 +482,7 @@ class InputsUdp(pulumi.CustomResource):
             disabled=False)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -525,6 +528,7 @@ class InputsUdp(pulumi.CustomResource):
             sourcetype="new",
             disabled=False)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsUdpArgs args: The arguments to use to populate this resource's properties.

@@ -28,6 +28,7 @@ class ShIndexesManagerArgs:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ShIndexesManager resource.
+
         :param pulumi.Input[_builtins.str] datatype: Valid values: (event | metric). Specifies the type of index.
         :param pulumi.Input[_builtins.str] frozen_time_period_in_secs: Number of seconds after which indexed data rolls to frozen.
                Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
@@ -116,6 +117,7 @@ class _ShIndexesManagerState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ShIndexesManager resources.
+
         :param pulumi.Input[_builtins.str] datatype: Valid values: (event | metric). Specifies the type of index.
         :param pulumi.Input[_builtins.str] frozen_time_period_in_secs: Number of seconds after which indexed data rolls to frozen.
                Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
@@ -228,6 +230,7 @@ class ShIndexesManager(pulumi.CustomResource):
             max_global_raw_data_size_mb="100")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] datatype: Valid values: (event | metric). Specifies the type of index.
@@ -264,6 +267,7 @@ class ShIndexesManager(pulumi.CustomResource):
             frozen_time_period_in_secs="94608000",
             max_global_raw_data_size_mb="100")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ShIndexesManagerArgs args: The arguments to use to populate this resource's properties.

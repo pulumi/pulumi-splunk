@@ -34,6 +34,7 @@ class OutputsTcpGroupArgs:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a OutputsTcpGroup resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] servers: Comma-separated list of servers to include in the group.
         :param pulumi.Input['OutputsTcpGroupAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] compressed: If true, forwarder sends compressed data. If set to true, the receiver port must also have compression turned on.
@@ -237,6 +238,7 @@ class _OutputsTcpGroupState:
                  token: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpGroup resources.
+
         :param pulumi.Input['OutputsTcpGroupAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] compressed: If true, forwarder sends compressed data. If set to true, the receiver port must also have compression turned on.
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
@@ -466,6 +468,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
             ])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -518,6 +521,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
                 "2.2.2.2:1234",
             ])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param OutputsTcpGroupArgs args: The arguments to use to populate this resource's properties.
