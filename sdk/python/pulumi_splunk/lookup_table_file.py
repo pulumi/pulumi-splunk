@@ -25,6 +25,7 @@ class LookupTableFileArgs:
                  owner: pulumi.Input[_builtins.str]):
         """
         The set of arguments for constructing a LookupTableFile resource.
+
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file.
         :param pulumi.Input[_builtins.str] file_name: A name for the lookup table file. Generally ends with ".csv"
@@ -93,6 +94,7 @@ class _LookupTableFileState:
                  owner: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LookupTableFile resources.
+
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file.
         :param pulumi.Input[_builtins.str] file_name: A name for the lookup table file. Generally ends with ".csv"
@@ -206,6 +208,7 @@ class LookupTableFile(pulumi.CustomResource):
             ])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
@@ -257,6 +260,7 @@ class LookupTableFile(pulumi.CustomResource):
                 ],
             ])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param LookupTableFileArgs args: The arguments to use to populate this resource's properties.

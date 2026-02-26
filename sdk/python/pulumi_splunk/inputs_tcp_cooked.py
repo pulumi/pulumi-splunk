@@ -29,6 +29,7 @@ class InputsTcpCookedArgs:
                  restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpCooked resource.
+
         :param pulumi.Input['InputsTcpCookedAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -143,6 +144,7 @@ class _InputsTcpCookedState:
                  restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpCooked resources.
+
         :param pulumi.Input['InputsTcpCookedAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -277,6 +279,7 @@ class InputsTcpCooked(pulumi.CustomResource):
             restrict_to_host="splunk")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -314,6 +317,7 @@ class InputsTcpCooked(pulumi.CustomResource):
             connection_host="dns",
             restrict_to_host="splunk")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsTcpCookedArgs args: The arguments to use to populate this resource's properties.

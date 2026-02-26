@@ -30,6 +30,7 @@ class AuthenticationUsersArgs:
                  tz: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuthenticationUsers resource.
+
         :param pulumi.Input[_builtins.str] default_app: User default app. Overrides the default app inherited from the user roles.
         :param pulumi.Input[_builtins.str] email: User email address.
         :param pulumi.Input[_builtins.bool] force_change_pass: Force user to change password indication
@@ -182,6 +183,7 @@ class _AuthenticationUsersState:
                  tz: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuthenticationUsers resources.
+
         :param pulumi.Input[_builtins.str] default_app: User default app. Overrides the default app inherited from the user roles.
         :param pulumi.Input[_builtins.str] email: User email address.
         :param pulumi.Input[_builtins.bool] force_change_pass: Force user to change password indication
@@ -355,6 +357,7 @@ class AuthenticationUsers(pulumi.CustomResource):
             roles=["terraform-user01-role"])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] default_app: User default app. Overrides the default app inherited from the user roles.
@@ -391,6 +394,7 @@ class AuthenticationUsers(pulumi.CustomResource):
             force_change_pass=False,
             roles=["terraform-user01-role"])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuthenticationUsersArgs args: The arguments to use to populate this resource's properties.

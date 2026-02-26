@@ -34,6 +34,7 @@ class AuthorizationRolesArgs:
                  search_time_win: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a AuthorizationRoles resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: List of capabilities assigned to role.
         :param pulumi.Input[_builtins.int] cumulative_realtime_search_jobs_quota: Maximum number of concurrently running real-time searches that all members of this role can have.
         :param pulumi.Input[_builtins.int] cumulative_search_jobs_quota: Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
@@ -250,6 +251,7 @@ class _AuthorizationRolesState:
                  search_time_win: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AuthorizationRoles resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: List of capabilities assigned to role.
         :param pulumi.Input[_builtins.int] cumulative_realtime_search_jobs_quota: Maximum number of concurrently running real-time searches that all members of this role can have.
         :param pulumi.Input[_builtins.int] cumulative_search_jobs_quota: Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
@@ -503,6 +505,7 @@ class AuthorizationRoles(pulumi.CustomResource):
             ])
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capabilities: List of capabilities assigned to role.
@@ -559,6 +562,7 @@ class AuthorizationRoles(pulumi.CustomResource):
                 "main",
             ])
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AuthorizationRolesArgs args: The arguments to use to populate this resource's properties.

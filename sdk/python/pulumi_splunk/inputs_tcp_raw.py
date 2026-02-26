@@ -34,6 +34,7 @@ class InputsTcpRawArgs:
                  sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpRaw resource.
+
         :param pulumi.Input['InputsTcpRawAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -242,6 +243,7 @@ class _InputsTcpRawState:
                  sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpRaw resources.
+
         :param pulumi.Input['InputsTcpRawAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] connection_host: Valid values: (ip | dns | none)
                Set the host for the remote server that is sending data.
@@ -472,6 +474,7 @@ class InputsTcpRaw(pulumi.CustomResource):
             disabled=False)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -523,6 +526,7 @@ class InputsTcpRaw(pulumi.CustomResource):
             sourcetype="new",
             disabled=False)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param InputsTcpRawArgs args: The arguments to use to populate this resource's properties.

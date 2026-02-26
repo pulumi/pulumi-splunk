@@ -36,6 +36,7 @@ class AppsLocalArgs:
                  visible: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AppsLocal resource.
+
         :param pulumi.Input['AppsLocalAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] auth: Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         :param pulumi.Input[_builtins.str] author: For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
@@ -274,6 +275,7 @@ class _AppsLocalState:
                  visible: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AppsLocal resources.
+
         :param pulumi.Input['AppsLocalAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] auth: Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         :param pulumi.Input[_builtins.str] author: For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
@@ -531,6 +533,7 @@ class AppsLocal(pulumi.CustomResource):
             explicit_appname="amazon_connect_app_for_splunk")
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -580,6 +583,7 @@ class AppsLocal(pulumi.CustomResource):
             name="/usr/home/amazon_connect_app_for_splunk-0.0.1.tar.gz",
             explicit_appname="amazon_connect_app_for_splunk")
         ```
+
 
         :param str resource_name: The name of the resource.
         :param AppsLocalArgs args: The arguments to use to populate this resource's properties.

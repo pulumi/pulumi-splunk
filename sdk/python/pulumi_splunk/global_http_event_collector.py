@@ -28,6 +28,7 @@ class GlobalHttpEventCollectorArgs:
                  use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a GlobalHttpEventCollector resource.
+
         :param pulumi.Input[_builtins.int] dedicated_io_threads: Number of threads used by HTTP Input server.
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator.
         :param pulumi.Input[_builtins.bool] enable_ssl: Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
@@ -150,6 +151,7 @@ class _GlobalHttpEventCollectorState:
                  use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering GlobalHttpEventCollector resources.
+
         :param pulumi.Input[_builtins.int] dedicated_io_threads: Number of threads used by HTTP Input server.
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator.
         :param pulumi.Input[_builtins.bool] enable_ssl: Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
@@ -291,6 +293,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
             port=8088)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] dedicated_io_threads: Number of threads used by HTTP Input server.
@@ -324,6 +327,7 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
             enable_ssl=True,
             port=8088)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param GlobalHttpEventCollectorArgs args: The arguments to use to populate this resource's properties.

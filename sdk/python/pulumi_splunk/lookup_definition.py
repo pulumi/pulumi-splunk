@@ -26,6 +26,7 @@ class LookupDefinitionArgs:
                  acl: Optional[pulumi.Input['LookupDefinitionAclArgs']] = None):
         """
         The set of arguments for constructing a LookupDefinition resource.
+
         :param pulumi.Input[_builtins.str] filename: The filename for the lookup table, usually ending in `.csv`.
         :param pulumi.Input[_builtins.str] name: A unique name for the lookup definition within the app context.
         :param pulumi.Input['LookupDefinitionAclArgs'] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
@@ -80,6 +81,7 @@ class _LookupDefinitionState:
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LookupDefinition resources.
+
         :param pulumi.Input['LookupDefinitionAclArgs'] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
         :param pulumi.Input[_builtins.str] filename: The filename for the lookup table, usually ending in `.csv`.
         :param pulumi.Input[_builtins.str] name: A unique name for the lookup definition within the app context.
@@ -167,6 +169,7 @@ class LookupDefinition(pulumi.CustomResource):
 
         When `acl.sharing` is set to `user`, the `acl.read` and `acl.write` fields must not be explicitly set. Setting them will trigger a validation error.
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
@@ -207,6 +210,7 @@ class LookupDefinition(pulumi.CustomResource):
         ## Validation Rules
 
         When `acl.sharing` is set to `user`, the `acl.read` and `acl.write` fields must not be explicitly set. Setting them will trigger a validation error.
+
 
         :param str resource_name: The name of the resource.
         :param LookupDefinitionArgs args: The arguments to use to populate this resource's properties.

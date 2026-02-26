@@ -62,6 +62,7 @@ class IndexesArgs:
                  warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Indexes resource.
+
         :param pulumi.Input['IndexesAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.int] block_sign_size: Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
         :param pulumi.Input[_builtins.str] bucket_rebuild_memory_hint: Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
@@ -782,6 +783,7 @@ class _IndexesState:
                  warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Indexes resources.
+
         :param pulumi.Input['IndexesAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.int] block_sign_size: Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
         :param pulumi.Input[_builtins.str] bucket_rebuild_memory_hint: Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
@@ -1526,6 +1528,7 @@ class Indexes(pulumi.CustomResource):
             max_total_data_size_mb=1000000)
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -1639,6 +1642,7 @@ class Indexes(pulumi.CustomResource):
             max_hot_buckets=6,
             max_total_data_size_mb=1000000)
         ```
+
 
         :param str resource_name: The name of the resource.
         :param IndexesArgs args: The arguments to use to populate this resource's properties.

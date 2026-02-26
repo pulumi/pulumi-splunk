@@ -26,6 +26,7 @@ class ConfigsConfArgs:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ConfigsConf resource.
+
         :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
                
                **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
@@ -86,6 +87,7 @@ class _ConfigsConfState:
                  variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ConfigsConf resources.
+
         :param pulumi.Input['ConfigsConfAclArgs'] acl: The app/user context that is the namespace for the resource
                
                **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
@@ -167,6 +169,7 @@ class ConfigsConf(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -199,6 +202,7 @@ class ConfigsConf(pulumi.CustomResource):
                 "custom_key": "value",
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConfigsConfArgs args: The arguments to use to populate this resource's properties.

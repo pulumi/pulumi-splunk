@@ -210,6 +210,7 @@ class SavedSearchesArgs:
                  workload_pool: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SavedSearches resource.
+
         :param pulumi.Input[_builtins.str] search: Required when creating a new search.
         :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
@@ -3214,6 +3215,7 @@ class _SavedSearchesState:
                  workload_pool: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SavedSearches resources.
+
         :param pulumi.Input['SavedSearchesAclArgs'] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
         :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
@@ -6323,6 +6325,7 @@ class SavedSearches(pulumi.CustomResource):
             })
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
@@ -6550,6 +6553,7 @@ class SavedSearches(pulumi.CustomResource):
                 "app": "launcher",
             })
         ```
+
 
         :param str resource_name: The name of the resource.
         :param SavedSearchesArgs args: The arguments to use to populate this resource's properties.
