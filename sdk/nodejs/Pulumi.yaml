@@ -1,3 +1,0 @@
-name: splunk
-description: A Pulumi resource provider for splunk.
-language: nodejs
