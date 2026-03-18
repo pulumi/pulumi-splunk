@@ -1,3 +1,0 @@
-name: admin-saml-groups-ts
-runtime: nodejs
-description: A minimal TypeScript Pulumi program
