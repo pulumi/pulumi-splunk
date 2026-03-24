@@ -365,14 +365,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Specify whether to include a link to the results. Defaults to 0.
+     * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      * 
      */
     @Import(name="actionEmailIncludeResultsLink")
     private @Nullable Output<Integer> actionEmailIncludeResultsLink;
 
     /**
-     * @return Specify whether to include a link to the results. Defaults to 0.
+     * @return Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      * 
      */
     public Optional<Output<Integer>> actionEmailIncludeResultsLink() {
@@ -380,14 +380,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * Specify whether to include the search that caused an email to be sent. [1|0]
      * 
      */
     @Import(name="actionEmailIncludeSearch")
     private @Nullable Output<Integer> actionEmailIncludeSearch;
 
     /**
-     * @return Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * @return Specify whether to include the search that caused an email to be sent. [1|0]
      * 
      */
     public Optional<Output<Integer>> actionEmailIncludeSearch() {
@@ -395,14 +395,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      * 
      */
     @Import(name="actionEmailIncludeTrigger")
     private @Nullable Output<Integer> actionEmailIncludeTrigger;
 
     /**
-     * @return Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * @return Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      * 
      */
     public Optional<Output<Integer>> actionEmailIncludeTrigger() {
@@ -410,14 +410,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Specify whether to show the time that the alert was fired. Defaults to 0.
+     * Specify whether to show the time that the alert was fired. [1|0]
      * 
      */
     @Import(name="actionEmailIncludeTriggerTime")
     private @Nullable Output<Integer> actionEmailIncludeTriggerTime;
 
     /**
-     * @return Specify whether to show the time that the alert was fired. Defaults to 0.
+     * @return Specify whether to show the time that the alert was fired. [1|0]
      * 
      */
     public Optional<Output<Integer>> actionEmailIncludeTriggerTime() {
@@ -425,14 +425,14 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      * 
      */
     @Import(name="actionEmailIncludeViewLink")
     private @Nullable Output<Integer> actionEmailIncludeViewLink;
 
     /**
-     * @return Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * @return Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      * 
      */
     public Optional<Output<Integer>> actionEmailIncludeViewLink() {
@@ -3598,7 +3598,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeResultsLink Specify whether to include a link to the results. Defaults to 0.
+         * @param actionEmailIncludeResultsLink Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
          * 
          * @return builder
          * 
@@ -3609,7 +3609,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeResultsLink Specify whether to include a link to the results. Defaults to 0.
+         * @param actionEmailIncludeResultsLink Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
          * 
          * @return builder
          * 
@@ -3619,7 +3619,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeSearch Specify whether to include the search that caused an email to be sent. Defaults to 0.
+         * @param actionEmailIncludeSearch Specify whether to include the search that caused an email to be sent. [1|0]
          * 
          * @return builder
          * 
@@ -3630,7 +3630,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeSearch Specify whether to include the search that caused an email to be sent. Defaults to 0.
+         * @param actionEmailIncludeSearch Specify whether to include the search that caused an email to be sent. [1|0]
          * 
          * @return builder
          * 
@@ -3640,7 +3640,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeTrigger Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+         * @param actionEmailIncludeTrigger Specify whether to show the trigger condition that caused the alert to fire. [1|0]
          * 
          * @return builder
          * 
@@ -3651,7 +3651,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeTrigger Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+         * @param actionEmailIncludeTrigger Specify whether to show the trigger condition that caused the alert to fire. [1|0]
          * 
          * @return builder
          * 
@@ -3661,7 +3661,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeTriggerTime Specify whether to show the time that the alert was fired. Defaults to 0.
+         * @param actionEmailIncludeTriggerTime Specify whether to show the time that the alert was fired. [1|0]
          * 
          * @return builder
          * 
@@ -3672,7 +3672,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeTriggerTime Specify whether to show the time that the alert was fired. Defaults to 0.
+         * @param actionEmailIncludeTriggerTime Specify whether to show the time that the alert was fired. [1|0]
          * 
          * @return builder
          * 
@@ -3682,7 +3682,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeViewLink Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+         * @param actionEmailIncludeViewLink Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
          * 
          * @return builder
          * 
@@ -3693,7 +3693,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionEmailIncludeViewLink Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+         * @param actionEmailIncludeViewLink Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
          * 
          * @return builder
          * 

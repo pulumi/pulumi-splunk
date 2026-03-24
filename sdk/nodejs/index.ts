@@ -123,6 +123,11 @@ utilities.lazyLoad(exports, ["OutputsTcpSyslog"], () => require("./outputsTcpSys
 export * from "./provider";
 import { Provider } from "./provider";
 
+export { SavedEventTypesArgs, SavedEventTypesState } from "./savedEventTypes";
+export type SavedEventTypes = import("./savedEventTypes").SavedEventTypes;
+export const SavedEventTypes: typeof import("./savedEventTypes").SavedEventTypes = null as any;
+utilities.lazyLoad(exports, ["SavedEventTypes"], () => require("./savedEventTypes"));
+
 export { SavedSearchesArgs, SavedSearchesState } from "./savedSearches";
 export type SavedSearches = import("./savedSearches").SavedSearches;
 export const SavedSearches: typeof import("./savedSearches").SavedSearches = null as any;
@@ -193,6 +198,8 @@ const _module = {
                 return new OutputsTcpServer(name, <any>undefined, { urn })
             case "splunk:index/outputsTcpSyslog:OutputsTcpSyslog":
                 return new OutputsTcpSyslog(name, <any>undefined, { urn })
+            case "splunk:index/savedEventTypes:SavedEventTypes":
+                return new SavedEventTypes(name, <any>undefined, { urn })
             case "splunk:index/savedSearches:SavedSearches":
                 return new SavedSearches(name, <any>undefined, { urn })
             case "splunk:index/shIndexesManager:ShIndexesManager":
@@ -225,6 +232,7 @@ pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpDefault", _modu
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpGroup", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpServer", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/outputsTcpSyslog", _module)
+pulumi.runtime.registerResourceModule("splunk", "index/savedEventTypes", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/savedSearches", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/shIndexesManager", _module)
 pulumi.runtime.registerResourcePackage("splunk", {

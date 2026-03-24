@@ -19,6 +19,7 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
+                 acl_get_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  auth_token: Optional[pulumi.Input[_builtins.str]] = None,
                  insecure_skip_verify: Optional[pulumi.Input[_builtins.bool]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
@@ -28,6 +29,7 @@ class ProviderArgs:
         """
         The set of arguments for constructing a Provider resource.
 
+        :param pulumi.Input[_builtins.str] acl_get_mode: For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
         :param pulumi.Input[_builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         :param pulumi.Input[_builtins.bool] insecure_skip_verify: insecure skip verification flag
         :param pulumi.Input[_builtins.str] password: Splunk instance password
@@ -35,6 +37,8 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.str] url: Splunk instance URL
         :param pulumi.Input[_builtins.str] username: Splunk instance admin username
         """
+        if acl_get_mode is not None:
+            pulumi.set(__self__, "acl_get_mode", acl_get_mode)
         if auth_token is not None:
             pulumi.set(__self__, "auth_token", auth_token)
         if insecure_skip_verify is not None:
@@ -47,6 +51,18 @@ class ProviderArgs:
             pulumi.set(__self__, "url", url)
         if username is not None:
             pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="aclGetMode")
+    def acl_get_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+        """
+        return pulumi.get(self, "acl_get_mode")
+
+    @acl_get_mode.setter
+    def acl_get_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "acl_get_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="authToken")
@@ -127,6 +143,7 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 acl_get_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  auth_token: Optional[pulumi.Input[_builtins.str]] = None,
                  insecure_skip_verify: Optional[pulumi.Input[_builtins.bool]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
@@ -143,6 +160,7 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] acl_get_mode: For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
         :param pulumi.Input[_builtins.str] auth_token: Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         :param pulumi.Input[_builtins.bool] insecure_skip_verify: insecure skip verification flag
         :param pulumi.Input[_builtins.str] password: Splunk instance password
@@ -178,6 +196,7 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 acl_get_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  auth_token: Optional[pulumi.Input[_builtins.str]] = None,
                  insecure_skip_verify: Optional[pulumi.Input[_builtins.bool]] = None,
                  password: Optional[pulumi.Input[_builtins.str]] = None,
@@ -193,6 +212,7 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
+            __props__.__dict__["acl_get_mode"] = acl_get_mode
             __props__.__dict__["auth_token"] = auth_token
             __props__.__dict__["insecure_skip_verify"] = pulumi.Output.from_input(insecure_skip_verify).apply(pulumi.runtime.to_json) if insecure_skip_verify is not None else None
             __props__.__dict__["password"] = password
@@ -204,6 +224,14 @@ class Provider(pulumi.ProviderResource):
             resource_name,
             __props__,
             opts)
+
+    @_builtins.property
+    @pulumi.getter(name="aclGetMode")
+    def acl_get_mode(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+        """
+        return pulumi.get(self, "acl_get_mode")
 
     @_builtins.property
     @pulumi.getter(name="authToken")

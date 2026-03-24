@@ -30,6 +30,7 @@ from .outputs_tcp_group import *
 from .outputs_tcp_server import *
 from .outputs_tcp_syslog import *
 from .provider import *
+from .saved_event_types import *
 from .saved_searches import *
 from .sh_indexes_manager import *
 from ._inputs import *
@@ -227,6 +228,14 @@ _utilities.register(
   "fqn": "pulumi_splunk",
   "classes": {
    "splunk:index/outputsTcpSyslog:OutputsTcpSyslog": "OutputsTcpSyslog"
+  }
+ },
+ {
+  "pkg": "splunk",
+  "mod": "index/savedEventTypes",
+  "fqn": "pulumi_splunk",
+  "classes": {
+   "splunk:index/savedEventTypes:SavedEventTypes": "SavedEventTypes"
   }
  },
  {

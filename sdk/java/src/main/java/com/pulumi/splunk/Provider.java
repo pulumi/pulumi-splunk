@@ -23,6 +23,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:splunk")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
+     * For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+     * 
+     */
+    @Export(name="aclGetMode", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> aclGetMode;
+
+    /**
+     * @return For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+     * 
+     */
+    public Output<Optional<String>> aclGetMode() {
+        return Codegen.optional(this.aclGetMode);
+    }
+    /**
      * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      * 
      */

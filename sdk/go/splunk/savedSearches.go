@@ -107,16 +107,16 @@ type SavedSearches struct {
 	ActionEmailFrom pulumi.StringOutput `pulumi:"actionEmailFrom"`
 	// Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
 	ActionEmailHostname pulumi.StringOutput `pulumi:"actionEmailHostname"`
-	// Specify whether to include a link to the results. Defaults to 0.
-	ActionEmailIncludeResultsLink pulumi.IntOutput `pulumi:"actionEmailIncludeResultsLink"`
-	// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+	// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
+	ActionEmailIncludeResultsLink pulumi.IntPtrOutput `pulumi:"actionEmailIncludeResultsLink"`
+	// Specify whether to include the search that caused an email to be sent. [1|0]
 	ActionEmailIncludeSearch pulumi.IntOutput `pulumi:"actionEmailIncludeSearch"`
-	// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+	// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
 	ActionEmailIncludeTrigger pulumi.IntOutput `pulumi:"actionEmailIncludeTrigger"`
-	// Specify whether to show the time that the alert was fired. Defaults to 0.
+	// Specify whether to show the time that the alert was fired. [1|0]
 	ActionEmailIncludeTriggerTime pulumi.IntOutput `pulumi:"actionEmailIncludeTriggerTime"`
-	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
-	ActionEmailIncludeViewLink pulumi.IntOutput `pulumi:"actionEmailIncludeViewLink"`
+	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
+	ActionEmailIncludeViewLink pulumi.IntPtrOutput `pulumi:"actionEmailIncludeViewLink"`
 	// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
 	ActionEmailInline pulumi.BoolOutput `pulumi:"actionEmailInline"`
 	// Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
@@ -526,15 +526,15 @@ type savedSearchesState struct {
 	ActionEmailFrom *string `pulumi:"actionEmailFrom"`
 	// Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
 	ActionEmailHostname *string `pulumi:"actionEmailHostname"`
-	// Specify whether to include a link to the results. Defaults to 0.
+	// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeResultsLink *int `pulumi:"actionEmailIncludeResultsLink"`
-	// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+	// Specify whether to include the search that caused an email to be sent. [1|0]
 	ActionEmailIncludeSearch *int `pulumi:"actionEmailIncludeSearch"`
-	// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+	// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
 	ActionEmailIncludeTrigger *int `pulumi:"actionEmailIncludeTrigger"`
-	// Specify whether to show the time that the alert was fired. Defaults to 0.
+	// Specify whether to show the time that the alert was fired. [1|0]
 	ActionEmailIncludeTriggerTime *int `pulumi:"actionEmailIncludeTriggerTime"`
-	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeViewLink *int `pulumi:"actionEmailIncludeViewLink"`
 	// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
 	ActionEmailInline *bool `pulumi:"actionEmailInline"`
@@ -913,15 +913,15 @@ type SavedSearchesState struct {
 	ActionEmailFrom pulumi.StringPtrInput
 	// Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
 	ActionEmailHostname pulumi.StringPtrInput
-	// Specify whether to include a link to the results. Defaults to 0.
+	// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeResultsLink pulumi.IntPtrInput
-	// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+	// Specify whether to include the search that caused an email to be sent. [1|0]
 	ActionEmailIncludeSearch pulumi.IntPtrInput
-	// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+	// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
 	ActionEmailIncludeTrigger pulumi.IntPtrInput
-	// Specify whether to show the time that the alert was fired. Defaults to 0.
+	// Specify whether to show the time that the alert was fired. [1|0]
 	ActionEmailIncludeTriggerTime pulumi.IntPtrInput
-	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeViewLink pulumi.IntPtrInput
 	// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
 	ActionEmailInline pulumi.BoolPtrInput
@@ -1302,15 +1302,15 @@ type savedSearchesArgs struct {
 	ActionEmailFrom *string `pulumi:"actionEmailFrom"`
 	// Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
 	ActionEmailHostname *string `pulumi:"actionEmailHostname"`
-	// Specify whether to include a link to the results. Defaults to 0.
+	// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeResultsLink *int `pulumi:"actionEmailIncludeResultsLink"`
-	// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+	// Specify whether to include the search that caused an email to be sent. [1|0]
 	ActionEmailIncludeSearch *int `pulumi:"actionEmailIncludeSearch"`
-	// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+	// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
 	ActionEmailIncludeTrigger *int `pulumi:"actionEmailIncludeTrigger"`
-	// Specify whether to show the time that the alert was fired. Defaults to 0.
+	// Specify whether to show the time that the alert was fired. [1|0]
 	ActionEmailIncludeTriggerTime *int `pulumi:"actionEmailIncludeTriggerTime"`
-	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeViewLink *int `pulumi:"actionEmailIncludeViewLink"`
 	// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
 	ActionEmailInline *bool `pulumi:"actionEmailInline"`
@@ -1680,15 +1680,15 @@ type SavedSearchesArgs struct {
 	ActionEmailFrom pulumi.StringPtrInput
 	// Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
 	ActionEmailHostname pulumi.StringPtrInput
-	// Specify whether to include a link to the results. Defaults to 0.
+	// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeResultsLink pulumi.IntPtrInput
-	// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+	// Specify whether to include the search that caused an email to be sent. [1|0]
 	ActionEmailIncludeSearch pulumi.IntPtrInput
-	// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+	// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
 	ActionEmailIncludeTrigger pulumi.IntPtrInput
-	// Specify whether to show the time that the alert was fired. Defaults to 0.
+	// Specify whether to show the time that the alert was fired. [1|0]
 	ActionEmailIncludeTriggerTime pulumi.IntPtrInput
-	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+	// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
 	ActionEmailIncludeViewLink pulumi.IntPtrInput
 	// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
 	ActionEmailInline pulumi.BoolPtrInput
@@ -2214,29 +2214,29 @@ func (o SavedSearchesOutput) ActionEmailHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionEmailHostname }).(pulumi.StringOutput)
 }
 
-// Specify whether to include a link to the results. Defaults to 0.
-func (o SavedSearchesOutput) ActionEmailIncludeResultsLink() pulumi.IntOutput {
-	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeResultsLink }).(pulumi.IntOutput)
+// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
+func (o SavedSearchesOutput) ActionEmailIncludeResultsLink() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntPtrOutput { return v.ActionEmailIncludeResultsLink }).(pulumi.IntPtrOutput)
 }
 
-// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+// Specify whether to include the search that caused an email to be sent. [1|0]
 func (o SavedSearchesOutput) ActionEmailIncludeSearch() pulumi.IntOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeSearch }).(pulumi.IntOutput)
 }
 
-// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
 func (o SavedSearchesOutput) ActionEmailIncludeTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeTrigger }).(pulumi.IntOutput)
 }
 
-// Specify whether to show the time that the alert was fired. Defaults to 0.
+// Specify whether to show the time that the alert was fired. [1|0]
 func (o SavedSearchesOutput) ActionEmailIncludeTriggerTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeTriggerTime }).(pulumi.IntOutput)
 }
 
-// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
-func (o SavedSearchesOutput) ActionEmailIncludeViewLink() pulumi.IntOutput {
-	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionEmailIncludeViewLink }).(pulumi.IntOutput)
+// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
+func (o SavedSearchesOutput) ActionEmailIncludeViewLink() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.IntPtrOutput { return v.ActionEmailIncludeViewLink }).(pulumi.IntPtrOutput)
 }
 
 // Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.

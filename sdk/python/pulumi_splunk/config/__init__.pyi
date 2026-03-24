@@ -14,6 +14,11 @@ else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
 
+aclGetMode: Optional[str]
+"""
+For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+"""
+
 authToken: Optional[str]
 """
 Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform

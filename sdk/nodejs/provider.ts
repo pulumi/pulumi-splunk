@@ -26,6 +26,10 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
+     * For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+     */
+    declare public readonly aclGetMode: pulumi.Output<string | undefined>;
+    /**
      * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      */
     declare public readonly authToken: pulumi.Output<string | undefined>;
@@ -53,6 +57,7 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
+            resourceInputs["aclGetMode"] = args?.aclGetMode;
             resourceInputs["authToken"] = args?.authToken;
             resourceInputs["insecureSkipVerify"] = pulumi.output(args?.insecureSkipVerify).apply(JSON.stringify);
             resourceInputs["password"] = args?.password;
@@ -78,6 +83,10 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
+    /**
+     * For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+     */
+    aclGetMode?: pulumi.Input<string>;
     /**
      * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      */

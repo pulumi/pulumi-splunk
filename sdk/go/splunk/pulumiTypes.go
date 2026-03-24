@@ -5572,6 +5572,333 @@ func (o OutputsTcpSyslogAclPtrOutput) Writes() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+type SavedEventTypesAcl struct {
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App *string `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms *bool `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp *bool `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal *bool `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser *bool `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite *bool `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner *string `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads []string `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable *bool `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing *string `pulumi:"sharing"`
+	// Properties that indicate resource write permissions.
+	Writes []string `pulumi:"writes"`
+}
+
+// SavedEventTypesAclInput is an input type that accepts SavedEventTypesAclArgs and SavedEventTypesAclOutput values.
+// You can construct a concrete instance of `SavedEventTypesAclInput` via:
+//
+//	SavedEventTypesAclArgs{...}
+type SavedEventTypesAclInput interface {
+	pulumi.Input
+
+	ToSavedEventTypesAclOutput() SavedEventTypesAclOutput
+	ToSavedEventTypesAclOutputWithContext(context.Context) SavedEventTypesAclOutput
+}
+
+type SavedEventTypesAclArgs struct {
+	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+	App pulumi.StringPtrInput `pulumi:"app"`
+	// Indicates if the active user can change permissions for this object. Defaults to true.
+	CanChangePerms pulumi.BoolPtrInput `pulumi:"canChangePerms"`
+	// Indicates if the active user can change sharing to app level. Defaults to true.
+	CanShareApp pulumi.BoolPtrInput `pulumi:"canShareApp"`
+	// Indicates if the active user can change sharing to system level. Defaults to true.
+	CanShareGlobal pulumi.BoolPtrInput `pulumi:"canShareGlobal"`
+	// Indicates if the active user can change sharing to user level. Defaults to true.
+	CanShareUser pulumi.BoolPtrInput `pulumi:"canShareUser"`
+	// Indicates if the active user can edit this object. Defaults to true.
+	CanWrite pulumi.BoolPtrInput `pulumi:"canWrite"`
+	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Properties that indicate resource read permissions.
+	Reads pulumi.StringArrayInput `pulumi:"reads"`
+	// Indicates whether an admin or user with sufficient permissions can delete the entity.
+	Removable pulumi.BoolPtrInput `pulumi:"removable"`
+	// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+	Sharing pulumi.StringPtrInput `pulumi:"sharing"`
+	// Properties that indicate resource write permissions.
+	Writes pulumi.StringArrayInput `pulumi:"writes"`
+}
+
+func (SavedEventTypesAclArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SavedEventTypesAcl)(nil)).Elem()
+}
+
+func (i SavedEventTypesAclArgs) ToSavedEventTypesAclOutput() SavedEventTypesAclOutput {
+	return i.ToSavedEventTypesAclOutputWithContext(context.Background())
+}
+
+func (i SavedEventTypesAclArgs) ToSavedEventTypesAclOutputWithContext(ctx context.Context) SavedEventTypesAclOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedEventTypesAclOutput)
+}
+
+func (i SavedEventTypesAclArgs) ToSavedEventTypesAclPtrOutput() SavedEventTypesAclPtrOutput {
+	return i.ToSavedEventTypesAclPtrOutputWithContext(context.Background())
+}
+
+func (i SavedEventTypesAclArgs) ToSavedEventTypesAclPtrOutputWithContext(ctx context.Context) SavedEventTypesAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedEventTypesAclOutput).ToSavedEventTypesAclPtrOutputWithContext(ctx)
+}
+
+// SavedEventTypesAclPtrInput is an input type that accepts SavedEventTypesAclArgs, SavedEventTypesAclPtr and SavedEventTypesAclPtrOutput values.
+// You can construct a concrete instance of `SavedEventTypesAclPtrInput` via:
+//
+//	        SavedEventTypesAclArgs{...}
+//
+//	or:
+//
+//	        nil
+type SavedEventTypesAclPtrInput interface {
+	pulumi.Input
+
+	ToSavedEventTypesAclPtrOutput() SavedEventTypesAclPtrOutput
+	ToSavedEventTypesAclPtrOutputWithContext(context.Context) SavedEventTypesAclPtrOutput
+}
+
+type savedEventTypesAclPtrType SavedEventTypesAclArgs
+
+func SavedEventTypesAclPtr(v *SavedEventTypesAclArgs) SavedEventTypesAclPtrInput {
+	return (*savedEventTypesAclPtrType)(v)
+}
+
+func (*savedEventTypesAclPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SavedEventTypesAcl)(nil)).Elem()
+}
+
+func (i *savedEventTypesAclPtrType) ToSavedEventTypesAclPtrOutput() SavedEventTypesAclPtrOutput {
+	return i.ToSavedEventTypesAclPtrOutputWithContext(context.Background())
+}
+
+func (i *savedEventTypesAclPtrType) ToSavedEventTypesAclPtrOutputWithContext(ctx context.Context) SavedEventTypesAclPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SavedEventTypesAclPtrOutput)
+}
+
+type SavedEventTypesAclOutput struct{ *pulumi.OutputState }
+
+func (SavedEventTypesAclOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SavedEventTypesAcl)(nil)).Elem()
+}
+
+func (o SavedEventTypesAclOutput) ToSavedEventTypesAclOutput() SavedEventTypesAclOutput {
+	return o
+}
+
+func (o SavedEventTypesAclOutput) ToSavedEventTypesAclOutputWithContext(ctx context.Context) SavedEventTypesAclOutput {
+	return o
+}
+
+func (o SavedEventTypesAclOutput) ToSavedEventTypesAclPtrOutput() SavedEventTypesAclPtrOutput {
+	return o.ToSavedEventTypesAclPtrOutputWithContext(context.Background())
+}
+
+func (o SavedEventTypesAclOutput) ToSavedEventTypesAclPtrOutputWithContext(ctx context.Context) SavedEventTypesAclPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SavedEventTypesAcl) *SavedEventTypesAcl {
+		return &v
+	}).(SavedEventTypesAclPtrOutput)
+}
+
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+func (o SavedEventTypesAclOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *string { return v.App }).(pulumi.StringPtrOutput)
+}
+
+// Indicates if the active user can change permissions for this object. Defaults to true.
+func (o SavedEventTypesAclOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *bool { return v.CanChangePerms }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can change sharing to app level. Defaults to true.
+func (o SavedEventTypesAclOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *bool { return v.CanShareApp }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can change sharing to system level. Defaults to true.
+func (o SavedEventTypesAclOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *bool { return v.CanShareGlobal }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can change sharing to user level. Defaults to true.
+func (o SavedEventTypesAclOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *bool { return v.CanShareUser }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can edit this object. Defaults to true.
+func (o SavedEventTypesAclOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *bool { return v.CanWrite }).(pulumi.BoolPtrOutput)
+}
+
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+func (o SavedEventTypesAclOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// Properties that indicate resource read permissions.
+func (o SavedEventTypesAclOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) []string { return v.Reads }).(pulumi.StringArrayOutput)
+}
+
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
+func (o SavedEventTypesAclOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *bool { return v.Removable }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+func (o SavedEventTypesAclOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) *string { return v.Sharing }).(pulumi.StringPtrOutput)
+}
+
+// Properties that indicate resource write permissions.
+func (o SavedEventTypesAclOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SavedEventTypesAcl) []string { return v.Writes }).(pulumi.StringArrayOutput)
+}
+
+type SavedEventTypesAclPtrOutput struct{ *pulumi.OutputState }
+
+func (SavedEventTypesAclPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SavedEventTypesAcl)(nil)).Elem()
+}
+
+func (o SavedEventTypesAclPtrOutput) ToSavedEventTypesAclPtrOutput() SavedEventTypesAclPtrOutput {
+	return o
+}
+
+func (o SavedEventTypesAclPtrOutput) ToSavedEventTypesAclPtrOutputWithContext(ctx context.Context) SavedEventTypesAclPtrOutput {
+	return o
+}
+
+func (o SavedEventTypesAclPtrOutput) Elem() SavedEventTypesAclOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) SavedEventTypesAcl {
+		if v != nil {
+			return *v
+		}
+		var ret SavedEventTypesAcl
+		return ret
+	}).(SavedEventTypesAclOutput)
+}
+
+// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+func (o SavedEventTypesAclPtrOutput) App() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.App
+	}).(pulumi.StringPtrOutput)
+}
+
+// Indicates if the active user can change permissions for this object. Defaults to true.
+func (o SavedEventTypesAclPtrOutput) CanChangePerms() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanChangePerms
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can change sharing to app level. Defaults to true.
+func (o SavedEventTypesAclPtrOutput) CanShareApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareApp
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can change sharing to system level. Defaults to true.
+func (o SavedEventTypesAclPtrOutput) CanShareGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareGlobal
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can change sharing to user level. Defaults to true.
+func (o SavedEventTypesAclPtrOutput) CanShareUser() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanShareUser
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Indicates if the active user can edit this object. Defaults to true.
+func (o SavedEventTypesAclPtrOutput) CanWrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CanWrite
+	}).(pulumi.BoolPtrOutput)
+}
+
+// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+func (o SavedEventTypesAclPtrOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Owner
+	}).(pulumi.StringPtrOutput)
+}
+
+// Properties that indicate resource read permissions.
+func (o SavedEventTypesAclPtrOutput) Reads() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Reads
+	}).(pulumi.StringArrayOutput)
+}
+
+// Indicates whether an admin or user with sufficient permissions can delete the entity.
+func (o SavedEventTypesAclPtrOutput) Removable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Removable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+func (o SavedEventTypesAclPtrOutput) Sharing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Sharing
+	}).(pulumi.StringPtrOutput)
+}
+
+// Properties that indicate resource write permissions.
+func (o SavedEventTypesAclPtrOutput) Writes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SavedEventTypesAcl) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Writes
+	}).(pulumi.StringArrayOutput)
+}
+
 type SavedSearchesAcl struct {
 	// The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
 	App *string `pulumi:"app"`
@@ -6261,6 +6588,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpServerAclPtrInput)(nil)).Elem(), OutputsTcpServerAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogAclInput)(nil)).Elem(), OutputsTcpSyslogAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OutputsTcpSyslogAclPtrInput)(nil)).Elem(), OutputsTcpSyslogAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedEventTypesAclInput)(nil)).Elem(), SavedEventTypesAclArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SavedEventTypesAclPtrInput)(nil)).Elem(), SavedEventTypesAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesAclInput)(nil)).Elem(), SavedSearchesAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SavedSearchesAclPtrInput)(nil)).Elem(), SavedSearchesAclArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShIndexesManagerAclInput)(nil)).Elem(), ShIndexesManagerAclArgs{})
@@ -6299,6 +6628,8 @@ func init() {
 	pulumi.RegisterOutputType(OutputsTcpServerAclPtrOutput{})
 	pulumi.RegisterOutputType(OutputsTcpSyslogAclOutput{})
 	pulumi.RegisterOutputType(OutputsTcpSyslogAclPtrOutput{})
+	pulumi.RegisterOutputType(SavedEventTypesAclOutput{})
+	pulumi.RegisterOutputType(SavedEventTypesAclPtrOutput{})
 	pulumi.RegisterOutputType(SavedSearchesAclOutput{})
 	pulumi.RegisterOutputType(SavedSearchesAclPtrOutput{})
 	pulumi.RegisterOutputType(ShIndexesManagerAclOutput{})

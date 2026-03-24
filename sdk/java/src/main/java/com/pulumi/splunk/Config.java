@@ -13,6 +13,13 @@ public final class Config {
 
     private static final com.pulumi.Config config = com.pulumi.Config.of("splunk");
 /**
+ * For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+ * 
+ */
+    public Optional<String> aclGetMode() {
+        return Codegen.stringProp("aclGetMode").config(config).get();
+    }
+/**
  * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
  * 
  */

@@ -19,6 +19,12 @@ namespace Pulumi.Splunk
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
+        /// For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+        /// </summary>
+        [Output("aclGetMode")]
+        public Output<string?> AclGetMode { get; private set; } = null!;
+
+        /// <summary>
         /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         /// </summary>
         [Output("authToken")]
@@ -76,6 +82,12 @@ namespace Pulumi.Splunk
 
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+        /// </summary>
+        [Input("aclGetMode")]
+        public Input<string>? AclGetMode { get; set; }
+
         /// <summary>
         /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         /// </summary>

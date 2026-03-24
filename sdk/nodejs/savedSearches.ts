@@ -160,25 +160,25 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionEmailHostname: pulumi.Output<string>;
     /**
-     * Specify whether to include a link to the results. Defaults to 0.
+     * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      */
-    declare public readonly actionEmailIncludeResultsLink: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeResultsLink: pulumi.Output<number | undefined>;
     /**
-     * Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * Specify whether to include the search that caused an email to be sent. [1|0]
      */
     declare public readonly actionEmailIncludeSearch: pulumi.Output<number>;
     /**
-     * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      */
     declare public readonly actionEmailIncludeTrigger: pulumi.Output<number>;
     /**
-     * Specify whether to show the time that the alert was fired. Defaults to 0.
+     * Specify whether to show the time that the alert was fired. [1|0]
      */
     declare public readonly actionEmailIncludeTriggerTime: pulumi.Output<number>;
     /**
-     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      */
-    declare public readonly actionEmailIncludeViewLink: pulumi.Output<number>;
+    declare public readonly actionEmailIncludeViewLink: pulumi.Output<number | undefined>;
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      */
@@ -1341,23 +1341,23 @@ export interface SavedSearchesState {
      */
     actionEmailHostname?: pulumi.Input<string>;
     /**
-     * Specify whether to include a link to the results. Defaults to 0.
+     * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      */
     actionEmailIncludeResultsLink?: pulumi.Input<number>;
     /**
-     * Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * Specify whether to include the search that caused an email to be sent. [1|0]
      */
     actionEmailIncludeSearch?: pulumi.Input<number>;
     /**
-     * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      */
     actionEmailIncludeTrigger?: pulumi.Input<number>;
     /**
-     * Specify whether to show the time that the alert was fired. Defaults to 0.
+     * Specify whether to show the time that the alert was fired. [1|0]
      */
     actionEmailIncludeTriggerTime?: pulumi.Input<number>;
     /**
-     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      */
     actionEmailIncludeViewLink?: pulumi.Input<number>;
     /**
@@ -2111,23 +2111,23 @@ export interface SavedSearchesArgs {
      */
     actionEmailHostname?: pulumi.Input<string>;
     /**
-     * Specify whether to include a link to the results. Defaults to 0.
+     * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      */
     actionEmailIncludeResultsLink?: pulumi.Input<number>;
     /**
-     * Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * Specify whether to include the search that caused an email to be sent. [1|0]
      */
     actionEmailIncludeSearch?: pulumi.Input<number>;
     /**
-     * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      */
     actionEmailIncludeTrigger?: pulumi.Input<number>;
     /**
-     * Specify whether to show the time that the alert was fired. Defaults to 0.
+     * Specify whether to show the time that the alert was fired. [1|0]
      */
     actionEmailIncludeTriggerTime?: pulumi.Input<number>;
     /**
-     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      */
     actionEmailIncludeViewLink?: pulumi.Input<number>;
     /**

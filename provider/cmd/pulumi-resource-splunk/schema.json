@@ -54,6 +54,10 @@
     },
     "config": {
         "variables": {
+            "aclGetMode": {
+                "type": "string",
+                "description": "For\u003cspan pulumi-lang-nodejs=\" splunk.GenericAcl \" pulumi-lang-dotnet=\" splunk.GenericAcl \" pulumi-lang-go=\" GenericAcl \" pulumi-lang-python=\" GenericAcl \" pulumi-lang-yaml=\" splunk.GenericAcl \" pulumi-lang-java=\" splunk.GenericAcl \"\u003e splunk.GenericAcl \u003c/span\u003eGET .../acl: \"enterprise\" (default) omits owner/sharing query parameters; \"cloud\" includes them."
+            },
             "authToken": {
                 "type": "string",
                 "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
@@ -1342,6 +1346,80 @@
                 }
             }
         },
+        "splunk:index/SavedEventTypesAcl:SavedEventTypesAcl": {
+            "properties": {
+                "app": {
+                    "type": "string",
+                    "description": "The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system\n",
+                    "willReplaceOnChanges": true
+                },
+                "canChangePerms": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change permissions for this object. Defaults to true.\n"
+                },
+                "canShareApp": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to app level. Defaults to true.\n"
+                },
+                "canShareGlobal": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to system level. Defaults to true.\n"
+                },
+                "canShareUser": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can change sharing to user level. Defaults to true.\n"
+                },
+                "canWrite": {
+                    "type": "boolean",
+                    "description": "Indicates if the active user can edit this object. Defaults to true.\n"
+                },
+                "owner": {
+                    "type": "string",
+                    "description": "User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.\n"
+                },
+                "reads": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Properties that indicate resource read permissions.\n"
+                },
+                "removable": {
+                    "type": "boolean",
+                    "description": "Indicates whether an admin or user with sufficient permissions can delete the entity.\n"
+                },
+                "sharing": {
+                    "type": "string",
+                    "description": "Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user\n",
+                    "willReplaceOnChanges": true
+                },
+                "writes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Properties that indicate resource write permissions.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "app",
+                        "canChangePerms",
+                        "canShareApp",
+                        "canShareGlobal",
+                        "canShareUser",
+                        "canWrite",
+                        "owner",
+                        "reads",
+                        "removable",
+                        "sharing",
+                        "writes"
+                    ]
+                }
+            }
+        },
         "splunk:index/SavedSearchesAcl:SavedSearchesAcl": {
             "properties": {
                 "app": {
@@ -1494,6 +1572,10 @@
     "provider": {
         "description": "The provider type for the splunk package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
         "properties": {
+            "aclGetMode": {
+                "type": "string",
+                "description": "For\u003cspan pulumi-lang-nodejs=\" splunk.GenericAcl \" pulumi-lang-dotnet=\" splunk.GenericAcl \" pulumi-lang-go=\" GenericAcl \" pulumi-lang-python=\" GenericAcl \" pulumi-lang-yaml=\" splunk.GenericAcl \" pulumi-lang-java=\" splunk.GenericAcl \"\u003e splunk.GenericAcl \u003c/span\u003eGET .../acl: \"enterprise\" (default) omits owner/sharing query parameters; \"cloud\" includes them."
+            },
             "authToken": {
                 "type": "string",
                 "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
@@ -1520,6 +1602,10 @@
             }
         },
         "inputProperties": {
+            "aclGetMode": {
+                "type": "string",
+                "description": "For\u003cspan pulumi-lang-nodejs=\" splunk.GenericAcl \" pulumi-lang-dotnet=\" splunk.GenericAcl \" pulumi-lang-go=\" GenericAcl \" pulumi-lang-python=\" GenericAcl \" pulumi-lang-yaml=\" splunk.GenericAcl \" pulumi-lang-java=\" splunk.GenericAcl \"\u003e splunk.GenericAcl \u003c/span\u003eGET .../acl: \"enterprise\" (default) omits owner/sharing query parameters; \"cloud\" includes them."
+            },
             "authToken": {
                 "type": "string",
                 "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
@@ -2263,7 +2349,7 @@
             }
         },
         "splunk:index/genericAcl:GenericAcl": {
-            "description": "## # Resource:\u003cspan pulumi-lang-nodejs=\" splunk.GenericAcl\n\" pulumi-lang-dotnet=\" splunk.GenericAcl\n\" pulumi-lang-go=\" GenericAcl\n\" pulumi-lang-python=\" GenericAcl\n\" pulumi-lang-yaml=\" splunk.GenericAcl\n\" pulumi-lang-java=\" splunk.GenericAcl\n\"\u003e splunk.GenericAcl\n\u003c/span\u003e\nManage the ACL of any Splunk object not already managed in Terraform. To define the ACL of an object that is itself\nmanaged in Terraform, use the \u003cspan pulumi-lang-nodejs=\"`acl`\" pulumi-lang-dotnet=\"`Acl`\" pulumi-lang-go=\"`acl`\" pulumi-lang-python=\"`acl`\" pulumi-lang-yaml=\"`acl`\" pulumi-lang-java=\"`acl`\"\u003e`acl`\u003c/span\u003e block on that configured resource instead of using a \u003cspan pulumi-lang-nodejs=\"`splunk.GenericAcl`\" pulumi-lang-dotnet=\"`splunk.GenericAcl`\" pulumi-lang-go=\"`GenericAcl`\" pulumi-lang-python=\"`GenericAcl`\" pulumi-lang-yaml=\"`splunk.GenericAcl`\" pulumi-lang-java=\"`splunk.GenericAcl`\"\u003e`splunk.GenericAcl`\u003c/span\u003e resource.\n\nNote: This resource doesn't actually create any remote resources, because ACLs can only exist (and always exist) for\nknowledge objects. They can, however, be managed separately.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst myApp = new splunk.GenericAcl(\"my_app\", {\n    path: \"apps/local/my_app\",\n    acl: {\n        app: \"system\",\n        owner: \"nobody\",\n        reads: [\"*\"],\n        writes: [\n            \"admin\",\n            \"power\",\n        ],\n    },\n});\nconst myDashboard = new splunk.GenericAcl(\"my_dashboard\", {\n    path: \"data/ui/views/my_dashboard\",\n    acl: {\n        app: \"my_app\",\n        owner: \"joe_user\",\n        reads: [\"team_joe\"],\n        writes: [\"team_joe\"],\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nmy_app = splunk.GenericAcl(\"my_app\",\n    path=\"apps/local/my_app\",\n    acl={\n        \"app\": \"system\",\n        \"owner\": \"nobody\",\n        \"reads\": [\"*\"],\n        \"writes\": [\n            \"admin\",\n            \"power\",\n        ],\n    })\nmy_dashboard = splunk.GenericAcl(\"my_dashboard\",\n    path=\"data/ui/views/my_dashboard\",\n    acl={\n        \"app\": \"my_app\",\n        \"owner\": \"joe_user\",\n        \"reads\": [\"team_joe\"],\n        \"writes\": [\"team_joe\"],\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var myApp = new Splunk.GenericAcl(\"my_app\", new()\n    {\n        Path = \"apps/local/my_app\",\n        Acl = new Splunk.Inputs.GenericAclAclArgs\n        {\n            App = \"system\",\n            Owner = \"nobody\",\n            Reads = new[]\n            {\n                \"*\",\n            },\n            Writes = new[]\n            {\n                \"admin\",\n                \"power\",\n            },\n        },\n    });\n\n    var myDashboard = new Splunk.GenericAcl(\"my_dashboard\", new()\n    {\n        Path = \"data/ui/views/my_dashboard\",\n        Acl = new Splunk.Inputs.GenericAclAclArgs\n        {\n            App = \"my_app\",\n            Owner = \"joe_user\",\n            Reads = new[]\n            {\n                \"team_joe\",\n            },\n            Writes = new[]\n            {\n                \"team_joe\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewGenericAcl(ctx, \"my_app\", \u0026splunk.GenericAclArgs{\n\t\t\tPath: pulumi.String(\"apps/local/my_app\"),\n\t\t\tAcl: \u0026splunk.GenericAclAclArgs{\n\t\t\t\tApp:   pulumi.String(\"system\"),\n\t\t\t\tOwner: pulumi.String(\"nobody\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"*\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"admin\"),\n\t\t\t\t\tpulumi.String(\"power\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = splunk.NewGenericAcl(ctx, \"my_dashboard\", \u0026splunk.GenericAclArgs{\n\t\t\tPath: pulumi.String(\"data/ui/views/my_dashboard\"),\n\t\t\tAcl: \u0026splunk.GenericAclAclArgs{\n\t\t\t\tApp:   pulumi.String(\"my_app\"),\n\t\t\t\tOwner: pulumi.String(\"joe_user\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"team_joe\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"team_joe\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.GenericAcl;\nimport com.pulumi.splunk.GenericAclArgs;\nimport com.pulumi.splunk.inputs.GenericAclAclArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var myApp = new GenericAcl(\"myApp\", GenericAclArgs.builder()\n            .path(\"apps/local/my_app\")\n            .acl(GenericAclAclArgs.builder()\n                .app(\"system\")\n                .owner(\"nobody\")\n                .reads(\"*\")\n                .writes(                \n                    \"admin\",\n                    \"power\")\n                .build())\n            .build());\n\n        var myDashboard = new GenericAcl(\"myDashboard\", GenericAclArgs.builder()\n            .path(\"data/ui/views/my_dashboard\")\n            .acl(GenericAclAclArgs.builder()\n                .app(\"my_app\")\n                .owner(\"joe_user\")\n                .reads(\"team_joe\")\n                .writes(\"team_joe\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  myApp:\n    type: splunk:GenericAcl\n    name: my_app\n    properties:\n      path: apps/local/my_app\n      acl:\n        app: system\n        owner: nobody\n        reads:\n          - '*'\n        writes:\n          - admin\n          - power\n  myDashboard:\n    type: splunk:GenericAcl\n    name: my_dashboard\n    properties:\n      path: data/ui/views/my_dashboard\n      acl:\n        app: my_app\n        owner: joe_user\n        reads:\n          - team_joe\n        writes:\n          - team_joe\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nGeneric ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:\n\n```sh\nterraform import splunk_generic_acl \u003cowner\u003e:\u003capp\u003e:\u003cpath\u003e\n```\n\n",
+            "description": "## # Resource:\u003cspan pulumi-lang-nodejs=\" splunk.GenericAcl\n\" pulumi-lang-dotnet=\" splunk.GenericAcl\n\" pulumi-lang-go=\" GenericAcl\n\" pulumi-lang-python=\" GenericAcl\n\" pulumi-lang-yaml=\" splunk.GenericAcl\n\" pulumi-lang-java=\" splunk.GenericAcl\n\"\u003e splunk.GenericAcl\n\u003c/span\u003e\nManage the ACL of any Splunk object not already managed in Terraform. To define the ACL of an object that is itself\nmanaged in Terraform, use the \u003cspan pulumi-lang-nodejs=\"`acl`\" pulumi-lang-dotnet=\"`Acl`\" pulumi-lang-go=\"`acl`\" pulumi-lang-python=\"`acl`\" pulumi-lang-yaml=\"`acl`\" pulumi-lang-java=\"`acl`\"\u003e`acl`\u003c/span\u003e block on that configured resource instead of using a \u003cspan pulumi-lang-nodejs=\"`splunk.GenericAcl`\" pulumi-lang-dotnet=\"`splunk.GenericAcl`\" pulumi-lang-go=\"`GenericAcl`\" pulumi-lang-python=\"`GenericAcl`\" pulumi-lang-yaml=\"`splunk.GenericAcl`\" pulumi-lang-java=\"`splunk.GenericAcl`\"\u003e`splunk.GenericAcl`\u003c/span\u003e resource.\n\nNote: This resource doesn't actually create any remote resources, because ACLs can only exist (and always exist) for\nknowledge objects. They can, however, be managed separately.\n\nOn **Splunk Cloud**, if ACL reads fail with missing \u003cspan pulumi-lang-nodejs=\"`owner`\" pulumi-lang-dotnet=\"`Owner`\" pulumi-lang-go=\"`owner`\" pulumi-lang-python=\"`owner`\" pulumi-lang-yaml=\"`owner`\" pulumi-lang-java=\"`owner`\"\u003e`owner`\u003c/span\u003e/\u003cspan pulumi-lang-nodejs=\"`sharing`\" pulumi-lang-dotnet=\"`Sharing`\" pulumi-lang-go=\"`sharing`\" pulumi-lang-python=\"`sharing`\" pulumi-lang-yaml=\"`sharing`\" pulumi-lang-java=\"`sharing`\"\u003e`sharing`\u003c/span\u003e, set the provider argument \u003cspan pulumi-lang-nodejs=\"`aclGetMode \" pulumi-lang-dotnet=\"`AclGetMode \" pulumi-lang-go=\"`aclGetMode \" pulumi-lang-python=\"`acl_get_mode \" pulumi-lang-yaml=\"`aclGetMode \" pulumi-lang-java=\"`aclGetMode \"\u003e`acl_get_mode \u003c/span\u003e= \"cloud\"` (or env `SPLUNK_ACL_GET_MODE=cloud`). The default \u003cspan pulumi-lang-nodejs=\"`enterprise`\" pulumi-lang-dotnet=\"`Enterprise`\" pulumi-lang-go=\"`enterprise`\" pulumi-lang-python=\"`enterprise`\" pulumi-lang-yaml=\"`enterprise`\" pulumi-lang-java=\"`enterprise`\"\u003e`enterprise`\u003c/span\u003e omits those query parameters on GET, which matches Splunk Enterprise.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst myApp = new splunk.GenericAcl(\"my_app\", {\n    path: \"apps/local/my_app\",\n    acl: {\n        app: \"system\",\n        owner: \"nobody\",\n        reads: [\"*\"],\n        writes: [\n            \"admin\",\n            \"power\",\n        ],\n    },\n});\nconst myDashboard = new splunk.GenericAcl(\"my_dashboard\", {\n    path: \"data/ui/views/my_dashboard\",\n    acl: {\n        app: \"my_app\",\n        owner: \"joe_user\",\n        reads: [\"team_joe\"],\n        writes: [\"team_joe\"],\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nmy_app = splunk.GenericAcl(\"my_app\",\n    path=\"apps/local/my_app\",\n    acl={\n        \"app\": \"system\",\n        \"owner\": \"nobody\",\n        \"reads\": [\"*\"],\n        \"writes\": [\n            \"admin\",\n            \"power\",\n        ],\n    })\nmy_dashboard = splunk.GenericAcl(\"my_dashboard\",\n    path=\"data/ui/views/my_dashboard\",\n    acl={\n        \"app\": \"my_app\",\n        \"owner\": \"joe_user\",\n        \"reads\": [\"team_joe\"],\n        \"writes\": [\"team_joe\"],\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var myApp = new Splunk.GenericAcl(\"my_app\", new()\n    {\n        Path = \"apps/local/my_app\",\n        Acl = new Splunk.Inputs.GenericAclAclArgs\n        {\n            App = \"system\",\n            Owner = \"nobody\",\n            Reads = new[]\n            {\n                \"*\",\n            },\n            Writes = new[]\n            {\n                \"admin\",\n                \"power\",\n            },\n        },\n    });\n\n    var myDashboard = new Splunk.GenericAcl(\"my_dashboard\", new()\n    {\n        Path = \"data/ui/views/my_dashboard\",\n        Acl = new Splunk.Inputs.GenericAclAclArgs\n        {\n            App = \"my_app\",\n            Owner = \"joe_user\",\n            Reads = new[]\n            {\n                \"team_joe\",\n            },\n            Writes = new[]\n            {\n                \"team_joe\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewGenericAcl(ctx, \"my_app\", \u0026splunk.GenericAclArgs{\n\t\t\tPath: pulumi.String(\"apps/local/my_app\"),\n\t\t\tAcl: \u0026splunk.GenericAclAclArgs{\n\t\t\t\tApp:   pulumi.String(\"system\"),\n\t\t\t\tOwner: pulumi.String(\"nobody\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"*\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"admin\"),\n\t\t\t\t\tpulumi.String(\"power\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = splunk.NewGenericAcl(ctx, \"my_dashboard\", \u0026splunk.GenericAclArgs{\n\t\t\tPath: pulumi.String(\"data/ui/views/my_dashboard\"),\n\t\t\tAcl: \u0026splunk.GenericAclAclArgs{\n\t\t\t\tApp:   pulumi.String(\"my_app\"),\n\t\t\t\tOwner: pulumi.String(\"joe_user\"),\n\t\t\t\tReads: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"team_joe\"),\n\t\t\t\t},\n\t\t\t\tWrites: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"team_joe\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.GenericAcl;\nimport com.pulumi.splunk.GenericAclArgs;\nimport com.pulumi.splunk.inputs.GenericAclAclArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var myApp = new GenericAcl(\"myApp\", GenericAclArgs.builder()\n            .path(\"apps/local/my_app\")\n            .acl(GenericAclAclArgs.builder()\n                .app(\"system\")\n                .owner(\"nobody\")\n                .reads(\"*\")\n                .writes(                \n                    \"admin\",\n                    \"power\")\n                .build())\n            .build());\n\n        var myDashboard = new GenericAcl(\"myDashboard\", GenericAclArgs.builder()\n            .path(\"data/ui/views/my_dashboard\")\n            .acl(GenericAclAclArgs.builder()\n                .app(\"my_app\")\n                .owner(\"joe_user\")\n                .reads(\"team_joe\")\n                .writes(\"team_joe\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  myApp:\n    type: splunk:GenericAcl\n    name: my_app\n    properties:\n      path: apps/local/my_app\n      acl:\n        app: system\n        owner: nobody\n        reads:\n          - '*'\n        writes:\n          - admin\n          - power\n  myDashboard:\n    type: splunk:GenericAcl\n    name: my_dashboard\n    properties:\n      path: data/ui/views/my_dashboard\n      acl:\n        app: my_app\n        owner: joe_user\n        reads:\n          - team_joe\n        writes:\n          - team_joe\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nGeneric ACL resources can be imported by specifying their owner, app, and path with a colon-delimited string as the ID:\n\n```sh\nterraform import splunk_generic_acl \u003cowner\u003e:\u003capp\u003e:\u003cpath\u003e\n```\n\n",
             "properties": {
                 "acl": {
                     "$ref": "#/types/splunk:index/GenericAclAcl:GenericAclAcl",
@@ -4783,6 +4869,133 @@
                 "type": "object"
             }
         },
+        "splunk:index/savedEventTypes:SavedEventTypes": {
+            "description": "## # Resource:\u003cspan pulumi-lang-nodejs=\" splunk.SavedEventTypes\n\" pulumi-lang-dotnet=\" splunk.SavedEventTypes\n\" pulumi-lang-go=\" SavedEventTypes\n\" pulumi-lang-python=\" SavedEventTypes\n\" pulumi-lang-yaml=\" splunk.SavedEventTypes\n\" pulumi-lang-java=\" splunk.SavedEventTypes\n\"\u003e splunk.SavedEventTypes\n\u003c/span\u003e\nCreate and manage saved event types (knowledge objects).\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst test = new splunk.SavedEventTypes(\"test\", {\n    name: \"test\",\n    description: \"Test New event description\",\n    disabled: false,\n    priority: 1,\n    search: \"index=main\",\n    color: \"et_blue\",\n    tags: [\"tag\"],\n    acl: {\n        owner: \"admin\",\n        sharing: \"app\",\n        app: \"launcher\",\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\ntest = splunk.SavedEventTypes(\"test\",\n    name=\"test\",\n    description=\"Test New event description\",\n    disabled=False,\n    priority=1,\n    search=\"index=main\",\n    color=\"et_blue\",\n    tags=[\"tag\"],\n    acl={\n        \"owner\": \"admin\",\n        \"sharing\": \"app\",\n        \"app\": \"launcher\",\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var test = new Splunk.SavedEventTypes(\"test\", new()\n    {\n        Name = \"test\",\n        Description = \"Test New event description\",\n        Disabled = false,\n        Priority = 1,\n        Search = \"index=main\",\n        Color = \"et_blue\",\n        Tags = new[]\n        {\n            \"tag\",\n        },\n        Acl = new Splunk.Inputs.SavedEventTypesAclArgs\n        {\n            Owner = \"admin\",\n            Sharing = \"app\",\n            App = \"launcher\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewSavedEventTypes(ctx, \"test\", \u0026splunk.SavedEventTypesArgs{\n\t\t\tName:        pulumi.String(\"test\"),\n\t\t\tDescription: pulumi.String(\"Test New event description\"),\n\t\t\tDisabled:    pulumi.Bool(false),\n\t\t\tPriority:    pulumi.Int(1),\n\t\t\tSearch:      pulumi.String(\"index=main\"),\n\t\t\tColor:       pulumi.String(\"et_blue\"),\n\t\t\tTags: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"tag\"),\n\t\t\t},\n\t\t\tAcl: \u0026splunk.SavedEventTypesAclArgs{\n\t\t\t\tOwner:   pulumi.String(\"admin\"),\n\t\t\t\tSharing: pulumi.String(\"app\"),\n\t\t\t\tApp:     pulumi.String(\"launcher\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.SavedEventTypes;\nimport com.pulumi.splunk.SavedEventTypesArgs;\nimport com.pulumi.splunk.inputs.SavedEventTypesAclArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var test = new SavedEventTypes(\"test\", SavedEventTypesArgs.builder()\n            .name(\"test\")\n            .description(\"Test New event description\")\n            .disabled(false)\n            .priority(1)\n            .search(\"index=main\")\n            .color(\"et_blue\")\n            .tags(\"tag\")\n            .acl(SavedEventTypesAclArgs.builder()\n                .owner(\"admin\")\n                .sharing(\"app\")\n                .app(\"launcher\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  test:\n    type: splunk:SavedEventTypes\n    properties:\n      name: test\n      description: Test New event description\n      disabled: false\n      priority: 1\n      search: index=main\n      color: et_blue\n      tags:\n        - tag\n      acl:\n        owner: admin\n        sharing: app\n        app: launcher\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "properties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/SavedEventTypesAcl:SavedEventTypesAcl",
+                    "description": "The app/user context that is the namespace for the resource\n"
+                },
+                "color": {
+                    "type": "string",
+                    "description": "Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description of this event type.\n"
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "description": "If True, disables the event type.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for the event type.\n"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.\n"
+                },
+                "search": {
+                    "type": "string",
+                    "description": "Event type search string.\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "[Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.\n"
+                }
+            },
+            "required": [
+                "acl",
+                "name",
+                "search"
+            ],
+            "inputProperties": {
+                "acl": {
+                    "$ref": "#/types/splunk:index/SavedEventTypesAcl:SavedEventTypesAcl",
+                    "description": "The app/user context that is the namespace for the resource\n"
+                },
+                "color": {
+                    "type": "string",
+                    "description": "Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description of this event type.\n"
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "description": "If True, disables the event type.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "A name for the event type.\n"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.\n"
+                },
+                "search": {
+                    "type": "string",
+                    "description": "Event type search string.\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "[Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.\n"
+                }
+            },
+            "requiredInputs": [
+                "name",
+                "search"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SavedEventTypes resources.\n",
+                "properties": {
+                    "acl": {
+                        "$ref": "#/types/splunk:index/SavedEventTypesAcl:SavedEventTypesAcl",
+                        "description": "The app/user context that is the namespace for the resource\n"
+                    },
+                    "color": {
+                        "type": "string",
+                        "description": "Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Human-readable description of this event type.\n"
+                    },
+                    "disabled": {
+                        "type": "boolean",
+                        "description": "If True, disables the event type.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "A name for the event type.\n"
+                    },
+                    "priority": {
+                        "type": "integer",
+                        "description": "Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.\n"
+                    },
+                    "search": {
+                        "type": "string",
+                        "description": "Event type search string.\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "[Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "splunk:index/savedSearches:SavedSearches": {
             "description": "## # Resource:\u003cspan pulumi-lang-nodejs=\" splunk.SavedSearches\n\" pulumi-lang-dotnet=\" splunk.SavedSearches\n\" pulumi-lang-go=\" SavedSearches\n\" pulumi-lang-python=\" SavedSearches\n\" pulumi-lang-yaml=\" splunk.SavedSearches\n\" pulumi-lang-java=\" splunk.SavedSearches\n\"\u003e splunk.SavedSearches\n\u003c/span\u003e\nCreate and manage saved searches.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst savedSearch = new splunk.SavedSearches(\"saved_search\", {\n    name: \"Test New Alert\",\n    search: \"index=main\",\n    actions: \"email\",\n    actionEmailFormat: \"table\",\n    actionEmailMaxTime: \"5m\",\n    actionEmailMaxResults: 10,\n    actionEmailSendResults: false,\n    actionEmailSubject: \"Splunk Alert: $name$\",\n    actionEmailTo: \"splunk@splunk.com\",\n    actionEmailTrackAlert: true,\n    dispatchEarliestTime: \"rt-15m\",\n    dispatchLatestTime: \"rt-0m\",\n    cronSchedule: \"*/5 * * * *\",\n    acl: {\n        owner: \"admin\",\n        sharing: \"app\",\n        app: \"launcher\",\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nsaved_search = splunk.SavedSearches(\"saved_search\",\n    name=\"Test New Alert\",\n    search=\"index=main\",\n    actions=\"email\",\n    action_email_format=\"table\",\n    action_email_max_time=\"5m\",\n    action_email_max_results=10,\n    action_email_send_results=False,\n    action_email_subject=\"Splunk Alert: $name$\",\n    action_email_to=\"splunk@splunk.com\",\n    action_email_track_alert=True,\n    dispatch_earliest_time=\"rt-15m\",\n    dispatch_latest_time=\"rt-0m\",\n    cron_schedule=\"*/5 * * * *\",\n    acl={\n        \"owner\": \"admin\",\n        \"sharing\": \"app\",\n        \"app\": \"launcher\",\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var savedSearch = new Splunk.SavedSearches(\"saved_search\", new()\n    {\n        Name = \"Test New Alert\",\n        Search = \"index=main\",\n        Actions = \"email\",\n        ActionEmailFormat = \"table\",\n        ActionEmailMaxTime = \"5m\",\n        ActionEmailMaxResults = 10,\n        ActionEmailSendResults = false,\n        ActionEmailSubject = \"Splunk Alert: $name$\",\n        ActionEmailTo = \"splunk@splunk.com\",\n        ActionEmailTrackAlert = true,\n        DispatchEarliestTime = \"rt-15m\",\n        DispatchLatestTime = \"rt-0m\",\n        CronSchedule = \"*/5 * * * *\",\n        Acl = new Splunk.Inputs.SavedSearchesAclArgs\n        {\n            Owner = \"admin\",\n            Sharing = \"app\",\n            App = \"launcher\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewSavedSearches(ctx, \"saved_search\", \u0026splunk.SavedSearchesArgs{\n\t\t\tName:                   pulumi.String(\"Test New Alert\"),\n\t\t\tSearch:                 pulumi.String(\"index=main\"),\n\t\t\tActions:                pulumi.String(\"email\"),\n\t\t\tActionEmailFormat:      pulumi.String(\"table\"),\n\t\t\tActionEmailMaxTime:     pulumi.String(\"5m\"),\n\t\t\tActionEmailMaxResults:  pulumi.Int(10),\n\t\t\tActionEmailSendResults: pulumi.Bool(false),\n\t\t\tActionEmailSubject:     pulumi.String(\"Splunk Alert: $name$\"),\n\t\t\tActionEmailTo:          pulumi.String(\"splunk@splunk.com\"),\n\t\t\tActionEmailTrackAlert:  pulumi.Bool(true),\n\t\t\tDispatchEarliestTime:   pulumi.String(\"rt-15m\"),\n\t\t\tDispatchLatestTime:     pulumi.String(\"rt-0m\"),\n\t\t\tCronSchedule:           pulumi.String(\"*/5 * * * *\"),\n\t\t\tAcl: \u0026splunk.SavedSearchesAclArgs{\n\t\t\t\tOwner:   pulumi.String(\"admin\"),\n\t\t\t\tSharing: pulumi.String(\"app\"),\n\t\t\t\tApp:     pulumi.String(\"launcher\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.SavedSearches;\nimport com.pulumi.splunk.SavedSearchesArgs;\nimport com.pulumi.splunk.inputs.SavedSearchesAclArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var savedSearch = new SavedSearches(\"savedSearch\", SavedSearchesArgs.builder()\n            .name(\"Test New Alert\")\n            .search(\"index=main\")\n            .actions(\"email\")\n            .actionEmailFormat(\"table\")\n            .actionEmailMaxTime(\"5m\")\n            .actionEmailMaxResults(10)\n            .actionEmailSendResults(false)\n            .actionEmailSubject(\"Splunk Alert: $name$\")\n            .actionEmailTo(\"splunk@splunk.com\")\n            .actionEmailTrackAlert(true)\n            .dispatchEarliestTime(\"rt-15m\")\n            .dispatchLatestTime(\"rt-0m\")\n            .cronSchedule(\"*/5 * * * *\")\n            .acl(SavedSearchesAclArgs.builder()\n                .owner(\"admin\")\n                .sharing(\"app\")\n                .app(\"launcher\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  savedSearch:\n    type: splunk:SavedSearches\n    name: saved_search\n    properties:\n      name: Test New Alert\n      search: index=main\n      actions: email\n      actionEmailFormat: table\n      actionEmailMaxTime: 5m\n      actionEmailMaxResults: 10\n      actionEmailSendResults: false\n      actionEmailSubject: 'Splunk Alert: $name$'\n      actionEmailTo: splunk@splunk.com\n      actionEmailTrackAlert: true\n      dispatchEarliestTime: rt-15m\n      dispatchLatestTime: rt-0m\n      cronSchedule: '*/5 * * * *'\n      acl:\n        owner: admin\n        sharing: app\n        app: launcher\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "properties": {
@@ -4880,23 +5093,23 @@
                 },
                 "actionEmailIncludeResultsLink": {
                     "type": "integer",
-                    "description": "Specify whether to include a link to the results. Defaults to 0.\n"
+                    "description": "Specify whether to include a link to the results. Defaults to 1 (true). [1|0]\n"
                 },
                 "actionEmailIncludeSearch": {
                     "type": "integer",
-                    "description": "Specify whether to include the search that caused an email to be sent. Defaults to 0.\n"
+                    "description": "Specify whether to include the search that caused an email to be sent. [1|0]\n"
                 },
                 "actionEmailIncludeTrigger": {
                     "type": "integer",
-                    "description": "Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.\n"
+                    "description": "Specify whether to show the trigger condition that caused the alert to fire. [1|0]\n"
                 },
                 "actionEmailIncludeTriggerTime": {
                     "type": "integer",
-                    "description": "Specify whether to show the time that the alert was fired. Defaults to 0.\n"
+                    "description": "Specify whether to show the time that the alert was fired. [1|0]\n"
                 },
                 "actionEmailIncludeViewLink": {
                     "type": "integer",
-                    "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.\n"
+                    "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]\n"
                 },
                 "actionEmailInline": {
                     "type": "boolean",
@@ -5566,11 +5779,9 @@
                 "actionEmailFormat",
                 "actionEmailFrom",
                 "actionEmailHostname",
-                "actionEmailIncludeResultsLink",
                 "actionEmailIncludeSearch",
                 "actionEmailIncludeTrigger",
                 "actionEmailIncludeTriggerTime",
-                "actionEmailIncludeViewLink",
                 "actionEmailInline",
                 "actionEmailMailserver",
                 "actionEmailMaxResults",
@@ -5797,23 +6008,23 @@
                 },
                 "actionEmailIncludeResultsLink": {
                     "type": "integer",
-                    "description": "Specify whether to include a link to the results. Defaults to 0.\n"
+                    "description": "Specify whether to include a link to the results. Defaults to 1 (true). [1|0]\n"
                 },
                 "actionEmailIncludeSearch": {
                     "type": "integer",
-                    "description": "Specify whether to include the search that caused an email to be sent. Defaults to 0.\n"
+                    "description": "Specify whether to include the search that caused an email to be sent. [1|0]\n"
                 },
                 "actionEmailIncludeTrigger": {
                     "type": "integer",
-                    "description": "Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.\n"
+                    "description": "Specify whether to show the trigger condition that caused the alert to fire. [1|0]\n"
                 },
                 "actionEmailIncludeTriggerTime": {
                     "type": "integer",
-                    "description": "Specify whether to show the time that the alert was fired. Defaults to 0.\n"
+                    "description": "Specify whether to show the time that the alert was fired. [1|0]\n"
                 },
                 "actionEmailIncludeViewLink": {
                     "type": "integer",
-                    "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.\n"
+                    "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]\n"
                 },
                 "actionEmailInline": {
                     "type": "boolean",
@@ -6557,23 +6768,23 @@
                     },
                     "actionEmailIncludeResultsLink": {
                         "type": "integer",
-                        "description": "Specify whether to include a link to the results. Defaults to 0.\n"
+                        "description": "Specify whether to include a link to the results. Defaults to 1 (true). [1|0]\n"
                     },
                     "actionEmailIncludeSearch": {
                         "type": "integer",
-                        "description": "Specify whether to include the search that caused an email to be sent. Defaults to 0.\n"
+                        "description": "Specify whether to include the search that caused an email to be sent. [1|0]\n"
                     },
                     "actionEmailIncludeTrigger": {
                         "type": "integer",
-                        "description": "Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.\n"
+                        "description": "Specify whether to show the trigger condition that caused the alert to fire. [1|0]\n"
                     },
                     "actionEmailIncludeTriggerTime": {
                         "type": "integer",
-                        "description": "Specify whether to show the time that the alert was fired. Defaults to 0.\n"
+                        "description": "Specify whether to show the time that the alert was fired. [1|0]\n"
                     },
                     "actionEmailIncludeViewLink": {
                         "type": "integer",
-                        "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.\n"
+                        "description": "Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]\n"
                     },
                     "actionEmailInline": {
                         "type": "boolean",
