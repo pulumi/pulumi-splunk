@@ -234,11 +234,11 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_email_format: Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
         :param pulumi.Input[_builtins.str] action_email_from: Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
         :param pulumi.Input[_builtins.str] action_email_hostname: Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
-        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         :param pulumi.Input[_builtins.bool] action_email_inline: Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
         :param pulumi.Input[_builtins.str] action_email_mailserver: Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
         :param pulumi.Input[_builtins.int] action_email_max_results: Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
@@ -1053,7 +1053,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionEmailIncludeResultsLink")
     def action_email_include_results_link(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to include a link to the results. Defaults to 0.
+        Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_results_link")
 
@@ -1065,7 +1065,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionEmailIncludeSearch")
     def action_email_include_search(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        Specify whether to include the search that caused an email to be sent. [1|0]
         """
         return pulumi.get(self, "action_email_include_search")
 
@@ -1077,7 +1077,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionEmailIncludeTrigger")
     def action_email_include_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger")
 
@@ -1089,7 +1089,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionEmailIncludeTriggerTime")
     def action_email_include_trigger_time(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to show the time that the alert was fired. Defaults to 0.
+        Specify whether to show the time that the alert was fired. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger_time")
 
@@ -1101,7 +1101,7 @@ class SavedSearchesArgs:
     @pulumi.getter(name="actionEmailIncludeViewLink")
     def action_email_include_view_link(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_view_link")
 
@@ -3239,11 +3239,11 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_email_format: Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
         :param pulumi.Input[_builtins.str] action_email_from: Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
         :param pulumi.Input[_builtins.str] action_email_hostname: Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
-        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         :param pulumi.Input[_builtins.bool] action_email_inline: Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
         :param pulumi.Input[_builtins.str] action_email_mailserver: Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
         :param pulumi.Input[_builtins.int] action_email_max_results: Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
@@ -4074,7 +4074,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionEmailIncludeResultsLink")
     def action_email_include_results_link(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to include a link to the results. Defaults to 0.
+        Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_results_link")
 
@@ -4086,7 +4086,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionEmailIncludeSearch")
     def action_email_include_search(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        Specify whether to include the search that caused an email to be sent. [1|0]
         """
         return pulumi.get(self, "action_email_include_search")
 
@@ -4098,7 +4098,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionEmailIncludeTrigger")
     def action_email_include_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger")
 
@@ -4110,7 +4110,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionEmailIncludeTriggerTime")
     def action_email_include_trigger_time(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to show the time that the alert was fired. Defaults to 0.
+        Specify whether to show the time that the alert was fired. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger_time")
 
@@ -4122,7 +4122,7 @@ class _SavedSearchesState:
     @pulumi.getter(name="actionEmailIncludeViewLink")
     def action_email_include_view_link(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_view_link")
 
@@ -6350,11 +6350,11 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_email_format: Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
         :param pulumi.Input[_builtins.str] action_email_from: Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
         :param pulumi.Input[_builtins.str] action_email_hostname: Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
-        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         :param pulumi.Input[_builtins.bool] action_email_inline: Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
         :param pulumi.Input[_builtins.str] action_email_mailserver: Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
         :param pulumi.Input[_builtins.int] action_email_max_results: Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
@@ -7192,11 +7192,11 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_email_format: Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
         :param pulumi.Input[_builtins.str] action_email_from: Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
         :param pulumi.Input[_builtins.str] action_email_hostname: Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
-        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. Defaults to 0.
-        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        :param pulumi.Input[_builtins.int] action_email_include_results_link: Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_search: Specify whether to include the search that caused an email to be sent. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger: Specify whether to show the trigger condition that caused the alert to fire. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_trigger_time: Specify whether to show the time that the alert was fired. [1|0]
+        :param pulumi.Input[_builtins.int] action_email_include_view_link: Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         :param pulumi.Input[_builtins.bool] action_email_inline: Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
         :param pulumi.Input[_builtins.str] action_email_mailserver: Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
         :param pulumi.Input[_builtins.int] action_email_max_results: Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
@@ -7746,9 +7746,9 @@ class SavedSearches(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeResultsLink")
-    def action_email_include_results_link(self) -> pulumi.Output[_builtins.int]:
+    def action_email_include_results_link(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        Specify whether to include a link to the results. Defaults to 0.
+        Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_results_link")
 
@@ -7756,7 +7756,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionEmailIncludeSearch")
     def action_email_include_search(self) -> pulumi.Output[_builtins.int]:
         """
-        Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        Specify whether to include the search that caused an email to be sent. [1|0]
         """
         return pulumi.get(self, "action_email_include_search")
 
@@ -7764,7 +7764,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionEmailIncludeTrigger")
     def action_email_include_trigger(self) -> pulumi.Output[_builtins.int]:
         """
-        Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger")
 
@@ -7772,15 +7772,15 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter(name="actionEmailIncludeTriggerTime")
     def action_email_include_trigger_time(self) -> pulumi.Output[_builtins.int]:
         """
-        Specify whether to show the time that the alert was fired. Defaults to 0.
+        Specify whether to show the time that the alert was fired. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger_time")
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeViewLink")
-    def action_email_include_view_link(self) -> pulumi.Output[_builtins.int]:
+    def action_email_include_view_link(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_view_link")
 

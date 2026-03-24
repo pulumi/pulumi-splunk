@@ -400,74 +400,74 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionEmailHostname;
     }
     /**
-     * Specify whether to include a link to the results. Defaults to 0.
+     * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      * 
      */
     @Export(name="actionEmailIncludeResultsLink", refs={Integer.class}, tree="[0]")
-    private Output<Integer> actionEmailIncludeResultsLink;
+    private Output</* @Nullable */ Integer> actionEmailIncludeResultsLink;
 
     /**
-     * @return Specify whether to include a link to the results. Defaults to 0.
+     * @return Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      * 
      */
-    public Output<Integer> actionEmailIncludeResultsLink() {
-        return this.actionEmailIncludeResultsLink;
+    public Output<Optional<Integer>> actionEmailIncludeResultsLink() {
+        return Codegen.optional(this.actionEmailIncludeResultsLink);
     }
     /**
-     * Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * Specify whether to include the search that caused an email to be sent. [1|0]
      * 
      */
     @Export(name="actionEmailIncludeSearch", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeSearch;
 
     /**
-     * @return Specify whether to include the search that caused an email to be sent. Defaults to 0.
+     * @return Specify whether to include the search that caused an email to be sent. [1|0]
      * 
      */
     public Output<Integer> actionEmailIncludeSearch() {
         return this.actionEmailIncludeSearch;
     }
     /**
-     * Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      * 
      */
     @Export(name="actionEmailIncludeTrigger", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeTrigger;
 
     /**
-     * @return Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+     * @return Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      * 
      */
     public Output<Integer> actionEmailIncludeTrigger() {
         return this.actionEmailIncludeTrigger;
     }
     /**
-     * Specify whether to show the time that the alert was fired. Defaults to 0.
+     * Specify whether to show the time that the alert was fired. [1|0]
      * 
      */
     @Export(name="actionEmailIncludeTriggerTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> actionEmailIncludeTriggerTime;
 
     /**
-     * @return Specify whether to show the time that the alert was fired. Defaults to 0.
+     * @return Specify whether to show the time that the alert was fired. [1|0]
      * 
      */
     public Output<Integer> actionEmailIncludeTriggerTime() {
         return this.actionEmailIncludeTriggerTime;
     }
     /**
-     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      * 
      */
     @Export(name="actionEmailIncludeViewLink", refs={Integer.class}, tree="[0]")
-    private Output<Integer> actionEmailIncludeViewLink;
+    private Output</* @Nullable */ Integer> actionEmailIncludeViewLink;
 
     /**
-     * @return Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+     * @return Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      * 
      */
-    public Output<Integer> actionEmailIncludeViewLink() {
-        return this.actionEmailIncludeViewLink;
+    public Output<Optional<Integer>> actionEmailIncludeViewLink() {
+        return Codegen.optional(this.actionEmailIncludeViewLink);
     }
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.

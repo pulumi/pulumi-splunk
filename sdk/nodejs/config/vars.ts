@@ -8,6 +8,17 @@ declare var exports: any;
 const __config = new pulumi.Config("splunk");
 
 /**
+ * For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+ */
+export declare const aclGetMode: string | undefined;
+Object.defineProperty(exports, "aclGetMode", {
+    get() {
+        return __config.get("aclGetMode");
+    },
+    enumerable: true,
+});
+
+/**
  * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
  */
 export declare const authToken: string | undefined;

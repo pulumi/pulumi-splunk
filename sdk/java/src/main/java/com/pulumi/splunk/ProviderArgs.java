@@ -18,6 +18,21 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
+     * For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+     * 
+     */
+    @Import(name="aclGetMode")
+    private @Nullable Output<String> aclGetMode;
+
+    /**
+     * @return For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+     * 
+     */
+    public Optional<Output<String>> aclGetMode() {
+        return Optional.ofNullable(this.aclGetMode);
+    }
+
+    /**
      * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      * 
      */
@@ -110,6 +125,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     private ProviderArgs() {}
 
     private ProviderArgs(ProviderArgs $) {
+        this.aclGetMode = $.aclGetMode;
         this.authToken = $.authToken;
         this.insecureSkipVerify = $.insecureSkipVerify;
         this.password = $.password;
@@ -134,6 +150,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ProviderArgs defaults) {
             $ = new ProviderArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param aclGetMode For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder aclGetMode(@Nullable Output<String> aclGetMode) {
+            $.aclGetMode = aclGetMode;
+            return this;
+        }
+
+        /**
+         * @param aclGetMode For splunk.GenericAcl GET .../acl: &#34;enterprise&#34; (default) omits owner/sharing query parameters; &#34;cloud&#34; includes them.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder aclGetMode(String aclGetMode) {
+            return aclGetMode(Output.of(aclGetMode));
         }
 
         /**

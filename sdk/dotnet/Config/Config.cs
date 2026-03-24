@@ -32,6 +32,16 @@ namespace Pulumi.Splunk
 
         private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("splunk");
 
+        private static readonly __Value<string?> _aclGetMode = new __Value<string?>(() => __config.Get("aclGetMode"));
+        /// <summary>
+        /// For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+        /// </summary>
+        public static string? AclGetMode
+        {
+            get => _aclGetMode.Get();
+            set => _aclGetMode.Set(value);
+        }
+
         private static readonly __Value<string?> _authToken = new __Value<string?>(() => __config.Get("authToken"));
         /// <summary>
         /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform

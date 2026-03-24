@@ -32,6 +32,7 @@ __all__ = [
     'OutputsTcpGroupAcl',
     'OutputsTcpServerAcl',
     'OutputsTcpSyslogAcl',
+    'SavedEventTypesAcl',
     'SavedSearchesAcl',
     'ShIndexesManagerAcl',
 ]
@@ -2685,6 +2686,170 @@ class OutputsTcpSyslogAcl(dict):
 
     def get(self, key: str, default = None) -> Any:
         OutputsTcpSyslogAcl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 app: Optional[_builtins.str] = None,
+                 can_change_perms: Optional[_builtins.bool] = None,
+                 can_share_app: Optional[_builtins.bool] = None,
+                 can_share_global: Optional[_builtins.bool] = None,
+                 can_share_user: Optional[_builtins.bool] = None,
+                 can_write: Optional[_builtins.bool] = None,
+                 owner: Optional[_builtins.str] = None,
+                 reads: Optional[Sequence[_builtins.str]] = None,
+                 removable: Optional[_builtins.bool] = None,
+                 sharing: Optional[_builtins.str] = None,
+                 writes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str app: The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        :param _builtins.bool can_change_perms: Indicates if the active user can change permissions for this object. Defaults to true.
+        :param _builtins.bool can_share_app: Indicates if the active user can change sharing to app level. Defaults to true.
+        :param _builtins.bool can_share_global: Indicates if the active user can change sharing to system level. Defaults to true.
+        :param _builtins.bool can_share_user: Indicates if the active user can change sharing to user level. Defaults to true.
+        :param _builtins.bool can_write: Indicates if the active user can edit this object. Defaults to true.
+        :param _builtins.str owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param Sequence[_builtins.str] reads: Properties that indicate resource read permissions.
+        :param _builtins.bool removable: Indicates whether an admin or user with sufficient permissions can delete the entity.
+        :param _builtins.str sharing: Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        :param Sequence[_builtins.str] writes: Properties that indicate resource write permissions.
+        """
+        if app is not None:
+            pulumi.set(__self__, "app", app)
+        if can_change_perms is not None:
+            pulumi.set(__self__, "can_change_perms", can_change_perms)
+        if can_share_app is not None:
+            pulumi.set(__self__, "can_share_app", can_share_app)
+        if can_share_global is not None:
+            pulumi.set(__self__, "can_share_global", can_share_global)
+        if can_share_user is not None:
+            pulumi.set(__self__, "can_share_user", can_share_user)
+        if can_write is not None:
+            pulumi.set(__self__, "can_write", can_write)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if reads is not None:
+            pulumi.set(__self__, "reads", reads)
+        if removable is not None:
+            pulumi.set(__self__, "removable", removable)
+        if sharing is not None:
+            pulumi.set(__self__, "sharing", sharing)
+        if writes is not None:
+            pulumi.set(__self__, "writes", writes)
+
+    @_builtins.property
+    @pulumi.getter
+    def app(self) -> Optional[_builtins.str]:
+        """
+        The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+        """
+        return pulumi.get(self, "app")
+
+    @_builtins.property
+    @pulumi.getter(name="canChangePerms")
+    def can_change_perms(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if the active user can change permissions for this object. Defaults to true.
+        """
+        return pulumi.get(self, "can_change_perms")
+
+    @_builtins.property
+    @pulumi.getter(name="canShareApp")
+    def can_share_app(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if the active user can change sharing to app level. Defaults to true.
+        """
+        return pulumi.get(self, "can_share_app")
+
+    @_builtins.property
+    @pulumi.getter(name="canShareGlobal")
+    def can_share_global(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if the active user can change sharing to system level. Defaults to true.
+        """
+        return pulumi.get(self, "can_share_global")
+
+    @_builtins.property
+    @pulumi.getter(name="canShareUser")
+    def can_share_user(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if the active user can change sharing to user level. Defaults to true.
+        """
+        return pulumi.get(self, "can_share_user")
+
+    @_builtins.property
+    @pulumi.getter(name="canWrite")
+    def can_write(self) -> Optional[_builtins.bool]:
+        """
+        Indicates if the active user can edit this object. Defaults to true.
+        """
+        return pulumi.get(self, "can_write")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> Optional[_builtins.str]:
+        """
+        User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter
+    def reads(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Properties that indicate resource read permissions.
+        """
+        return pulumi.get(self, "reads")
+
+    @_builtins.property
+    @pulumi.getter
+    def removable(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether an admin or user with sufficient permissions can delete the entity.
+        """
+        return pulumi.get(self, "removable")
+
+    @_builtins.property
+    @pulumi.getter
+    def sharing(self) -> Optional[_builtins.str]:
+        """
+        Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+        """
+        return pulumi.get(self, "sharing")
+
+    @_builtins.property
+    @pulumi.getter
+    def writes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Properties that indicate resource write permissions.
+        """
+        return pulumi.get(self, "writes")
+
+
+@pulumi.output_type
+class SavedEventTypesAcl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "canChangePerms":
+            suggest = "can_change_perms"
+        elif key == "canShareApp":
+            suggest = "can_share_app"
+        elif key == "canShareGlobal":
+            suggest = "can_share_global"
+        elif key == "canShareUser":
+            suggest = "can_share_user"
+        elif key == "canWrite":
+            suggest = "can_write"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SavedEventTypesAcl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SavedEventTypesAcl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SavedEventTypesAcl.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,

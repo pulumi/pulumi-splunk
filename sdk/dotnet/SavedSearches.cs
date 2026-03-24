@@ -192,34 +192,34 @@ namespace Pulumi.Splunk
         public Output<string> ActionEmailHostname { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to include a link to the results. Defaults to 0.
+        /// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         /// </summary>
         [Output("actionEmailIncludeResultsLink")]
-        public Output<int> ActionEmailIncludeResultsLink { get; private set; } = null!;
+        public Output<int?> ActionEmailIncludeResultsLink { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        /// Specify whether to include the search that caused an email to be sent. [1|0]
         /// </summary>
         [Output("actionEmailIncludeSearch")]
         public Output<int> ActionEmailIncludeSearch { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        /// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         /// </summary>
         [Output("actionEmailIncludeTrigger")]
         public Output<int> ActionEmailIncludeTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to show the time that the alert was fired. Defaults to 0.
+        /// Specify whether to show the time that the alert was fired. [1|0]
         /// </summary>
         [Output("actionEmailIncludeTriggerTime")]
         public Output<int> ActionEmailIncludeTriggerTime { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        /// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         /// </summary>
         [Output("actionEmailIncludeViewLink")]
-        public Output<int> ActionEmailIncludeViewLink { get; private set; } = null!;
+        public Output<int?> ActionEmailIncludeViewLink { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
@@ -1384,31 +1384,31 @@ namespace Pulumi.Splunk
         public Input<string>? ActionEmailHostname { get; set; }
 
         /// <summary>
-        /// Specify whether to include a link to the results. Defaults to 0.
+        /// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         /// </summary>
         [Input("actionEmailIncludeResultsLink")]
         public Input<int>? ActionEmailIncludeResultsLink { get; set; }
 
         /// <summary>
-        /// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        /// Specify whether to include the search that caused an email to be sent. [1|0]
         /// </summary>
         [Input("actionEmailIncludeSearch")]
         public Input<int>? ActionEmailIncludeSearch { get; set; }
 
         /// <summary>
-        /// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        /// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         /// </summary>
         [Input("actionEmailIncludeTrigger")]
         public Input<int>? ActionEmailIncludeTrigger { get; set; }
 
         /// <summary>
-        /// Specify whether to show the time that the alert was fired. Defaults to 0.
+        /// Specify whether to show the time that the alert was fired. [1|0]
         /// </summary>
         [Input("actionEmailIncludeTriggerTime")]
         public Input<int>? ActionEmailIncludeTriggerTime { get; set; }
 
         /// <summary>
-        /// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        /// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         /// </summary>
         [Input("actionEmailIncludeViewLink")]
         public Input<int>? ActionEmailIncludeViewLink { get; set; }
@@ -2520,31 +2520,31 @@ namespace Pulumi.Splunk
         public Input<string>? ActionEmailHostname { get; set; }
 
         /// <summary>
-        /// Specify whether to include a link to the results. Defaults to 0.
+        /// Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         /// </summary>
         [Input("actionEmailIncludeResultsLink")]
         public Input<int>? ActionEmailIncludeResultsLink { get; set; }
 
         /// <summary>
-        /// Specify whether to include the search that caused an email to be sent. Defaults to 0.
+        /// Specify whether to include the search that caused an email to be sent. [1|0]
         /// </summary>
         [Input("actionEmailIncludeSearch")]
         public Input<int>? ActionEmailIncludeSearch { get; set; }
 
         /// <summary>
-        /// Specify whether to show the trigger condition that caused the alert to fire. Defaults to 0.
+        /// Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         /// </summary>
         [Input("actionEmailIncludeTrigger")]
         public Input<int>? ActionEmailIncludeTrigger { get; set; }
 
         /// <summary>
-        /// Specify whether to show the time that the alert was fired. Defaults to 0.
+        /// Specify whether to show the time that the alert was fired. [1|0]
         /// </summary>
         [Input("actionEmailIncludeTriggerTime")]
         public Input<int>? ActionEmailIncludeTriggerTime { get; set; }
 
         /// <summary>
-        /// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 0.
+        /// Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         /// </summary>
         [Input("actionEmailIncludeViewLink")]
         public Input<int>? ActionEmailIncludeViewLink { get; set; }

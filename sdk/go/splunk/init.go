@@ -67,6 +67,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OutputsTcpServer{}
 	case "splunk:index/outputsTcpSyslog:OutputsTcpSyslog":
 		r = &OutputsTcpSyslog{}
+	case "splunk:index/savedEventTypes:SavedEventTypes":
+		r = &SavedEventTypes{}
 	case "splunk:index/savedSearches:SavedSearches":
 		r = &SavedSearches{}
 	case "splunk:index/shIndexesManager:ShIndexesManager":
@@ -215,6 +217,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"splunk",
 		"index/outputsTcpSyslog",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"splunk",
+		"index/savedEventTypes",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

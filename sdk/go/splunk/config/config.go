@@ -11,6 +11,11 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+// For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+func GetAclGetMode(ctx *pulumi.Context) string {
+	return config.Get(ctx, "splunk:aclGetMode")
+}
+
 // Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
 func GetAuthToken(ctx *pulumi.Context) string {
 	return config.Get(ctx, "splunk:authToken")

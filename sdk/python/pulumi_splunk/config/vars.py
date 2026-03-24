@@ -21,6 +21,13 @@ __config__ = pulumi.Config('splunk')
 
 class _ExportableConfig(types.ModuleType):
     @_builtins.property
+    def acl_get_mode(self) -> Optional[str]:
+        """
+        For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
+        """
+        return __config__.get('aclGetMode')
+
+    @_builtins.property
     def auth_token(self) -> Optional[str]:
         """
         Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform

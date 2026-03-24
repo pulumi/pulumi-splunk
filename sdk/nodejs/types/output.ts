@@ -804,6 +804,53 @@ export interface OutputsTcpSyslogAcl {
     writes: string[];
 }
 
+export interface SavedEventTypesAcl {
+    /**
+     * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system
+     */
+    app: string;
+    /**
+     * Indicates if the active user can change permissions for this object. Defaults to true.
+     */
+    canChangePerms: boolean;
+    /**
+     * Indicates if the active user can change sharing to app level. Defaults to true.
+     */
+    canShareApp: boolean;
+    /**
+     * Indicates if the active user can change sharing to system level. Defaults to true.
+     */
+    canShareGlobal: boolean;
+    /**
+     * Indicates if the active user can change sharing to user level. Defaults to true.
+     */
+    canShareUser: boolean;
+    /**
+     * Indicates if the active user can edit this object. Defaults to true.
+     */
+    canWrite: boolean;
+    /**
+     * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties.nobody = All users may access the resource, but write access to the resource might be restricted.
+     */
+    owner: string;
+    /**
+     * Properties that indicate resource read permissions.
+     */
+    reads: string[];
+    /**
+     * Indicates whether an admin or user with sufficient permissions can delete the entity.
+     */
+    removable: boolean;
+    /**
+     * Indicates how the resource is shared. Required for updating any knowledge object ACL properties.app: Shared within a specific appglobal: (Default) Shared globally to all apps.user: Private to a user
+     */
+    sharing: string;
+    /**
+     * Properties that indicate resource write permissions.
+     */
+    writes: string[];
+}
+
 export interface SavedSearchesAcl {
     /**
      * The app context for the resource. Required for updating saved search ACL properties. Allowed values are:The name of an app and system

@@ -18,6 +18,8 @@ namespace Pulumi.Splunk
     /// Note: This resource doesn't actually create any remote resources, because ACLs can only exist (and always exist) for
     /// knowledge objects. They can, however, be managed separately.
     /// 
+    /// On **Splunk Cloud**, if ACL reads fail with missing `Owner`/`Sharing`, set the provider argument `AclGetMode = "cloud"` (or env `SPLUNK_ACL_GET_MODE=cloud`). The default `Enterprise` omits those query parameters on GET, which matches Splunk Enterprise.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
