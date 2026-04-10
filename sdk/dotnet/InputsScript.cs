@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var script = new Splunk.InputsScript("script", new()
+    ///     var script = new Splunk.Index.InputsScript("script", new()
     ///     {
     ///         Name = "opt/splunk/bin/scripts/readme.txt",
     ///         Interval = 360,

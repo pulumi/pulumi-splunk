@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var role01 = new Splunk.AuthorizationRoles("role01", new()
+    ///     var role01 = new Splunk.Index.AuthorizationRoles("role01", new()
     ///     {
     ///         Name = "terraform-user01-role",
     ///         DefaultApp = "search",

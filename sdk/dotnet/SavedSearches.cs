@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var savedSearch = new Splunk.SavedSearches("saved_search", new()
+    ///     var savedSearch = new Splunk.Index.SavedSearches("saved_search", new()
     ///     {
     ///         Name = "Test New Alert",
     ///         Search = "index=main",

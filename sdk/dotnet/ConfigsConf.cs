@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var new_conf_stanza = new Splunk.ConfigsConf("new-conf-stanza", new()
+    ///     var new_conf_stanza = new Splunk.Index.ConfigsConf("new-conf-stanza", new()
     ///     {
     ///         Name = "custom-conf/custom",
     ///         Variables = 

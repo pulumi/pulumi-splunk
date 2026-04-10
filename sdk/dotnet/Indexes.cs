@@ -29,7 +29,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var user01_index = new Splunk.Indexes("user01-index", new()
+    ///     var user01_index = new Splunk.Index.Indexes("user01-index", new()
     ///     {
     ///         Name = "user01-index",
     ///         MaxHotBuckets = 6,
