@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Splunk.SavedEventTypes("test", new()
+    ///     var test = new Splunk.Index.SavedEventTypes("test", new()
     ///     {
     ///         Name = "test",
     ///         Description = "Test New event description",

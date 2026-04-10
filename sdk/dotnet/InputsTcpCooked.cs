@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpCooked = new Splunk.InputsTcpCooked("tcp_cooked", new()
+    ///     var tcpCooked = new Splunk.Index.InputsTcpCooked("tcp_cooked", new()
     ///     {
     ///         Name = "50000",
     ///         Disabled = false,

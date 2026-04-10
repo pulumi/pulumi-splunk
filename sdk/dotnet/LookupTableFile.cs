@@ -28,7 +28,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var lookupTableFile = new Splunk.LookupTableFile("lookup_table_file", new()
+    ///     var lookupTableFile = new Splunk.Index.LookupTableFile("lookup_table_file", new()
     ///     {
     ///         App = "search",
     ///         Owner = "nobody",

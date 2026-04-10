@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var hec_token_01 = new Splunk.InputsHttpEventCollector("hec-token-01", new()
+    ///     var hec_token_01 = new Splunk.Index.InputsHttpEventCollector("hec-token-01", new()
     ///     {
     ///         Name = "hec-token-01",
     ///         Index = "main",

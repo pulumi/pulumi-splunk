@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var udp = new Splunk.InputsUdp("udp", new()
+    ///     var udp = new Splunk.Index.InputsUdp("udp", new()
     ///     {
     ///         Name = "41000",
     ///         Index = "main",

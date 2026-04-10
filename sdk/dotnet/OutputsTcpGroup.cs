@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpGroup = new Splunk.OutputsTcpGroup("tcp_group", new()
+    ///     var tcpGroup = new Splunk.Index.OutputsTcpGroup("tcp_group", new()
     ///     {
     ///         Name = "tcp-group",
     ///         Disabled = false,

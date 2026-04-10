@@ -28,7 +28,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tf_index = new Splunk.ShIndexesManager("tf-index", new()
+    ///     var tf_index = new Splunk.Index.ShIndexesManager("tf-index", new()
     ///     {
     ///         Name = "tf-test-index-0",
     ///         Datatype = "event",

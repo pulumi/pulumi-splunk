@@ -26,7 +26,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Splunk.LookupDefinition("example", new()
+    ///     var example = new Splunk.Index.LookupDefinition("example", new()
     ///     {
     ///         Name = "example_lookup_definition",
     ///         Filename = "example_lookup_file.csv",
