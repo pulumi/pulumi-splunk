@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var http = new Splunk.Index.GlobalHttpEventCollector("http", new()
+    ///     var http = new Splunk.GlobalHttpEventCollector("http", new()
     ///     {
     ///         Disabled = false,
     ///         EnableSsl = true,
