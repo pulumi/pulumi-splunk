@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpSyslog = new Splunk.Index.OutputsTcpSyslog("tcp_syslog", new()
+    ///     var tcpSyslog = new Splunk.OutputsTcpSyslog("tcp_syslog", new()
     ///     {
     ///         Name = "new-syslog",
     ///         Server = "new-host-1:1234",

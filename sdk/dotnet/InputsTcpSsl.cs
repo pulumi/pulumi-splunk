@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Splunk.Index.InputsTcpSsl("test", new()
+    ///     var test = new Splunk.InputsTcpSsl("test", new()
     ///     {
     ///         Disabled = false,
     ///         RequireClientCert = true,

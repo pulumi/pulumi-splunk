@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var monitor = new Splunk.Index.InputsMonitor("monitor", new()
+    ///     var monitor = new Splunk.InputsMonitor("monitor", new()
     ///     {
     ///         Name = "opt/splunk/var/log/splunk/health.log",
     ///         Recursive = true,

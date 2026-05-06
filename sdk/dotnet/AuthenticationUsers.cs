@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var user01 = new Splunk.Index.AuthenticationUsers("user01", new()
+    ///     var user01 = new Splunk.AuthenticationUsers("user01", new()
     ///     {
     ///         Name = "user01",
     ///         Email = "user01@example.com",
