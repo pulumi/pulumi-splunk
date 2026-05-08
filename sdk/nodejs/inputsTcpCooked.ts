@@ -123,7 +123,7 @@ export interface InputsTcpCookedState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsTcpCookedAcl>;
+    acl?: pulumi.Input<inputs.InputsTcpCookedAcl | undefined>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -132,23 +132,23 @@ export interface InputsTcpCookedState {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    connectionHost?: pulumi.Input<string>;
+    connectionHost?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Host from which the indexer gets data.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * The port number of this input.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Restrict incoming connections on this port to the host specified here.
      */
-    restrictToHost?: pulumi.Input<string>;
+    restrictToHost?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -158,7 +158,7 @@ export interface InputsTcpCookedArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsTcpCookedAcl>;
+    acl?: pulumi.Input<inputs.InputsTcpCookedAcl | undefined>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -167,21 +167,21 @@ export interface InputsTcpCookedArgs {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    connectionHost?: pulumi.Input<string>;
+    connectionHost?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Host from which the indexer gets data.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * The port number of this input.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Restrict incoming connections on this port to the host specified here.
      */
-    restrictToHost?: pulumi.Input<string>;
+    restrictToHost?: pulumi.Input<string | undefined>;
 }

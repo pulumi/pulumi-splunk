@@ -21,17 +21,17 @@ __all__ = ['OutputsTcpServerArgs', 'OutputsTcpServer']
 @pulumi.input_type
 class OutputsTcpServerArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['OutputsTcpServerAclArgs']] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 method: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_alt_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cipher: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_common_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_root_ca_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acl: pulumi.Input[Optional['OutputsTcpServerAclArgs']] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 method: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_alt_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cipher: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_common_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_root_ca_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_verify_server_cert: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a OutputsTcpServer resource.
 
@@ -75,31 +75,31 @@ class OutputsTcpServerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['OutputsTcpServerAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['OutputsTcpServerAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['OutputsTcpServerAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['OutputsTcpServerAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, disables the group.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (clone | balance | autobalance)
         The data distribution method used when two or more servers exist in the same forwarder group.
@@ -107,60 +107,60 @@ class OutputsTcpServerArgs:
         return pulumi.get(self, "method")
 
     @method.setter
-    def method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "method", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         <host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sslAltNameToCheck")
-    def ssl_alt_name_to_check(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_alt_name_to_check(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The alternate name to match in the remote server's SSL certificate.
         """
         return pulumi.get(self, "ssl_alt_name_to_check")
 
     @ssl_alt_name_to_check.setter
-    def ssl_alt_name_to_check(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_alt_name_to_check(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_alt_name_to_check", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCertPath")
-    def ssl_cert_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cert_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the client certificate. If specified, connection uses SSL.
         """
         return pulumi.get(self, "ssl_cert_path")
 
     @ssl_cert_path.setter
-    def ssl_cert_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cert_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cert_path", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCipher")
-    def ssl_cipher(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cipher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
         """
         return pulumi.get(self, "ssl_cipher")
 
     @ssl_cipher.setter
-    def ssl_cipher(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cipher(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cipher", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCommonNameToCheck")
-    def ssl_common_name_to_check(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_common_name_to_check(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Check the common name of the server's certificate against this name.
         If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
@@ -168,12 +168,12 @@ class OutputsTcpServerArgs:
         return pulumi.get(self, "ssl_common_name_to_check")
 
     @ssl_common_name_to_check.setter
-    def ssl_common_name_to_check(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_common_name_to_check(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_common_name_to_check", value)
 
     @_builtins.property
     @pulumi.getter(name="sslPassword")
-    def ssl_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password associated with the CAcert.
         The default Splunk Enterprise CAcert uses the password "password."
@@ -181,48 +181,48 @@ class OutputsTcpServerArgs:
         return pulumi.get(self, "ssl_password")
 
     @ssl_password.setter
-    def ssl_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_password", value)
 
     @_builtins.property
     @pulumi.getter(name="sslRootCaPath")
-    def ssl_root_ca_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_root_ca_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The path to the root certificate authority file.
         """
         return pulumi.get(self, "ssl_root_ca_path")
 
     @ssl_root_ca_path.setter
-    def ssl_root_ca_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_root_ca_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_root_ca_path", value)
 
     @_builtins.property
     @pulumi.getter(name="sslVerifyServerCert")
-    def ssl_verify_server_cert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ssl_verify_server_cert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
         """
         return pulumi.get(self, "ssl_verify_server_cert")
 
     @ssl_verify_server_cert.setter
-    def ssl_verify_server_cert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ssl_verify_server_cert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ssl_verify_server_cert", value)
 
 
 @pulumi.input_type
 class _OutputsTcpServerState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['OutputsTcpServerAclArgs']] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 method: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_alt_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cipher: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_common_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_root_ca_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acl: pulumi.Input[Optional['OutputsTcpServerAclArgs']] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 method: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_alt_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cipher: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_common_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_root_ca_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_verify_server_cert: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpServer resources.
 
@@ -266,31 +266,31 @@ class _OutputsTcpServerState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['OutputsTcpServerAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['OutputsTcpServerAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['OutputsTcpServerAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['OutputsTcpServerAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, disables the group.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (clone | balance | autobalance)
         The data distribution method used when two or more servers exist in the same forwarder group.
@@ -298,60 +298,60 @@ class _OutputsTcpServerState:
         return pulumi.get(self, "method")
 
     @method.setter
-    def method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "method", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         <host>:<port> of the Splunk receiver. <host> can be either an ip address or server name. <port> is the that port that the Splunk receiver is listening on.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sslAltNameToCheck")
-    def ssl_alt_name_to_check(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_alt_name_to_check(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The alternate name to match in the remote server's SSL certificate.
         """
         return pulumi.get(self, "ssl_alt_name_to_check")
 
     @ssl_alt_name_to_check.setter
-    def ssl_alt_name_to_check(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_alt_name_to_check(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_alt_name_to_check", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCertPath")
-    def ssl_cert_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cert_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the client certificate. If specified, connection uses SSL.
         """
         return pulumi.get(self, "ssl_cert_path")
 
     @ssl_cert_path.setter
-    def ssl_cert_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cert_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cert_path", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCipher")
-    def ssl_cipher(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_cipher(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SSL Cipher in the form ALL:!aNULL:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
         """
         return pulumi.get(self, "ssl_cipher")
 
     @ssl_cipher.setter
-    def ssl_cipher(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_cipher(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_cipher", value)
 
     @_builtins.property
     @pulumi.getter(name="sslCommonNameToCheck")
-    def ssl_common_name_to_check(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_common_name_to_check(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Check the common name of the server's certificate against this name.
         If there is no match, assume that Splunk Enterprise is not authenticated against this server. You must specify this setting if sslVerifyServerCert is true.
@@ -359,12 +359,12 @@ class _OutputsTcpServerState:
         return pulumi.get(self, "ssl_common_name_to_check")
 
     @ssl_common_name_to_check.setter
-    def ssl_common_name_to_check(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_common_name_to_check(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_common_name_to_check", value)
 
     @_builtins.property
     @pulumi.getter(name="sslPassword")
-    def ssl_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password associated with the CAcert.
         The default Splunk Enterprise CAcert uses the password "password."
@@ -372,31 +372,31 @@ class _OutputsTcpServerState:
         return pulumi.get(self, "ssl_password")
 
     @ssl_password.setter
-    def ssl_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_password", value)
 
     @_builtins.property
     @pulumi.getter(name="sslRootCaPath")
-    def ssl_root_ca_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_root_ca_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The path to the root certificate authority file.
         """
         return pulumi.get(self, "ssl_root_ca_path")
 
     @ssl_root_ca_path.setter
-    def ssl_root_ca_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_root_ca_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_root_ca_path", value)
 
     @_builtins.property
     @pulumi.getter(name="sslVerifyServerCert")
-    def ssl_verify_server_cert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ssl_verify_server_cert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, make sure that the server you are connecting to is a valid one (authenticated). Both the common name and the alternate name of the server are then checked for a match.
         """
         return pulumi.get(self, "ssl_verify_server_cert")
 
     @ssl_verify_server_cert.setter
-    def ssl_verify_server_cert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ssl_verify_server_cert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ssl_verify_server_cert", value)
 
 
@@ -406,17 +406,17 @@ class OutputsTcpServer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 method: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_alt_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cipher: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_common_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_root_ca_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 method: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_alt_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cipher: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_common_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_root_ca_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_verify_server_cert: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         ## # Resource: OutputsTcpServer
@@ -490,17 +490,17 @@ class OutputsTcpServer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 method: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_alt_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cert_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_cipher: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_common_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_root_ca_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 method: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_alt_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cert_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_cipher: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_common_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_root_ca_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_verify_server_cert: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -533,17 +533,17 @@ class OutputsTcpServer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            method: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_alt_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_cert_path: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_cipher: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_common_name_to_check: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_password: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_root_ca_path: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_verify_server_cert: Optional[pulumi.Input[_builtins.bool]] = None) -> 'OutputsTcpServer':
+            acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            method: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_alt_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cert_path: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cipher: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_common_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_root_ca_path: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_verify_server_cert: pulumi.Input[Optional[_builtins.bool]] = None) -> 'OutputsTcpServer':
         """
         Get an existing OutputsTcpServer resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

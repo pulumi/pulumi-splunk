@@ -21,19 +21,19 @@ __all__ = ['AppsLocalArgs', 'AppsLocal']
 @pulumi.input_type
 class AppsLocalArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['AppsLocalAclArgs']] = None,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 author: Optional[pulumi.Input[_builtins.str]] = None,
-                 configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 explicit_appname: Optional[pulumi.Input[_builtins.str]] = None,
-                 filename: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session: Optional[pulumi.Input[_builtins.str]] = None,
-                 update: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 visible: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acl: pulumi.Input[Optional['AppsLocalAclArgs']] = None,
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 author: pulumi.Input[Optional[_builtins.str]] = None,
+                 configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 explicit_appname: pulumi.Input[Optional[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session: pulumi.Input[Optional[_builtins.str]] = None,
+                 update: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 visible: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AppsLocal resource.
 
@@ -91,43 +91,43 @@ class AppsLocalArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['AppsLocalAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['AppsLocalAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['AppsLocalAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['AppsLocalAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def auth(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         """
         return pulumi.get(self, "auth")
 
     @auth.setter
-    def auth(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth", value)
 
     @_builtins.property
     @pulumi.getter
-    def author(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def author(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
         """
         return pulumi.get(self, "author")
 
     @author.setter
-    def author(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def author(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "author", value)
 
     @_builtins.property
     @pulumi.getter
-    def configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Custom setup complete indication:
         <br>true = Custom app setup complete.
@@ -136,36 +136,36 @@ class AppsLocalArgs:
         return pulumi.get(self, "configured")
 
     @configured.setter
-    def configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "configured", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Short app description also displayed below the app title in Splunk Web Launcher.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="explicitAppname")
-    def explicit_appname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def explicit_appname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
         """
         return pulumi.get(self, "explicit_appname")
 
     @explicit_appname.setter
-    def explicit_appname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def explicit_appname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "explicit_appname", value)
 
     @_builtins.property
     @pulumi.getter
-    def filename(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def filename(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to use the name value as the app source location.
         <br>true indicates that name is a path to a file to install.
@@ -174,24 +174,24 @@ class AppsLocalArgs:
         return pulumi.get(self, "filename")
 
     @filename.setter
-    def filename(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def filename(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "filename", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         App name displayed in Splunk Web, from five to eighty characters excluding the prefix "Splunk for".
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Literal app name or path for the file to install, depending on the value of filename.
         <br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
@@ -201,24 +201,24 @@ class AppsLocalArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def session(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
         """
         return pulumi.get(self, "session")
 
     @session.setter
-    def session(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session", value)
 
     @_builtins.property
     @pulumi.getter
-    def update(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def update(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         File-based update indication:
         <br>true specifies that filename should be used to update an existing app. If not specified, update defaults to
@@ -227,24 +227,24 @@ class AppsLocalArgs:
         return pulumi.get(self, "update")
 
     @update.setter
-    def update(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def update(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "update", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         App version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
-    def visible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def visible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the app is visible and navigable from Splunk Web.
         <br>true = App is visible and navigable.
@@ -253,26 +253,26 @@ class AppsLocalArgs:
         return pulumi.get(self, "visible")
 
     @visible.setter
-    def visible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def visible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "visible", value)
 
 
 @pulumi.input_type
 class _AppsLocalState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['AppsLocalAclArgs']] = None,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 author: Optional[pulumi.Input[_builtins.str]] = None,
-                 configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 explicit_appname: Optional[pulumi.Input[_builtins.str]] = None,
-                 filename: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session: Optional[pulumi.Input[_builtins.str]] = None,
-                 update: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 visible: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acl: pulumi.Input[Optional['AppsLocalAclArgs']] = None,
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 author: pulumi.Input[Optional[_builtins.str]] = None,
+                 configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 explicit_appname: pulumi.Input[Optional[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session: pulumi.Input[Optional[_builtins.str]] = None,
+                 update: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 visible: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AppsLocal resources.
 
@@ -330,43 +330,43 @@ class _AppsLocalState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['AppsLocalAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['AppsLocalAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['AppsLocalAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['AppsLocalAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def auth(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         """
         return pulumi.get(self, "auth")
 
     @auth.setter
-    def auth(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth", value)
 
     @_builtins.property
     @pulumi.getter
-    def author(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def author(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
         """
         return pulumi.get(self, "author")
 
     @author.setter
-    def author(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def author(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "author", value)
 
     @_builtins.property
     @pulumi.getter
-    def configured(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def configured(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Custom setup complete indication:
         <br>true = Custom app setup complete.
@@ -375,36 +375,36 @@ class _AppsLocalState:
         return pulumi.get(self, "configured")
 
     @configured.setter
-    def configured(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def configured(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "configured", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Short app description also displayed below the app title in Splunk Web Launcher.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="explicitAppname")
-    def explicit_appname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def explicit_appname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Custom app name. Overrides name when installing an app from a file where filename is set to true. See also filename.
         """
         return pulumi.get(self, "explicit_appname")
 
     @explicit_appname.setter
-    def explicit_appname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def explicit_appname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "explicit_appname", value)
 
     @_builtins.property
     @pulumi.getter
-    def filename(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def filename(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to use the name value as the app source location.
         <br>true indicates that name is a path to a file to install.
@@ -413,24 +413,24 @@ class _AppsLocalState:
         return pulumi.get(self, "filename")
 
     @filename.setter
-    def filename(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def filename(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "filename", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         App name displayed in Splunk Web, from five to eighty characters excluding the prefix "Splunk for".
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Literal app name or path for the file to install, depending on the value of filename.
         <br>filename = false indicates that name is the literal app name and that the app is created from Splunkbase using a template.
@@ -440,24 +440,24 @@ class _AppsLocalState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def session(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
         """
         return pulumi.get(self, "session")
 
     @session.setter
-    def session(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session", value)
 
     @_builtins.property
     @pulumi.getter
-    def update(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def update(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         File-based update indication:
         <br>true specifies that filename should be used to update an existing app. If not specified, update defaults to
@@ -466,24 +466,24 @@ class _AppsLocalState:
         return pulumi.get(self, "update")
 
     @update.setter
-    def update(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def update(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "update", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         App version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter
-    def visible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def visible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the app is visible and navigable from Splunk Web.
         <br>true = App is visible and navigable.
@@ -492,7 +492,7 @@ class _AppsLocalState:
         return pulumi.get(self, "visible")
 
     @visible.setter
-    def visible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def visible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "visible", value)
 
 
@@ -502,19 +502,19 @@ class AppsLocal(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 author: Optional[pulumi.Input[_builtins.str]] = None,
-                 configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 explicit_appname: Optional[pulumi.Input[_builtins.str]] = None,
-                 filename: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session: Optional[pulumi.Input[_builtins.str]] = None,
-                 update: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 visible: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 author: pulumi.Input[Optional[_builtins.str]] = None,
+                 configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 explicit_appname: pulumi.Input[Optional[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session: pulumi.Input[Optional[_builtins.str]] = None,
+                 update: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 visible: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         ## # Resource: AppsLocal
@@ -600,19 +600,19 @@ class AppsLocal(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
-                 auth: Optional[pulumi.Input[_builtins.str]] = None,
-                 author: Optional[pulumi.Input[_builtins.str]] = None,
-                 configured: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 explicit_appname: Optional[pulumi.Input[_builtins.str]] = None,
-                 filename: Optional[pulumi.Input[_builtins.bool]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 session: Optional[pulumi.Input[_builtins.str]] = None,
-                 update: Optional[pulumi.Input[_builtins.bool]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 visible: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
+                 auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 author: pulumi.Input[Optional[_builtins.str]] = None,
+                 configured: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 explicit_appname: pulumi.Input[Optional[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.bool]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 session: pulumi.Input[Optional[_builtins.str]] = None,
+                 update: pulumi.Input[Optional[_builtins.bool]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 visible: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -645,19 +645,19 @@ class AppsLocal(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
-            auth: Optional[pulumi.Input[_builtins.str]] = None,
-            author: Optional[pulumi.Input[_builtins.str]] = None,
-            configured: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            explicit_appname: Optional[pulumi.Input[_builtins.str]] = None,
-            filename: Optional[pulumi.Input[_builtins.bool]] = None,
-            label: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            session: Optional[pulumi.Input[_builtins.str]] = None,
-            update: Optional[pulumi.Input[_builtins.bool]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            visible: Optional[pulumi.Input[_builtins.bool]] = None) -> 'AppsLocal':
+            acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
+            auth: pulumi.Input[Optional[_builtins.str]] = None,
+            author: pulumi.Input[Optional[_builtins.str]] = None,
+            configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            explicit_appname: pulumi.Input[Optional[_builtins.str]] = None,
+            filename: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            session: pulumi.Input[Optional[_builtins.str]] = None,
+            update: pulumi.Input[Optional[_builtins.bool]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            visible: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AppsLocal':
         """
         Get an existing AppsLocal resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

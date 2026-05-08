@@ -112,48 +112,48 @@ export class ShIndexesManager extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ShIndexesManager resources.
  */
 export interface ShIndexesManagerState {
-    acl?: pulumi.Input<inputs.ShIndexesManagerAcl>;
+    acl?: pulumi.Input<inputs.ShIndexesManagerAcl | undefined>;
     /**
      * Valid values: (event | metric). Specifies the type of index.
      */
-    datatype?: pulumi.Input<string>;
+    datatype?: pulumi.Input<string | undefined>;
     /**
      * Number of seconds after which indexed data rolls to frozen.
      * Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      */
-    frozenTimePeriodInSecs?: pulumi.Input<string>;
+    frozenTimePeriodInSecs?: pulumi.Input<string | undefined>;
     /**
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      * Defaults to 100 MB.
      */
-    maxGlobalRawDataSizeMb?: pulumi.Input<string>;
+    maxGlobalRawDataSizeMb?: pulumi.Input<string | undefined>;
     /**
      * The name of the index to create.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ShIndexesManager resource.
  */
 export interface ShIndexesManagerArgs {
-    acl?: pulumi.Input<inputs.ShIndexesManagerAcl>;
+    acl?: pulumi.Input<inputs.ShIndexesManagerAcl | undefined>;
     /**
      * Valid values: (event | metric). Specifies the type of index.
      */
-    datatype?: pulumi.Input<string>;
+    datatype?: pulumi.Input<string | undefined>;
     /**
      * Number of seconds after which indexed data rolls to frozen.
      * Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
      */
-    frozenTimePeriodInSecs?: pulumi.Input<string>;
+    frozenTimePeriodInSecs?: pulumi.Input<string | undefined>;
     /**
      * The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
      * Defaults to 100 MB.
      */
-    maxGlobalRawDataSizeMb?: pulumi.Input<string>;
+    maxGlobalRawDataSizeMb?: pulumi.Input<string | undefined>;
     /**
      * The name of the index to create.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

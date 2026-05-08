@@ -105,15 +105,15 @@ export interface ConfigsConfState {
      *
      * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
      */
-    acl?: pulumi.Input<inputs.ConfigsConfAcl>;
+    acl?: pulumi.Input<inputs.ConfigsConfAcl | undefined>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A map of key value pairs for a stanza.
      */
-    variables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    variables?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**
@@ -125,13 +125,13 @@ export interface ConfigsConfArgs {
      *
      * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
      */
-    acl?: pulumi.Input<inputs.ConfigsConfAcl>;
+    acl?: pulumi.Input<inputs.ConfigsConfAcl | undefined>;
     /**
      * A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A map of key value pairs for a stanza.
      */
-    variables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    variables?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

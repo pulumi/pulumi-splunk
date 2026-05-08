@@ -23,12 +23,12 @@ class SavedEventTypesArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
                  search: pulumi.Input[_builtins.str],
-                 acl: Optional[pulumi.Input['SavedEventTypesAclArgs']] = None,
-                 color: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 acl: pulumi.Input[Optional['SavedEventTypesAclArgs']] = None,
+                 color: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a SavedEventTypes resource.
 
@@ -82,88 +82,88 @@ class SavedEventTypesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['SavedEventTypesAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['SavedEventTypesAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['SavedEventTypesAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['SavedEventTypesAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def color(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def color(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.
         """
         return pulumi.get(self, "color")
 
     @color.setter
-    def color(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def color(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "color", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human-readable description of this event type.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If True, disables the event type.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         [Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _SavedEventTypesState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['SavedEventTypesAclArgs']] = None,
-                 color: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 search: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 acl: pulumi.Input[Optional['SavedEventTypesAclArgs']] = None,
+                 color: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 search: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering SavedEventTypes resources.
 
@@ -195,98 +195,98 @@ class _SavedEventTypesState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['SavedEventTypesAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['SavedEventTypesAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['SavedEventTypesAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['SavedEventTypesAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def color(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def color(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.
         """
         return pulumi.get(self, "color")
 
     @color.setter
-    def color(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def color(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "color", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human-readable description of this event type.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If True, disables the event type.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A name for the event type.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def search(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def search(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Event type search string.
         """
         return pulumi.get(self, "search")
 
     @search.setter
-    def search(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def search(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "search", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         [Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "tags", value)
 
 
@@ -296,14 +296,14 @@ class SavedEventTypes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
-                 color: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 search: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
+                 color: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 search: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         ## # Resource: SavedEventTypes
@@ -391,14 +391,14 @@ class SavedEventTypes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
-                 color: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 search: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
+                 color: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 search: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -430,14 +430,14 @@ class SavedEventTypes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
-            color: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            search: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SavedEventTypes':
+            acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
+            color: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            search: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'SavedEventTypes':
         """
         Get an existing SavedEventTypes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -19,11 +19,11 @@ __all__ = ['InputsTcpSslArgs', 'InputsTcpSsl']
 @pulumi.input_type
 class InputsTcpSslArgs:
     def __init__(__self__, *,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 require_client_cert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_cert: Optional[pulumi.Input[_builtins.str]] = None):
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 require_client_cert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_cert: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpSsl resource.
 
@@ -46,73 +46,73 @@ class InputsTcpSslArgs:
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Server certificate password, if any.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="requireClientCert")
-    def require_client_cert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def require_client_cert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines whether a client must authenticate.
         """
         return pulumi.get(self, "require_client_cert")
 
     @require_client_cert.setter
-    def require_client_cert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def require_client_cert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "require_client_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="rootCa")
-    def root_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Certificate authority list (root file)
         """
         return pulumi.get(self, "root_ca")
 
     @root_ca.setter
-    def root_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="serverCert")
-    def server_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Full path to the server certificate.
         """
         return pulumi.get(self, "server_cert")
 
     @server_cert.setter
-    def server_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_cert", value)
 
 
 @pulumi.input_type
 class _InputsTcpSslState:
     def __init__(__self__, *,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 require_client_cert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_cert: Optional[pulumi.Input[_builtins.str]] = None):
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 require_client_cert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_cert: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpSsl resources.
 
@@ -135,62 +135,62 @@ class _InputsTcpSslState:
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Server certificate password, if any.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="requireClientCert")
-    def require_client_cert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def require_client_cert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines whether a client must authenticate.
         """
         return pulumi.get(self, "require_client_cert")
 
     @require_client_cert.setter
-    def require_client_cert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def require_client_cert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "require_client_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="rootCa")
-    def root_ca(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Certificate authority list (root file)
         """
         return pulumi.get(self, "root_ca")
 
     @root_ca.setter
-    def root_ca(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="serverCert")
-    def server_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Full path to the server certificate.
         """
         return pulumi.get(self, "server_cert")
 
     @server_cert.setter
-    def server_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_cert", value)
 
 
@@ -200,11 +200,11 @@ class InputsTcpSsl(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 require_client_cert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_cert: Optional[pulumi.Input[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 require_client_cert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_cert: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsTcpSsl
@@ -269,11 +269,11 @@ class InputsTcpSsl(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 require_client_cert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_ca: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_cert: Optional[pulumi.Input[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 require_client_cert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_cert: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,11 +300,11 @@ class InputsTcpSsl(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            require_client_cert: Optional[pulumi.Input[_builtins.bool]] = None,
-            root_ca: Optional[pulumi.Input[_builtins.str]] = None,
-            server_cert: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsTcpSsl':
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            require_client_cert: pulumi.Input[Optional[_builtins.bool]] = None,
+            root_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            server_cert: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsTcpSsl':
         """
         Get an existing InputsTcpSsl resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

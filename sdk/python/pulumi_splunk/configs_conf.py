@@ -21,9 +21,9 @@ __all__ = ['ConfigsConfArgs', 'ConfigsConf']
 @pulumi.input_type
 class ConfigsConfArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 acl: pulumi.Input[Optional['ConfigsConfAclArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ConfigsConf resource.
 
@@ -42,7 +42,7 @@ class ConfigsConfArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['ConfigsConfAclArgs']]:
         """
         The app/user context that is the namespace for the resource
 
@@ -51,40 +51,40 @@ class ConfigsConfArgs:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['ConfigsConfAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['ConfigsConfAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def variables(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A map of key value pairs for a stanza.
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def variables(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "variables", value)
 
 
 @pulumi.input_type
 class _ConfigsConfState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['ConfigsConfAclArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 acl: pulumi.Input[Optional['ConfigsConfAclArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ConfigsConf resources.
 
@@ -103,7 +103,7 @@ class _ConfigsConfState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['ConfigsConfAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['ConfigsConfAclArgs']]:
         """
         The app/user context that is the namespace for the resource
 
@@ -112,31 +112,31 @@ class _ConfigsConfState:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['ConfigsConfAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['ConfigsConfAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def variables(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A map of key value pairs for a stanza.
         """
         return pulumi.get(self, "variables")
 
     @variables.setter
-    def variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def variables(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "variables", value)
 
 
@@ -146,9 +146,9 @@ class ConfigsConf(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         ## # Resource: ConfigsConf
@@ -219,9 +219,9 @@ class ConfigsConf(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -244,9 +244,9 @@ class ConfigsConf(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'ConfigsConf':
+            acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'ConfigsConf':
         """
         Get an existing ConfigsConf resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -21,45 +21,45 @@ __all__ = ['IndexesArgs', 'Indexes']
 @pulumi.input_type
 class IndexesArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['IndexesAclArgs']] = None,
-                 block_sign_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 bucket_rebuild_memory_hint: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 compress_rawdata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_online_bucket_repair: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_bloom_backfill_bucket_age: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_concurrent_optimizes: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_hot_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_idle_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_span_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_mem_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_meta_entries: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_no_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_with_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_data_size_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_warm_db_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_raw_file_sync_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_stream_group_queue_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partial_service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_tracker_service_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_future_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_past_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 raw_chunk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 rep_factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotate_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 sync_meta: Optional[pulumi.Input[_builtins.bool]] = None,
-                 thawed_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 throttle_check_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 tstats_home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['IndexesAclArgs']] = None,
+                 block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 compress_rawdata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_online_bucket_repair: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_bloom_backfill_bucket_age: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_concurrent_optimizes: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_hot_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_idle_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_span_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_mem_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_meta_entries: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_no_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_with_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_data_size_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_warm_db_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_raw_file_sync_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 min_stream_group_queue_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partial_service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_tracker_service_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_future_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_past_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 raw_chunk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 rep_factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotate_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 sync_meta: pulumi.Input[Optional[_builtins.bool]] = None,
+                 thawed_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 throttle_check_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 tstats_home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 warm_to_cold_script: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Indexes resource.
 
@@ -228,31 +228,31 @@ class IndexesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['IndexesAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['IndexesAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['IndexesAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['IndexesAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="blockSignSize")
-    def block_sign_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_sign_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
         """
         return pulumi.get(self, "block_sign_size")
 
     @block_sign_size.setter
-    def block_sign_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_sign_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_sign_size", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketRebuildMemoryHint")
-    def bucket_rebuild_memory_hint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_rebuild_memory_hint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
         <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.
@@ -265,24 +265,24 @@ class IndexesArgs:
         return pulumi.get(self, "bucket_rebuild_memory_hint")
 
     @bucket_rebuild_memory_hint.setter
-    def bucket_rebuild_memory_hint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_rebuild_memory_hint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_rebuild_memory_hint", value)
 
     @_builtins.property
     @pulumi.getter(name="coldPath")
-    def cold_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cold_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
         """
         return pulumi.get(self, "cold_path")
 
     @cold_path.setter
-    def cold_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cold_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cold_path", value)
 
     @_builtins.property
     @pulumi.getter(name="coldToFrozenDir")
-    def cold_to_frozen_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cold_to_frozen_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
         <br>
@@ -296,12 +296,12 @@ class IndexesArgs:
         return pulumi.get(self, "cold_to_frozen_dir")
 
     @cold_to_frozen_dir.setter
-    def cold_to_frozen_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cold_to_frozen_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cold_to_frozen_dir", value)
 
     @_builtins.property
     @pulumi.getter(name="coldToFrozenScript")
-    def cold_to_frozen_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cold_to_frozen_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the archiving script.
         <br>If your script requires a program to run it (for example, python), specify the program followed by the path. The script must be in $SPLUNK_HOME/bin or one of its subdirectories.
@@ -311,36 +311,36 @@ class IndexesArgs:
         return pulumi.get(self, "cold_to_frozen_script")
 
     @cold_to_frozen_script.setter
-    def cold_to_frozen_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cold_to_frozen_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cold_to_frozen_script", value)
 
     @_builtins.property
     @pulumi.getter(name="compressRawdata")
-    def compress_rawdata(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def compress_rawdata(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This parameter is ignored. The splunkd process always compresses raw data.
         """
         return pulumi.get(self, "compress_rawdata")
 
     @compress_rawdata.setter
-    def compress_rawdata(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def compress_rawdata(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "compress_rawdata", value)
 
     @_builtins.property
     @pulumi.getter
-    def datatype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datatype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (event | metric). Specifies the type of index.
         """
         return pulumi.get(self, "datatype")
 
     @datatype.setter
-    def datatype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datatype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datatype", value)
 
     @_builtins.property
     @pulumi.getter(name="enableOnlineBucketRepair")
-    def enable_online_bucket_repair(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_online_bucket_repair(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables asynchronous "online fsck" bucket repair, which runs concurrently with Splunk software.
         When enabled, you do not have to wait until buckets are repaired to start the Splunk platform. However, you might observe a slight performance degratation.
@@ -348,12 +348,12 @@ class IndexesArgs:
         return pulumi.get(self, "enable_online_bucket_repair")
 
     @enable_online_bucket_repair.setter
-    def enable_online_bucket_repair(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_online_bucket_repair(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_online_bucket_repair", value)
 
     @_builtins.property
     @pulumi.getter(name="frozenTimePeriodInSecs")
-    def frozen_time_period_in_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def frozen_time_period_in_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of seconds after which indexed data rolls to frozen.
         Defaults to 188697600 (6 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
@@ -361,12 +361,12 @@ class IndexesArgs:
         return pulumi.get(self, "frozen_time_period_in_secs")
 
     @frozen_time_period_in_secs.setter
-    def frozen_time_period_in_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def frozen_time_period_in_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "frozen_time_period_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="homePath")
-    def home_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path that contains the hot and warm buckets for the index.
         Required. Splunk software does not start if an index lacks a valid homePath.
@@ -375,12 +375,12 @@ class IndexesArgs:
         return pulumi.get(self, "home_path")
 
     @home_path.setter
-    def home_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_path", value)
 
     @_builtins.property
     @pulumi.getter(name="maxBloomBackfillBucketAge")
-    def max_bloom_backfill_bucket_age(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_bloom_backfill_bucket_age(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[m|s|h|d].
         <br>If a warm or cold bucket is older than the specified age, do not create or rebuild its bloomfilter. Specify 0 to never rebuild bloomfilters.
@@ -388,12 +388,12 @@ class IndexesArgs:
         return pulumi.get(self, "max_bloom_backfill_bucket_age")
 
     @max_bloom_backfill_bucket_age.setter
-    def max_bloom_backfill_bucket_age(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_bloom_backfill_bucket_age(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_bloom_backfill_bucket_age", value)
 
     @_builtins.property
     @pulumi.getter(name="maxConcurrentOptimizes")
-    def max_concurrent_optimizes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_concurrent_optimizes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of concurrent optimize processes that can run against a hot bucket.
         This number should be increased if instructed by Splunk Support. Typically the default value should suffice.
@@ -401,12 +401,12 @@ class IndexesArgs:
         return pulumi.get(self, "max_concurrent_optimizes")
 
     @max_concurrent_optimizes.setter
-    def max_concurrent_optimizes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_concurrent_optimizes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_concurrent_optimizes", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDataSize")
-    def max_data_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_data_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "auto_high_volume" causes Splunk software to autotune this parameter (recommended).
         Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
@@ -414,12 +414,12 @@ class IndexesArgs:
         return pulumi.get(self, "max_data_size")
 
     @max_data_size.setter
-    def max_data_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_data_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_data_size", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHotBuckets")
-    def max_hot_buckets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hot_buckets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum hot buckets that can exist per index. Defaults to 3.
         <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
@@ -427,60 +427,60 @@ class IndexesArgs:
         return pulumi.get(self, "max_hot_buckets")
 
     @max_hot_buckets.setter
-    def max_hot_buckets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hot_buckets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hot_buckets", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHotIdleSecs")
-    def max_hot_idle_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hot_idle_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
         """
         return pulumi.get(self, "max_hot_idle_secs")
 
     @max_hot_idle_secs.setter
-    def max_hot_idle_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hot_idle_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hot_idle_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHotSpanSecs")
-    def max_hot_span_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hot_span_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
         """
         return pulumi.get(self, "max_hot_span_secs")
 
     @max_hot_span_secs.setter
-    def max_hot_span_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hot_span_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hot_span_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemMb")
-    def max_mem_mb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_mem_mb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
         """
         return pulumi.get(self, "max_mem_mb")
 
     @max_mem_mb.setter
-    def max_mem_mb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_mem_mb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_mem_mb", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMetaEntries")
-    def max_meta_entries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_meta_entries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored. If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies. Highest legal value is 2147483647. To disable this parameter, set to 0.
         """
         return pulumi.get(self, "max_meta_entries")
 
     @max_meta_entries.setter
-    def max_meta_entries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_meta_entries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_meta_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTimeUnreplicatedNoAcks")
-    def max_time_unreplicated_no_acks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_time_unreplicated_no_acks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored.
         If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies.
@@ -489,12 +489,12 @@ class IndexesArgs:
         return pulumi.get(self, "max_time_unreplicated_no_acks")
 
     @max_time_unreplicated_no_acks.setter
-    def max_time_unreplicated_no_acks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_time_unreplicated_no_acks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_time_unreplicated_no_acks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTimeUnreplicatedWithAcks")
-    def max_time_unreplicated_with_acks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_time_unreplicated_with_acks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper limit, in seconds, on how long events can sit unacknowledged in a raw slice. Applies only if you have enabled acks on forwarders and have replication enabled (with clustering).
         Note: This is an advanced parameter. Make sure you understand the settings on all forwarders before changing this. This number should not exceed ack timeout configured on any forwarder, and should actually be set to at most half of the minimum value of that timeout. You can find this setting in outputs.conf readTimeout setting under the tcpout stanza.
@@ -503,36 +503,36 @@ class IndexesArgs:
         return pulumi.get(self, "max_time_unreplicated_with_acks")
 
     @max_time_unreplicated_with_acks.setter
-    def max_time_unreplicated_with_acks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_time_unreplicated_with_acks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_time_unreplicated_with_acks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTotalDataSizeMb")
-    def max_total_data_size_mb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_total_data_size_mb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
         """
         return pulumi.get(self, "max_total_data_size_mb")
 
     @max_total_data_size_mb.setter
-    def max_total_data_size_mb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_total_data_size_mb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_total_data_size_mb", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWarmDbCount")
-    def max_warm_db_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_warm_db_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of warm buckets. If this number is exceeded, the warm bucket/s with the lowest value for their latest times is moved to cold.
         """
         return pulumi.get(self, "max_warm_db_count")
 
     @max_warm_db_count.setter
-    def max_warm_db_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_warm_db_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_warm_db_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minRawFileSyncSecs")
-    def min_raw_file_sync_secs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def min_raw_file_sync_secs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an integer (or "disable") for this parameter.
         This parameter sets how frequently splunkd forces a filesystem sync while compressing journal slices.
@@ -542,36 +542,36 @@ class IndexesArgs:
         return pulumi.get(self, "min_raw_file_sync_secs")
 
     @min_raw_file_sync_secs.setter
-    def min_raw_file_sync_secs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def min_raw_file_sync_secs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "min_raw_file_sync_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="minStreamGroupQueueSize")
-    def min_stream_group_queue_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_stream_group_queue_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Minimum size of the queue that stores events in memory before committing them to a tsidx file.
         """
         return pulumi.get(self, "min_stream_group_queue_size")
 
     @min_stream_group_queue_size.setter
-    def min_stream_group_queue_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_stream_group_queue_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_stream_group_queue_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the index to create.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="partialServiceMetaPeriod")
-    def partial_service_meta_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def partial_service_meta_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Related to serviceMetaPeriod. If set, it enables metadata sync every <integer> seconds, but only for records where the sync can be done efficiently in-place, without requiring a full re-write of the metadata file. Records that require full re-write are be sync'ed at serviceMetaPeriod.
         partialServiceMetaPeriod specifies, in seconds, how frequently it should sync. Zero means that this feature is turned off and serviceMetaPeriod is the only time when metadata sync happens.
@@ -581,12 +581,12 @@ class IndexesArgs:
         return pulumi.get(self, "partial_service_meta_period")
 
     @partial_service_meta_period.setter
-    def partial_service_meta_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def partial_service_meta_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "partial_service_meta_period", value)
 
     @_builtins.property
     @pulumi.getter(name="processTrackerServiceInterval")
-    def process_tracker_service_interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def process_tracker_service_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies, in seconds, how often the indexer checks the status of the child OS processes it launched to see if it can launch new processes for queued requests. Defaults to 15.
         If set to 0, the indexer checks child process status every second.
@@ -595,12 +595,12 @@ class IndexesArgs:
         return pulumi.get(self, "process_tracker_service_interval")
 
     @process_tracker_service_interval.setter
-    def process_tracker_service_interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def process_tracker_service_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "process_tracker_service_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="quarantineFutureSecs")
-    def quarantine_future_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quarantine_future_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Events with timestamp of quarantineFutureSecs newer than "now" are dropped into quarantine bucket. Defaults to 2592000 (30 days).
         This is a mechanism to prevent main hot buckets from being polluted with fringe events.
@@ -608,36 +608,36 @@ class IndexesArgs:
         return pulumi.get(self, "quarantine_future_secs")
 
     @quarantine_future_secs.setter
-    def quarantine_future_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quarantine_future_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quarantine_future_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="quarantinePastSecs")
-    def quarantine_past_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quarantine_past_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Events with timestamp of quarantinePastSecs older than "now" are dropped into quarantine bucket. Defaults to 77760000 (900 days). This is a mechanism to prevent the main hot buckets from being polluted with fringe events.
         """
         return pulumi.get(self, "quarantine_past_secs")
 
     @quarantine_past_secs.setter
-    def quarantine_past_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quarantine_past_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quarantine_past_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="rawChunkSizeBytes")
-    def raw_chunk_size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def raw_chunk_size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Target uncompressed size in bytes for individual raw slice in the rawdata journal of the index. Defaults to 131072 (128KB). 0 is not a valid value. If 0 is specified, rawChunkSizeBytes is set to the default value.
         """
         return pulumi.get(self, "raw_chunk_size_bytes")
 
     @raw_chunk_size_bytes.setter
-    def raw_chunk_size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def raw_chunk_size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "raw_chunk_size_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="repFactor")
-    def rep_factor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rep_factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Index replication control. This parameter applies to only clustering slaves.
         auto = Use the master index replication configuration value.
@@ -646,24 +646,24 @@ class IndexesArgs:
         return pulumi.get(self, "rep_factor")
 
     @rep_factor.setter
-    def rep_factor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rep_factor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rep_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="rotatePeriodInSecs")
-    def rotate_period_in_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rotate_period_in_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
         """
         return pulumi.get(self, "rotate_period_in_secs")
 
     @rotate_period_in_secs.setter
-    def rotate_period_in_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rotate_period_in_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rotate_period_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceMetaPeriod")
-    def service_meta_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def service_meta_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
         You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
@@ -671,24 +671,24 @@ class IndexesArgs:
         return pulumi.get(self, "service_meta_period")
 
     @service_meta_period.setter
-    def service_meta_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def service_meta_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "service_meta_period", value)
 
     @_builtins.property
     @pulumi.getter(name="syncMeta")
-    def sync_meta(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sync_meta(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When true, a sync operation is called before file descriptor is closed on metadata file updates. This functionality improves integrity of metadata files, especially in regards to operating system crashes/machine failures.
         """
         return pulumi.get(self, "sync_meta")
 
     @sync_meta.setter
-    def sync_meta(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sync_meta(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sync_meta", value)
 
     @_builtins.property
     @pulumi.getter(name="thawedPath")
-    def thawed_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def thawed_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path that contains the thawed (resurrected) databases for the index.
         Cannot be defined in terms of a volume definition.
@@ -697,24 +697,24 @@ class IndexesArgs:
         return pulumi.get(self, "thawed_path")
 
     @thawed_path.setter
-    def thawed_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def thawed_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "thawed_path", value)
 
     @_builtins.property
     @pulumi.getter(name="throttleCheckPeriod")
-    def throttle_check_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def throttle_check_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Defines how frequently Splunk software checks for index throttling condition, in seconds. Defaults to 15 (seconds).
         """
         return pulumi.get(self, "throttle_check_period")
 
     @throttle_check_period.setter
-    def throttle_check_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def throttle_check_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "throttle_check_period", value)
 
     @_builtins.property
     @pulumi.getter(name="tstatsHomePath")
-    def tstats_home_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tstats_home_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location to store datamodel acceleration TSIDX data for this index. Restart splunkd after changing this parameter.
         If specified, it must be defined in terms of a volume definition.
@@ -722,12 +722,12 @@ class IndexesArgs:
         return pulumi.get(self, "tstats_home_path")
 
     @tstats_home_path.setter
-    def tstats_home_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tstats_home_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tstats_home_path", value)
 
     @_builtins.property
     @pulumi.getter(name="warmToColdScript")
-    def warm_to_cold_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warm_to_cold_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to a script to run when moving data from warm to cold.
         This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
@@ -735,52 +735,52 @@ class IndexesArgs:
         return pulumi.get(self, "warm_to_cold_script")
 
     @warm_to_cold_script.setter
-    def warm_to_cold_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warm_to_cold_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warm_to_cold_script", value)
 
 
 @pulumi.input_type
 class _IndexesState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['IndexesAclArgs']] = None,
-                 block_sign_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 bucket_rebuild_memory_hint: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 compress_rawdata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_online_bucket_repair: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_bloom_backfill_bucket_age: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_concurrent_optimizes: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_hot_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_idle_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_span_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_mem_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_meta_entries: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_no_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_with_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_data_size_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_warm_db_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_raw_file_sync_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_stream_group_queue_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partial_service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_tracker_service_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_future_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_past_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 raw_chunk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 rep_factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotate_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 sync_meta: Optional[pulumi.Input[_builtins.bool]] = None,
-                 thawed_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 throttle_check_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 tstats_home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['IndexesAclArgs']] = None,
+                 block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 compress_rawdata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_online_bucket_repair: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_bloom_backfill_bucket_age: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_concurrent_optimizes: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_hot_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_idle_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_span_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_mem_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_meta_entries: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_no_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_with_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_data_size_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_warm_db_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_raw_file_sync_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 min_stream_group_queue_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partial_service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_tracker_service_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_future_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_past_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 raw_chunk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 rep_factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotate_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 sync_meta: pulumi.Input[Optional[_builtins.bool]] = None,
+                 thawed_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 throttle_check_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 tstats_home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 warm_to_cold_script: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Indexes resources.
 
@@ -949,31 +949,31 @@ class _IndexesState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['IndexesAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['IndexesAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['IndexesAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['IndexesAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="blockSignSize")
-    def block_sign_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def block_sign_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
         """
         return pulumi.get(self, "block_sign_size")
 
     @block_sign_size.setter
-    def block_sign_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def block_sign_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "block_sign_size", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketRebuildMemoryHint")
-    def bucket_rebuild_memory_hint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_rebuild_memory_hint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
         <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.
@@ -986,24 +986,24 @@ class _IndexesState:
         return pulumi.get(self, "bucket_rebuild_memory_hint")
 
     @bucket_rebuild_memory_hint.setter
-    def bucket_rebuild_memory_hint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_rebuild_memory_hint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_rebuild_memory_hint", value)
 
     @_builtins.property
     @pulumi.getter(name="coldPath")
-    def cold_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cold_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
         """
         return pulumi.get(self, "cold_path")
 
     @cold_path.setter
-    def cold_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cold_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cold_path", value)
 
     @_builtins.property
     @pulumi.getter(name="coldToFrozenDir")
-    def cold_to_frozen_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cold_to_frozen_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
         <br>
@@ -1017,12 +1017,12 @@ class _IndexesState:
         return pulumi.get(self, "cold_to_frozen_dir")
 
     @cold_to_frozen_dir.setter
-    def cold_to_frozen_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cold_to_frozen_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cold_to_frozen_dir", value)
 
     @_builtins.property
     @pulumi.getter(name="coldToFrozenScript")
-    def cold_to_frozen_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cold_to_frozen_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the archiving script.
         <br>If your script requires a program to run it (for example, python), specify the program followed by the path. The script must be in $SPLUNK_HOME/bin or one of its subdirectories.
@@ -1032,36 +1032,36 @@ class _IndexesState:
         return pulumi.get(self, "cold_to_frozen_script")
 
     @cold_to_frozen_script.setter
-    def cold_to_frozen_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cold_to_frozen_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cold_to_frozen_script", value)
 
     @_builtins.property
     @pulumi.getter(name="compressRawdata")
-    def compress_rawdata(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def compress_rawdata(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This parameter is ignored. The splunkd process always compresses raw data.
         """
         return pulumi.get(self, "compress_rawdata")
 
     @compress_rawdata.setter
-    def compress_rawdata(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def compress_rawdata(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "compress_rawdata", value)
 
     @_builtins.property
     @pulumi.getter
-    def datatype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datatype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (event | metric). Specifies the type of index.
         """
         return pulumi.get(self, "datatype")
 
     @datatype.setter
-    def datatype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datatype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datatype", value)
 
     @_builtins.property
     @pulumi.getter(name="enableOnlineBucketRepair")
-    def enable_online_bucket_repair(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_online_bucket_repair(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables asynchronous "online fsck" bucket repair, which runs concurrently with Splunk software.
         When enabled, you do not have to wait until buckets are repaired to start the Splunk platform. However, you might observe a slight performance degratation.
@@ -1069,12 +1069,12 @@ class _IndexesState:
         return pulumi.get(self, "enable_online_bucket_repair")
 
     @enable_online_bucket_repair.setter
-    def enable_online_bucket_repair(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_online_bucket_repair(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_online_bucket_repair", value)
 
     @_builtins.property
     @pulumi.getter(name="frozenTimePeriodInSecs")
-    def frozen_time_period_in_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def frozen_time_period_in_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of seconds after which indexed data rolls to frozen.
         Defaults to 188697600 (6 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
@@ -1082,12 +1082,12 @@ class _IndexesState:
         return pulumi.get(self, "frozen_time_period_in_secs")
 
     @frozen_time_period_in_secs.setter
-    def frozen_time_period_in_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def frozen_time_period_in_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "frozen_time_period_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="homePath")
-    def home_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path that contains the hot and warm buckets for the index.
         Required. Splunk software does not start if an index lacks a valid homePath.
@@ -1096,12 +1096,12 @@ class _IndexesState:
         return pulumi.get(self, "home_path")
 
     @home_path.setter
-    def home_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_path", value)
 
     @_builtins.property
     @pulumi.getter(name="maxBloomBackfillBucketAge")
-    def max_bloom_backfill_bucket_age(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_bloom_backfill_bucket_age(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[m|s|h|d].
         <br>If a warm or cold bucket is older than the specified age, do not create or rebuild its bloomfilter. Specify 0 to never rebuild bloomfilters.
@@ -1109,12 +1109,12 @@ class _IndexesState:
         return pulumi.get(self, "max_bloom_backfill_bucket_age")
 
     @max_bloom_backfill_bucket_age.setter
-    def max_bloom_backfill_bucket_age(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_bloom_backfill_bucket_age(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_bloom_backfill_bucket_age", value)
 
     @_builtins.property
     @pulumi.getter(name="maxConcurrentOptimizes")
-    def max_concurrent_optimizes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_concurrent_optimizes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of concurrent optimize processes that can run against a hot bucket.
         This number should be increased if instructed by Splunk Support. Typically the default value should suffice.
@@ -1122,12 +1122,12 @@ class _IndexesState:
         return pulumi.get(self, "max_concurrent_optimizes")
 
     @max_concurrent_optimizes.setter
-    def max_concurrent_optimizes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_concurrent_optimizes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_concurrent_optimizes", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDataSize")
-    def max_data_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_data_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The maximum size in MB for a hot DB to reach before a roll to warm is triggered. Specifying "auto" or "auto_high_volume" causes Splunk software to autotune this parameter (recommended).
         Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
@@ -1135,12 +1135,12 @@ class _IndexesState:
         return pulumi.get(self, "max_data_size")
 
     @max_data_size.setter
-    def max_data_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_data_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_data_size", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHotBuckets")
-    def max_hot_buckets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hot_buckets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum hot buckets that can exist per index. Defaults to 3.
         <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
@@ -1148,60 +1148,60 @@ class _IndexesState:
         return pulumi.get(self, "max_hot_buckets")
 
     @max_hot_buckets.setter
-    def max_hot_buckets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hot_buckets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hot_buckets", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHotIdleSecs")
-    def max_hot_idle_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hot_idle_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
         """
         return pulumi.get(self, "max_hot_idle_secs")
 
     @max_hot_idle_secs.setter
-    def max_hot_idle_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hot_idle_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hot_idle_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHotSpanSecs")
-    def max_hot_span_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hot_span_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
         """
         return pulumi.get(self, "max_hot_span_secs")
 
     @max_hot_span_secs.setter
-    def max_hot_span_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hot_span_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hot_span_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemMb")
-    def max_mem_mb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_mem_mb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
         """
         return pulumi.get(self, "max_mem_mb")
 
     @max_mem_mb.setter
-    def max_mem_mb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_mem_mb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_mem_mb", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMetaEntries")
-    def max_meta_entries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_meta_entries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored. If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies. Highest legal value is 2147483647. To disable this parameter, set to 0.
         """
         return pulumi.get(self, "max_meta_entries")
 
     @max_meta_entries.setter
-    def max_meta_entries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_meta_entries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_meta_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTimeUnreplicatedNoAcks")
-    def max_time_unreplicated_no_acks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_time_unreplicated_no_acks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper limit, in seconds, on how long an event can sit in raw slice. Applies only if replication is enabled for this index. Otherwise ignored.
         If there are any acknowledged events sharing this raw slice, this paramater does not apply. In this case, maxTimeUnreplicatedWithAcks applies.
@@ -1210,12 +1210,12 @@ class _IndexesState:
         return pulumi.get(self, "max_time_unreplicated_no_acks")
 
     @max_time_unreplicated_no_acks.setter
-    def max_time_unreplicated_no_acks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_time_unreplicated_no_acks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_time_unreplicated_no_acks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTimeUnreplicatedWithAcks")
-    def max_time_unreplicated_with_acks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_time_unreplicated_with_acks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Upper limit, in seconds, on how long events can sit unacknowledged in a raw slice. Applies only if you have enabled acks on forwarders and have replication enabled (with clustering).
         Note: This is an advanced parameter. Make sure you understand the settings on all forwarders before changing this. This number should not exceed ack timeout configured on any forwarder, and should actually be set to at most half of the minimum value of that timeout. You can find this setting in outputs.conf readTimeout setting under the tcpout stanza.
@@ -1224,36 +1224,36 @@ class _IndexesState:
         return pulumi.get(self, "max_time_unreplicated_with_acks")
 
     @max_time_unreplicated_with_acks.setter
-    def max_time_unreplicated_with_acks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_time_unreplicated_with_acks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_time_unreplicated_with_acks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTotalDataSizeMb")
-    def max_total_data_size_mb(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_total_data_size_mb(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
         """
         return pulumi.get(self, "max_total_data_size_mb")
 
     @max_total_data_size_mb.setter
-    def max_total_data_size_mb(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_total_data_size_mb(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_total_data_size_mb", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWarmDbCount")
-    def max_warm_db_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_warm_db_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of warm buckets. If this number is exceeded, the warm bucket/s with the lowest value for their latest times is moved to cold.
         """
         return pulumi.get(self, "max_warm_db_count")
 
     @max_warm_db_count.setter
-    def max_warm_db_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_warm_db_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_warm_db_count", value)
 
     @_builtins.property
     @pulumi.getter(name="minRawFileSyncSecs")
-    def min_raw_file_sync_secs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def min_raw_file_sync_secs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an integer (or "disable") for this parameter.
         This parameter sets how frequently splunkd forces a filesystem sync while compressing journal slices.
@@ -1263,36 +1263,36 @@ class _IndexesState:
         return pulumi.get(self, "min_raw_file_sync_secs")
 
     @min_raw_file_sync_secs.setter
-    def min_raw_file_sync_secs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def min_raw_file_sync_secs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "min_raw_file_sync_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="minStreamGroupQueueSize")
-    def min_stream_group_queue_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min_stream_group_queue_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Minimum size of the queue that stores events in memory before committing them to a tsidx file.
         """
         return pulumi.get(self, "min_stream_group_queue_size")
 
     @min_stream_group_queue_size.setter
-    def min_stream_group_queue_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min_stream_group_queue_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min_stream_group_queue_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the index to create.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="partialServiceMetaPeriod")
-    def partial_service_meta_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def partial_service_meta_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Related to serviceMetaPeriod. If set, it enables metadata sync every <integer> seconds, but only for records where the sync can be done efficiently in-place, without requiring a full re-write of the metadata file. Records that require full re-write are be sync'ed at serviceMetaPeriod.
         partialServiceMetaPeriod specifies, in seconds, how frequently it should sync. Zero means that this feature is turned off and serviceMetaPeriod is the only time when metadata sync happens.
@@ -1302,12 +1302,12 @@ class _IndexesState:
         return pulumi.get(self, "partial_service_meta_period")
 
     @partial_service_meta_period.setter
-    def partial_service_meta_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def partial_service_meta_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "partial_service_meta_period", value)
 
     @_builtins.property
     @pulumi.getter(name="processTrackerServiceInterval")
-    def process_tracker_service_interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def process_tracker_service_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies, in seconds, how often the indexer checks the status of the child OS processes it launched to see if it can launch new processes for queued requests. Defaults to 15.
         If set to 0, the indexer checks child process status every second.
@@ -1316,12 +1316,12 @@ class _IndexesState:
         return pulumi.get(self, "process_tracker_service_interval")
 
     @process_tracker_service_interval.setter
-    def process_tracker_service_interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def process_tracker_service_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "process_tracker_service_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="quarantineFutureSecs")
-    def quarantine_future_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quarantine_future_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Events with timestamp of quarantineFutureSecs newer than "now" are dropped into quarantine bucket. Defaults to 2592000 (30 days).
         This is a mechanism to prevent main hot buckets from being polluted with fringe events.
@@ -1329,36 +1329,36 @@ class _IndexesState:
         return pulumi.get(self, "quarantine_future_secs")
 
     @quarantine_future_secs.setter
-    def quarantine_future_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quarantine_future_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quarantine_future_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="quarantinePastSecs")
-    def quarantine_past_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quarantine_past_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Events with timestamp of quarantinePastSecs older than "now" are dropped into quarantine bucket. Defaults to 77760000 (900 days). This is a mechanism to prevent the main hot buckets from being polluted with fringe events.
         """
         return pulumi.get(self, "quarantine_past_secs")
 
     @quarantine_past_secs.setter
-    def quarantine_past_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quarantine_past_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quarantine_past_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="rawChunkSizeBytes")
-    def raw_chunk_size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def raw_chunk_size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Target uncompressed size in bytes for individual raw slice in the rawdata journal of the index. Defaults to 131072 (128KB). 0 is not a valid value. If 0 is specified, rawChunkSizeBytes is set to the default value.
         """
         return pulumi.get(self, "raw_chunk_size_bytes")
 
     @raw_chunk_size_bytes.setter
-    def raw_chunk_size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def raw_chunk_size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "raw_chunk_size_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="repFactor")
-    def rep_factor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rep_factor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Index replication control. This parameter applies to only clustering slaves.
         auto = Use the master index replication configuration value.
@@ -1367,24 +1367,24 @@ class _IndexesState:
         return pulumi.get(self, "rep_factor")
 
     @rep_factor.setter
-    def rep_factor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rep_factor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rep_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="rotatePeriodInSecs")
-    def rotate_period_in_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rotate_period_in_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
         """
         return pulumi.get(self, "rotate_period_in_secs")
 
     @rotate_period_in_secs.setter
-    def rotate_period_in_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rotate_period_in_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rotate_period_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceMetaPeriod")
-    def service_meta_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def service_meta_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
         You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
@@ -1392,24 +1392,24 @@ class _IndexesState:
         return pulumi.get(self, "service_meta_period")
 
     @service_meta_period.setter
-    def service_meta_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def service_meta_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "service_meta_period", value)
 
     @_builtins.property
     @pulumi.getter(name="syncMeta")
-    def sync_meta(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def sync_meta(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         When true, a sync operation is called before file descriptor is closed on metadata file updates. This functionality improves integrity of metadata files, especially in regards to operating system crashes/machine failures.
         """
         return pulumi.get(self, "sync_meta")
 
     @sync_meta.setter
-    def sync_meta(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def sync_meta(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "sync_meta", value)
 
     @_builtins.property
     @pulumi.getter(name="thawedPath")
-    def thawed_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def thawed_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An absolute path that contains the thawed (resurrected) databases for the index.
         Cannot be defined in terms of a volume definition.
@@ -1418,24 +1418,24 @@ class _IndexesState:
         return pulumi.get(self, "thawed_path")
 
     @thawed_path.setter
-    def thawed_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def thawed_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "thawed_path", value)
 
     @_builtins.property
     @pulumi.getter(name="throttleCheckPeriod")
-    def throttle_check_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def throttle_check_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Defines how frequently Splunk software checks for index throttling condition, in seconds. Defaults to 15 (seconds).
         """
         return pulumi.get(self, "throttle_check_period")
 
     @throttle_check_period.setter
-    def throttle_check_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def throttle_check_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "throttle_check_period", value)
 
     @_builtins.property
     @pulumi.getter(name="tstatsHomePath")
-    def tstats_home_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tstats_home_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location to store datamodel acceleration TSIDX data for this index. Restart splunkd after changing this parameter.
         If specified, it must be defined in terms of a volume definition.
@@ -1443,12 +1443,12 @@ class _IndexesState:
         return pulumi.get(self, "tstats_home_path")
 
     @tstats_home_path.setter
-    def tstats_home_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tstats_home_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tstats_home_path", value)
 
     @_builtins.property
     @pulumi.getter(name="warmToColdScript")
-    def warm_to_cold_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def warm_to_cold_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to a script to run when moving data from warm to cold.
         This attribute is supported for backwards compatibility with Splunk software versions older than 4.0. Contact Splunk support if you need help configuring this setting.
@@ -1456,7 +1456,7 @@ class _IndexesState:
         return pulumi.get(self, "warm_to_cold_script")
 
     @warm_to_cold_script.setter
-    def warm_to_cold_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def warm_to_cold_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "warm_to_cold_script", value)
 
 
@@ -1466,45 +1466,45 @@ class Indexes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
-                 block_sign_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 bucket_rebuild_memory_hint: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 compress_rawdata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_online_bucket_repair: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_bloom_backfill_bucket_age: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_concurrent_optimizes: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_hot_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_idle_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_span_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_mem_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_meta_entries: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_no_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_with_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_data_size_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_warm_db_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_raw_file_sync_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_stream_group_queue_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partial_service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_tracker_service_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_future_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_past_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 raw_chunk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 rep_factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotate_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 sync_meta: Optional[pulumi.Input[_builtins.bool]] = None,
-                 thawed_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 throttle_check_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 tstats_home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
+                 block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 compress_rawdata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_online_bucket_repair: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_bloom_backfill_bucket_age: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_concurrent_optimizes: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_hot_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_idle_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_span_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_mem_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_meta_entries: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_no_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_with_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_data_size_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_warm_db_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_raw_file_sync_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 min_stream_group_queue_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partial_service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_tracker_service_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_future_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_past_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 raw_chunk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 rep_factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotate_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 sync_meta: pulumi.Input[Optional[_builtins.bool]] = None,
+                 thawed_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 throttle_check_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 tstats_home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 warm_to_cold_script: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: Indexes
@@ -1659,45 +1659,45 @@ class Indexes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
-                 block_sign_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 bucket_rebuild_memory_hint: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 cold_to_frozen_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 compress_rawdata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_online_bucket_repair: Optional[pulumi.Input[_builtins.bool]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_bloom_backfill_bucket_age: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_concurrent_optimizes: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_hot_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_idle_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hot_span_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_mem_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_meta_entries: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_no_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_time_unreplicated_with_acks: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_total_data_size_mb: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_warm_db_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 min_raw_file_sync_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_stream_group_queue_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 partial_service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 process_tracker_service_interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_future_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 quarantine_past_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 raw_chunk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 rep_factor: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotate_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 sync_meta: Optional[pulumi.Input[_builtins.bool]] = None,
-                 thawed_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 throttle_check_period: Optional[pulumi.Input[_builtins.int]] = None,
-                 tstats_home_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
+                 block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 cold_to_frozen_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 compress_rawdata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_online_bucket_repair: pulumi.Input[Optional[_builtins.bool]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_bloom_backfill_bucket_age: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_concurrent_optimizes: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_hot_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_idle_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hot_span_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_mem_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_meta_entries: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_no_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_time_unreplicated_with_acks: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_total_data_size_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_warm_db_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 min_raw_file_sync_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 min_stream_group_queue_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 partial_service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 process_tracker_service_interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_future_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 quarantine_past_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 raw_chunk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 rep_factor: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotate_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 sync_meta: pulumi.Input[Optional[_builtins.bool]] = None,
+                 thawed_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 throttle_check_period: pulumi.Input[Optional[_builtins.int]] = None,
+                 tstats_home_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 warm_to_cold_script: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1756,45 +1756,45 @@ class Indexes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
-            block_sign_size: Optional[pulumi.Input[_builtins.int]] = None,
-            bucket_rebuild_memory_hint: Optional[pulumi.Input[_builtins.str]] = None,
-            cold_path: Optional[pulumi.Input[_builtins.str]] = None,
-            cold_to_frozen_dir: Optional[pulumi.Input[_builtins.str]] = None,
-            cold_to_frozen_script: Optional[pulumi.Input[_builtins.str]] = None,
-            compress_rawdata: Optional[pulumi.Input[_builtins.bool]] = None,
-            datatype: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_online_bucket_repair: Optional[pulumi.Input[_builtins.bool]] = None,
-            frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            home_path: Optional[pulumi.Input[_builtins.str]] = None,
-            max_bloom_backfill_bucket_age: Optional[pulumi.Input[_builtins.str]] = None,
-            max_concurrent_optimizes: Optional[pulumi.Input[_builtins.int]] = None,
-            max_data_size: Optional[pulumi.Input[_builtins.str]] = None,
-            max_hot_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-            max_hot_idle_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            max_hot_span_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            max_mem_mb: Optional[pulumi.Input[_builtins.int]] = None,
-            max_meta_entries: Optional[pulumi.Input[_builtins.int]] = None,
-            max_time_unreplicated_no_acks: Optional[pulumi.Input[_builtins.int]] = None,
-            max_time_unreplicated_with_acks: Optional[pulumi.Input[_builtins.int]] = None,
-            max_total_data_size_mb: Optional[pulumi.Input[_builtins.int]] = None,
-            max_warm_db_count: Optional[pulumi.Input[_builtins.int]] = None,
-            min_raw_file_sync_secs: Optional[pulumi.Input[_builtins.str]] = None,
-            min_stream_group_queue_size: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            partial_service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-            process_tracker_service_interval: Optional[pulumi.Input[_builtins.int]] = None,
-            quarantine_future_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            quarantine_past_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            raw_chunk_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            rep_factor: Optional[pulumi.Input[_builtins.str]] = None,
-            rotate_period_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            service_meta_period: Optional[pulumi.Input[_builtins.int]] = None,
-            sync_meta: Optional[pulumi.Input[_builtins.bool]] = None,
-            thawed_path: Optional[pulumi.Input[_builtins.str]] = None,
-            throttle_check_period: Optional[pulumi.Input[_builtins.int]] = None,
-            tstats_home_path: Optional[pulumi.Input[_builtins.str]] = None,
-            warm_to_cold_script: Optional[pulumi.Input[_builtins.str]] = None) -> 'Indexes':
+            acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
+            block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
+            bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
+            cold_path: pulumi.Input[Optional[_builtins.str]] = None,
+            cold_to_frozen_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            cold_to_frozen_script: pulumi.Input[Optional[_builtins.str]] = None,
+            compress_rawdata: pulumi.Input[Optional[_builtins.bool]] = None,
+            datatype: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_online_bucket_repair: pulumi.Input[Optional[_builtins.bool]] = None,
+            frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            home_path: pulumi.Input[Optional[_builtins.str]] = None,
+            max_bloom_backfill_bucket_age: pulumi.Input[Optional[_builtins.str]] = None,
+            max_concurrent_optimizes: pulumi.Input[Optional[_builtins.int]] = None,
+            max_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+            max_hot_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+            max_hot_idle_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            max_hot_span_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            max_mem_mb: pulumi.Input[Optional[_builtins.int]] = None,
+            max_meta_entries: pulumi.Input[Optional[_builtins.int]] = None,
+            max_time_unreplicated_no_acks: pulumi.Input[Optional[_builtins.int]] = None,
+            max_time_unreplicated_with_acks: pulumi.Input[Optional[_builtins.int]] = None,
+            max_total_data_size_mb: pulumi.Input[Optional[_builtins.int]] = None,
+            max_warm_db_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_raw_file_sync_secs: pulumi.Input[Optional[_builtins.str]] = None,
+            min_stream_group_queue_size: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            partial_service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+            process_tracker_service_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            quarantine_future_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            quarantine_past_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            raw_chunk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            rep_factor: pulumi.Input[Optional[_builtins.str]] = None,
+            rotate_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+            sync_meta: pulumi.Input[Optional[_builtins.bool]] = None,
+            thawed_path: pulumi.Input[Optional[_builtins.str]] = None,
+            throttle_check_period: pulumi.Input[Optional[_builtins.int]] = None,
+            tstats_home_path: pulumi.Input[Optional[_builtins.str]] = None,
+            warm_to_cold_script: pulumi.Input[Optional[_builtins.str]] = None) -> 'Indexes':
         """
         Get an existing Indexes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

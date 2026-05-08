@@ -21,15 +21,15 @@ __all__ = ['OutputsTcpDefaultArgs', 'OutputsTcpDefault']
 @pulumi.input_type
 class OutputsTcpDefaultArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']] = None,
-                 default_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 drop_events_on_queue_full: Optional[pulumi.Input[_builtins.int]] = None,
-                 heartbeat_frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 index_and_forward: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_queue_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acl: pulumi.Input[Optional['OutputsTcpDefaultAclArgs']] = None,
+                 default_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+                 heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 index_and_forward: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a OutputsTcpDefault resource.
 
@@ -76,19 +76,19 @@ class OutputsTcpDefaultArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['OutputsTcpDefaultAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['OutputsTcpDefaultAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['OutputsTcpDefaultAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultGroup")
-    def default_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
         The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
@@ -96,24 +96,24 @@ class OutputsTcpDefaultArgs:
         return pulumi.get(self, "default_group")
 
     @default_group.setter
-    def default_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disables default tcpout settings
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="dropEventsOnQueueFull")
-    def drop_events_on_queue_full(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def drop_events_on_queue_full(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
         <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
@@ -123,12 +123,12 @@ class OutputsTcpDefaultArgs:
         return pulumi.get(self, "drop_events_on_queue_full")
 
     @drop_events_on_queue_full.setter
-    def drop_events_on_queue_full(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def drop_events_on_queue_full(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "drop_events_on_queue_full", value)
 
     @_builtins.property
     @pulumi.getter(name="heartbeatFrequency")
-    def heartbeat_frequency(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def heartbeat_frequency(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How often (in seconds) to send a heartbeat packet to the receiving server.
         Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
@@ -136,12 +136,12 @@ class OutputsTcpDefaultArgs:
         return pulumi.get(self, "heartbeat_frequency")
 
     @heartbeat_frequency.setter
-    def heartbeat_frequency(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def heartbeat_frequency(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "heartbeat_frequency", value)
 
     @_builtins.property
     @pulumi.getter(name="indexAndForward")
-    def index_and_forward(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def index_and_forward(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether to index all data locally, in addition to forwarding it. Defaults to false.
         This is known as an "index-and-forward" configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
@@ -149,12 +149,12 @@ class OutputsTcpDefaultArgs:
         return pulumi.get(self, "index_and_forward")
 
     @index_and_forward.setter
-    def index_and_forward(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def index_and_forward(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "index_and_forward", value)
 
     @_builtins.property
     @pulumi.getter(name="maxQueueSize")
-    def max_queue_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_queue_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an integer or integer[KB|MB|GB].
         <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
@@ -166,24 +166,24 @@ class OutputsTcpDefaultArgs:
         return pulumi.get(self, "max_queue_size")
 
     @max_queue_size.setter
-    def max_queue_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_queue_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_queue_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration to be edited. The only valid value is "tcpout".
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sendCookedData")
-    def send_cooked_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def send_cooked_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
         Set to false if you are sending to a third-party system.
@@ -191,22 +191,22 @@ class OutputsTcpDefaultArgs:
         return pulumi.get(self, "send_cooked_data")
 
     @send_cooked_data.setter
-    def send_cooked_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def send_cooked_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "send_cooked_data", value)
 
 
 @pulumi.input_type
 class _OutputsTcpDefaultState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']] = None,
-                 default_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 drop_events_on_queue_full: Optional[pulumi.Input[_builtins.int]] = None,
-                 heartbeat_frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 index_and_forward: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_queue_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None):
+                 acl: pulumi.Input[Optional['OutputsTcpDefaultAclArgs']] = None,
+                 default_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+                 heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 index_and_forward: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpDefault resources.
 
@@ -253,19 +253,19 @@ class _OutputsTcpDefaultState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['OutputsTcpDefaultAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['OutputsTcpDefaultAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['OutputsTcpDefaultAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['OutputsTcpDefaultAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultGroup")
-    def default_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
         The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
@@ -273,24 +273,24 @@ class _OutputsTcpDefaultState:
         return pulumi.get(self, "default_group")
 
     @default_group.setter
-    def default_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Disables default tcpout settings
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="dropEventsOnQueueFull")
-    def drop_events_on_queue_full(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def drop_events_on_queue_full(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
         <br>CAUTION: Do not set this value to a positive integer if you are monitoring files.
@@ -300,12 +300,12 @@ class _OutputsTcpDefaultState:
         return pulumi.get(self, "drop_events_on_queue_full")
 
     @drop_events_on_queue_full.setter
-    def drop_events_on_queue_full(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def drop_events_on_queue_full(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "drop_events_on_queue_full", value)
 
     @_builtins.property
     @pulumi.getter(name="heartbeatFrequency")
-    def heartbeat_frequency(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def heartbeat_frequency(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How often (in seconds) to send a heartbeat packet to the receiving server.
         Heartbeats are only sent if sendCookedData=true. Defaults to 30 seconds.
@@ -313,12 +313,12 @@ class _OutputsTcpDefaultState:
         return pulumi.get(self, "heartbeat_frequency")
 
     @heartbeat_frequency.setter
-    def heartbeat_frequency(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def heartbeat_frequency(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "heartbeat_frequency", value)
 
     @_builtins.property
     @pulumi.getter(name="indexAndForward")
-    def index_and_forward(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def index_and_forward(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether to index all data locally, in addition to forwarding it. Defaults to false.
         This is known as an "index-and-forward" configuration. This attribute is only available for heavy forwarders. It is available only at the top level [tcpout] stanza in outputs.conf. It cannot be overridden in a target group.
@@ -326,12 +326,12 @@ class _OutputsTcpDefaultState:
         return pulumi.get(self, "index_and_forward")
 
     @index_and_forward.setter
-    def index_and_forward(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def index_and_forward(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "index_and_forward", value)
 
     @_builtins.property
     @pulumi.getter(name="maxQueueSize")
-    def max_queue_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_queue_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify an integer or integer[KB|MB|GB].
         <br>Sets the maximum size of the forwarder output queue. It also sets the maximum size of the wait queue to 3x this value, if you have enabled indexer acknowledgment (useACK=true).
@@ -343,24 +343,24 @@ class _OutputsTcpDefaultState:
         return pulumi.get(self, "max_queue_size")
 
     @max_queue_size.setter
-    def max_queue_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_queue_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_queue_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration to be edited. The only valid value is "tcpout".
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sendCookedData")
-    def send_cooked_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def send_cooked_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, events are cooked (processed by Splunk software). If false, events are raw and untouched prior to sending. Defaults to true.
         Set to false if you are sending to a third-party system.
@@ -368,7 +368,7 @@ class _OutputsTcpDefaultState:
         return pulumi.get(self, "send_cooked_data")
 
     @send_cooked_data.setter
-    def send_cooked_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def send_cooked_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "send_cooked_data", value)
 
 
@@ -378,15 +378,15 @@ class OutputsTcpDefault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
-                 default_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 drop_events_on_queue_full: Optional[pulumi.Input[_builtins.int]] = None,
-                 heartbeat_frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 index_and_forward: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_queue_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
+                 default_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+                 heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 index_and_forward: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         ## # Resource: OutputsTcpDefault
@@ -477,15 +477,15 @@ class OutputsTcpDefault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
-                 default_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 drop_events_on_queue_full: Optional[pulumi.Input[_builtins.int]] = None,
-                 heartbeat_frequency: Optional[pulumi.Input[_builtins.int]] = None,
-                 index_and_forward: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_queue_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
+                 default_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+                 heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+                 index_and_forward: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -514,15 +514,15 @@ class OutputsTcpDefault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
-            default_group: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            drop_events_on_queue_full: Optional[pulumi.Input[_builtins.int]] = None,
-            heartbeat_frequency: Optional[pulumi.Input[_builtins.int]] = None,
-            index_and_forward: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_queue_size: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            send_cooked_data: Optional[pulumi.Input[_builtins.bool]] = None) -> 'OutputsTcpDefault':
+            acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
+            default_group: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+            heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            index_and_forward: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None) -> 'OutputsTcpDefault':
         """
         Get an existing OutputsTcpDefault resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

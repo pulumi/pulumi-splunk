@@ -135,23 +135,23 @@ export interface OutputsTcpSyslogState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.OutputsTcpSyslogAcl>;
+    acl?: pulumi.Input<inputs.OutputsTcpSyslogAcl | undefined>;
     /**
      * If true, disables global syslog settings.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * host:port of the server where syslog data should be sent
      */
-    server?: pulumi.Input<string>;
+    server?: pulumi.Input<string | undefined>;
     /**
      * Specifies a rule for handling data in addition to that provided by the "syslog" sourcetype. By default, there is no value for syslogSourceType.
      * <br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string "syslog" receives this special treatment.
@@ -160,16 +160,16 @@ export interface OutputsTcpSyslogState {
      * Data that is "syslog" or matches this setting is assumed to already be in syslog format.
      * Data that does not match the rules has a header, potentially a timestamp, and a hostname added to the front of the event. This is how Splunk software causes arbitrary log data to match syslog expectations.
      */
-    syslogSourcetype?: pulumi.Input<string>;
+    syslogSourcetype?: pulumi.Input<string | undefined>;
     /**
      * Format of timestamp to add at start of the events to be forwarded.
      * The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      */
-    timestampFormat?: pulumi.Input<string>;
+    timestampFormat?: pulumi.Input<string | undefined>;
     /**
      * Protocol to use to send syslog data. Valid values: (tcp | udp ).
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,23 +179,23 @@ export interface OutputsTcpSyslogArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.OutputsTcpSyslogAcl>;
+    acl?: pulumi.Input<inputs.OutputsTcpSyslogAcl | undefined>;
     /**
      * If true, disables global syslog settings.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * host:port of the server where syslog data should be sent
      */
-    server?: pulumi.Input<string>;
+    server?: pulumi.Input<string | undefined>;
     /**
      * Specifies a rule for handling data in addition to that provided by the "syslog" sourcetype. By default, there is no value for syslogSourceType.
      * <br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string "syslog" receives this special treatment.
@@ -204,14 +204,14 @@ export interface OutputsTcpSyslogArgs {
      * Data that is "syslog" or matches this setting is assumed to already be in syslog format.
      * Data that does not match the rules has a header, potentially a timestamp, and a hostname added to the front of the event. This is how Splunk software causes arbitrary log data to match syslog expectations.
      */
-    syslogSourcetype?: pulumi.Input<string>;
+    syslogSourcetype?: pulumi.Input<string | undefined>;
     /**
      * Format of timestamp to add at start of the events to be forwarded.
      * The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
      */
-    timestampFormat?: pulumi.Input<string>;
+    timestampFormat?: pulumi.Input<string | undefined>;
     /**
      * Protocol to use to send syslog data. Valid values: (tcp | udp ).
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpRaw = new Splunk.Index.InputsTcpRaw("tcp_raw", new()
+    ///     var tcpRaw = new Splunk.InputsTcpRaw("tcp_raw", new()
     ///     {
     ///         Name = "41000",
     ///         Index = "main",

@@ -161,7 +161,7 @@ export interface InputsUdpState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsUdpAcl>;
+    acl?: pulumi.Input<inputs.InputsUdpAcl | undefined>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -170,48 +170,48 @@ export interface InputsUdpState {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    connectionHost?: pulumi.Input<string>;
+    connectionHost?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Which index events from this input should be stored in. Defaults to default.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * The UDP port that this input should listen on.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
      */
-    noAppendingTimestamp?: pulumi.Input<boolean>;
+    noAppendingTimestamp?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, Splunk software does not remove the priority field from incoming syslog events.
      */
-    noPriorityStripping?: pulumi.Input<boolean>;
+    noPriorityStripping?: pulumi.Input<boolean | undefined>;
     /**
      * Which queue events from this input should be sent to. Generally this does not need to be changed.
      */
-    queue?: pulumi.Input<string>;
+    queue?: pulumi.Input<string | undefined>;
     /**
      * Restrict incoming connections on this port to the host specified here.
      * If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
      */
-    restrictToHost?: pulumi.Input<string>;
+    restrictToHost?: pulumi.Input<string | undefined>;
     /**
      * The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The value to populate in the sourcetype field for incoming events.
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -221,7 +221,7 @@ export interface InputsUdpArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsUdpAcl>;
+    acl?: pulumi.Input<inputs.InputsUdpAcl | undefined>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -230,46 +230,46 @@ export interface InputsUdpArgs {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    connectionHost?: pulumi.Input<string>;
+    connectionHost?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Which index events from this input should be stored in. Defaults to default.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * The UDP port that this input should listen on.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
      */
-    noAppendingTimestamp?: pulumi.Input<boolean>;
+    noAppendingTimestamp?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, Splunk software does not remove the priority field from incoming syslog events.
      */
-    noPriorityStripping?: pulumi.Input<boolean>;
+    noPriorityStripping?: pulumi.Input<boolean | undefined>;
     /**
      * Which queue events from this input should be sent to. Generally this does not need to be changed.
      */
-    queue?: pulumi.Input<string>;
+    queue?: pulumi.Input<string | undefined>;
     /**
      * Restrict incoming connections on this port to the host specified here.
      * If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
      */
-    restrictToHost?: pulumi.Input<string>;
+    restrictToHost?: pulumi.Input<string | undefined>;
     /**
      * The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The value to populate in the sourcetype field for incoming events.
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
 }

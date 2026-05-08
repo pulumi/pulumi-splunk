@@ -19,13 +19,13 @@ __all__ = ['GlobalHttpEventCollectorArgs', 'GlobalHttpEventCollector']
 @pulumi.input_type
 class GlobalHttpEventCollectorArgs:
     def __init__(__self__, *,
-                 dedicated_io_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None):
+                 dedicated_io_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 use_deployment_server: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a GlobalHttpEventCollector resource.
 
@@ -55,79 +55,79 @@ class GlobalHttpEventCollectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="dedicatedIoThreads")
-    def dedicated_io_threads(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dedicated_io_threads(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of threads used by HTTP Input server.
         """
         return pulumi.get(self, "dedicated_io_threads")
 
     @dedicated_io_threads.setter
-    def dedicated_io_threads(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dedicated_io_threads(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dedicated_io_threads", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Input disabled indicator.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSsl")
-    def enable_ssl(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_ssl(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
         """
         return pulumi.get(self, "enable_ssl")
 
     @enable_ssl.setter
-    def enable_ssl(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_ssl(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_ssl", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSockets")
-    def max_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_sockets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum number of simultaneous HTTP connections accepted. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
         """
         return pulumi.get(self, "max_sockets")
 
     @max_sockets.setter
-    def max_sockets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_sockets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_sockets", value)
 
     @_builtins.property
     @pulumi.getter(name="maxThreads")
-    def max_threads(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_threads(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum number of threads that can be used by active HTTP transactions. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
         """
         return pulumi.get(self, "max_threads")
 
     @max_threads.setter
-    def max_threads(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_threads(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_threads", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         HTTP data input IP port.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="useDeploymentServer")
-    def use_deployment_server(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def use_deployment_server(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
         Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
@@ -135,20 +135,20 @@ class GlobalHttpEventCollectorArgs:
         return pulumi.get(self, "use_deployment_server")
 
     @use_deployment_server.setter
-    def use_deployment_server(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def use_deployment_server(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "use_deployment_server", value)
 
 
 @pulumi.input_type
 class _GlobalHttpEventCollectorState:
     def __init__(__self__, *,
-                 dedicated_io_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None):
+                 dedicated_io_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 use_deployment_server: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering GlobalHttpEventCollector resources.
 
@@ -178,79 +178,79 @@ class _GlobalHttpEventCollectorState:
 
     @_builtins.property
     @pulumi.getter(name="dedicatedIoThreads")
-    def dedicated_io_threads(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dedicated_io_threads(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of threads used by HTTP Input server.
         """
         return pulumi.get(self, "dedicated_io_threads")
 
     @dedicated_io_threads.setter
-    def dedicated_io_threads(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dedicated_io_threads(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dedicated_io_threads", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Input disabled indicator.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSsl")
-    def enable_ssl(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_ssl(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enable SSL protocol for HTTP data input. `true` = SSL enabled, `false` = SSL disabled.
         """
         return pulumi.get(self, "enable_ssl")
 
     @enable_ssl.setter
-    def enable_ssl(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_ssl(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_ssl", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSockets")
-    def max_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_sockets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum number of simultaneous HTTP connections accepted. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
         """
         return pulumi.get(self, "max_sockets")
 
     @max_sockets.setter
-    def max_sockets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_sockets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_sockets", value)
 
     @_builtins.property
     @pulumi.getter(name="maxThreads")
-    def max_threads(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_threads(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum number of threads that can be used by active HTTP transactions. Adjusting this value may cause server performance issues and is not generally recommended. Possible values for this setting vary by OS.
         """
         return pulumi.get(self, "max_threads")
 
     @max_threads.setter
-    def max_threads(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_threads(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_threads", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         HTTP data input IP port.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="useDeploymentServer")
-    def use_deployment_server(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def use_deployment_server(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates whether the event collector input writes its configuration to a deployment server repository. When this setting is set to 1 (enabled), the input writes its configuration to the directory specified as repositoryLocation in serverclass.conf.
         Copy the full contents of the splunk_httpinput app directory to this directory for the configuration to work. When enabled, only the tokens defined in the splunk_httpinput app in this repository are viewable and editable on the API and the Data Inputs page in Splunk Web. When disabled, the input writes its configuration to $SPLUNK_HOME/etc/apps by default. Defaults to 0 (disabled).
@@ -258,7 +258,7 @@ class _GlobalHttpEventCollectorState:
         return pulumi.get(self, "use_deployment_server")
 
     @use_deployment_server.setter
-    def use_deployment_server(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def use_deployment_server(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "use_deployment_server", value)
 
 
@@ -268,13 +268,13 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dedicated_io_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None,
+                 dedicated_io_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 use_deployment_server: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         ## # Resource: GlobalHttpEventCollector
@@ -344,13 +344,13 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dedicated_io_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_threads: Optional[pulumi.Input[_builtins.int]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None,
+                 dedicated_io_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_threads: pulumi.Input[Optional[_builtins.int]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 use_deployment_server: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -377,13 +377,13 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dedicated_io_threads: Optional[pulumi.Input[_builtins.int]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-            max_threads: Optional[pulumi.Input[_builtins.int]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            use_deployment_server: Optional[pulumi.Input[_builtins.int]] = None) -> 'GlobalHttpEventCollector':
+            dedicated_io_threads: pulumi.Input[Optional[_builtins.int]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+            max_threads: pulumi.Input[Optional[_builtins.int]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            use_deployment_server: pulumi.Input[Optional[_builtins.int]] = None) -> 'GlobalHttpEventCollector':
         """
         Get an existing GlobalHttpEventCollector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

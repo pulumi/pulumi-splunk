@@ -21,12 +21,12 @@ __all__ = ['InputsTcpCookedArgs', 'InputsTcpCooked']
 @pulumi.input_type
 class InputsTcpCookedArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsTcpCookedAclArgs']] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsTcpCookedAclArgs']] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpCooked resource.
 
@@ -57,19 +57,19 @@ class InputsTcpCookedArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsTcpCookedAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsTcpCookedAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsTcpCookedAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsTcpCookedAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionHost")
-    def connection_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (ip | dns | none)
         Set the host for the remote server that is sending data.
@@ -81,67 +81,67 @@ class InputsTcpCookedArgs:
         return pulumi.get(self, "connection_host")
 
     @connection_host.setter
-    def connection_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host from which the indexer gets data.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The port number of this input.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictToHost")
-    def restrict_to_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_to_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restrict incoming connections on this port to the host specified here.
         """
         return pulumi.get(self, "restrict_to_host")
 
     @restrict_to_host.setter
-    def restrict_to_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_to_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_to_host", value)
 
 
 @pulumi.input_type
 class _InputsTcpCookedState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsTcpCookedAclArgs']] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsTcpCookedAclArgs']] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpCooked resources.
 
@@ -172,19 +172,19 @@ class _InputsTcpCookedState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsTcpCookedAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsTcpCookedAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsTcpCookedAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsTcpCookedAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionHost")
-    def connection_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (ip | dns | none)
         Set the host for the remote server that is sending data.
@@ -196,55 +196,55 @@ class _InputsTcpCookedState:
         return pulumi.get(self, "connection_host")
 
     @connection_host.setter
-    def connection_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host from which the indexer gets data.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The port number of this input.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictToHost")
-    def restrict_to_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_to_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restrict incoming connections on this port to the host specified here.
         """
         return pulumi.get(self, "restrict_to_host")
 
     @restrict_to_host.setter
-    def restrict_to_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_to_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_to_host", value)
 
 
@@ -254,12 +254,12 @@ class InputsTcpCooked(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']]] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']]] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsTcpCooked
@@ -334,12 +334,12 @@ class InputsTcpCooked(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']]] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']]] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -365,12 +365,12 @@ class InputsTcpCooked(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']]] = None,
-            connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsTcpCooked':
+            acl: pulumi.Input[Optional[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict']]] = None,
+            connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsTcpCooked':
         """
         Get an existing InputsTcpCooked resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

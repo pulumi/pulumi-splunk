@@ -98,15 +98,15 @@ export interface InputsTcpSplunkTcpTokenState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsTcpSplunkTcpTokenAcl>;
+    acl?: pulumi.Input<inputs.InputsTcpSplunkTcpTokenAcl | undefined>;
     /**
      * Required. Name for the token to create.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Optional. Token value to use. If unspecified, a token is generated automatically.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -116,13 +116,13 @@ export interface InputsTcpSplunkTcpTokenArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsTcpSplunkTcpTokenAcl>;
+    acl?: pulumi.Input<inputs.InputsTcpSplunkTcpTokenAcl | undefined>;
     /**
      * Required. Name for the token to create.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Optional. Token value to use. If unspecified, a token is generated automatically.
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
 }

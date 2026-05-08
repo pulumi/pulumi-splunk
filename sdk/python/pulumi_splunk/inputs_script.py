@@ -22,15 +22,15 @@ __all__ = ['InputsScriptArgs', 'InputsScript']
 class InputsScriptArgs:
     def __init__(__self__, *,
                  interval: pulumi.Input[_builtins.int],
-                 acl: Optional[pulumi.Input['InputsScriptAclArgs']] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 passauth: Optional[pulumi.Input[_builtins.str]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsScriptAclArgs']] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 passauth: pulumi.Input[Optional[_builtins.str]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsScript resource.
 
@@ -81,91 +81,91 @@ class InputsScriptArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsScriptAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsScriptAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsScriptAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsScriptAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the input script is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the host for events from this input. Defaults to whatever host sent the event.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the index for events from this input. Defaults to the main index.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the name of the scripted input.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def passauth(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def passauth(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
         """
         return pulumi.get(self, "passauth")
 
     @passauth.setter
-    def passauth(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def passauth(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "passauth", value)
 
     @_builtins.property
     @pulumi.getter(name="renameSource")
-    def rename_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rename_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a new name for the source field for the script.
         """
         return pulumi.get(self, "rename_source")
 
     @rename_source.setter
-    def rename_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rename_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rename_source", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the source key/field for events from this input. Defaults to the input file path.
         Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
@@ -173,12 +173,12 @@ class InputsScriptArgs:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
         Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
@@ -186,23 +186,23 @@ class InputsScriptArgs:
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
 
 @pulumi.input_type
 class _InputsScriptState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsScriptAclArgs']] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 passauth: Optional[pulumi.Input[_builtins.str]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsScriptAclArgs']] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 passauth: pulumi.Input[Optional[_builtins.str]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsScript resources.
 
@@ -242,103 +242,103 @@ class _InputsScriptState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsScriptAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsScriptAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsScriptAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsScriptAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the input script is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the host for events from this input. Defaults to whatever host sent the event.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the index for events from this input. Defaults to the main index.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def interval(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
         """
         return pulumi.get(self, "interval")
 
     @interval.setter
-    def interval(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the name of the scripted input.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def passauth(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def passauth(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
         """
         return pulumi.get(self, "passauth")
 
     @passauth.setter
-    def passauth(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def passauth(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "passauth", value)
 
     @_builtins.property
     @pulumi.getter(name="renameSource")
-    def rename_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rename_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a new name for the source field for the script.
         """
         return pulumi.get(self, "rename_source")
 
     @rename_source.setter
-    def rename_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rename_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rename_source", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the source key/field for events from this input. Defaults to the input file path.
         Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
@@ -346,12 +346,12 @@ class _InputsScriptState:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
         Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
@@ -359,7 +359,7 @@ class _InputsScriptState:
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
 
@@ -369,16 +369,16 @@ class InputsScript(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 passauth: Optional[pulumi.Input[_builtins.str]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 passauth: pulumi.Input[Optional[_builtins.str]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsScript
@@ -450,16 +450,16 @@ class InputsScript(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 interval: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 passauth: Optional[pulumi.Input[_builtins.str]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 passauth: pulumi.Input[Optional[_builtins.str]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -491,16 +491,16 @@ class InputsScript(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            index: Optional[pulumi.Input[_builtins.str]] = None,
-            interval: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            passauth: Optional[pulumi.Input[_builtins.str]] = None,
-            rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            sourcetype: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsScript':
+            acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.str]] = None,
+            interval: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            passauth: pulumi.Input[Optional[_builtins.str]] = None,
+            rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            sourcetype: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsScript':
         """
         Get an existing InputsScript resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

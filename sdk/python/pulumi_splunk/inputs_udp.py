@@ -21,18 +21,18 @@ __all__ = ['InputsUdpArgs', 'InputsUdp']
 @pulumi.input_type
 class InputsUdpArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsUdpAclArgs']] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_appending_timestamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 no_priority_stripping: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsUdpAclArgs']] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_appending_timestamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 no_priority_stripping: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsUdp resource.
 
@@ -82,19 +82,19 @@ class InputsUdpArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsUdpAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsUdpAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsUdpAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsUdpAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionHost")
-    def connection_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (ip | dns | none)
         Set the host for the remote server that is sending data.
@@ -106,96 +106,96 @@ class InputsUdpArgs:
         return pulumi.get(self, "connection_host")
 
     @connection_host.setter
-    def connection_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Which index events from this input should be stored in. Defaults to default.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UDP port that this input should listen on.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="noAppendingTimestamp")
-    def no_appending_timestamp(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_appending_timestamp(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
         """
         return pulumi.get(self, "no_appending_timestamp")
 
     @no_appending_timestamp.setter
-    def no_appending_timestamp(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_appending_timestamp(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_appending_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="noPriorityStripping")
-    def no_priority_stripping(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_priority_stripping(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, Splunk software does not remove the priority field from incoming syslog events.
         """
         return pulumi.get(self, "no_priority_stripping")
 
     @no_priority_stripping.setter
-    def no_priority_stripping(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_priority_stripping(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_priority_stripping", value)
 
     @_builtins.property
     @pulumi.getter
-    def queue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Which queue events from this input should be sent to. Generally this does not need to be changed.
         """
         return pulumi.get(self, "queue")
 
     @queue.setter
-    def queue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictToHost")
-    def restrict_to_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_to_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restrict incoming connections on this port to the host specified here.
         If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
@@ -203,49 +203,49 @@ class InputsUdpArgs:
         return pulumi.get(self, "restrict_to_host")
 
     @restrict_to_host.setter
-    def restrict_to_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_to_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_to_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the sourcetype field for incoming events.
         """
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
 
 @pulumi.input_type
 class _InputsUdpState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsUdpAclArgs']] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_appending_timestamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 no_priority_stripping: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsUdpAclArgs']] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_appending_timestamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 no_priority_stripping: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsUdp resources.
 
@@ -295,19 +295,19 @@ class _InputsUdpState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsUdpAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsUdpAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsUdpAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsUdpAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionHost")
-    def connection_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (ip | dns | none)
         Set the host for the remote server that is sending data.
@@ -319,96 +319,96 @@ class _InputsUdpState:
         return pulumi.get(self, "connection_host")
 
     @connection_host.setter
-    def connection_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the host field for incoming events. This is used during parsing/indexing, in particular to set the host field. It is also the host field used at search time.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Which index events from this input should be stored in. Defaults to default.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UDP port that this input should listen on.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="noAppendingTimestamp")
-    def no_appending_timestamp(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_appending_timestamp(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, prevents Splunk software from prepending a timestamp and hostname to incoming events.
         """
         return pulumi.get(self, "no_appending_timestamp")
 
     @no_appending_timestamp.setter
-    def no_appending_timestamp(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_appending_timestamp(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_appending_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="noPriorityStripping")
-    def no_priority_stripping(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def no_priority_stripping(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, Splunk software does not remove the priority field from incoming syslog events.
         """
         return pulumi.get(self, "no_priority_stripping")
 
     @no_priority_stripping.setter
-    def no_priority_stripping(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def no_priority_stripping(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "no_priority_stripping", value)
 
     @_builtins.property
     @pulumi.getter
-    def queue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Which queue events from this input should be sent to. Generally this does not need to be changed.
         """
         return pulumi.get(self, "queue")
 
     @queue.setter
-    def queue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictToHost")
-    def restrict_to_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_to_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Restrict incoming connections on this port to the host specified here.
         If this is not set, the value specified in [udp://<remote server>:<port>] in inputs.conf is used.
@@ -416,31 +416,31 @@ class _InputsUdpState:
         return pulumi.get(self, "restrict_to_host")
 
     @restrict_to_host.setter
-    def restrict_to_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_to_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_to_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the source field for incoming events. The same source should not be used for multiple data inputs.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the sourcetype field for incoming events.
         """
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
 
@@ -450,18 +450,18 @@ class InputsUdp(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_appending_timestamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 no_priority_stripping: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_appending_timestamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 no_priority_stripping: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsTcpRaw
@@ -545,18 +545,18 @@ class InputsUdp(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 no_appending_timestamp: Optional[pulumi.Input[_builtins.bool]] = None,
-                 no_priority_stripping: Optional[pulumi.Input[_builtins.bool]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_appending_timestamp: pulumi.Input[Optional[_builtins.bool]] = None,
+                 no_priority_stripping: pulumi.Input[Optional[_builtins.bool]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -588,18 +588,18 @@ class InputsUdp(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
-            connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            index: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            no_appending_timestamp: Optional[pulumi.Input[_builtins.bool]] = None,
-            no_priority_stripping: Optional[pulumi.Input[_builtins.bool]] = None,
-            queue: Optional[pulumi.Input[_builtins.str]] = None,
-            restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            sourcetype: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsUdp':
+            acl: pulumi.Input[Optional[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict']]] = None,
+            connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            no_appending_timestamp: pulumi.Input[Optional[_builtins.bool]] = None,
+            no_priority_stripping: pulumi.Input[Optional[_builtins.bool]] = None,
+            queue: pulumi.Input[Optional[_builtins.str]] = None,
+            restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            sourcetype: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsUdp':
         """
         Get an existing InputsUdp resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

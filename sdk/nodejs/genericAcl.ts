@@ -132,11 +132,11 @@ export interface GenericAclState {
      * apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
      * app and owner for objects that don't fit in the normal namespace.
      */
-    acl?: pulumi.Input<inputs.GenericAclAcl>;
+    acl?: pulumi.Input<inputs.GenericAclAcl | undefined>;
     /**
      * REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -149,7 +149,7 @@ export interface GenericAclArgs {
      * apps, require specific values for app and owner. Consult the REST API documentation regarding which values to use for
      * app and owner for objects that don't fit in the normal namespace.
      */
-    acl?: pulumi.Input<inputs.GenericAclAcl>;
+    acl?: pulumi.Input<inputs.GenericAclAcl | undefined>;
     /**
      * REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
      */

@@ -22,8 +22,8 @@ __all__ = ['DataUiViewsArgs', 'DataUiViews']
 class DataUiViewsArgs:
     def __init__(__self__, *,
                  eai_data: pulumi.Input[_builtins.str],
-                 acl: Optional[pulumi.Input['DataUiViewsAclArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['DataUiViewsAclArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataUiViews resource.
 
@@ -51,16 +51,16 @@ class DataUiViewsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['DataUiViewsAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['DataUiViewsAclArgs']]:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['DataUiViewsAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['DataUiViewsAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Dashboard name.
         * `eai:data` - (Required) Dashboard XML definition.
@@ -68,16 +68,16 @@ class DataUiViewsArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _DataUiViewsState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['DataUiViewsAclArgs']] = None,
-                 eai_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['DataUiViewsAclArgs']] = None,
+                 eai_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataUiViews resources.
 
@@ -94,28 +94,28 @@ class _DataUiViewsState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['DataUiViewsAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['DataUiViewsAclArgs']]:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['DataUiViewsAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['DataUiViewsAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="eaiData")
-    def eai_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eai_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Dashboard XML definition.
         """
         return pulumi.get(self, "eai_data")
 
     @eai_data.setter
-    def eai_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eai_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eai_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Dashboard name.
         * `eai:data` - (Required) Dashboard XML definition.
@@ -123,7 +123,7 @@ class _DataUiViewsState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -133,9 +133,9 @@ class DataUiViews(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['DataUiViewsAclArgs', 'DataUiViewsAclArgsDict']]] = None,
-                 eai_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['DataUiViewsAclArgs', 'DataUiViewsAclArgsDict']]] = None,
+                 eai_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: DataUiViews
@@ -204,9 +204,9 @@ class DataUiViews(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['DataUiViewsAclArgs', 'DataUiViewsAclArgsDict']]] = None,
-                 eai_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['DataUiViewsAclArgs', 'DataUiViewsAclArgsDict']]] = None,
+                 eai_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -231,9 +231,9 @@ class DataUiViews(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['DataUiViewsAclArgs', 'DataUiViewsAclArgsDict']]] = None,
-            eai_data: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'DataUiViews':
+            acl: pulumi.Input[Optional[Union['DataUiViewsAclArgs', 'DataUiViewsAclArgsDict']]] = None,
+            eai_data: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'DataUiViews':
         """
         Get an existing DataUiViews resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

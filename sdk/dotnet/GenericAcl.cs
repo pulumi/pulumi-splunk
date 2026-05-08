@@ -30,7 +30,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var myApp = new Splunk.Index.GenericAcl("my_app", new()
+    ///     var myApp = new Splunk.GenericAcl("my_app", new()
     ///     {
     ///         Path = "apps/local/my_app",
     ///         Acl = new Splunk.Inputs.GenericAclAclArgs
@@ -49,7 +49,7 @@ namespace Pulumi.Splunk
     ///         },
     ///     });
     /// 
-    ///     var myDashboard = new Splunk.Index.GenericAcl("my_dashboard", new()
+    ///     var myDashboard = new Splunk.GenericAcl("my_dashboard", new()
     ///     {
     ///         Path = "data/ui/views/my_dashboard",
     ///         Acl = new Splunk.Inputs.GenericAclAclArgs

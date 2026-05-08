@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var tcpDefault = new Splunk.Index.OutputsTcpDefault("tcp_default", new()
+    ///     var tcpDefault = new Splunk.OutputsTcpDefault("tcp_default", new()
     ///     {
     ///         Name = "tcpout",
     ///         Disabled = false,

@@ -88,10 +88,10 @@ class LookupTableFileArgs:
 @pulumi.input_type
 class _LookupTableFileState:
     def __init__(__self__, *,
-                 app: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_contents: Optional[pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None):
+                 app: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LookupTableFile resources.
 
@@ -111,50 +111,50 @@ class _LookupTableFileState:
 
     @_builtins.property
     @pulumi.getter
-    def app(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The app context for the resource.
         """
         return pulumi.get(self, "app")
 
     @app.setter
-    def app(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app", value)
 
     @_builtins.property
     @pulumi.getter(name="fileContents")
-    def file_contents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]:
+    def file_contents(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]:
         """
         The column header and row value contents for the lookup table file.
         """
         return pulumi.get(self, "file_contents")
 
     @file_contents.setter
-    def file_contents(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]):
+    def file_contents(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]):
         pulumi.set(self, "file_contents", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A name for the lookup table file. Generally ends with ".csv"
         """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
-    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
 
@@ -164,10 +164,10 @@ class LookupTableFile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_contents: Optional[pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
+                 app: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: LookupTableFile
@@ -285,10 +285,10 @@ class LookupTableFile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_contents: Optional[pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
+                 app: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -320,10 +320,10 @@ class LookupTableFile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app: Optional[pulumi.Input[_builtins.str]] = None,
-            file_contents: Optional[pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
-            file_name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner: Optional[pulumi.Input[_builtins.str]] = None) -> 'LookupTableFile':
+            app: pulumi.Input[Optional[_builtins.str]] = None,
+            file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+            file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None) -> 'LookupTableFile':
         """
         Get an existing LookupTableFile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

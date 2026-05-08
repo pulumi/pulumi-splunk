@@ -22,7 +22,7 @@ __all__ = ['GenericAclArgs', 'GenericAcl']
 class GenericAclArgs:
     def __init__(__self__, *,
                  path: pulumi.Input[_builtins.str],
-                 acl: Optional[pulumi.Input['GenericAclAclArgs']] = None):
+                 acl: pulumi.Input[Optional['GenericAclAclArgs']] = None):
         """
         The set of arguments for constructing a GenericAcl resource.
 
@@ -50,7 +50,7 @@ class GenericAclArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['GenericAclAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['GenericAclAclArgs']]:
         """
         The ACL to apply to the object, including app/owner to properly identify the object.
         Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
@@ -60,15 +60,15 @@ class GenericAclArgs:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['GenericAclAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['GenericAclAclArgs']]):
         pulumi.set(self, "acl", value)
 
 
 @pulumi.input_type
 class _GenericAclState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['GenericAclAclArgs']] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['GenericAclAclArgs']] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GenericAcl resources.
 
@@ -85,7 +85,7 @@ class _GenericAclState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['GenericAclAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['GenericAclAclArgs']]:
         """
         The ACL to apply to the object, including app/owner to properly identify the object.
         Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as
@@ -95,19 +95,19 @@ class _GenericAclState:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['GenericAclAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['GenericAclAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         REST API Endpoint path to the object, relative to servicesNS/<owner>/<app>
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
 
@@ -117,8 +117,8 @@ class GenericAcl(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: GenericAcl
@@ -243,8 +243,8 @@ class GenericAcl(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -268,8 +268,8 @@ class GenericAcl(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
-            path: Optional[pulumi.Input[_builtins.str]] = None) -> 'GenericAcl':
+            acl: pulumi.Input[Optional[Union['GenericAclAclArgs', 'GenericAclAclArgsDict']]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None) -> 'GenericAcl':
         """
         Get an existing GenericAcl resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

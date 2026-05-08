@@ -117,15 +117,15 @@ export interface LookupDefinitionState {
     /**
      * Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
      */
-    acl?: pulumi.Input<inputs.LookupDefinitionAcl>;
+    acl?: pulumi.Input<inputs.LookupDefinitionAcl | undefined>;
     /**
      * The filename for the lookup table, usually ending in `.csv`.
      */
-    filename?: pulumi.Input<string>;
+    filename?: pulumi.Input<string | undefined>;
     /**
      * A unique name for the lookup definition within the app context.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -135,7 +135,7 @@ export interface LookupDefinitionArgs {
     /**
      * Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
      */
-    acl?: pulumi.Input<inputs.LookupDefinitionAcl>;
+    acl?: pulumi.Input<inputs.LookupDefinitionAcl | undefined>;
     /**
      * The filename for the lookup table, usually ending in `.csv`.
      */

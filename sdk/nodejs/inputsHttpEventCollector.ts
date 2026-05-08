@@ -155,43 +155,43 @@ export interface InputsHttpEventCollectorState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsHttpEventCollectorAcl>;
+    acl?: pulumi.Input<inputs.InputsHttpEventCollectorAcl | undefined>;
     /**
      * Input disabled indicator
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Default host value for events with this token
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Index to store generated events
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * Set of indexes allowed for events with this token
      */
-    indexes?: pulumi.Input<pulumi.Input<string>[]>;
+    indexes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Token name (inputs.conf key)
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Default source for events with this token
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Default source type for events with this token
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
     /**
      * Token value for sending data to collector/event endpoint
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Indexer acknowledgement for this token
      */
-    useAck?: pulumi.Input<number>;
+    useAck?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -201,41 +201,41 @@ export interface InputsHttpEventCollectorArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsHttpEventCollectorAcl>;
+    acl?: pulumi.Input<inputs.InputsHttpEventCollectorAcl | undefined>;
     /**
      * Input disabled indicator
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Default host value for events with this token
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Index to store generated events
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * Set of indexes allowed for events with this token
      */
-    indexes?: pulumi.Input<pulumi.Input<string>[]>;
+    indexes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Token name (inputs.conf key)
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Default source for events with this token
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Default source type for events with this token
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
     /**
      * Token value for sending data to collector/event endpoint
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
     /**
      * Indexer acknowledgement for this token
      */
-    useAck?: pulumi.Input<number>;
+    useAck?: pulumi.Input<number | undefined>;
 }
