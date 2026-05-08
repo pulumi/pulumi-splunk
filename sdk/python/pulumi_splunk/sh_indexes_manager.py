@@ -21,11 +21,11 @@ __all__ = ['ShIndexesManagerArgs', 'ShIndexesManager']
 @pulumi.input_type
 class ShIndexesManagerArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['ShIndexesManagerAclArgs']] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_global_raw_data_size_mb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['ShIndexesManagerAclArgs']] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_global_raw_data_size_mb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ShIndexesManager resource.
 
@@ -49,28 +49,28 @@ class ShIndexesManagerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['ShIndexesManagerAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['ShIndexesManagerAclArgs']]:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['ShIndexesManagerAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['ShIndexesManagerAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def datatype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datatype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (event | metric). Specifies the type of index.
         """
         return pulumi.get(self, "datatype")
 
     @datatype.setter
-    def datatype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datatype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datatype", value)
 
     @_builtins.property
     @pulumi.getter(name="frozenTimePeriodInSecs")
-    def frozen_time_period_in_secs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def frozen_time_period_in_secs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of seconds after which indexed data rolls to frozen.
         Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
@@ -78,12 +78,12 @@ class ShIndexesManagerArgs:
         return pulumi.get(self, "frozen_time_period_in_secs")
 
     @frozen_time_period_in_secs.setter
-    def frozen_time_period_in_secs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def frozen_time_period_in_secs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "frozen_time_period_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxGlobalRawDataSizeMb")
-    def max_global_raw_data_size_mb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_global_raw_data_size_mb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
         Defaults to 100 MB.
@@ -91,30 +91,30 @@ class ShIndexesManagerArgs:
         return pulumi.get(self, "max_global_raw_data_size_mb")
 
     @max_global_raw_data_size_mb.setter
-    def max_global_raw_data_size_mb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_global_raw_data_size_mb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_global_raw_data_size_mb", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the index to create.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ShIndexesManagerState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['ShIndexesManagerAclArgs']] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_global_raw_data_size_mb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['ShIndexesManagerAclArgs']] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_global_raw_data_size_mb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ShIndexesManager resources.
 
@@ -138,28 +138,28 @@ class _ShIndexesManagerState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['ShIndexesManagerAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['ShIndexesManagerAclArgs']]:
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['ShIndexesManagerAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['ShIndexesManagerAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def datatype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def datatype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (event | metric). Specifies the type of index.
         """
         return pulumi.get(self, "datatype")
 
     @datatype.setter
-    def datatype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def datatype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "datatype", value)
 
     @_builtins.property
     @pulumi.getter(name="frozenTimePeriodInSecs")
-    def frozen_time_period_in_secs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def frozen_time_period_in_secs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of seconds after which indexed data rolls to frozen.
         Defaults to 94608000 (3 years).Freezing data means it is removed from the index. If you need to archive your data, refer to coldToFrozenDir and coldToFrozenScript parameter documentation.
@@ -167,12 +167,12 @@ class _ShIndexesManagerState:
         return pulumi.get(self, "frozen_time_period_in_secs")
 
     @frozen_time_period_in_secs.setter
-    def frozen_time_period_in_secs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def frozen_time_period_in_secs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "frozen_time_period_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxGlobalRawDataSizeMb")
-    def max_global_raw_data_size_mb(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_global_raw_data_size_mb(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The maximum size of an index (in MB). If an index grows larger than the maximum size, the oldest data is frozen.
         Defaults to 100 MB.
@@ -180,19 +180,19 @@ class _ShIndexesManagerState:
         return pulumi.get(self, "max_global_raw_data_size_mb")
 
     @max_global_raw_data_size_mb.setter
-    def max_global_raw_data_size_mb(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_global_raw_data_size_mb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_global_raw_data_size_mb", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the index to create.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -202,11 +202,11 @@ class ShIndexesManager(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict']]] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_global_raw_data_size_mb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict']]] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_global_raw_data_size_mb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: ShIndexesManager
@@ -284,11 +284,11 @@ class ShIndexesManager(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict']]] = None,
-                 datatype: Optional[pulumi.Input[_builtins.str]] = None,
-                 frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_global_raw_data_size_mb: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict']]] = None,
+                 datatype: pulumi.Input[Optional[_builtins.str]] = None,
+                 frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_global_raw_data_size_mb: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -313,11 +313,11 @@ class ShIndexesManager(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict']]] = None,
-            datatype: Optional[pulumi.Input[_builtins.str]] = None,
-            frozen_time_period_in_secs: Optional[pulumi.Input[_builtins.str]] = None,
-            max_global_raw_data_size_mb: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'ShIndexesManager':
+            acl: pulumi.Input[Optional[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict']]] = None,
+            datatype: pulumi.Input[Optional[_builtins.str]] = None,
+            frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.str]] = None,
+            max_global_raw_data_size_mb: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ShIndexesManager':
         """
         Get an existing ShIndexesManager resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

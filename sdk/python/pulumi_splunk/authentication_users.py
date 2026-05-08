@@ -19,15 +19,15 @@ __all__ = ['AuthenticationUsersArgs', 'AuthenticationUsers']
 @pulumi.input_type
 class AuthenticationUsersArgs:
     def __init__(__self__, *,
-                 default_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_change_pass: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 realname: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_background_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tz: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_change_pass: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 realname: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_background_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tz: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuthenticationUsers resource.
 
@@ -62,125 +62,125 @@ class AuthenticationUsersArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultApp")
-    def default_app(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_app(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User default app. Overrides the default app inherited from the user roles.
         """
         return pulumi.get(self, "default_app")
 
     @default_app.setter
-    def default_app(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_app(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_app", value)
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User email address.
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter(name="forceChangePass")
-    def force_change_pass(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_change_pass(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Force user to change password indication
         """
         return pulumi.get(self, "force_change_pass")
 
     @force_change_pass.setter
-    def force_change_pass(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_change_pass(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_change_pass", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique user login name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User login password.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def realname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def realname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Full user name.
         """
         return pulumi.get(self, "realname")
 
     @realname.setter
-    def realname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def realname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "realname", value)
 
     @_builtins.property
     @pulumi.getter(name="restartBackgroundJobs")
-    def restart_background_jobs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restart_background_jobs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Restart background search job that has not completed when Splunk restarts indication.
         """
         return pulumi.get(self, "restart_background_jobs")
 
     @restart_background_jobs.setter
-    def restart_background_jobs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restart_background_jobs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restart_background_jobs", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Role to assign to this user. At least one existing role is required.
         """
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter
-    def tz(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tz(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User timezone.
         """
         return pulumi.get(self, "tz")
 
     @tz.setter
-    def tz(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tz(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tz", value)
 
 
 @pulumi.input_type
 class _AuthenticationUsersState:
     def __init__(__self__, *,
-                 default_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_change_pass: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 realname: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_background_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tz: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_change_pass: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 realname: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_background_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tz: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuthenticationUsers resources.
 
@@ -215,110 +215,110 @@ class _AuthenticationUsersState:
 
     @_builtins.property
     @pulumi.getter(name="defaultApp")
-    def default_app(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_app(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User default app. Overrides the default app inherited from the user roles.
         """
         return pulumi.get(self, "default_app")
 
     @default_app.setter
-    def default_app(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_app(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_app", value)
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User email address.
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter(name="forceChangePass")
-    def force_change_pass(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_change_pass(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Force user to change password indication
         """
         return pulumi.get(self, "force_change_pass")
 
     @force_change_pass.setter
-    def force_change_pass(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_change_pass(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_change_pass", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique user login name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User login password.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def realname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def realname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Full user name.
         """
         return pulumi.get(self, "realname")
 
     @realname.setter
-    def realname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def realname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "realname", value)
 
     @_builtins.property
     @pulumi.getter(name="restartBackgroundJobs")
-    def restart_background_jobs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restart_background_jobs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Restart background search job that has not completed when Splunk restarts indication.
         """
         return pulumi.get(self, "restart_background_jobs")
 
     @restart_background_jobs.setter
-    def restart_background_jobs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restart_background_jobs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restart_background_jobs", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Role to assign to this user. At least one existing role is required.
         """
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter
-    def tz(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tz(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User timezone.
         """
         return pulumi.get(self, "tz")
 
     @tz.setter
-    def tz(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tz(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tz", value)
 
 
@@ -328,15 +328,15 @@ class AuthenticationUsers(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_change_pass: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 realname: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_background_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tz: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_change_pass: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 realname: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_background_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tz: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: AuthenticationUsers
@@ -411,15 +411,15 @@ class AuthenticationUsers(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_change_pass: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 realname: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_background_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tz: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_change_pass: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 realname: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_background_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tz: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -450,15 +450,15 @@ class AuthenticationUsers(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_app: Optional[pulumi.Input[_builtins.str]] = None,
-            email: Optional[pulumi.Input[_builtins.str]] = None,
-            force_change_pass: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            realname: Optional[pulumi.Input[_builtins.str]] = None,
-            restart_background_jobs: Optional[pulumi.Input[_builtins.bool]] = None,
-            roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tz: Optional[pulumi.Input[_builtins.str]] = None) -> 'AuthenticationUsers':
+            default_app: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            force_change_pass: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            realname: pulumi.Input[Optional[_builtins.str]] = None,
+            restart_background_jobs: pulumi.Input[Optional[_builtins.bool]] = None,
+            roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tz: pulumi.Input[Optional[_builtins.str]] = None) -> 'AuthenticationUsers':
         """
         Get an existing AuthenticationUsers resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

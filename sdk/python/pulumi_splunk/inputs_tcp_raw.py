@@ -21,17 +21,17 @@ __all__ = ['InputsTcpRawArgs', 'InputsTcpRaw']
 @pulumi.input_type
 class InputsTcpRawArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsTcpRawAclArgs']] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 raw_tcp_done_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsTcpRawAclArgs']] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 raw_tcp_done_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpRaw resource.
 
@@ -84,19 +84,19 @@ class InputsTcpRawArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsTcpRawAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsTcpRawAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsTcpRawAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsTcpRawAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionHost")
-    def connection_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (ip | dns | none)
         Set the host for the remote server that is sending data.
@@ -108,60 +108,60 @@ class InputsTcpRawArgs:
         return pulumi.get(self, "connection_host")
 
     @connection_host.setter
-    def connection_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host from which the indexer gets data.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Index to store generated events. Defaults to default.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The input port which receives raw data.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def queue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (parsingQueue | indexQueue)
         Specifies where the input processor should deposit the events it reads. Defaults to parsingQueue.
@@ -171,12 +171,12 @@ class InputsTcpRawArgs:
         return pulumi.get(self, "queue")
 
     @queue.setter
-    def queue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue", value)
 
     @_builtins.property
     @pulumi.getter(name="rawTcpDoneTimeout")
-    def raw_tcp_done_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def raw_tcp_done_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies in seconds the timeout value for adding a Done-key. Default value is 10 seconds.
         If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
@@ -184,24 +184,24 @@ class InputsTcpRawArgs:
         return pulumi.get(self, "raw_tcp_done_timeout")
 
     @raw_tcp_done_timeout.setter
-    def raw_tcp_done_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def raw_tcp_done_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "raw_tcp_done_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictToHost")
-    def restrict_to_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_to_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allows for restricting this input to only accept data from the host specified here.
         """
         return pulumi.get(self, "restrict_to_host")
 
     @restrict_to_host.setter
-    def restrict_to_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_to_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_to_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the source key/field for events from this input. Defaults to the input file path.
         Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
@@ -209,12 +209,12 @@ class InputsTcpRawArgs:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set the source type for events from this input.
         "sourcetype=" is automatically prepended to <string>.
@@ -223,24 +223,24 @@ class InputsTcpRawArgs:
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
 
 @pulumi.input_type
 class _InputsTcpRawState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsTcpRawAclArgs']] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 raw_tcp_done_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsTcpRawAclArgs']] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 raw_tcp_done_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpRaw resources.
 
@@ -293,19 +293,19 @@ class _InputsTcpRawState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsTcpRawAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsTcpRawAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsTcpRawAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsTcpRawAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionHost")
-    def connection_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (ip | dns | none)
         Set the host for the remote server that is sending data.
@@ -317,60 +317,60 @@ class _InputsTcpRawState:
         return pulumi.get(self, "connection_host")
 
     @connection_host.setter
-    def connection_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host from which the indexer gets data.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Index to store generated events. Defaults to default.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The input port which receives raw data.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def queue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (parsingQueue | indexQueue)
         Specifies where the input processor should deposit the events it reads. Defaults to parsingQueue.
@@ -380,12 +380,12 @@ class _InputsTcpRawState:
         return pulumi.get(self, "queue")
 
     @queue.setter
-    def queue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue", value)
 
     @_builtins.property
     @pulumi.getter(name="rawTcpDoneTimeout")
-    def raw_tcp_done_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def raw_tcp_done_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies in seconds the timeout value for adding a Done-key. Default value is 10 seconds.
         If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
@@ -393,24 +393,24 @@ class _InputsTcpRawState:
         return pulumi.get(self, "raw_tcp_done_timeout")
 
     @raw_tcp_done_timeout.setter
-    def raw_tcp_done_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def raw_tcp_done_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "raw_tcp_done_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictToHost")
-    def restrict_to_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restrict_to_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allows for restricting this input to only accept data from the host specified here.
         """
         return pulumi.get(self, "restrict_to_host")
 
     @restrict_to_host.setter
-    def restrict_to_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restrict_to_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restrict_to_host", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the source key/field for events from this input. Defaults to the input file path.
         Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
@@ -418,12 +418,12 @@ class _InputsTcpRawState:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set the source type for events from this input.
         "sourcetype=" is automatically prepended to <string>.
@@ -432,7 +432,7 @@ class _InputsTcpRawState:
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
 
@@ -442,17 +442,17 @@ class InputsTcpRaw(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']]] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 raw_tcp_done_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']]] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 raw_tcp_done_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsTcpRaw
@@ -543,17 +543,17 @@ class InputsTcpRaw(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']]] = None,
-                 connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue: Optional[pulumi.Input[_builtins.str]] = None,
-                 raw_tcp_done_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']]] = None,
+                 connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue: pulumi.Input[Optional[_builtins.str]] = None,
+                 raw_tcp_done_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -584,17 +584,17 @@ class InputsTcpRaw(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']]] = None,
-            connection_host: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            index: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            queue: Optional[pulumi.Input[_builtins.str]] = None,
-            raw_tcp_done_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            restrict_to_host: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            sourcetype: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsTcpRaw':
+            acl: pulumi.Input[Optional[Union['InputsTcpRawAclArgs', 'InputsTcpRawAclArgsDict']]] = None,
+            connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            queue: pulumi.Input[Optional[_builtins.str]] = None,
+            raw_tcp_done_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            sourcetype: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsTcpRaw':
         """
         Get an existing InputsTcpRaw resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

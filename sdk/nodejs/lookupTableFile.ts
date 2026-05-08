@@ -141,19 +141,19 @@ export interface LookupTableFileState {
     /**
      * The app context for the resource.
      */
-    app?: pulumi.Input<string>;
+    app?: pulumi.Input<string | undefined>;
     /**
      * The column header and row value contents for the lookup table file.
      */
-    fileContents?: pulumi.Input<pulumi.Input<pulumi.Input<string>[]>[]>;
+    fileContents?: pulumi.Input<pulumi.Input<pulumi.Input<string>[]>[] | undefined>;
     /**
      * A name for the lookup table file. Generally ends with ".csv"
      */
-    fileName?: pulumi.Input<string>;
+    fileName?: pulumi.Input<string | undefined>;
     /**
      * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
 }
 
 /**

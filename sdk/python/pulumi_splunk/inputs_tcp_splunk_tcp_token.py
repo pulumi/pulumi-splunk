@@ -21,9 +21,9 @@ __all__ = ['InputsTcpSplunkTcpTokenArgs', 'InputsTcpSplunkTcpToken']
 @pulumi.input_type
 class InputsTcpSplunkTcpTokenArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsTcpSplunkTcpTokenAclArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsTcpSplunkTcpToken resource.
 
@@ -40,47 +40,47 @@ class InputsTcpSplunkTcpTokenArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsTcpSplunkTcpTokenAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsTcpSplunkTcpTokenAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Required. Name for the token to create.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional. Token value to use. If unspecified, a token is generated automatically.
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
 
 @pulumi.input_type
 class _InputsTcpSplunkTcpTokenState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsTcpSplunkTcpTokenAclArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsTcpSplunkTcpToken resources.
 
@@ -97,38 +97,38 @@ class _InputsTcpSplunkTcpTokenState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsTcpSplunkTcpTokenAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsTcpSplunkTcpTokenAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsTcpSplunkTcpTokenAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Required. Name for the token to create.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional. Token value to use. If unspecified, a token is generated automatically.
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "token", value)
 
 
@@ -138,9 +138,9 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsTcpSplunkTcpToken
@@ -203,9 +203,9 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 token: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -228,9 +228,9 @@ class InputsTcpSplunkTcpToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            token: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsTcpSplunkTcpToken':
+            acl: pulumi.Input[Optional[Union['InputsTcpSplunkTcpTokenAclArgs', 'InputsTcpSplunkTcpTokenAclArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsTcpSplunkTcpToken':
         """
         Get an existing InputsTcpSplunkTcpToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -177,67 +177,67 @@ export interface InputsMonitorState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsMonitorAcl>;
+    acl?: pulumi.Input<inputs.InputsMonitorAcl | undefined>;
     /**
      * Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
      */
-    blacklist?: pulumi.Input<string>;
+    blacklist?: pulumi.Input<string | undefined>;
     /**
      * A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
      */
-    crcSalt?: pulumi.Input<string>;
+    crcSalt?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input monitoring is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, files that are seen for the first time is read from the end.
      */
-    followTail?: pulumi.Input<boolean>;
+    followTail?: pulumi.Input<boolean | undefined>;
     /**
      * The value to populate in the host field for events from this data input.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
      */
-    hostRegex?: pulumi.Input<string>;
+    hostRegex?: pulumi.Input<string | undefined>;
     /**
      * Use the specified slash-separate segment of the filepath as the host field value.
      */
-    hostSegment?: pulumi.Input<number>;
+    hostSegment?: pulumi.Input<number | undefined>;
     /**
      * Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
      */
-    ignoreOlderThan?: pulumi.Input<string>;
+    ignoreOlderThan?: pulumi.Input<string | undefined>;
     /**
      * Which index events from this input should be stored in. Defaults to default.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * The file or directory path to monitor on the system.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Setting this to false prevents monitoring of any subdirectories encountered within this data input.
      */
-    recursive?: pulumi.Input<boolean>;
+    recursive?: pulumi.Input<boolean | undefined>;
     /**
      * The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
      */
-    renameSource?: pulumi.Input<string>;
+    renameSource?: pulumi.Input<string | undefined>;
     /**
      * The value to populate in the sourcetype field for incoming events.
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
     /**
      * When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
      */
-    timeBeforeClose?: pulumi.Input<number>;
+    timeBeforeClose?: pulumi.Input<number | undefined>;
     /**
      * Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
      */
-    whitelist?: pulumi.Input<string>;
+    whitelist?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -247,65 +247,65 @@ export interface InputsMonitorArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsMonitorAcl>;
+    acl?: pulumi.Input<inputs.InputsMonitorAcl | undefined>;
     /**
      * Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
      */
-    blacklist?: pulumi.Input<string>;
+    blacklist?: pulumi.Input<string | undefined>;
     /**
      * A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
      */
-    crcSalt?: pulumi.Input<string>;
+    crcSalt?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input monitoring is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * If set to true, files that are seen for the first time is read from the end.
      */
-    followTail?: pulumi.Input<boolean>;
+    followTail?: pulumi.Input<boolean | undefined>;
     /**
      * The value to populate in the host field for events from this data input.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
      */
-    hostRegex?: pulumi.Input<string>;
+    hostRegex?: pulumi.Input<string | undefined>;
     /**
      * Use the specified slash-separate segment of the filepath as the host field value.
      */
-    hostSegment?: pulumi.Input<number>;
+    hostSegment?: pulumi.Input<number | undefined>;
     /**
      * Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
      */
-    ignoreOlderThan?: pulumi.Input<string>;
+    ignoreOlderThan?: pulumi.Input<string | undefined>;
     /**
      * Which index events from this input should be stored in. Defaults to default.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * The file or directory path to monitor on the system.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Setting this to false prevents monitoring of any subdirectories encountered within this data input.
      */
-    recursive?: pulumi.Input<boolean>;
+    recursive?: pulumi.Input<boolean | undefined>;
     /**
      * The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
      */
-    renameSource?: pulumi.Input<string>;
+    renameSource?: pulumi.Input<string | undefined>;
     /**
      * The value to populate in the sourcetype field for incoming events.
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
     /**
      * When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
      */
-    timeBeforeClose?: pulumi.Input<number>;
+    timeBeforeClose?: pulumi.Input<number | undefined>;
     /**
      * Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
      */
-    whitelist?: pulumi.Input<string>;
+    whitelist?: pulumi.Input<string | undefined>;
 }

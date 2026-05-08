@@ -110,23 +110,23 @@ export interface InputsTcpSslState {
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Server certificate password, if any.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Determines whether a client must authenticate.
      */
-    requireClientCert?: pulumi.Input<boolean>;
+    requireClientCert?: pulumi.Input<boolean | undefined>;
     /**
      * Certificate authority list (root file)
      */
-    rootCa?: pulumi.Input<string>;
+    rootCa?: pulumi.Input<string | undefined>;
     /**
      * Full path to the server certificate.
      */
-    serverCert?: pulumi.Input<string>;
+    serverCert?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -136,21 +136,21 @@ export interface InputsTcpSslArgs {
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Server certificate password, if any.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Determines whether a client must authenticate.
      */
-    requireClientCert?: pulumi.Input<boolean>;
+    requireClientCert?: pulumi.Input<boolean | undefined>;
     /**
      * Certificate authority list (root file)
      */
-    rootCa?: pulumi.Input<string>;
+    rootCa?: pulumi.Input<string | undefined>;
     /**
      * Full path to the server certificate.
      */
-    serverCert?: pulumi.Input<string>;
+    serverCert?: pulumi.Input<string | undefined>;
 }

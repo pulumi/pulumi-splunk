@@ -1251,771 +1251,771 @@ export interface SavedSearchesState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    acl?: pulumi.Input<inputs.SavedSearchesAcl | undefined>;
     /**
      * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
      */
-    actionBetterWebhookParamBodyFormat?: pulumi.Input<string>;
+    actionBetterWebhookParamBodyFormat?: pulumi.Input<string | undefined>;
     /**
      * Name of the Splunk stored credential to use for authentication
      */
-    actionBetterWebhookParamCredential?: pulumi.Input<string>;
+    actionBetterWebhookParamCredential?: pulumi.Input<string | undefined>;
     /**
      * Use the credentials defined in the webhook URL
      */
-    actionBetterWebhookParamCredentials?: pulumi.Input<string>;
+    actionBetterWebhookParamCredentials?: pulumi.Input<string | undefined>;
     /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
-    actionBetterWebhookParamUrl?: pulumi.Input<string>;
+    actionBetterWebhookParamUrl?: pulumi.Input<string | undefined>;
     /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      */
-    actionCreateXsoarIncident?: pulumi.Input<string>;
+    actionCreateXsoarIncident?: pulumi.Input<string | undefined>;
     /**
      * XSOAR custom incident fields (should be a comma separated list)
      */
-    actionCreateXsoarIncidentParamCustomFields?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamCustomFields?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident description
      */
-    actionCreateXsoarIncidentParamDetails?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamDetails?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident name
      */
-    actionCreateXsoarIncidentParamIncidentName?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamIncidentName?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident time
      */
-    actionCreateXsoarIncidentParamOccurred?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamOccurred?: pulumi.Input<string | undefined>;
     /**
      * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
      */
-    actionCreateXsoarIncidentParamSendAllServers?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamSendAllServers?: pulumi.Input<string | undefined>;
     /**
      * XSOAR Server instance URL (Should start with https:// || http://)
      */
-    actionCreateXsoarIncidentParamServerUrl?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamServerUrl?: pulumi.Input<string | undefined>;
     /**
      * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
      */
-    actionCreateXsoarIncidentParamSeverity?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamSeverity?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident type
      */
-    actionCreateXsoarIncidentParamType?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamType?: pulumi.Input<string | undefined>;
     /**
      * The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    actionEmail?: pulumi.Input<boolean>;
+    actionEmail?: pulumi.Input<boolean | undefined>;
     /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      */
-    actionEmailAuthPassword?: pulumi.Input<string>;
+    actionEmailAuthPassword?: pulumi.Input<string | undefined>;
     /**
      * The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
      */
-    actionEmailAuthUsername?: pulumi.Input<string>;
+    actionEmailAuthUsername?: pulumi.Input<string | undefined>;
     /**
      * BCC email address to use if action.email is enabled.
      */
-    actionEmailBcc?: pulumi.Input<string>;
+    actionEmailBcc?: pulumi.Input<string | undefined>;
     /**
      * CC email address to use if action.email is enabled.
      */
-    actionEmailCc?: pulumi.Input<string>;
+    actionEmailCc?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionEmailCommand?: pulumi.Input<string>;
+    actionEmailCommand?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
      */
-    actionEmailFormat?: pulumi.Input<string>;
+    actionEmailFormat?: pulumi.Input<string | undefined>;
     /**
      * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
      */
-    actionEmailFrom?: pulumi.Input<string>;
+    actionEmailFrom?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
      */
-    actionEmailHostname?: pulumi.Input<string>;
+    actionEmailHostname?: pulumi.Input<string | undefined>;
     /**
      * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      */
-    actionEmailIncludeResultsLink?: pulumi.Input<number>;
+    actionEmailIncludeResultsLink?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to include the search that caused an email to be sent. [1|0]
      */
-    actionEmailIncludeSearch?: pulumi.Input<number>;
+    actionEmailIncludeSearch?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      */
-    actionEmailIncludeTrigger?: pulumi.Input<number>;
+    actionEmailIncludeTrigger?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to show the time that the alert was fired. [1|0]
      */
-    actionEmailIncludeTriggerTime?: pulumi.Input<number>;
+    actionEmailIncludeTriggerTime?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      */
-    actionEmailIncludeViewLink?: pulumi.Input<number>;
+    actionEmailIncludeViewLink?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      */
-    actionEmailInline?: pulumi.Input<boolean>;
+    actionEmailInline?: pulumi.Input<boolean | undefined>;
     /**
      * Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
      */
-    actionEmailMailserver?: pulumi.Input<string>;
+    actionEmailMailserver?: pulumi.Input<string | undefined>;
     /**
      * Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
      */
-    actionEmailMaxResults?: pulumi.Input<number>;
+    actionEmailMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
      */
-    actionEmailMaxTime?: pulumi.Input<string>;
+    actionEmailMaxTime?: pulumi.Input<string | undefined>;
     /**
      * Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
      */
-    actionEmailMessageAlert?: pulumi.Input<string>;
+    actionEmailMessageAlert?: pulumi.Input<string | undefined>;
     /**
      * Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
      */
-    actionEmailMessageReport?: pulumi.Input<string>;
+    actionEmailMessageReport?: pulumi.Input<string | undefined>;
     /**
      * The name of the view to deliver if sendpdf is enabled
      */
-    actionEmailPdfview?: pulumi.Input<string>;
+    actionEmailPdfview?: pulumi.Input<string | undefined>;
     /**
      * Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
      */
-    actionEmailPreprocessResults?: pulumi.Input<string>;
+    actionEmailPreprocessResults?: pulumi.Input<string | undefined>;
     /**
      * Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
      */
-    actionEmailReportCidFontList?: pulumi.Input<string>;
+    actionEmailReportCidFontList?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to include the Splunk logo with the report.
      */
-    actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean>;
+    actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
      */
-    actionEmailReportPaperOrientation?: pulumi.Input<string>;
+    actionEmailReportPaperOrientation?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
      */
-    actionEmailReportPaperSize?: pulumi.Input<string>;
+    actionEmailReportPaperSize?: pulumi.Input<string | undefined>;
     /**
      * No Supported
      */
-    actionEmailReportServerEnabled?: pulumi.Input<boolean>;
+    actionEmailReportServerEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Not supported.For a default locally installed report server, the URL is http://localhost:8091/
      */
-    actionEmailReportServerUrl?: pulumi.Input<string>;
+    actionEmailReportServerUrl?: pulumi.Input<string | undefined>;
     /**
      * Specify whether to send results as a CSV file. Defaults to 0.
      */
-    actionEmailSendCsv?: pulumi.Input<number>;
+    actionEmailSendCsv?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether to create and send the results as a PDF. Defaults to false.
      */
-    actionEmailSendPdf?: pulumi.Input<boolean>;
+    actionEmailSendPdf?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
      */
-    actionEmailSendResults?: pulumi.Input<boolean>;
+    actionEmailSendResults?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
      */
-    actionEmailSubject?: pulumi.Input<string>;
+    actionEmailSubject?: pulumi.Input<string | undefined>;
     /**
      * A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
      */
-    actionEmailTo?: pulumi.Input<string>;
+    actionEmailTo?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionEmailTrackAlert?: pulumi.Input<boolean>;
+    actionEmailTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
      */
-    actionEmailTtl?: pulumi.Input<string>;
+    actionEmailTtl?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
      */
-    actionEmailUseSsl?: pulumi.Input<boolean>;
+    actionEmailUseSsl?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
      */
-    actionEmailUseTls?: pulumi.Input<boolean>;
+    actionEmailUseTls?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
-    actionEmailWidthSortColumns?: pulumi.Input<boolean>;
+    actionEmailWidthSortColumns?: pulumi.Input<boolean | undefined>;
     /**
      * Jira Service Desk account name
      */
-    actionJiraServiceDeskParamAccount?: pulumi.Input<string>;
+    actionJiraServiceDeskParamAccount?: pulumi.Input<string | undefined>;
     /**
      * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
      */
-    actionJiraServiceDeskParamJiraCustomfields?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraCustomfields?: pulumi.Input<string | undefined>;
     /**
      * Jira issue description
      */
-    actionJiraServiceDeskParamJiraDescription?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraDescription?: pulumi.Input<string | undefined>;
     /**
      * Jira issue type name
      */
-    actionJiraServiceDeskParamJiraIssueType?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraIssueType?: pulumi.Input<string | undefined>;
     /**
      * Jira priority of issue
      */
-    actionJiraServiceDeskParamJiraPriority?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraPriority?: pulumi.Input<string | undefined>;
     /**
      * Jira Project name
      */
-    actionJiraServiceDeskParamJiraProject?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraProject?: pulumi.Input<string | undefined>;
     /**
      * Jira issue title/summary
      */
-    actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string | undefined>;
     /**
      * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
      */
-    actionLogevent?: pulumi.Input<string>;
+    actionLogevent?: pulumi.Input<string | undefined>;
     /**
      * Specific event text for the logged event.
      */
-    actionLogeventParamEvent?: pulumi.Input<string>;
+    actionLogeventParamEvent?: pulumi.Input<string | undefined>;
     /**
      * Value for the host field of the logged event.
      */
-    actionLogeventParamHost?: pulumi.Input<string>;
+    actionLogeventParamHost?: pulumi.Input<string | undefined>;
     /**
      * Destination index where to store the logged event.
      */
-    actionLogeventParamIndex?: pulumi.Input<string>;
+    actionLogeventParamIndex?: pulumi.Input<string | undefined>;
     /**
      * Value for the source field of the logged event.
      */
-    actionLogeventParamSource?: pulumi.Input<string>;
+    actionLogeventParamSource?: pulumi.Input<string | undefined>;
     /**
      * Destination sourcetype where to store the logged event.
      */
-    actionLogeventParamSourcetype?: pulumi.Input<string>;
+    actionLogeventParamSourcetype?: pulumi.Input<string | undefined>;
     /**
      * The PagerDuty custom details information.
      */
-    actionPagerdutyCustomDetails?: pulumi.Input<string>;
+    actionPagerdutyCustomDetails?: pulumi.Input<string | undefined>;
     /**
      * The PagerDuty integration Key.
      */
-    actionPagerdutyIntegrationKey?: pulumi.Input<string>;
+    actionPagerdutyIntegrationKey?: pulumi.Input<string | undefined>;
     /**
      * The PagerDuty integration Key override.
      */
-    actionPagerdutyIntegrationKeyOverride?: pulumi.Input<string>;
+    actionPagerdutyIntegrationKeyOverride?: pulumi.Input<string | undefined>;
     /**
      * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
-    actionPagerdutyIntegrationUrl?: pulumi.Input<string>;
+    actionPagerdutyIntegrationUrl?: pulumi.Input<string | undefined>;
     /**
      * The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
-    actionPagerdutyIntegrationUrlOverride?: pulumi.Input<string>;
+    actionPagerdutyIntegrationUrlOverride?: pulumi.Input<string | undefined>;
     /**
      * The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    actionPopulateLookup?: pulumi.Input<boolean>;
+    actionPopulateLookup?: pulumi.Input<boolean | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */
-    actionPopulateLookupCommand?: pulumi.Input<string>;
+    actionPopulateLookupCommand?: pulumi.Input<string | undefined>;
     /**
      * Lookup name of path of the lookup to populate
      */
-    actionPopulateLookupDest?: pulumi.Input<string>;
+    actionPopulateLookupDest?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionPopulateLookupHostname?: pulumi.Input<string>;
+    actionPopulateLookupHostname?: pulumi.Input<string | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionPopulateLookupMaxResults?: pulumi.Input<number>;
+    actionPopulateLookupMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
      */
-    actionPopulateLookupMaxTime?: pulumi.Input<number>;
+    actionPopulateLookupMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionPopulateLookupTrackAlert?: pulumi.Input<boolean>;
+    actionPopulateLookupTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
      */
-    actionPopulateLookupTtl?: pulumi.Input<string>;
+    actionPopulateLookupTtl?: pulumi.Input<string | undefined>;
     /**
      * The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    actionRss?: pulumi.Input<boolean>;
+    actionRss?: pulumi.Input<boolean | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionRssCommand?: pulumi.Input<string>;
+    actionRssCommand?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionRssHostname?: pulumi.Input<string>;
+    actionRssHostname?: pulumi.Input<string | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionRssMaxResults?: pulumi.Input<number>;
+    actionRssMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    actionRssMaxTime?: pulumi.Input<number>;
+    actionRssMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionRssTrackAlert?: pulumi.Input<boolean>;
+    actionRssTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    actionRssTtl?: pulumi.Input<string>;
+    actionRssTtl?: pulumi.Input<string | undefined>;
     /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    actionScript?: pulumi.Input<boolean>;
+    actionScript?: pulumi.Input<boolean | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionScriptCommand?: pulumi.Input<string>;
+    actionScriptCommand?: pulumi.Input<string | undefined>;
     /**
      * File name of the script to call. Required if script action is enabled
      */
-    actionScriptFilename?: pulumi.Input<string>;
+    actionScriptFilename?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionScriptHostname?: pulumi.Input<string>;
+    actionScriptHostname?: pulumi.Input<string | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionScriptMaxResults?: pulumi.Input<number>;
+    actionScriptMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    actionScriptMaxTime?: pulumi.Input<number>;
+    actionScriptMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionScriptTrackAlert?: pulumi.Input<boolean>;
+    actionScriptTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    actionScriptTtl?: pulumi.Input<string>;
+    actionScriptTtl?: pulumi.Input<string | undefined>;
     /**
      * Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
      */
-    actionSlackAppAlertIntegrationParamAutoJoinChannel?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamAutoJoinChannel?: pulumi.Input<string | undefined>;
     /**
      * The bot username that will post the message
      */
-    actionSlackAppAlertIntegrationParamBotUsername?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamBotUsername?: pulumi.Input<string | undefined>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    actionSlackAppAlertIntegrationParamChannel?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamChannel?: pulumi.Input<string | undefined>;
     /**
      * Emoji icon to use as the bot's avatar (Should start and end with :)
      */
-    actionSlackAppAlertIntegrationParamEmoji?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamEmoji?: pulumi.Input<string | undefined>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
      */
-    actionSlackAppAlertIntegrationParamMessage?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamMessage?: pulumi.Input<string | undefined>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
-    actionSlackParamAttachment?: pulumi.Input<string>;
+    actionSlackParamAttachment?: pulumi.Input<string | undefined>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    actionSlackParamChannel?: pulumi.Input<string>;
+    actionSlackParamChannel?: pulumi.Input<string | undefined>;
     /**
      * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      */
-    actionSlackParamFields?: pulumi.Input<string>;
+    actionSlackParamFields?: pulumi.Input<string | undefined>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
      */
-    actionSlackParamMessage?: pulumi.Input<string>;
+    actionSlackParamMessage?: pulumi.Input<string | undefined>;
     /**
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
-    actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
+    actionSlackParamWebhookUrlOverride?: pulumi.Input<string | undefined>;
     /**
      * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
      */
-    actionSnowEventParamAccount?: pulumi.Input<string>;
+    actionSnowEventParamAccount?: pulumi.Input<string | undefined>;
     /**
      * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
      */
-    actionSnowEventParamAdditionalInfo?: pulumi.Input<string>;
+    actionSnowEventParamAdditionalInfo?: pulumi.Input<string | undefined>;
     /**
      * String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
      */
-    actionSnowEventParamCiIdentifier?: pulumi.Input<string>;
+    actionSnowEventParamCiIdentifier?: pulumi.Input<string | undefined>;
     /**
      * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      */
-    actionSnowEventParamCustomFields?: pulumi.Input<string>;
+    actionSnowEventParamCustomFields?: pulumi.Input<string | undefined>;
     /**
      * A brief description of the event.
      */
-    actionSnowEventParamDescription?: pulumi.Input<string>;
+    actionSnowEventParamDescription?: pulumi.Input<string | undefined>;
     /**
      * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
      */
-    actionSnowEventParamNode?: pulumi.Input<string>;
+    actionSnowEventParamNode?: pulumi.Input<string | undefined>;
     /**
      * The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
      */
-    actionSnowEventParamResource?: pulumi.Input<string>;
+    actionSnowEventParamResource?: pulumi.Input<string | undefined>;
     /**
      * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
      */
-    actionSnowEventParamSeverity?: pulumi.Input<number>;
+    actionSnowEventParamSeverity?: pulumi.Input<number | undefined>;
     /**
      * The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
      */
-    actionSnowEventParamType?: pulumi.Input<string>;
+    actionSnowEventParamType?: pulumi.Input<string | undefined>;
     /**
      * The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
-    actionSummaryIndex?: pulumi.Input<boolean>;
+    actionSummaryIndex?: pulumi.Input<boolean | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionSummaryIndexCommand?: pulumi.Input<string>;
+    actionSummaryIndexCommand?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionSummaryIndexHostname?: pulumi.Input<string>;
+    actionSummaryIndexHostname?: pulumi.Input<string | undefined>;
     /**
      * Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
      */
-    actionSummaryIndexInline?: pulumi.Input<boolean>;
+    actionSummaryIndexInline?: pulumi.Input<boolean | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionSummaryIndexMaxResults?: pulumi.Input<number>;
+    actionSummaryIndexMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    actionSummaryIndexMaxTime?: pulumi.Input<number>;
+    actionSummaryIndexMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
      */
-    actionSummaryIndexName?: pulumi.Input<string>;
+    actionSummaryIndexName?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionSummaryIndexTrackAlert?: pulumi.Input<boolean>;
+    actionSummaryIndexTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    actionSummaryIndexTtl?: pulumi.Input<string>;
+    actionSummaryIndexTtl?: pulumi.Input<string | undefined>;
     /**
      * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
      */
-    actionVictoropsParamEnableRecovery?: pulumi.Input<string>;
+    actionVictoropsParamEnableRecovery?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the affected system or service
      */
-    actionVictoropsParamEntityId?: pulumi.Input<string>;
+    actionVictoropsParamEntityId?: pulumi.Input<string | undefined>;
     /**
      * Number of inactive polls before sending a recovery message
      */
-    actionVictoropsParamInactivePolls?: pulumi.Input<string>;
+    actionVictoropsParamInactivePolls?: pulumi.Input<string | undefined>;
     /**
      * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
      */
-    actionVictoropsParamMessageType?: pulumi.Input<string>;
+    actionVictoropsParamMessageType?: pulumi.Input<string | undefined>;
     /**
      * Name of the monitoring tool sending the alert
      */
-    actionVictoropsParamMonitoringTool?: pulumi.Input<string>;
+    actionVictoropsParamMonitoringTool?: pulumi.Input<string | undefined>;
     /**
      * Polling interval for checking the status of the alert (in minutes)
      */
-    actionVictoropsParamPollInterval?: pulumi.Input<string>;
+    actionVictoropsParamPollInterval?: pulumi.Input<string | undefined>;
     /**
      * Identifier used to correlate related alerts
      */
-    actionVictoropsParamRecordId?: pulumi.Input<string>;
+    actionVictoropsParamRecordId?: pulumi.Input<string | undefined>;
     /**
      * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
      */
-    actionVictoropsParamRoutingKeyOverride?: pulumi.Input<string>;
+    actionVictoropsParamRoutingKeyOverride?: pulumi.Input<string | undefined>;
     /**
      * Description of the alert condition
      */
-    actionVictoropsParamStateMessage?: pulumi.Input<string>;
+    actionVictoropsParamStateMessage?: pulumi.Input<string | undefined>;
     /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
-    actionWebhookParamUrl?: pulumi.Input<string>;
+    actionWebhookParamUrl?: pulumi.Input<string | undefined>;
     /**
      * A comma-separated list of actions to enable. For example: rss,email
      */
-    actions?: pulumi.Input<string>;
+    actions?: pulumi.Input<string | undefined>;
     /**
      * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      */
-    alertComparator?: pulumi.Input<string>;
+    alertComparator?: pulumi.Input<string | undefined>;
     /**
      * Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
      */
-    alertCondition?: pulumi.Input<string>;
+    alertCondition?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
      */
-    alertDigestMode?: pulumi.Input<boolean>;
+    alertDigestMode?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    alertExpires?: pulumi.Input<string>;
+    alertExpires?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
      */
-    alertSeverity?: pulumi.Input<number>;
+    alertSeverity?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether alert suppression is enabled for this scheduled search.
      */
-    alertSuppress?: pulumi.Input<boolean>;
+    alertSuppress?: pulumi.Input<boolean | undefined>;
     /**
      * Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
      */
-    alertSuppressFields?: pulumi.Input<string>;
+    alertSuppressFields?: pulumi.Input<string | undefined>;
     /**
      * Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    alertSuppressPeriod?: pulumi.Input<string>;
+    alertSuppressPeriod?: pulumi.Input<string | undefined>;
     /**
      * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
-    alertThreshold?: pulumi.Input<string>;
+    alertThreshold?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    alertTrack?: pulumi.Input<boolean>;
+    alertTrack?: pulumi.Input<boolean | undefined>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
-    alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string | undefined>;
     /**
      * Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
      */
-    allowSkew?: pulumi.Input<string>;
+    allowSkew?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
      */
-    autoSummarize?: pulumi.Input<boolean>;
+    autoSummarize?: pulumi.Input<boolean | undefined>;
     /**
      * An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
      */
-    autoSummarizeCommand?: pulumi.Input<string>;
+    autoSummarizeCommand?: pulumi.Input<string | undefined>;
     /**
      * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      */
-    autoSummarizeCronSchedule?: pulumi.Input<string>;
+    autoSummarizeCronSchedule?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    autoSummarizeDispatchEarliestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchEarliestTime?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchLatestTime?: pulumi.Input<string | undefined>;
     /**
      * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
+    autoSummarizeDispatchTimeFormat?: pulumi.Input<string | undefined>;
     /**
      * Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
      */
-    autoSummarizeDispatchTtl?: pulumi.Input<string>;
+    autoSummarizeDispatchTtl?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
      */
-    autoSummarizeMaxDisabledBuckets?: pulumi.Input<number>;
+    autoSummarizeMaxDisabledBuckets?: pulumi.Input<number | undefined>;
     /**
      * The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
      */
-    autoSummarizeMaxSummaryRatio?: pulumi.Input<number>;
+    autoSummarizeMaxSummaryRatio?: pulumi.Input<number | undefined>;
     /**
      * The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
      */
-    autoSummarizeMaxSummarySize?: pulumi.Input<number>;
+    autoSummarizeMaxSummarySize?: pulumi.Input<number | undefined>;
     /**
      * Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
      */
-    autoSummarizeMaxTime?: pulumi.Input<number>;
+    autoSummarizeMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
      */
-    autoSummarizeSuspendPeriod?: pulumi.Input<string>;
+    autoSummarizeSuspendPeriod?: pulumi.Input<string | undefined>;
     /**
      * The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
      */
-    autoSummarizeTimespan?: pulumi.Input<string>;
+    autoSummarizeTimespan?: pulumi.Input<string | undefined>;
     /**
      * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      */
-    cronSchedule?: pulumi.Input<string>;
+    cronSchedule?: pulumi.Input<string | undefined>;
     /**
      * Human-readable description of this saved search. Defaults to empty string.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of timeline buckets. Defaults to 0.
      */
-    dispatchBuckets?: pulumi.Input<number>;
+    dispatchBuckets?: pulumi.Input<number | undefined>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchEarliestTime?: pulumi.Input<string>;
+    dispatchEarliestTime?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchIndexEarliest?: pulumi.Input<string>;
+    dispatchIndexEarliest?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchIndexLatest?: pulumi.Input<string>;
+    dispatchIndexLatest?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchIndexedRealtime?: pulumi.Input<boolean>;
+    dispatchIndexedRealtime?: pulumi.Input<boolean | undefined>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    dispatchIndexedRealtimeMinspan?: pulumi.Input<number>;
+    dispatchIndexedRealtimeMinspan?: pulumi.Input<number | undefined>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    dispatchIndexedRealtimeOffset?: pulumi.Input<number>;
+    dispatchIndexedRealtimeOffset?: pulumi.Input<number | undefined>;
     /**
      * A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchLatestTime?: pulumi.Input<string>;
+    dispatchLatestTime?: pulumi.Input<string | undefined>;
     /**
      * Enables or disables the lookups for this search. Defaults to 1.
      */
-    dispatchLookups?: pulumi.Input<boolean>;
+    dispatchLookups?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of results before finalizing the search. Defaults to 500000.
      */
-    dispatchMaxCount?: pulumi.Input<number>;
+    dispatchMaxCount?: pulumi.Input<number | undefined>;
     /**
      * Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
      */
-    dispatchMaxTime?: pulumi.Input<number>;
+    dispatchMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
      */
-    dispatchReduceFreq?: pulumi.Input<number>;
+    dispatchReduceFreq?: pulumi.Input<number | undefined>;
     /**
      * Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
      */
-    dispatchRtBackfill?: pulumi.Input<boolean>;
+    dispatchRtBackfill?: pulumi.Input<boolean | undefined>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      */
-    dispatchRtMaximumSpan?: pulumi.Input<number>;
+    dispatchRtMaximumSpan?: pulumi.Input<number | undefined>;
     /**
      * Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
      */
-    dispatchSpawnProcess?: pulumi.Input<boolean>;
+    dispatchSpawnProcess?: pulumi.Input<boolean | undefined>;
     /**
      * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    dispatchTimeFormat?: pulumi.Input<string>;
+    dispatchTimeFormat?: pulumi.Input<string | undefined>;
     /**
      * Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
      */
-    dispatchTtl?: pulumi.Input<string>;
+    dispatchTtl?: pulumi.Input<string | undefined>;
     /**
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
-    displayView?: pulumi.Input<string>;
+    displayView?: pulumi.Input<string | undefined>;
     /**
      * Whether this search is to be run on a schedule
      */
-    isScheduled?: pulumi.Input<boolean>;
+    isScheduled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
      */
-    isVisible?: pulumi.Input<boolean>;
+    isVisible?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
      */
-    maxConcurrent?: pulumi.Input<number>;
+    maxConcurrent?: pulumi.Input<number | undefined>;
     /**
      * A name for the search.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
      */
-    realtimeSchedule?: pulumi.Input<boolean>;
+    realtimeSchedule?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
      */
-    requestUiDispatchApp?: pulumi.Input<string>;
+    requestUiDispatchApp?: pulumi.Input<string | undefined>;
     /**
      * Specifies a field used by Splunk Web to denote the view this search should be displayed in.
      */
-    requestUiDispatchView?: pulumi.Input<string>;
+    requestUiDispatchView?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
      */
-    restartOnSearchpeerAdd?: pulumi.Input<boolean>;
+    restartOnSearchpeerAdd?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
      */
-    runOnStartup?: pulumi.Input<boolean>;
+    runOnStartup?: pulumi.Input<boolean | undefined>;
     /**
      * Raises the scheduling priority of the named search. Defaults to Default
      */
-    schedulePriority?: pulumi.Input<string>;
+    schedulePriority?: pulumi.Input<string | undefined>;
     /**
      * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      */
-    scheduleWindow?: pulumi.Input<string>;
+    scheduleWindow?: pulumi.Input<string | undefined>;
     /**
      * Required when creating a new search.
      */
-    search?: pulumi.Input<string>;
+    search?: pulumi.Input<string | undefined>;
     /**
      * Defines the viewstate id associated with the UI view listed in 'displayview'.
      */
-    vsid?: pulumi.Input<string>;
+    vsid?: pulumi.Input<string | undefined>;
     /**
      * Specifies the new workload pool where the existing running search will be placed.`
      */
-    workloadPool?: pulumi.Input<string>;
+    workloadPool?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -2025,739 +2025,739 @@ export interface SavedSearchesArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.SavedSearchesAcl>;
+    acl?: pulumi.Input<inputs.SavedSearchesAcl | undefined>;
     /**
      * Format of the body content. Valid values are json, xml, form-urlencoded, or raw
      */
-    actionBetterWebhookParamBodyFormat?: pulumi.Input<string>;
+    actionBetterWebhookParamBodyFormat?: pulumi.Input<string | undefined>;
     /**
      * Name of the Splunk stored credential to use for authentication
      */
-    actionBetterWebhookParamCredential?: pulumi.Input<string>;
+    actionBetterWebhookParamCredential?: pulumi.Input<string | undefined>;
     /**
      * Use the credentials defined in the webhook URL
      */
-    actionBetterWebhookParamCredentials?: pulumi.Input<string>;
+    actionBetterWebhookParamCredentials?: pulumi.Input<string | undefined>;
     /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
-    actionBetterWebhookParamUrl?: pulumi.Input<string>;
+    actionBetterWebhookParamUrl?: pulumi.Input<string | undefined>;
     /**
      * Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
      */
-    actionCreateXsoarIncident?: pulumi.Input<string>;
+    actionCreateXsoarIncident?: pulumi.Input<string | undefined>;
     /**
      * XSOAR custom incident fields (should be a comma separated list)
      */
-    actionCreateXsoarIncidentParamCustomFields?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamCustomFields?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident description
      */
-    actionCreateXsoarIncidentParamDetails?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamDetails?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident name
      */
-    actionCreateXsoarIncidentParamIncidentName?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamIncidentName?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident time
      */
-    actionCreateXsoarIncidentParamOccurred?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamOccurred?: pulumi.Input<string | undefined>;
     /**
      * Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
      */
-    actionCreateXsoarIncidentParamSendAllServers?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamSendAllServers?: pulumi.Input<string | undefined>;
     /**
      * XSOAR Server instance URL (Should start with https:// || http://)
      */
-    actionCreateXsoarIncidentParamServerUrl?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamServerUrl?: pulumi.Input<string | undefined>;
     /**
      * XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
      */
-    actionCreateXsoarIncidentParamSeverity?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamSeverity?: pulumi.Input<string | undefined>;
     /**
      * XSOAR incident type
      */
-    actionCreateXsoarIncidentParamType?: pulumi.Input<string>;
+    actionCreateXsoarIncidentParamType?: pulumi.Input<string | undefined>;
     /**
      * The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
      */
-    actionEmailAuthPassword?: pulumi.Input<string>;
+    actionEmailAuthPassword?: pulumi.Input<string | undefined>;
     /**
      * The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
      */
-    actionEmailAuthUsername?: pulumi.Input<string>;
+    actionEmailAuthUsername?: pulumi.Input<string | undefined>;
     /**
      * BCC email address to use if action.email is enabled.
      */
-    actionEmailBcc?: pulumi.Input<string>;
+    actionEmailBcc?: pulumi.Input<string | undefined>;
     /**
      * CC email address to use if action.email is enabled.
      */
-    actionEmailCc?: pulumi.Input<string>;
+    actionEmailCc?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionEmailCommand?: pulumi.Input<string>;
+    actionEmailCommand?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
      */
-    actionEmailFormat?: pulumi.Input<string>;
+    actionEmailFormat?: pulumi.Input<string | undefined>;
     /**
      * Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
      */
-    actionEmailFrom?: pulumi.Input<string>;
+    actionEmailFrom?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
      */
-    actionEmailHostname?: pulumi.Input<string>;
+    actionEmailHostname?: pulumi.Input<string | undefined>;
     /**
      * Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
      */
-    actionEmailIncludeResultsLink?: pulumi.Input<number>;
+    actionEmailIncludeResultsLink?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to include the search that caused an email to be sent. [1|0]
      */
-    actionEmailIncludeSearch?: pulumi.Input<number>;
+    actionEmailIncludeSearch?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to show the trigger condition that caused the alert to fire. [1|0]
      */
-    actionEmailIncludeTrigger?: pulumi.Input<number>;
+    actionEmailIncludeTrigger?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to show the time that the alert was fired. [1|0]
      */
-    actionEmailIncludeTriggerTime?: pulumi.Input<number>;
+    actionEmailIncludeTriggerTime?: pulumi.Input<number | undefined>;
     /**
      * Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
      */
-    actionEmailIncludeViewLink?: pulumi.Input<number>;
+    actionEmailIncludeViewLink?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
      */
-    actionEmailInline?: pulumi.Input<boolean>;
+    actionEmailInline?: pulumi.Input<boolean | undefined>;
     /**
      * Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
      */
-    actionEmailMailserver?: pulumi.Input<string>;
+    actionEmailMailserver?: pulumi.Input<string | undefined>;
     /**
      * Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
      */
-    actionEmailMaxResults?: pulumi.Input<number>;
+    actionEmailMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
      */
-    actionEmailMaxTime?: pulumi.Input<string>;
+    actionEmailMaxTime?: pulumi.Input<string | undefined>;
     /**
      * Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
      */
-    actionEmailMessageAlert?: pulumi.Input<string>;
+    actionEmailMessageAlert?: pulumi.Input<string | undefined>;
     /**
      * Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
      */
-    actionEmailMessageReport?: pulumi.Input<string>;
+    actionEmailMessageReport?: pulumi.Input<string | undefined>;
     /**
      * The name of the view to deliver if sendpdf is enabled
      */
-    actionEmailPdfview?: pulumi.Input<string>;
+    actionEmailPdfview?: pulumi.Input<string | undefined>;
     /**
      * Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
      */
-    actionEmailPreprocessResults?: pulumi.Input<string>;
+    actionEmailPreprocessResults?: pulumi.Input<string | undefined>;
     /**
      * Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
      */
-    actionEmailReportCidFontList?: pulumi.Input<string>;
+    actionEmailReportCidFontList?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to include the Splunk logo with the report.
      */
-    actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean>;
+    actionEmailReportIncludeSplunkLogo?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
      */
-    actionEmailReportPaperOrientation?: pulumi.Input<string>;
+    actionEmailReportPaperOrientation?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
      */
-    actionEmailReportPaperSize?: pulumi.Input<string>;
+    actionEmailReportPaperSize?: pulumi.Input<string | undefined>;
     /**
      * No Supported
      */
-    actionEmailReportServerEnabled?: pulumi.Input<boolean>;
+    actionEmailReportServerEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Not supported.For a default locally installed report server, the URL is http://localhost:8091/
      */
-    actionEmailReportServerUrl?: pulumi.Input<string>;
+    actionEmailReportServerUrl?: pulumi.Input<string | undefined>;
     /**
      * Specify whether to send results as a CSV file. Defaults to 0.
      */
-    actionEmailSendCsv?: pulumi.Input<number>;
+    actionEmailSendCsv?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether to create and send the results as a PDF. Defaults to false.
      */
-    actionEmailSendPdf?: pulumi.Input<boolean>;
+    actionEmailSendPdf?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
      */
-    actionEmailSendResults?: pulumi.Input<boolean>;
+    actionEmailSendResults?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
      */
-    actionEmailSubject?: pulumi.Input<string>;
+    actionEmailSubject?: pulumi.Input<string | undefined>;
     /**
      * A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
      */
-    actionEmailTo?: pulumi.Input<string>;
+    actionEmailTo?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionEmailTrackAlert?: pulumi.Input<boolean>;
+    actionEmailTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
      */
-    actionEmailTtl?: pulumi.Input<string>;
+    actionEmailTtl?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
      */
-    actionEmailUseSsl?: pulumi.Input<boolean>;
+    actionEmailUseSsl?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
      */
-    actionEmailUseTls?: pulumi.Input<boolean>;
+    actionEmailUseTls?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
      */
-    actionEmailWidthSortColumns?: pulumi.Input<boolean>;
+    actionEmailWidthSortColumns?: pulumi.Input<boolean | undefined>;
     /**
      * Jira Service Desk account name
      */
-    actionJiraServiceDeskParamAccount?: pulumi.Input<string>;
+    actionJiraServiceDeskParamAccount?: pulumi.Input<string | undefined>;
     /**
      * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
      */
-    actionJiraServiceDeskParamJiraCustomfields?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraCustomfields?: pulumi.Input<string | undefined>;
     /**
      * Jira issue description
      */
-    actionJiraServiceDeskParamJiraDescription?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraDescription?: pulumi.Input<string | undefined>;
     /**
      * Jira issue type name
      */
-    actionJiraServiceDeskParamJiraIssueType?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraIssueType?: pulumi.Input<string | undefined>;
     /**
      * Jira priority of issue
      */
-    actionJiraServiceDeskParamJiraPriority?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraPriority?: pulumi.Input<string | undefined>;
     /**
      * Jira Project name
      */
-    actionJiraServiceDeskParamJiraProject?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraProject?: pulumi.Input<string | undefined>;
     /**
      * Jira issue title/summary
      */
-    actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string>;
+    actionJiraServiceDeskParamJiraSummary?: pulumi.Input<string | undefined>;
     /**
      * Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
      */
-    actionLogevent?: pulumi.Input<string>;
+    actionLogevent?: pulumi.Input<string | undefined>;
     /**
      * Specific event text for the logged event.
      */
-    actionLogeventParamEvent?: pulumi.Input<string>;
+    actionLogeventParamEvent?: pulumi.Input<string | undefined>;
     /**
      * Value for the host field of the logged event.
      */
-    actionLogeventParamHost?: pulumi.Input<string>;
+    actionLogeventParamHost?: pulumi.Input<string | undefined>;
     /**
      * Destination index where to store the logged event.
      */
-    actionLogeventParamIndex?: pulumi.Input<string>;
+    actionLogeventParamIndex?: pulumi.Input<string | undefined>;
     /**
      * Value for the source field of the logged event.
      */
-    actionLogeventParamSource?: pulumi.Input<string>;
+    actionLogeventParamSource?: pulumi.Input<string | undefined>;
     /**
      * Destination sourcetype where to store the logged event.
      */
-    actionLogeventParamSourcetype?: pulumi.Input<string>;
+    actionLogeventParamSourcetype?: pulumi.Input<string | undefined>;
     /**
      * The PagerDuty custom details information.
      */
-    actionPagerdutyCustomDetails?: pulumi.Input<string>;
+    actionPagerdutyCustomDetails?: pulumi.Input<string | undefined>;
     /**
      * The PagerDuty integration Key.
      */
-    actionPagerdutyIntegrationKey?: pulumi.Input<string>;
+    actionPagerdutyIntegrationKey?: pulumi.Input<string | undefined>;
     /**
      * The PagerDuty integration Key override.
      */
-    actionPagerdutyIntegrationKeyOverride?: pulumi.Input<string>;
+    actionPagerdutyIntegrationKeyOverride?: pulumi.Input<string | undefined>;
     /**
      * The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
-    actionPagerdutyIntegrationUrl?: pulumi.Input<string>;
+    actionPagerdutyIntegrationUrl?: pulumi.Input<string | undefined>;
     /**
      * The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
      */
-    actionPagerdutyIntegrationUrlOverride?: pulumi.Input<string>;
+    actionPagerdutyIntegrationUrlOverride?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.
      */
-    actionPopulateLookupCommand?: pulumi.Input<string>;
+    actionPopulateLookupCommand?: pulumi.Input<string | undefined>;
     /**
      * Lookup name of path of the lookup to populate
      */
-    actionPopulateLookupDest?: pulumi.Input<string>;
+    actionPopulateLookupDest?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionPopulateLookupHostname?: pulumi.Input<string>;
+    actionPopulateLookupHostname?: pulumi.Input<string | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionPopulateLookupMaxResults?: pulumi.Input<number>;
+    actionPopulateLookupMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
      */
-    actionPopulateLookupMaxTime?: pulumi.Input<number>;
+    actionPopulateLookupMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionPopulateLookupTrackAlert?: pulumi.Input<boolean>;
+    actionPopulateLookupTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
      */
-    actionPopulateLookupTtl?: pulumi.Input<string>;
+    actionPopulateLookupTtl?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionRssCommand?: pulumi.Input<string>;
+    actionRssCommand?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionRssHostname?: pulumi.Input<string>;
+    actionRssHostname?: pulumi.Input<string | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionRssMaxResults?: pulumi.Input<number>;
+    actionRssMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    actionRssMaxTime?: pulumi.Input<number>;
+    actionRssMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionRssTrackAlert?: pulumi.Input<boolean>;
+    actionRssTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    actionRssTtl?: pulumi.Input<string>;
+    actionRssTtl?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionScriptCommand?: pulumi.Input<string>;
+    actionScriptCommand?: pulumi.Input<string | undefined>;
     /**
      * File name of the script to call. Required if script action is enabled
      */
-    actionScriptFilename?: pulumi.Input<string>;
+    actionScriptFilename?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionScriptHostname?: pulumi.Input<string>;
+    actionScriptHostname?: pulumi.Input<string | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionScriptMaxResults?: pulumi.Input<number>;
+    actionScriptMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    actionScriptMaxTime?: pulumi.Input<number>;
+    actionScriptMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionScriptTrackAlert?: pulumi.Input<boolean>;
+    actionScriptTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    actionScriptTtl?: pulumi.Input<string>;
+    actionScriptTtl?: pulumi.Input<string | undefined>;
     /**
      * Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
      */
-    actionSlackAppAlertIntegrationParamAutoJoinChannel?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamAutoJoinChannel?: pulumi.Input<string | undefined>;
     /**
      * The bot username that will post the message
      */
-    actionSlackAppAlertIntegrationParamBotUsername?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamBotUsername?: pulumi.Input<string | undefined>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    actionSlackAppAlertIntegrationParamChannel?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamChannel?: pulumi.Input<string | undefined>;
     /**
      * Emoji icon to use as the bot's avatar (Should start and end with :)
      */
-    actionSlackAppAlertIntegrationParamEmoji?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamEmoji?: pulumi.Input<string | undefined>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
      */
-    actionSlackAppAlertIntegrationParamMessage?: pulumi.Input<string>;
+    actionSlackAppAlertIntegrationParamMessage?: pulumi.Input<string | undefined>;
     /**
      * Include a message attachment. Valid values are message, none, or alert_link
      */
-    actionSlackParamAttachment?: pulumi.Input<string>;
+    actionSlackParamAttachment?: pulumi.Input<string | undefined>;
     /**
      * Slack channel to send the message to (Should start with # or @)
      */
-    actionSlackParamChannel?: pulumi.Input<string>;
+    actionSlackParamChannel?: pulumi.Input<string | undefined>;
     /**
      * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
      */
-    actionSlackParamFields?: pulumi.Input<string>;
+    actionSlackParamFields?: pulumi.Input<string | undefined>;
     /**
      * Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
      */
-    actionSlackParamMessage?: pulumi.Input<string>;
+    actionSlackParamMessage?: pulumi.Input<string | undefined>;
     /**
      * You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
      */
-    actionSlackParamWebhookUrlOverride?: pulumi.Input<string>;
+    actionSlackParamWebhookUrlOverride?: pulumi.Input<string | undefined>;
     /**
      * Account(s) for which the event is/ are to be created across ServiceNow instance(s).
      */
-    actionSnowEventParamAccount?: pulumi.Input<string>;
+    actionSnowEventParamAccount?: pulumi.Input<string | undefined>;
     /**
      * You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
      */
-    actionSnowEventParamAdditionalInfo?: pulumi.Input<string>;
+    actionSnowEventParamAdditionalInfo?: pulumi.Input<string | undefined>;
     /**
      * String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
      */
-    actionSnowEventParamCiIdentifier?: pulumi.Input<string>;
+    actionSnowEventParamCiIdentifier?: pulumi.Input<string | undefined>;
     /**
      * The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the emEvent table of ServiceNow.
      */
-    actionSnowEventParamCustomFields?: pulumi.Input<string>;
+    actionSnowEventParamCustomFields?: pulumi.Input<string | undefined>;
     /**
      * A brief description of the event.
      */
-    actionSnowEventParamDescription?: pulumi.Input<string>;
+    actionSnowEventParamDescription?: pulumi.Input<string | undefined>;
     /**
      * The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
      */
-    actionSnowEventParamNode?: pulumi.Input<string>;
+    actionSnowEventParamNode?: pulumi.Input<string | undefined>;
     /**
      * The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
      */
-    actionSnowEventParamResource?: pulumi.Input<string>;
+    actionSnowEventParamResource?: pulumi.Input<string | undefined>;
     /**
      * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
      */
-    actionSnowEventParamSeverity?: pulumi.Input<number>;
+    actionSnowEventParamSeverity?: pulumi.Input<number | undefined>;
     /**
      * The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
      */
-    actionSnowEventParamType?: pulumi.Input<string>;
+    actionSnowEventParamType?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */
-    actionSummaryIndexCommand?: pulumi.Input<string>;
+    actionSummaryIndexCommand?: pulumi.Input<string | undefined>;
     /**
      * Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      */
-    actionSummaryIndexHostname?: pulumi.Input<string>;
+    actionSummaryIndexHostname?: pulumi.Input<string | undefined>;
     /**
      * Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
      */
-    actionSummaryIndexInline?: pulumi.Input<boolean>;
+    actionSummaryIndexInline?: pulumi.Input<boolean | undefined>;
     /**
      * Sets the maximum number of search results sent using alerts. Defaults to 100.
      */
-    actionSummaryIndexMaxResults?: pulumi.Input<number>;
+    actionSummaryIndexMaxResults?: pulumi.Input<number | undefined>;
     /**
      * Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
      */
-    actionSummaryIndexMaxTime?: pulumi.Input<number>;
+    actionSummaryIndexMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
      */
-    actionSummaryIndexName?: pulumi.Input<string>;
+    actionSummaryIndexName?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the execution of this action signifies a trackable alert.
      */
-    actionSummaryIndexTrackAlert?: pulumi.Input<boolean>;
+    actionSummaryIndexTrackAlert?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
-    actionSummaryIndexTtl?: pulumi.Input<string>;
+    actionSummaryIndexTtl?: pulumi.Input<string | undefined>;
     /**
      * Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
      */
-    actionVictoropsParamEnableRecovery?: pulumi.Input<string>;
+    actionVictoropsParamEnableRecovery?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier for the affected system or service
      */
-    actionVictoropsParamEntityId?: pulumi.Input<string>;
+    actionVictoropsParamEntityId?: pulumi.Input<string | undefined>;
     /**
      * Number of inactive polls before sending a recovery message
      */
-    actionVictoropsParamInactivePolls?: pulumi.Input<string>;
+    actionVictoropsParamInactivePolls?: pulumi.Input<string | undefined>;
     /**
      * Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
      */
-    actionVictoropsParamMessageType?: pulumi.Input<string>;
+    actionVictoropsParamMessageType?: pulumi.Input<string | undefined>;
     /**
      * Name of the monitoring tool sending the alert
      */
-    actionVictoropsParamMonitoringTool?: pulumi.Input<string>;
+    actionVictoropsParamMonitoringTool?: pulumi.Input<string | undefined>;
     /**
      * Polling interval for checking the status of the alert (in minutes)
      */
-    actionVictoropsParamPollInterval?: pulumi.Input<string>;
+    actionVictoropsParamPollInterval?: pulumi.Input<string | undefined>;
     /**
      * Identifier used to correlate related alerts
      */
-    actionVictoropsParamRecordId?: pulumi.Input<string>;
+    actionVictoropsParamRecordId?: pulumi.Input<string | undefined>;
     /**
      * You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
      */
-    actionVictoropsParamRoutingKeyOverride?: pulumi.Input<string>;
+    actionVictoropsParamRoutingKeyOverride?: pulumi.Input<string | undefined>;
     /**
      * Description of the alert condition
      */
-    actionVictoropsParamStateMessage?: pulumi.Input<string>;
+    actionVictoropsParamStateMessage?: pulumi.Input<string | undefined>;
     /**
      * URL to send the HTTP POST request to. Must be accessible from the Splunk server
      */
-    actionWebhookParamUrl?: pulumi.Input<string>;
+    actionWebhookParamUrl?: pulumi.Input<string | undefined>;
     /**
      * A comma-separated list of actions to enable. For example: rss,email
      */
-    actions?: pulumi.Input<string>;
+    actions?: pulumi.Input<string | undefined>;
     /**
      * One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
      */
-    alertComparator?: pulumi.Input<string>;
+    alertComparator?: pulumi.Input<string | undefined>;
     /**
      * Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
      */
-    alertCondition?: pulumi.Input<string>;
+    alertCondition?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
      */
-    alertDigestMode?: pulumi.Input<boolean>;
+    alertDigestMode?: pulumi.Input<boolean | undefined>;
     /**
      * Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    alertExpires?: pulumi.Input<string>;
+    alertExpires?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
      */
-    alertSeverity?: pulumi.Input<number>;
+    alertSeverity?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether alert suppression is enabled for this scheduled search.
      */
-    alertSuppress?: pulumi.Input<boolean>;
+    alertSuppress?: pulumi.Input<boolean | undefined>;
     /**
      * Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
      */
-    alertSuppressFields?: pulumi.Input<string>;
+    alertSuppressFields?: pulumi.Input<string | undefined>;
     /**
      * Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
      */
-    alertSuppressPeriod?: pulumi.Input<string>;
+    alertSuppressPeriod?: pulumi.Input<string | undefined>;
     /**
      * Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alertComparator is set to rises by perc or drops by perc.
      */
-    alertThreshold?: pulumi.Input<string>;
+    alertThreshold?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
      */
-    alertTrack?: pulumi.Input<boolean>;
+    alertTrack?: pulumi.Input<boolean | undefined>;
     /**
      * What to base the alert on, overriden by alertCondition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
      */
-    alertType?: pulumi.Input<string>;
+    alertType?: pulumi.Input<string | undefined>;
     /**
      * Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
      */
-    allowSkew?: pulumi.Input<string>;
+    allowSkew?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
      */
-    autoSummarize?: pulumi.Input<boolean>;
+    autoSummarize?: pulumi.Input<boolean | undefined>;
     /**
      * An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
      */
-    autoSummarizeCommand?: pulumi.Input<string>;
+    autoSummarizeCommand?: pulumi.Input<string | undefined>;
     /**
      * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
      */
-    autoSummarizeCronSchedule?: pulumi.Input<string>;
+    autoSummarizeCronSchedule?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    autoSummarizeDispatchEarliestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchEarliestTime?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    autoSummarizeDispatchLatestTime?: pulumi.Input<string>;
+    autoSummarizeDispatchLatestTime?: pulumi.Input<string | undefined>;
     /**
      * Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    autoSummarizeDispatchTimeFormat?: pulumi.Input<string>;
+    autoSummarizeDispatchTimeFormat?: pulumi.Input<string | undefined>;
     /**
      * Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
      */
-    autoSummarizeDispatchTtl?: pulumi.Input<string>;
+    autoSummarizeDispatchTtl?: pulumi.Input<string | undefined>;
     /**
      * The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
      */
-    autoSummarizeMaxDisabledBuckets?: pulumi.Input<number>;
+    autoSummarizeMaxDisabledBuckets?: pulumi.Input<number | undefined>;
     /**
      * The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
      */
-    autoSummarizeMaxSummaryRatio?: pulumi.Input<number>;
+    autoSummarizeMaxSummaryRatio?: pulumi.Input<number | undefined>;
     /**
      * The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
      */
-    autoSummarizeMaxSummarySize?: pulumi.Input<number>;
+    autoSummarizeMaxSummarySize?: pulumi.Input<number | undefined>;
     /**
      * Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
      */
-    autoSummarizeMaxTime?: pulumi.Input<number>;
+    autoSummarizeMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
      */
-    autoSummarizeSuspendPeriod?: pulumi.Input<string>;
+    autoSummarizeSuspendPeriod?: pulumi.Input<string | undefined>;
     /**
      * The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
      */
-    autoSummarizeTimespan?: pulumi.Input<string>;
+    autoSummarizeTimespan?: pulumi.Input<string | undefined>;
     /**
      * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
      */
-    cronSchedule?: pulumi.Input<string>;
+    cronSchedule?: pulumi.Input<string | undefined>;
     /**
      * Human-readable description of this saved search. Defaults to empty string.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of timeline buckets. Defaults to 0.
      */
-    dispatchBuckets?: pulumi.Input<number>;
+    dispatchBuckets?: pulumi.Input<number | undefined>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchEarliestTime?: pulumi.Input<string>;
+    dispatchEarliestTime?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchIndexEarliest?: pulumi.Input<string>;
+    dispatchIndexEarliest?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchIndexLatest?: pulumi.Input<string>;
+    dispatchIndexLatest?: pulumi.Input<string | undefined>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchIndexedRealtime?: pulumi.Input<boolean>;
+    dispatchIndexedRealtime?: pulumi.Input<boolean | undefined>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    dispatchIndexedRealtimeMinspan?: pulumi.Input<number>;
+    dispatchIndexedRealtimeMinspan?: pulumi.Input<number | undefined>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
      */
-    dispatchIndexedRealtimeOffset?: pulumi.Input<number>;
+    dispatchIndexedRealtimeOffset?: pulumi.Input<number | undefined>;
     /**
      * A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    dispatchLatestTime?: pulumi.Input<string>;
+    dispatchLatestTime?: pulumi.Input<string | undefined>;
     /**
      * Enables or disables the lookups for this search. Defaults to 1.
      */
-    dispatchLookups?: pulumi.Input<boolean>;
+    dispatchLookups?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of results before finalizing the search. Defaults to 500000.
      */
-    dispatchMaxCount?: pulumi.Input<number>;
+    dispatchMaxCount?: pulumi.Input<number | undefined>;
     /**
      * Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
      */
-    dispatchMaxTime?: pulumi.Input<number>;
+    dispatchMaxTime?: pulumi.Input<number | undefined>;
     /**
      * Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
      */
-    dispatchReduceFreq?: pulumi.Input<number>;
+    dispatchReduceFreq?: pulumi.Input<number | undefined>;
     /**
      * Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
      */
-    dispatchRtBackfill?: pulumi.Input<boolean>;
+    dispatchRtBackfill?: pulumi.Input<boolean | undefined>;
     /**
      * Allows for a per-job override of the [search] indexedRealtimeMaximumSpan setting in limits.conf.
      */
-    dispatchRtMaximumSpan?: pulumi.Input<number>;
+    dispatchRtMaximumSpan?: pulumi.Input<number | undefined>;
     /**
      * Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
      */
-    dispatchSpawnProcess?: pulumi.Input<boolean>;
+    dispatchSpawnProcess?: pulumi.Input<boolean | undefined>;
     /**
      * A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
      */
-    dispatchTimeFormat?: pulumi.Input<string>;
+    dispatchTimeFormat?: pulumi.Input<string | undefined>;
     /**
      * Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
      */
-    dispatchTtl?: pulumi.Input<string>;
+    dispatchTtl?: pulumi.Input<string | undefined>;
     /**
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
-    displayView?: pulumi.Input<string>;
+    displayView?: pulumi.Input<string | undefined>;
     /**
      * Whether this search is to be run on a schedule
      */
-    isScheduled?: pulumi.Input<boolean>;
+    isScheduled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
      */
-    isVisible?: pulumi.Input<boolean>;
+    isVisible?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
      */
-    maxConcurrent?: pulumi.Input<number>;
+    maxConcurrent?: pulumi.Input<number | undefined>;
     /**
      * A name for the search.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
      */
-    realtimeSchedule?: pulumi.Input<boolean>;
+    realtimeSchedule?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
      */
-    requestUiDispatchApp?: pulumi.Input<string>;
+    requestUiDispatchApp?: pulumi.Input<string | undefined>;
     /**
      * Specifies a field used by Splunk Web to denote the view this search should be displayed in.
      */
-    requestUiDispatchView?: pulumi.Input<string>;
+    requestUiDispatchView?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
      */
-    restartOnSearchpeerAdd?: pulumi.Input<boolean>;
+    restartOnSearchpeerAdd?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
      */
-    runOnStartup?: pulumi.Input<boolean>;
+    runOnStartup?: pulumi.Input<boolean | undefined>;
     /**
      * Raises the scheduling priority of the named search. Defaults to Default
      */
-    schedulePriority?: pulumi.Input<string>;
+    schedulePriority?: pulumi.Input<string | undefined>;
     /**
      * Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the editSearchScheduleWindow capability to override auto.
      */
-    scheduleWindow?: pulumi.Input<string>;
+    scheduleWindow?: pulumi.Input<string | undefined>;
     /**
      * Required when creating a new search.
      */
@@ -2765,9 +2765,9 @@ export interface SavedSearchesArgs {
     /**
      * Defines the viewstate id associated with the UI view listed in 'displayview'.
      */
-    vsid?: pulumi.Input<string>;
+    vsid?: pulumi.Input<string | undefined>;
     /**
      * Specifies the new workload pool where the existing running search will be placed.`
      */
-    workloadPool?: pulumi.Input<string>;
+    workloadPool?: pulumi.Input<string | undefined>;
 }

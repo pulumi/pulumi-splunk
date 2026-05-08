@@ -23,7 +23,7 @@ class LookupDefinitionArgs:
     def __init__(__self__, *,
                  filename: pulumi.Input[_builtins.str],
                  name: pulumi.Input[_builtins.str],
-                 acl: Optional[pulumi.Input['LookupDefinitionAclArgs']] = None):
+                 acl: pulumi.Input[Optional['LookupDefinitionAclArgs']] = None):
         """
         The set of arguments for constructing a LookupDefinition resource.
 
@@ -62,23 +62,23 @@ class LookupDefinitionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['LookupDefinitionAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['LookupDefinitionAclArgs']]:
         """
         Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['LookupDefinitionAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['LookupDefinitionAclArgs']]):
         pulumi.set(self, "acl", value)
 
 
 @pulumi.input_type
 class _LookupDefinitionState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['LookupDefinitionAclArgs']] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['LookupDefinitionAclArgs']] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LookupDefinition resources.
 
@@ -95,38 +95,38 @@ class _LookupDefinitionState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['LookupDefinitionAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['LookupDefinitionAclArgs']]:
         """
         Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['LookupDefinitionAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['LookupDefinitionAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filename for the lookup table, usually ending in `.csv`.
         """
         return pulumi.get(self, "filename")
 
     @filename.setter
-    def filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filename", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique name for the lookup definition within the app context.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -136,9 +136,9 @@ class LookupDefinition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## 
@@ -227,9 +227,9 @@ class LookupDefinition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,9 +256,9 @@ class LookupDefinition(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
-            filename: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'LookupDefinition':
+            acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
+            filename: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'LookupDefinition':
         """
         Get an existing LookupDefinition resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -145,45 +145,45 @@ export interface InputsScriptState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsScriptAcl>;
+    acl?: pulumi.Input<inputs.InputsScriptAcl | undefined>;
     /**
      * Specifies whether the input script is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Sets the host for events from this input. Defaults to whatever host sent the event.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Sets the index for events from this input. Defaults to the main index.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
      */
-    interval?: pulumi.Input<number>;
+    interval?: pulumi.Input<number | undefined>;
     /**
      * Specify the name of the scripted input.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
      */
-    passauth?: pulumi.Input<string>;
+    passauth?: pulumi.Input<string | undefined>;
     /**
      * Specify a new name for the source field for the script.
      */
-    renameSource?: pulumi.Input<string>;
+    renameSource?: pulumi.Input<string | undefined>;
     /**
      * Sets the source key/field for events from this input. Defaults to the input file path.
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
      * Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -193,19 +193,19 @@ export interface InputsScriptArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsScriptAcl>;
+    acl?: pulumi.Input<inputs.InputsScriptAcl | undefined>;
     /**
      * Specifies whether the input script is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Sets the host for events from this input. Defaults to whatever host sent the event.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Sets the index for events from this input. Defaults to the main index.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * Specify an integer or cron schedule. This parameter specifies how often to execute the specified script, in seconds or a valid cron schedule. If you specify a cron schedule, the script is not executed on start-up.
      */
@@ -213,23 +213,23 @@ export interface InputsScriptArgs {
     /**
      * Specify the name of the scripted input.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * User to run the script as. If you provide a username, Splunk software generates an auth token for that user and passes it to the script.
      */
-    passauth?: pulumi.Input<string>;
+    passauth?: pulumi.Input<string | undefined>;
     /**
      * Specify a new name for the source field for the script.
      */
-    renameSource?: pulumi.Input<string>;
+    renameSource?: pulumi.Input<string | undefined>;
     /**
      * Sets the source key/field for events from this input. Defaults to the input file path.
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Sets the sourcetype key/field for events from this input. If unset, Splunk software picks a source type based on various aspects of the data. As a convenience, the chosen string is prepended with 'sourcetype::'. There is no hard-coded default.
      * Sets the sourcetype key initial value. The key is used during parsing/indexing, in particular to set the source type field during indexing. It is also the source type field used at search time.
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
 }

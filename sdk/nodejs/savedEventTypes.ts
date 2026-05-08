@@ -144,35 +144,35 @@ export interface SavedEventTypesState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.SavedEventTypesAcl>;
+    acl?: pulumi.Input<inputs.SavedEventTypesAcl | undefined>;
     /**
      * Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * Human-readable description of this event type.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If True, disables the event type.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * A name for the event type.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * Event type search string.
      */
-    search?: pulumi.Input<string>;
+    search?: pulumi.Input<string | undefined>;
     /**
      * [Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -182,19 +182,19 @@ export interface SavedEventTypesArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.SavedEventTypesAcl>;
+    acl?: pulumi.Input<inputs.SavedEventTypesAcl | undefined>;
     /**
      * Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.
      */
-    color?: pulumi.Input<string>;
+    color?: pulumi.Input<string | undefined>;
     /**
      * Human-readable description of this event type.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * If True, disables the event type.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * A name for the event type.
      */
@@ -202,7 +202,7 @@ export interface SavedEventTypesArgs {
     /**
      * Specify an integer from 1 to 10 for the value used to determine the order in which the matching event types of an event are displayed. 1 is the highest priority.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * Event type search string.
      */
@@ -210,5 +210,5 @@ export interface SavedEventTypesArgs {
     /**
      * [Deprecated] Use tags.conf.spec file to assign tags to groups of events with related field values.
      */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -86,31 +86,31 @@ export interface ProviderArgs {
     /**
      * For splunk.GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
      */
-    aclGetMode?: pulumi.Input<string>;
+    aclGetMode?: pulumi.Input<string | undefined>;
     /**
      * Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
      */
-    authToken?: pulumi.Input<string>;
+    authToken?: pulumi.Input<string | undefined>;
     /**
      * insecure skip verification flag
      */
-    insecureSkipVerify?: pulumi.Input<boolean>;
+    insecureSkipVerify?: pulumi.Input<boolean | undefined>;
     /**
      * Splunk instance password
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Timeout when making calls to Splunk server. Defaults to 60 seconds
      */
-    timeout?: pulumi.Input<number>;
+    timeout?: pulumi.Input<number | undefined>;
     /**
      * Splunk instance URL
      */
-    url?: pulumi.Input<string>;
+    url?: pulumi.Input<string | undefined>;
     /**
      * Splunk instance admin username
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {

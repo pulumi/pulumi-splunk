@@ -21,22 +21,22 @@ __all__ = ['InputsMonitorArgs', 'InputsMonitor']
 @pulumi.input_type
 class InputsMonitorArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsMonitorAclArgs']] = None,
-                 blacklist: Optional[pulumi.Input[_builtins.str]] = None,
-                 crc_salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 follow_tail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_segment: Optional[pulumi.Input[_builtins.int]] = None,
-                 ignore_older_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recursive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_before_close: Optional[pulumi.Input[_builtins.int]] = None,
-                 whitelist: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsMonitorAclArgs']] = None,
+                 blacklist: pulumi.Input[Optional[_builtins.str]] = None,
+                 crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 follow_tail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_segment: pulumi.Input[Optional[_builtins.int]] = None,
+                 ignore_older_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recursive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_before_close: pulumi.Input[Optional[_builtins.int]] = None,
+                 whitelist: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InputsMonitor resource.
 
@@ -92,216 +92,216 @@ class InputsMonitorArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsMonitorAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsMonitorAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsMonitorAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsMonitorAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def blacklist(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def blacklist(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
         """
         return pulumi.get(self, "blacklist")
 
     @blacklist.setter
-    def blacklist(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def blacklist(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "blacklist", value)
 
     @_builtins.property
     @pulumi.getter(name="crcSalt")
-    def crc_salt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crc_salt(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
         """
         return pulumi.get(self, "crc_salt")
 
     @crc_salt.setter
-    def crc_salt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crc_salt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crc_salt", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input monitoring is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="followTail")
-    def follow_tail(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def follow_tail(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, files that are seen for the first time is read from the end.
         """
         return pulumi.get(self, "follow_tail")
 
     @follow_tail.setter
-    def follow_tail(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def follow_tail(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "follow_tail", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the host field for events from this data input.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="hostRegex")
-    def host_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
         """
         return pulumi.get(self, "host_regex")
 
     @host_regex.setter
-    def host_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_regex", value)
 
     @_builtins.property
     @pulumi.getter(name="hostSegment")
-    def host_segment(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def host_segment(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Use the specified slash-separate segment of the filepath as the host field value.
         """
         return pulumi.get(self, "host_segment")
 
     @host_segment.setter
-    def host_segment(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def host_segment(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "host_segment", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreOlderThan")
-    def ignore_older_than(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ignore_older_than(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
         """
         return pulumi.get(self, "ignore_older_than")
 
     @ignore_older_than.setter
-    def ignore_older_than(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ignore_older_than(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ignore_older_than", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Which index events from this input should be stored in. Defaults to default.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file or directory path to monitor on the system.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def recursive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def recursive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Setting this to false prevents monitoring of any subdirectories encountered within this data input.
         """
         return pulumi.get(self, "recursive")
 
     @recursive.setter
-    def recursive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def recursive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "recursive", value)
 
     @_builtins.property
     @pulumi.getter(name="renameSource")
-    def rename_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rename_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
         """
         return pulumi.get(self, "rename_source")
 
     @rename_source.setter
-    def rename_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rename_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rename_source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the sourcetype field for incoming events.
         """
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="timeBeforeClose")
-    def time_before_close(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def time_before_close(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
         """
         return pulumi.get(self, "time_before_close")
 
     @time_before_close.setter
-    def time_before_close(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def time_before_close(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "time_before_close", value)
 
     @_builtins.property
     @pulumi.getter
-    def whitelist(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def whitelist(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
         """
         return pulumi.get(self, "whitelist")
 
     @whitelist.setter
-    def whitelist(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def whitelist(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "whitelist", value)
 
 
 @pulumi.input_type
 class _InputsMonitorState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['InputsMonitorAclArgs']] = None,
-                 blacklist: Optional[pulumi.Input[_builtins.str]] = None,
-                 crc_salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 follow_tail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_segment: Optional[pulumi.Input[_builtins.int]] = None,
-                 ignore_older_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recursive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_before_close: Optional[pulumi.Input[_builtins.int]] = None,
-                 whitelist: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['InputsMonitorAclArgs']] = None,
+                 blacklist: pulumi.Input[Optional[_builtins.str]] = None,
+                 crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 follow_tail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_segment: pulumi.Input[Optional[_builtins.int]] = None,
+                 ignore_older_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recursive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_before_close: pulumi.Input[Optional[_builtins.int]] = None,
+                 whitelist: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InputsMonitor resources.
 
@@ -357,194 +357,194 @@ class _InputsMonitorState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['InputsMonitorAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['InputsMonitorAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['InputsMonitorAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['InputsMonitorAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def blacklist(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def blacklist(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
         """
         return pulumi.get(self, "blacklist")
 
     @blacklist.setter
-    def blacklist(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def blacklist(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "blacklist", value)
 
     @_builtins.property
     @pulumi.getter(name="crcSalt")
-    def crc_salt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crc_salt(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
         """
         return pulumi.get(self, "crc_salt")
 
     @crc_salt.setter
-    def crc_salt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crc_salt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crc_salt", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if input monitoring is disabled.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="followTail")
-    def follow_tail(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def follow_tail(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If set to true, files that are seen for the first time is read from the end.
         """
         return pulumi.get(self, "follow_tail")
 
     @follow_tail.setter
-    def follow_tail(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def follow_tail(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "follow_tail", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the host field for events from this data input.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="hostRegex")
-    def host_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a regular expression for a file path. If the path for a file matches this regular expression, the captured value is used to populate the host field for events from this data input. The regular expression must have one capture group.
         """
         return pulumi.get(self, "host_regex")
 
     @host_regex.setter
-    def host_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_regex", value)
 
     @_builtins.property
     @pulumi.getter(name="hostSegment")
-    def host_segment(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def host_segment(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Use the specified slash-separate segment of the filepath as the host field value.
         """
         return pulumi.get(self, "host_segment")
 
     @host_segment.setter
-    def host_segment(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def host_segment(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "host_segment", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreOlderThan")
-    def ignore_older_than(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ignore_older_than(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a time value. If the modification time of a file being monitored falls outside of this rolling time window, the file is no longer being monitored.
         """
         return pulumi.get(self, "ignore_older_than")
 
     @ignore_older_than.setter
-    def ignore_older_than(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ignore_older_than(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ignore_older_than", value)
 
     @_builtins.property
     @pulumi.getter
-    def index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Which index events from this input should be stored in. Defaults to default.
         """
         return pulumi.get(self, "index")
 
     @index.setter
-    def index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "index", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file or directory path to monitor on the system.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def recursive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def recursive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Setting this to false prevents monitoring of any subdirectories encountered within this data input.
         """
         return pulumi.get(self, "recursive")
 
     @recursive.setter
-    def recursive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def recursive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "recursive", value)
 
     @_builtins.property
     @pulumi.getter(name="renameSource")
-    def rename_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rename_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the source field for events from this data input. The same source should not be used for multiple data inputs.
         """
         return pulumi.get(self, "rename_source")
 
     @rename_source.setter
-    def rename_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rename_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rename_source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value to populate in the sourcetype field for incoming events.
         """
         return pulumi.get(self, "sourcetype")
 
     @sourcetype.setter
-    def sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="timeBeforeClose")
-    def time_before_close(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def time_before_close(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         When Splunk software reaches the end of a file that is being read, the file is kept open for a minimum of the number of seconds specified in this value. After this period has elapsed, the file is checked again for more data.
         """
         return pulumi.get(self, "time_before_close")
 
     @time_before_close.setter
-    def time_before_close(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def time_before_close(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "time_before_close", value)
 
     @_builtins.property
     @pulumi.getter
-    def whitelist(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def whitelist(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify a regular expression for a file path. Only file paths that match this regular expression are indexed.
         """
         return pulumi.get(self, "whitelist")
 
     @whitelist.setter
-    def whitelist(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def whitelist(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "whitelist", value)
 
 
@@ -554,22 +554,22 @@ class InputsMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
-                 blacklist: Optional[pulumi.Input[_builtins.str]] = None,
-                 crc_salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 follow_tail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_segment: Optional[pulumi.Input[_builtins.int]] = None,
-                 ignore_older_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recursive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_before_close: Optional[pulumi.Input[_builtins.int]] = None,
-                 whitelist: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
+                 blacklist: pulumi.Input[Optional[_builtins.str]] = None,
+                 crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 follow_tail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_segment: pulumi.Input[Optional[_builtins.int]] = None,
+                 ignore_older_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recursive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_before_close: pulumi.Input[Optional[_builtins.int]] = None,
+                 whitelist: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: InputsMonitor
@@ -647,22 +647,22 @@ class InputsMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
-                 blacklist: Optional[pulumi.Input[_builtins.str]] = None,
-                 crc_salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 follow_tail: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_segment: Optional[pulumi.Input[_builtins.int]] = None,
-                 ignore_older_than: Optional[pulumi.Input[_builtins.str]] = None,
-                 index: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recursive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_before_close: Optional[pulumi.Input[_builtins.int]] = None,
-                 whitelist: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
+                 blacklist: pulumi.Input[Optional[_builtins.str]] = None,
+                 crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 follow_tail: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_segment: pulumi.Input[Optional[_builtins.int]] = None,
+                 ignore_older_than: pulumi.Input[Optional[_builtins.str]] = None,
+                 index: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recursive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_before_close: pulumi.Input[Optional[_builtins.int]] = None,
+                 whitelist: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -698,22 +698,22 @@ class InputsMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
-            blacklist: Optional[pulumi.Input[_builtins.str]] = None,
-            crc_salt: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            follow_tail: Optional[pulumi.Input[_builtins.bool]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            host_regex: Optional[pulumi.Input[_builtins.str]] = None,
-            host_segment: Optional[pulumi.Input[_builtins.int]] = None,
-            ignore_older_than: Optional[pulumi.Input[_builtins.str]] = None,
-            index: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            recursive: Optional[pulumi.Input[_builtins.bool]] = None,
-            rename_source: Optional[pulumi.Input[_builtins.str]] = None,
-            sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-            time_before_close: Optional[pulumi.Input[_builtins.int]] = None,
-            whitelist: Optional[pulumi.Input[_builtins.str]] = None) -> 'InputsMonitor':
+            acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
+            blacklist: pulumi.Input[Optional[_builtins.str]] = None,
+            crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            follow_tail: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            host_regex: pulumi.Input[Optional[_builtins.str]] = None,
+            host_segment: pulumi.Input[Optional[_builtins.int]] = None,
+            ignore_older_than: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            recursive: pulumi.Input[Optional[_builtins.bool]] = None,
+            rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+            sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+            time_before_close: pulumi.Input[Optional[_builtins.int]] = None,
+            whitelist: pulumi.Input[Optional[_builtins.str]] = None) -> 'InputsMonitor':
         """
         Get an existing InputsMonitor resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

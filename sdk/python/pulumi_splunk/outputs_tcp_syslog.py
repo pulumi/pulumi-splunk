@@ -21,14 +21,14 @@ __all__ = ['OutputsTcpSyslogArgs', 'OutputsTcpSyslog']
 @pulumi.input_type
 class OutputsTcpSyslogArgs:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['OutputsTcpSyslogAclArgs']] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 server: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['OutputsTcpSyslogAclArgs']] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 server: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OutputsTcpSyslog resource.
 
@@ -66,67 +66,67 @@ class OutputsTcpSyslogArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['OutputsTcpSyslogAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['OutputsTcpSyslogAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['OutputsTcpSyslogAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['OutputsTcpSyslogAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, disables global syslog settings.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         host:port of the server where syslog data should be sent
         """
         return pulumi.get(self, "server")
 
     @server.setter
-    def server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogSourcetype")
-    def syslog_sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a rule for handling data in addition to that provided by the "syslog" sourcetype. By default, there is no value for syslogSourceType.
         <br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string "syslog" receives this special treatment.
@@ -138,12 +138,12 @@ class OutputsTcpSyslogArgs:
         return pulumi.get(self, "syslog_sourcetype")
 
     @syslog_sourcetype.setter
-    def syslog_sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="timestampFormat")
-    def timestamp_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timestamp_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Format of timestamp to add at start of the events to be forwarded.
         The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
@@ -151,33 +151,33 @@ class OutputsTcpSyslogArgs:
         return pulumi.get(self, "timestamp_format")
 
     @timestamp_format.setter
-    def timestamp_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timestamp_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timestamp_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol to use to send syslog data. Valid values: (tcp | udp ).
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
 class _OutputsTcpSyslogState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['OutputsTcpSyslogAclArgs']] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 server: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['OutputsTcpSyslogAclArgs']] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 server: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OutputsTcpSyslog resources.
 
@@ -215,67 +215,67 @@ class _OutputsTcpSyslogState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['OutputsTcpSyslogAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['OutputsTcpSyslogAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['OutputsTcpSyslogAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['OutputsTcpSyslogAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, disables global syslog settings.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def server(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         host:port of the server where syslog data should be sent
         """
         return pulumi.get(self, "server")
 
     @server.setter
-    def server(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogSourcetype")
-    def syslog_sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a rule for handling data in addition to that provided by the "syslog" sourcetype. By default, there is no value for syslogSourceType.
         <br>This string is used as a substring match against the sourcetype key. For example, if the string is set to 'syslog', then all source types containing the string "syslog" receives this special treatment.
@@ -287,12 +287,12 @@ class _OutputsTcpSyslogState:
         return pulumi.get(self, "syslog_sourcetype")
 
     @syslog_sourcetype.setter
-    def syslog_sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="timestampFormat")
-    def timestamp_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timestamp_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Format of timestamp to add at start of the events to be forwarded.
         The format is a strftime-style timestamp formatting string. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
@@ -300,19 +300,19 @@ class _OutputsTcpSyslogState:
         return pulumi.get(self, "timestamp_format")
 
     @timestamp_format.setter
-    def timestamp_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timestamp_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timestamp_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol to use to send syslog data. Valid values: (tcp | udp ).
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -322,14 +322,14 @@ class OutputsTcpSyslog(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 server: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 server: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: OutputsTcpSyslog
@@ -405,14 +405,14 @@ class OutputsTcpSyslog(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 server: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 timestamp_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 server: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 timestamp_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -440,14 +440,14 @@ class OutputsTcpSyslog(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            server: Optional[pulumi.Input[_builtins.str]] = None,
-            syslog_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-            timestamp_format: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'OutputsTcpSyslog':
+            acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            server: pulumi.Input[Optional[_builtins.str]] = None,
+            syslog_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+            timestamp_format: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'OutputsTcpSyslog':
         """
         Get an existing OutputsTcpSyslog resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

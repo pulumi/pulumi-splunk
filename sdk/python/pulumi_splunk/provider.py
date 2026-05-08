@@ -19,13 +19,13 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 acl_get_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 insecure_skip_verify: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl_get_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 insecure_skip_verify: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
 
@@ -54,86 +54,86 @@ class ProviderArgs:
 
     @_builtins.property
     @pulumi.getter(name="aclGetMode")
-    def acl_get_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def acl_get_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For GenericAcl GET .../acl: "enterprise" (default) omits owner/sharing query parameters; "cloud" includes them.
         """
         return pulumi.get(self, "acl_get_mode")
 
     @acl_get_mode.setter
-    def acl_get_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def acl_get_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "acl_get_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         """
         return pulumi.get(self, "auth_token")
 
     @auth_token.setter
-    def auth_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_token", value)
 
     @_builtins.property
     @pulumi.getter(name="insecureSkipVerify")
-    def insecure_skip_verify(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def insecure_skip_verify(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         insecure skip verification flag
         """
         return pulumi.get(self, "insecure_skip_verify")
 
     @insecure_skip_verify.setter
-    def insecure_skip_verify(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def insecure_skip_verify(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "insecure_skip_verify", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Splunk instance password
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Timeout when making calls to Splunk server. Defaults to 60 seconds
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Splunk instance URL
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Splunk instance admin username
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -143,13 +143,13 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl_get_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 insecure_skip_verify: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl_get_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 insecure_skip_verify: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The provider type for the splunk package. By default, resources use package-wide configuration
@@ -196,13 +196,13 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl_get_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 insecure_skip_verify: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl_get_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 insecure_skip_verify: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):

@@ -162,7 +162,7 @@ export interface InputsTcpRawState {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsTcpRawAcl>;
+    acl?: pulumi.Input<inputs.InputsTcpRawAcl | undefined>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -171,50 +171,50 @@ export interface InputsTcpRawState {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    connectionHost?: pulumi.Input<string>;
+    connectionHost?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Host from which the indexer gets data.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Index to store generated events. Defaults to default.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * The input port which receives raw data.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (parsingQueue | indexQueue)
      * Specifies where the input processor should deposit the events it reads. Defaults to parsingQueue.
      * Set queue to parsingQueue to apply props.conf and other parsing rules to your data. For more information about props.conf and rules for timestamping and linebreaking, refer to props.conf and the online documentation at "Monitor files and directories with inputs.conf"
      * Set queue to indexQueue to send your data directly into the index.
      */
-    queue?: pulumi.Input<string>;
+    queue?: pulumi.Input<string | undefined>;
     /**
      * Specifies in seconds the timeout value for adding a Done-key. Default value is 10 seconds.
      * If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
      */
-    rawTcpDoneTimeout?: pulumi.Input<number>;
+    rawTcpDoneTimeout?: pulumi.Input<number | undefined>;
     /**
      * Allows for restricting this input to only accept data from the host specified here.
      */
-    restrictToHost?: pulumi.Input<string>;
+    restrictToHost?: pulumi.Input<string | undefined>;
     /**
      * Sets the source key/field for events from this input. Defaults to the input file path.
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Set the source type for events from this input.
      * "sourcetype=" is automatically prepended to <string>.
      * Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -224,7 +224,7 @@ export interface InputsTcpRawArgs {
     /**
      * The app/user context that is the namespace for the resource
      */
-    acl?: pulumi.Input<inputs.InputsTcpRawAcl>;
+    acl?: pulumi.Input<inputs.InputsTcpRawAcl | undefined>;
     /**
      * Valid values: (ip | dns | none)
      * Set the host for the remote server that is sending data.
@@ -233,48 +233,48 @@ export interface InputsTcpRawArgs {
      * none leaves the host as specified in inputs.conf, which is typically the Splunk system hostname.
      * Default value is dns.
      */
-    connectionHost?: pulumi.Input<string>;
+    connectionHost?: pulumi.Input<string | undefined>;
     /**
      * Indicates if input is disabled.
      */
-    disabled?: pulumi.Input<boolean>;
+    disabled?: pulumi.Input<boolean | undefined>;
     /**
      * Host from which the indexer gets data.
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * Index to store generated events. Defaults to default.
      */
-    index?: pulumi.Input<string>;
+    index?: pulumi.Input<string | undefined>;
     /**
      * The input port which receives raw data.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Valid values: (parsingQueue | indexQueue)
      * Specifies where the input processor should deposit the events it reads. Defaults to parsingQueue.
      * Set queue to parsingQueue to apply props.conf and other parsing rules to your data. For more information about props.conf and rules for timestamping and linebreaking, refer to props.conf and the online documentation at "Monitor files and directories with inputs.conf"
      * Set queue to indexQueue to send your data directly into the index.
      */
-    queue?: pulumi.Input<string>;
+    queue?: pulumi.Input<string | undefined>;
     /**
      * Specifies in seconds the timeout value for adding a Done-key. Default value is 10 seconds.
      * If a connection over the port specified by name remains idle after receiving data for specified number of seconds, it adds a Done-key. This implies the last event is completely received.
      */
-    rawTcpDoneTimeout?: pulumi.Input<number>;
+    rawTcpDoneTimeout?: pulumi.Input<number | undefined>;
     /**
      * Allows for restricting this input to only accept data from the host specified here.
      */
-    restrictToHost?: pulumi.Input<string>;
+    restrictToHost?: pulumi.Input<string | undefined>;
     /**
      * Sets the source key/field for events from this input. Defaults to the input file path.
      * Sets the source key initial value. The key is used during parsing/indexing, in particular to set the source field during indexing. It is also the source field used at search time. As a convenience, the chosen string is prepended with 'source::'.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Set the source type for events from this input.
      * "sourcetype=" is automatically prepended to <string>.
      * Defaults to audittrail (if signedaudit=true) or fschange (if signedaudit=false).
      */
-    sourcetype?: pulumi.Input<string>;
+    sourcetype?: pulumi.Input<string | undefined>;
 }

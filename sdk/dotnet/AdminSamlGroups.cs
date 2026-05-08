@@ -24,7 +24,7 @@ namespace Pulumi.Splunk
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var saml_group = new Splunk.Index.AdminSamlGroups("saml-group", new()
+    ///     var saml_group = new Splunk.AdminSamlGroups("saml-group", new()
     ///     {
     ///         Name = "mygroup",
     ///         Roles = new[]

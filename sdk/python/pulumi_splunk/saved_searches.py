@@ -22,192 +22,192 @@ __all__ = ['SavedSearchesArgs', 'SavedSearches']
 class SavedSearchesArgs:
     def __init__(__self__, *,
                  search: pulumi.Input[_builtins.str],
-                 acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
-                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_bcc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_cc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_include_results_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_search: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_view_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_mailserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_max_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_alert: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_report: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_pdfview: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_preprocess_results: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_cid_font_list: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_include_splunk_logo: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_paper_orientation: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_paper_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_send_csv: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_send_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_send_results: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_use_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_use_tls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_width_sort_columns: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_jira_service_desk_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_dest: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_populate_lookup_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_rss_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_webhook_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_additional_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_resource: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_snow_event_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 actions: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_digest_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_expires: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 alert_suppress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_suppress_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_suppress_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_threshold: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_track: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 allow_skew: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_summarize_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_max_disabled_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_summary_ratio: Optional[pulumi.Input[_builtins.float]] = None,
-                 auto_summarize_max_summary_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_suspend_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_timespan: Optional[pulumi.Input[_builtins.str]] = None,
-                 cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_earliest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_latest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_indexed_realtime: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_indexed_realtime_minspan: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_indexed_realtime_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_lookups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_max_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_reduce_freq: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_rt_backfill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_rt_maximum_span: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_spawn_process: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_visible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_concurrent: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 realtime_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 request_ui_dispatch_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_ui_dispatch_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_on_searchpeer_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 run_on_startup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schedule_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsid: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_pool: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['SavedSearchesAclArgs']] = None,
+                 action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_incident_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_occurred: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_bcc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_cc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_include_results_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_search: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_view_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_mailserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_max_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_alert: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_report: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_pdfview: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_preprocess_results: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_cid_font_list: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_include_splunk_logo: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_paper_orientation: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_paper_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_server_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_send_csv: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_send_pdf: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_send_results: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_use_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_use_tls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_project: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_event: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_index: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_custom_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_dest: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_populate_lookup_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_script_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_webhook_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_additional_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_ci_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 actions: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_comparator: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_digest_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_expires: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 alert_suppress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_suppress_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_suppress_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_threshold: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_track: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_skew: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_summarize_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_max_disabled_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_summary_ratio: pulumi.Input[Optional[_builtins.float]] = None,
+                 auto_summarize_max_summary_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_suspend_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_timespan: pulumi.Input[Optional[_builtins.str]] = None,
+                 cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_earliest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_latest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_indexed_realtime: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_indexed_realtime_minspan: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_indexed_realtime_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_lookups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_max_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_reduce_freq: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_rt_backfill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_rt_maximum_span: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_spawn_process: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 realtime_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 request_ui_dispatch_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_ui_dispatch_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_on_searchpeer_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 run_on_startup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schedule_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_pool: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SavedSearches resource.
 
@@ -787,2432 +787,2432 @@ class SavedSearchesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['SavedSearchesAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['SavedSearchesAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['SavedSearchesAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamBodyFormat")
-    def action_better_webhook_param_body_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_body_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Format of the body content. Valid values are json, xml, form-urlencoded, or raw
         """
         return pulumi.get(self, "action_better_webhook_param_body_format")
 
     @action_better_webhook_param_body_format.setter
-    def action_better_webhook_param_body_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_body_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_body_format", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamCredential")
-    def action_better_webhook_param_credential(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_credential(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Splunk stored credential to use for authentication
         """
         return pulumi.get(self, "action_better_webhook_param_credential")
 
     @action_better_webhook_param_credential.setter
-    def action_better_webhook_param_credential(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_credential(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_credential", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamCredentials")
-    def action_better_webhook_param_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_credentials(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Use the credentials defined in the webhook URL
         """
         return pulumi.get(self, "action_better_webhook_param_credentials")
 
     @action_better_webhook_param_credentials.setter
-    def action_better_webhook_param_credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_credentials(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamUrl")
-    def action_better_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to send the HTTP POST request to. Must be accessible from the Splunk server
         """
         return pulumi.get(self, "action_better_webhook_param_url")
 
     @action_better_webhook_param_url.setter
-    def action_better_webhook_param_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncident")
-    def action_create_xsoar_incident(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_create_xsoar_incident")
 
     @action_create_xsoar_incident.setter
-    def action_create_xsoar_incident(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamCustomFields")
-    def action_create_xsoar_incident_param_custom_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_custom_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR custom incident fields (should be a comma separated list)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_custom_fields")
 
     @action_create_xsoar_incident_param_custom_fields.setter
-    def action_create_xsoar_incident_param_custom_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_custom_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_custom_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamDetails")
-    def action_create_xsoar_incident_param_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident description
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_details")
 
     @action_create_xsoar_incident_param_details.setter
-    def action_create_xsoar_incident_param_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_details", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamIncidentName")
-    def action_create_xsoar_incident_param_incident_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_incident_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident name
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_incident_name")
 
     @action_create_xsoar_incident_param_incident_name.setter
-    def action_create_xsoar_incident_param_incident_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_incident_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_incident_name", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamOccurred")
-    def action_create_xsoar_incident_param_occurred(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_occurred(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident time
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_occurred")
 
     @action_create_xsoar_incident_param_occurred.setter
-    def action_create_xsoar_incident_param_occurred(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_occurred(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_occurred", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamSendAllServers")
-    def action_create_xsoar_incident_param_send_all_servers(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_send_all_servers(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_send_all_servers")
 
     @action_create_xsoar_incident_param_send_all_servers.setter
-    def action_create_xsoar_incident_param_send_all_servers(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_send_all_servers(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_send_all_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamServerUrl")
-    def action_create_xsoar_incident_param_server_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_server_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR Server instance URL (Should start with https:// || http://)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_server_url")
 
     @action_create_xsoar_incident_param_server_url.setter
-    def action_create_xsoar_incident_param_server_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_server_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_server_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamSeverity")
-    def action_create_xsoar_incident_param_severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_severity")
 
     @action_create_xsoar_incident_param_severity.setter
-    def action_create_xsoar_incident_param_severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamType")
-    def action_create_xsoar_incident_param_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident type
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_type")
 
     @action_create_xsoar_incident_param_type.setter
-    def action_create_xsoar_incident_param_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailAuthPassword")
-    def action_email_auth_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_auth_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         """
         return pulumi.get(self, "action_email_auth_password")
 
     @action_email_auth_password.setter
-    def action_email_auth_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_auth_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_auth_password", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailAuthUsername")
-    def action_email_auth_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_auth_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
         """
         return pulumi.get(self, "action_email_auth_username")
 
     @action_email_auth_username.setter
-    def action_email_auth_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_auth_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_auth_username", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailBcc")
-    def action_email_bcc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_bcc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         BCC email address to use if action.email is enabled.
         """
         return pulumi.get(self, "action_email_bcc")
 
     @action_email_bcc.setter
-    def action_email_bcc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_bcc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_bcc", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailCc")
-    def action_email_cc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_cc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CC email address to use if action.email is enabled.
         """
         return pulumi.get(self, "action_email_cc")
 
     @action_email_cc.setter
-    def action_email_cc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_cc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_cc", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailCommand")
-    def action_email_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_email_command")
 
     @action_email_command.setter
-    def action_email_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailFormat")
-    def action_email_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
         """
         return pulumi.get(self, "action_email_format")
 
     @action_email_format.setter
-    def action_email_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_format", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailFrom")
-    def action_email_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
         """
         return pulumi.get(self, "action_email_from")
 
     @action_email_from.setter
-    def action_email_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_from", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailHostname")
-    def action_email_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
         """
         return pulumi.get(self, "action_email_hostname")
 
     @action_email_hostname.setter
-    def action_email_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeResultsLink")
-    def action_email_include_results_link(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_results_link(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_results_link")
 
     @action_email_include_results_link.setter
-    def action_email_include_results_link(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_results_link(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_results_link", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeSearch")
-    def action_email_include_search(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_search(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to include the search that caused an email to be sent. [1|0]
         """
         return pulumi.get(self, "action_email_include_search")
 
     @action_email_include_search.setter
-    def action_email_include_search(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_search(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_search", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeTrigger")
-    def action_email_include_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger")
 
     @action_email_include_trigger.setter
-    def action_email_include_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeTriggerTime")
-    def action_email_include_trigger_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_trigger_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to show the time that the alert was fired. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger_time")
 
     @action_email_include_trigger_time.setter
-    def action_email_include_trigger_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_trigger_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_trigger_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeViewLink")
-    def action_email_include_view_link(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_view_link(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_view_link")
 
     @action_email_include_view_link.setter
-    def action_email_include_view_link(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_view_link(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_view_link", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailInline")
-    def action_email_inline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_inline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
         """
         return pulumi.get(self, "action_email_inline")
 
     @action_email_inline.setter
-    def action_email_inline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_inline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_inline", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMailserver")
-    def action_email_mailserver(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_mailserver(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
         """
         return pulumi.get(self, "action_email_mailserver")
 
     @action_email_mailserver.setter
-    def action_email_mailserver(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_mailserver(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_mailserver", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMaxResults")
-    def action_email_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
         """
         return pulumi.get(self, "action_email_max_results")
 
     @action_email_max_results.setter
-    def action_email_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMaxTime")
-    def action_email_max_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_max_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
         """
         return pulumi.get(self, "action_email_max_time")
 
     @action_email_max_time.setter
-    def action_email_max_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_max_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMessageAlert")
-    def action_email_message_alert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_message_alert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
         """
         return pulumi.get(self, "action_email_message_alert")
 
     @action_email_message_alert.setter
-    def action_email_message_alert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_message_alert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_message_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMessageReport")
-    def action_email_message_report(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_message_report(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
         """
         return pulumi.get(self, "action_email_message_report")
 
     @action_email_message_report.setter
-    def action_email_message_report(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_message_report(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_message_report", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailPdfview")
-    def action_email_pdfview(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_pdfview(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the view to deliver if sendpdf is enabled
         """
         return pulumi.get(self, "action_email_pdfview")
 
     @action_email_pdfview.setter
-    def action_email_pdfview(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_pdfview(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_pdfview", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailPreprocessResults")
-    def action_email_preprocess_results(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_preprocess_results(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
         """
         return pulumi.get(self, "action_email_preprocess_results")
 
     @action_email_preprocess_results.setter
-    def action_email_preprocess_results(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_preprocess_results(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_preprocess_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportCidFontList")
-    def action_email_report_cid_font_list(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_cid_font_list(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
         """
         return pulumi.get(self, "action_email_report_cid_font_list")
 
     @action_email_report_cid_font_list.setter
-    def action_email_report_cid_font_list(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_cid_font_list(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_cid_font_list", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportIncludeSplunkLogo")
-    def action_email_report_include_splunk_logo(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_report_include_splunk_logo(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to include the Splunk logo with the report.
         """
         return pulumi.get(self, "action_email_report_include_splunk_logo")
 
     @action_email_report_include_splunk_logo.setter
-    def action_email_report_include_splunk_logo(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_report_include_splunk_logo(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_report_include_splunk_logo", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportPaperOrientation")
-    def action_email_report_paper_orientation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_paper_orientation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
         """
         return pulumi.get(self, "action_email_report_paper_orientation")
 
     @action_email_report_paper_orientation.setter
-    def action_email_report_paper_orientation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_paper_orientation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_paper_orientation", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportPaperSize")
-    def action_email_report_paper_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_paper_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
         """
         return pulumi.get(self, "action_email_report_paper_size")
 
     @action_email_report_paper_size.setter
-    def action_email_report_paper_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_paper_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_paper_size", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportServerEnabled")
-    def action_email_report_server_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_report_server_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         No Supported
         """
         return pulumi.get(self, "action_email_report_server_enabled")
 
     @action_email_report_server_enabled.setter
-    def action_email_report_server_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_report_server_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_report_server_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportServerUrl")
-    def action_email_report_server_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_server_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Not supported.For a default locally installed report server, the URL is http://localhost:8091/
         """
         return pulumi.get(self, "action_email_report_server_url")
 
     @action_email_report_server_url.setter
-    def action_email_report_server_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_server_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_server_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSendCsv")
-    def action_email_send_csv(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_send_csv(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to send results as a CSV file. Defaults to 0.
         """
         return pulumi.get(self, "action_email_send_csv")
 
     @action_email_send_csv.setter
-    def action_email_send_csv(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_send_csv(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_send_csv", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSendPdf")
-    def action_email_send_pdf(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_send_pdf(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to create and send the results as a PDF. Defaults to false.
         """
         return pulumi.get(self, "action_email_send_pdf")
 
     @action_email_send_pdf.setter
-    def action_email_send_pdf(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_send_pdf(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_send_pdf", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSendResults")
-    def action_email_send_results(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_send_results(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
         """
         return pulumi.get(self, "action_email_send_results")
 
     @action_email_send_results.setter
-    def action_email_send_results(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_send_results(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_send_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSubject")
-    def action_email_subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
         """
         return pulumi.get(self, "action_email_subject")
 
     @action_email_subject.setter
-    def action_email_subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_subject", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailTo")
-    def action_email_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
         """
         return pulumi.get(self, "action_email_to")
 
     @action_email_to.setter
-    def action_email_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_to", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailTrackAlert")
-    def action_email_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_email_track_alert")
 
     @action_email_track_alert.setter
-    def action_email_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailTtl")
-    def action_email_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
         """
         return pulumi.get(self, "action_email_ttl")
 
     @action_email_ttl.setter
-    def action_email_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailUseSsl")
-    def action_email_use_ssl(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_use_ssl(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
         """
         return pulumi.get(self, "action_email_use_ssl")
 
     @action_email_use_ssl.setter
-    def action_email_use_ssl(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_use_ssl(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_use_ssl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailUseTls")
-    def action_email_use_tls(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_use_tls(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         """
         return pulumi.get(self, "action_email_use_tls")
 
     @action_email_use_tls.setter
-    def action_email_use_tls(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_use_tls(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_use_tls", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailWidthSortColumns")
-    def action_email_width_sort_columns(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_width_sort_columns(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         """
         return pulumi.get(self, "action_email_width_sort_columns")
 
     @action_email_width_sort_columns.setter
-    def action_email_width_sort_columns(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_width_sort_columns(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_width_sort_columns", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamAccount")
-    def action_jira_service_desk_param_account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira Service Desk account name
         """
         return pulumi.get(self, "action_jira_service_desk_param_account")
 
     @action_jira_service_desk_param_account.setter
-    def action_jira_service_desk_param_account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_account", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraCustomfields")
-    def action_jira_service_desk_param_jira_customfields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_customfields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_customfields")
 
     @action_jira_service_desk_param_jira_customfields.setter
-    def action_jira_service_desk_param_jira_customfields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_customfields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_customfields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
-    def action_jira_service_desk_param_jira_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira issue description
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_description")
 
     @action_jira_service_desk_param_jira_description.setter
-    def action_jira_service_desk_param_jira_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_description", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraIssueType")
-    def action_jira_service_desk_param_jira_issue_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_issue_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira issue type name
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_issue_type")
 
     @action_jira_service_desk_param_jira_issue_type.setter
-    def action_jira_service_desk_param_jira_issue_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_issue_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_issue_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraPriority")
-    def action_jira_service_desk_param_jira_priority(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_priority(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira priority of issue
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_priority")
 
     @action_jira_service_desk_param_jira_priority.setter
-    def action_jira_service_desk_param_jira_priority(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_priority(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_priority", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraProject")
-    def action_jira_service_desk_param_jira_project(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_project(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira Project name
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_project")
 
     @action_jira_service_desk_param_jira_project.setter
-    def action_jira_service_desk_param_jira_project(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_project(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_project", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraSummary")
-    def action_jira_service_desk_param_jira_summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira issue title/summary
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
 
     @action_jira_service_desk_param_jira_summary.setter
-    def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogevent")
-    def action_logevent(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_logevent")
 
     @action_logevent.setter
-    def action_logevent(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamEvent")
-    def action_logevent_param_event(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_event(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specific event text for the logged event.
         """
         return pulumi.get(self, "action_logevent_param_event")
 
     @action_logevent_param_event.setter
-    def action_logevent_param_event(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_event(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_event", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamHost")
-    def action_logevent_param_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value for the host field of the logged event.
         """
         return pulumi.get(self, "action_logevent_param_host")
 
     @action_logevent_param_host.setter
-    def action_logevent_param_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_host", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamIndex")
-    def action_logevent_param_index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination index where to store the logged event.
         """
         return pulumi.get(self, "action_logevent_param_index")
 
     @action_logevent_param_index.setter
-    def action_logevent_param_index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_index", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamSource")
-    def action_logevent_param_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value for the source field of the logged event.
         """
         return pulumi.get(self, "action_logevent_param_source")
 
     @action_logevent_param_source.setter
-    def action_logevent_param_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_source", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamSourcetype")
-    def action_logevent_param_sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination sourcetype where to store the logged event.
         """
         return pulumi.get(self, "action_logevent_param_sourcetype")
 
     @action_logevent_param_sourcetype.setter
-    def action_logevent_param_sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyCustomDetails")
-    def action_pagerduty_custom_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_custom_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PagerDuty custom details information.
         """
         return pulumi.get(self, "action_pagerduty_custom_details")
 
     @action_pagerduty_custom_details.setter
-    def action_pagerduty_custom_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_custom_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_custom_details", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationKey")
-    def action_pagerduty_integration_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PagerDuty integration Key.
         """
         return pulumi.get(self, "action_pagerduty_integration_key")
 
     @action_pagerduty_integration_key.setter
-    def action_pagerduty_integration_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_key", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationKeyOverride")
-    def action_pagerduty_integration_key_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_key_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PagerDuty integration Key override.
         """
         return pulumi.get(self, "action_pagerduty_integration_key_override")
 
     @action_pagerduty_integration_key_override.setter
-    def action_pagerduty_integration_key_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_key_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_key_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationUrl")
-    def action_pagerduty_integration_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         """
         return pulumi.get(self, "action_pagerduty_integration_url")
 
     @action_pagerduty_integration_url.setter
-    def action_pagerduty_integration_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationUrlOverride")
-    def action_pagerduty_integration_url_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_url_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         """
         return pulumi.get(self, "action_pagerduty_integration_url_override")
 
     @action_pagerduty_integration_url_override.setter
-    def action_pagerduty_integration_url_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_url_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_url_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupCommand")
-    def action_populate_lookup_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.
         """
         return pulumi.get(self, "action_populate_lookup_command")
 
     @action_populate_lookup_command.setter
-    def action_populate_lookup_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupDest")
-    def action_populate_lookup_dest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_dest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lookup name of path of the lookup to populate
         """
         return pulumi.get(self, "action_populate_lookup_dest")
 
     @action_populate_lookup_dest.setter
-    def action_populate_lookup_dest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_dest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_dest", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupHostname")
-    def action_populate_lookup_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_populate_lookup_hostname")
 
     @action_populate_lookup_hostname.setter
-    def action_populate_lookup_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupMaxResults")
-    def action_populate_lookup_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_populate_lookup_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_populate_lookup_max_results")
 
     @action_populate_lookup_max_results.setter
-    def action_populate_lookup_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_populate_lookup_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_populate_lookup_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupMaxTime")
-    def action_populate_lookup_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_populate_lookup_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
         """
         return pulumi.get(self, "action_populate_lookup_max_time")
 
     @action_populate_lookup_max_time.setter
-    def action_populate_lookup_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_populate_lookup_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_populate_lookup_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupTrackAlert")
-    def action_populate_lookup_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_populate_lookup_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_populate_lookup_track_alert")
 
     @action_populate_lookup_track_alert.setter
-    def action_populate_lookup_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_populate_lookup_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_populate_lookup_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupTtl")
-    def action_populate_lookup_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
         """
         return pulumi.get(self, "action_populate_lookup_ttl")
 
     @action_populate_lookup_ttl.setter
-    def action_populate_lookup_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssCommand")
-    def action_rss_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_rss_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_rss_command")
 
     @action_rss_command.setter
-    def action_rss_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_rss_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssHostname")
-    def action_rss_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_rss_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_rss_hostname")
 
     @action_rss_hostname.setter
-    def action_rss_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_rss_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssMaxResults")
-    def action_rss_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_rss_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_rss_max_results")
 
     @action_rss_max_results.setter
-    def action_rss_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_rss_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_rss_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssMaxTime")
-    def action_rss_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_rss_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         """
         return pulumi.get(self, "action_rss_max_time")
 
     @action_rss_max_time.setter
-    def action_rss_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_rss_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_rss_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssTrackAlert")
-    def action_rss_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_rss_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_rss_track_alert")
 
     @action_rss_track_alert.setter
-    def action_rss_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_rss_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_rss_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssTtl")
-    def action_rss_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_rss_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_rss_ttl")
 
     @action_rss_ttl.setter
-    def action_rss_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_rss_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptCommand")
-    def action_script_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_script_command")
 
     @action_script_command.setter
-    def action_script_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptFilename")
-    def action_script_filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         File name of the script to call. Required if script action is enabled
         """
         return pulumi.get(self, "action_script_filename")
 
     @action_script_filename.setter
-    def action_script_filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_filename", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptHostname")
-    def action_script_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_script_hostname")
 
     @action_script_hostname.setter
-    def action_script_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptMaxResults")
-    def action_script_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_script_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_script_max_results")
 
     @action_script_max_results.setter
-    def action_script_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_script_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_script_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptMaxTime")
-    def action_script_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_script_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         """
         return pulumi.get(self, "action_script_max_time")
 
     @action_script_max_time.setter
-    def action_script_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_script_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_script_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptTrackAlert")
-    def action_script_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_script_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_script_track_alert")
 
     @action_script_track_alert.setter
-    def action_script_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_script_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_script_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptTtl")
-    def action_script_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_script_ttl")
 
     @action_script_ttl.setter
-    def action_script_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamAutoJoinChannel")
-    def action_slack_app_alert_integration_param_auto_join_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_auto_join_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_auto_join_channel")
 
     @action_slack_app_alert_integration_param_auto_join_channel.setter
-    def action_slack_app_alert_integration_param_auto_join_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_auto_join_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_auto_join_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamBotUsername")
-    def action_slack_app_alert_integration_param_bot_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_bot_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bot username that will post the message
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_bot_username")
 
     @action_slack_app_alert_integration_param_bot_username.setter
-    def action_slack_app_alert_integration_param_bot_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_bot_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_bot_username", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamChannel")
-    def action_slack_app_alert_integration_param_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Slack channel to send the message to (Should start with # or @)
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_channel")
 
     @action_slack_app_alert_integration_param_channel.setter
-    def action_slack_app_alert_integration_param_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamEmoji")
-    def action_slack_app_alert_integration_param_emoji(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_emoji(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Emoji icon to use as the bot's avatar (Should start and end with :)
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_emoji")
 
     @action_slack_app_alert_integration_param_emoji.setter
-    def action_slack_app_alert_integration_param_emoji(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_emoji(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_emoji", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamMessage")
-    def action_slack_app_alert_integration_param_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_message")
 
     @action_slack_app_alert_integration_param_message.setter
-    def action_slack_app_alert_integration_param_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_message", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamAttachment")
-    def action_slack_param_attachment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_attachment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Include a message attachment. Valid values are message, none, or alert_link
         """
         return pulumi.get(self, "action_slack_param_attachment")
 
     @action_slack_param_attachment.setter
-    def action_slack_param_attachment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_attachment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamChannel")
-    def action_slack_param_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Slack channel to send the message to (Should start with # or @)
         """
         return pulumi.get(self, "action_slack_param_channel")
 
     @action_slack_param_channel.setter
-    def action_slack_param_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamFields")
-    def action_slack_param_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         """
         return pulumi.get(self, "action_slack_param_fields")
 
     @action_slack_param_fields.setter
-    def action_slack_param_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamMessage")
-    def action_slack_param_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         """
         return pulumi.get(self, "action_slack_param_message")
 
     @action_slack_param_message.setter
-    def action_slack_param_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_message", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamWebhookUrlOverride")
-    def action_slack_param_webhook_url_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_webhook_url_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         """
         return pulumi.get(self, "action_slack_param_webhook_url_override")
 
     @action_slack_param_webhook_url_override.setter
-    def action_slack_param_webhook_url_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_webhook_url_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_webhook_url_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamAccount")
-    def action_snow_event_param_account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Account(s) for which the event is/ are to be created across ServiceNow instance(s).
         """
         return pulumi.get(self, "action_snow_event_param_account")
 
     @action_snow_event_param_account.setter
-    def action_snow_event_param_account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_account", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
-    def action_snow_event_param_additional_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_additional_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
         """
         return pulumi.get(self, "action_snow_event_param_additional_info")
 
     @action_snow_event_param_additional_info.setter
-    def action_snow_event_param_additional_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_additional_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_additional_info", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamCiIdentifier")
-    def action_snow_event_param_ci_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_ci_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         """
         return pulumi.get(self, "action_snow_event_param_ci_identifier")
 
     @action_snow_event_param_ci_identifier.setter
-    def action_snow_event_param_ci_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_ci_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_ci_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamCustomFields")
-    def action_snow_event_param_custom_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_custom_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         """
         return pulumi.get(self, "action_snow_event_param_custom_fields")
 
     @action_snow_event_param_custom_fields.setter
-    def action_snow_event_param_custom_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_custom_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_custom_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamDescription")
-    def action_snow_event_param_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A brief description of the event.
         """
         return pulumi.get(self, "action_snow_event_param_description")
 
     @action_snow_event_param_description.setter
-    def action_snow_event_param_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_description", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamNode")
-    def action_snow_event_param_node(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_node(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         """
         return pulumi.get(self, "action_snow_event_param_node")
 
     @action_snow_event_param_node.setter
-    def action_snow_event_param_node(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_node(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_node", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamResource")
-    def action_snow_event_param_resource(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_resource(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
         """
         return pulumi.get(self, "action_snow_event_param_resource")
 
     @action_snow_event_param_resource.setter
-    def action_snow_event_param_resource(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_resource(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamSeverity")
-    def action_snow_event_param_severity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_snow_event_param_severity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         """
         return pulumi.get(self, "action_snow_event_param_severity")
 
     @action_snow_event_param_severity.setter
-    def action_snow_event_param_severity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_snow_event_param_severity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_snow_event_param_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamType")
-    def action_snow_event_param_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         """
         return pulumi.get(self, "action_snow_event_param_type")
 
     @action_snow_event_param_type.setter
-    def action_snow_event_param_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexCommand")
-    def action_summary_index_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_summary_index_command")
 
     @action_summary_index_command.setter
-    def action_summary_index_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexHostname")
-    def action_summary_index_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_summary_index_hostname")
 
     @action_summary_index_hostname.setter
-    def action_summary_index_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexInline")
-    def action_summary_index_inline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_summary_index_inline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
         """
         return pulumi.get(self, "action_summary_index_inline")
 
     @action_summary_index_inline.setter
-    def action_summary_index_inline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_summary_index_inline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_summary_index_inline", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexMaxResults")
-    def action_summary_index_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_summary_index_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_summary_index_max_results")
 
     @action_summary_index_max_results.setter
-    def action_summary_index_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_summary_index_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_summary_index_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexMaxTime")
-    def action_summary_index_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_summary_index_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         """
         return pulumi.get(self, "action_summary_index_max_time")
 
     @action_summary_index_max_time.setter
-    def action_summary_index_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_summary_index_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_summary_index_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexName")
-    def action_summary_index_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         """
         return pulumi.get(self, "action_summary_index_name")
 
     @action_summary_index_name.setter
-    def action_summary_index_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_name", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexTrackAlert")
-    def action_summary_index_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_summary_index_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_summary_index_track_alert")
 
     @action_summary_index_track_alert.setter
-    def action_summary_index_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_summary_index_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_summary_index_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexTtl")
-    def action_summary_index_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_summary_index_ttl")
 
     @action_summary_index_ttl.setter
-    def action_summary_index_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamEnableRecovery")
-    def action_victorops_param_enable_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_enable_recovery(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_victorops_param_enable_recovery")
 
     @action_victorops_param_enable_recovery.setter
-    def action_victorops_param_enable_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_enable_recovery(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_enable_recovery", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamEntityId")
-    def action_victorops_param_entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the affected system or service
         """
         return pulumi.get(self, "action_victorops_param_entity_id")
 
     @action_victorops_param_entity_id.setter
-    def action_victorops_param_entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamInactivePolls")
-    def action_victorops_param_inactive_polls(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_inactive_polls(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of inactive polls before sending a recovery message
         """
         return pulumi.get(self, "action_victorops_param_inactive_polls")
 
     @action_victorops_param_inactive_polls.setter
-    def action_victorops_param_inactive_polls(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_inactive_polls(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_inactive_polls", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamMessageType")
-    def action_victorops_param_message_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_message_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
         """
         return pulumi.get(self, "action_victorops_param_message_type")
 
     @action_victorops_param_message_type.setter
-    def action_victorops_param_message_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_message_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_message_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamMonitoringTool")
-    def action_victorops_param_monitoring_tool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_monitoring_tool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the monitoring tool sending the alert
         """
         return pulumi.get(self, "action_victorops_param_monitoring_tool")
 
     @action_victorops_param_monitoring_tool.setter
-    def action_victorops_param_monitoring_tool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_monitoring_tool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_monitoring_tool", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamPollInterval")
-    def action_victorops_param_poll_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_poll_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Polling interval for checking the status of the alert (in minutes)
         """
         return pulumi.get(self, "action_victorops_param_poll_interval")
 
     @action_victorops_param_poll_interval.setter
-    def action_victorops_param_poll_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_poll_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_poll_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamRecordId")
-    def action_victorops_param_record_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_record_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier used to correlate related alerts
         """
         return pulumi.get(self, "action_victorops_param_record_id")
 
     @action_victorops_param_record_id.setter
-    def action_victorops_param_record_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_record_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_record_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamRoutingKeyOverride")
-    def action_victorops_param_routing_key_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_routing_key_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         """
         return pulumi.get(self, "action_victorops_param_routing_key_override")
 
     @action_victorops_param_routing_key_override.setter
-    def action_victorops_param_routing_key_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_routing_key_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_routing_key_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamStateMessage")
-    def action_victorops_param_state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_state_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the alert condition
         """
         return pulumi.get(self, "action_victorops_param_state_message")
 
     @action_victorops_param_state_message.setter
-    def action_victorops_param_state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_state_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_state_message", value)
 
     @_builtins.property
     @pulumi.getter(name="actionWebhookParamUrl")
-    def action_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_webhook_param_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to send the HTTP POST request to. Must be accessible from the Splunk server
         """
         return pulumi.get(self, "action_webhook_param_url")
 
     @action_webhook_param_url.setter
-    def action_webhook_param_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_webhook_param_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_webhook_param_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def actions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma-separated list of actions to enable. For example: rss,email
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def actions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="alertComparator")
-    def alert_comparator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_comparator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         """
         return pulumi.get(self, "alert_comparator")
 
     @alert_comparator.setter
-    def alert_comparator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_comparator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_comparator", value)
 
     @_builtins.property
     @pulumi.getter(name="alertCondition")
-    def alert_condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
         """
         return pulumi.get(self, "alert_condition")
 
     @alert_condition.setter
-    def alert_condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_condition", value)
 
     @_builtins.property
     @pulumi.getter(name="alertDigestMode")
-    def alert_digest_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alert_digest_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
         """
         return pulumi.get(self, "alert_digest_mode")
 
     @alert_digest_mode.setter
-    def alert_digest_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alert_digest_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alert_digest_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="alertExpires")
-    def alert_expires(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_expires(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
         """
         return pulumi.get(self, "alert_expires")
 
     @alert_expires.setter
-    def alert_expires(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_expires(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_expires", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSeverity")
-    def alert_severity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def alert_severity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
         """
         return pulumi.get(self, "alert_severity")
 
     @alert_severity.setter
-    def alert_severity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def alert_severity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "alert_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSuppress")
-    def alert_suppress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alert_suppress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether alert suppression is enabled for this scheduled search.
         """
         return pulumi.get(self, "alert_suppress")
 
     @alert_suppress.setter
-    def alert_suppress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alert_suppress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alert_suppress", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSuppressFields")
-    def alert_suppress_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_suppress_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         """
         return pulumi.get(self, "alert_suppress_fields")
 
     @alert_suppress_fields.setter
-    def alert_suppress_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_suppress_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_suppress_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSuppressPeriod")
-    def alert_suppress_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_suppress_period(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
         """
         return pulumi.get(self, "alert_suppress_period")
 
     @alert_suppress_period.setter
-    def alert_suppress_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_suppress_period(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_suppress_period", value)
 
     @_builtins.property
     @pulumi.getter(name="alertThreshold")
-    def alert_threshold(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_threshold(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         """
         return pulumi.get(self, "alert_threshold")
 
     @alert_threshold.setter
-    def alert_threshold(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_threshold(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="alertTrack")
-    def alert_track(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alert_track(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         """
         return pulumi.get(self, "alert_track")
 
     @alert_track.setter
-    def alert_track(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alert_track(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alert_track", value)
 
     @_builtins.property
     @pulumi.getter(name="alertType")
-    def alert_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         """
         return pulumi.get(self, "alert_type")
 
     @alert_type.setter
-    def alert_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_type", value)
 
     @_builtins.property
     @pulumi.getter(name="allowSkew")
-    def allow_skew(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allow_skew(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         """
         return pulumi.get(self, "allow_skew")
 
     @allow_skew.setter
-    def allow_skew(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allow_skew(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allow_skew", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarize")
-    def auto_summarize(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_summarize(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
         """
         return pulumi.get(self, "auto_summarize")
 
     @auto_summarize.setter
-    def auto_summarize(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_summarize(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_summarize", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeCommand")
-    def auto_summarize_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
         """
         return pulumi.get(self, "auto_summarize_command")
 
     @auto_summarize_command.setter
-    def auto_summarize_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_command", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeCronSchedule")
-    def auto_summarize_cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_cron_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         """
         return pulumi.get(self, "auto_summarize_cron_schedule")
 
     @auto_summarize_cron_schedule.setter
-    def auto_summarize_cron_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_cron_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_cron_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchEarliestTime")
-    def auto_summarize_dispatch_earliest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_earliest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "auto_summarize_dispatch_earliest_time")
 
     @auto_summarize_dispatch_earliest_time.setter
-    def auto_summarize_dispatch_earliest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_earliest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_earliest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchLatestTime")
-    def auto_summarize_dispatch_latest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_latest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "auto_summarize_dispatch_latest_time")
 
     @auto_summarize_dispatch_latest_time.setter
-    def auto_summarize_dispatch_latest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_latest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_latest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchTimeFormat")
-    def auto_summarize_dispatch_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
         """
         return pulumi.get(self, "auto_summarize_dispatch_time_format")
 
     @auto_summarize_dispatch_time_format.setter
-    def auto_summarize_dispatch_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchTtl")
-    def auto_summarize_dispatch_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
         """
         return pulumi.get(self, "auto_summarize_dispatch_ttl")
 
     @auto_summarize_dispatch_ttl.setter
-    def auto_summarize_dispatch_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxDisabledBuckets")
-    def auto_summarize_max_disabled_buckets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_summarize_max_disabled_buckets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
         """
         return pulumi.get(self, "auto_summarize_max_disabled_buckets")
 
     @auto_summarize_max_disabled_buckets.setter
-    def auto_summarize_max_disabled_buckets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_summarize_max_disabled_buckets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_summarize_max_disabled_buckets", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxSummaryRatio")
-    def auto_summarize_max_summary_ratio(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def auto_summarize_max_summary_ratio(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
         """
         return pulumi.get(self, "auto_summarize_max_summary_ratio")
 
     @auto_summarize_max_summary_ratio.setter
-    def auto_summarize_max_summary_ratio(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def auto_summarize_max_summary_ratio(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "auto_summarize_max_summary_ratio", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxSummarySize")
-    def auto_summarize_max_summary_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_summarize_max_summary_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
         """
         return pulumi.get(self, "auto_summarize_max_summary_size")
 
     @auto_summarize_max_summary_size.setter
-    def auto_summarize_max_summary_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_summarize_max_summary_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_summarize_max_summary_size", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxTime")
-    def auto_summarize_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_summarize_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
         """
         return pulumi.get(self, "auto_summarize_max_time")
 
     @auto_summarize_max_time.setter
-    def auto_summarize_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_summarize_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_summarize_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeSuspendPeriod")
-    def auto_summarize_suspend_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_suspend_period(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
         """
         return pulumi.get(self, "auto_summarize_suspend_period")
 
     @auto_summarize_suspend_period.setter
-    def auto_summarize_suspend_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_suspend_period(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_suspend_period", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeTimespan")
-    def auto_summarize_timespan(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_timespan(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
         """
         return pulumi.get(self, "auto_summarize_timespan")
 
     @auto_summarize_timespan.setter
-    def auto_summarize_timespan(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_timespan(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_timespan", value)
 
     @_builtins.property
     @pulumi.getter(name="cronSchedule")
-    def cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cron_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         """
         return pulumi.get(self, "cron_schedule")
 
     @cron_schedule.setter
-    def cron_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cron_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cron_schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human-readable description of this saved search. Defaults to empty string.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchBuckets")
-    def dispatch_buckets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_buckets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of timeline buckets. Defaults to 0.
         """
         return pulumi.get(self, "dispatch_buckets")
 
     @dispatch_buckets.setter
-    def dispatch_buckets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_buckets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_buckets", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchEarliestTime")
-    def dispatch_earliest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_earliest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_earliest_time")
 
     @dispatch_earliest_time.setter
-    def dispatch_earliest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_earliest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_earliest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexEarliest")
-    def dispatch_index_earliest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_index_earliest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_index_earliest")
 
     @dispatch_index_earliest.setter
-    def dispatch_index_earliest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_index_earliest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_index_earliest", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexLatest")
-    def dispatch_index_latest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_index_latest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_index_latest")
 
     @dispatch_index_latest.setter
-    def dispatch_index_latest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_index_latest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_index_latest", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexedRealtime")
-    def dispatch_indexed_realtime(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_indexed_realtime(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_indexed_realtime")
 
     @dispatch_indexed_realtime.setter
-    def dispatch_indexed_realtime(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_indexed_realtime(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_indexed_realtime", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexedRealtimeMinspan")
-    def dispatch_indexed_realtime_minspan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_indexed_realtime_minspan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
         """
         return pulumi.get(self, "dispatch_indexed_realtime_minspan")
 
     @dispatch_indexed_realtime_minspan.setter
-    def dispatch_indexed_realtime_minspan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_indexed_realtime_minspan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_indexed_realtime_minspan", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexedRealtimeOffset")
-    def dispatch_indexed_realtime_offset(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_indexed_realtime_offset(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
         """
         return pulumi.get(self, "dispatch_indexed_realtime_offset")
 
     @dispatch_indexed_realtime_offset.setter
-    def dispatch_indexed_realtime_offset(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_indexed_realtime_offset(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_indexed_realtime_offset", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchLatestTime")
-    def dispatch_latest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_latest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_latest_time")
 
     @dispatch_latest_time.setter
-    def dispatch_latest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_latest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_latest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchLookups")
-    def dispatch_lookups(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_lookups(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables or disables the lookups for this search. Defaults to 1.
         """
         return pulumi.get(self, "dispatch_lookups")
 
     @dispatch_lookups.setter
-    def dispatch_lookups(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_lookups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_lookups", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchMaxCount")
-    def dispatch_max_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_max_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of results before finalizing the search. Defaults to 500000.
         """
         return pulumi.get(self, "dispatch_max_count")
 
     @dispatch_max_count.setter
-    def dispatch_max_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_max_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_max_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchMaxTime")
-    def dispatch_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
         """
         return pulumi.get(self, "dispatch_max_time")
 
     @dispatch_max_time.setter
-    def dispatch_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchReduceFreq")
-    def dispatch_reduce_freq(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_reduce_freq(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
         """
         return pulumi.get(self, "dispatch_reduce_freq")
 
     @dispatch_reduce_freq.setter
-    def dispatch_reduce_freq(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_reduce_freq(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_reduce_freq", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchRtBackfill")
-    def dispatch_rt_backfill(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_rt_backfill(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
         """
         return pulumi.get(self, "dispatch_rt_backfill")
 
     @dispatch_rt_backfill.setter
-    def dispatch_rt_backfill(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_rt_backfill(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_rt_backfill", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchRtMaximumSpan")
-    def dispatch_rt_maximum_span(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_rt_maximum_span(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
         """
         return pulumi.get(self, "dispatch_rt_maximum_span")
 
     @dispatch_rt_maximum_span.setter
-    def dispatch_rt_maximum_span(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_rt_maximum_span(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_rt_maximum_span", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchSpawnProcess")
-    def dispatch_spawn_process(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_spawn_process(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
         """
         return pulumi.get(self, "dispatch_spawn_process")
 
     @dispatch_spawn_process.setter
-    def dispatch_spawn_process(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_spawn_process(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_spawn_process", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchTimeFormat")
-    def dispatch_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
         """
         return pulumi.get(self, "dispatch_time_format")
 
     @dispatch_time_format.setter
-    def dispatch_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchTtl")
-    def dispatch_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         """
         return pulumi.get(self, "dispatch_ttl")
 
     @dispatch_ttl.setter
-    def dispatch_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="displayView")
-    def display_view(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_view(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         """
         return pulumi.get(self, "display_view")
 
     @display_view.setter
-    def display_view(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_view(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_view", value)
 
     @_builtins.property
     @pulumi.getter(name="isScheduled")
-    def is_scheduled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scheduled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether this search is to be run on a schedule
         """
         return pulumi.get(self, "is_scheduled")
 
     @is_scheduled.setter
-    def is_scheduled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scheduled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVisible")
-    def is_visible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_visible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
         """
         return pulumi.get(self, "is_visible")
 
     @is_visible.setter
-    def is_visible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_visible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_visible", value)
 
     @_builtins.property
     @pulumi.getter(name="maxConcurrent")
-    def max_concurrent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_concurrent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
         """
         return pulumi.get(self, "max_concurrent")
 
     @max_concurrent.setter
-    def max_concurrent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_concurrent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_concurrent", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A name for the search.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="realtimeSchedule")
-    def realtime_schedule(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def realtime_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
         """
         return pulumi.get(self, "realtime_schedule")
 
     @realtime_schedule.setter
-    def realtime_schedule(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def realtime_schedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "realtime_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="requestUiDispatchApp")
-    def request_ui_dispatch_app(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_ui_dispatch_app(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
         """
         return pulumi.get(self, "request_ui_dispatch_app")
 
     @request_ui_dispatch_app.setter
-    def request_ui_dispatch_app(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_ui_dispatch_app(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_ui_dispatch_app", value)
 
     @_builtins.property
     @pulumi.getter(name="requestUiDispatchView")
-    def request_ui_dispatch_view(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_ui_dispatch_view(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a field used by Splunk Web to denote the view this search should be displayed in.
         """
         return pulumi.get(self, "request_ui_dispatch_view")
 
     @request_ui_dispatch_view.setter
-    def request_ui_dispatch_view(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_ui_dispatch_view(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_ui_dispatch_view", value)
 
     @_builtins.property
     @pulumi.getter(name="restartOnSearchpeerAdd")
-    def restart_on_searchpeer_add(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restart_on_searchpeer_add(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
         """
         return pulumi.get(self, "restart_on_searchpeer_add")
 
     @restart_on_searchpeer_add.setter
-    def restart_on_searchpeer_add(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restart_on_searchpeer_add(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restart_on_searchpeer_add", value)
 
     @_builtins.property
     @pulumi.getter(name="runOnStartup")
-    def run_on_startup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def run_on_startup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
         """
         return pulumi.get(self, "run_on_startup")
 
     @run_on_startup.setter
-    def run_on_startup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def run_on_startup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "run_on_startup", value)
 
     @_builtins.property
     @pulumi.getter(name="schedulePriority")
-    def schedule_priority(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_priority(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Raises the scheduling priority of the named search. Defaults to Default
         """
         return pulumi.get(self, "schedule_priority")
 
     @schedule_priority.setter
-    def schedule_priority(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_priority(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_priority", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleWindow")
-    def schedule_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_window(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
         """
         return pulumi.get(self, "schedule_window")
 
     @schedule_window.setter
-    def schedule_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_window(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_window", value)
 
     @_builtins.property
     @pulumi.getter
-    def vsid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the viewstate id associated with the UI view listed in 'displayview'.
         """
         return pulumi.get(self, "vsid")
 
     @vsid.setter
-    def vsid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsid", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadPool")
-    def workload_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the new workload pool where the existing running search will be placed.`
         """
         return pulumi.get(self, "workload_pool")
 
     @workload_pool.setter
-    def workload_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_pool", value)
 
 
 @pulumi.input_type
 class _SavedSearchesState:
     def __init__(__self__, *,
-                 acl: Optional[pulumi.Input['SavedSearchesAclArgs']] = None,
-                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_auth_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_bcc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_cc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_include_results_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_search: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_view_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_mailserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_max_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_alert: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_report: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_pdfview: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_preprocess_results: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_cid_font_list: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_include_splunk_logo: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_paper_orientation: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_paper_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_send_csv: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_send_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_send_results: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_use_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_use_tls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_width_sort_columns: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_jira_service_desk_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_populate_lookup_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_dest: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_populate_lookup_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_rss_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_rss_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_script_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_webhook_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_additional_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_resource: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_snow_event_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 actions: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_digest_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_expires: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 alert_suppress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_suppress_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_suppress_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_threshold: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_track: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 allow_skew: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_summarize_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_max_disabled_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_summary_ratio: Optional[pulumi.Input[_builtins.float]] = None,
-                 auto_summarize_max_summary_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_suspend_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_timespan: Optional[pulumi.Input[_builtins.str]] = None,
-                 cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_earliest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_latest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_indexed_realtime: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_indexed_realtime_minspan: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_indexed_realtime_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_lookups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_max_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_reduce_freq: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_rt_backfill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_rt_maximum_span: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_spawn_process: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_visible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_concurrent: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 realtime_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 request_ui_dispatch_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_ui_dispatch_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_on_searchpeer_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 run_on_startup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schedule_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 search: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsid: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_pool: Optional[pulumi.Input[_builtins.str]] = None):
+                 acl: pulumi.Input[Optional['SavedSearchesAclArgs']] = None,
+                 action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_incident_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_occurred: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_auth_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_bcc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_cc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_include_results_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_search: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_view_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_mailserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_max_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_alert: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_report: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_pdfview: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_preprocess_results: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_cid_font_list: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_include_splunk_logo: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_paper_orientation: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_paper_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_server_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_send_csv: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_send_pdf: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_send_results: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_use_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_use_tls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_project: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_event: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_index: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_custom_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_populate_lookup_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_dest: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_populate_lookup_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_rss_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_script_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_webhook_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_additional_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_ci_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 actions: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_comparator: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_digest_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_expires: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 alert_suppress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_suppress_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_suppress_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_threshold: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_track: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_skew: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_summarize_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_max_disabled_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_summary_ratio: pulumi.Input[Optional[_builtins.float]] = None,
+                 auto_summarize_max_summary_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_suspend_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_timespan: pulumi.Input[Optional[_builtins.str]] = None,
+                 cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_earliest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_latest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_indexed_realtime: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_indexed_realtime_minspan: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_indexed_realtime_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_lookups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_max_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_reduce_freq: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_rt_backfill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_rt_maximum_span: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_spawn_process: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 realtime_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 request_ui_dispatch_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_ui_dispatch_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_on_searchpeer_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 run_on_startup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schedule_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 search: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_pool: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SavedSearches resources.
 
@@ -3796,2306 +3796,2306 @@ class _SavedSearchesState:
 
     @_builtins.property
     @pulumi.getter
-    def acl(self) -> Optional[pulumi.Input['SavedSearchesAclArgs']]:
+    def acl(self) -> pulumi.Input[Optional['SavedSearchesAclArgs']]:
         """
         The app/user context that is the namespace for the resource
         """
         return pulumi.get(self, "acl")
 
     @acl.setter
-    def acl(self, value: Optional[pulumi.Input['SavedSearchesAclArgs']]):
+    def acl(self, value: pulumi.Input[Optional['SavedSearchesAclArgs']]):
         pulumi.set(self, "acl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamBodyFormat")
-    def action_better_webhook_param_body_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_body_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Format of the body content. Valid values are json, xml, form-urlencoded, or raw
         """
         return pulumi.get(self, "action_better_webhook_param_body_format")
 
     @action_better_webhook_param_body_format.setter
-    def action_better_webhook_param_body_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_body_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_body_format", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamCredential")
-    def action_better_webhook_param_credential(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_credential(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Splunk stored credential to use for authentication
         """
         return pulumi.get(self, "action_better_webhook_param_credential")
 
     @action_better_webhook_param_credential.setter
-    def action_better_webhook_param_credential(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_credential(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_credential", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamCredentials")
-    def action_better_webhook_param_credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_credentials(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Use the credentials defined in the webhook URL
         """
         return pulumi.get(self, "action_better_webhook_param_credentials")
 
     @action_better_webhook_param_credentials.setter
-    def action_better_webhook_param_credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_credentials(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="actionBetterWebhookParamUrl")
-    def action_better_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_better_webhook_param_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to send the HTTP POST request to. Must be accessible from the Splunk server
         """
         return pulumi.get(self, "action_better_webhook_param_url")
 
     @action_better_webhook_param_url.setter
-    def action_better_webhook_param_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_better_webhook_param_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_better_webhook_param_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncident")
-    def action_create_xsoar_incident(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable XSOAR alerting (Should by 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_create_xsoar_incident")
 
     @action_create_xsoar_incident.setter
-    def action_create_xsoar_incident(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamCustomFields")
-    def action_create_xsoar_incident_param_custom_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_custom_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR custom incident fields (should be a comma separated list)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_custom_fields")
 
     @action_create_xsoar_incident_param_custom_fields.setter
-    def action_create_xsoar_incident_param_custom_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_custom_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_custom_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamDetails")
-    def action_create_xsoar_incident_param_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident description
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_details")
 
     @action_create_xsoar_incident_param_details.setter
-    def action_create_xsoar_incident_param_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_details", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamIncidentName")
-    def action_create_xsoar_incident_param_incident_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_incident_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident name
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_incident_name")
 
     @action_create_xsoar_incident_param_incident_name.setter
-    def action_create_xsoar_incident_param_incident_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_incident_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_incident_name", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamOccurred")
-    def action_create_xsoar_incident_param_occurred(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_occurred(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident time
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_occurred")
 
     @action_create_xsoar_incident_param_occurred.setter
-    def action_create_xsoar_incident_param_occurred(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_occurred(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_occurred", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamSendAllServers")
-    def action_create_xsoar_incident_param_send_all_servers(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_send_all_servers(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable XSOAR alerting sending to all servers (Should by 1 (Enabled) or 0 (Disabled)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_send_all_servers")
 
     @action_create_xsoar_incident_param_send_all_servers.setter
-    def action_create_xsoar_incident_param_send_all_servers(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_send_all_servers(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_send_all_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamServerUrl")
-    def action_create_xsoar_incident_param_server_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_server_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR Server instance URL (Should start with https:// || http://)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_server_url")
 
     @action_create_xsoar_incident_param_server_url.setter
-    def action_create_xsoar_incident_param_server_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_server_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_server_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamSeverity")
-    def action_create_xsoar_incident_param_severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR Severity (1 - Low, 2 - Medium, 3 - High, 4 - Critical)
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_severity")
 
     @action_create_xsoar_incident_param_severity.setter
-    def action_create_xsoar_incident_param_severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="actionCreateXsoarIncidentParamType")
-    def action_create_xsoar_incident_param_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_create_xsoar_incident_param_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         XSOAR incident type
         """
         return pulumi.get(self, "action_create_xsoar_incident_param_type")
 
     @action_create_xsoar_incident_param_type.setter
-    def action_create_xsoar_incident_param_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_create_xsoar_incident_param_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_create_xsoar_incident_param_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmail")
-    def action_email(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The state of the email action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         """
         return pulumi.get(self, "action_email")
 
     @action_email.setter
-    def action_email(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailAuthPassword")
-    def action_email_auth_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_auth_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         """
         return pulumi.get(self, "action_email_auth_password")
 
     @action_email_auth_password.setter
-    def action_email_auth_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_auth_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_auth_password", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailAuthUsername")
-    def action_email_auth_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_auth_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
         """
         return pulumi.get(self, "action_email_auth_username")
 
     @action_email_auth_username.setter
-    def action_email_auth_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_auth_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_auth_username", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailBcc")
-    def action_email_bcc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_bcc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         BCC email address to use if action.email is enabled.
         """
         return pulumi.get(self, "action_email_bcc")
 
     @action_email_bcc.setter
-    def action_email_bcc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_bcc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_bcc", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailCc")
-    def action_email_cc(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_cc(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         CC email address to use if action.email is enabled.
         """
         return pulumi.get(self, "action_email_cc")
 
     @action_email_cc.setter
-    def action_email_cc(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_cc(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_cc", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailCommand")
-    def action_email_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_email_command")
 
     @action_email_command.setter
-    def action_email_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailFormat")
-    def action_email_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (table | plain | html | raw | csv)Specify the format of text in the email. This value also applies to any attachments.
         """
         return pulumi.get(self, "action_email_format")
 
     @action_email_format.setter
-    def action_email_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_format", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailFrom")
-    def action_email_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Email address from which the email action originates.Defaults to splunk@$LOCALHOST or whatever value is set in alert_actions.conf.
         """
         return pulumi.get(self, "action_email_from")
 
     @action_email_from.setter
-    def action_email_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_from", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailHostname")
-    def action_email_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in email actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)
         """
         return pulumi.get(self, "action_email_hostname")
 
     @action_email_hostname.setter
-    def action_email_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeResultsLink")
-    def action_email_include_results_link(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_results_link(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to include a link to the results. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_results_link")
 
     @action_email_include_results_link.setter
-    def action_email_include_results_link(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_results_link(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_results_link", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeSearch")
-    def action_email_include_search(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_search(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to include the search that caused an email to be sent. [1|0]
         """
         return pulumi.get(self, "action_email_include_search")
 
     @action_email_include_search.setter
-    def action_email_include_search(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_search(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_search", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeTrigger")
-    def action_email_include_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to show the trigger condition that caused the alert to fire. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger")
 
     @action_email_include_trigger.setter
-    def action_email_include_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeTriggerTime")
-    def action_email_include_trigger_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_trigger_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to show the time that the alert was fired. [1|0]
         """
         return pulumi.get(self, "action_email_include_trigger_time")
 
     @action_email_include_trigger_time.setter
-    def action_email_include_trigger_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_trigger_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_trigger_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailIncludeViewLink")
-    def action_email_include_view_link(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_include_view_link(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to show the title and a link to enable the user to edit the saved search. Defaults to 1 (true). [1|0]
         """
         return pulumi.get(self, "action_email_include_view_link")
 
     @action_email_include_view_link.setter
-    def action_email_include_view_link(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_include_view_link(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_include_view_link", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailInline")
-    def action_email_inline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_inline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the search results are contained in the body of the email.Results can be either inline or attached to an email.
         """
         return pulumi.get(self, "action_email_inline")
 
     @action_email_inline.setter
-    def action_email_inline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_inline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_inline", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMailserver")
-    def action_email_mailserver(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_mailserver(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Set the address of the MTA server to be used to send the emails.Defaults to <LOCALHOST> or whatever is set in alert_actions.conf.
         """
         return pulumi.get(self, "action_email_mailserver")
 
     @action_email_mailserver.setter
-    def action_email_mailserver(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_mailserver(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_mailserver", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMaxResults")
-    def action_email_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the global maximum number of search results to send when email.action is enabled. Defaults to 100.
         """
         return pulumi.get(self, "action_email_max_results")
 
     @action_email_max_results.setter
-    def action_email_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMaxTime")
-    def action_email_max_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_max_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are Integer[m|s|h|d].Specifies the maximum amount of time the execution of an email action takes before the action is aborted. Defaults to 5m.
         """
         return pulumi.get(self, "action_email_max_time")
 
     @action_email_max_time.setter
-    def action_email_max_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_max_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMessageAlert")
-    def action_email_message_alert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_message_alert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Customize the message sent in the emailed alert. Defaults to: The alert condition for '$name$' was triggered.
         """
         return pulumi.get(self, "action_email_message_alert")
 
     @action_email_message_alert.setter
-    def action_email_message_alert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_message_alert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_message_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailMessageReport")
-    def action_email_message_report(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_message_report(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Customize the message sent in the emailed report. Defaults to: The scheduled report '$name$' has run
         """
         return pulumi.get(self, "action_email_message_report")
 
     @action_email_message_report.setter
-    def action_email_message_report(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_message_report(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_message_report", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailPdfview")
-    def action_email_pdfview(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_pdfview(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the view to deliver if sendpdf is enabled
         """
         return pulumi.get(self, "action_email_pdfview")
 
     @action_email_pdfview.setter
-    def action_email_pdfview(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_pdfview(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_pdfview", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailPreprocessResults")
-    def action_email_preprocess_results(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_preprocess_results(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Search string to preprocess results before emailing them. Defaults to empty string (no preprocessing).Usually the preprocessing consists of filtering out unwanted internal fields.
         """
         return pulumi.get(self, "action_email_preprocess_results")
 
     @action_email_preprocess_results.setter
-    def action_email_preprocess_results(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_preprocess_results(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_preprocess_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportCidFontList")
-    def action_email_report_cid_font_list(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_cid_font_list(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Space-separated list. Specifies the set (and load order) of CID fonts for handling Simplified Chinese(gb), Traditional Chinese(cns), Japanese(jp), and Korean(kor) in Integrated PDF Rendering.If multiple fonts provide a glyph for a given character code, the glyph from the first font specified in the list is used.To skip loading any CID fonts, specify the empty string.Defaults to 'gb cns jp kor'
         """
         return pulumi.get(self, "action_email_report_cid_font_list")
 
     @action_email_report_cid_font_list.setter
-    def action_email_report_cid_font_list(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_cid_font_list(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_cid_font_list", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportIncludeSplunkLogo")
-    def action_email_report_include_splunk_logo(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_report_include_splunk_logo(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to include the Splunk logo with the report.
         """
         return pulumi.get(self, "action_email_report_include_splunk_logo")
 
     @action_email_report_include_splunk_logo.setter
-    def action_email_report_include_splunk_logo(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_report_include_splunk_logo(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_report_include_splunk_logo", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportPaperOrientation")
-    def action_email_report_paper_orientation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_paper_orientation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (portrait | landscape)Specifies the paper orientation: portrait or landscape. Defaults to portrait.
         """
         return pulumi.get(self, "action_email_report_paper_orientation")
 
     @action_email_report_paper_orientation.setter
-    def action_email_report_paper_orientation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_paper_orientation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_paper_orientation", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportPaperSize")
-    def action_email_report_paper_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_paper_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: (letter | legal | ledger | a2 | a3 | a4 | a5)Specifies the paper size for PDFs. Defaults to letter.
         """
         return pulumi.get(self, "action_email_report_paper_size")
 
     @action_email_report_paper_size.setter
-    def action_email_report_paper_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_paper_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_paper_size", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportServerEnabled")
-    def action_email_report_server_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_report_server_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         No Supported
         """
         return pulumi.get(self, "action_email_report_server_enabled")
 
     @action_email_report_server_enabled.setter
-    def action_email_report_server_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_report_server_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_report_server_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailReportServerUrl")
-    def action_email_report_server_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_report_server_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Not supported.For a default locally installed report server, the URL is http://localhost:8091/
         """
         return pulumi.get(self, "action_email_report_server_url")
 
     @action_email_report_server_url.setter
-    def action_email_report_server_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_report_server_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_report_server_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSendCsv")
-    def action_email_send_csv(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_email_send_csv(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specify whether to send results as a CSV file. Defaults to 0.
         """
         return pulumi.get(self, "action_email_send_csv")
 
     @action_email_send_csv.setter
-    def action_email_send_csv(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_email_send_csv(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_email_send_csv", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSendPdf")
-    def action_email_send_pdf(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_send_pdf(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to create and send the results as a PDF. Defaults to false.
         """
         return pulumi.get(self, "action_email_send_pdf")
 
     @action_email_send_pdf.setter
-    def action_email_send_pdf(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_send_pdf(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_send_pdf", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSendResults")
-    def action_email_send_results(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_send_results(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to attach the search results in the email.Results can be either attached or inline. See action.email.inline.
         """
         return pulumi.get(self, "action_email_send_results")
 
     @action_email_send_results.setter
-    def action_email_send_results(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_send_results(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_send_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailSubject")
-    def action_email_subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies an alternate email subject.Defaults to SplunkAlert-<savedsearchname>.
         """
         return pulumi.get(self, "action_email_subject")
 
     @action_email_subject.setter
-    def action_email_subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_subject", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailTo")
-    def action_email_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma or semicolon separated list of recipient email addresses. Required if this search is scheduled and the email alert action is enabled.
         """
         return pulumi.get(self, "action_email_to")
 
     @action_email_to.setter
-    def action_email_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_to", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailTrackAlert")
-    def action_email_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_email_track_alert")
 
     @action_email_track_alert.setter
-    def action_email_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailTtl")
-    def action_email_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_email_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are Integer[p].Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows <Integer>, int is the number of scheduled periods. Defaults to 86400 (24 hours).If no actions are triggered, the artifacts have their ttl determined by dispatch.ttl in savedsearches.conf.
         """
         return pulumi.get(self, "action_email_ttl")
 
     @action_email_ttl.setter
-    def action_email_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_email_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_email_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailUseSsl")
-    def action_email_use_ssl(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_use_ssl(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to use SSL when communicating with the SMTP server. Defaults to false.
         """
         return pulumi.get(self, "action_email_use_ssl")
 
     @action_email_use_ssl.setter
-    def action_email_use_ssl(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_use_ssl(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_use_ssl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailUseTls")
-    def action_email_use_tls(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_use_tls(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to use TLS (transport layer security) when communicating with the SMTP server (starttls).Defaults to false.
         """
         return pulumi.get(self, "action_email_use_tls")
 
     @action_email_use_tls.setter
-    def action_email_use_tls(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_use_tls(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_use_tls", value)
 
     @_builtins.property
     @pulumi.getter(name="actionEmailWidthSortColumns")
-    def action_email_width_sort_columns(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_email_width_sort_columns(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         """
         return pulumi.get(self, "action_email_width_sort_columns")
 
     @action_email_width_sort_columns.setter
-    def action_email_width_sort_columns(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_email_width_sort_columns(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_email_width_sort_columns", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamAccount")
-    def action_jira_service_desk_param_account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira Service Desk account name
         """
         return pulumi.get(self, "action_jira_service_desk_param_account")
 
     @action_jira_service_desk_param_account.setter
-    def action_jira_service_desk_param_account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_account", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraCustomfields")
-    def action_jira_service_desk_param_jira_customfields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_customfields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_customfields")
 
     @action_jira_service_desk_param_jira_customfields.setter
-    def action_jira_service_desk_param_jira_customfields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_customfields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_customfields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
-    def action_jira_service_desk_param_jira_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira issue description
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_description")
 
     @action_jira_service_desk_param_jira_description.setter
-    def action_jira_service_desk_param_jira_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_description", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraIssueType")
-    def action_jira_service_desk_param_jira_issue_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_issue_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira issue type name
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_issue_type")
 
     @action_jira_service_desk_param_jira_issue_type.setter
-    def action_jira_service_desk_param_jira_issue_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_issue_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_issue_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraPriority")
-    def action_jira_service_desk_param_jira_priority(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_priority(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira priority of issue
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_priority")
 
     @action_jira_service_desk_param_jira_priority.setter
-    def action_jira_service_desk_param_jira_priority(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_priority(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_priority", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraProject")
-    def action_jira_service_desk_param_jira_project(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_project(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira Project name
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_project")
 
     @action_jira_service_desk_param_jira_project.setter
-    def action_jira_service_desk_param_jira_project(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_project(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_project", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraSummary")
-    def action_jira_service_desk_param_jira_summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_jira_service_desk_param_jira_summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Jira issue title/summary
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_summary")
 
     @action_jira_service_desk_param_jira_summary.setter
-    def action_jira_service_desk_param_jira_summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_jira_service_desk_param_jira_summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_summary", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogevent")
-    def action_logevent(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable log event action (Should be 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_logevent")
 
     @action_logevent.setter
-    def action_logevent(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamEvent")
-    def action_logevent_param_event(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_event(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specific event text for the logged event.
         """
         return pulumi.get(self, "action_logevent_param_event")
 
     @action_logevent_param_event.setter
-    def action_logevent_param_event(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_event(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_event", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamHost")
-    def action_logevent_param_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value for the host field of the logged event.
         """
         return pulumi.get(self, "action_logevent_param_host")
 
     @action_logevent_param_host.setter
-    def action_logevent_param_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_host", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamIndex")
-    def action_logevent_param_index(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_index(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination index where to store the logged event.
         """
         return pulumi.get(self, "action_logevent_param_index")
 
     @action_logevent_param_index.setter
-    def action_logevent_param_index(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_index(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_index", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamSource")
-    def action_logevent_param_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value for the source field of the logged event.
         """
         return pulumi.get(self, "action_logevent_param_source")
 
     @action_logevent_param_source.setter
-    def action_logevent_param_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_source", value)
 
     @_builtins.property
     @pulumi.getter(name="actionLogeventParamSourcetype")
-    def action_logevent_param_sourcetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_logevent_param_sourcetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination sourcetype where to store the logged event.
         """
         return pulumi.get(self, "action_logevent_param_sourcetype")
 
     @action_logevent_param_sourcetype.setter
-    def action_logevent_param_sourcetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_logevent_param_sourcetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_logevent_param_sourcetype", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyCustomDetails")
-    def action_pagerduty_custom_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_custom_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PagerDuty custom details information.
         """
         return pulumi.get(self, "action_pagerduty_custom_details")
 
     @action_pagerduty_custom_details.setter
-    def action_pagerduty_custom_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_custom_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_custom_details", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationKey")
-    def action_pagerduty_integration_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PagerDuty integration Key.
         """
         return pulumi.get(self, "action_pagerduty_integration_key")
 
     @action_pagerduty_integration_key.setter
-    def action_pagerduty_integration_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_key", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationKeyOverride")
-    def action_pagerduty_integration_key_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_key_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The PagerDuty integration Key override.
         """
         return pulumi.get(self, "action_pagerduty_integration_key_override")
 
     @action_pagerduty_integration_key_override.setter
-    def action_pagerduty_integration_key_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_key_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_key_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationUrl")
-    def action_pagerduty_integration_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
         """
         return pulumi.get(self, "action_pagerduty_integration_url")
 
     @action_pagerduty_integration_url.setter
-    def action_pagerduty_integration_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_url", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPagerdutyIntegrationUrlOverride")
-    def action_pagerduty_integration_url_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_pagerduty_integration_url_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The pagerduty integration URL override. This integration uses Splunk's native webhooks to send events to PagerDuty.
         """
         return pulumi.get(self, "action_pagerduty_integration_url_override")
 
     @action_pagerduty_integration_url_override.setter
-    def action_pagerduty_integration_url_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_pagerduty_integration_url_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_pagerduty_integration_url_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookup")
-    def action_populate_lookup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_populate_lookup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The state of the populate lookup action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         """
         return pulumi.get(self, "action_populate_lookup")
 
     @action_populate_lookup.setter
-    def action_populate_lookup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_populate_lookup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_populate_lookup", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupCommand")
-    def action_populate_lookup_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.
         """
         return pulumi.get(self, "action_populate_lookup_command")
 
     @action_populate_lookup_command.setter
-    def action_populate_lookup_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupDest")
-    def action_populate_lookup_dest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_dest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lookup name of path of the lookup to populate
         """
         return pulumi.get(self, "action_populate_lookup_dest")
 
     @action_populate_lookup_dest.setter
-    def action_populate_lookup_dest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_dest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_dest", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupHostname")
-    def action_populate_lookup_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_populate_lookup_hostname")
 
     @action_populate_lookup_hostname.setter
-    def action_populate_lookup_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupMaxResults")
-    def action_populate_lookup_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_populate_lookup_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_populate_lookup_max_results")
 
     @action_populate_lookup_max_results.setter
-    def action_populate_lookup_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_populate_lookup_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_populate_lookup_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupMaxTime")
-    def action_populate_lookup_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_populate_lookup_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are: Integer[m|s|h|d]Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 5m.
         """
         return pulumi.get(self, "action_populate_lookup_max_time")
 
     @action_populate_lookup_max_time.setter
-    def action_populate_lookup_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_populate_lookup_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_populate_lookup_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupTrackAlert")
-    def action_populate_lookup_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_populate_lookup_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_populate_lookup_track_alert")
 
     @action_populate_lookup_track_alert.setter
-    def action_populate_lookup_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_populate_lookup_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_populate_lookup_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionPopulateLookupTtl")
-    def action_populate_lookup_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_populate_lookup_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are Integer[p]Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, then this specifies the number of scheduled periods. Defaults to 10p.
         """
         return pulumi.get(self, "action_populate_lookup_ttl")
 
     @action_populate_lookup_ttl.setter
-    def action_populate_lookup_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_populate_lookup_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_populate_lookup_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRss")
-    def action_rss(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_rss(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The state of the rss action. Read-only attribute. Value ignored on POST.Use actions to specify a list of enabled actions. Defaults to 0.
         """
         return pulumi.get(self, "action_rss")
 
     @action_rss.setter
-    def action_rss(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_rss(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_rss", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssCommand")
-    def action_rss_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_rss_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_rss_command")
 
     @action_rss_command.setter
-    def action_rss_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_rss_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssHostname")
-    def action_rss_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_rss_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_rss_hostname")
 
     @action_rss_hostname.setter
-    def action_rss_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_rss_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssMaxResults")
-    def action_rss_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_rss_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_rss_max_results")
 
     @action_rss_max_results.setter
-    def action_rss_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_rss_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_rss_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssMaxTime")
-    def action_rss_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_rss_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         """
         return pulumi.get(self, "action_rss_max_time")
 
     @action_rss_max_time.setter
-    def action_rss_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_rss_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_rss_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssTrackAlert")
-    def action_rss_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_rss_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_rss_track_alert")
 
     @action_rss_track_alert.setter
-    def action_rss_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_rss_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_rss_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionRssTtl")
-    def action_rss_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_rss_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_rss_ttl")
 
     @action_rss_ttl.setter
-    def action_rss_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_rss_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScript")
-    def action_script(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_script(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         """
         return pulumi.get(self, "action_script")
 
     @action_script.setter
-    def action_script(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_script(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_script", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptCommand")
-    def action_script_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_script_command")
 
     @action_script_command.setter
-    def action_script_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptFilename")
-    def action_script_filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         File name of the script to call. Required if script action is enabled
         """
         return pulumi.get(self, "action_script_filename")
 
     @action_script_filename.setter
-    def action_script_filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_filename", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptHostname")
-    def action_script_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_script_hostname")
 
     @action_script_hostname.setter
-    def action_script_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptMaxResults")
-    def action_script_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_script_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_script_max_results")
 
     @action_script_max_results.setter
-    def action_script_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_script_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_script_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptMaxTime")
-    def action_script_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_script_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         """
         return pulumi.get(self, "action_script_max_time")
 
     @action_script_max_time.setter
-    def action_script_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_script_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_script_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptTrackAlert")
-    def action_script_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_script_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_script_track_alert")
 
     @action_script_track_alert.setter
-    def action_script_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_script_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_script_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptTtl")
-    def action_script_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_script_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_script_ttl")
 
     @action_script_ttl.setter
-    def action_script_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_script_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_script_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamAutoJoinChannel")
-    def action_slack_app_alert_integration_param_auto_join_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_auto_join_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Automatically join the channel if the bot is not already a member (Should be 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_auto_join_channel")
 
     @action_slack_app_alert_integration_param_auto_join_channel.setter
-    def action_slack_app_alert_integration_param_auto_join_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_auto_join_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_auto_join_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamBotUsername")
-    def action_slack_app_alert_integration_param_bot_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_bot_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bot username that will post the message
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_bot_username")
 
     @action_slack_app_alert_integration_param_bot_username.setter
-    def action_slack_app_alert_integration_param_bot_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_bot_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_bot_username", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamChannel")
-    def action_slack_app_alert_integration_param_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Slack channel to send the message to (Should start with # or @)
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_channel")
 
     @action_slack_app_alert_integration_param_channel.setter
-    def action_slack_app_alert_integration_param_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamEmoji")
-    def action_slack_app_alert_integration_param_emoji(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_emoji(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Emoji icon to use as the bot's avatar (Should start and end with :)
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_emoji")
 
     @action_slack_app_alert_integration_param_emoji.setter
-    def action_slack_app_alert_integration_param_emoji(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_emoji(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_emoji", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackAppAlertIntegrationParamMessage")
-    def action_slack_app_alert_integration_param_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_app_alert_integration_param_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the
         """
         return pulumi.get(self, "action_slack_app_alert_integration_param_message")
 
     @action_slack_app_alert_integration_param_message.setter
-    def action_slack_app_alert_integration_param_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_app_alert_integration_param_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_app_alert_integration_param_message", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamAttachment")
-    def action_slack_param_attachment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_attachment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Include a message attachment. Valid values are message, none, or alert_link
         """
         return pulumi.get(self, "action_slack_param_attachment")
 
     @action_slack_param_attachment.setter
-    def action_slack_param_attachment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_attachment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_attachment", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamChannel")
-    def action_slack_param_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Slack channel to send the message to (Should start with # or @)
         """
         return pulumi.get(self, "action_slack_param_channel")
 
     @action_slack_param_channel.setter
-    def action_slack_param_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamFields")
-    def action_slack_param_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\\*
         """
         return pulumi.get(self, "action_slack_param_fields")
 
     @action_slack_param_fields.setter
-    def action_slack_param_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamMessage")
-    def action_slack_param_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enter the chat message to send to the Slack channel. The message can include tokens that insert text based on the results of the search.
         """
         return pulumi.get(self, "action_slack_param_message")
 
     @action_slack_param_message.setter
-    def action_slack_param_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_message", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSlackParamWebhookUrlOverride")
-    def action_slack_param_webhook_url_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_slack_param_webhook_url_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         """
         return pulumi.get(self, "action_slack_param_webhook_url_override")
 
     @action_slack_param_webhook_url_override.setter
-    def action_slack_param_webhook_url_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_slack_param_webhook_url_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_slack_param_webhook_url_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamAccount")
-    def action_snow_event_param_account(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_account(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Account(s) for which the event is/ are to be created across ServiceNow instance(s).
         """
         return pulumi.get(self, "action_snow_event_param_account")
 
     @action_snow_event_param_account.setter
-    def action_snow_event_param_account(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_account(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_account", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamAdditionalInfo")
-    def action_snow_event_param_additional_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_additional_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can pass additional information that might be of use to the user. This field can also be used to supply the URL of your Splunk search head. When you use the snow_event.py alert-triggered script, the Splunk platform uses the URL to create a deep link that allows a ServiceNow user to navigate back to this Splunk platform search. You can find the resulting full URL for navigation from ServiceNow to the Splunk platform search by clicking Splunk Drilldown in the event page in ServiceNow. See an example below. Note that if you create events using the commands snowevent or snoweventstream, you must supply the URL in this field.You can pass the URL of Splunk as url=<value>. You can also pass other fields and their values by || separated key-value format. For example, url=<value>||k1=v1||k2=v2||....
         """
         return pulumi.get(self, "action_snow_event_param_additional_info")
 
     @action_snow_event_param_additional_info.setter
-    def action_snow_event_param_additional_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_additional_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_additional_info", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamCiIdentifier")
-    def action_snow_event_param_ci_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_ci_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         String that represents a configuration item in your network. You can pass value as || separated key-value format. For example, k1=v1||k2=v2.
         """
         return pulumi.get(self, "action_snow_event_param_ci_identifier")
 
     @action_snow_event_param_ci_identifier.setter
-    def action_snow_event_param_ci_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_ci_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_ci_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamCustomFields")
-    def action_snow_event_param_custom_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_custom_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The custom fields which are configured at the ServiceNow Instance. You can pass the custom fields and their values in the || separated format. For example, custom_field1=value1||custom_field2=value2||...custom_fields used must be present in the em_event table of ServiceNow.
         """
         return pulumi.get(self, "action_snow_event_param_custom_fields")
 
     @action_snow_event_param_custom_fields.setter
-    def action_snow_event_param_custom_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_custom_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_custom_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamDescription")
-    def action_snow_event_param_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A brief description of the event.
         """
         return pulumi.get(self, "action_snow_event_param_description")
 
     @action_snow_event_param_description.setter
-    def action_snow_event_param_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_description", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamNode")
-    def action_snow_event_param_node(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_node(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         """
         return pulumi.get(self, "action_snow_event_param_node")
 
     @action_snow_event_param_node.setter
-    def action_snow_event_param_node(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_node(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_node", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamResource")
-    def action_snow_event_param_resource(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_resource(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
         """
         return pulumi.get(self, "action_snow_event_param_resource")
 
     @action_snow_event_param_resource.setter
-    def action_snow_event_param_resource(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_resource(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamSeverity")
-    def action_snow_event_param_severity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_snow_event_param_severity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
         """
         return pulumi.get(self, "action_snow_event_param_severity")
 
     @action_snow_event_param_severity.setter
-    def action_snow_event_param_severity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_snow_event_param_severity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_snow_event_param_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamType")
-    def action_snow_event_param_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_snow_event_param_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         """
         return pulumi.get(self, "action_snow_event_param_type")
 
     @action_snow_event_param_type.setter
-    def action_snow_event_param_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_snow_event_param_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndex")
-    def action_summary_index(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_summary_index(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         """
         return pulumi.get(self, "action_summary_index")
 
     @action_summary_index.setter
-    def action_summary_index(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_summary_index(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_summary_index", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexCommand")
-    def action_summary_index_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         """
         return pulumi.get(self, "action_summary_index_command")
 
     @action_summary_index_command.setter
-    def action_summary_index_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_command", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexHostname")
-    def action_summary_index_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
         """
         return pulumi.get(self, "action_summary_index_hostname")
 
     @action_summary_index_hostname.setter
-    def action_summary_index_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexInline")
-    def action_summary_index_inline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_summary_index_inline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines whether to execute the summary indexing action as part of the scheduled search.NOTE: This option is considered only if the summary index action is enabled and is always executed (in other words, if counttype = always).Defaults to true
         """
         return pulumi.get(self, "action_summary_index_inline")
 
     @action_summary_index_inline.setter
-    def action_summary_index_inline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_summary_index_inline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_summary_index_inline", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexMaxResults")
-    def action_summary_index_max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_summary_index_max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Sets the maximum number of search results sent using alerts. Defaults to 100.
         """
         return pulumi.get(self, "action_summary_index_max_results")
 
     @action_summary_index_max_results.setter
-    def action_summary_index_max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_summary_index_max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_summary_index_max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexMaxTime")
-    def action_summary_index_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def action_summary_index_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         """
         return pulumi.get(self, "action_summary_index_max_time")
 
     @action_summary_index_max_time.setter
-    def action_summary_index_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def action_summary_index_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "action_summary_index_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexName")
-    def action_summary_index_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the name of the summary index where the results of the scheduled search are saved.Defaults to summary.
         """
         return pulumi.get(self, "action_summary_index_name")
 
     @action_summary_index_name.setter
-    def action_summary_index_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_name", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexTrackAlert")
-    def action_summary_index_track_alert(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def action_summary_index_track_alert(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the execution of this action signifies a trackable alert.
         """
         return pulumi.get(self, "action_summary_index_track_alert")
 
     @action_summary_index_track_alert.setter
-    def action_summary_index_track_alert(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def action_summary_index_track_alert(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "action_summary_index_track_alert", value)
 
     @_builtins.property
     @pulumi.getter(name="actionSummaryIndexTtl")
-    def action_summary_index_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_summary_index_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_summary_index_ttl")
 
     @action_summary_index_ttl.setter
-    def action_summary_index_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_summary_index_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_summary_index_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamEnableRecovery")
-    def action_victorops_param_enable_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_enable_recovery(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enable sending of recovery messages (Should be 1 (Enabled) or 0 (Disabled))
         """
         return pulumi.get(self, "action_victorops_param_enable_recovery")
 
     @action_victorops_param_enable_recovery.setter
-    def action_victorops_param_enable_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_enable_recovery(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_enable_recovery", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamEntityId")
-    def action_victorops_param_entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the affected system or service
         """
         return pulumi.get(self, "action_victorops_param_entity_id")
 
     @action_victorops_param_entity_id.setter
-    def action_victorops_param_entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamInactivePolls")
-    def action_victorops_param_inactive_polls(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_inactive_polls(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Number of inactive polls before sending a recovery message
         """
         return pulumi.get(self, "action_victorops_param_inactive_polls")
 
     @action_victorops_param_inactive_polls.setter
-    def action_victorops_param_inactive_polls(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_inactive_polls(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_inactive_polls", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamMessageType")
-    def action_victorops_param_message_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_message_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of VictorOps message. Valid values are info, warning, critical, recovery, ack
         """
         return pulumi.get(self, "action_victorops_param_message_type")
 
     @action_victorops_param_message_type.setter
-    def action_victorops_param_message_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_message_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_message_type", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamMonitoringTool")
-    def action_victorops_param_monitoring_tool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_monitoring_tool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the monitoring tool sending the alert
         """
         return pulumi.get(self, "action_victorops_param_monitoring_tool")
 
     @action_victorops_param_monitoring_tool.setter
-    def action_victorops_param_monitoring_tool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_monitoring_tool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_monitoring_tool", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamPollInterval")
-    def action_victorops_param_poll_interval(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_poll_interval(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Polling interval for checking the status of the alert (in minutes)
         """
         return pulumi.get(self, "action_victorops_param_poll_interval")
 
     @action_victorops_param_poll_interval.setter
-    def action_victorops_param_poll_interval(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_poll_interval(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_poll_interval", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamRecordId")
-    def action_victorops_param_record_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_record_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier used to correlate related alerts
         """
         return pulumi.get(self, "action_victorops_param_record_id")
 
     @action_victorops_param_record_id.setter
-    def action_victorops_param_record_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_record_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_record_id", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamRoutingKeyOverride")
-    def action_victorops_param_routing_key_override(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_routing_key_override(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         """
         return pulumi.get(self, "action_victorops_param_routing_key_override")
 
     @action_victorops_param_routing_key_override.setter
-    def action_victorops_param_routing_key_override(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_routing_key_override(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_routing_key_override", value)
 
     @_builtins.property
     @pulumi.getter(name="actionVictoropsParamStateMessage")
-    def action_victorops_param_state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_victorops_param_state_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the alert condition
         """
         return pulumi.get(self, "action_victorops_param_state_message")
 
     @action_victorops_param_state_message.setter
-    def action_victorops_param_state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_victorops_param_state_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_victorops_param_state_message", value)
 
     @_builtins.property
     @pulumi.getter(name="actionWebhookParamUrl")
-    def action_webhook_param_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_webhook_param_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to send the HTTP POST request to. Must be accessible from the Splunk server
         """
         return pulumi.get(self, "action_webhook_param_url")
 
     @action_webhook_param_url.setter
-    def action_webhook_param_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_webhook_param_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_webhook_param_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def actions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comma-separated list of actions to enable. For example: rss,email
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def actions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="alertComparator")
-    def alert_comparator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_comparator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         """
         return pulumi.get(self, "alert_comparator")
 
     @alert_comparator.setter
-    def alert_comparator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_comparator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_comparator", value)
 
     @_builtins.property
     @pulumi.getter(name="alertCondition")
-    def alert_condition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
         """
         return pulumi.get(self, "alert_condition")
 
     @alert_condition.setter
-    def alert_condition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_condition", value)
 
     @_builtins.property
     @pulumi.getter(name="alertDigestMode")
-    def alert_digest_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alert_digest_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
         """
         return pulumi.get(self, "alert_digest_mode")
 
     @alert_digest_mode.setter
-    def alert_digest_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alert_digest_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alert_digest_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="alertExpires")
-    def alert_expires(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_expires(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: [number][time-unit]Sets the period of time to show the alert in the dashboard. Defaults to 24h.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
         """
         return pulumi.get(self, "alert_expires")
 
     @alert_expires.setter
-    def alert_expires(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_expires(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_expires", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSeverity")
-    def alert_severity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def alert_severity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Valid values: (1 | 2 | 3 | 4 | 5 | 6) Sets the alert severity level.Valid values are:1 DEBUG 2 INFO 3 WARN 4 ERROR 5 SEVERE 6 FATAL Defaults to 3.
         """
         return pulumi.get(self, "alert_severity")
 
     @alert_severity.setter
-    def alert_severity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def alert_severity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "alert_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSuppress")
-    def alert_suppress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alert_suppress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether alert suppression is enabled for this scheduled search.
         """
         return pulumi.get(self, "alert_suppress")
 
     @alert_suppress.setter
-    def alert_suppress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alert_suppress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alert_suppress", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSuppressFields")
-    def alert_suppress_fields(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_suppress_fields(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Comma delimited list of fields to use for suppression when doing per result alerting. Required if suppression is turned on and per result alerting is enabled.
         """
         return pulumi.get(self, "alert_suppress_fields")
 
     @alert_suppress_fields.setter
-    def alert_suppress_fields(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_suppress_fields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_suppress_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="alertSuppressPeriod")
-    def alert_suppress_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_suppress_period(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: [number][time-unit] Specifies the suppresion period. Only valid if alert.supress is enabled.Use [number][time-unit] to specify a time. For example: 60 = 60 seconds, 1m = 1 minute, 1h = 60 minutes = 1 hour.
         """
         return pulumi.get(self, "alert_suppress_period")
 
     @alert_suppress_period.setter
-    def alert_suppress_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_suppress_period(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_suppress_period", value)
 
     @_builtins.property
     @pulumi.getter(name="alertThreshold")
-    def alert_threshold(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_threshold(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values are: Integer[%]Specifies the value to compare (see alert_comparator) before triggering the alert actions. If expressed as a percentage, indicates value to use when alert_comparator is set to rises by perc or drops by perc.
         """
         return pulumi.get(self, "alert_threshold")
 
     @alert_threshold.setter
-    def alert_threshold(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_threshold(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="alertTrack")
-    def alert_track(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def alert_track(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Valid values: (true | false | auto) Specifies whether to track the actions triggered by this scheduled search.auto - determine whether to track or not based on the tracking setting of each action, do not track scheduled searches that always trigger actions. Default value true - force alert tracking.false - disable alert tracking for this search.
         """
         return pulumi.get(self, "alert_track")
 
     @alert_track.setter
-    def alert_track(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def alert_track(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "alert_track", value)
 
     @_builtins.property
     @pulumi.getter(name="alertType")
-    def alert_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alert_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         What to base the alert on, overriden by alert_condition if it is specified. Valid values are: always, custom, number of events, number of hosts, number of sources.
         """
         return pulumi.get(self, "alert_type")
 
     @alert_type.setter
-    def alert_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alert_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alert_type", value)
 
     @_builtins.property
     @pulumi.getter(name="allowSkew")
-    def allow_skew(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allow_skew(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allows the search scheduler to distribute scheduled searches randomly and more evenly over their specified search periods.
         """
         return pulumi.get(self, "allow_skew")
 
     @allow_skew.setter
-    def allow_skew(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allow_skew(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allow_skew", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarize")
-    def auto_summarize(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_summarize(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the scheduler should ensure that the data for this search is automatically summarized. Defaults to 0.
         """
         return pulumi.get(self, "auto_summarize")
 
     @auto_summarize.setter
-    def auto_summarize(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_summarize(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_summarize", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeCommand")
-    def auto_summarize_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An auto summarization template for this search. See auto summarization options in savedsearches.conf for more details.
         """
         return pulumi.get(self, "auto_summarize_command")
 
     @auto_summarize_command.setter
-    def auto_summarize_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_command", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeCronSchedule")
-    def auto_summarize_cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_cron_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \\* \\* \\* and corresponds to \\`every ten hours\\`.
         """
         return pulumi.get(self, "auto_summarize_cron_schedule")
 
     @auto_summarize_cron_schedule.setter
-    def auto_summarize_cron_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_cron_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_cron_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchEarliestTime")
-    def auto_summarize_dispatch_earliest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_earliest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest time for summarizing this search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "auto_summarize_dispatch_earliest_time")
 
     @auto_summarize_dispatch_earliest_time.setter
-    def auto_summarize_dispatch_earliest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_earliest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_earliest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchLatestTime")
-    def auto_summarize_dispatch_latest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_latest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the latest time for summarizing this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "auto_summarize_dispatch_latest_time")
 
     @auto_summarize_dispatch_latest_time.setter
-    def auto_summarize_dispatch_latest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_latest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_latest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchTimeFormat")
-    def auto_summarize_dispatch_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the time format that Splunk software uses to specify the earliest and latest time. Defaults to %FT%T.%Q%:z
         """
         return pulumi.get(self, "auto_summarize_dispatch_time_format")
 
     @auto_summarize_dispatch_time_format.setter
-    def auto_summarize_dispatch_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeDispatchTtl")
-    def auto_summarize_dispatch_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_dispatch_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: Integer[p]. Defaults to 60.Indicates the time to live (in seconds) for the artifacts of the summarization of the scheduled search.
         """
         return pulumi.get(self, "auto_summarize_dispatch_ttl")
 
     @auto_summarize_dispatch_ttl.setter
-    def auto_summarize_dispatch_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_dispatch_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_dispatch_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxDisabledBuckets")
-    def auto_summarize_max_disabled_buckets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_summarize_max_disabled_buckets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of buckets with the suspended summarization before the summarization search is completely stopped, and the summarization of the search is suspended for auto_summarize.suspend_period. Defaults to 2.
         """
         return pulumi.get(self, "auto_summarize_max_disabled_buckets")
 
     @auto_summarize_max_disabled_buckets.setter
-    def auto_summarize_max_disabled_buckets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_summarize_max_disabled_buckets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_summarize_max_disabled_buckets", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxSummaryRatio")
-    def auto_summarize_max_summary_ratio(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def auto_summarize_max_summary_ratio(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum ratio of summary_size/bucket_size, which specifies when to stop summarization and deem it unhelpful for a bucket. Defaults to 0.1 Note: The test is only performed if the summary size is larger than auto_summarize.max_summary_size.
         """
         return pulumi.get(self, "auto_summarize_max_summary_ratio")
 
     @auto_summarize_max_summary_ratio.setter
-    def auto_summarize_max_summary_ratio(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def auto_summarize_max_summary_ratio(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "auto_summarize_max_summary_ratio", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxSummarySize")
-    def auto_summarize_max_summary_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_summarize_max_summary_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The minimum summary size, in bytes, before testing whether the summarization is helpful.The default value is 52428800 and is equivalent to 5MB.
         """
         return pulumi.get(self, "auto_summarize_max_summary_size")
 
     @auto_summarize_max_summary_size.setter
-    def auto_summarize_max_summary_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_summarize_max_summary_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_summarize_max_summary_size", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeMaxTime")
-    def auto_summarize_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def auto_summarize_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum time (in seconds) that the summary search is allowed to run. Defaults to 3600.Note: This is an approximate time. The summary search stops at clean bucket boundaries.
         """
         return pulumi.get(self, "auto_summarize_max_time")
 
     @auto_summarize_max_time.setter
-    def auto_summarize_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def auto_summarize_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "auto_summarize_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeSuspendPeriod")
-    def auto_summarize_suspend_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_suspend_period(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time specfier indicating when to suspend summarization of this search if the summarization is deemed unhelpful.Defaults to 24h.
         """
         return pulumi.get(self, "auto_summarize_suspend_period")
 
     @auto_summarize_suspend_period.setter
-    def auto_summarize_suspend_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_suspend_period(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_suspend_period", value)
 
     @_builtins.property
     @pulumi.getter(name="autoSummarizeTimespan")
-    def auto_summarize_timespan(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_summarize_timespan(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of time ranges that each summarized chunk should span. This comprises the list of available granularity levels for which summaries would be available. Specify a comma delimited list of time specifiers.For example a timechart over the last month whose granuality is at the day level should set this to 1d. If you need the same data summarized at the hour level for weekly charts, use: 1h,1d.
         """
         return pulumi.get(self, "auto_summarize_timespan")
 
     @auto_summarize_timespan.setter
-    def auto_summarize_timespan(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_summarize_timespan(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_summarize_timespan", value)
 
     @_builtins.property
     @pulumi.getter(name="cronSchedule")
-    def cron_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cron_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \\* \\* \\* causes the search to execute every 5 minutes.
         """
         return pulumi.get(self, "cron_schedule")
 
     @cron_schedule.setter
-    def cron_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cron_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cron_schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Human-readable description of this saved search. Defaults to empty string.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the saved search is enabled. Defaults to 0.Disabled saved searches are not visible in Splunk Web.
         """
         return pulumi.get(self, "disabled")
 
     @disabled.setter
-    def disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchBuckets")
-    def dispatch_buckets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_buckets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of timeline buckets. Defaults to 0.
         """
         return pulumi.get(self, "dispatch_buckets")
 
     @dispatch_buckets.setter
-    def dispatch_buckets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_buckets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_buckets", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchEarliestTime")
-    def dispatch_earliest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_earliest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_earliest_time")
 
     @dispatch_earliest_time.setter
-    def dispatch_earliest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_earliest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_earliest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexEarliest")
-    def dispatch_index_earliest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_index_earliest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_index_earliest")
 
     @dispatch_index_earliest.setter
-    def dispatch_index_earliest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_index_earliest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_index_earliest", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexLatest")
-    def dispatch_index_latest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_index_latest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_index_latest")
 
     @dispatch_index_latest.setter
-    def dispatch_index_latest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_index_latest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_index_latest", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexedRealtime")
-    def dispatch_indexed_realtime(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_indexed_realtime(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_indexed_realtime")
 
     @dispatch_indexed_realtime.setter
-    def dispatch_indexed_realtime(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_indexed_realtime(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_indexed_realtime", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexedRealtimeMinspan")
-    def dispatch_indexed_realtime_minspan(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_indexed_realtime_minspan(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
         """
         return pulumi.get(self, "dispatch_indexed_realtime_minspan")
 
     @dispatch_indexed_realtime_minspan.setter
-    def dispatch_indexed_realtime_minspan(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_indexed_realtime_minspan(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_indexed_realtime_minspan", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexedRealtimeOffset")
-    def dispatch_indexed_realtime_offset(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_indexed_realtime_offset(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Allows for a per-job override of the [search] indexed_realtime_disk_sync_delay setting in limits.conf.
         """
         return pulumi.get(self, "dispatch_indexed_realtime_offset")
 
     @dispatch_indexed_realtime_offset.setter
-    def dispatch_indexed_realtime_offset(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_indexed_realtime_offset(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_indexed_realtime_offset", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchLatestTime")
-    def dispatch_latest_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_latest_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time string that specifies the latest time for this saved search. Can be a relative or absolute time.If this value is an absolute time, use the dispatch.time_format to format the value.
         """
         return pulumi.get(self, "dispatch_latest_time")
 
     @dispatch_latest_time.setter
-    def dispatch_latest_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_latest_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_latest_time", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchLookups")
-    def dispatch_lookups(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_lookups(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Enables or disables the lookups for this search. Defaults to 1.
         """
         return pulumi.get(self, "dispatch_lookups")
 
     @dispatch_lookups.setter
-    def dispatch_lookups(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_lookups(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_lookups", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchMaxCount")
-    def dispatch_max_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_max_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of results before finalizing the search. Defaults to 500000.
         """
         return pulumi.get(self, "dispatch_max_count")
 
     @dispatch_max_count.setter
-    def dispatch_max_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_max_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_max_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchMaxTime")
-    def dispatch_max_time(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_max_time(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Indicates the maximum amount of time (in seconds) before finalizing the search. Defaults to 0.
         """
         return pulumi.get(self, "dispatch_max_time")
 
     @dispatch_max_time.setter
-    def dispatch_max_time(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_max_time(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_max_time", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchReduceFreq")
-    def dispatch_reduce_freq(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_reduce_freq(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Specifies, in seconds, how frequently the MapReduce reduce phase runs on accumulated map values. Defaults to 10.
         """
         return pulumi.get(self, "dispatch_reduce_freq")
 
     @dispatch_reduce_freq.setter
-    def dispatch_reduce_freq(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_reduce_freq(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_reduce_freq", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchRtBackfill")
-    def dispatch_rt_backfill(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_rt_backfill(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to back fill the real time window for this search. Parameter valid only if this is a real time search. Defaults to 0.
         """
         return pulumi.get(self, "dispatch_rt_backfill")
 
     @dispatch_rt_backfill.setter
-    def dispatch_rt_backfill(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_rt_backfill(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_rt_backfill", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchRtMaximumSpan")
-    def dispatch_rt_maximum_span(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def dispatch_rt_maximum_span(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Allows for a per-job override of the [search] indexed_realtime_maximum_span setting in limits.conf.
         """
         return pulumi.get(self, "dispatch_rt_maximum_span")
 
     @dispatch_rt_maximum_span.setter
-    def dispatch_rt_maximum_span(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def dispatch_rt_maximum_span(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "dispatch_rt_maximum_span", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchSpawnProcess")
-    def dispatch_spawn_process(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dispatch_spawn_process(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether a new search process spawns when this saved search is executed. Defaults to 1. Searches against indexes must run in a separate process.
         """
         return pulumi.get(self, "dispatch_spawn_process")
 
     @dispatch_spawn_process.setter
-    def dispatch_spawn_process(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dispatch_spawn_process(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dispatch_spawn_process", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchTimeFormat")
-    def dispatch_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
         """
         return pulumi.get(self, "dispatch_time_format")
 
     @dispatch_time_format.setter
-    def dispatch_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="dispatchTtl")
-    def dispatch_ttl(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dispatch_ttl(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         """
         return pulumi.get(self, "dispatch_ttl")
 
     @dispatch_ttl.setter
-    def dispatch_ttl(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dispatch_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dispatch_ttl", value)
 
     @_builtins.property
     @pulumi.getter(name="displayView")
-    def display_view(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_view(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         """
         return pulumi.get(self, "display_view")
 
     @display_view.setter
-    def display_view(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_view(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_view", value)
 
     @_builtins.property
     @pulumi.getter(name="isScheduled")
-    def is_scheduled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scheduled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether this search is to be run on a schedule
         """
         return pulumi.get(self, "is_scheduled")
 
     @is_scheduled.setter
-    def is_scheduled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scheduled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVisible")
-    def is_visible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_visible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
         """
         return pulumi.get(self, "is_visible")
 
     @is_visible.setter
-    def is_visible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_visible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_visible", value)
 
     @_builtins.property
     @pulumi.getter(name="maxConcurrent")
-    def max_concurrent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_concurrent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
         """
         return pulumi.get(self, "max_concurrent")
 
     @max_concurrent.setter
-    def max_concurrent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_concurrent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_concurrent", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A name for the search.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="realtimeSchedule")
-    def realtime_schedule(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def realtime_schedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Defaults to 1. Controls the way the scheduler computes the next execution time of a scheduled search. If this value is set to 1, the scheduler bases its determination of the next scheduled search execution time on the current time. If this value is set to 0, the scheduler bases its determination of the next scheduled search on the last search execution time. This is called continuous scheduling. If set to 0, the scheduler never skips scheduled execution periods. However, the execution of the saved search might fall behind depending on the scheduler load. Use continuous scheduling whenever you enable the summary index option.
         """
         return pulumi.get(self, "realtime_schedule")
 
     @realtime_schedule.setter
-    def realtime_schedule(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def realtime_schedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "realtime_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="requestUiDispatchApp")
-    def request_ui_dispatch_app(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_ui_dispatch_app(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a field used by Splunk Web to denote the app this search should be dispatched in.
         """
         return pulumi.get(self, "request_ui_dispatch_app")
 
     @request_ui_dispatch_app.setter
-    def request_ui_dispatch_app(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_ui_dispatch_app(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_ui_dispatch_app", value)
 
     @_builtins.property
     @pulumi.getter(name="requestUiDispatchView")
-    def request_ui_dispatch_view(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_ui_dispatch_view(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a field used by Splunk Web to denote the view this search should be displayed in.
         """
         return pulumi.get(self, "request_ui_dispatch_view")
 
     @request_ui_dispatch_view.setter
-    def request_ui_dispatch_view(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_ui_dispatch_view(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_ui_dispatch_view", value)
 
     @_builtins.property
     @pulumi.getter(name="restartOnSearchpeerAdd")
-    def restart_on_searchpeer_add(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restart_on_searchpeer_add(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether to restart a real-time search managed by the scheduler when a search peer becomes available for this saved search. Defaults to 1.
         """
         return pulumi.get(self, "restart_on_searchpeer_add")
 
     @restart_on_searchpeer_add.setter
-    def restart_on_searchpeer_add(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restart_on_searchpeer_add(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restart_on_searchpeer_add", value)
 
     @_builtins.property
     @pulumi.getter(name="runOnStartup")
-    def run_on_startup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def run_on_startup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether this search runs at startup. If it does not run on startup, it runs at the next scheduled time. Defaults to 0. Set to 1 for scheduled searches that populate lookup tables.
         """
         return pulumi.get(self, "run_on_startup")
 
     @run_on_startup.setter
-    def run_on_startup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def run_on_startup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "run_on_startup", value)
 
     @_builtins.property
     @pulumi.getter(name="schedulePriority")
-    def schedule_priority(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_priority(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Raises the scheduling priority of the named search. Defaults to Default
         """
         return pulumi.get(self, "schedule_priority")
 
     @schedule_priority.setter
-    def schedule_priority(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_priority(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_priority", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleWindow")
-    def schedule_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_window(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time window (in minutes) during which the search has lower priority. Defaults to 0. The scheduler can give higher priority to more critical searches during this window. The window must be smaller than the search period.Set to auto to let the scheduler determine the optimal window value automatically. Requires the edit_search_schedule_window capability to override auto.
         """
         return pulumi.get(self, "schedule_window")
 
     @schedule_window.setter
-    def schedule_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_window(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_window", value)
 
     @_builtins.property
     @pulumi.getter
-    def search(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def search(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Required when creating a new search.
         """
         return pulumi.get(self, "search")
 
     @search.setter
-    def search(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def search(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "search", value)
 
     @_builtins.property
     @pulumi.getter
-    def vsid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vsid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the viewstate id associated with the UI view listed in 'displayview'.
         """
         return pulumi.get(self, "vsid")
 
     @vsid.setter
-    def vsid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vsid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vsid", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadPool")
-    def workload_pool(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_pool(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the new workload pool where the existing running search will be placed.`
         """
         return pulumi.get(self, "workload_pool")
 
     @workload_pool.setter
-    def workload_pool(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_pool(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_pool", value)
 
 
@@ -6105,193 +6105,193 @@ class SavedSearches(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
-                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_bcc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_cc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_include_results_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_search: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_view_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_mailserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_max_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_alert: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_report: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_pdfview: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_preprocess_results: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_cid_font_list: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_include_splunk_logo: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_paper_orientation: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_paper_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_send_csv: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_send_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_send_results: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_use_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_use_tls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_width_sort_columns: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_jira_service_desk_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_dest: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_populate_lookup_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_rss_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_webhook_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_additional_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_resource: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_snow_event_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 actions: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_digest_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_expires: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 alert_suppress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_suppress_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_suppress_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_threshold: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_track: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 allow_skew: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_summarize_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_max_disabled_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_summary_ratio: Optional[pulumi.Input[_builtins.float]] = None,
-                 auto_summarize_max_summary_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_suspend_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_timespan: Optional[pulumi.Input[_builtins.str]] = None,
-                 cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_earliest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_latest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_indexed_realtime: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_indexed_realtime_minspan: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_indexed_realtime_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_lookups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_max_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_reduce_freq: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_rt_backfill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_rt_maximum_span: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_spawn_process: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_visible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_concurrent: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 realtime_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 request_ui_dispatch_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_ui_dispatch_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_on_searchpeer_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 run_on_startup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schedule_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 search: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsid: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_pool: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+                 action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_incident_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_occurred: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_bcc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_cc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_include_results_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_search: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_view_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_mailserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_max_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_alert: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_report: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_pdfview: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_preprocess_results: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_cid_font_list: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_include_splunk_logo: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_paper_orientation: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_paper_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_server_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_send_csv: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_send_pdf: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_send_results: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_use_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_use_tls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_project: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_event: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_index: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_custom_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_dest: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_populate_lookup_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_script_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_webhook_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_additional_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_ci_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 actions: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_comparator: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_digest_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_expires: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 alert_suppress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_suppress_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_suppress_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_threshold: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_track: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_skew: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_summarize_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_max_disabled_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_summary_ratio: pulumi.Input[Optional[_builtins.float]] = None,
+                 auto_summarize_max_summary_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_suspend_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_timespan: pulumi.Input[Optional[_builtins.str]] = None,
+                 cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_earliest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_latest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_indexed_realtime: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_indexed_realtime_minspan: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_indexed_realtime_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_lookups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_max_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_reduce_freq: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_rt_backfill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_rt_maximum_span: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_spawn_process: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 realtime_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 request_ui_dispatch_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_ui_dispatch_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_on_searchpeer_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 run_on_startup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schedule_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 search: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_pool: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         ## # Resource: SavedSearches
@@ -6570,193 +6570,193 @@ class SavedSearches(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
-                 action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_create_xsoar_incident_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_auth_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_bcc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_cc: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_include_results_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_search: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_trigger_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_include_view_link: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_mailserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_max_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_alert: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_message_report: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_pdfview: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_preprocess_results: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_cid_font_list: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_include_splunk_logo: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_paper_orientation: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_paper_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_report_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_report_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_send_csv: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_email_send_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_send_results: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_email_use_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_use_tls: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_email_width_sort_columns: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_jira_service_desk_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_pagerduty_integration_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_dest: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_populate_lookup_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_populate_lookup_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_populate_lookup_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_rss_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_rss_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_rss_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_script_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_slack_param_webhook_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_additional_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_ci_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_node: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_resource: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_snow_event_param_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_snow_event_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-                 action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 actions: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_condition: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_digest_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_expires: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_severity: Optional[pulumi.Input[_builtins.int]] = None,
-                 alert_suppress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_suppress_fields: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_suppress_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_threshold: Optional[pulumi.Input[_builtins.str]] = None,
-                 alert_track: Optional[pulumi.Input[_builtins.bool]] = None,
-                 alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 allow_skew: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize: Optional[pulumi.Input[_builtins.bool]] = None,
-                 auto_summarize_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_max_disabled_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_summary_ratio: Optional[pulumi.Input[_builtins.float]] = None,
-                 auto_summarize_max_summary_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 auto_summarize_suspend_period: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_summarize_timespan: Optional[pulumi.Input[_builtins.str]] = None,
-                 cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_earliest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_index_latest: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_indexed_realtime: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_indexed_realtime_minspan: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_indexed_realtime_offset: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_lookups: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_max_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_reduce_freq: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_rt_backfill: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_rt_maximum_span: Optional[pulumi.Input[_builtins.int]] = None,
-                 dispatch_spawn_process: Optional[pulumi.Input[_builtins.bool]] = None,
-                 dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_visible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_concurrent: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 realtime_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 request_ui_dispatch_app: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_ui_dispatch_view: Optional[pulumi.Input[_builtins.str]] = None,
-                 restart_on_searchpeer_add: Optional[pulumi.Input[_builtins.bool]] = None,
-                 run_on_startup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schedule_priority: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_window: Optional[pulumi.Input[_builtins.str]] = None,
-                 search: Optional[pulumi.Input[_builtins.str]] = None,
-                 vsid: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_pool: Optional[pulumi.Input[_builtins.str]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+                 action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_better_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_incident_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_occurred: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_send_all_servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_create_xsoar_incident_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_auth_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_bcc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_cc: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_include_results_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_search: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_trigger_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_include_view_link: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_mailserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_max_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_alert: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_message_report: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_pdfview: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_preprocess_results: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_cid_font_list: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_include_splunk_logo: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_paper_orientation: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_paper_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_report_server_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_report_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_send_csv: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_email_send_pdf: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_send_results: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_email_use_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_use_tls: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_project: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_event: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_index: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_logevent_param_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_custom_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_pagerduty_integration_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_dest: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_populate_lookup_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_populate_lookup_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_populate_lookup_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_rss_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_script_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_script_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_script_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_auto_join_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_bot_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_emoji: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_app_alert_integration_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_slack_param_webhook_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_additional_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_ci_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_summary_index_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_summary_index_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+                 action_summary_index_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_enable_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_inactive_polls: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_monitoring_tool: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_poll_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_routing_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_victorops_param_state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 actions: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_comparator: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_digest_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_expires: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 alert_suppress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_suppress_fields: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_suppress_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_threshold: pulumi.Input[Optional[_builtins.str]] = None,
+                 alert_track: pulumi.Input[Optional[_builtins.bool]] = None,
+                 alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_skew: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize: pulumi.Input[Optional[_builtins.bool]] = None,
+                 auto_summarize_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_max_disabled_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_summary_ratio: pulumi.Input[Optional[_builtins.float]] = None,
+                 auto_summarize_max_summary_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 auto_summarize_suspend_period: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_summarize_timespan: pulumi.Input[Optional[_builtins.str]] = None,
+                 cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_earliest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_index_latest: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_indexed_realtime: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_indexed_realtime_minspan: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_indexed_realtime_offset: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_lookups: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_max_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_reduce_freq: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_rt_backfill: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_rt_maximum_span: pulumi.Input[Optional[_builtins.int]] = None,
+                 dispatch_spawn_process: pulumi.Input[Optional[_builtins.bool]] = None,
+                 dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 realtime_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 request_ui_dispatch_app: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_ui_dispatch_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 restart_on_searchpeer_add: pulumi.Input[Optional[_builtins.bool]] = None,
+                 run_on_startup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 schedule_priority: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_window: pulumi.Input[Optional[_builtins.str]] = None,
+                 search: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_pool: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -6970,198 +6970,198 @@ class SavedSearches(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: Optional[pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
-            action_better_webhook_param_body_format: Optional[pulumi.Input[_builtins.str]] = None,
-            action_better_webhook_param_credential: Optional[pulumi.Input[_builtins.str]] = None,
-            action_better_webhook_param_credentials: Optional[pulumi.Input[_builtins.str]] = None,
-            action_better_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_details: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_incident_name: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_occurred: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_send_all_servers: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_severity: Optional[pulumi.Input[_builtins.str]] = None,
-            action_create_xsoar_incident_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_auth_password: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_auth_username: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_bcc: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_cc: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_command: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_format: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_from: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_include_results_link: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_include_search: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_include_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_include_trigger_time: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_include_view_link: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_mailserver: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_max_time: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_message_alert: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_message_report: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_pdfview: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_preprocess_results: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_report_cid_font_list: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_report_include_splunk_logo: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_report_paper_orientation: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_report_paper_size: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_report_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_report_server_url: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_send_csv: Optional[pulumi.Input[_builtins.int]] = None,
-            action_email_send_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_send_results: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_subject: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_to: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            action_email_use_ssl: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_use_tls: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_email_width_sort_columns: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_jira_service_desk_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-            action_jira_service_desk_param_jira_customfields: Optional[pulumi.Input[_builtins.str]] = None,
-            action_jira_service_desk_param_jira_description: Optional[pulumi.Input[_builtins.str]] = None,
-            action_jira_service_desk_param_jira_issue_type: Optional[pulumi.Input[_builtins.str]] = None,
-            action_jira_service_desk_param_jira_priority: Optional[pulumi.Input[_builtins.str]] = None,
-            action_jira_service_desk_param_jira_project: Optional[pulumi.Input[_builtins.str]] = None,
-            action_jira_service_desk_param_jira_summary: Optional[pulumi.Input[_builtins.str]] = None,
-            action_logevent: Optional[pulumi.Input[_builtins.str]] = None,
-            action_logevent_param_event: Optional[pulumi.Input[_builtins.str]] = None,
-            action_logevent_param_host: Optional[pulumi.Input[_builtins.str]] = None,
-            action_logevent_param_index: Optional[pulumi.Input[_builtins.str]] = None,
-            action_logevent_param_source: Optional[pulumi.Input[_builtins.str]] = None,
-            action_logevent_param_sourcetype: Optional[pulumi.Input[_builtins.str]] = None,
-            action_pagerduty_custom_details: Optional[pulumi.Input[_builtins.str]] = None,
-            action_pagerduty_integration_key: Optional[pulumi.Input[_builtins.str]] = None,
-            action_pagerduty_integration_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-            action_pagerduty_integration_url: Optional[pulumi.Input[_builtins.str]] = None,
-            action_pagerduty_integration_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-            action_populate_lookup: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_populate_lookup_command: Optional[pulumi.Input[_builtins.str]] = None,
-            action_populate_lookup_dest: Optional[pulumi.Input[_builtins.str]] = None,
-            action_populate_lookup_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            action_populate_lookup_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-            action_populate_lookup_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-            action_populate_lookup_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_populate_lookup_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            action_rss: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_rss_command: Optional[pulumi.Input[_builtins.str]] = None,
-            action_rss_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            action_rss_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-            action_rss_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-            action_rss_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_rss_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            action_script: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_script_command: Optional[pulumi.Input[_builtins.str]] = None,
-            action_script_filename: Optional[pulumi.Input[_builtins.str]] = None,
-            action_script_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            action_script_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-            action_script_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-            action_script_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_script_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_app_alert_integration_param_auto_join_channel: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_app_alert_integration_param_bot_username: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_app_alert_integration_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_app_alert_integration_param_emoji: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_app_alert_integration_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_param_attachment: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_param_channel: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_param_fields: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_param_message: Optional[pulumi.Input[_builtins.str]] = None,
-            action_slack_param_webhook_url_override: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_account: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_additional_info: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_ci_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_custom_fields: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_description: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_node: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_resource: Optional[pulumi.Input[_builtins.str]] = None,
-            action_snow_event_param_severity: Optional[pulumi.Input[_builtins.int]] = None,
-            action_snow_event_param_type: Optional[pulumi.Input[_builtins.str]] = None,
-            action_summary_index: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_summary_index_command: Optional[pulumi.Input[_builtins.str]] = None,
-            action_summary_index_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            action_summary_index_inline: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_summary_index_max_results: Optional[pulumi.Input[_builtins.int]] = None,
-            action_summary_index_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-            action_summary_index_name: Optional[pulumi.Input[_builtins.str]] = None,
-            action_summary_index_track_alert: Optional[pulumi.Input[_builtins.bool]] = None,
-            action_summary_index_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_enable_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_inactive_polls: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_message_type: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_monitoring_tool: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_poll_interval: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_record_id: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_routing_key_override: Optional[pulumi.Input[_builtins.str]] = None,
-            action_victorops_param_state_message: Optional[pulumi.Input[_builtins.str]] = None,
-            action_webhook_param_url: Optional[pulumi.Input[_builtins.str]] = None,
-            actions: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_comparator: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_condition: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_digest_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-            alert_expires: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_severity: Optional[pulumi.Input[_builtins.int]] = None,
-            alert_suppress: Optional[pulumi.Input[_builtins.bool]] = None,
-            alert_suppress_fields: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_suppress_period: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_threshold: Optional[pulumi.Input[_builtins.str]] = None,
-            alert_track: Optional[pulumi.Input[_builtins.bool]] = None,
-            alert_type: Optional[pulumi.Input[_builtins.str]] = None,
-            allow_skew: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize: Optional[pulumi.Input[_builtins.bool]] = None,
-            auto_summarize_command: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_max_disabled_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-            auto_summarize_max_summary_ratio: Optional[pulumi.Input[_builtins.float]] = None,
-            auto_summarize_max_summary_size: Optional[pulumi.Input[_builtins.int]] = None,
-            auto_summarize_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-            auto_summarize_suspend_period: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_summarize_timespan: Optional[pulumi.Input[_builtins.str]] = None,
-            cron_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            dispatch_buckets: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_earliest_time: Optional[pulumi.Input[_builtins.str]] = None,
-            dispatch_index_earliest: Optional[pulumi.Input[_builtins.str]] = None,
-            dispatch_index_latest: Optional[pulumi.Input[_builtins.str]] = None,
-            dispatch_indexed_realtime: Optional[pulumi.Input[_builtins.bool]] = None,
-            dispatch_indexed_realtime_minspan: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_indexed_realtime_offset: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_latest_time: Optional[pulumi.Input[_builtins.str]] = None,
-            dispatch_lookups: Optional[pulumi.Input[_builtins.bool]] = None,
-            dispatch_max_count: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_max_time: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_reduce_freq: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_rt_backfill: Optional[pulumi.Input[_builtins.bool]] = None,
-            dispatch_rt_maximum_span: Optional[pulumi.Input[_builtins.int]] = None,
-            dispatch_spawn_process: Optional[pulumi.Input[_builtins.bool]] = None,
-            dispatch_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-            dispatch_ttl: Optional[pulumi.Input[_builtins.str]] = None,
-            display_view: Optional[pulumi.Input[_builtins.str]] = None,
-            is_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_visible: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_concurrent: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            realtime_schedule: Optional[pulumi.Input[_builtins.bool]] = None,
-            request_ui_dispatch_app: Optional[pulumi.Input[_builtins.str]] = None,
-            request_ui_dispatch_view: Optional[pulumi.Input[_builtins.str]] = None,
-            restart_on_searchpeer_add: Optional[pulumi.Input[_builtins.bool]] = None,
-            run_on_startup: Optional[pulumi.Input[_builtins.bool]] = None,
-            schedule_priority: Optional[pulumi.Input[_builtins.str]] = None,
-            schedule_window: Optional[pulumi.Input[_builtins.str]] = None,
-            search: Optional[pulumi.Input[_builtins.str]] = None,
-            vsid: Optional[pulumi.Input[_builtins.str]] = None,
-            workload_pool: Optional[pulumi.Input[_builtins.str]] = None) -> 'SavedSearches':
+            acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+            action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
+            action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
+            action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
+            action_better_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_details: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_incident_name: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_occurred: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_send_all_servers: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
+            action_create_xsoar_incident_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_auth_password: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_auth_username: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_bcc: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_cc: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_command: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_format: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_from: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_include_results_link: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_include_search: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_include_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_include_trigger_time: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_include_view_link: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_mailserver: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_max_time: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_message_alert: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_message_report: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_pdfview: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_preprocess_results: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_report_cid_font_list: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_report_include_splunk_logo: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_report_paper_orientation: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_report_paper_size: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_report_server_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_report_server_url: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_send_csv: pulumi.Input[Optional[_builtins.int]] = None,
+            action_email_send_pdf: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_send_results: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_subject: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_to: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            action_email_use_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_use_tls: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_project: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            action_logevent: pulumi.Input[Optional[_builtins.str]] = None,
+            action_logevent_param_event: pulumi.Input[Optional[_builtins.str]] = None,
+            action_logevent_param_host: pulumi.Input[Optional[_builtins.str]] = None,
+            action_logevent_param_index: pulumi.Input[Optional[_builtins.str]] = None,
+            action_logevent_param_source: pulumi.Input[Optional[_builtins.str]] = None,
+            action_logevent_param_sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+            action_pagerduty_custom_details: pulumi.Input[Optional[_builtins.str]] = None,
+            action_pagerduty_integration_key: pulumi.Input[Optional[_builtins.str]] = None,
+            action_pagerduty_integration_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+            action_pagerduty_integration_url: pulumi.Input[Optional[_builtins.str]] = None,
+            action_pagerduty_integration_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+            action_populate_lookup: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_populate_lookup_command: pulumi.Input[Optional[_builtins.str]] = None,
+            action_populate_lookup_dest: pulumi.Input[Optional[_builtins.str]] = None,
+            action_populate_lookup_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            action_populate_lookup_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+            action_populate_lookup_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+            action_populate_lookup_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_populate_lookup_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            action_rss: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_rss_command: pulumi.Input[Optional[_builtins.str]] = None,
+            action_rss_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            action_rss_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+            action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+            action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            action_script: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
+            action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
+            action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            action_script_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+            action_script_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+            action_script_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_script_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_auto_join_channel: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_bot_username: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_emoji: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_app_alert_integration_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_param_attachment: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_param_channel: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_param_fields: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_param_message: pulumi.Input[Optional[_builtins.str]] = None,
+            action_slack_param_webhook_url_override: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_account: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_additional_info: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_ci_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_custom_fields: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
+            action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+            action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
+            action_summary_index: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
+            action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            action_summary_index_inline: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_summary_index_max_results: pulumi.Input[Optional[_builtins.int]] = None,
+            action_summary_index_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+            action_summary_index_name: pulumi.Input[Optional[_builtins.str]] = None,
+            action_summary_index_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
+            action_summary_index_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_enable_recovery: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_inactive_polls: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_message_type: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_monitoring_tool: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_poll_interval: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_record_id: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_routing_key_override: pulumi.Input[Optional[_builtins.str]] = None,
+            action_victorops_param_state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            action_webhook_param_url: pulumi.Input[Optional[_builtins.str]] = None,
+            actions: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_comparator: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_condition: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_digest_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            alert_expires: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_severity: pulumi.Input[Optional[_builtins.int]] = None,
+            alert_suppress: pulumi.Input[Optional[_builtins.bool]] = None,
+            alert_suppress_fields: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_suppress_period: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_threshold: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_track: pulumi.Input[Optional[_builtins.bool]] = None,
+            alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+            allow_skew: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize: pulumi.Input[Optional[_builtins.bool]] = None,
+            auto_summarize_command: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_max_disabled_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_summarize_max_summary_ratio: pulumi.Input[Optional[_builtins.float]] = None,
+            auto_summarize_max_summary_size: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_summarize_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+            auto_summarize_suspend_period: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_summarize_timespan: pulumi.Input[Optional[_builtins.str]] = None,
+            cron_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            dispatch_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_earliest_time: pulumi.Input[Optional[_builtins.str]] = None,
+            dispatch_index_earliest: pulumi.Input[Optional[_builtins.str]] = None,
+            dispatch_index_latest: pulumi.Input[Optional[_builtins.str]] = None,
+            dispatch_indexed_realtime: pulumi.Input[Optional[_builtins.bool]] = None,
+            dispatch_indexed_realtime_minspan: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_indexed_realtime_offset: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_latest_time: pulumi.Input[Optional[_builtins.str]] = None,
+            dispatch_lookups: pulumi.Input[Optional[_builtins.bool]] = None,
+            dispatch_max_count: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_max_time: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_reduce_freq: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_rt_backfill: pulumi.Input[Optional[_builtins.bool]] = None,
+            dispatch_rt_maximum_span: pulumi.Input[Optional[_builtins.int]] = None,
+            dispatch_spawn_process: pulumi.Input[Optional[_builtins.bool]] = None,
+            dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+            dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            display_view: pulumi.Input[Optional[_builtins.str]] = None,
+            is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            realtime_schedule: pulumi.Input[Optional[_builtins.bool]] = None,
+            request_ui_dispatch_app: pulumi.Input[Optional[_builtins.str]] = None,
+            request_ui_dispatch_view: pulumi.Input[Optional[_builtins.str]] = None,
+            restart_on_searchpeer_add: pulumi.Input[Optional[_builtins.bool]] = None,
+            run_on_startup: pulumi.Input[Optional[_builtins.bool]] = None,
+            schedule_priority: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_window: pulumi.Input[Optional[_builtins.str]] = None,
+            search: pulumi.Input[Optional[_builtins.str]] = None,
+            vsid: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_pool: pulumi.Input[Optional[_builtins.str]] = None) -> 'SavedSearches':
         """
         Get an existing SavedSearches resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

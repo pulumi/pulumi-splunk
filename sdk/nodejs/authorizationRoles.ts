@@ -175,55 +175,55 @@ export interface AuthorizationRolesState {
     /**
      * List of capabilities assigned to role.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Maximum number of concurrently running real-time searches that all members of this role can have.
      */
-    cumulativeRealtimeSearchJobsQuota?: pulumi.Input<number>;
+    cumulativeRealtimeSearchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
      */
-    cumulativeSearchJobsQuota?: pulumi.Input<number>;
+    cumulativeSearchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
      */
-    defaultApp?: pulumi.Input<string>;
+    defaultApp?: pulumi.Input<string | undefined>;
     /**
      * List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
      */
-    importedRoles?: pulumi.Input<pulumi.Input<string>[]>;
+    importedRoles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the user role to create.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
      */
-    realtimeSearchJobsQuota?: pulumi.Input<number>;
+    realtimeSearchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
      */
-    searchDiskQuota?: pulumi.Input<number>;
+    searchDiskQuota?: pulumi.Input<number | undefined>;
     /**
      * Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
      */
-    searchFilter?: pulumi.Input<string>;
+    searchFilter?: pulumi.Input<string | undefined>;
     /**
      * List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
      */
-    searchIndexesAlloweds?: pulumi.Input<pulumi.Input<string>[]>;
+    searchIndexesAlloweds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
      */
-    searchIndexesDefaults?: pulumi.Input<pulumi.Input<string>[]>;
+    searchIndexesDefaults?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
      */
-    searchJobsQuota?: pulumi.Input<number>;
+    searchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
      */
-    searchTimeWin?: pulumi.Input<number>;
+    searchTimeWin?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -233,53 +233,53 @@ export interface AuthorizationRolesArgs {
     /**
      * List of capabilities assigned to role.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Maximum number of concurrently running real-time searches that all members of this role can have.
      */
-    cumulativeRealtimeSearchJobsQuota?: pulumi.Input<number>;
+    cumulativeRealtimeSearchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
      */
-    cumulativeSearchJobsQuota?: pulumi.Input<number>;
+    cumulativeSearchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
      */
-    defaultApp?: pulumi.Input<string>;
+    defaultApp?: pulumi.Input<string | undefined>;
     /**
      * List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
      */
-    importedRoles?: pulumi.Input<pulumi.Input<string>[]>;
+    importedRoles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the user role to create.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
      */
-    realtimeSearchJobsQuota?: pulumi.Input<number>;
+    realtimeSearchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
      */
-    searchDiskQuota?: pulumi.Input<number>;
+    searchDiskQuota?: pulumi.Input<number | undefined>;
     /**
      * Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
      */
-    searchFilter?: pulumi.Input<string>;
+    searchFilter?: pulumi.Input<string | undefined>;
     /**
      * List of indexes that this role has permissions to search. These may be wildcarded, but the index name must begin with an underscore to match internal indexes.
      */
-    searchIndexesAlloweds?: pulumi.Input<pulumi.Input<string>[]>;
+    searchIndexesAlloweds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of indexes to search when no index is specified. These indexes can be wildcarded, with the exception that '*' does not match internal indexes. To match internal indexes, start with '_'. All internal indexes are represented by '_*'. A user with this role can search other indexes using "index= "
      */
-    searchIndexesDefaults?: pulumi.Input<pulumi.Input<string>[]>;
+    searchIndexesDefaults?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The maximum number of concurrent searches a user with this role is allowed to run. For users with multiple roles, the maximum quota value among all of the roles applies.
      */
-    searchJobsQuota?: pulumi.Input<number>;
+    searchJobsQuota?: pulumi.Input<number | undefined>;
     /**
      * Maximum time span of a search, in seconds. By default, searches are not limited to any specific time window. To override any search time windows from imported roles, set srchTimeWin to '0', as the 'admin' role does.
      */
-    searchTimeWin?: pulumi.Input<number>;
+    searchTimeWin?: pulumi.Input<number | undefined>;
 }

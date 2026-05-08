@@ -137,39 +137,39 @@ export interface AuthenticationUsersState {
     /**
      * User default app. Overrides the default app inherited from the user roles.
      */
-    defaultApp?: pulumi.Input<string>;
+    defaultApp?: pulumi.Input<string | undefined>;
     /**
      * User email address.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * Force user to change password indication
      */
-    forceChangePass?: pulumi.Input<boolean>;
+    forceChangePass?: pulumi.Input<boolean | undefined>;
     /**
      * Unique user login name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * User login password.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Full user name.
      */
-    realname?: pulumi.Input<string>;
+    realname?: pulumi.Input<string | undefined>;
     /**
      * Restart background search job that has not completed when Splunk restarts indication.
      */
-    restartBackgroundJobs?: pulumi.Input<boolean>;
+    restartBackgroundJobs?: pulumi.Input<boolean | undefined>;
     /**
      * Role to assign to this user. At least one existing role is required.
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * User timezone.
      */
-    tz?: pulumi.Input<string>;
+    tz?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -179,37 +179,37 @@ export interface AuthenticationUsersArgs {
     /**
      * User default app. Overrides the default app inherited from the user roles.
      */
-    defaultApp?: pulumi.Input<string>;
+    defaultApp?: pulumi.Input<string | undefined>;
     /**
      * User email address.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * Force user to change password indication
      */
-    forceChangePass?: pulumi.Input<boolean>;
+    forceChangePass?: pulumi.Input<boolean | undefined>;
     /**
      * Unique user login name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * User login password.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Full user name.
      */
-    realname?: pulumi.Input<string>;
+    realname?: pulumi.Input<string | undefined>;
     /**
      * Restart background search job that has not completed when Splunk restarts indication.
      */
-    restartBackgroundJobs?: pulumi.Input<boolean>;
+    restartBackgroundJobs?: pulumi.Input<boolean | undefined>;
     /**
      * Role to assign to this user. At least one existing role is required.
      */
-    roles?: pulumi.Input<pulumi.Input<string>[]>;
+    roles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * User timezone.
      */
-    tz?: pulumi.Input<string>;
+    tz?: pulumi.Input<string | undefined>;
 }
