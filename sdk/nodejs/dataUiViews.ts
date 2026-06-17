@@ -25,6 +25,37 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Dashboards/views in the default namespace can be imported by name:
+ *
+ * ```sh
+ * $ pulumi import splunk:index/dataUiViews:DataUiViews example "<view-name>"
+ * ```
+ *
+ * Dashboards/views in a specific Splunk namespace can be imported with a Splunk REST path or URL. URL-encode the view name when it contains spaces or other special characters:
+ *
+ * ```sh
+ * $ pulumi import splunk:index/dataUiViews:DataUiViews example "/servicesNS/<owner>/<app>/data/ui/views/<url-encoded-view-name>"
+ * ```
+ *
+ * ### After import
+ *
+ * Import sets the resource `id` and `name` to the view name. REST-path imports also set initial ACL namespace values (`owner`, `app`, and an inferred `sharing` value). Import does not load every Splunk setting or permission list.
+ *
+ * Run `pulumi preview` immediately after import. Plan output commonly includes drift until your configuration matches Splunk:
+ *
+ * - **ACL drift** — `acl.read` and `acl.write` are not populated during import and may differ from Splunk until you copy values from the Splunk UI or REST API into your `.tf` file. REST-path import infers `sharing` as `app` when `owner` is `nobody`, otherwise `user`. Globally shared views (`sharing = "global"`) may show a one-time ACL change in plan; set `sharing = "global"` explicitly in config if needed.
+ * - **Unset attributes** — Dashboard attributes such as `eaiData` and ACL permissions may differ from a minimal import config until you define them explicitly or use `lifecycle { ignoreChanges = [...] }`.
+ * - **Bare-name import** — Importing by name alone does not set `acl`. Without an `acl` block in config, refresh may use provider defaults that do not match the view's Splunk namespace. Prefer REST-path import or set `acl` explicitly.
+ *
+ * Recommended workflow:
+ *
+ * 1. `terraform import ...` (name or REST path)
+ * 2. `pulumi preview` — review drift
+ * 3. Update `.tf` to match required settings, or use `pulumi preview -generate-config-out=generated.tf` (Terraform 1.5+) as a starting point
+ * 4. Run `pulumi preview` again until only intentional changes remain
  */
 export class DataUiViews extends pulumi.CustomResource {
     /**

@@ -49,6 +49,37 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Saved searches in the default namespace can be imported by name:
+    /// 
+    /// ```sh
+    /// $ pulumi import splunk:index/savedSearches:SavedSearches example "&lt;saved-search-name&gt;"
+    /// ```
+    /// 
+    /// Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. URL-encode the saved search name when it contains spaces or other special characters:
+    /// 
+    /// ```sh
+    /// $ pulumi import splunk:index/savedSearches:SavedSearches example "/servicesNS/&lt;owner&gt;/&lt;app&gt;/saved/searches/&lt;url-encoded-saved-search-name&gt;"
+    /// ```
+    /// 
+    /// ### After import
+    /// 
+    /// Import sets the resource `Id` and `Name` to the saved search name. REST-path imports also set initial ACL namespace values (`Owner`, `App`, and an inferred `Sharing` value). Import does not load every Splunk setting or permission list.
+    /// 
+    /// Run `pulumi preview` immediately after import. Plan output commonly includes drift until your configuration matches Splunk:
+    /// 
+    /// - **ACL drift** — `acl.read` and `acl.write` are not populated during import and may differ from Splunk until you copy values from the Splunk UI or REST API into your `.tf` file. REST-path import infers `Sharing` as `App` when `Owner` is `Nobody`, otherwise `User`. Globally shared saved searches (`sharing = "global"`) may show a one-time ACL change in plan; set `sharing = "global"` explicitly in config if needed.
+    /// - **Unset attributes** — Saved searches expose many optional fields with Splunk defaults. A minimal import config will often produce a large plan until you define the attributes you care about or use `lifecycle { IgnoreChanges = [...] }`.
+    /// - **Bare-name import** — Importing by name alone does not set `Acl`. Without an `Acl` block in config, the provider defaults to `owner = "nobody"` and `app = "search"`, which can cause refresh errors or plan changes for app- or user-scoped saved searches. Prefer REST-path import or set `Acl` explicitly.
+    /// 
+    /// Recommended workflow:
+    /// 
+    /// 1. `terraform import ...` (name or REST path)
+    /// 2. `pulumi preview` — review drift
+    /// 3. Update `.tf` to match required settings, or use `pulumi preview -generate-config-out=generated.tf` (Terraform 1.5+) as a starting point
+    /// 4. Run `pulumi preview` again until only intentional changes remain
     /// </summary>
     [SplunkResourceType("splunk:index/savedSearches:SavedSearches")]
     public partial class SavedSearches : global::Pulumi.CustomResource
