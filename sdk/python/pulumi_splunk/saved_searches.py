@@ -195,6 +195,7 @@ class SavedSearchesArgs:
                  dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
                  display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_schedule_priority: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
                  max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
@@ -385,6 +386,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
         :param pulumi.Input[_builtins.str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[_builtins.str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+        :param pulumi.Input[_builtins.bool] ignore_schedule_priority: When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
         :param pulumi.Input[_builtins.bool] is_scheduled: Whether this search is to be run on a schedule
         :param pulumi.Input[_builtins.bool] is_visible: Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
         :param pulumi.Input[_builtins.int] max_concurrent: The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
@@ -746,6 +748,8 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "dispatch_ttl", dispatch_ttl)
         if display_view is not None:
             pulumi.set(__self__, "display_view", display_view)
+        if ignore_schedule_priority is not None:
+            pulumi.set(__self__, "ignore_schedule_priority", ignore_schedule_priority)
         if is_scheduled is not None:
             pulumi.set(__self__, "is_scheduled", is_scheduled)
         if is_visible is not None:
@@ -2862,6 +2866,18 @@ class SavedSearchesArgs:
         pulumi.set(self, "display_view", value)
 
     @_builtins.property
+    @pulumi.getter(name="ignoreSchedulePriority")
+    def ignore_schedule_priority(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
+        """
+        return pulumi.get(self, "ignore_schedule_priority")
+
+    @ignore_schedule_priority.setter
+    def ignore_schedule_priority(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_schedule_priority", value)
+
+    @_builtins.property
     @pulumi.getter(name="isScheduled")
     def is_scheduled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -3199,6 +3215,7 @@ class _SavedSearchesState:
                  dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
                  display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_schedule_priority: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
                  max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
@@ -3394,6 +3411,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
         :param pulumi.Input[_builtins.str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[_builtins.str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+        :param pulumi.Input[_builtins.bool] ignore_schedule_priority: When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
         :param pulumi.Input[_builtins.bool] is_scheduled: Whether this search is to be run on a schedule
         :param pulumi.Input[_builtins.bool] is_visible: Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
         :param pulumi.Input[_builtins.int] max_concurrent: The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
@@ -3765,6 +3783,8 @@ class _SavedSearchesState:
             pulumi.set(__self__, "dispatch_ttl", dispatch_ttl)
         if display_view is not None:
             pulumi.set(__self__, "display_view", display_view)
+        if ignore_schedule_priority is not None:
+            pulumi.set(__self__, "ignore_schedule_priority", ignore_schedule_priority)
         if is_scheduled is not None:
             pulumi.set(__self__, "is_scheduled", is_scheduled)
         if is_visible is not None:
@@ -5931,6 +5951,18 @@ class _SavedSearchesState:
         pulumi.set(self, "display_view", value)
 
     @_builtins.property
+    @pulumi.getter(name="ignoreSchedulePriority")
+    def ignore_schedule_priority(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
+        """
+        return pulumi.get(self, "ignore_schedule_priority")
+
+    @ignore_schedule_priority.setter
+    def ignore_schedule_priority(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ignore_schedule_priority", value)
+
+    @_builtins.property
     @pulumi.getter(name="isScheduled")
     def is_scheduled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -6278,6 +6310,7 @@ class SavedSearches(pulumi.CustomResource):
                  dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
                  display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_schedule_priority: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
                  max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
@@ -6532,6 +6565,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
         :param pulumi.Input[_builtins.str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[_builtins.str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+        :param pulumi.Input[_builtins.bool] ignore_schedule_priority: When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
         :param pulumi.Input[_builtins.bool] is_scheduled: Whether this search is to be run on a schedule
         :param pulumi.Input[_builtins.bool] is_visible: Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
         :param pulumi.Input[_builtins.int] max_concurrent: The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
@@ -6805,6 +6839,7 @@ class SavedSearches(pulumi.CustomResource):
                  dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
                  display_view: pulumi.Input[Optional[_builtins.str]] = None,
+                 ignore_schedule_priority: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
                  max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
@@ -7001,6 +7036,7 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["dispatch_time_format"] = dispatch_time_format
             __props__.__dict__["dispatch_ttl"] = dispatch_ttl
             __props__.__dict__["display_view"] = display_view
+            __props__.__dict__["ignore_schedule_priority"] = ignore_schedule_priority
             __props__.__dict__["is_scheduled"] = is_scheduled
             __props__.__dict__["is_visible"] = is_visible
             __props__.__dict__["max_concurrent"] = max_concurrent
@@ -7210,6 +7246,7 @@ class SavedSearches(pulumi.CustomResource):
             dispatch_time_format: pulumi.Input[Optional[_builtins.str]] = None,
             dispatch_ttl: pulumi.Input[Optional[_builtins.str]] = None,
             display_view: pulumi.Input[Optional[_builtins.str]] = None,
+            ignore_schedule_priority: pulumi.Input[Optional[_builtins.bool]] = None,
             is_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_visible: pulumi.Input[Optional[_builtins.bool]] = None,
             max_concurrent: pulumi.Input[Optional[_builtins.int]] = None,
@@ -7409,6 +7446,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dispatch_time_format: A time format string that defines the time format for specifying the earliest and latest time. Defaults to %FT%T.%Q%:z
         :param pulumi.Input[_builtins.str] dispatch_ttl: Valid values: Integer[p]. Defaults to 2p.Indicates the time to live (in seconds) for the artifacts of the scheduled search, if no actions are triggered.
         :param pulumi.Input[_builtins.str] display_view: Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
+        :param pulumi.Input[_builtins.bool] ignore_schedule_priority: When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
         :param pulumi.Input[_builtins.bool] is_scheduled: Whether this search is to be run on a schedule
         :param pulumi.Input[_builtins.bool] is_visible: Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
         :param pulumi.Input[_builtins.int] max_concurrent: The maximum number of concurrent instances of this search the scheduler is allowed to run. Defaults to 1.
@@ -7606,6 +7644,7 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["dispatch_time_format"] = dispatch_time_format
         __props__.__dict__["dispatch_ttl"] = dispatch_ttl
         __props__.__dict__["display_view"] = display_view
+        __props__.__dict__["ignore_schedule_priority"] = ignore_schedule_priority
         __props__.__dict__["is_scheduled"] = is_scheduled
         __props__.__dict__["is_visible"] = is_visible
         __props__.__dict__["max_concurrent"] = max_concurrent
@@ -9045,6 +9084,14 @@ class SavedSearches(pulumi.CustomResource):
         Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
         """
         return pulumi.get(self, "display_view")
+
+    @_builtins.property
+    @pulumi.getter(name="ignoreSchedulePriority")
+    def ignore_schedule_priority(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        When true, omit `schedule_priority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedule_priority is not supported by this handler`; omit `schedule_priority` from the resource when using this option.
+        """
+        return pulumi.get(self, "ignore_schedule_priority")
 
     @_builtins.property
     @pulumi.getter(name="isScheduled")

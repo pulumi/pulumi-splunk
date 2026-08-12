@@ -448,6 +448,8 @@ type SavedSearches struct {
 	DispatchTtl pulumi.StringOutput `pulumi:"dispatchTtl"`
 	// Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
 	DisplayView pulumi.StringOutput `pulumi:"displayView"`
+	// When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+	IgnoreSchedulePriority pulumi.BoolPtrOutput `pulumi:"ignoreSchedulePriority"`
 	// Whether this search is to be run on a schedule
 	IsScheduled pulumi.BoolOutput `pulumi:"isScheduled"`
 	// Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
@@ -867,6 +869,8 @@ type savedSearchesState struct {
 	DispatchTtl *string `pulumi:"dispatchTtl"`
 	// Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
 	DisplayView *string `pulumi:"displayView"`
+	// When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+	IgnoreSchedulePriority *bool `pulumi:"ignoreSchedulePriority"`
 	// Whether this search is to be run on a schedule
 	IsScheduled *bool `pulumi:"isScheduled"`
 	// Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
@@ -1254,6 +1258,8 @@ type SavedSearchesState struct {
 	DispatchTtl pulumi.StringPtrInput
 	// Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
 	DisplayView pulumi.StringPtrInput
+	// When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+	IgnoreSchedulePriority pulumi.BoolPtrInput
 	// Whether this search is to be run on a schedule
 	IsScheduled pulumi.BoolPtrInput
 	// Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
@@ -1635,6 +1641,8 @@ type savedSearchesArgs struct {
 	DispatchTtl *string `pulumi:"dispatchTtl"`
 	// Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
 	DisplayView *string `pulumi:"displayView"`
+	// When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+	IgnoreSchedulePriority *bool `pulumi:"ignoreSchedulePriority"`
 	// Whether this search is to be run on a schedule
 	IsScheduled *bool `pulumi:"isScheduled"`
 	// Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
@@ -2013,6 +2021,8 @@ type SavedSearchesArgs struct {
 	DispatchTtl pulumi.StringPtrInput
 	// Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
 	DisplayView pulumi.StringPtrInput
+	// When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+	IgnoreSchedulePriority pulumi.BoolPtrInput
 	// Whether this search is to be run on a schedule
 	IsScheduled pulumi.BoolPtrInput
 	// Specifies whether this saved search should be listed in the visible saved search list. Defaults to 1.
@@ -3020,6 +3030,11 @@ func (o SavedSearchesOutput) DispatchTtl() pulumi.StringOutput {
 // Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
 func (o SavedSearchesOutput) DisplayView() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DisplayView }).(pulumi.StringOutput)
+}
+
+// When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+func (o SavedSearchesOutput) IgnoreSchedulePriority() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.BoolPtrOutput { return v.IgnoreSchedulePriority }).(pulumi.BoolPtrOutput)
 }
 
 // Whether this search is to be run on a schedule

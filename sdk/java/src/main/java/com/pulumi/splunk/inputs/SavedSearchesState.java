@@ -2690,6 +2690,21 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     * 
+     */
+    @Import(name="ignoreSchedulePriority")
+    private @Nullable Output<Boolean> ignoreSchedulePriority;
+
+    /**
+     * @return When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     * 
+     */
+    public Optional<Output<Boolean>> ignoreSchedulePriority() {
+        return Optional.ofNullable(this.ignoreSchedulePriority);
+    }
+
+    /**
      * Whether this search is to be run on a schedule
      * 
      */
@@ -3080,6 +3095,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         this.dispatchTimeFormat = $.dispatchTimeFormat;
         this.dispatchTtl = $.dispatchTtl;
         this.displayView = $.displayView;
+        this.ignoreSchedulePriority = $.ignoreSchedulePriority;
         this.isScheduled = $.isScheduled;
         this.isVisible = $.isVisible;
         this.maxConcurrent = $.maxConcurrent;
@@ -6850,6 +6866,27 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder displayView(String displayView) {
             return displayView(Output.of(displayView));
+        }
+
+        /**
+         * @param ignoreSchedulePriority When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ignoreSchedulePriority(@Nullable Output<Boolean> ignoreSchedulePriority) {
+            $.ignoreSchedulePriority = ignoreSchedulePriority;
+            return this;
+        }
+
+        /**
+         * @param ignoreSchedulePriority When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ignoreSchedulePriority(Boolean ignoreSchedulePriority) {
+            return ignoreSchedulePriority(Output.of(ignoreSchedulePriority));
         }
 
         /**
