@@ -811,6 +811,10 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly displayView: pulumi.Output<string>;
     /**
+     * When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     */
+    declare public readonly ignoreSchedulePriority: pulumi.Output<boolean | undefined>;
+    /**
      * Whether this search is to be run on a schedule
      */
     declare public readonly isScheduled: pulumi.Output<boolean>;
@@ -1058,6 +1062,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["dispatchTimeFormat"] = state?.dispatchTimeFormat;
             resourceInputs["dispatchTtl"] = state?.dispatchTtl;
             resourceInputs["displayView"] = state?.displayView;
+            resourceInputs["ignoreSchedulePriority"] = state?.ignoreSchedulePriority;
             resourceInputs["isScheduled"] = state?.isScheduled;
             resourceInputs["isVisible"] = state?.isVisible;
             resourceInputs["maxConcurrent"] = state?.maxConcurrent;
@@ -1250,6 +1255,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["dispatchTimeFormat"] = args?.dispatchTimeFormat;
             resourceInputs["dispatchTtl"] = args?.dispatchTtl;
             resourceInputs["displayView"] = args?.displayView;
+            resourceInputs["ignoreSchedulePriority"] = args?.ignoreSchedulePriority;
             resourceInputs["isScheduled"] = args?.isScheduled;
             resourceInputs["isVisible"] = args?.isVisible;
             resourceInputs["maxConcurrent"] = args?.maxConcurrent;
@@ -1991,6 +1997,10 @@ export interface SavedSearchesState {
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
     displayView?: pulumi.Input<string | undefined>;
+    /**
+     * When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     */
+    ignoreSchedulePriority?: pulumi.Input<boolean | undefined>;
     /**
      * Whether this search is to be run on a schedule
      */
@@ -2745,6 +2755,10 @@ export interface SavedSearchesArgs {
      * Defines the default UI view name (not label) in which to load the results. Accessibility is subject to the user having sufficient permissions.
      */
     displayView?: pulumi.Input<string | undefined>;
+    /**
+     * When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     */
+    ignoreSchedulePriority?: pulumi.Input<boolean | undefined>;
     /**
      * Whether this search is to be run on a schedule
      */

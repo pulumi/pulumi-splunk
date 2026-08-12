@@ -2601,6 +2601,20 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.displayView;
     }
     /**
+     * When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     * 
+     */
+    @Export(name="ignoreSchedulePriority", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> ignoreSchedulePriority;
+
+    /**
+     * @return When true, omit `schedulePriority` from create/update API calls and do not sync it on read. Defaults to `false` for Splunk Enterprise. Set to `true` on Splunk Cloud when updates fail with `schedulePriority is not supported by this handler`; omit `schedulePriority` from the resource when using this option.
+     * 
+     */
+    public Output<Optional<Boolean>> ignoreSchedulePriority() {
+        return Codegen.optional(this.ignoreSchedulePriority);
+    }
+    /**
      * Whether this search is to be run on a schedule
      * 
      */

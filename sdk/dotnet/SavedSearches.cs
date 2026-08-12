@@ -1153,6 +1153,12 @@ namespace Pulumi.Splunk
         public Output<string> DisplayView { get; private set; } = null!;
 
         /// <summary>
+        /// When true, omit `SchedulePriority` from create/update API calls and do not sync it on read. Defaults to `False` for Splunk Enterprise. Set to `True` on Splunk Cloud when updates fail with `SchedulePriority is not supported by this handler`; omit `SchedulePriority` from the resource when using this option.
+        /// </summary>
+        [Output("ignoreSchedulePriority")]
+        public Output<bool?> IgnoreSchedulePriority { get; private set; } = null!;
+
+        /// <summary>
         /// Whether this search is to be run on a schedule
         /// </summary>
         [Output("isScheduled")]
@@ -2321,6 +2327,12 @@ namespace Pulumi.Splunk
         public Input<string>? DisplayView { get; set; }
 
         /// <summary>
+        /// When true, omit `SchedulePriority` from create/update API calls and do not sync it on read. Defaults to `False` for Splunk Enterprise. Set to `True` on Splunk Cloud when updates fail with `SchedulePriority is not supported by this handler`; omit `SchedulePriority` from the resource when using this option.
+        /// </summary>
+        [Input("ignoreSchedulePriority")]
+        public Input<bool>? IgnoreSchedulePriority { get; set; }
+
+        /// <summary>
         /// Whether this search is to be run on a schedule
         /// </summary>
         [Input("isScheduled")]
@@ -3479,6 +3491,12 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("displayView")]
         public Input<string>? DisplayView { get; set; }
+
+        /// <summary>
+        /// When true, omit `SchedulePriority` from create/update API calls and do not sync it on read. Defaults to `False` for Splunk Enterprise. Set to `True` on Splunk Cloud when updates fail with `SchedulePriority is not supported by this handler`; omit `SchedulePriority` from the resource when using this option.
+        /// </summary>
+        [Input("ignoreSchedulePriority")]
+        public Input<bool>? IgnoreSchedulePriority { get; set; }
 
         /// <summary>
         /// Whether this search is to be run on a schedule
