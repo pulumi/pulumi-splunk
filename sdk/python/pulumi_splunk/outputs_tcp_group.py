@@ -570,7 +570,9 @@ class OutputsTcpGroup(pulumi.CustomResource):
             if servers is None and not opts.urn:
                 raise TypeError("Missing required property 'servers'")
             __props__.__dict__["servers"] = servers
-            __props__.__dict__["token"] = token
+            __props__.__dict__["token"] = None if token is None else pulumi.Output.secret(token)
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["token"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(OutputsTcpGroup, __self__).__init__(
             'splunk:index/outputsTcpGroup:OutputsTcpGroup',
             resource_name,

@@ -96,6 +96,13 @@ func NewOutputsTcpGroup(ctx *pulumi.Context,
 	if args.Servers == nil {
 		return nil, errors.New("invalid value for required argument 'Servers'")
 	}
+	if args.Token != nil {
+		args.Token = pulumi.ToSecret(args.Token).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"token",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OutputsTcpGroup
 	err := ctx.RegisterResource("splunk:index/outputsTcpGroup:OutputsTcpGroup", name, args, &resource, opts...)

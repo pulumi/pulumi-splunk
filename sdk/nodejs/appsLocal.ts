@@ -145,7 +145,7 @@ export class AppsLocal extends pulumi.CustomResource {
         } else {
             const args = argsOrState as AppsLocalArgs | undefined;
             resourceInputs["acl"] = args?.acl;
-            resourceInputs["auth"] = args?.auth;
+            resourceInputs["auth"] = args?.auth ? pulumi.secret(args.auth) : undefined;
             resourceInputs["author"] = args?.author;
             resourceInputs["configured"] = args?.configured;
             resourceInputs["description"] = args?.description;
@@ -153,12 +153,14 @@ export class AppsLocal extends pulumi.CustomResource {
             resourceInputs["filename"] = args?.filename;
             resourceInputs["label"] = args?.label;
             resourceInputs["name"] = args?.name;
-            resourceInputs["session"] = args?.session;
+            resourceInputs["session"] = args?.session ? pulumi.secret(args.session) : undefined;
             resourceInputs["update"] = args?.update;
             resourceInputs["version"] = args?.version;
             resourceInputs["visible"] = args?.visible;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["auth", "session"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AppsLocal.__pulumiType, name, resourceInputs, opts);
     }
 }

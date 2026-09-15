@@ -84,9 +84,11 @@ export class InputsTcpSplunkTcpToken extends pulumi.CustomResource {
             const args = argsOrState as InputsTcpSplunkTcpTokenArgs | undefined;
             resourceInputs["acl"] = args?.acl;
             resourceInputs["name"] = args?.name;
-            resourceInputs["token"] = args?.token;
+            resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["token"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(InputsTcpSplunkTcpToken.__pulumiType, name, resourceInputs, opts);
     }
 }

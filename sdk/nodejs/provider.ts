@@ -58,14 +58,16 @@ export class Provider extends pulumi.ProviderResource {
         opts = opts || {};
         {
             resourceInputs["aclGetMode"] = args?.aclGetMode;
-            resourceInputs["authToken"] = args?.authToken;
+            resourceInputs["authToken"] = args?.authToken ? pulumi.secret(args.authToken) : undefined;
             resourceInputs["insecureSkipVerify"] = pulumi.output(args?.insecureSkipVerify).apply(JSON.stringify);
-            resourceInputs["password"] = args?.password;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["timeout"] = pulumi.output(args?.timeout).apply(JSON.stringify);
             resourceInputs["url"] = args?.url;
             resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["authToken", "password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 

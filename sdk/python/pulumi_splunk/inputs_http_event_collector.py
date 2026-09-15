@@ -498,8 +498,10 @@ class InputsHttpEventCollector(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             __props__.__dict__["source"] = source
             __props__.__dict__["sourcetype"] = sourcetype
-            __props__.__dict__["token"] = token
+            __props__.__dict__["token"] = None if token is None else pulumi.Output.secret(token)
             __props__.__dict__["use_ack"] = use_ack
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["token"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(InputsHttpEventCollector, __self__).__init__(
             'splunk:index/inputsHttpEventCollector:InputsHttpEventCollector',
             resource_name,

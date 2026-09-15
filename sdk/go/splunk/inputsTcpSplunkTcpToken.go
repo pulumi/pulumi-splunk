@@ -59,6 +59,13 @@ func NewInputsTcpSplunkTcpToken(ctx *pulumi.Context,
 		args = &InputsTcpSplunkTcpTokenArgs{}
 	}
 
+	if args.Token != nil {
+		args.Token = pulumi.ToSecret(args.Token).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"token",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsTcpSplunkTcpToken
 	err := ctx.RegisterResource("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", name, args, &resource, opts...)

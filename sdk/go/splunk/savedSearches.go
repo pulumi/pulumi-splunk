@@ -490,6 +490,33 @@ func NewSavedSearches(ctx *pulumi.Context,
 	if args.Search == nil {
 		return nil, errors.New("invalid value for required argument 'Search'")
 	}
+	if args.ActionEmailAuthPassword != nil {
+		args.ActionEmailAuthPassword = pulumi.ToSecret(args.ActionEmailAuthPassword).(pulumi.StringPtrInput)
+	}
+	if args.ActionPagerdutyIntegrationKey != nil {
+		args.ActionPagerdutyIntegrationKey = pulumi.ToSecret(args.ActionPagerdutyIntegrationKey).(pulumi.StringPtrInput)
+	}
+	if args.ActionPagerdutyIntegrationKeyOverride != nil {
+		args.ActionPagerdutyIntegrationKeyOverride = pulumi.ToSecret(args.ActionPagerdutyIntegrationKeyOverride).(pulumi.StringPtrInput)
+	}
+	if args.ActionSlackParamWebhookUrlOverride != nil {
+		args.ActionSlackParamWebhookUrlOverride = pulumi.ToSecret(args.ActionSlackParamWebhookUrlOverride).(pulumi.StringPtrInput)
+	}
+	if args.ActionVictoropsParamRoutingKeyOverride != nil {
+		args.ActionVictoropsParamRoutingKeyOverride = pulumi.ToSecret(args.ActionVictoropsParamRoutingKeyOverride).(pulumi.StringPtrInput)
+	}
+	if args.ActionWebhookParamUrl != nil {
+		args.ActionWebhookParamUrl = pulumi.ToSecret(args.ActionWebhookParamUrl).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"actionEmailAuthPassword",
+		"actionPagerdutyIntegrationKey",
+		"actionPagerdutyIntegrationKeyOverride",
+		"actionSlackParamWebhookUrlOverride",
+		"actionVictoropsParamRoutingKeyOverride",
+		"actionWebhookParamUrl",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SavedSearches
 	err := ctx.RegisterResource("splunk:index/savedSearches:SavedSearches", name, args, &resource, opts...)

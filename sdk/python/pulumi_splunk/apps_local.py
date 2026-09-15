@@ -623,7 +623,7 @@ class AppsLocal(pulumi.CustomResource):
             __props__ = AppsLocalArgs.__new__(AppsLocalArgs)
 
             __props__.__dict__["acl"] = acl
-            __props__.__dict__["auth"] = auth
+            __props__.__dict__["auth"] = None if auth is None else pulumi.Output.secret(auth)
             __props__.__dict__["author"] = author
             __props__.__dict__["configured"] = configured
             __props__.__dict__["description"] = description
@@ -631,10 +631,12 @@ class AppsLocal(pulumi.CustomResource):
             __props__.__dict__["filename"] = filename
             __props__.__dict__["label"] = label
             __props__.__dict__["name"] = name
-            __props__.__dict__["session"] = session
+            __props__.__dict__["session"] = None if session is None else pulumi.Output.secret(session)
             __props__.__dict__["update"] = update
             __props__.__dict__["version"] = version
             __props__.__dict__["visible"] = visible
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["auth", "session"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AppsLocal, __self__).__init__(
             'splunk:index/appsLocal:AppsLocal',
             resource_name,
