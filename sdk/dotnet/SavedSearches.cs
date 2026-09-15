@@ -1265,6 +1265,15 @@ namespace Pulumi.Splunk
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "actionEmailAuthPassword",
+                    "actionPagerdutyIntegrationKey",
+                    "actionPagerdutyIntegrationKeyOverride",
+                    "actionSlackParamWebhookUrlOverride",
+                    "actionVictoropsParamRoutingKeyOverride",
+                    "actionWebhookParamUrl",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -1372,11 +1381,21 @@ namespace Pulumi.Splunk
         [Input("actionCreateXsoarIncidentParamType")]
         public Input<string>? ActionCreateXsoarIncidentParamType { get; set; }
 
+        [Input("actionEmailAuthPassword")]
+        private Input<string>? _actionEmailAuthPassword;
+
         /// <summary>
         /// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         /// </summary>
-        [Input("actionEmailAuthPassword")]
-        public Input<string>? ActionEmailAuthPassword { get; set; }
+        public Input<string>? ActionEmailAuthPassword
+        {
+            get => _actionEmailAuthPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionEmailAuthPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
@@ -1678,17 +1697,37 @@ namespace Pulumi.Splunk
         [Input("actionPagerdutyCustomDetails")]
         public Input<string>? ActionPagerdutyCustomDetails { get; set; }
 
+        [Input("actionPagerdutyIntegrationKey")]
+        private Input<string>? _actionPagerdutyIntegrationKey;
+
         /// <summary>
         /// The PagerDuty integration Key.
         /// </summary>
-        [Input("actionPagerdutyIntegrationKey")]
-        public Input<string>? ActionPagerdutyIntegrationKey { get; set; }
+        public Input<string>? ActionPagerdutyIntegrationKey
+        {
+            get => _actionPagerdutyIntegrationKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionPagerdutyIntegrationKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("actionPagerdutyIntegrationKeyOverride")]
+        private Input<string>? _actionPagerdutyIntegrationKeyOverride;
 
         /// <summary>
         /// The PagerDuty integration Key override.
         /// </summary>
-        [Input("actionPagerdutyIntegrationKeyOverride")]
-        public Input<string>? ActionPagerdutyIntegrationKeyOverride { get; set; }
+        public Input<string>? ActionPagerdutyIntegrationKeyOverride
+        {
+            get => _actionPagerdutyIntegrationKeyOverride;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionPagerdutyIntegrationKeyOverride = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -1876,11 +1915,21 @@ namespace Pulumi.Splunk
         [Input("actionSlackParamMessage")]
         public Input<string>? ActionSlackParamMessage { get; set; }
 
+        [Input("actionSlackParamWebhookUrlOverride")]
+        private Input<string>? _actionSlackParamWebhookUrlOverride;
+
         /// <summary>
         /// You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         /// </summary>
-        [Input("actionSlackParamWebhookUrlOverride")]
-        public Input<string>? ActionSlackParamWebhookUrlOverride { get; set; }
+        public Input<string>? ActionSlackParamWebhookUrlOverride
+        {
+            get => _actionSlackParamWebhookUrlOverride;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionSlackParamWebhookUrlOverride = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Account(s) for which the event is/ are to be created across ServiceNow instance(s).
@@ -2026,11 +2075,21 @@ namespace Pulumi.Splunk
         [Input("actionVictoropsParamRecordId")]
         public Input<string>? ActionVictoropsParamRecordId { get; set; }
 
+        [Input("actionVictoropsParamRoutingKeyOverride")]
+        private Input<string>? _actionVictoropsParamRoutingKeyOverride;
+
         /// <summary>
         /// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         /// </summary>
-        [Input("actionVictoropsParamRoutingKeyOverride")]
-        public Input<string>? ActionVictoropsParamRoutingKeyOverride { get; set; }
+        public Input<string>? ActionVictoropsParamRoutingKeyOverride
+        {
+            get => _actionVictoropsParamRoutingKeyOverride;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionVictoropsParamRoutingKeyOverride = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Description of the alert condition
@@ -2038,11 +2097,21 @@ namespace Pulumi.Splunk
         [Input("actionVictoropsParamStateMessage")]
         public Input<string>? ActionVictoropsParamStateMessage { get; set; }
 
+        [Input("actionWebhookParamUrl")]
+        private Input<string>? _actionWebhookParamUrl;
+
         /// <summary>
         /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
         /// </summary>
-        [Input("actionWebhookParamUrl")]
-        public Input<string>? ActionWebhookParamUrl { get; set; }
+        public Input<string>? ActionWebhookParamUrl
+        {
+            get => _actionWebhookParamUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionWebhookParamUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// A comma-separated list of actions to enable. For example: rss,email
@@ -2514,11 +2583,21 @@ namespace Pulumi.Splunk
         [Input("actionEmail")]
         public Input<bool>? ActionEmail { get; set; }
 
+        [Input("actionEmailAuthPassword")]
+        private Input<string>? _actionEmailAuthPassword;
+
         /// <summary>
         /// The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.
         /// </summary>
-        [Input("actionEmailAuthPassword")]
-        public Input<string>? ActionEmailAuthPassword { get; set; }
+        public Input<string>? ActionEmailAuthPassword
+        {
+            get => _actionEmailAuthPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionEmailAuthPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The username to use when authenticating with the SMTP server. If this is empty string, no authentication is attempted. Defaults to empty stringNOTE: Your SMTP server might reject unauthenticated emails.
@@ -2820,17 +2899,37 @@ namespace Pulumi.Splunk
         [Input("actionPagerdutyCustomDetails")]
         public Input<string>? ActionPagerdutyCustomDetails { get; set; }
 
+        [Input("actionPagerdutyIntegrationKey")]
+        private Input<string>? _actionPagerdutyIntegrationKey;
+
         /// <summary>
         /// The PagerDuty integration Key.
         /// </summary>
-        [Input("actionPagerdutyIntegrationKey")]
-        public Input<string>? ActionPagerdutyIntegrationKey { get; set; }
+        public Input<string>? ActionPagerdutyIntegrationKey
+        {
+            get => _actionPagerdutyIntegrationKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionPagerdutyIntegrationKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("actionPagerdutyIntegrationKeyOverride")]
+        private Input<string>? _actionPagerdutyIntegrationKeyOverride;
 
         /// <summary>
         /// The PagerDuty integration Key override.
         /// </summary>
-        [Input("actionPagerdutyIntegrationKeyOverride")]
-        public Input<string>? ActionPagerdutyIntegrationKeyOverride { get; set; }
+        public Input<string>? ActionPagerdutyIntegrationKeyOverride
+        {
+            get => _actionPagerdutyIntegrationKeyOverride;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionPagerdutyIntegrationKeyOverride = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The pagerduty integration URL. This integration uses Splunk's native webhooks to send events to PagerDuty.
@@ -3036,11 +3135,21 @@ namespace Pulumi.Splunk
         [Input("actionSlackParamMessage")]
         public Input<string>? ActionSlackParamMessage { get; set; }
 
+        [Input("actionSlackParamWebhookUrlOverride")]
+        private Input<string>? _actionSlackParamWebhookUrlOverride;
+
         /// <summary>
         /// You can override the Slack webhook URL here if you need to send the alert message to a different Slack team
         /// </summary>
-        [Input("actionSlackParamWebhookUrlOverride")]
-        public Input<string>? ActionSlackParamWebhookUrlOverride { get; set; }
+        public Input<string>? ActionSlackParamWebhookUrlOverride
+        {
+            get => _actionSlackParamWebhookUrlOverride;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionSlackParamWebhookUrlOverride = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Account(s) for which the event is/ are to be created across ServiceNow instance(s).
@@ -3192,11 +3301,21 @@ namespace Pulumi.Splunk
         [Input("actionVictoropsParamRecordId")]
         public Input<string>? ActionVictoropsParamRecordId { get; set; }
 
+        [Input("actionVictoropsParamRoutingKeyOverride")]
+        private Input<string>? _actionVictoropsParamRoutingKeyOverride;
+
         /// <summary>
         /// You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         /// </summary>
-        [Input("actionVictoropsParamRoutingKeyOverride")]
-        public Input<string>? ActionVictoropsParamRoutingKeyOverride { get; set; }
+        public Input<string>? ActionVictoropsParamRoutingKeyOverride
+        {
+            get => _actionVictoropsParamRoutingKeyOverride;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionVictoropsParamRoutingKeyOverride = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Description of the alert condition
@@ -3204,11 +3323,21 @@ namespace Pulumi.Splunk
         [Input("actionVictoropsParamStateMessage")]
         public Input<string>? ActionVictoropsParamStateMessage { get; set; }
 
+        [Input("actionWebhookParamUrl")]
+        private Input<string>? _actionWebhookParamUrl;
+
         /// <summary>
         /// URL to send the HTTP POST request to. Must be accessible from the Splunk server
         /// </summary>
-        [Input("actionWebhookParamUrl")]
-        public Input<string>? ActionWebhookParamUrl { get; set; }
+        public Input<string>? ActionWebhookParamUrl
+        {
+            get => _actionWebhookParamUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _actionWebhookParamUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// A comma-separated list of actions to enable. For example: rss,email

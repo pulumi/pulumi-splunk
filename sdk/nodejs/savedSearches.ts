@@ -1096,7 +1096,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionCreateXsoarIncidentParamServerUrl"] = args?.actionCreateXsoarIncidentParamServerUrl;
             resourceInputs["actionCreateXsoarIncidentParamSeverity"] = args?.actionCreateXsoarIncidentParamSeverity;
             resourceInputs["actionCreateXsoarIncidentParamType"] = args?.actionCreateXsoarIncidentParamType;
-            resourceInputs["actionEmailAuthPassword"] = args?.actionEmailAuthPassword;
+            resourceInputs["actionEmailAuthPassword"] = args?.actionEmailAuthPassword ? pulumi.secret(args.actionEmailAuthPassword) : undefined;
             resourceInputs["actionEmailAuthUsername"] = args?.actionEmailAuthUsername;
             resourceInputs["actionEmailBcc"] = args?.actionEmailBcc;
             resourceInputs["actionEmailCc"] = args?.actionEmailCc;
@@ -1147,8 +1147,8 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionLogeventParamSource"] = args?.actionLogeventParamSource;
             resourceInputs["actionLogeventParamSourcetype"] = args?.actionLogeventParamSourcetype;
             resourceInputs["actionPagerdutyCustomDetails"] = args?.actionPagerdutyCustomDetails;
-            resourceInputs["actionPagerdutyIntegrationKey"] = args?.actionPagerdutyIntegrationKey;
-            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = args?.actionPagerdutyIntegrationKeyOverride;
+            resourceInputs["actionPagerdutyIntegrationKey"] = args?.actionPagerdutyIntegrationKey ? pulumi.secret(args.actionPagerdutyIntegrationKey) : undefined;
+            resourceInputs["actionPagerdutyIntegrationKeyOverride"] = args?.actionPagerdutyIntegrationKeyOverride ? pulumi.secret(args.actionPagerdutyIntegrationKeyOverride) : undefined;
             resourceInputs["actionPagerdutyIntegrationUrl"] = args?.actionPagerdutyIntegrationUrl;
             resourceInputs["actionPagerdutyIntegrationUrlOverride"] = args?.actionPagerdutyIntegrationUrlOverride;
             resourceInputs["actionPopulateLookupCommand"] = args?.actionPopulateLookupCommand;
@@ -1180,7 +1180,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionSlackParamChannel"] = args?.actionSlackParamChannel;
             resourceInputs["actionSlackParamFields"] = args?.actionSlackParamFields;
             resourceInputs["actionSlackParamMessage"] = args?.actionSlackParamMessage;
-            resourceInputs["actionSlackParamWebhookUrlOverride"] = args?.actionSlackParamWebhookUrlOverride;
+            resourceInputs["actionSlackParamWebhookUrlOverride"] = args?.actionSlackParamWebhookUrlOverride ? pulumi.secret(args.actionSlackParamWebhookUrlOverride) : undefined;
             resourceInputs["actionSnowEventParamAccount"] = args?.actionSnowEventParamAccount;
             resourceInputs["actionSnowEventParamAdditionalInfo"] = args?.actionSnowEventParamAdditionalInfo;
             resourceInputs["actionSnowEventParamCiIdentifier"] = args?.actionSnowEventParamCiIdentifier;
@@ -1205,9 +1205,9 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionVictoropsParamMonitoringTool"] = args?.actionVictoropsParamMonitoringTool;
             resourceInputs["actionVictoropsParamPollInterval"] = args?.actionVictoropsParamPollInterval;
             resourceInputs["actionVictoropsParamRecordId"] = args?.actionVictoropsParamRecordId;
-            resourceInputs["actionVictoropsParamRoutingKeyOverride"] = args?.actionVictoropsParamRoutingKeyOverride;
+            resourceInputs["actionVictoropsParamRoutingKeyOverride"] = args?.actionVictoropsParamRoutingKeyOverride ? pulumi.secret(args.actionVictoropsParamRoutingKeyOverride) : undefined;
             resourceInputs["actionVictoropsParamStateMessage"] = args?.actionVictoropsParamStateMessage;
-            resourceInputs["actionWebhookParamUrl"] = args?.actionWebhookParamUrl;
+            resourceInputs["actionWebhookParamUrl"] = args?.actionWebhookParamUrl ? pulumi.secret(args.actionWebhookParamUrl) : undefined;
             resourceInputs["actions"] = args?.actions;
             resourceInputs["alertComparator"] = args?.alertComparator;
             resourceInputs["alertCondition"] = args?.alertCondition;
@@ -1277,6 +1277,8 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionSummaryIndex"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["actionEmailAuthPassword", "actionPagerdutyIntegrationKey", "actionPagerdutyIntegrationKeyOverride", "actionSlackParamWebhookUrlOverride", "actionVictoropsParamRoutingKeyOverride", "actionWebhookParamUrl"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(SavedSearches.__pulumiType, name, resourceInputs, opts);
     }
 }

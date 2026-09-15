@@ -66,6 +66,11 @@ namespace Pulumi.Splunk
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "authToken",
+                    "password",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -88,11 +93,21 @@ namespace Pulumi.Splunk
         [Input("aclGetMode")]
         public Input<string>? AclGetMode { get; set; }
 
+        [Input("authToken")]
+        private Input<string>? _authToken;
+
         /// <summary>
         /// Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform
         /// </summary>
-        [Input("authToken")]
-        public Input<string>? AuthToken { get; set; }
+        public Input<string>? AuthToken
+        {
+            get => _authToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// insecure skip verification flag
@@ -100,11 +115,21 @@ namespace Pulumi.Splunk
         [Input("insecureSkipVerify", json: true)]
         public Input<bool>? InsecureSkipVerify { get; set; }
 
+        [Input("password")]
+        private Input<string>? _password;
+
         /// <summary>
         /// Splunk instance password
         /// </summary>
-        [Input("password")]
-        public Input<string>? Password { get; set; }
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Timeout when making calls to Splunk server. Defaults to 60 seconds

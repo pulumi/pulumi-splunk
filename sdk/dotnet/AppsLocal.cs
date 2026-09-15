@@ -149,6 +149,11 @@ namespace Pulumi.Splunk
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "auth",
+                    "session",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -178,11 +183,21 @@ namespace Pulumi.Splunk
         [Input("acl")]
         public Input<Inputs.AppsLocalAclArgs>? Acl { get; set; }
 
+        [Input("auth")]
+        private Input<string>? _auth;
+
         /// <summary>
         /// Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         /// </summary>
-        [Input("auth")]
-        public Input<string>? Auth { get; set; }
+        public Input<string>? Auth
+        {
+            get => _auth;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _auth = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
@@ -233,11 +248,21 @@ namespace Pulumi.Splunk
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("session")]
+        private Input<string>? _session;
+
         /// <summary>
         /// Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
         /// </summary>
-        [Input("session")]
-        public Input<string>? Session { get; set; }
+        public Input<string>? Session
+        {
+            get => _session;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _session = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// File-based update indication:
@@ -275,11 +300,21 @@ namespace Pulumi.Splunk
         [Input("acl")]
         public Input<Inputs.AppsLocalAclGetArgs>? Acl { get; set; }
 
+        [Input("auth")]
+        private Input<string>? _auth;
+
         /// <summary>
         /// Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         /// </summary>
-        [Input("auth")]
-        public Input<string>? Auth { get; set; }
+        public Input<string>? Auth
+        {
+            get => _auth;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _auth = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
@@ -330,11 +365,21 @@ namespace Pulumi.Splunk
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("session")]
+        private Input<string>? _session;
+
         /// <summary>
         /// Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.
         /// </summary>
-        [Input("session")]
-        public Input<string>? Session { get; set; }
+        public Input<string>? Session
+        {
+            get => _session;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _session = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// File-based update indication:

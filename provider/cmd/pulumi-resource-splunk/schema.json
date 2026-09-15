@@ -60,7 +60,8 @@
             },
             "authToken": {
                 "type": "string",
-                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
+                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform",
+                "secret": true
             },
             "insecureSkipVerify": {
                 "type": "boolean",
@@ -68,7 +69,8 @@
             },
             "password": {
                 "type": "string",
-                "description": "Splunk instance password"
+                "description": "Splunk instance password",
+                "secret": true
             },
             "timeout": {
                 "type": "integer",
@@ -1578,7 +1580,8 @@
             },
             "authToken": {
                 "type": "string",
-                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
+                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform",
+                "secret": true
             },
             "insecureSkipVerify": {
                 "type": "boolean",
@@ -1586,7 +1589,8 @@
             },
             "password": {
                 "type": "string",
-                "description": "Splunk instance password"
+                "description": "Splunk instance password",
+                "secret": true
             },
             "timeout": {
                 "type": "integer",
@@ -1608,7 +1612,8 @@
             },
             "authToken": {
                 "type": "string",
-                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform"
+                "description": "Authentication tokens, also known as JSON Web Tokens (JWT), are a method for authenticating Splunk platform users into the Splunk platform",
+                "secret": true
             },
             "insecureSkipVerify": {
                 "type": "boolean",
@@ -1616,7 +1621,8 @@
             },
             "password": {
                 "type": "string",
-                "description": "Splunk instance password"
+                "description": "Splunk instance password",
+                "secret": true
             },
             "timeout": {
                 "type": "integer",
@@ -1697,7 +1703,8 @@
                 },
                 "auth": {
                     "type": "string",
-                    "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.\n"
+                    "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.\n",
+                    "secret": true
                 },
                 "author": {
                     "type": "string",
@@ -1729,7 +1736,8 @@
                 },
                 "session": {
                     "type": "string",
-                    "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.\n"
+                    "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.\n",
+                    "secret": true
                 },
                 "update": {
                     "type": "boolean",
@@ -1761,7 +1769,8 @@
                 },
                 "auth": {
                     "type": "string",
-                    "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.\n"
+                    "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.\n",
+                    "secret": true
                 },
                 "author": {
                     "type": "string",
@@ -1793,7 +1802,8 @@
                 },
                 "session": {
                     "type": "string",
-                    "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.\n"
+                    "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.\n",
+                    "secret": true
                 },
                 "update": {
                     "type": "boolean",
@@ -1817,7 +1827,8 @@
                     },
                     "auth": {
                         "type": "string",
-                        "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.\n"
+                        "description": "Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.\n",
+                        "secret": true
                     },
                     "author": {
                         "type": "string",
@@ -1849,7 +1860,8 @@
                     },
                     "session": {
                         "type": "string",
-                        "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.\n"
+                        "description": "Login session token for installing or updating an app on Splunkbase. Alternatively, use auth.\n",
+                        "secret": true
                     },
                     "update": {
                         "type": "boolean",
@@ -3062,7 +3074,8 @@
                 },
                 "token": {
                     "type": "string",
-                    "description": "Token value for sending data to collector/event endpoint\n"
+                    "description": "Token value for sending data to collector/event endpoint\n",
+                    "secret": true
                 },
                 "useAck": {
                     "type": "integer",
@@ -3120,7 +3133,8 @@
                 },
                 "token": {
                     "type": "string",
-                    "description": "Token value for sending data to collector/event endpoint\n"
+                    "description": "Token value for sending data to collector/event endpoint\n",
+                    "secret": true
                 },
                 "useAck": {
                     "type": "integer",
@@ -3168,7 +3182,8 @@
                     },
                     "token": {
                         "type": "string",
-                        "description": "Token value for sending data to collector/event endpoint\n"
+                        "description": "Token value for sending data to collector/event endpoint\n",
+                        "secret": true
                     },
                     "useAck": {
                         "type": "integer",
@@ -3825,7 +3840,8 @@
                 },
                 "token": {
                     "type": "string",
-                    "description": "Optional. Token value to use. If unspecified, a token is generated automatically.\n"
+                    "description": "Optional. Token value to use. If unspecified, a token is generated automatically.\n",
+                    "secret": true
                 }
             },
             "required": [
@@ -3845,7 +3861,8 @@
                 },
                 "token": {
                     "type": "string",
-                    "description": "Optional. Token value to use. If unspecified, a token is generated automatically.\n"
+                    "description": "Optional. Token value to use. If unspecified, a token is generated automatically.\n",
+                    "secret": true
                 }
             },
             "stateInputs": {
@@ -3862,7 +3879,8 @@
                     },
                     "token": {
                         "type": "string",
-                        "description": "Optional. Token value to use. If unspecified, a token is generated automatically.\n"
+                        "description": "Optional. Token value to use. If unspecified, a token is generated automatically.\n",
+                        "secret": true
                     }
                 },
                 "type": "object"
@@ -4461,7 +4479,8 @@
                 },
                 "token": {
                     "type": "string",
-                    "description": "Token value generated by the indexer after configuration.\n"
+                    "description": "Token value generated by the indexer after configuration.\n",
+                    "secret": true
                 }
             },
             "required": [
@@ -4524,7 +4543,8 @@
                 },
                 "token": {
                     "type": "string",
-                    "description": "Token value generated by the indexer after configuration.\n"
+                    "description": "Token value generated by the indexer after configuration.\n",
+                    "secret": true
                 }
             },
             "requiredInputs": [
@@ -4579,7 +4599,8 @@
                     },
                     "token": {
                         "type": "string",
-                        "description": "Token value generated by the indexer after configuration.\n"
+                        "description": "Token value generated by the indexer after configuration.\n",
+                        "secret": true
                     }
                 },
                 "type": "object"
@@ -5061,7 +5082,8 @@
                 },
                 "actionEmailAuthPassword": {
                     "type": "string",
-                    "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n"
+                    "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n",
+                    "secret": true
                 },
                 "actionEmailAuthUsername": {
                     "type": "string",
@@ -5265,11 +5287,13 @@
                 },
                 "actionPagerdutyIntegrationKey": {
                     "type": "string",
-                    "description": "The PagerDuty integration Key.\n"
+                    "description": "The PagerDuty integration Key.\n",
+                    "secret": true
                 },
                 "actionPagerdutyIntegrationKeyOverride": {
                     "type": "string",
-                    "description": "The PagerDuty integration Key override.\n"
+                    "description": "The PagerDuty integration Key override.\n",
+                    "secret": true
                 },
                 "actionPagerdutyIntegrationUrl": {
                     "type": "string",
@@ -5409,7 +5433,8 @@
                 },
                 "actionSlackParamWebhookUrlOverride": {
                     "type": "string",
-                    "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team\n"
+                    "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team\n",
+                    "secret": true
                 },
                 "actionSnowEventParamAccount": {
                     "type": "string",
@@ -5513,7 +5538,8 @@
                 },
                 "actionVictoropsParamRoutingKeyOverride": {
                     "type": "string",
-                    "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n"
+                    "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n",
+                    "secret": true
                 },
                 "actionVictoropsParamStateMessage": {
                     "type": "string",
@@ -5521,7 +5547,8 @@
                 },
                 "actionWebhookParamUrl": {
                     "type": "string",
-                    "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
+                    "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n",
+                    "secret": true
                 },
                 "actions": {
                     "type": "string",
@@ -5980,7 +6007,8 @@
                 },
                 "actionEmailAuthPassword": {
                     "type": "string",
-                    "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n"
+                    "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n",
+                    "secret": true
                 },
                 "actionEmailAuthUsername": {
                     "type": "string",
@@ -6184,11 +6212,13 @@
                 },
                 "actionPagerdutyIntegrationKey": {
                     "type": "string",
-                    "description": "The PagerDuty integration Key.\n"
+                    "description": "The PagerDuty integration Key.\n",
+                    "secret": true
                 },
                 "actionPagerdutyIntegrationKeyOverride": {
                     "type": "string",
-                    "description": "The PagerDuty integration Key override.\n"
+                    "description": "The PagerDuty integration Key override.\n",
+                    "secret": true
                 },
                 "actionPagerdutyIntegrationUrl": {
                     "type": "string",
@@ -6316,7 +6346,8 @@
                 },
                 "actionSlackParamWebhookUrlOverride": {
                     "type": "string",
-                    "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team\n"
+                    "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team\n",
+                    "secret": true
                 },
                 "actionSnowEventParamAccount": {
                     "type": "string",
@@ -6416,7 +6447,8 @@
                 },
                 "actionVictoropsParamRoutingKeyOverride": {
                     "type": "string",
-                    "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n"
+                    "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n",
+                    "secret": true
                 },
                 "actionVictoropsParamStateMessage": {
                     "type": "string",
@@ -6424,7 +6456,8 @@
                 },
                 "actionWebhookParamUrl": {
                     "type": "string",
-                    "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
+                    "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n",
+                    "secret": true
                 },
                 "actions": {
                     "type": "string",
@@ -6744,7 +6777,8 @@
                     },
                     "actionEmailAuthPassword": {
                         "type": "string",
-                        "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n"
+                        "description": "The password to use when authenticating with the SMTP server. Normally this value is set when editing the email settings, however you can set a clear text password here and it is encrypted on the next platform restart.Defaults to empty string.\n",
+                        "secret": true
                     },
                     "actionEmailAuthUsername": {
                         "type": "string",
@@ -6948,11 +6982,13 @@
                     },
                     "actionPagerdutyIntegrationKey": {
                         "type": "string",
-                        "description": "The PagerDuty integration Key.\n"
+                        "description": "The PagerDuty integration Key.\n",
+                        "secret": true
                     },
                     "actionPagerdutyIntegrationKeyOverride": {
                         "type": "string",
-                        "description": "The PagerDuty integration Key override.\n"
+                        "description": "The PagerDuty integration Key override.\n",
+                        "secret": true
                     },
                     "actionPagerdutyIntegrationUrl": {
                         "type": "string",
@@ -7092,7 +7128,8 @@
                     },
                     "actionSlackParamWebhookUrlOverride": {
                         "type": "string",
-                        "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team\n"
+                        "description": "You can override the Slack webhook URL here if you need to send the alert message to a different Slack team\n",
+                        "secret": true
                     },
                     "actionSnowEventParamAccount": {
                         "type": "string",
@@ -7196,7 +7233,8 @@
                     },
                     "actionVictoropsParamRoutingKeyOverride": {
                         "type": "string",
-                        "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n"
+                        "description": "You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team\n",
+                        "secret": true
                     },
                     "actionVictoropsParamStateMessage": {
                         "type": "string",
@@ -7204,7 +7242,8 @@
                     },
                     "actionWebhookParamUrl": {
                         "type": "string",
-                        "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n"
+                        "description": "URL to send the HTTP POST request to. Must be accessible from the Splunk server\n",
+                        "secret": true
                     },
                     "actions": {
                         "type": "string",

@@ -92,6 +92,13 @@ func NewInputsHttpEventCollector(ctx *pulumi.Context,
 		args = &InputsHttpEventCollectorArgs{}
 	}
 
+	if args.Token != nil {
+		args.Token = pulumi.ToSecret(args.Token).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"token",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource InputsHttpEventCollector
 	err := ctx.RegisterResource("splunk:index/inputsHttpEventCollector:InputsHttpEventCollector", name, args, &resource, opts...)

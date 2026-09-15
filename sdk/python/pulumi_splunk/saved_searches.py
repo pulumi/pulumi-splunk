@@ -6877,7 +6877,7 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_create_xsoar_incident_param_server_url"] = action_create_xsoar_incident_param_server_url
             __props__.__dict__["action_create_xsoar_incident_param_severity"] = action_create_xsoar_incident_param_severity
             __props__.__dict__["action_create_xsoar_incident_param_type"] = action_create_xsoar_incident_param_type
-            __props__.__dict__["action_email_auth_password"] = action_email_auth_password
+            __props__.__dict__["action_email_auth_password"] = None if action_email_auth_password is None else pulumi.Output.secret(action_email_auth_password)
             __props__.__dict__["action_email_auth_username"] = action_email_auth_username
             __props__.__dict__["action_email_bcc"] = action_email_bcc
             __props__.__dict__["action_email_cc"] = action_email_cc
@@ -6928,8 +6928,8 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_logevent_param_source"] = action_logevent_param_source
             __props__.__dict__["action_logevent_param_sourcetype"] = action_logevent_param_sourcetype
             __props__.__dict__["action_pagerduty_custom_details"] = action_pagerduty_custom_details
-            __props__.__dict__["action_pagerduty_integration_key"] = action_pagerduty_integration_key
-            __props__.__dict__["action_pagerduty_integration_key_override"] = action_pagerduty_integration_key_override
+            __props__.__dict__["action_pagerduty_integration_key"] = None if action_pagerduty_integration_key is None else pulumi.Output.secret(action_pagerduty_integration_key)
+            __props__.__dict__["action_pagerduty_integration_key_override"] = None if action_pagerduty_integration_key_override is None else pulumi.Output.secret(action_pagerduty_integration_key_override)
             __props__.__dict__["action_pagerduty_integration_url"] = action_pagerduty_integration_url
             __props__.__dict__["action_pagerduty_integration_url_override"] = action_pagerduty_integration_url_override
             __props__.__dict__["action_populate_lookup_command"] = action_populate_lookup_command
@@ -6961,7 +6961,7 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_slack_param_channel"] = action_slack_param_channel
             __props__.__dict__["action_slack_param_fields"] = action_slack_param_fields
             __props__.__dict__["action_slack_param_message"] = action_slack_param_message
-            __props__.__dict__["action_slack_param_webhook_url_override"] = action_slack_param_webhook_url_override
+            __props__.__dict__["action_slack_param_webhook_url_override"] = None if action_slack_param_webhook_url_override is None else pulumi.Output.secret(action_slack_param_webhook_url_override)
             __props__.__dict__["action_snow_event_param_account"] = action_snow_event_param_account
             __props__.__dict__["action_snow_event_param_additional_info"] = action_snow_event_param_additional_info
             __props__.__dict__["action_snow_event_param_ci_identifier"] = action_snow_event_param_ci_identifier
@@ -6986,9 +6986,9 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_victorops_param_monitoring_tool"] = action_victorops_param_monitoring_tool
             __props__.__dict__["action_victorops_param_poll_interval"] = action_victorops_param_poll_interval
             __props__.__dict__["action_victorops_param_record_id"] = action_victorops_param_record_id
-            __props__.__dict__["action_victorops_param_routing_key_override"] = action_victorops_param_routing_key_override
+            __props__.__dict__["action_victorops_param_routing_key_override"] = None if action_victorops_param_routing_key_override is None else pulumi.Output.secret(action_victorops_param_routing_key_override)
             __props__.__dict__["action_victorops_param_state_message"] = action_victorops_param_state_message
-            __props__.__dict__["action_webhook_param_url"] = action_webhook_param_url
+            __props__.__dict__["action_webhook_param_url"] = None if action_webhook_param_url is None else pulumi.Output.secret(action_webhook_param_url)
             __props__.__dict__["actions"] = actions
             __props__.__dict__["alert_comparator"] = alert_comparator
             __props__.__dict__["alert_condition"] = alert_condition
@@ -7058,6 +7058,8 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_rss"] = None
             __props__.__dict__["action_script"] = None
             __props__.__dict__["action_summary_index"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["actionEmailAuthPassword", "actionPagerdutyIntegrationKey", "actionPagerdutyIntegrationKeyOverride", "actionSlackParamWebhookUrlOverride", "actionVictoropsParamRoutingKeyOverride", "actionWebhookParamUrl"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(SavedSearches, __self__).__init__(
             'splunk:index/savedSearches:SavedSearches',
             resource_name,

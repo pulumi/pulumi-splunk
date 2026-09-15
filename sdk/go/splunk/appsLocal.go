@@ -91,6 +91,17 @@ func NewAppsLocal(ctx *pulumi.Context,
 		args = &AppsLocalArgs{}
 	}
 
+	if args.Auth != nil {
+		args.Auth = pulumi.ToSecret(args.Auth).(pulumi.StringPtrInput)
+	}
+	if args.Session != nil {
+		args.Session = pulumi.ToSecret(args.Session).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"auth",
+		"session",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppsLocal
 	err := ctx.RegisterResource("splunk:index/appsLocal:AppsLocal", name, args, &resource, opts...)
