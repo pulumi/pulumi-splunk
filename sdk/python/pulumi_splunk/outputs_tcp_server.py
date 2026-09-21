@@ -406,7 +406,7 @@ class OutputsTcpServer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict', 'outputs.OutputsTcpServerAcl']]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  method: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -437,7 +437,7 @@ class OutputsTcpServer(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict', 'outputs.OutputsTcpServerAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
         :param pulumi.Input[_builtins.str] method: Valid values: (clone | balance | autobalance)
                The data distribution method used when two or more servers exist in the same forwarder group.
@@ -490,7 +490,7 @@ class OutputsTcpServer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict', 'outputs.OutputsTcpServerAcl']]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  method: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -533,7 +533,7 @@ class OutputsTcpServer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict', 'outputs.OutputsTcpServerAcl']]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
             method: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -551,7 +551,7 @@ class OutputsTcpServer(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict', 'outputs.OutputsTcpServerAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
         :param pulumi.Input[_builtins.str] method: Valid values: (clone | balance | autobalance)
                The data distribution method used when two or more servers exist in the same forwarder group.

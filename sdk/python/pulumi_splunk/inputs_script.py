@@ -369,7 +369,7 @@ class InputsScript(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict', 'outputs.InputsScriptAcl']]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  host: pulumi.Input[Optional[_builtins.str]] = None,
                  index: pulumi.Input[Optional[_builtins.str]] = None,
@@ -399,7 +399,7 @@ class InputsScript(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict', 'outputs.InputsScriptAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: Specifies whether the input script is disabled.
         :param pulumi.Input[_builtins.str] host: Sets the host for events from this input. Defaults to whatever host sent the event.
         :param pulumi.Input[_builtins.str] index: Sets the index for events from this input. Defaults to the main index.
@@ -450,7 +450,7 @@ class InputsScript(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict', 'outputs.InputsScriptAcl']]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  host: pulumi.Input[Optional[_builtins.str]] = None,
                  index: pulumi.Input[Optional[_builtins.str]] = None,
@@ -491,7 +491,7 @@ class InputsScript(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict', 'outputs.InputsScriptAcl']]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
             host: pulumi.Input[Optional[_builtins.str]] = None,
             index: pulumi.Input[Optional[_builtins.str]] = None,
@@ -508,7 +508,7 @@ class InputsScript(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsScriptAclArgs', 'InputsScriptAclArgsDict', 'outputs.InputsScriptAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: Specifies whether the input script is disabled.
         :param pulumi.Input[_builtins.str] host: Sets the host for events from this input. Defaults to whatever host sent the event.
         :param pulumi.Input[_builtins.str] index: Sets the index for events from this input. Defaults to the main index.

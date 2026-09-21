@@ -136,7 +136,7 @@ class LookupDefinition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict', 'outputs.LookupDefinitionAcl']]] = None,
                  filename: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -154,15 +154,15 @@ class LookupDefinition(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         example = splunk.LookupDefinition("example",
-            name="example_lookup_definition",
-            filename="example_lookup_file.csv",
             acl={
                 "owner": "admin",
                 "app": "search",
                 "sharing": "app",
                 "reads": ["*"],
                 "writes": ["admin"],
-            })
+            },
+            name="example_lookup_definition",
+            filename="example_lookup_file.csv")
         ```
 
         ## Validation Rules
@@ -172,7 +172,7 @@ class LookupDefinition(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
+        :param pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict', 'outputs.LookupDefinitionAcl']] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
         :param pulumi.Input[_builtins.str] filename: The filename for the lookup table, usually ending in `.csv`.
         :param pulumi.Input[_builtins.str] name: A unique name for the lookup definition within the app context.
         """
@@ -196,15 +196,15 @@ class LookupDefinition(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         example = splunk.LookupDefinition("example",
-            name="example_lookup_definition",
-            filename="example_lookup_file.csv",
             acl={
                 "owner": "admin",
                 "app": "search",
                 "sharing": "app",
                 "reads": ["*"],
                 "writes": ["admin"],
-            })
+            },
+            name="example_lookup_definition",
+            filename="example_lookup_file.csv")
         ```
 
         ## Validation Rules
@@ -227,7 +227,7 @@ class LookupDefinition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict', 'outputs.LookupDefinitionAcl']]] = None,
                  filename: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -256,7 +256,7 @@ class LookupDefinition(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict', 'outputs.LookupDefinitionAcl']]] = None,
             filename: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None) -> 'LookupDefinition':
         """
@@ -266,7 +266,7 @@ class LookupDefinition(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict']] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
+        :param pulumi.Input[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict', 'outputs.LookupDefinitionAcl']] acl: Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
         :param pulumi.Input[_builtins.str] filename: The filename for the lookup table, usually ending in `.csv`.
         :param pulumi.Input[_builtins.str] name: A unique name for the lookup definition within the app context.
         """

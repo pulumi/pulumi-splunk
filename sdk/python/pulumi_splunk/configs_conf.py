@@ -146,7 +146,7 @@ class ConfigsConf(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict', 'outputs.ConfigsConfAcl']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -172,7 +172,7 @@ class ConfigsConf(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict', 'outputs.ConfigsConfAcl']] acl: The app/user context that is the namespace for the resource
                
                **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
         :param pulumi.Input[_builtins.str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza
@@ -219,7 +219,7 @@ class ConfigsConf(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict', 'outputs.ConfigsConfAcl']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -244,7 +244,7 @@ class ConfigsConf(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict', 'outputs.ConfigsConfAcl']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'ConfigsConf':
         """
@@ -254,7 +254,7 @@ class ConfigsConf(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['ConfigsConfAclArgs', 'ConfigsConfAclArgsDict', 'outputs.ConfigsConfAcl']] acl: The app/user context that is the namespace for the resource
                
                **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configs_conf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. <b>Although the plan will show them being removed, these default fields will <b>not</b> actually be modified or removed by Splunk.</b>
         :param pulumi.Input[_builtins.str] name: A '/' separated string consisting of {conf_file_name}/{stanza_name} ex. props/custom_stanza

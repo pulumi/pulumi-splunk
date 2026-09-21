@@ -26,6 +26,12 @@ namespace Pulumi.Splunk
     /// {
     ///     var test = new Splunk.SavedEventTypes("test", new()
     ///     {
+    ///         Acl = new Splunk.Inputs.SavedEventTypesAclArgs
+    ///         {
+    ///             Owner = "admin",
+    ///             Sharing = "app",
+    ///             App = "launcher",
+    ///         },
     ///         Name = "test",
     ///         Description = "Test New event description",
     ///         Disabled = false,
@@ -35,12 +41,6 @@ namespace Pulumi.Splunk
     ///         Tags = new[]
     ///         {
     ///             "tag",
-    ///         },
-    ///         Acl = new Splunk.Inputs.SavedEventTypesAclArgs
-    ///         {
-    ///             Owner = "admin",
-    ///             Sharing = "app",
-    ///             App = "launcher",
     ///         },
     ///     });
     /// 

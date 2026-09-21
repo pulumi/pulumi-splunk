@@ -30,6 +30,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewInputsHttpEventCollector(ctx, "hec-token-01", &splunk.InputsHttpEventCollectorArgs{
+//				Acl: &splunk.InputsHttpEventCollectorAclArgs{
+//					Owner:   pulumi.String("user01"),
+//					Sharing: pulumi.String("global"),
+//					Reads: pulumi.StringArray{
+//						pulumi.String("admin"),
+//					},
+//					Writes: pulumi.StringArray{
+//						pulumi.String("admin"),
+//					},
+//				},
 //				Name:  pulumi.String("hec-token-01"),
 //				Index: pulumi.String("main"),
 //				Indexes: pulumi.StringArray{
@@ -41,16 +51,6 @@ import (
 //				Sourcetype: pulumi.String("new:sourcetype"),
 //				Disabled:   pulumi.Bool(false),
 //				UseAck:     pulumi.Int(0),
-//				Acl: &splunk.InputsHttpEventCollectorAclArgs{
-//					Owner:   pulumi.String("user01"),
-//					Sharing: pulumi.String("global"),
-//					Reads: pulumi.StringArray{
-//						pulumi.String("admin"),
-//					},
-//					Writes: pulumi.StringArray{
-//						pulumi.String("admin"),
-//					},
-//				},
 //			})
 //			if err != nil {
 //				return err

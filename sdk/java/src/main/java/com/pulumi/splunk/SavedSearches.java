@@ -50,6 +50,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) }{{@code
  *         var savedSearch = new SavedSearches("savedSearch", SavedSearchesArgs.builder()
+ *             .acl(SavedSearchesAclArgs.builder()
+ *                 .owner("admin")
+ *                 .sharing("app")
+ *                 .app("launcher")
+ *                 .build())
  *             .name("Test New Alert")
  *             .search("index=main")
  *             .actions("email")
@@ -63,11 +68,6 @@ import javax.annotation.Nullable;
  *             .dispatchEarliestTime("rt-15m")
  *             .dispatchLatestTime("rt-0m")
  *             .cronSchedule("*}&#47;{@code 5 * * * *")
- *             .acl(SavedSearchesAclArgs.builder()
- *                 .owner("admin")
- *                 .sharing("app")
- *                 .app("launcher")
- *                 .build())
  *             .build());
  * 
  *     }}{@code

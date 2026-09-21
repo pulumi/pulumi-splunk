@@ -28,8 +28,6 @@ namespace Pulumi.Splunk
     /// {
     ///     var example = new Splunk.LookupDefinition("example", new()
     ///     {
-    ///         Name = "example_lookup_definition",
-    ///         Filename = "example_lookup_file.csv",
     ///         Acl = new Splunk.Inputs.LookupDefinitionAclArgs
     ///         {
     ///             Owner = "admin",
@@ -44,6 +42,8 @@ namespace Pulumi.Splunk
     ///                 "admin",
     ///             },
     ///         },
+    ///         Name = "example_lookup_definition",
+    ///         Filename = "example_lookup_file.csv",
     ///     });
     /// 
     /// });

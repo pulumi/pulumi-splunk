@@ -18,6 +18,11 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const savedSearch = new splunk.SavedSearches("saved_search", {
+ *     acl: {
+ *         owner: "admin",
+ *         sharing: "app",
+ *         app: "launcher",
+ *     },
  *     name: "Test New Alert",
  *     search: "index=main",
  *     actions: "email",
@@ -31,11 +36,6 @@ import * as utilities from "./utilities";
  *     dispatchEarliestTime: "rt-15m",
  *     dispatchLatestTime: "rt-0m",
  *     cronSchedule: "*&#47;5 * * * *",
- *     acl: {
- *         owner: "admin",
- *         sharing: "app",
- *         app: "launcher",
- *     },
  * });
  * ```
  *

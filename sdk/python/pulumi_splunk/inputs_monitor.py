@@ -554,7 +554,7 @@ class InputsMonitor(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict', 'outputs.InputsMonitorAcl']]] = None,
                  blacklist: pulumi.Input[Optional[_builtins.str]] = None,
                  crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -591,7 +591,7 @@ class InputsMonitor(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict', 'outputs.InputsMonitorAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] blacklist: Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
         :param pulumi.Input[_builtins.str] crc_salt: A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if input monitoring is disabled.
@@ -647,7 +647,7 @@ class InputsMonitor(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict', 'outputs.InputsMonitorAcl']]] = None,
                  blacklist: pulumi.Input[Optional[_builtins.str]] = None,
                  crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -698,7 +698,7 @@ class InputsMonitor(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict', 'outputs.InputsMonitorAcl']]] = None,
             blacklist: pulumi.Input[Optional[_builtins.str]] = None,
             crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -721,7 +721,7 @@ class InputsMonitor(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict', 'outputs.InputsMonitorAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] blacklist: Specify a regular expression for a file path. The file path that matches this regular expression is not indexed.
         :param pulumi.Input[_builtins.str] crc_salt: A string that modifies the file tracking identity for files in this input. The magic value <SOURCE> invokes special behavior.
         :param pulumi.Input[_builtins.bool] disabled: Indicates if input monitoring is disabled.

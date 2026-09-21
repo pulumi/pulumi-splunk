@@ -20,8 +20,6 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const example = new splunk.LookupDefinition("example", {
- *     name: "example_lookup_definition",
- *     filename: "example_lookup_file.csv",
  *     acl: {
  *         owner: "admin",
  *         app: "search",
@@ -29,6 +27,8 @@ import * as utilities from "./utilities";
  *         reads: ["*"],
  *         writes: ["admin"],
  *     },
+ *     name: "example_lookup_definition",
+ *     filename: "example_lookup_file.csv",
  * });
  * ```
  *

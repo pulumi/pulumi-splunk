@@ -1466,7 +1466,7 @@ class Indexes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict', 'outputs.IndexesAcl']]] = None,
                  block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
                  bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
                  cold_path: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1531,7 +1531,7 @@ class Indexes(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict', 'outputs.IndexesAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.int] block_sign_size: Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
         :param pulumi.Input[_builtins.str] bucket_rebuild_memory_hint: Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
                <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.
@@ -1659,7 +1659,7 @@ class Indexes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict', 'outputs.IndexesAcl']]] = None,
                  block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
                  bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
                  cold_path: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1756,7 +1756,7 @@ class Indexes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict', 'outputs.IndexesAcl']]] = None,
             block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
             bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
             cold_path: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1802,7 +1802,7 @@ class Indexes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['IndexesAclArgs', 'IndexesAclArgsDict', 'outputs.IndexesAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.int] block_sign_size: Controls how many events make up a block for block signatures. If this is set to 0, block signing is disabled for this index. <br>A recommended value is 100.
         :param pulumi.Input[_builtins.str] bucket_rebuild_memory_hint: Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.
                <be>Caution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.

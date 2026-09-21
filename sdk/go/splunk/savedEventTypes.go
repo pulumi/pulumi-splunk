@@ -31,6 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewSavedEventTypes(ctx, "test", &splunk.SavedEventTypesArgs{
+//				Acl: &splunk.SavedEventTypesAclArgs{
+//					Owner:   pulumi.String("admin"),
+//					Sharing: pulumi.String("app"),
+//					App:     pulumi.String("launcher"),
+//				},
 //				Name:        pulumi.String("test"),
 //				Description: pulumi.String("Test New event description"),
 //				Disabled:    pulumi.Bool(false),
@@ -39,11 +44,6 @@ import (
 //				Color:       pulumi.String("et_blue"),
 //				Tags: pulumi.StringArray{
 //					pulumi.String("tag"),
-//				},
-//				Acl: &splunk.SavedEventTypesAclArgs{
-//					Owner:   pulumi.String("admin"),
-//					Sharing: pulumi.String("app"),
-//					App:     pulumi.String("launcher"),
 //				},
 //			})
 //			if err != nil {

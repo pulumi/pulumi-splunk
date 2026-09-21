@@ -18,6 +18,11 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const test = new splunk.SavedEventTypes("test", {
+ *     acl: {
+ *         owner: "admin",
+ *         sharing: "app",
+ *         app: "launcher",
+ *     },
  *     name: "test",
  *     description: "Test New event description",
  *     disabled: false,
@@ -25,11 +30,6 @@ import * as utilities from "./utilities";
  *     search: "index=main",
  *     color: "et_blue",
  *     tags: ["tag"],
- *     acl: {
- *         owner: "admin",
- *         sharing: "app",
- *         app: "launcher",
- *     },
  * });
  * ```
  */

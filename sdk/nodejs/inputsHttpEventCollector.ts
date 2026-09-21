@@ -18,6 +18,12 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const hec_token_01 = new splunk.InputsHttpEventCollector("hec-token-01", {
+ *     acl: {
+ *         owner: "user01",
+ *         sharing: "global",
+ *         reads: ["admin"],
+ *         writes: ["admin"],
+ *     },
  *     name: "hec-token-01",
  *     index: "main",
  *     indexes: [
@@ -29,12 +35,6 @@ import * as utilities from "./utilities";
  *     sourcetype: "new:sourcetype",
  *     disabled: false,
  *     useAck: 0,
- *     acl: {
- *         owner: "user01",
- *         sharing: "global",
- *         reads: ["admin"],
- *         writes: ["admin"],
- *     },
  * });
  * ```
  */

@@ -296,7 +296,7 @@ class SavedEventTypes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict', 'outputs.SavedEventTypesAcl']]] = None,
                  color: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -317,24 +317,24 @@ class SavedEventTypes(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         test = splunk.SavedEventTypes("test",
+            acl={
+                "owner": "admin",
+                "sharing": "app",
+                "app": "launcher",
+            },
             name="test",
             description="Test New event description",
             disabled=False,
             priority=1,
             search="index=main",
             color="et_blue",
-            tags=["tag"],
-            acl={
-                "owner": "admin",
-                "sharing": "app",
-                "app": "launcher",
-            })
+            tags=["tag"])
         ```
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict', 'outputs.SavedEventTypesAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] color: Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.
         :param pulumi.Input[_builtins.str] description: Human-readable description of this event type.
         :param pulumi.Input[_builtins.bool] disabled: If True, disables the event type.
@@ -361,18 +361,18 @@ class SavedEventTypes(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         test = splunk.SavedEventTypes("test",
+            acl={
+                "owner": "admin",
+                "sharing": "app",
+                "app": "launcher",
+            },
             name="test",
             description="Test New event description",
             disabled=False,
             priority=1,
             search="index=main",
             color="et_blue",
-            tags=["tag"],
-            acl={
-                "owner": "admin",
-                "sharing": "app",
-                "app": "launcher",
-            })
+            tags=["tag"])
         ```
 
 
@@ -391,7 +391,7 @@ class SavedEventTypes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict', 'outputs.SavedEventTypesAcl']]] = None,
                  color: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -430,7 +430,7 @@ class SavedEventTypes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict', 'outputs.SavedEventTypesAcl']]] = None,
             color: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -445,7 +445,7 @@ class SavedEventTypes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict', 'outputs.SavedEventTypesAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] color: Color for this event type. The supported colors are: none, et_blue, et_green, et_magenta, et_orange, et_purple, et_red, et_sky, et_teal, et_yellow.
         :param pulumi.Input[_builtins.str] description: Human-readable description of this event type.
         :param pulumi.Input[_builtins.bool] disabled: If True, disables the event type.
