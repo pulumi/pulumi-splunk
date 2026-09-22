@@ -49,6 +49,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var test = new SavedEventTypes("test", SavedEventTypesArgs.builder()
+ *             .acl(SavedEventTypesAclArgs.builder()
+ *                 .owner("admin")
+ *                 .sharing("app")
+ *                 .app("launcher")
+ *                 .build())
  *             .name("test")
  *             .description("Test New event description")
  *             .disabled(false)
@@ -56,11 +61,6 @@ import javax.annotation.Nullable;
  *             .search("index=main")
  *             .color("et_blue")
  *             .tags("tag")
- *             .acl(SavedEventTypesAclArgs.builder()
- *                 .owner("admin")
- *                 .sharing("app")
- *                 .app("launcher")
- *                 .build())
  *             .build());
  * 
  *     }

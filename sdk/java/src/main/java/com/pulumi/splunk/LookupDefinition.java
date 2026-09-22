@@ -47,8 +47,6 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var example = new LookupDefinition("example", LookupDefinitionArgs.builder()
- *             .name("example_lookup_definition")
- *             .filename("example_lookup_file.csv")
  *             .acl(LookupDefinitionAclArgs.builder()
  *                 .owner("admin")
  *                 .app("search")
@@ -56,6 +54,8 @@ import javax.annotation.Nullable;
  *                 .reads("*")
  *                 .writes("admin")
  *                 .build())
+ *             .name("example_lookup_definition")
+ *             .filename("example_lookup_file.csv")
  *             .build());
  * 
  *     }

@@ -502,7 +502,7 @@ class AppsLocal(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict', 'outputs.AppsLocalAcl']]] = None,
                  auth: pulumi.Input[Optional[_builtins.str]] = None,
                  author: pulumi.Input[Optional[_builtins.str]] = None,
                  configured: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -536,7 +536,7 @@ class AppsLocal(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict', 'outputs.AppsLocalAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] auth: Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         :param pulumi.Input[_builtins.str] author: For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
         :param pulumi.Input[_builtins.bool] configured: Custom setup complete indication:
@@ -600,7 +600,7 @@ class AppsLocal(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict', 'outputs.AppsLocalAcl']]] = None,
                  auth: pulumi.Input[Optional[_builtins.str]] = None,
                  author: pulumi.Input[Optional[_builtins.str]] = None,
                  configured: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -647,7 +647,7 @@ class AppsLocal(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict', 'outputs.AppsLocalAcl']]] = None,
             auth: pulumi.Input[Optional[_builtins.str]] = None,
             author: pulumi.Input[Optional[_builtins.str]] = None,
             configured: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -667,7 +667,7 @@ class AppsLocal(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict', 'outputs.AppsLocalAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] auth: Splunkbase session token for operations like install and update that require login. Use auth or session when installing or updating an app through Splunkbase.
         :param pulumi.Input[_builtins.str] author: For apps posted to Splunkbase, use your Splunk account username. For internal apps, include your name and contact information.
         :param pulumi.Input[_builtins.bool] configured: Custom setup complete indication:

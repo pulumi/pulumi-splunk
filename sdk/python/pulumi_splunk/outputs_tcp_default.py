@@ -378,7 +378,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict', 'outputs.OutputsTcpDefaultAcl']]] = None,
                  default_group: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
@@ -412,7 +412,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict', 'outputs.OutputsTcpDefaultAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] default_group: Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
                The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
         :param pulumi.Input[_builtins.bool] disabled: Disables default tcpout settings
@@ -477,7 +477,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict', 'outputs.OutputsTcpDefaultAcl']]] = None,
                  default_group: pulumi.Input[Optional[_builtins.str]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
@@ -514,7 +514,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict', 'outputs.OutputsTcpDefaultAcl']]] = None,
             default_group: pulumi.Input[Optional[_builtins.str]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
             drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
@@ -530,7 +530,7 @@ class OutputsTcpDefault(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict', 'outputs.OutputsTcpDefaultAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] default_group: Comma-separated list of one or more target group names, specified later in [tcpout:<target_group>] stanzas of outputs.conf.spec file.
                The forwarder sends all data to the specified groups. If you do not want to forward data automatically, do not set this attribute. Can be overridden by an inputs.conf _TCP_ROUTING setting, which in turn can be overridden by a props.conf/transforms.conf modifier.
         :param pulumi.Input[_builtins.bool] disabled: Disables default tcpout settings

@@ -72,13 +72,13 @@ func Provider() tfbridge.ProviderInfo {
 
 	prov := tfbridge.ProviderInfo{
 		P:           p,
-		Name:        "splunk",
+		Name:        mainPkg,
 		Description: "A Pulumi package for creating and managing splunk cloud resources.",
-		Keywords:    []string{"pulumi", "splunk"},
+		Keywords:    []string{"pulumi", mainPkg},
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
 		Repository:  "https://github.com/pulumi/pulumi-splunk",
-		GitHubOrg:   "splunk",
+		GitHubOrg:   mainPkg,
 		Config:      map[string]*tfbridge.SchemaInfo{},
 		DocRules:    &tfbridge.DocRuleInfo{EditRules: docEditRules},
 		Resources: map[string]*tfbridge.ResourceInfo{

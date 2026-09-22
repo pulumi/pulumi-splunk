@@ -32,7 +32,6 @@ namespace Pulumi.Splunk
     /// {
     ///     var myApp = new Splunk.GenericAcl("my_app", new()
     ///     {
-    ///         Path = "apps/local/my_app",
     ///         Acl = new Splunk.Inputs.GenericAclAclArgs
     ///         {
     ///             App = "system",
@@ -47,11 +46,11 @@ namespace Pulumi.Splunk
     ///                 "power",
     ///             },
     ///         },
+    ///         Path = "apps/local/my_app",
     ///     });
     /// 
     ///     var myDashboard = new Splunk.GenericAcl("my_dashboard", new()
     ///     {
-    ///         Path = "data/ui/views/my_dashboard",
     ///         Acl = new Splunk.Inputs.GenericAclAclArgs
     ///         {
     ///             App = "my_app",
@@ -65,6 +64,7 @@ namespace Pulumi.Splunk
     ///                 "team_joe",
     ///             },
     ///         },
+    ///         Path = "data/ui/views/my_dashboard",
     ///     });
     /// 
     /// });

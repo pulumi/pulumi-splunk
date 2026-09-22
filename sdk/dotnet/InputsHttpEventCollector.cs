@@ -26,18 +26,6 @@ namespace Pulumi.Splunk
     /// {
     ///     var hec_token_01 = new Splunk.InputsHttpEventCollector("hec-token-01", new()
     ///     {
-    ///         Name = "hec-token-01",
-    ///         Index = "main",
-    ///         Indexes = new[]
-    ///         {
-    ///             "main",
-    ///             "history",
-    ///             "summary",
-    ///         },
-    ///         Source = "new:source",
-    ///         Sourcetype = "new:sourcetype",
-    ///         Disabled = false,
-    ///         UseAck = 0,
     ///         Acl = new Splunk.Inputs.InputsHttpEventCollectorAclArgs
     ///         {
     ///             Owner = "user01",
@@ -51,6 +39,18 @@ namespace Pulumi.Splunk
     ///                 "admin",
     ///             },
     ///         },
+    ///         Name = "hec-token-01",
+    ///         Index = "main",
+    ///         Indexes = new[]
+    ///         {
+    ///             "main",
+    ///             "history",
+    ///             "summary",
+    ///         },
+    ///         Source = "new:source",
+    ///         Sourcetype = "new:sourcetype",
+    ///         Disabled = false,
+    ///         UseAck = 0,
     ///     });
     /// 
     /// });

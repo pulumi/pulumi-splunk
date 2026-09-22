@@ -33,8 +33,6 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewLookupDefinition(ctx, "example", &splunk.LookupDefinitionArgs{
-//				Name:     pulumi.String("example_lookup_definition"),
-//				Filename: pulumi.String("example_lookup_file.csv"),
 //				Acl: &splunk.LookupDefinitionAclArgs{
 //					Owner:   pulumi.String("admin"),
 //					App:     pulumi.String("search"),
@@ -46,6 +44,8 @@ import (
 //						pulumi.String("admin"),
 //					},
 //				},
+//				Name:     pulumi.String("example_lookup_definition"),
+//				Filename: pulumi.String("example_lookup_file.csv"),
 //			})
 //			if err != nil {
 //				return err

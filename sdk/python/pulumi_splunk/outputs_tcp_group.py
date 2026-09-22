@@ -433,7 +433,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict', 'outputs.OutputsTcpGroupAcl']]] = None,
                  compressed: pulumi.Input[Optional[_builtins.bool]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
@@ -471,7 +471,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict', 'outputs.OutputsTcpGroupAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] compressed: If true, forwarder sends compressed data. If set to true, the receiver port must also have compression turned on.
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
         :param pulumi.Input[_builtins.int] drop_events_on_queue_full: If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).
@@ -538,7 +538,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict', 'outputs.OutputsTcpGroupAcl']]] = None,
                  compressed: pulumi.Input[Optional[_builtins.bool]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
@@ -583,7 +583,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict', 'outputs.OutputsTcpGroupAcl']]] = None,
             compressed: pulumi.Input[Optional[_builtins.bool]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
             drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
@@ -601,7 +601,7 @@ class OutputsTcpGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict', 'outputs.OutputsTcpGroupAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] compressed: If true, forwarder sends compressed data. If set to true, the receiver port must also have compression turned on.
         :param pulumi.Input[_builtins.bool] disabled: If true, disables the group.
         :param pulumi.Input[_builtins.int] drop_events_on_queue_full: If set to a positive number, wait the specified number of seconds before throwing out all new events until the output queue has space. Defaults to -1 (do not drop events).

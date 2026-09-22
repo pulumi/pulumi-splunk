@@ -31,6 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := splunk.NewSavedSearches(ctx, "saved_search", &splunk.SavedSearchesArgs{
+//				Acl: &splunk.SavedSearchesAclArgs{
+//					Owner:   pulumi.String("admin"),
+//					Sharing: pulumi.String("app"),
+//					App:     pulumi.String("launcher"),
+//				},
 //				Name:                   pulumi.String("Test New Alert"),
 //				Search:                 pulumi.String("index=main"),
 //				Actions:                pulumi.String("email"),
@@ -44,11 +49,6 @@ import (
 //				DispatchEarliestTime:   pulumi.String("rt-15m"),
 //				DispatchLatestTime:     pulumi.String("rt-0m"),
 //				CronSchedule:           pulumi.String("*/5 * * * *"),
-//				Acl: &splunk.SavedSearchesAclArgs{
-//					Owner:   pulumi.String("admin"),
-//					Sharing: pulumi.String("app"),
-//					App:     pulumi.String("launcher"),
-//				},
 //			})
 //			if err != nil {
 //				return err

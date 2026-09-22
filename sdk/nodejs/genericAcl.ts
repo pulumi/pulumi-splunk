@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  * import * as splunk from "@pulumi/splunk";
  *
  * const myApp = new splunk.GenericAcl("my_app", {
- *     path: "apps/local/my_app",
  *     acl: {
  *         app: "system",
  *         owner: "nobody",
@@ -34,15 +33,16 @@ import * as utilities from "./utilities";
  *             "power",
  *         ],
  *     },
+ *     path: "apps/local/my_app",
  * });
  * const myDashboard = new splunk.GenericAcl("my_dashboard", {
- *     path: "data/ui/views/my_dashboard",
  *     acl: {
  *         app: "my_app",
  *         owner: "joe_user",
  *         reads: ["team_joe"],
  *         writes: ["team_joe"],
  *     },
+ *     path: "data/ui/views/my_dashboard",
  * });
  * ```
  *

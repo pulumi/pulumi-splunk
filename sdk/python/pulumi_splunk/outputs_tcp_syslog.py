@@ -322,7 +322,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict', 'outputs.OutputsTcpSyslogAcl']]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
@@ -351,7 +351,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict', 'outputs.OutputsTcpSyslogAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables global syslog settings.
         :param pulumi.Input[_builtins.str] name: Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
         :param pulumi.Input[_builtins.int] priority: Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.
@@ -405,7 +405,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict', 'outputs.OutputsTcpSyslogAcl']]] = None,
                  disabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
@@ -440,7 +440,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict', 'outputs.OutputsTcpSyslogAcl']]] = None,
             disabled: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             priority: pulumi.Input[Optional[_builtins.int]] = None,
@@ -455,7 +455,7 @@ class OutputsTcpSyslog(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['OutputsTcpSyslogAclArgs', 'OutputsTcpSyslogAclArgsDict', 'outputs.OutputsTcpSyslogAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.bool] disabled: If true, disables global syslog settings.
         :param pulumi.Input[_builtins.str] name: Name of the syslog output group. This is name used when creating syslog configuration in outputs.conf.
         :param pulumi.Input[_builtins.int] priority: Sets syslog priority value. The priority value should specified as an integer. See $SPLUNK_HOME/etc/system/README/outputs.conf.spec for details.

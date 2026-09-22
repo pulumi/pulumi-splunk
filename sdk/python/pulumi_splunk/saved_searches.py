@@ -6137,7 +6137,7 @@ class SavedSearches(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict', 'outputs.SavedSearchesAcl']]] = None,
                  action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
                  action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
                  action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
@@ -6338,6 +6338,11 @@ class SavedSearches(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         saved_search = splunk.SavedSearches("saved_search",
+            acl={
+                "owner": "admin",
+                "sharing": "app",
+                "app": "launcher",
+            },
             name="Test New Alert",
             search="index=main",
             actions="email",
@@ -6350,12 +6355,7 @@ class SavedSearches(pulumi.CustomResource):
             action_email_track_alert=True,
             dispatch_earliest_time="rt-15m",
             dispatch_latest_time="rt-0m",
-            cron_schedule="*/5 * * * *",
-            acl={
-                "owner": "admin",
-                "sharing": "app",
-                "app": "launcher",
-            })
+            cron_schedule="*/5 * * * *")
         ```
 
         ## Import
@@ -6392,7 +6392,7 @@ class SavedSearches(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict', 'outputs.SavedSearchesAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
         :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
         :param pulumi.Input[_builtins.str] action_better_webhook_param_credentials: Use the credentials defined in the webhook URL
@@ -6599,6 +6599,11 @@ class SavedSearches(pulumi.CustomResource):
         import pulumi_splunk as splunk
 
         saved_search = splunk.SavedSearches("saved_search",
+            acl={
+                "owner": "admin",
+                "sharing": "app",
+                "app": "launcher",
+            },
             name="Test New Alert",
             search="index=main",
             actions="email",
@@ -6611,12 +6616,7 @@ class SavedSearches(pulumi.CustomResource):
             action_email_track_alert=True,
             dispatch_earliest_time="rt-15m",
             dispatch_latest_time="rt-0m",
-            cron_schedule="*/5 * * * *",
-            acl={
-                "owner": "admin",
-                "sharing": "app",
-                "app": "launcher",
-            })
+            cron_schedule="*/5 * * * *")
         ```
 
         ## Import
@@ -6666,7 +6666,7 @@ class SavedSearches(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+                 acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict', 'outputs.SavedSearchesAcl']]] = None,
                  action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
                  action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
                  action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7070,7 +7070,7 @@ class SavedSearches(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']]] = None,
+            acl: pulumi.Input[Optional[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict', 'outputs.SavedSearchesAcl']]] = None,
             action_better_webhook_param_body_format: pulumi.Input[Optional[_builtins.str]] = None,
             action_better_webhook_param_credential: pulumi.Input[Optional[_builtins.str]] = None,
             action_better_webhook_param_credentials: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7270,7 +7270,7 @@ class SavedSearches(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict']] acl: The app/user context that is the namespace for the resource
+        :param pulumi.Input[Union['SavedSearchesAclArgs', 'SavedSearchesAclArgsDict', 'outputs.SavedSearchesAcl']] acl: The app/user context that is the namespace for the resource
         :param pulumi.Input[_builtins.str] action_better_webhook_param_body_format: Format of the body content. Valid values are json, xml, form-urlencoded, or raw
         :param pulumi.Input[_builtins.str] action_better_webhook_param_credential: Name of the Splunk stored credential to use for authentication
         :param pulumi.Input[_builtins.str] action_better_webhook_param_credentials: Use the credentials defined in the webhook URL
