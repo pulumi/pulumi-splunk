@@ -27,6 +27,8 @@
         "config/vars.ts",
         "configsConf.ts",
         "dataUiViews.ts",
+        "federatedIndexes.ts",
+        "federatedProviders.ts",
         "genericAcl.ts",
         "globalHttpEventCollector.ts",
         "index.ts",

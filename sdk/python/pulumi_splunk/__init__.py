@@ -12,6 +12,8 @@ from .authentication_users import *
 from .authorization_roles import *
 from .configs_conf import *
 from .data_ui_views import *
+from .federated_indexes import *
+from .federated_providers import *
 from .generic_acl import *
 from .global_http_event_collector import *
 from .indexes import *
@@ -92,6 +94,22 @@ _utilities.register(
   "fqn": "pulumi_splunk",
   "classes": {
    "splunk:index/dataUiViews:DataUiViews": "DataUiViews"
+  }
+ },
+ {
+  "pkg": "splunk",
+  "mod": "index/federatedIndexes",
+  "fqn": "pulumi_splunk",
+  "classes": {
+   "splunk:index/federatedIndexes:FederatedIndexes": "FederatedIndexes"
+  }
+ },
+ {
+  "pkg": "splunk",
+  "mod": "index/federatedProviders",
+  "fqn": "pulumi_splunk",
+  "classes": {
+   "splunk:index/federatedProviders:FederatedProviders": "FederatedProviders"
   }
  },
  {

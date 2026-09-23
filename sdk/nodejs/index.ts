@@ -35,6 +35,16 @@ export type DataUiViews = import("./dataUiViews").DataUiViews;
 export const DataUiViews: typeof import("./dataUiViews").DataUiViews = null as any;
 utilities.lazyLoad(exports, ["DataUiViews"], () => require("./dataUiViews"));
 
+export { FederatedIndexesArgs, FederatedIndexesState } from "./federatedIndexes";
+export type FederatedIndexes = import("./federatedIndexes").FederatedIndexes;
+export const FederatedIndexes: typeof import("./federatedIndexes").FederatedIndexes = null as any;
+utilities.lazyLoad(exports, ["FederatedIndexes"], () => require("./federatedIndexes"));
+
+export { FederatedProvidersArgs, FederatedProvidersState } from "./federatedProviders";
+export type FederatedProviders = import("./federatedProviders").FederatedProviders;
+export const FederatedProviders: typeof import("./federatedProviders").FederatedProviders = null as any;
+utilities.lazyLoad(exports, ["FederatedProviders"], () => require("./federatedProviders"));
+
 export { GenericAclArgs, GenericAclState } from "./genericAcl";
 export type GenericAcl = import("./genericAcl").GenericAcl;
 export const GenericAcl: typeof import("./genericAcl").GenericAcl = null as any;
@@ -164,6 +174,10 @@ const _module = {
                 return new ConfigsConf(name, <any>undefined, { urn })
             case "splunk:index/dataUiViews:DataUiViews":
                 return new DataUiViews(name, <any>undefined, { urn })
+            case "splunk:index/federatedIndexes:FederatedIndexes":
+                return new FederatedIndexes(name, <any>undefined, { urn })
+            case "splunk:index/federatedProviders:FederatedProviders":
+                return new FederatedProviders(name, <any>undefined, { urn })
             case "splunk:index/genericAcl:GenericAcl":
                 return new GenericAcl(name, <any>undefined, { urn })
             case "splunk:index/globalHttpEventCollector:GlobalHttpEventCollector":
@@ -215,6 +229,8 @@ pulumi.runtime.registerResourceModule("splunk", "index/authenticationUsers", _mo
 pulumi.runtime.registerResourceModule("splunk", "index/authorizationRoles", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/configsConf", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/dataUiViews", _module)
+pulumi.runtime.registerResourceModule("splunk", "index/federatedIndexes", _module)
+pulumi.runtime.registerResourceModule("splunk", "index/federatedProviders", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/genericAcl", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/globalHttpEventCollector", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/indexes", _module)
