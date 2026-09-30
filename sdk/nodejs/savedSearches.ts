@@ -439,6 +439,14 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionRssTtl: pulumi.Output<string>;
     /**
+     * Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     */
+    declare public readonly actionRunAiagentParamAgentName: pulumi.Output<string>;
+    /**
+     * Prompt passed to the AI agent
+     */
+    declare public readonly actionRunAiagentParamPrompt: pulumi.Output<string>;
+    /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
     declare public /*out*/ readonly actionScript: pulumi.Output<boolean>;
@@ -969,6 +977,8 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionRssMaxTime"] = state?.actionRssMaxTime;
             resourceInputs["actionRssTrackAlert"] = state?.actionRssTrackAlert;
             resourceInputs["actionRssTtl"] = state?.actionRssTtl;
+            resourceInputs["actionRunAiagentParamAgentName"] = state?.actionRunAiagentParamAgentName;
+            resourceInputs["actionRunAiagentParamPrompt"] = state?.actionRunAiagentParamPrompt;
             resourceInputs["actionScript"] = state?.actionScript;
             resourceInputs["actionScriptCommand"] = state?.actionScriptCommand;
             resourceInputs["actionScriptFilename"] = state?.actionScriptFilename;
@@ -1164,6 +1174,8 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionRssMaxTime"] = args?.actionRssMaxTime;
             resourceInputs["actionRssTrackAlert"] = args?.actionRssTrackAlert;
             resourceInputs["actionRssTtl"] = args?.actionRssTtl;
+            resourceInputs["actionRunAiagentParamAgentName"] = args?.actionRunAiagentParamAgentName;
+            resourceInputs["actionRunAiagentParamPrompt"] = args?.actionRunAiagentParamPrompt;
             resourceInputs["actionScriptCommand"] = args?.actionScriptCommand;
             resourceInputs["actionScriptFilename"] = args?.actionScriptFilename;
             resourceInputs["actionScriptHostname"] = args?.actionScriptHostname;
@@ -1627,6 +1639,14 @@ export interface SavedSearchesState {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
     actionRssTtl?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     */
+    actionRunAiagentParamAgentName?: pulumi.Input<string | undefined>;
+    /**
+     * Prompt passed to the AI agent
+     */
+    actionRunAiagentParamPrompt?: pulumi.Input<string | undefined>;
     /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      */
@@ -2393,6 +2413,14 @@ export interface SavedSearchesArgs {
      * Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
      */
     actionRssTtl?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     */
+    actionRunAiagentParamAgentName?: pulumi.Input<string | undefined>;
+    /**
+     * Prompt passed to the AI agent
+     */
+    actionRunAiagentParamPrompt?: pulumi.Input<string | undefined>;
     /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      */

@@ -1300,6 +1300,34 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionRssTtl;
     }
     /**
+     * Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     * 
+     */
+    @Export(name="actionRunAiagentParamAgentName", refs={String.class}, tree="[0]")
+    private Output<String> actionRunAiagentParamAgentName;
+
+    /**
+     * @return Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     * 
+     */
+    public Output<String> actionRunAiagentParamAgentName() {
+        return this.actionRunAiagentParamAgentName;
+    }
+    /**
+     * Prompt passed to the AI agent
+     * 
+     */
+    @Export(name="actionRunAiagentParamPrompt", refs={String.class}, tree="[0]")
+    private Output<String> actionRunAiagentParamPrompt;
+
+    /**
+     * @return Prompt passed to the AI agent
+     * 
+     */
+    public Output<String> actionRunAiagentParamPrompt() {
+        return this.actionRunAiagentParamPrompt;
+    }
+    /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */

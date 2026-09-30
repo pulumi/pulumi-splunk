@@ -36,12 +36,32 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Configuration stanzas in the default `nobody/search` namespace can be imported
+    /// by configuration and stanza name:
+    /// 
+    /// ```sh
+    /// $ pulumi import splunk:index/configsConf:ConfigsConf example "&lt;configuration&gt;/&lt;stanza&gt;"
+    /// ```
+    /// 
+    /// Configuration stanzas in a specific Splunk namespace can be imported with a
+    /// Splunk REST path or URL. URL-encode the stanza as one path segment when needed:
+    /// 
+    /// ```sh
+    /// $ pulumi import splunk:index/configsConf:ConfigsConf example "/servicesNS/&lt;owner&gt;/&lt;app&gt;/configs/conf-&lt;configuration&gt;/&lt;url-encoded-stanza&gt;"
+    /// ```
     /// </summary>
     [SplunkResourceType("splunk:index/configsConf:ConfigsConf")]
     public partial class ConfigsConf : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
+        /// 
+        /// During refresh, the provider reads the stanza through the configured `Acl`
+        /// namespace. Configure `Acl` when the same configuration and stanza name exists
+        /// in more than one app or owner namespace.
         /// 
         /// **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `ConfigsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
         /// </summary>
@@ -109,6 +129,10 @@ namespace Pulumi.Splunk
         /// <summary>
         /// The app/user context that is the namespace for the resource
         /// 
+        /// During refresh, the provider reads the stanza through the configured `Acl`
+        /// namespace. Configure `Acl` when the same configuration and stanza name exists
+        /// in more than one app or owner namespace.
+        /// 
         /// **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `ConfigsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
         /// </summary>
         [Input("acl")]
@@ -142,6 +166,10 @@ namespace Pulumi.Splunk
     {
         /// <summary>
         /// The app/user context that is the namespace for the resource
+        /// 
+        /// During refresh, the provider reads the stanza through the configured `Acl`
+        /// namespace. Configure `Acl` when the same configuration and stanza name exists
+        /// in more than one app or owner namespace.
         /// 
         /// **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `ConfigsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
         /// </summary>

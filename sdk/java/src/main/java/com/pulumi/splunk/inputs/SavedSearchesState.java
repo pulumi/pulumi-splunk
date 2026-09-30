@@ -1295,6 +1295,36 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     * 
+     */
+    @Import(name="actionRunAiagentParamAgentName")
+    private @Nullable Output<String> actionRunAiagentParamAgentName;
+
+    /**
+     * @return Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     * 
+     */
+    public Optional<Output<String>> actionRunAiagentParamAgentName() {
+        return Optional.ofNullable(this.actionRunAiagentParamAgentName);
+    }
+
+    /**
+     * Prompt passed to the AI agent
+     * 
+     */
+    @Import(name="actionRunAiagentParamPrompt")
+    private @Nullable Output<String> actionRunAiagentParamPrompt;
+
+    /**
+     * @return Prompt passed to the AI agent
+     * 
+     */
+    public Optional<Output<String>> actionRunAiagentParamPrompt() {
+        return Optional.ofNullable(this.actionRunAiagentParamPrompt);
+    }
+
+    /**
      * The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
      * 
      */
@@ -3002,6 +3032,8 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         this.actionRssMaxTime = $.actionRssMaxTime;
         this.actionRssTrackAlert = $.actionRssTrackAlert;
         this.actionRssTtl = $.actionRssTtl;
+        this.actionRunAiagentParamAgentName = $.actionRunAiagentParamAgentName;
+        this.actionRunAiagentParamPrompt = $.actionRunAiagentParamPrompt;
         this.actionScript = $.actionScript;
         this.actionScriptCommand = $.actionScriptCommand;
         this.actionScriptFilename = $.actionScriptFilename;
@@ -4913,6 +4945,48 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder actionRssTtl(String actionRssTtl) {
             return actionRssTtl(Output.of(actionRssTtl));
+        }
+
+        /**
+         * @param actionRunAiagentParamAgentName Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamAgentName(@Nullable Output<String> actionRunAiagentParamAgentName) {
+            $.actionRunAiagentParamAgentName = actionRunAiagentParamAgentName;
+            return this;
+        }
+
+        /**
+         * @param actionRunAiagentParamAgentName Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamAgentName(String actionRunAiagentParamAgentName) {
+            return actionRunAiagentParamAgentName(Output.of(actionRunAiagentParamAgentName));
+        }
+
+        /**
+         * @param actionRunAiagentParamPrompt Prompt passed to the AI agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamPrompt(@Nullable Output<String> actionRunAiagentParamPrompt) {
+            $.actionRunAiagentParamPrompt = actionRunAiagentParamPrompt;
+            return this;
+        }
+
+        /**
+         * @param actionRunAiagentParamPrompt Prompt passed to the AI agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamPrompt(String actionRunAiagentParamPrompt) {
+            return actionRunAiagentParamPrompt(Output.of(actionRunAiagentParamPrompt));
         }
 
         /**
