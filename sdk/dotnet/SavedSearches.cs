@@ -595,6 +595,18 @@ namespace Pulumi.Splunk
         public Output<string> ActionRssTtl { get; private set; } = null!;
 
         /// <summary>
+        /// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        /// </summary>
+        [Output("actionRunAiagentParamAgentName")]
+        public Output<string> ActionRunAiagentParamAgentName { get; private set; } = null!;
+
+        /// <summary>
+        /// Prompt passed to the AI agent
+        /// </summary>
+        [Output("actionRunAiagentParamPrompt")]
+        public Output<string> ActionRunAiagentParamPrompt { get; private set; } = null!;
+
+        /// <summary>
         /// The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         /// </summary>
         [Output("actionScript")]
@@ -1820,6 +1832,18 @@ namespace Pulumi.Splunk
         public Input<string>? ActionRssTtl { get; set; }
 
         /// <summary>
+        /// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        /// </summary>
+        [Input("actionRunAiagentParamAgentName")]
+        public Input<string>? ActionRunAiagentParamAgentName { get; set; }
+
+        /// <summary>
+        /// Prompt passed to the AI agent
+        /// </summary>
+        [Input("actionRunAiagentParamPrompt")]
+        public Input<string>? ActionRunAiagentParamPrompt { get; set; }
+
+        /// <summary>
         /// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         /// </summary>
         [Input("actionScriptCommand")]
@@ -3032,6 +3056,18 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionRssTtl")]
         public Input<string>? ActionRssTtl { get; set; }
+
+        /// <summary>
+        /// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        /// </summary>
+        [Input("actionRunAiagentParamAgentName")]
+        public Input<string>? ActionRunAiagentParamAgentName { get; set; }
+
+        /// <summary>
+        /// Prompt passed to the AI agent
+        /// </summary>
+        [Input("actionRunAiagentParamPrompt")]
+        public Input<string>? ActionRunAiagentParamPrompt { get; set; }
 
         /// <summary>
         /// The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.

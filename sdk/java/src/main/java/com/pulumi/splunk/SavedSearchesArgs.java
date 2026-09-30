@@ -1251,6 +1251,36 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     * 
+     */
+    @Import(name="actionRunAiagentParamAgentName")
+    private @Nullable Output<String> actionRunAiagentParamAgentName;
+
+    /**
+     * @return Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+     * 
+     */
+    public Optional<Output<String>> actionRunAiagentParamAgentName() {
+        return Optional.ofNullable(this.actionRunAiagentParamAgentName);
+    }
+
+    /**
+     * Prompt passed to the AI agent
+     * 
+     */
+    @Import(name="actionRunAiagentParamPrompt")
+    private @Nullable Output<String> actionRunAiagentParamPrompt;
+
+    /**
+     * @return Prompt passed to the AI agent
+     * 
+     */
+    public Optional<Output<String>> actionRunAiagentParamPrompt() {
+        return Optional.ofNullable(this.actionRunAiagentParamPrompt);
+    }
+
+    /**
      * The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
      * 
      */
@@ -2925,6 +2955,8 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         this.actionRssMaxTime = $.actionRssMaxTime;
         this.actionRssTrackAlert = $.actionRssTrackAlert;
         this.actionRssTtl = $.actionRssTtl;
+        this.actionRunAiagentParamAgentName = $.actionRunAiagentParamAgentName;
+        this.actionRunAiagentParamPrompt = $.actionRunAiagentParamPrompt;
         this.actionScriptCommand = $.actionScriptCommand;
         this.actionScriptFilename = $.actionScriptFilename;
         this.actionScriptHostname = $.actionScriptHostname;
@@ -4771,6 +4803,48 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionRssTtl(String actionRssTtl) {
             return actionRssTtl(Output.of(actionRssTtl));
+        }
+
+        /**
+         * @param actionRunAiagentParamAgentName Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamAgentName(@Nullable Output<String> actionRunAiagentParamAgentName) {
+            $.actionRunAiagentParamAgentName = actionRunAiagentParamAgentName;
+            return this;
+        }
+
+        /**
+         * @param actionRunAiagentParamAgentName Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamAgentName(String actionRunAiagentParamAgentName) {
+            return actionRunAiagentParamAgentName(Output.of(actionRunAiagentParamAgentName));
+        }
+
+        /**
+         * @param actionRunAiagentParamPrompt Prompt passed to the AI agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamPrompt(@Nullable Output<String> actionRunAiagentParamPrompt) {
+            $.actionRunAiagentParamPrompt = actionRunAiagentParamPrompt;
+            return this;
+        }
+
+        /**
+         * @param actionRunAiagentParamPrompt Prompt passed to the AI agent
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionRunAiagentParamPrompt(String actionRunAiagentParamPrompt) {
+            return actionRunAiagentParamPrompt(Output.of(actionRunAiagentParamPrompt));
         }
 
         /**

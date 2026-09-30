@@ -262,6 +262,10 @@ type SavedSearches struct {
 	ActionRssTrackAlert pulumi.BoolOutput `pulumi:"actionRssTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionRssTtl pulumi.StringOutput `pulumi:"actionRssTtl"`
+	// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+	ActionRunAiagentParamAgentName pulumi.StringOutput `pulumi:"actionRunAiagentParamAgentName"`
+	// Prompt passed to the AI agent
+	ActionRunAiagentParamPrompt pulumi.StringOutput `pulumi:"actionRunAiagentParamPrompt"`
 	// The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionScript pulumi.BoolOutput `pulumi:"actionScript"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -710,6 +714,10 @@ type savedSearchesState struct {
 	ActionRssTrackAlert *bool `pulumi:"actionRssTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionRssTtl *string `pulumi:"actionRssTtl"`
+	// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+	ActionRunAiagentParamAgentName *string `pulumi:"actionRunAiagentParamAgentName"`
+	// Prompt passed to the AI agent
+	ActionRunAiagentParamPrompt *string `pulumi:"actionRunAiagentParamPrompt"`
 	// The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionScript *bool `pulumi:"actionScript"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -1099,6 +1107,10 @@ type SavedSearchesState struct {
 	ActionRssTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionRssTtl pulumi.StringPtrInput
+	// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+	ActionRunAiagentParamAgentName pulumi.StringPtrInput
+	// Prompt passed to the AI agent
+	ActionRunAiagentParamPrompt pulumi.StringPtrInput
 	// The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
 	ActionScript pulumi.BoolPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -1486,6 +1498,10 @@ type savedSearchesArgs struct {
 	ActionRssTrackAlert *bool `pulumi:"actionRssTrackAlert"`
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionRssTtl *string `pulumi:"actionRssTtl"`
+	// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+	ActionRunAiagentParamAgentName *string `pulumi:"actionRunAiagentParamAgentName"`
+	// Prompt passed to the AI agent
+	ActionRunAiagentParamPrompt *string `pulumi:"actionRunAiagentParamPrompt"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionScriptCommand *string `pulumi:"actionScriptCommand"`
 	// File name of the script to call. Required if script action is enabled
@@ -1866,6 +1882,10 @@ type SavedSearchesArgs struct {
 	ActionRssTrackAlert pulumi.BoolPtrInput
 	// Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 	ActionRssTtl pulumi.StringPtrInput
+	// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+	ActionRunAiagentParamAgentName pulumi.StringPtrInput
+	// Prompt passed to the AI agent
+	ActionRunAiagentParamPrompt pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
 	ActionScriptCommand pulumi.StringPtrInput
 	// File name of the script to call. Required if script action is enabled
@@ -2590,6 +2610,16 @@ func (o SavedSearchesOutput) ActionRssTrackAlert() pulumi.BoolOutput {
 // Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
 func (o SavedSearchesOutput) ActionRssTtl() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRssTtl }).(pulumi.StringOutput)
+}
+
+// Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+func (o SavedSearchesOutput) ActionRunAiagentParamAgentName() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRunAiagentParamAgentName }).(pulumi.StringOutput)
+}
+
+// Prompt passed to the AI agent
+func (o SavedSearchesOutput) ActionRunAiagentParamPrompt() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionRunAiagentParamPrompt }).(pulumi.StringOutput)
 }
 
 // The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.

@@ -57,11 +57,31 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  * 
+ * ## Import
+ * 
+ * Configuration stanzas in the default `nobody/search` namespace can be imported
+ * by configuration and stanza name:
+ * 
+ * ```sh
+ * $ pulumi import splunk:index/configsConf:ConfigsConf example &#34;&lt;configuration&gt;/&lt;stanza&gt;&#34;
+ * ```
+ * 
+ * Configuration stanzas in a specific Splunk namespace can be imported with a
+ * Splunk REST path or URL. URL-encode the stanza as one path segment when needed:
+ * 
+ * ```sh
+ * $ pulumi import splunk:index/configsConf:ConfigsConf example &#34;/servicesNS/&lt;owner&gt;/&lt;app&gt;/configs/conf-&lt;configuration&gt;/&lt;url-encoded-stanza&gt;&#34;
+ * ```
+ * 
  */
 @ResourceType(type="splunk:index/configsConf:ConfigsConf")
 public class ConfigsConf extends com.pulumi.resources.CustomResource {
     /**
      * The app/user context that is the namespace for the resource
+     * 
+     * During refresh, the provider reads the stanza through the configured `acl`
+     * namespace. Configure `acl` when the same configuration and stanza name exists
+     * in more than one app or owner namespace.
      * 
      * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
      * 
@@ -71,6 +91,10 @@ public class ConfigsConf extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The app/user context that is the namespace for the resource
+     * 
+     * During refresh, the provider reads the stanza through the configured `acl`
+     * namespace. Configure `acl` when the same configuration and stanza name exists
+     * in more than one app or owner namespace.
      * 
      * **NOTE:** When importing an existing conf file, Splunk will respond with all default values for the conf file stanza (even if they do not appear explicitly in the stanza itself). These can be added to the associated `configsConf` Terraform resource in your `.tf` file, otherwise they will show up as removed in the `pulumi preview` diff. &lt;b&gt;Although the plan will show them being removed, these default fields will &lt;b&gt;not&lt;/b&gt; actually be modified or removed by Splunk.&lt;/b&gt;
      * 

@@ -104,6 +104,8 @@ class SavedSearchesArgs:
                  action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
                  action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_agent_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_prompt: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
@@ -295,6 +297,8 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_agent_name: Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_prompt: Prompt passed to the AI agent
         :param pulumi.Input[_builtins.str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[_builtins.str] action_script_filename: File name of the script to call. Required if script action is enabled
         :param pulumi.Input[_builtins.str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -566,6 +570,10 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_rss_track_alert", action_rss_track_alert)
         if action_rss_ttl is not None:
             pulumi.set(__self__, "action_rss_ttl", action_rss_ttl)
+        if action_run_aiagent_param_agent_name is not None:
+            pulumi.set(__self__, "action_run_aiagent_param_agent_name", action_run_aiagent_param_agent_name)
+        if action_run_aiagent_param_prompt is not None:
+            pulumi.set(__self__, "action_run_aiagent_param_prompt", action_run_aiagent_param_prompt)
         if action_script_command is not None:
             pulumi.set(__self__, "action_script_command", action_script_command)
         if action_script_filename is not None:
@@ -1772,6 +1780,30 @@ class SavedSearchesArgs:
     @action_rss_ttl.setter
     def action_rss_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_ttl", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionRunAiagentParamAgentName")
+    def action_run_aiagent_param_agent_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        """
+        return pulumi.get(self, "action_run_aiagent_param_agent_name")
+
+    @action_run_aiagent_param_agent_name.setter
+    def action_run_aiagent_param_agent_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action_run_aiagent_param_agent_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionRunAiagentParamPrompt")
+    def action_run_aiagent_param_prompt(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Prompt passed to the AI agent
+        """
+        return pulumi.get(self, "action_run_aiagent_param_prompt")
+
+    @action_run_aiagent_param_prompt.setter
+    def action_run_aiagent_param_prompt(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action_run_aiagent_param_prompt", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScriptCommand")
@@ -3122,6 +3154,8 @@ class _SavedSearchesState:
                  action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
                  action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_agent_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_prompt: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
@@ -3318,6 +3352,8 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_agent_name: Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_prompt: Prompt passed to the AI agent
         :param pulumi.Input[_builtins.bool] action_script: The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[_builtins.str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[_builtins.str] action_script_filename: File name of the script to call. Required if script action is enabled
@@ -3597,6 +3633,10 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_rss_track_alert", action_rss_track_alert)
         if action_rss_ttl is not None:
             pulumi.set(__self__, "action_rss_ttl", action_rss_ttl)
+        if action_run_aiagent_param_agent_name is not None:
+            pulumi.set(__self__, "action_run_aiagent_param_agent_name", action_run_aiagent_param_agent_name)
+        if action_run_aiagent_param_prompt is not None:
+            pulumi.set(__self__, "action_run_aiagent_param_prompt", action_run_aiagent_param_prompt)
         if action_script is not None:
             pulumi.set(__self__, "action_script", action_script)
         if action_script_command is not None:
@@ -4833,6 +4873,30 @@ class _SavedSearchesState:
     @action_rss_ttl.setter
     def action_rss_ttl(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_rss_ttl", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionRunAiagentParamAgentName")
+    def action_run_aiagent_param_agent_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        """
+        return pulumi.get(self, "action_run_aiagent_param_agent_name")
+
+    @action_run_aiagent_param_agent_name.setter
+    def action_run_aiagent_param_agent_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action_run_aiagent_param_agent_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionRunAiagentParamPrompt")
+    def action_run_aiagent_param_prompt(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Prompt passed to the AI agent
+        """
+        return pulumi.get(self, "action_run_aiagent_param_prompt")
+
+    @action_run_aiagent_param_prompt.setter
+    def action_run_aiagent_param_prompt(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action_run_aiagent_param_prompt", value)
 
     @_builtins.property
     @pulumi.getter(name="actionScript")
@@ -6219,6 +6283,8 @@ class SavedSearches(pulumi.CustomResource):
                  action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
                  action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_agent_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_prompt: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
@@ -6474,6 +6540,8 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_agent_name: Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_prompt: Prompt passed to the AI agent
         :param pulumi.Input[_builtins.str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[_builtins.str] action_script_filename: File name of the script to call. Required if script action is enabled
         :param pulumi.Input[_builtins.str] action_script_hostname: Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\\n\\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -6748,6 +6816,8 @@ class SavedSearches(pulumi.CustomResource):
                  action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
                  action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_agent_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_run_aiagent_param_prompt: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
                  action_script_hostname: pulumi.Input[Optional[_builtins.str]] = None,
@@ -6945,6 +7015,8 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_rss_max_time"] = action_rss_max_time
             __props__.__dict__["action_rss_track_alert"] = action_rss_track_alert
             __props__.__dict__["action_rss_ttl"] = action_rss_ttl
+            __props__.__dict__["action_run_aiagent_param_agent_name"] = action_run_aiagent_param_agent_name
+            __props__.__dict__["action_run_aiagent_param_prompt"] = action_run_aiagent_param_prompt
             __props__.__dict__["action_script_command"] = action_script_command
             __props__.__dict__["action_script_filename"] = action_script_filename
             __props__.__dict__["action_script_hostname"] = action_script_hostname
@@ -7155,6 +7227,8 @@ class SavedSearches(pulumi.CustomResource):
             action_rss_max_time: pulumi.Input[Optional[_builtins.int]] = None,
             action_rss_track_alert: pulumi.Input[Optional[_builtins.bool]] = None,
             action_rss_ttl: pulumi.Input[Optional[_builtins.str]] = None,
+            action_run_aiagent_param_agent_name: pulumi.Input[Optional[_builtins.str]] = None,
+            action_run_aiagent_param_prompt: pulumi.Input[Optional[_builtins.str]] = None,
             action_script: pulumi.Input[Optional[_builtins.bool]] = None,
             action_script_command: pulumi.Input[Optional[_builtins.str]] = None,
             action_script_filename: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7355,6 +7429,8 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] action_rss_max_time: Valid values are Integer[m|s|h|d].Sets the maximum amount of time the execution of an action takes before the action is aborted. Defaults to 1m.
         :param pulumi.Input[_builtins.bool] action_rss_track_alert: Indicates whether the execution of this action signifies a trackable alert.
         :param pulumi.Input[_builtins.str] action_rss_ttl: Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_agent_name: Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        :param pulumi.Input[_builtins.str] action_run_aiagent_param_prompt: Prompt passed to the AI agent
         :param pulumi.Input[_builtins.bool] action_script: The state of the script action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[_builtins.str] action_script_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[_builtins.str] action_script_filename: File name of the script to call. Required if script action is enabled
@@ -7553,6 +7629,8 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_rss_max_time"] = action_rss_max_time
         __props__.__dict__["action_rss_track_alert"] = action_rss_track_alert
         __props__.__dict__["action_rss_ttl"] = action_rss_ttl
+        __props__.__dict__["action_run_aiagent_param_agent_name"] = action_run_aiagent_param_agent_name
+        __props__.__dict__["action_run_aiagent_param_prompt"] = action_run_aiagent_param_prompt
         __props__.__dict__["action_script"] = action_script
         __props__.__dict__["action_script_command"] = action_script_command
         __props__.__dict__["action_script_filename"] = action_script_filename
@@ -8342,6 +8420,22 @@ class SavedSearches(pulumi.CustomResource):
         Valid values are: Integer[p] Specifies the minimum time-to-live in seconds of the search artifacts if this action is triggered. If p follows Integer, specifies the number of scheduled periods. Defaults to 86400 (24 hours).
         """
         return pulumi.get(self, "action_rss_ttl")
+
+    @_builtins.property
+    @pulumi.getter(name="actionRunAiagentParamAgentName")
+    def action_run_aiagent_param_agent_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        Name of the AI agent to run, as configured in the Splunk AI Toolkit app
+        """
+        return pulumi.get(self, "action_run_aiagent_param_agent_name")
+
+    @_builtins.property
+    @pulumi.getter(name="actionRunAiagentParamPrompt")
+    def action_run_aiagent_param_prompt(self) -> pulumi.Output[_builtins.str]:
+        """
+        Prompt passed to the AI agent
+        """
+        return pulumi.get(self, "action_run_aiagent_param_prompt")
 
     @_builtins.property
     @pulumi.getter(name="actionScript")
