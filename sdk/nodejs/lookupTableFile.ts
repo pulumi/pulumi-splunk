@@ -47,6 +47,8 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ *
+ * For large CSV files, use `filePath` to let the provider read the file without sending its contents through Terraform's provider RPC:
  */
 export class LookupTableFile extends pulumi.CustomResource {
     /**
@@ -81,13 +83,21 @@ export class LookupTableFile extends pulumi.CustomResource {
      */
     declare public readonly app: pulumi.Output<string>;
     /**
-     * The column header and row value contents for the lookup table file.
+     * The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      */
-    declare public readonly fileContents: pulumi.Output<string[][]>;
+    declare public readonly fileContents: pulumi.Output<string[][] | undefined>;
+    /**
+     * SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+     */
+    declare public /*out*/ readonly fileContentsHash: pulumi.Output<string>;
     /**
      * A name for the lookup table file. Generally ends with ".csv"
      */
     declare public readonly fileName: pulumi.Output<string>;
+    /**
+     * Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     */
+    declare public readonly filePath: pulumi.Output<string | undefined>;
     /**
      * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
      */
@@ -108,15 +118,14 @@ export class LookupTableFile extends pulumi.CustomResource {
             const state = argsOrState as LookupTableFileState | undefined;
             resourceInputs["app"] = state?.app;
             resourceInputs["fileContents"] = state?.fileContents;
+            resourceInputs["fileContentsHash"] = state?.fileContentsHash;
             resourceInputs["fileName"] = state?.fileName;
+            resourceInputs["filePath"] = state?.filePath;
             resourceInputs["owner"] = state?.owner;
         } else {
             const args = argsOrState as LookupTableFileArgs | undefined;
             if (args?.app === undefined && !opts.urn) {
                 throw new Error("Missing required property 'app'");
-            }
-            if (args?.fileContents === undefined && !opts.urn) {
-                throw new Error("Missing required property 'fileContents'");
             }
             if (args?.fileName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'fileName'");
@@ -127,7 +136,9 @@ export class LookupTableFile extends pulumi.CustomResource {
             resourceInputs["app"] = args?.app;
             resourceInputs["fileContents"] = args?.fileContents;
             resourceInputs["fileName"] = args?.fileName;
+            resourceInputs["filePath"] = args?.filePath;
             resourceInputs["owner"] = args?.owner;
+            resourceInputs["fileContentsHash"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LookupTableFile.__pulumiType, name, resourceInputs, opts);
@@ -143,13 +154,21 @@ export interface LookupTableFileState {
      */
     app?: pulumi.Input<string | undefined>;
     /**
-     * The column header and row value contents for the lookup table file.
+     * The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      */
     fileContents?: pulumi.Input<pulumi.Input<pulumi.Input<string>[]>[] | undefined>;
+    /**
+     * SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+     */
+    fileContentsHash?: pulumi.Input<string | undefined>;
     /**
      * A name for the lookup table file. Generally ends with ".csv"
      */
     fileName?: pulumi.Input<string | undefined>;
+    /**
+     * Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     */
+    filePath?: pulumi.Input<string | undefined>;
     /**
      * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
      */
@@ -165,13 +184,17 @@ export interface LookupTableFileArgs {
      */
     app: pulumi.Input<string>;
     /**
-     * The column header and row value contents for the lookup table file.
+     * The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      */
-    fileContents: pulumi.Input<pulumi.Input<pulumi.Input<string>[]>[]>;
+    fileContents?: pulumi.Input<pulumi.Input<pulumi.Input<string>[]>[] | undefined>;
     /**
      * A name for the lookup table file. Generally ends with ".csv"
      */
     fileName: pulumi.Input<string>;
+    /**
+     * Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     */
+    filePath?: pulumi.Input<string | undefined>;
     /**
      * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
      */

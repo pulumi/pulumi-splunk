@@ -69,15 +69,21 @@ import (
 //	}
 //
 // ```
+//
+// For large CSV files, use `filePath` to let the provider read the file without sending its contents through Terraform's provider RPC:
 type LookupTableFile struct {
 	pulumi.CustomResourceState
 
 	// The app context for the resource.
 	App pulumi.StringOutput `pulumi:"app"`
-	// The column header and row value contents for the lookup table file.
+	// The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
 	FileContents pulumi.StringArrayArrayOutput `pulumi:"fileContents"`
+	// SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+	FileContentsHash pulumi.StringOutput `pulumi:"fileContentsHash"`
 	// A name for the lookup table file. Generally ends with ".csv"
 	FileName pulumi.StringOutput `pulumi:"fileName"`
+	// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+	FilePath pulumi.StringPtrOutput `pulumi:"filePath"`
 	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
 	Owner pulumi.StringOutput `pulumi:"owner"`
 }
@@ -91,9 +97,6 @@ func NewLookupTableFile(ctx *pulumi.Context,
 
 	if args.App == nil {
 		return nil, errors.New("invalid value for required argument 'App'")
-	}
-	if args.FileContents == nil {
-		return nil, errors.New("invalid value for required argument 'FileContents'")
 	}
 	if args.FileName == nil {
 		return nil, errors.New("invalid value for required argument 'FileName'")
@@ -126,10 +129,14 @@ func GetLookupTableFile(ctx *pulumi.Context,
 type lookupTableFileState struct {
 	// The app context for the resource.
 	App *string `pulumi:"app"`
-	// The column header and row value contents for the lookup table file.
+	// The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
 	FileContents [][]string `pulumi:"fileContents"`
+	// SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+	FileContentsHash *string `pulumi:"fileContentsHash"`
 	// A name for the lookup table file. Generally ends with ".csv"
 	FileName *string `pulumi:"fileName"`
+	// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+	FilePath *string `pulumi:"filePath"`
 	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
 	Owner *string `pulumi:"owner"`
 }
@@ -137,10 +144,14 @@ type lookupTableFileState struct {
 type LookupTableFileState struct {
 	// The app context for the resource.
 	App pulumi.StringPtrInput
-	// The column header and row value contents for the lookup table file.
+	// The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
 	FileContents pulumi.StringArrayArrayInput
+	// SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+	FileContentsHash pulumi.StringPtrInput
 	// A name for the lookup table file. Generally ends with ".csv"
 	FileName pulumi.StringPtrInput
+	// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+	FilePath pulumi.StringPtrInput
 	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
 	Owner pulumi.StringPtrInput
 }
@@ -152,10 +163,12 @@ func (LookupTableFileState) ElementType() reflect.Type {
 type lookupTableFileArgs struct {
 	// The app context for the resource.
 	App string `pulumi:"app"`
-	// The column header and row value contents for the lookup table file.
+	// The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
 	FileContents [][]string `pulumi:"fileContents"`
 	// A name for the lookup table file. Generally ends with ".csv"
 	FileName string `pulumi:"fileName"`
+	// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+	FilePath *string `pulumi:"filePath"`
 	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
 	Owner string `pulumi:"owner"`
 }
@@ -164,10 +177,12 @@ type lookupTableFileArgs struct {
 type LookupTableFileArgs struct {
 	// The app context for the resource.
 	App pulumi.StringInput
-	// The column header and row value contents for the lookup table file.
+	// The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
 	FileContents pulumi.StringArrayArrayInput
 	// A name for the lookup table file. Generally ends with ".csv"
 	FileName pulumi.StringInput
+	// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+	FilePath pulumi.StringPtrInput
 	// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
 	Owner pulumi.StringInput
 }
@@ -264,14 +279,24 @@ func (o LookupTableFileOutput) App() pulumi.StringOutput {
 	return o.ApplyT(func(v *LookupTableFile) pulumi.StringOutput { return v.App }).(pulumi.StringOutput)
 }
 
-// The column header and row value contents for the lookup table file.
+// The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
 func (o LookupTableFileOutput) FileContents() pulumi.StringArrayArrayOutput {
 	return o.ApplyT(func(v *LookupTableFile) pulumi.StringArrayArrayOutput { return v.FileContents }).(pulumi.StringArrayArrayOutput)
+}
+
+// SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+func (o LookupTableFileOutput) FileContentsHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *LookupTableFile) pulumi.StringOutput { return v.FileContentsHash }).(pulumi.StringOutput)
 }
 
 // A name for the lookup table file. Generally ends with ".csv"
 func (o LookupTableFileOutput) FileName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LookupTableFile) pulumi.StringOutput { return v.FileName }).(pulumi.StringOutput)
+}
+
+// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+func (o LookupTableFileOutput) FilePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LookupTableFile) pulumi.StringPtrOutput { return v.FilePath }).(pulumi.StringPtrOutput)
 }
 
 // User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.

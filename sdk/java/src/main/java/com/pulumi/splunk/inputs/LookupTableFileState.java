@@ -32,18 +32,33 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The column header and row value contents for the lookup table file.
+     * The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      * 
      */
     @Import(name="fileContents")
     private @Nullable Output<List<List<String>>> fileContents;
 
     /**
-     * @return The column header and row value contents for the lookup table file.
+     * @return The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      * 
      */
     public Optional<Output<List<List<String>>>> fileContents() {
         return Optional.ofNullable(this.fileContents);
+    }
+
+    /**
+     * SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+     * 
+     */
+    @Import(name="fileContentsHash")
+    private @Nullable Output<String> fileContentsHash;
+
+    /**
+     * @return SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+     * 
+     */
+    public Optional<Output<String>> fileContentsHash() {
+        return Optional.ofNullable(this.fileContentsHash);
     }
 
     /**
@@ -59,6 +74,21 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> fileName() {
         return Optional.ofNullable(this.fileName);
+    }
+
+    /**
+     * Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     * 
+     */
+    @Import(name="filePath")
+    private @Nullable Output<String> filePath;
+
+    /**
+     * @return Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     * 
+     */
+    public Optional<Output<String>> filePath() {
+        return Optional.ofNullable(this.filePath);
     }
 
     /**
@@ -81,7 +111,9 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
     private LookupTableFileState(LookupTableFileState $) {
         this.app = $.app;
         this.fileContents = $.fileContents;
+        this.fileContentsHash = $.fileContentsHash;
         this.fileName = $.fileName;
+        this.filePath = $.filePath;
         this.owner = $.owner;
     }
 
@@ -125,7 +157,7 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param fileContents The column header and row value contents for the lookup table file.
+         * @param fileContents The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
          * 
          * @return builder
          * 
@@ -136,7 +168,7 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param fileContents The column header and row value contents for the lookup table file.
+         * @param fileContents The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
          * 
          * @return builder
          * 
@@ -146,13 +178,34 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param fileContents The column header and row value contents for the lookup table file.
+         * @param fileContents The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
          * 
          * @return builder
          * 
          */
         public Builder fileContents(List<String>... fileContents) {
             return fileContents(List.of(fileContents));
+        }
+
+        /**
+         * @param fileContentsHash SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileContentsHash(@Nullable Output<String> fileContentsHash) {
+            $.fileContentsHash = fileContentsHash;
+            return this;
+        }
+
+        /**
+         * @param fileContentsHash SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileContentsHash(String fileContentsHash) {
+            return fileContentsHash(Output.of(fileContentsHash));
         }
 
         /**
@@ -174,6 +227,27 @@ public final class LookupTableFileState extends com.pulumi.resources.ResourceArg
          */
         public Builder fileName(String fileName) {
             return fileName(Output.of(fileName));
+        }
+
+        /**
+         * @param filePath Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filePath(@Nullable Output<String> filePath) {
+            $.filePath = filePath;
+            return this;
+        }
+
+        /**
+         * @param filePath Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filePath(String filePath) {
+            return filePath(Output.of(filePath));
         }
 
         /**

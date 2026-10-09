@@ -20,21 +20,26 @@ __all__ = ['LookupTableFileArgs', 'LookupTableFile']
 class LookupTableFileArgs:
     def __init__(__self__, *,
                  app: pulumi.Input[_builtins.str],
-                 file_contents: pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]],
                  file_name: pulumi.Input[_builtins.str],
-                 owner: pulumi.Input[_builtins.str]):
+                 owner: pulumi.Input[_builtins.str],
+                 file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+                 file_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LookupTableFile resource.
 
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file.
         :param pulumi.Input[_builtins.str] file_name: A name for the lookup table file. Generally ends with ".csv"
         :param pulumi.Input[_builtins.str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
+        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
+        :param pulumi.Input[_builtins.str] file_path: Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
         """
         pulumi.set(__self__, "app", app)
-        pulumi.set(__self__, "file_contents", file_contents)
         pulumi.set(__self__, "file_name", file_name)
         pulumi.set(__self__, "owner", owner)
+        if file_contents is not None:
+            pulumi.set(__self__, "file_contents", file_contents)
+        if file_path is not None:
+            pulumi.set(__self__, "file_path", file_path)
 
     @_builtins.property
     @pulumi.getter
@@ -47,18 +52,6 @@ class LookupTableFileArgs:
     @app.setter
     def app(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "app", value)
-
-    @_builtins.property
-    @pulumi.getter(name="fileContents")
-    def file_contents(self) -> pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]:
-        """
-        The column header and row value contents for the lookup table file.
-        """
-        return pulumi.get(self, "file_contents")
-
-    @file_contents.setter
-    def file_contents(self, value: pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]):
-        pulumi.set(self, "file_contents", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
@@ -84,28 +77,60 @@ class LookupTableFileArgs:
     def owner(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "owner", value)
 
+    @_builtins.property
+    @pulumi.getter(name="fileContents")
+    def file_contents(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]:
+        """
+        The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
+        """
+        return pulumi.get(self, "file_contents")
+
+    @file_contents.setter
+    def file_contents(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]):
+        pulumi.set(self, "file_contents", value)
+
+    @_builtins.property
+    @pulumi.getter(name="filePath")
+    def file_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
+        """
+        return pulumi.get(self, "file_path")
+
+    @file_path.setter
+    def file_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_path", value)
+
 
 @pulumi.input_type
 class _LookupTableFileState:
     def __init__(__self__, *,
                  app: pulumi.Input[Optional[_builtins.str]] = None,
                  file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+                 file_contents_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_path: pulumi.Input[Optional[_builtins.str]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LookupTableFile resources.
 
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file.
+        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
+        :param pulumi.Input[_builtins.str] file_contents_hash: SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `file_path` is set. This is not the SHA-256 of the raw file. Empty when `file_contents` is used.
         :param pulumi.Input[_builtins.str] file_name: A name for the lookup table file. Generally ends with ".csv"
+        :param pulumi.Input[_builtins.str] file_path: Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
         :param pulumi.Input[_builtins.str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
         """
         if app is not None:
             pulumi.set(__self__, "app", app)
         if file_contents is not None:
             pulumi.set(__self__, "file_contents", file_contents)
+        if file_contents_hash is not None:
+            pulumi.set(__self__, "file_contents_hash", file_contents_hash)
         if file_name is not None:
             pulumi.set(__self__, "file_name", file_name)
+        if file_path is not None:
+            pulumi.set(__self__, "file_path", file_path)
         if owner is not None:
             pulumi.set(__self__, "owner", owner)
 
@@ -125,13 +150,25 @@ class _LookupTableFileState:
     @pulumi.getter(name="fileContents")
     def file_contents(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]:
         """
-        The column header and row value contents for the lookup table file.
+        The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
         """
         return pulumi.get(self, "file_contents")
 
     @file_contents.setter
     def file_contents(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]]):
         pulumi.set(self, "file_contents", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fileContentsHash")
+    def file_contents_hash(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `file_path` is set. This is not the SHA-256 of the raw file. Empty when `file_contents` is used.
+        """
+        return pulumi.get(self, "file_contents_hash")
+
+    @file_contents_hash.setter
+    def file_contents_hash(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_contents_hash", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
@@ -144,6 +181,18 @@ class _LookupTableFileState:
     @file_name.setter
     def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="filePath")
+    def file_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
+        """
+        return pulumi.get(self, "file_path")
+
+    @file_path.setter
+    def file_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_path", value)
 
     @_builtins.property
     @pulumi.getter
@@ -167,6 +216,7 @@ class LookupTableFile(pulumi.CustomResource):
                  app: pulumi.Input[Optional[_builtins.str]] = None,
                  file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
                  file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_path: pulumi.Input[Optional[_builtins.str]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -212,12 +262,15 @@ class LookupTableFile(pulumi.CustomResource):
             ])
         ```
 
+        For large CSV files, use `file_path` to let the provider read the file without sending its contents through Terraform's provider RPC:
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file.
+        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
         :param pulumi.Input[_builtins.str] file_name: A name for the lookup table file. Generally ends with ".csv"
+        :param pulumi.Input[_builtins.str] file_path: Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
         :param pulumi.Input[_builtins.str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
         """
         ...
@@ -269,6 +322,8 @@ class LookupTableFile(pulumi.CustomResource):
             ])
         ```
 
+        For large CSV files, use `file_path` to let the provider read the file without sending its contents through Terraform's provider RPC:
+
 
         :param str resource_name: The name of the resource.
         :param LookupTableFileArgs args: The arguments to use to populate this resource's properties.
@@ -288,6 +343,7 @@ class LookupTableFile(pulumi.CustomResource):
                  app: pulumi.Input[Optional[_builtins.str]] = None,
                  file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
                  file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_path: pulumi.Input[Optional[_builtins.str]] = None,
                  owner: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -301,15 +357,15 @@ class LookupTableFile(pulumi.CustomResource):
             if app is None and not opts.urn:
                 raise TypeError("Missing required property 'app'")
             __props__.__dict__["app"] = app
-            if file_contents is None and not opts.urn:
-                raise TypeError("Missing required property 'file_contents'")
             __props__.__dict__["file_contents"] = file_contents
             if file_name is None and not opts.urn:
                 raise TypeError("Missing required property 'file_name'")
             __props__.__dict__["file_name"] = file_name
+            __props__.__dict__["file_path"] = file_path
             if owner is None and not opts.urn:
                 raise TypeError("Missing required property 'owner'")
             __props__.__dict__["owner"] = owner
+            __props__.__dict__["file_contents_hash"] = None
         super(LookupTableFile, __self__).__init__(
             'splunk:index/lookupTableFile:LookupTableFile',
             resource_name,
@@ -322,7 +378,9 @@ class LookupTableFile(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             app: pulumi.Input[Optional[_builtins.str]] = None,
             file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+            file_contents_hash: pulumi.Input[Optional[_builtins.str]] = None,
             file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_path: pulumi.Input[Optional[_builtins.str]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None) -> 'LookupTableFile':
         """
         Get an existing LookupTableFile resource's state with the given name, id, and optional extra
@@ -332,8 +390,10 @@ class LookupTableFile(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app: The app context for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file.
+        :param pulumi.Input[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]] file_contents: The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
+        :param pulumi.Input[_builtins.str] file_contents_hash: SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `file_path` is set. This is not the SHA-256 of the raw file. Empty when `file_contents` is used.
         :param pulumi.Input[_builtins.str] file_name: A name for the lookup table file. Generally ends with ".csv"
+        :param pulumi.Input[_builtins.str] file_path: Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
         :param pulumi.Input[_builtins.str] owner: User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -342,7 +402,9 @@ class LookupTableFile(pulumi.CustomResource):
 
         __props__.__dict__["app"] = app
         __props__.__dict__["file_contents"] = file_contents
+        __props__.__dict__["file_contents_hash"] = file_contents_hash
         __props__.__dict__["file_name"] = file_name
+        __props__.__dict__["file_path"] = file_path
         __props__.__dict__["owner"] = owner
         return LookupTableFile(resource_name, opts=opts, __props__=__props__)
 
@@ -356,11 +418,19 @@ class LookupTableFile(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="fileContents")
-    def file_contents(self) -> pulumi.Output[Sequence[Sequence[_builtins.str]]]:
+    def file_contents(self) -> pulumi.Output[Optional[Sequence[Sequence[_builtins.str]]]]:
         """
-        The column header and row value contents for the lookup table file.
+        The column header and row value contents for the lookup table file. Specify exactly one of `file_contents` or `file_path`.
         """
         return pulumi.get(self, "file_contents")
+
+    @_builtins.property
+    @pulumi.getter(name="fileContentsHash")
+    def file_contents_hash(self) -> pulumi.Output[_builtins.str]:
+        """
+        SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `file_path` is set. This is not the SHA-256 of the raw file. Empty when `file_contents` is used.
+        """
+        return pulumi.get(self, "file_contents_hash")
 
     @_builtins.property
     @pulumi.getter(name="fileName")
@@ -369,6 +439,14 @@ class LookupTableFile(pulumi.CustomResource):
         A name for the lookup table file. Generally ends with ".csv"
         """
         return pulumi.get(self, "file_name")
+
+    @_builtins.property
+    @pulumi.getter(name="filePath")
+    def file_path(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `file_contents` or `file_path`.
+        """
+        return pulumi.get(self, "file_path")
 
     @_builtins.property
     @pulumi.getter
