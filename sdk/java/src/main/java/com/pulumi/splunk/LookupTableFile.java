@@ -12,6 +12,7 @@ import com.pulumi.splunk.Utilities;
 import com.pulumi.splunk.inputs.LookupTableFileState;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,6 +76,8 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  * 
+ * For large CSV files, use `filePath` to let the provider read the file without sending its contents through Terraform&#39;s provider RPC:
+ * 
  */
 @ResourceType(type="splunk:index/lookupTableFile:LookupTableFile")
 public class LookupTableFile extends com.pulumi.resources.CustomResource {
@@ -93,18 +96,32 @@ public class LookupTableFile extends com.pulumi.resources.CustomResource {
         return this.app;
     }
     /**
-     * The column header and row value contents for the lookup table file.
+     * The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      * 
      */
     @Export(name="fileContents", refs={List.class,String.class}, tree="[0,[0,1]]")
-    private Output<List<List<String>>> fileContents;
+    private Output</* @Nullable */ List<List<String>>> fileContents;
 
     /**
-     * @return The column header and row value contents for the lookup table file.
+     * @return The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      * 
      */
-    public Output<List<List<String>>> fileContents() {
-        return this.fileContents;
+    public Output<Optional<List<List<String>>>> fileContents() {
+        return Codegen.optional(this.fileContents);
+    }
+    /**
+     * SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+     * 
+     */
+    @Export(name="fileContentsHash", refs={String.class}, tree="[0]")
+    private Output<String> fileContentsHash;
+
+    /**
+     * @return SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `filePath` is set. This is not the SHA-256 of the raw file. Empty when `fileContents` is used.
+     * 
+     */
+    public Output<String> fileContentsHash() {
+        return this.fileContentsHash;
     }
     /**
      * A name for the lookup table file. Generally ends with &#34;.csv&#34;
@@ -119,6 +136,20 @@ public class LookupTableFile extends com.pulumi.resources.CustomResource {
      */
     public Output<String> fileName() {
         return this.fileName;
+    }
+    /**
+     * Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     * 
+     */
+    @Export(name="filePath", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> filePath;
+
+    /**
+     * @return Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     * 
+     */
+    public Output<Optional<String>> filePath() {
+        return Codegen.optional(this.filePath);
     }
     /**
      * User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.

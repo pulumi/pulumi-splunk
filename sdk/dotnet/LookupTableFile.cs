@@ -64,6 +64,8 @@ namespace Pulumi.Splunk
     /// 
     /// });
     /// ```
+    /// 
+    /// For large CSV files, use `FilePath` to let the provider read the file without sending its contents through Terraform's provider RPC:
     /// </summary>
     [SplunkResourceType("splunk:index/lookupTableFile:LookupTableFile")]
     public partial class LookupTableFile : global::Pulumi.CustomResource
@@ -75,16 +77,28 @@ namespace Pulumi.Splunk
         public Output<string> App { get; private set; } = null!;
 
         /// <summary>
-        /// The column header and row value contents for the lookup table file.
+        /// The column header and row value contents for the lookup table file. Specify exactly one of `FileContents` or `FilePath`.
         /// </summary>
         [Output("fileContents")]
         public Output<ImmutableArray<ImmutableArray<string>>> FileContents { get; private set; } = null!;
+
+        /// <summary>
+        /// SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `FilePath` is set. This is not the SHA-256 of the raw file. Empty when `FileContents` is used.
+        /// </summary>
+        [Output("fileContentsHash")]
+        public Output<string> FileContentsHash { get; private set; } = null!;
 
         /// <summary>
         /// A name for the lookup table file. Generally ends with ".csv"
         /// </summary>
         [Output("fileName")]
         public Output<string> FileName { get; private set; } = null!;
+
+        /// <summary>
+        /// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `FileContents` or `FilePath`.
+        /// </summary>
+        [Output("filePath")]
+        public Output<string?> FilePath { get; private set; } = null!;
 
         /// <summary>
         /// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
@@ -144,11 +158,11 @@ namespace Pulumi.Splunk
         [Input("app", required: true)]
         public Input<string> App { get; set; } = null!;
 
-        [Input("fileContents", required: true)]
+        [Input("fileContents")]
         private InputList<ImmutableArray<string>>? _fileContents;
 
         /// <summary>
-        /// The column header and row value contents for the lookup table file.
+        /// The column header and row value contents for the lookup table file. Specify exactly one of `FileContents` or `FilePath`.
         /// </summary>
         public InputList<ImmutableArray<string>> FileContents
         {
@@ -161,6 +175,12 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("fileName", required: true)]
         public Input<string> FileName { get; set; } = null!;
+
+        /// <summary>
+        /// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `FileContents` or `FilePath`.
+        /// </summary>
+        [Input("filePath")]
+        public Input<string>? FilePath { get; set; }
 
         /// <summary>
         /// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
@@ -186,7 +206,7 @@ namespace Pulumi.Splunk
         private InputList<ImmutableArray<string>>? _fileContents;
 
         /// <summary>
-        /// The column header and row value contents for the lookup table file.
+        /// The column header and row value contents for the lookup table file. Specify exactly one of `FileContents` or `FilePath`.
         /// </summary>
         public InputList<ImmutableArray<string>> FileContents
         {
@@ -195,10 +215,22 @@ namespace Pulumi.Splunk
         }
 
         /// <summary>
+        /// SHA-256 hex digest of the JSON encoding of the parsed CSV rows when `FilePath` is set. This is not the SHA-256 of the raw file. Empty when `FileContents` is used.
+        /// </summary>
+        [Input("fileContentsHash")]
+        public Input<string>? FileContentsHash { get; set; }
+
+        /// <summary>
         /// A name for the lookup table file. Generally ends with ".csv"
         /// </summary>
         [Input("fileName")]
         public Input<string>? FileName { get; set; }
+
+        /// <summary>
+        /// Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `FileContents` or `FilePath`.
+        /// </summary>
+        [Input("filePath")]
+        public Input<string>? FilePath { get; set; }
 
         /// <summary>
         /// User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.

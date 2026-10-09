@@ -9,6 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs {
@@ -31,18 +33,18 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The column header and row value contents for the lookup table file.
+     * The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      * 
      */
-    @Import(name="fileContents", required=true)
-    private Output<List<List<String>>> fileContents;
+    @Import(name="fileContents")
+    private @Nullable Output<List<List<String>>> fileContents;
 
     /**
-     * @return The column header and row value contents for the lookup table file.
+     * @return The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
      * 
      */
-    public Output<List<List<String>>> fileContents() {
-        return this.fileContents;
+    public Optional<Output<List<List<String>>>> fileContents() {
+        return Optional.ofNullable(this.fileContents);
     }
 
     /**
@@ -58,6 +60,21 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
      */
     public Output<String> fileName() {
         return this.fileName;
+    }
+
+    /**
+     * Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     * 
+     */
+    @Import(name="filePath")
+    private @Nullable Output<String> filePath;
+
+    /**
+     * @return Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+     * 
+     */
+    public Optional<Output<String>> filePath() {
+        return Optional.ofNullable(this.filePath);
     }
 
     /**
@@ -81,6 +98,7 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
         this.app = $.app;
         this.fileContents = $.fileContents;
         this.fileName = $.fileName;
+        this.filePath = $.filePath;
         this.owner = $.owner;
     }
 
@@ -124,18 +142,18 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param fileContents The column header and row value contents for the lookup table file.
+         * @param fileContents The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
          * 
          * @return builder
          * 
          */
-        public Builder fileContents(Output<List<List<String>>> fileContents) {
+        public Builder fileContents(@Nullable Output<List<List<String>>> fileContents) {
             $.fileContents = fileContents;
             return this;
         }
 
         /**
-         * @param fileContents The column header and row value contents for the lookup table file.
+         * @param fileContents The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
          * 
          * @return builder
          * 
@@ -145,7 +163,7 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param fileContents The column header and row value contents for the lookup table file.
+         * @param fileContents The column header and row value contents for the lookup table file. Specify exactly one of `fileContents` or `filePath`.
          * 
          * @return builder
          * 
@@ -176,6 +194,27 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param filePath Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filePath(@Nullable Output<String> filePath) {
+            $.filePath = filePath;
+            return this;
+        }
+
+        /**
+         * @param filePath Path to a local CSV file. Use an absolute path or `path.module`. The provider reads this path during plan and apply. A change to the file contents triggers an update. Specify exactly one of `fileContents` or `filePath`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filePath(String filePath) {
+            return filePath(Output.of(filePath));
+        }
+
+        /**
          * @param owner User name of resource owner. Defaults to the resource creator. Required for updating any knowledge object ACL properties. nobody = All users may access the resource, but write access to the resource might be restricted.
          * 
          * @return builder
@@ -199,9 +238,6 @@ public final class LookupTableFileArgs extends com.pulumi.resources.ResourceArgs
         public LookupTableFileArgs build() {
             if ($.app == null) {
                 throw new MissingRequiredPropertyException("LookupTableFileArgs", "app");
-            }
-            if ($.fileContents == null) {
-                throw new MissingRequiredPropertyException("LookupTableFileArgs", "fileContents");
             }
             if ($.fileName == null) {
                 throw new MissingRequiredPropertyException("LookupTableFileArgs", "fileName");
