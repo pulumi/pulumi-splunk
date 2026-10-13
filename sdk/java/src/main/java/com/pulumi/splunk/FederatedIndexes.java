@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var remoteMain = new FederatedIndexes("remoteMain", FederatedIndexesArgs.builder()
  *             .name("remote-main")
- *             .federatedProvider(remote.name())
+ *             .federatedProvider(remote.get("name"))
  *             .datasetType("index")
  *             .datasetName("main")
  *             .build());
