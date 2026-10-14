@@ -1642,6 +1642,62 @@
         }
     },
     "resources": {
+        "splunk:index/adminProxyssoGroups:AdminProxyssoGroups": {
+            "description": "## # Resource:\u003cspan pulumi-lang-nodejs=\" splunk.AdminProxyssoGroups\n\" pulumi-lang-dotnet=\" splunk.AdminProxyssoGroups\n\" pulumi-lang-go=\" AdminProxyssoGroups\n\" pulumi-lang-python=\" AdminProxyssoGroups\n\" pulumi-lang-yaml=\" splunk.AdminProxyssoGroups\n\" pulumi-lang-java=\" splunk.AdminProxyssoGroups\n\" pulumi-lang-hcl=\" splunk_admin_proxysso_groups\n\"\u003e splunk.AdminProxyssoGroups\n\u003c/span\u003e\nManage Proxy SSO group-to-role mappings on Splunk Enterprise. Proxy SSO is an Enterprise authentication method and is not available on Splunk Cloud.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst proxyGroup = new splunk.AdminProxyssoGroups(\"proxy_group\", {\n    name: \"mygroup\",\n    roles: [\n        \"admin\",\n        \"power\",\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nproxy_group = splunk.AdminProxyssoGroups(\"proxy_group\",\n    name=\"mygroup\",\n    roles=[\n        \"admin\",\n        \"power\",\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var proxyGroup = new Splunk.AdminProxyssoGroups(\"proxy_group\", new()\n    {\n        Name = \"mygroup\",\n        Roles = new[]\n        {\n            \"admin\",\n            \"power\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewAdminProxyssoGroups(ctx, \"proxy_group\", \u0026splunk.AdminProxyssoGroupsArgs{\n\t\t\tName: pulumi.String(\"mygroup\"),\n\t\t\tRoles: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"admin\"),\n\t\t\t\tpulumi.String(\"power\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    splunk = {\n      source = \"pulumi/splunk\"\n    }\n  }\n}\n\nresource \"splunk_admin_proxysso_groups\" \"proxy_group\" {\n  lifecycle {\n    create_before_destroy = true\n  }\n  name  = \"mygroup\"\n  roles = [\"admin\", \"power\"]\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.AdminProxyssoGroups;\nimport com.pulumi.splunk.AdminProxyssoGroupsArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var proxyGroup = new AdminProxyssoGroups(\"proxyGroup\", AdminProxyssoGroupsArgs.builder()\n            .name(\"mygroup\")\n            .roles(            \n                \"admin\",\n                \"power\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  proxyGroup:\n    type: splunk:AdminProxyssoGroups\n    name: proxy_group\n    properties:\n      name: mygroup\n      roles:\n        - admin\n        - power\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nProxy SSO groups can be imported using the group name, for example:\n\n```sh\n$ pulumi import splunk:index/adminProxyssoGroups:AdminProxyssoGroups proxy_group mygroup\n```\n\n",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the external group. Changing this forces a new resource.\n"
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Set of internal roles assigned to the group. Role order does not matter.\n"
+                }
+            },
+            "required": [
+                "name",
+                "roles"
+            ],
+            "inputProperties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the external group. Changing this forces a new resource.\n",
+                    "willReplaceOnChanges": true
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Set of internal roles assigned to the group. Role order does not matter.\n"
+                }
+            },
+            "requiredInputs": [
+                "name",
+                "roles"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AdminProxyssoGroups resources.\n",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the external group. Changing this forces a new resource.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "roles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Set of internal roles assigned to the group. Role order does not matter.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "splunk:index/adminSamlGroups:AdminSamlGroups": {
             "description": "## # Resource:\u003cspan pulumi-lang-nodejs=\" splunk.AdminSamlGroups\n\" pulumi-lang-dotnet=\" splunk.AdminSamlGroups\n\" pulumi-lang-go=\" AdminSamlGroups\n\" pulumi-lang-python=\" AdminSamlGroups\n\" pulumi-lang-yaml=\" splunk.AdminSamlGroups\n\" pulumi-lang-java=\" splunk.AdminSamlGroups\n\" pulumi-lang-hcl=\" splunk_admin_saml_groups\n\"\u003e splunk.AdminSamlGroups\n\u003c/span\u003e\nManage external groups in an IdP response to internal Splunk roles.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as splunk from \"@pulumi/splunk\";\n\nconst saml_group = new splunk.AdminSamlGroups(\"saml-group\", {\n    name: \"mygroup\",\n    roles: [\n        \"admin\",\n        \"power\",\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_splunk as splunk\n\nsaml_group = splunk.AdminSamlGroups(\"saml-group\",\n    name=\"mygroup\",\n    roles=[\n        \"admin\",\n        \"power\",\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Splunk = Pulumi.Splunk;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var saml_group = new Splunk.AdminSamlGroups(\"saml-group\", new()\n    {\n        Name = \"mygroup\",\n        Roles = new[]\n        {\n            \"admin\",\n            \"power\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-splunk/sdk/go/splunk\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := splunk.NewAdminSamlGroups(ctx, \"saml-group\", \u0026splunk.AdminSamlGroupsArgs{\n\t\t\tName: pulumi.String(\"mygroup\"),\n\t\t\tRoles: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"admin\"),\n\t\t\t\tpulumi.String(\"power\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    splunk = {\n      source = \"pulumi/splunk\"\n    }\n  }\n}\n\nresource \"splunk_admin_saml_groups\" \"saml-group\" {\n  lifecycle {\n    create_before_destroy = true\n  }\n  name  = \"mygroup\"\n  roles = [\"admin\", \"power\"]\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.splunk.AdminSamlGroups;\nimport com.pulumi.splunk.AdminSamlGroupsArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var saml_group = new AdminSamlGroups(\"saml-group\", AdminSamlGroupsArgs.builder()\n            .name(\"mygroup\")\n            .roles(            \n                \"admin\",\n                \"power\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  saml-group:\n    type: splunk:AdminSamlGroups\n    properties:\n      name: mygroup\n      roles:\n        - admin\n        - power\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nSAML groups can be imported using the id, e.g.\n\n```sh\n$ pulumi import splunk:index/adminSamlGroups:AdminSamlGroups saml-group mygroup\n```\n\n",
             "properties": {
@@ -2054,7 +2110,7 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of the user role to create.\n"
+                    "description": "The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.\n"
                 },
                 "realtimeSearchJobsQuota": {
                     "type": "integer",
@@ -2129,7 +2185,7 @@
                 },
                 "name": {
                     "type": "string",
-                    "description": "The name of the user role to create.\n",
+                    "description": "The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.\n",
                     "willReplaceOnChanges": true
                 },
                 "realtimeSearchJobsQuota": {
@@ -2198,7 +2254,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "description": "The name of the user role to create.\n",
+                        "description": "The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.\n",
                         "willReplaceOnChanges": true
                     },
                     "realtimeSearchJobsQuota": {
@@ -2698,7 +2754,7 @@
                 },
                 "bucketRebuildMemoryHint": {
                     "type": "string",
-                    "description": "Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.\n\u003cbe\u003eCaution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.\nDefault value, auto, varies by the amount of physical RAM on the host\u003cbr\u003e\nless than 2GB RAM = 67108864 (64MB) tsidx\n2GB to 8GB RAM = 134217728 (128MB) tsidx\nmore than 8GB RAM = 268435456 (256MB) tsidx\u003cbr\u003e\nValues other than \"auto\" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: \"16777216\" or \"16MB\" are equivalent.\n"
+                    "description": "Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.\n\u003cbe\u003eCaution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.\nDefault value, auto, varies by the amount of physical RAM on the host\u003cbr\u003e\nless than 2GB RAM = 67108864 (64MB) tsidx\n2GB to 8GB RAM = 134217728 (128MB) tsidx\nmore than 8GB RAM = 268435456 (256MB) tsidx\u003cbr\u003e\nValues other than \"auto\" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: \"16777216\" or \"16MB\" are equivalent. A refresh treats a size suffix and the same byte count as equal.\n"
                 },
                 "coldPath": {
                     "type": "string",
@@ -2746,7 +2802,7 @@
                 },
                 "maxHotBuckets": {
                     "type": "integer",
-                    "description": "Maximum hot buckets that can exist per index. Defaults to 3.\n\u003cbr\u003eWhen maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.\n"
+                    "description": "Maximum hot buckets that can exist per index. Defaults to 3.\n\u003cbr\u003eWhen maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.\n\u003cbr\u003eSplunk 8.2 and later can return this as a numeric string or as `\"auto\"`. `\"auto\"` means 3. This argument stays a number, so \u003cspan pulumi-lang-nodejs=\"`maxHotBuckets \" pulumi-lang-dotnet=\"`MaxHotBuckets \" pulumi-lang-go=\"`maxHotBuckets \" pulumi-lang-python=\"`max_hot_buckets \" pulumi-lang-yaml=\"`maxHotBuckets \" pulumi-lang-java=\"`maxHotBuckets \" pulumi-lang-hcl=\"`max_hot_buckets \"\u003e`maxHotBuckets \u003c/span\u003e= 6` remains valid.\n"
                 },
                 "maxHotIdleSecs": {
                     "type": "integer",
@@ -2814,7 +2870,7 @@
                 },
                 "repFactor": {
                     "type": "string",
-                    "description": "Index replication control. This parameter applies to only clustering slaves.\nauto = Use the master index replication configuration value.\n0 = Turn off replication for this index.\n"
+                    "description": "Index replication control. This parameter applies to only clustering slaves.\nauto = Use the master index replication configuration value.\n0 = Turn off replication for this index.\nSplunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\" pulumi-lang-hcl=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`auto`\" pulumi-lang-dotnet=\"`Auto`\" pulumi-lang-go=\"`auto`\" pulumi-lang-python=\"`auto`\" pulumi-lang-yaml=\"`auto`\" pulumi-lang-java=\"`auto`\" pulumi-lang-hcl=\"`auto`\"\u003e`auto`\u003c/span\u003e.\n"
                 },
                 "rotatePeriodInSecs": {
                     "type": "integer",
@@ -2897,7 +2953,7 @@
                 },
                 "bucketRebuildMemoryHint": {
                     "type": "string",
-                    "description": "Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.\n\u003cbe\u003eCaution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.\nDefault value, auto, varies by the amount of physical RAM on the host\u003cbr\u003e\nless than 2GB RAM = 67108864 (64MB) tsidx\n2GB to 8GB RAM = 134217728 (128MB) tsidx\nmore than 8GB RAM = 268435456 (256MB) tsidx\u003cbr\u003e\nValues other than \"auto\" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: \"16777216\" or \"16MB\" are equivalent.\n"
+                    "description": "Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.\n\u003cbe\u003eCaution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.\nDefault value, auto, varies by the amount of physical RAM on the host\u003cbr\u003e\nless than 2GB RAM = 67108864 (64MB) tsidx\n2GB to 8GB RAM = 134217728 (128MB) tsidx\nmore than 8GB RAM = 268435456 (256MB) tsidx\u003cbr\u003e\nValues other than \"auto\" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: \"16777216\" or \"16MB\" are equivalent. A refresh treats a size suffix and the same byte count as equal.\n"
                 },
                 "coldPath": {
                     "type": "string",
@@ -2945,7 +3001,7 @@
                 },
                 "maxHotBuckets": {
                     "type": "integer",
-                    "description": "Maximum hot buckets that can exist per index. Defaults to 3.\n\u003cbr\u003eWhen maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.\n"
+                    "description": "Maximum hot buckets that can exist per index. Defaults to 3.\n\u003cbr\u003eWhen maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.\n\u003cbr\u003eSplunk 8.2 and later can return this as a numeric string or as `\"auto\"`. `\"auto\"` means 3. This argument stays a number, so \u003cspan pulumi-lang-nodejs=\"`maxHotBuckets \" pulumi-lang-dotnet=\"`MaxHotBuckets \" pulumi-lang-go=\"`maxHotBuckets \" pulumi-lang-python=\"`max_hot_buckets \" pulumi-lang-yaml=\"`maxHotBuckets \" pulumi-lang-java=\"`maxHotBuckets \" pulumi-lang-hcl=\"`max_hot_buckets \"\u003e`maxHotBuckets \u003c/span\u003e= 6` remains valid.\n"
                 },
                 "maxHotIdleSecs": {
                     "type": "integer",
@@ -3014,7 +3070,7 @@
                 },
                 "repFactor": {
                     "type": "string",
-                    "description": "Index replication control. This parameter applies to only clustering slaves.\nauto = Use the master index replication configuration value.\n0 = Turn off replication for this index.\n"
+                    "description": "Index replication control. This parameter applies to only clustering slaves.\nauto = Use the master index replication configuration value.\n0 = Turn off replication for this index.\nSplunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\" pulumi-lang-hcl=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`auto`\" pulumi-lang-dotnet=\"`Auto`\" pulumi-lang-go=\"`auto`\" pulumi-lang-python=\"`auto`\" pulumi-lang-yaml=\"`auto`\" pulumi-lang-java=\"`auto`\" pulumi-lang-hcl=\"`auto`\"\u003e`auto`\u003c/span\u003e.\n"
                 },
                 "rotatePeriodInSecs": {
                     "type": "integer",
@@ -3058,7 +3114,7 @@
                     },
                     "bucketRebuildMemoryHint": {
                         "type": "string",
-                        "description": "Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.\n\u003cbe\u003eCaution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.\nDefault value, auto, varies by the amount of physical RAM on the host\u003cbr\u003e\nless than 2GB RAM = 67108864 (64MB) tsidx\n2GB to 8GB RAM = 134217728 (128MB) tsidx\nmore than 8GB RAM = 268435456 (256MB) tsidx\u003cbr\u003e\nValues other than \"auto\" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: \"16777216\" or \"16MB\" are equivalent.\n"
+                        "description": "Suggestion for the bucket rebuild process for the size of the time-series (tsidx) file to make.\n\u003cbe\u003eCaution: This is an advanced parameter. Inappropriate use of this parameter causes splunkd to not start if rebuild is required. Do not set this parameter unless instructed by Splunk Support.\nDefault value, auto, varies by the amount of physical RAM on the host\u003cbr\u003e\nless than 2GB RAM = 67108864 (64MB) tsidx\n2GB to 8GB RAM = 134217728 (128MB) tsidx\nmore than 8GB RAM = 268435456 (256MB) tsidx\u003cbr\u003e\nValues other than \"auto\" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: \"16777216\" or \"16MB\" are equivalent. A refresh treats a size suffix and the same byte count as equal.\n"
                     },
                     "coldPath": {
                         "type": "string",
@@ -3106,7 +3162,7 @@
                     },
                     "maxHotBuckets": {
                         "type": "integer",
-                        "description": "Maximum hot buckets that can exist per index. Defaults to 3.\n\u003cbr\u003eWhen maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.\n"
+                        "description": "Maximum hot buckets that can exist per index. Defaults to 3.\n\u003cbr\u003eWhen maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.\n\u003cbr\u003eSplunk 8.2 and later can return this as a numeric string or as `\"auto\"`. `\"auto\"` means 3. This argument stays a number, so \u003cspan pulumi-lang-nodejs=\"`maxHotBuckets \" pulumi-lang-dotnet=\"`MaxHotBuckets \" pulumi-lang-go=\"`maxHotBuckets \" pulumi-lang-python=\"`max_hot_buckets \" pulumi-lang-yaml=\"`maxHotBuckets \" pulumi-lang-java=\"`maxHotBuckets \" pulumi-lang-hcl=\"`max_hot_buckets \"\u003e`maxHotBuckets \u003c/span\u003e= 6` remains valid.\n"
                     },
                     "maxHotIdleSecs": {
                         "type": "integer",
@@ -3175,7 +3231,7 @@
                     },
                     "repFactor": {
                         "type": "string",
-                        "description": "Index replication control. This parameter applies to only clustering slaves.\nauto = Use the master index replication configuration value.\n0 = Turn off replication for this index.\n"
+                        "description": "Index replication control. This parameter applies to only clustering slaves.\nauto = Use the master index replication configuration value.\n0 = Turn off replication for this index.\nSplunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between \u003cspan pulumi-lang-nodejs=\"`0`\" pulumi-lang-dotnet=\"`0`\" pulumi-lang-go=\"`0`\" pulumi-lang-python=\"`0`\" pulumi-lang-yaml=\"`0`\" pulumi-lang-java=\"`0`\" pulumi-lang-hcl=\"`0`\"\u003e`0`\u003c/span\u003e and \u003cspan pulumi-lang-nodejs=\"`auto`\" pulumi-lang-dotnet=\"`Auto`\" pulumi-lang-go=\"`auto`\" pulumi-lang-python=\"`auto`\" pulumi-lang-yaml=\"`auto`\" pulumi-lang-java=\"`auto`\" pulumi-lang-hcl=\"`auto`\"\u003e`auto`\u003c/span\u003e.\n"
                     },
                     "rotatePeriodInSecs": {
                         "type": "integer",
@@ -3233,7 +3289,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "Set of indexes allowed for events with this token\n"
+                    "description": "Set of indexes allowed for events with this token. Order does not matter.\n"
                 },
                 "name": {
                     "type": "string",
@@ -3291,7 +3347,7 @@
                     "items": {
                         "type": "string"
                     },
-                    "description": "Set of indexes allowed for events with this token\n"
+                    "description": "Set of indexes allowed for events with this token. Order does not matter.\n"
                 },
                 "name": {
                     "type": "string",
@@ -3340,7 +3396,7 @@
                         "items": {
                             "type": "string"
                         },
-                        "description": "Set of indexes allowed for events with this token\n"
+                        "description": "Set of indexes allowed for events with this token. Order does not matter.\n"
                     },
                     "name": {
                         "type": "string",
@@ -5431,6 +5487,10 @@
                     "type": "string",
                     "description": "Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)\n"
                 },
+                "actionJiraServiceDeskParamJiraDedup": {
+                    "type": "string",
+                    "description": "Enables Jira ticket deduplication\n"
+                },
                 "actionJiraServiceDeskParamJiraDescription": {
                     "type": "string",
                     "description": "Jira issue description\n"
@@ -6366,6 +6426,10 @@
                     "type": "string",
                     "description": "Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)\n"
                 },
+                "actionJiraServiceDeskParamJiraDedup": {
+                    "type": "string",
+                    "description": "Enables Jira ticket deduplication\n"
+                },
                 "actionJiraServiceDeskParamJiraDescription": {
                     "type": "string",
                     "description": "Jira issue description\n"
@@ -7143,6 +7207,10 @@
                     "actionJiraServiceDeskParamJiraCustomfields": {
                         "type": "string",
                         "description": "Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)\n"
+                    },
+                    "actionJiraServiceDeskParamJiraDedup": {
+                        "type": "string",
+                        "description": "Enables Jira ticket deduplication\n"
                     },
                     "actionJiraServiceDeskParamJiraDescription": {
                         "type": "string",
