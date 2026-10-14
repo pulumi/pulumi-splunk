@@ -866,6 +866,20 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionJiraServiceDeskParamJiraCustomfields);
     }
     /**
+     * Enables Jira ticket deduplication
+     * 
+     */
+    @Export(name="actionJiraServiceDeskParamJiraDedup", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> actionJiraServiceDeskParamJiraDedup;
+
+    /**
+     * @return Enables Jira ticket deduplication
+     * 
+     */
+    public Output<Optional<String>> actionJiraServiceDeskParamJiraDedup() {
+        return Codegen.optional(this.actionJiraServiceDeskParamJiraDedup);
+    }
+    /**
      * Jira issue description
      * 
      */

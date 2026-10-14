@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "splunk:index/adminProxyssoGroups:AdminProxyssoGroups":
+		r = &AdminProxyssoGroups{}
 	case "splunk:index/adminSamlGroups:AdminSamlGroups":
 		r = &AdminSamlGroups{}
 	case "splunk:index/appsLocal:AppsLocal":
@@ -108,6 +110,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"splunk",
+		"index/adminProxyssoGroups",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"splunk",
 		"index/adminSamlGroups",

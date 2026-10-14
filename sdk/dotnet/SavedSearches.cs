@@ -409,6 +409,12 @@ namespace Pulumi.Splunk
         public Output<string?> ActionJiraServiceDeskParamJiraCustomfields { get; private set; } = null!;
 
         /// <summary>
+        /// Enables Jira ticket deduplication
+        /// </summary>
+        [Output("actionJiraServiceDeskParamJiraDedup")]
+        public Output<string?> ActionJiraServiceDeskParamJiraDedup { get; private set; } = null!;
+
+        /// <summary>
         /// Jira issue description
         /// </summary>
         [Output("actionJiraServiceDeskParamJiraDescription")]
@@ -1638,6 +1644,12 @@ namespace Pulumi.Splunk
         public Input<string>? ActionJiraServiceDeskParamJiraCustomfields { get; set; }
 
         /// <summary>
+        /// Enables Jira ticket deduplication
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraDedup")]
+        public Input<string>? ActionJiraServiceDeskParamJiraDedup { get; set; }
+
+        /// <summary>
         /// Jira issue description
         /// </summary>
         [Input("actionJiraServiceDeskParamJiraDescription")]
@@ -2850,6 +2862,12 @@ namespace Pulumi.Splunk
         /// </summary>
         [Input("actionJiraServiceDeskParamJiraCustomfields")]
         public Input<string>? ActionJiraServiceDeskParamJiraCustomfields { get; set; }
+
+        /// <summary>
+        /// Enables Jira ticket deduplication
+        /// </summary>
+        [Input("actionJiraServiceDeskParamJiraDedup")]
+        public Input<string>? ActionJiraServiceDeskParamJiraDedup { get; set; }
 
         /// <summary>
         /// Jira issue description

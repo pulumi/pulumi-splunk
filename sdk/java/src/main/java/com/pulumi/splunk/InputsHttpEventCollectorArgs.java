@@ -80,14 +80,14 @@ public final class InputsHttpEventCollectorArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Set of indexes allowed for events with this token
+     * Set of indexes allowed for events with this token. Order does not matter.
      * 
      */
     @Import(name="indexes")
     private @Nullable Output<List<String>> indexes;
 
     /**
-     * @return Set of indexes allowed for events with this token
+     * @return Set of indexes allowed for events with this token. Order does not matter.
      * 
      */
     public Optional<Output<List<String>>> indexes() {
@@ -287,7 +287,7 @@ public final class InputsHttpEventCollectorArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param indexes Set of indexes allowed for events with this token
+         * @param indexes Set of indexes allowed for events with this token. Order does not matter.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class InputsHttpEventCollectorArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param indexes Set of indexes allowed for events with this token
+         * @param indexes Set of indexes allowed for events with this token. Order does not matter.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class InputsHttpEventCollectorArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param indexes Set of indexes allowed for events with this token
+         * @param indexes Set of indexes allowed for events with this token. Order does not matter.
          * 
          * @return builder
          * 

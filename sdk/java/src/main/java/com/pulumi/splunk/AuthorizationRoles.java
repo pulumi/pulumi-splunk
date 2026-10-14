@@ -144,14 +144,14 @@ public class AuthorizationRoles extends com.pulumi.resources.CustomResource {
         return this.importedRoles;
     }
     /**
-     * The name of the user role to create.
+     * The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The name of the user role to create.
+     * @return The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      * 
      */
     public Output<String> name() {

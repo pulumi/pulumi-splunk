@@ -93,14 +93,14 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The name of the user role to create.
+     * The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the user role to create.
+     * @return The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      * 
      */
     public Optional<Output<String>> name() {
@@ -374,7 +374,7 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param name The name of the user role to create.
+         * @param name The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class AuthorizationRolesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param name The name of the user role to create.
+         * @param name The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
          * 
          * @return builder
          * 

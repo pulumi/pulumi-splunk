@@ -200,6 +200,8 @@ type SavedSearches struct {
 	ActionJiraServiceDeskParamAccount pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamAccount"`
 	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
 	ActionJiraServiceDeskParamJiraCustomfields pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraCustomfields"`
+	// Enables Jira ticket deduplication
+	ActionJiraServiceDeskParamJiraDedup pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraDedup"`
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrOutput `pulumi:"actionJiraServiceDeskParamJiraDescription"`
 	// Jira issue type name
@@ -652,6 +654,8 @@ type savedSearchesState struct {
 	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
 	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
 	ActionJiraServiceDeskParamJiraCustomfields *string `pulumi:"actionJiraServiceDeskParamJiraCustomfields"`
+	// Enables Jira ticket deduplication
+	ActionJiraServiceDeskParamJiraDedup *string `pulumi:"actionJiraServiceDeskParamJiraDedup"`
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
 	// Jira issue type name
@@ -1045,6 +1049,8 @@ type SavedSearchesState struct {
 	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
 	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
 	ActionJiraServiceDeskParamJiraCustomfields pulumi.StringPtrInput
+	// Enables Jira ticket deduplication
+	ActionJiraServiceDeskParamJiraDedup pulumi.StringPtrInput
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
 	// Jira issue type name
@@ -1440,6 +1446,8 @@ type savedSearchesArgs struct {
 	ActionJiraServiceDeskParamAccount *string `pulumi:"actionJiraServiceDeskParamAccount"`
 	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
 	ActionJiraServiceDeskParamJiraCustomfields *string `pulumi:"actionJiraServiceDeskParamJiraCustomfields"`
+	// Enables Jira ticket deduplication
+	ActionJiraServiceDeskParamJiraDedup *string `pulumi:"actionJiraServiceDeskParamJiraDedup"`
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription *string `pulumi:"actionJiraServiceDeskParamJiraDescription"`
 	// Jira issue type name
@@ -1824,6 +1832,8 @@ type SavedSearchesArgs struct {
 	ActionJiraServiceDeskParamAccount pulumi.StringPtrInput
 	// Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
 	ActionJiraServiceDeskParamJiraCustomfields pulumi.StringPtrInput
+	// Enables Jira ticket deduplication
+	ActionJiraServiceDeskParamJiraDedup pulumi.StringPtrInput
 	// Jira issue description
 	ActionJiraServiceDeskParamJiraDescription pulumi.StringPtrInput
 	// Jira issue type name
@@ -2455,6 +2465,11 @@ func (o SavedSearchesOutput) ActionJiraServiceDeskParamAccount() pulumi.StringPt
 // Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
 func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraCustomfields() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraCustomfields }).(pulumi.StringPtrOutput)
+}
+
+// Enables Jira ticket deduplication
+func (o SavedSearchesOutput) ActionJiraServiceDeskParamJiraDedup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionJiraServiceDeskParamJiraDedup }).(pulumi.StringPtrOutput)
 }
 
 // Jira issue description

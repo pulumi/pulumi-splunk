@@ -84,7 +84,7 @@ namespace Pulumi.Splunk
         public Output<string> Index { get; private set; } = null!;
 
         /// <summary>
-        /// Set of indexes allowed for events with this token
+        /// Set of indexes allowed for events with this token. Order does not matter.
         /// </summary>
         [Output("indexes")]
         public Output<ImmutableArray<string>> Indexes { get; private set; } = null!;
@@ -197,7 +197,7 @@ namespace Pulumi.Splunk
         private InputList<string>? _indexes;
 
         /// <summary>
-        /// Set of indexes allowed for events with this token
+        /// Set of indexes allowed for events with this token. Order does not matter.
         /// </summary>
         public InputList<string> Indexes
         {
@@ -281,7 +281,7 @@ namespace Pulumi.Splunk
         private InputList<string>? _indexes;
 
         /// <summary>
-        /// Set of indexes allowed for events with this token
+        /// Set of indexes allowed for events with this token. Order does not matter.
         /// </summary>
         public InputList<string> Indexes
         {

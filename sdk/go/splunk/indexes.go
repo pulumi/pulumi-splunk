@@ -60,7 +60,7 @@ type Indexes struct {
 	// less than 2GB RAM = 67108864 (64MB) tsidx
 	// 2GB to 8GB RAM = 134217728 (128MB) tsidx
 	// more than 8GB RAM = 268435456 (256MB) tsidx<br>
-	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
 	BucketRebuildMemoryHint pulumi.StringOutput `pulumi:"bucketRebuildMemoryHint"`
 	// An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
 	ColdPath pulumi.StringOutput `pulumi:"coldPath"`
@@ -103,6 +103,7 @@ type Indexes struct {
 	MaxDataSize pulumi.StringOutput `pulumi:"maxDataSize"`
 	// Maximum hot buckets that can exist per index. Defaults to 3.
 	// <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+	// <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
 	MaxHotBuckets pulumi.IntOutput `pulumi:"maxHotBuckets"`
 	// Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
 	MaxHotIdleSecs pulumi.IntOutput `pulumi:"maxHotIdleSecs"`
@@ -152,6 +153,7 @@ type Indexes struct {
 	// Index replication control. This parameter applies to only clustering slaves.
 	// auto = Use the master index replication configuration value.
 	// 0 = Turn off replication for this index.
+	// Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
 	RepFactor pulumi.StringOutput `pulumi:"repFactor"`
 	// How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
 	RotatePeriodInSecs pulumi.IntOutput `pulumi:"rotatePeriodInSecs"`
@@ -214,7 +216,7 @@ type indexesState struct {
 	// less than 2GB RAM = 67108864 (64MB) tsidx
 	// 2GB to 8GB RAM = 134217728 (128MB) tsidx
 	// more than 8GB RAM = 268435456 (256MB) tsidx<br>
-	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
 	BucketRebuildMemoryHint *string `pulumi:"bucketRebuildMemoryHint"`
 	// An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
 	ColdPath *string `pulumi:"coldPath"`
@@ -257,6 +259,7 @@ type indexesState struct {
 	MaxDataSize *string `pulumi:"maxDataSize"`
 	// Maximum hot buckets that can exist per index. Defaults to 3.
 	// <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+	// <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
 	MaxHotBuckets *int `pulumi:"maxHotBuckets"`
 	// Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
 	MaxHotIdleSecs *int `pulumi:"maxHotIdleSecs"`
@@ -306,6 +309,7 @@ type indexesState struct {
 	// Index replication control. This parameter applies to only clustering slaves.
 	// auto = Use the master index replication configuration value.
 	// 0 = Turn off replication for this index.
+	// Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
 	RepFactor *string `pulumi:"repFactor"`
 	// How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
 	RotatePeriodInSecs *int `pulumi:"rotatePeriodInSecs"`
@@ -339,7 +343,7 @@ type IndexesState struct {
 	// less than 2GB RAM = 67108864 (64MB) tsidx
 	// 2GB to 8GB RAM = 134217728 (128MB) tsidx
 	// more than 8GB RAM = 268435456 (256MB) tsidx<br>
-	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
 	BucketRebuildMemoryHint pulumi.StringPtrInput
 	// An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
 	ColdPath pulumi.StringPtrInput
@@ -382,6 +386,7 @@ type IndexesState struct {
 	MaxDataSize pulumi.StringPtrInput
 	// Maximum hot buckets that can exist per index. Defaults to 3.
 	// <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+	// <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
 	MaxHotBuckets pulumi.IntPtrInput
 	// Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
 	MaxHotIdleSecs pulumi.IntPtrInput
@@ -431,6 +436,7 @@ type IndexesState struct {
 	// Index replication control. This parameter applies to only clustering slaves.
 	// auto = Use the master index replication configuration value.
 	// 0 = Turn off replication for this index.
+	// Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
 	RepFactor pulumi.StringPtrInput
 	// How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
 	RotatePeriodInSecs pulumi.IntPtrInput
@@ -468,7 +474,7 @@ type indexesArgs struct {
 	// less than 2GB RAM = 67108864 (64MB) tsidx
 	// 2GB to 8GB RAM = 134217728 (128MB) tsidx
 	// more than 8GB RAM = 268435456 (256MB) tsidx<br>
-	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
 	BucketRebuildMemoryHint *string `pulumi:"bucketRebuildMemoryHint"`
 	// An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
 	ColdPath *string `pulumi:"coldPath"`
@@ -511,6 +517,7 @@ type indexesArgs struct {
 	MaxDataSize *string `pulumi:"maxDataSize"`
 	// Maximum hot buckets that can exist per index. Defaults to 3.
 	// <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+	// <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
 	MaxHotBuckets *int `pulumi:"maxHotBuckets"`
 	// Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
 	MaxHotIdleSecs *int `pulumi:"maxHotIdleSecs"`
@@ -560,6 +567,7 @@ type indexesArgs struct {
 	// Index replication control. This parameter applies to only clustering slaves.
 	// auto = Use the master index replication configuration value.
 	// 0 = Turn off replication for this index.
+	// Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
 	RepFactor *string `pulumi:"repFactor"`
 	// How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
 	RotatePeriodInSecs *int `pulumi:"rotatePeriodInSecs"`
@@ -594,7 +602,7 @@ type IndexesArgs struct {
 	// less than 2GB RAM = 67108864 (64MB) tsidx
 	// 2GB to 8GB RAM = 134217728 (128MB) tsidx
 	// more than 8GB RAM = 268435456 (256MB) tsidx<br>
-	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+	// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
 	BucketRebuildMemoryHint pulumi.StringPtrInput
 	// An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
 	ColdPath pulumi.StringPtrInput
@@ -637,6 +645,7 @@ type IndexesArgs struct {
 	MaxDataSize pulumi.StringPtrInput
 	// Maximum hot buckets that can exist per index. Defaults to 3.
 	// <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+	// <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
 	MaxHotBuckets pulumi.IntPtrInput
 	// Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
 	MaxHotIdleSecs pulumi.IntPtrInput
@@ -686,6 +695,7 @@ type IndexesArgs struct {
 	// Index replication control. This parameter applies to only clustering slaves.
 	// auto = Use the master index replication configuration value.
 	// 0 = Turn off replication for this index.
+	// Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
 	RepFactor pulumi.StringPtrInput
 	// How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
 	RotatePeriodInSecs pulumi.IntPtrInput
@@ -811,7 +821,7 @@ func (o IndexesOutput) BlockSignSize() pulumi.IntOutput {
 // less than 2GB RAM = 67108864 (64MB) tsidx
 // 2GB to 8GB RAM = 134217728 (128MB) tsidx
 // more than 8GB RAM = 268435456 (256MB) tsidx<br>
-// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+// Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
 func (o IndexesOutput) BucketRebuildMemoryHint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Indexes) pulumi.StringOutput { return v.BucketRebuildMemoryHint }).(pulumi.StringOutput)
 }
@@ -890,6 +900,7 @@ func (o IndexesOutput) MaxDataSize() pulumi.StringOutput {
 
 // Maximum hot buckets that can exist per index. Defaults to 3.
 // <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+// <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
 func (o IndexesOutput) MaxHotBuckets() pulumi.IntOutput {
 	return o.ApplyT(func(v *Indexes) pulumi.IntOutput { return v.MaxHotBuckets }).(pulumi.IntOutput)
 }
@@ -990,6 +1001,7 @@ func (o IndexesOutput) RawChunkSizeBytes() pulumi.IntOutput {
 // Index replication control. This parameter applies to only clustering slaves.
 // auto = Use the master index replication configuration value.
 // 0 = Turn off replication for this index.
+// Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
 func (o IndexesOutput) RepFactor() pulumi.StringOutput {
 	return o.ApplyT(func(v *Indexes) pulumi.StringOutput { return v.RepFactor }).(pulumi.StringOutput)
 }

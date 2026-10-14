@@ -6,6 +6,7 @@ import builtins as _builtins
 from . import _utilities
 import typing
 # Export this package's modules as members:
+from .admin_proxysso_groups import *
 from .admin_saml_groups import *
 from .apps_local import *
 from .authentication_users import *
@@ -48,6 +49,14 @@ else:
 _utilities.register(
     resource_modules="""
 [
+ {
+  "pkg": "splunk",
+  "mod": "index/adminProxyssoGroups",
+  "fqn": "pulumi_splunk",
+  "classes": {
+   "splunk:index/adminProxyssoGroups:AdminProxyssoGroups": "AdminProxyssoGroups"
+  }
+ },
  {
   "pkg": "splunk",
   "mod": "index/adminSamlGroups",

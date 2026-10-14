@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
+export { AdminProxyssoGroupsArgs, AdminProxyssoGroupsState } from "./adminProxyssoGroups";
+export type AdminProxyssoGroups = import("./adminProxyssoGroups").AdminProxyssoGroups;
+export const AdminProxyssoGroups: typeof import("./adminProxyssoGroups").AdminProxyssoGroups = null as any;
+utilities.lazyLoad(exports, ["AdminProxyssoGroups"], () => require("./adminProxyssoGroups"));
+
 export { AdminSamlGroupsArgs, AdminSamlGroupsState } from "./adminSamlGroups";
 export type AdminSamlGroups = import("./adminSamlGroups").AdminSamlGroups;
 export const AdminSamlGroups: typeof import("./adminSamlGroups").AdminSamlGroups = null as any;
@@ -162,6 +167,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "splunk:index/adminProxyssoGroups:AdminProxyssoGroups":
+                return new AdminProxyssoGroups(name, <any>undefined, { urn })
             case "splunk:index/adminSamlGroups:AdminSamlGroups":
                 return new AdminSamlGroups(name, <any>undefined, { urn })
             case "splunk:index/appsLocal:AppsLocal":
@@ -223,6 +230,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("splunk", "index/adminProxyssoGroups", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/adminSamlGroups", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/appsLocal", _module)
 pulumi.runtime.registerResourceModule("splunk", "index/authenticationUsers", _module)

@@ -71,7 +71,7 @@ type InputsHttpEventCollector struct {
 	Host pulumi.StringOutput `pulumi:"host"`
 	// Index to store generated events
 	Index pulumi.StringOutput `pulumi:"index"`
-	// Set of indexes allowed for events with this token
+	// Set of indexes allowed for events with this token. Order does not matter.
 	Indexes pulumi.StringArrayOutput `pulumi:"indexes"`
 	// Token name (inputs.conf key)
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -130,7 +130,7 @@ type inputsHttpEventCollectorState struct {
 	Host *string `pulumi:"host"`
 	// Index to store generated events
 	Index *string `pulumi:"index"`
-	// Set of indexes allowed for events with this token
+	// Set of indexes allowed for events with this token. Order does not matter.
 	Indexes []string `pulumi:"indexes"`
 	// Token name (inputs.conf key)
 	Name *string `pulumi:"name"`
@@ -153,7 +153,7 @@ type InputsHttpEventCollectorState struct {
 	Host pulumi.StringPtrInput
 	// Index to store generated events
 	Index pulumi.StringPtrInput
-	// Set of indexes allowed for events with this token
+	// Set of indexes allowed for events with this token. Order does not matter.
 	Indexes pulumi.StringArrayInput
 	// Token name (inputs.conf key)
 	Name pulumi.StringPtrInput
@@ -180,7 +180,7 @@ type inputsHttpEventCollectorArgs struct {
 	Host *string `pulumi:"host"`
 	// Index to store generated events
 	Index *string `pulumi:"index"`
-	// Set of indexes allowed for events with this token
+	// Set of indexes allowed for events with this token. Order does not matter.
 	Indexes []string `pulumi:"indexes"`
 	// Token name (inputs.conf key)
 	Name *string `pulumi:"name"`
@@ -204,7 +204,7 @@ type InputsHttpEventCollectorArgs struct {
 	Host pulumi.StringPtrInput
 	// Index to store generated events
 	Index pulumi.StringPtrInput
-	// Set of indexes allowed for events with this token
+	// Set of indexes allowed for events with this token. Order does not matter.
 	Indexes pulumi.StringArrayInput
 	// Token name (inputs.conf key)
 	Name pulumi.StringPtrInput
@@ -325,7 +325,7 @@ func (o InputsHttpEventCollectorOutput) Index() pulumi.StringOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringOutput { return v.Index }).(pulumi.StringOutput)
 }
 
-// Set of indexes allowed for events with this token
+// Set of indexes allowed for events with this token. Order does not matter.
 func (o InputsHttpEventCollectorOutput) Indexes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InputsHttpEventCollector) pulumi.StringArrayOutput { return v.Indexes }).(pulumi.StringArrayOutput)
 }
