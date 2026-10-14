@@ -75,6 +75,7 @@ class SavedSearchesArgs:
                  action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_dedup: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
@@ -268,6 +269,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_account: Jira Service Desk account name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_dedup: Enables Jira ticket deduplication
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -512,6 +514,8 @@ class SavedSearchesArgs:
             pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
         if action_jira_service_desk_param_jira_customfields is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_customfields", action_jira_service_desk_param_jira_customfields)
+        if action_jira_service_desk_param_jira_dedup is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_dedup", action_jira_service_desk_param_jira_dedup)
         if action_jira_service_desk_param_jira_description is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
         if action_jira_service_desk_param_jira_issue_type is not None:
@@ -1432,6 +1436,18 @@ class SavedSearchesArgs:
     @action_jira_service_desk_param_jira_customfields.setter
     def action_jira_service_desk_param_jira_customfields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_customfields", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraDedup")
+    def action_jira_service_desk_param_jira_dedup(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Enables Jira ticket deduplication
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_dedup")
+
+    @action_jira_service_desk_param_jira_dedup.setter
+    def action_jira_service_desk_param_jira_dedup(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_dedup", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
@@ -3123,6 +3139,7 @@ class _SavedSearchesState:
                  action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_dedup: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
@@ -3321,6 +3338,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_account: Jira Service Desk account name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_dedup: Enables Jira ticket deduplication
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -3571,6 +3589,8 @@ class _SavedSearchesState:
             pulumi.set(__self__, "action_jira_service_desk_param_account", action_jira_service_desk_param_account)
         if action_jira_service_desk_param_jira_customfields is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_customfields", action_jira_service_desk_param_jira_customfields)
+        if action_jira_service_desk_param_jira_dedup is not None:
+            pulumi.set(__self__, "action_jira_service_desk_param_jira_dedup", action_jira_service_desk_param_jira_dedup)
         if action_jira_service_desk_param_jira_description is not None:
             pulumi.set(__self__, "action_jira_service_desk_param_jira_description", action_jira_service_desk_param_jira_description)
         if action_jira_service_desk_param_jira_issue_type is not None:
@@ -4501,6 +4521,18 @@ class _SavedSearchesState:
     @action_jira_service_desk_param_jira_customfields.setter
     def action_jira_service_desk_param_jira_customfields(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_jira_service_desk_param_jira_customfields", value)
+
+    @_builtins.property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraDedup")
+    def action_jira_service_desk_param_jira_dedup(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Enables Jira ticket deduplication
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_dedup")
+
+    @action_jira_service_desk_param_jira_dedup.setter
+    def action_jira_service_desk_param_jira_dedup(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "action_jira_service_desk_param_jira_dedup", value)
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")
@@ -6254,6 +6286,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_dedup: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
@@ -6511,6 +6544,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_account: Jira Service Desk account name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_dedup: Enables Jira ticket deduplication
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -6787,6 +6821,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_jira_service_desk_param_jira_dedup: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
@@ -6986,6 +7021,7 @@ class SavedSearches(pulumi.CustomResource):
             __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
             __props__.__dict__["action_jira_service_desk_param_account"] = action_jira_service_desk_param_account
             __props__.__dict__["action_jira_service_desk_param_jira_customfields"] = action_jira_service_desk_param_jira_customfields
+            __props__.__dict__["action_jira_service_desk_param_jira_dedup"] = action_jira_service_desk_param_jira_dedup
             __props__.__dict__["action_jira_service_desk_param_jira_description"] = action_jira_service_desk_param_jira_description
             __props__.__dict__["action_jira_service_desk_param_jira_issue_type"] = action_jira_service_desk_param_jira_issue_type
             __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
@@ -7196,6 +7232,7 @@ class SavedSearches(pulumi.CustomResource):
             action_email_width_sort_columns: pulumi.Input[Optional[_builtins.bool]] = None,
             action_jira_service_desk_param_account: pulumi.Input[Optional[_builtins.str]] = None,
             action_jira_service_desk_param_jira_customfields: pulumi.Input[Optional[_builtins.str]] = None,
+            action_jira_service_desk_param_jira_dedup: pulumi.Input[Optional[_builtins.str]] = None,
             action_jira_service_desk_param_jira_description: pulumi.Input[Optional[_builtins.str]] = None,
             action_jira_service_desk_param_jira_issue_type: pulumi.Input[Optional[_builtins.str]] = None,
             action_jira_service_desk_param_jira_priority: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7398,6 +7435,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] action_email_width_sort_columns: Indicates whether columns should be sorted from least wide to most wide, left to right.Only valid if format=text.
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_account: Jira Service Desk account name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_customfields: Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
+        :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_dedup: Enables Jira ticket deduplication
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_description: Jira issue description
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_issue_type: Jira issue type name
         :param pulumi.Input[_builtins.str] action_jira_service_desk_param_jira_priority: Jira priority of issue
@@ -7598,6 +7636,7 @@ class SavedSearches(pulumi.CustomResource):
         __props__.__dict__["action_email_width_sort_columns"] = action_email_width_sort_columns
         __props__.__dict__["action_jira_service_desk_param_account"] = action_jira_service_desk_param_account
         __props__.__dict__["action_jira_service_desk_param_jira_customfields"] = action_jira_service_desk_param_jira_customfields
+        __props__.__dict__["action_jira_service_desk_param_jira_dedup"] = action_jira_service_desk_param_jira_dedup
         __props__.__dict__["action_jira_service_desk_param_jira_description"] = action_jira_service_desk_param_jira_description
         __props__.__dict__["action_jira_service_desk_param_jira_issue_type"] = action_jira_service_desk_param_jira_issue_type
         __props__.__dict__["action_jira_service_desk_param_jira_priority"] = action_jira_service_desk_param_jira_priority
@@ -8172,6 +8211,14 @@ class SavedSearches(pulumi.CustomResource):
         Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
         """
         return pulumi.get(self, "action_jira_service_desk_param_jira_customfields")
+
+    @_builtins.property
+    @pulumi.getter(name="actionJiraServiceDeskParamJiraDedup")
+    def action_jira_service_desk_param_jira_dedup(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Enables Jira ticket deduplication
+        """
+        return pulumi.get(self, "action_jira_service_desk_param_jira_dedup")
 
     @_builtins.property
     @pulumi.getter(name="actionJiraServiceDeskParamJiraDescription")

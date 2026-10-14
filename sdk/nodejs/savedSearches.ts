@@ -315,6 +315,10 @@ export class SavedSearches extends pulumi.CustomResource {
      */
     declare public readonly actionJiraServiceDeskParamJiraCustomfields: pulumi.Output<string | undefined>;
     /**
+     * Enables Jira ticket deduplication
+     */
+    declare public readonly actionJiraServiceDeskParamJiraDedup: pulumi.Output<string | undefined>;
+    /**
      * Jira issue description
      */
     declare public readonly actionJiraServiceDeskParamJiraDescription: pulumi.Output<string | undefined>;
@@ -946,6 +950,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionEmailWidthSortColumns"] = state?.actionEmailWidthSortColumns;
             resourceInputs["actionJiraServiceDeskParamAccount"] = state?.actionJiraServiceDeskParamAccount;
             resourceInputs["actionJiraServiceDeskParamJiraCustomfields"] = state?.actionJiraServiceDeskParamJiraCustomfields;
+            resourceInputs["actionJiraServiceDeskParamJiraDedup"] = state?.actionJiraServiceDeskParamJiraDedup;
             resourceInputs["actionJiraServiceDeskParamJiraDescription"] = state?.actionJiraServiceDeskParamJiraDescription;
             resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = state?.actionJiraServiceDeskParamJiraIssueType;
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = state?.actionJiraServiceDeskParamJiraPriority;
@@ -1145,6 +1150,7 @@ export class SavedSearches extends pulumi.CustomResource {
             resourceInputs["actionEmailWidthSortColumns"] = args?.actionEmailWidthSortColumns;
             resourceInputs["actionJiraServiceDeskParamAccount"] = args?.actionJiraServiceDeskParamAccount;
             resourceInputs["actionJiraServiceDeskParamJiraCustomfields"] = args?.actionJiraServiceDeskParamJiraCustomfields;
+            resourceInputs["actionJiraServiceDeskParamJiraDedup"] = args?.actionJiraServiceDeskParamJiraDedup;
             resourceInputs["actionJiraServiceDeskParamJiraDescription"] = args?.actionJiraServiceDeskParamJiraDescription;
             resourceInputs["actionJiraServiceDeskParamJiraIssueType"] = args?.actionJiraServiceDeskParamJiraIssueType;
             resourceInputs["actionJiraServiceDeskParamJiraPriority"] = args?.actionJiraServiceDeskParamJiraPriority;
@@ -1515,6 +1521,10 @@ export interface SavedSearchesState {
      * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
      */
     actionJiraServiceDeskParamJiraCustomfields?: pulumi.Input<string | undefined>;
+    /**
+     * Enables Jira ticket deduplication
+     */
+    actionJiraServiceDeskParamJiraDedup?: pulumi.Input<string | undefined>;
     /**
      * Jira issue description
      */
@@ -2297,6 +2307,10 @@ export interface SavedSearchesArgs {
      * Jira custom fields data (see https://ta-jira-service-desk-simple-addon.readthedocs.io/en/latest/userguide.html)
      */
     actionJiraServiceDeskParamJiraCustomfields?: pulumi.Input<string | undefined>;
+    /**
+     * Enables Jira ticket deduplication
+     */
+    actionJiraServiceDeskParamJiraDedup?: pulumi.Input<string | undefined>;
     /**
      * Jira issue description
      */

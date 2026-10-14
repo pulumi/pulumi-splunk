@@ -19,6 +19,7 @@
         "skipLibCheck": true
     },
     "files": [
+        "adminProxyssoGroups.ts",
         "adminSamlGroups.ts",
         "appsLocal.ts",
         "authenticationUsers.ts",

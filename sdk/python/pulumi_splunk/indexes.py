@@ -71,7 +71,7 @@ class IndexesArgs:
                less than 2GB RAM = 67108864 (64MB) tsidx
                2GB to 8GB RAM = 134217728 (128MB) tsidx
                more than 8GB RAM = 268435456 (256MB) tsidx<br>
-               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         :param pulumi.Input[_builtins.str] cold_path: An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
         :param pulumi.Input[_builtins.str] cold_to_frozen_dir: Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
                <br>
@@ -102,6 +102,7 @@ class IndexesArgs:
                Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         :param pulumi.Input[_builtins.int] max_hot_buckets: Maximum hot buckets that can exist per index. Defaults to 3.
                <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+               <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         :param pulumi.Input[_builtins.int] max_hot_idle_secs: Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
         :param pulumi.Input[_builtins.int] max_hot_span_secs: Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
         :param pulumi.Input[_builtins.int] max_mem_mb: The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
@@ -134,6 +135,7 @@ class IndexesArgs:
         :param pulumi.Input[_builtins.str] rep_factor: Index replication control. This parameter applies to only clustering slaves.
                auto = Use the master index replication configuration value.
                0 = Turn off replication for this index.
+               Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         :param pulumi.Input[_builtins.int] rotate_period_in_secs: How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
         :param pulumi.Input[_builtins.int] service_meta_period: Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
                You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
@@ -260,7 +262,7 @@ class IndexesArgs:
         less than 2GB RAM = 67108864 (64MB) tsidx
         2GB to 8GB RAM = 134217728 (128MB) tsidx
         more than 8GB RAM = 268435456 (256MB) tsidx<br>
-        Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+        Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         """
         return pulumi.get(self, "bucket_rebuild_memory_hint")
 
@@ -423,6 +425,7 @@ class IndexesArgs:
         """
         Maximum hot buckets that can exist per index. Defaults to 3.
         <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+        <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         """
         return pulumi.get(self, "max_hot_buckets")
 
@@ -642,6 +645,7 @@ class IndexesArgs:
         Index replication control. This parameter applies to only clustering slaves.
         auto = Use the master index replication configuration value.
         0 = Turn off replication for this index.
+        Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         """
         return pulumi.get(self, "rep_factor")
 
@@ -792,7 +796,7 @@ class _IndexesState:
                less than 2GB RAM = 67108864 (64MB) tsidx
                2GB to 8GB RAM = 134217728 (128MB) tsidx
                more than 8GB RAM = 268435456 (256MB) tsidx<br>
-               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         :param pulumi.Input[_builtins.str] cold_path: An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
         :param pulumi.Input[_builtins.str] cold_to_frozen_dir: Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
                <br>
@@ -823,6 +827,7 @@ class _IndexesState:
                Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         :param pulumi.Input[_builtins.int] max_hot_buckets: Maximum hot buckets that can exist per index. Defaults to 3.
                <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+               <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         :param pulumi.Input[_builtins.int] max_hot_idle_secs: Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
         :param pulumi.Input[_builtins.int] max_hot_span_secs: Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
         :param pulumi.Input[_builtins.int] max_mem_mb: The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
@@ -855,6 +860,7 @@ class _IndexesState:
         :param pulumi.Input[_builtins.str] rep_factor: Index replication control. This parameter applies to only clustering slaves.
                auto = Use the master index replication configuration value.
                0 = Turn off replication for this index.
+               Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         :param pulumi.Input[_builtins.int] rotate_period_in_secs: How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
         :param pulumi.Input[_builtins.int] service_meta_period: Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
                You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
@@ -981,7 +987,7 @@ class _IndexesState:
         less than 2GB RAM = 67108864 (64MB) tsidx
         2GB to 8GB RAM = 134217728 (128MB) tsidx
         more than 8GB RAM = 268435456 (256MB) tsidx<br>
-        Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+        Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         """
         return pulumi.get(self, "bucket_rebuild_memory_hint")
 
@@ -1144,6 +1150,7 @@ class _IndexesState:
         """
         Maximum hot buckets that can exist per index. Defaults to 3.
         <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+        <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         """
         return pulumi.get(self, "max_hot_buckets")
 
@@ -1363,6 +1370,7 @@ class _IndexesState:
         Index replication control. This parameter applies to only clustering slaves.
         auto = Use the master index replication configuration value.
         0 = Turn off replication for this index.
+        Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         """
         return pulumi.get(self, "rep_factor")
 
@@ -1539,7 +1547,7 @@ class Indexes(pulumi.CustomResource):
                less than 2GB RAM = 67108864 (64MB) tsidx
                2GB to 8GB RAM = 134217728 (128MB) tsidx
                more than 8GB RAM = 268435456 (256MB) tsidx<br>
-               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         :param pulumi.Input[_builtins.str] cold_path: An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
         :param pulumi.Input[_builtins.str] cold_to_frozen_dir: Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
                <br>
@@ -1570,6 +1578,7 @@ class Indexes(pulumi.CustomResource):
                Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         :param pulumi.Input[_builtins.int] max_hot_buckets: Maximum hot buckets that can exist per index. Defaults to 3.
                <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+               <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         :param pulumi.Input[_builtins.int] max_hot_idle_secs: Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
         :param pulumi.Input[_builtins.int] max_hot_span_secs: Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
         :param pulumi.Input[_builtins.int] max_mem_mb: The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
@@ -1602,6 +1611,7 @@ class Indexes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] rep_factor: Index replication control. This parameter applies to only clustering slaves.
                auto = Use the master index replication configuration value.
                0 = Turn off replication for this index.
+               Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         :param pulumi.Input[_builtins.int] rotate_period_in_secs: How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
         :param pulumi.Input[_builtins.int] service_meta_period: Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
                You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
@@ -1810,7 +1820,7 @@ class Indexes(pulumi.CustomResource):
                less than 2GB RAM = 67108864 (64MB) tsidx
                2GB to 8GB RAM = 134217728 (128MB) tsidx
                more than 8GB RAM = 268435456 (256MB) tsidx<br>
-               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+               Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         :param pulumi.Input[_builtins.str] cold_path: An absolute path that contains the colddbs for the index. The path must be readable and writable. Cold databases are opened as needed when searching.
         :param pulumi.Input[_builtins.str] cold_to_frozen_dir: Destination path for the frozen archive. Use as an alternative to a coldToFrozenScript. Splunk software automatically puts frozen buckets in this directory.
                <br>
@@ -1841,6 +1851,7 @@ class Indexes(pulumi.CustomResource):
                Use "auto_high_volume" for high volume indexes (such as the main index); otherwise, use "auto". A "high volume index" would typically be considered one that gets over 10GB of data per day.
         :param pulumi.Input[_builtins.int] max_hot_buckets: Maximum hot buckets that can exist per index. Defaults to 3.
                <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+               <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         :param pulumi.Input[_builtins.int] max_hot_idle_secs: Maximum life, in seconds, of a hot bucket. Defaults to 0. If a hot bucket exceeds maxHotIdleSecs, Splunk software rolls it to warm. This setting operates independently of maxHotBuckets, which can also cause hot buckets to roll. A value of 0 turns off the idle check (equivalent to INFINITE idle time).
         :param pulumi.Input[_builtins.int] max_hot_span_secs: Upper bound of target maximum timespan of hot/warm buckets in seconds. Defaults to 7776000 seconds (90 days).
         :param pulumi.Input[_builtins.int] max_mem_mb: The amount of memory, expressed in MB, to allocate for buffering a single tsidx file into memory before flushing to disk. Defaults to 5. The default is recommended for all environments.
@@ -1873,6 +1884,7 @@ class Indexes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] rep_factor: Index replication control. This parameter applies to only clustering slaves.
                auto = Use the master index replication configuration value.
                0 = Turn off replication for this index.
+               Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         :param pulumi.Input[_builtins.int] rotate_period_in_secs: How frequently (in seconds) to check if a new hot bucket needs to be created. Also, how frequently to check if there are any warm/cold buckets that should be rolled/frozen.
         :param pulumi.Input[_builtins.int] service_meta_period: Defines how frequently metadata is synced to disk, in seconds. Defaults to 25 (seconds).
                You may want to set this to a higher value if the sum of your metadata file sizes is larger than many tens of megabytes, to avoid the hit on I/O in the indexing fast path.
@@ -1957,7 +1969,7 @@ class Indexes(pulumi.CustomResource):
         less than 2GB RAM = 67108864 (64MB) tsidx
         2GB to 8GB RAM = 134217728 (128MB) tsidx
         more than 8GB RAM = 268435456 (256MB) tsidx<br>
-        Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+        Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
         """
         return pulumi.get(self, "bucket_rebuild_memory_hint")
 
@@ -2072,6 +2084,7 @@ class Indexes(pulumi.CustomResource):
         """
         Maximum hot buckets that can exist per index. Defaults to 3.
         <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+        <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `max_hot_buckets = 6` remains valid.
         """
         return pulumi.get(self, "max_hot_buckets")
 
@@ -2223,6 +2236,7 @@ class Indexes(pulumi.CustomResource):
         Index replication control. This parameter applies to only clustering slaves.
         auto = Use the master index replication configuration value.
         0 = Turn off replication for this index.
+        Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
         """
         return pulumi.get(self, "rep_factor")
 

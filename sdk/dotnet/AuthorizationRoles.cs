@@ -90,7 +90,7 @@ namespace Pulumi.Splunk
         public Output<ImmutableArray<string>> ImportedRoles { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the user role to create.
+        /// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -226,7 +226,7 @@ namespace Pulumi.Splunk
         }
 
         /// <summary>
-        /// The name of the user role to create.
+        /// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -336,7 +336,7 @@ namespace Pulumi.Splunk
         }
 
         /// <summary>
-        /// The name of the user role to create.
+        /// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

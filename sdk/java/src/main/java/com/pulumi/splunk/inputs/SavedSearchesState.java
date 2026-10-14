@@ -830,6 +830,21 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Enables Jira ticket deduplication
+     * 
+     */
+    @Import(name="actionJiraServiceDeskParamJiraDedup")
+    private @Nullable Output<String> actionJiraServiceDeskParamJiraDedup;
+
+    /**
+     * @return Enables Jira ticket deduplication
+     * 
+     */
+    public Optional<Output<String>> actionJiraServiceDeskParamJiraDedup() {
+        return Optional.ofNullable(this.actionJiraServiceDeskParamJiraDedup);
+    }
+
+    /**
      * Jira issue description
      * 
      */
@@ -3001,6 +3016,7 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         this.actionEmailWidthSortColumns = $.actionEmailWidthSortColumns;
         this.actionJiraServiceDeskParamAccount = $.actionJiraServiceDeskParamAccount;
         this.actionJiraServiceDeskParamJiraCustomfields = $.actionJiraServiceDeskParamJiraCustomfields;
+        this.actionJiraServiceDeskParamJiraDedup = $.actionJiraServiceDeskParamJiraDedup;
         this.actionJiraServiceDeskParamJiraDescription = $.actionJiraServiceDeskParamJiraDescription;
         this.actionJiraServiceDeskParamJiraIssueType = $.actionJiraServiceDeskParamJiraIssueType;
         this.actionJiraServiceDeskParamJiraPriority = $.actionJiraServiceDeskParamJiraPriority;
@@ -4294,6 +4310,27 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder actionJiraServiceDeskParamJiraCustomfields(String actionJiraServiceDeskParamJiraCustomfields) {
             return actionJiraServiceDeskParamJiraCustomfields(Output.of(actionJiraServiceDeskParamJiraCustomfields));
+        }
+
+        /**
+         * @param actionJiraServiceDeskParamJiraDedup Enables Jira ticket deduplication
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionJiraServiceDeskParamJiraDedup(@Nullable Output<String> actionJiraServiceDeskParamJiraDedup) {
+            $.actionJiraServiceDeskParamJiraDedup = actionJiraServiceDeskParamJiraDedup;
+            return this;
+        }
+
+        /**
+         * @param actionJiraServiceDeskParamJiraDedup Enables Jira ticket deduplication
+         * 
+         * @return builder
+         * 
+         */
+        public Builder actionJiraServiceDeskParamJiraDedup(String actionJiraServiceDeskParamJiraDedup) {
+            return actionJiraServiceDeskParamJiraDedup(Output.of(actionJiraServiceDeskParamJiraDedup));
         }
 
         /**

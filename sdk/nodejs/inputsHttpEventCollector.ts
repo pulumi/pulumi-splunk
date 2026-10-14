@@ -83,7 +83,7 @@ export class InputsHttpEventCollector extends pulumi.CustomResource {
      */
     declare public readonly index: pulumi.Output<string>;
     /**
-     * Set of indexes allowed for events with this token
+     * Set of indexes allowed for events with this token. Order does not matter.
      */
     declare public readonly indexes: pulumi.Output<string[]>;
     /**
@@ -171,7 +171,7 @@ export interface InputsHttpEventCollectorState {
      */
     index?: pulumi.Input<string | undefined>;
     /**
-     * Set of indexes allowed for events with this token
+     * Set of indexes allowed for events with this token. Order does not matter.
      */
     indexes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -217,7 +217,7 @@ export interface InputsHttpEventCollectorArgs {
      */
     index?: pulumi.Input<string | undefined>;
     /**
-     * Set of indexes allowed for events with this token
+     * Set of indexes allowed for events with this token. Order does not matter.
      */
     indexes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

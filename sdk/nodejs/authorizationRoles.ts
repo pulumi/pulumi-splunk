@@ -89,7 +89,7 @@ export class AuthorizationRoles extends pulumi.CustomResource {
      */
     declare public readonly importedRoles: pulumi.Output<string[]>;
     /**
-     * The name of the user role to create.
+     * The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -193,7 +193,7 @@ export interface AuthorizationRolesState {
      */
     importedRoles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The name of the user role to create.
+     * The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -251,7 +251,7 @@ export interface AuthorizationRolesArgs {
      */
     importedRoles?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The name of the user role to create.
+     * The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
      */
     name?: pulumi.Input<string | undefined>;
     /**

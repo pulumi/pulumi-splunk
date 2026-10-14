@@ -131,14 +131,14 @@ public class InputsHttpEventCollector extends com.pulumi.resources.CustomResourc
         return this.index;
     }
     /**
-     * Set of indexes allowed for events with this token
+     * Set of indexes allowed for events with this token. Order does not matter.
      * 
      */
     @Export(name="indexes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> indexes;
 
     /**
-     * @return Set of indexes allowed for events with this token
+     * @return Set of indexes allowed for events with this token. Order does not matter.
      * 
      */
     public Output<List<String>> indexes() {

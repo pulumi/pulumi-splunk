@@ -73,7 +73,7 @@ type AuthorizationRoles struct {
 	DefaultApp pulumi.StringOutput `pulumi:"defaultApp"`
 	// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
 	ImportedRoles pulumi.StringArrayOutput `pulumi:"importedRoles"`
-	// The name of the user role to create.
+	// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
 	RealtimeSearchJobsQuota pulumi.IntPtrOutput `pulumi:"realtimeSearchJobsQuota"`
@@ -131,7 +131,7 @@ type authorizationRolesState struct {
 	DefaultApp *string `pulumi:"defaultApp"`
 	// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
 	ImportedRoles []string `pulumi:"importedRoles"`
-	// The name of the user role to create.
+	// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
 	Name *string `pulumi:"name"`
 	// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
 	RealtimeSearchJobsQuota *int `pulumi:"realtimeSearchJobsQuota"`
@@ -160,7 +160,7 @@ type AuthorizationRolesState struct {
 	DefaultApp pulumi.StringPtrInput
 	// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
 	ImportedRoles pulumi.StringArrayInput
-	// The name of the user role to create.
+	// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
 	Name pulumi.StringPtrInput
 	// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
 	RealtimeSearchJobsQuota pulumi.IntPtrInput
@@ -193,7 +193,7 @@ type authorizationRolesArgs struct {
 	DefaultApp *string `pulumi:"defaultApp"`
 	// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
 	ImportedRoles []string `pulumi:"importedRoles"`
-	// The name of the user role to create.
+	// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
 	Name *string `pulumi:"name"`
 	// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
 	RealtimeSearchJobsQuota *int `pulumi:"realtimeSearchJobsQuota"`
@@ -223,7 +223,7 @@ type AuthorizationRolesArgs struct {
 	DefaultApp pulumi.StringPtrInput
 	// List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
 	ImportedRoles pulumi.StringArrayInput
-	// The name of the user role to create.
+	// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
 	Name pulumi.StringPtrInput
 	// Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
 	RealtimeSearchJobsQuota pulumi.IntPtrInput
@@ -353,7 +353,7 @@ func (o AuthorizationRolesOutput) ImportedRoles() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringArrayOutput { return v.ImportedRoles }).(pulumi.StringArrayOutput)
 }
 
-// The name of the user role to create.
+// The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
 func (o AuthorizationRolesOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuthorizationRoles) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

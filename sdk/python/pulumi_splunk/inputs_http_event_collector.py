@@ -38,7 +38,7 @@ class InputsHttpEventCollectorArgs:
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator
         :param pulumi.Input[_builtins.str] host: Default host value for events with this token
         :param pulumi.Input[_builtins.str] index: Index to store generated events
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token. Order does not matter.
         :param pulumi.Input[_builtins.str] name: Token name (inputs.conf key)
         :param pulumi.Input[_builtins.str] source: Default source for events with this token
         :param pulumi.Input[_builtins.str] sourcetype: Default source type for events with this token
@@ -118,7 +118,7 @@ class InputsHttpEventCollectorArgs:
     @pulumi.getter
     def indexes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Set of indexes allowed for events with this token
+        Set of indexes allowed for events with this token. Order does not matter.
         """
         return pulumi.get(self, "indexes")
 
@@ -207,7 +207,7 @@ class _InputsHttpEventCollectorState:
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator
         :param pulumi.Input[_builtins.str] host: Default host value for events with this token
         :param pulumi.Input[_builtins.str] index: Index to store generated events
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token. Order does not matter.
         :param pulumi.Input[_builtins.str] name: Token name (inputs.conf key)
         :param pulumi.Input[_builtins.str] source: Default source for events with this token
         :param pulumi.Input[_builtins.str] sourcetype: Default source type for events with this token
@@ -287,7 +287,7 @@ class _InputsHttpEventCollectorState:
     @pulumi.getter
     def indexes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Set of indexes allowed for events with this token
+        Set of indexes allowed for events with this token. Order does not matter.
         """
         return pulumi.get(self, "indexes")
 
@@ -411,7 +411,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator
         :param pulumi.Input[_builtins.str] host: Default host value for events with this token
         :param pulumi.Input[_builtins.str] index: Index to store generated events
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token. Order does not matter.
         :param pulumi.Input[_builtins.str] name: Token name (inputs.conf key)
         :param pulumi.Input[_builtins.str] source: Default source for events with this token
         :param pulumi.Input[_builtins.str] sourcetype: Default source type for events with this token
@@ -533,7 +533,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] disabled: Input disabled indicator
         :param pulumi.Input[_builtins.str] host: Default host value for events with this token
         :param pulumi.Input[_builtins.str] index: Index to store generated events
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] indexes: Set of indexes allowed for events with this token. Order does not matter.
         :param pulumi.Input[_builtins.str] name: Token name (inputs.conf key)
         :param pulumi.Input[_builtins.str] source: Default source for events with this token
         :param pulumi.Input[_builtins.str] sourcetype: Default source type for events with this token
@@ -592,7 +592,7 @@ class InputsHttpEventCollector(pulumi.CustomResource):
     @pulumi.getter
     def indexes(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        Set of indexes allowed for events with this token
+        Set of indexes allowed for events with this token. Order does not matter.
         """
         return pulumi.get(self, "indexes")
 

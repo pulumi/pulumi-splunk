@@ -99,7 +99,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * less than 2GB RAM = 67108864 (64MB) tsidx
      * 2GB to 8GB RAM = 134217728 (128MB) tsidx
      * more than 8GB RAM = 268435456 (256MB) tsidx&lt;br&gt;
-     * Values other than &#34;auto&#34; must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: &#34;16777216&#34; or &#34;16MB&#34; are equivalent.
+     * Values other than &#34;auto&#34; must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: &#34;16777216&#34; or &#34;16MB&#34; are equivalent. A refresh treats a size suffix and the same byte count as equal.
      * 
      */
     @Export(name="bucketRebuildMemoryHint", refs={String.class}, tree="[0]")
@@ -112,7 +112,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * less than 2GB RAM = 67108864 (64MB) tsidx
      * 2GB to 8GB RAM = 134217728 (128MB) tsidx
      * more than 8GB RAM = 268435456 (256MB) tsidx&lt;br&gt;
-     * Values other than &#34;auto&#34; must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: &#34;16777216&#34; or &#34;16MB&#34; are equivalent.
+     * Values other than &#34;auto&#34; must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: &#34;16777216&#34; or &#34;16MB&#34; are equivalent. A refresh treats a size suffix and the same byte count as equal.
      * 
      */
     public Output<String> bucketRebuildMemoryHint() {
@@ -309,6 +309,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * &lt;br&gt;When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+     * &lt;br&gt;Splunk 8.2 and later can return this as a numeric string or as `&#34;auto&#34;`. `&#34;auto&#34;` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
      * 
      */
     @Export(name="maxHotBuckets", refs={Integer.class}, tree="[0]")
@@ -317,6 +318,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
     /**
      * @return Maximum hot buckets that can exist per index. Defaults to 3.
      * &lt;br&gt;When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+     * &lt;br&gt;Splunk 8.2 and later can return this as a numeric string or as `&#34;auto&#34;`. `&#34;auto&#34;` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
      * 
      */
     public Output<Integer> maxHotBuckets() {
@@ -576,6 +578,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
+     * Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
      * 
      */
     @Export(name="repFactor", refs={String.class}, tree="[0]")
@@ -585,6 +588,7 @@ public class Indexes extends com.pulumi.resources.CustomResource {
      * @return Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
+     * Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
      * 
      */
     public Output<String> repFactor() {

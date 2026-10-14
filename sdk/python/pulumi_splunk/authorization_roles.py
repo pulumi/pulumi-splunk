@@ -40,7 +40,7 @@ class AuthorizationRolesArgs:
         :param pulumi.Input[_builtins.int] cumulative_search_jobs_quota: Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
         :param pulumi.Input[_builtins.str] default_app: Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] imported_roles: List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
-        :param pulumi.Input[_builtins.str] name: The name of the user role to create.
+        :param pulumi.Input[_builtins.str] name: The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         :param pulumi.Input[_builtins.int] realtime_search_jobs_quota: Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
         :param pulumi.Input[_builtins.int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[_builtins.str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
@@ -140,7 +140,7 @@ class AuthorizationRolesArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the user role to create.
+        The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         """
         return pulumi.get(self, "name")
 
@@ -257,7 +257,7 @@ class _AuthorizationRolesState:
         :param pulumi.Input[_builtins.int] cumulative_search_jobs_quota: Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
         :param pulumi.Input[_builtins.str] default_app: Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] imported_roles: List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
-        :param pulumi.Input[_builtins.str] name: The name of the user role to create.
+        :param pulumi.Input[_builtins.str] name: The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         :param pulumi.Input[_builtins.int] realtime_search_jobs_quota: Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
         :param pulumi.Input[_builtins.int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[_builtins.str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
@@ -357,7 +357,7 @@ class _AuthorizationRolesState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the user role to create.
+        The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         """
         return pulumi.get(self, "name")
 
@@ -513,7 +513,7 @@ class AuthorizationRoles(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] cumulative_search_jobs_quota: Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
         :param pulumi.Input[_builtins.str] default_app: Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] imported_roles: List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
-        :param pulumi.Input[_builtins.str] name: The name of the user role to create.
+        :param pulumi.Input[_builtins.str] name: The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         :param pulumi.Input[_builtins.int] realtime_search_jobs_quota: Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
         :param pulumi.Input[_builtins.int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[_builtins.str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
@@ -649,7 +649,7 @@ class AuthorizationRoles(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] cumulative_search_jobs_quota: Maximum number of concurrently running searches for all role members. Warning message logged when limit is reached.
         :param pulumi.Input[_builtins.str] default_app: Specify the folder name of the default app to use for this role. A user-specific default app overrides this.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] imported_roles: List of imported roles for this role. <br>Importing other roles imports all aspects of that role, such as capabilities and allowed indexes to search. In combining multiple roles, the effective value for each attribute is value with the broadest permissions.
-        :param pulumi.Input[_builtins.str] name: The name of the user role to create.
+        :param pulumi.Input[_builtins.str] name: The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         :param pulumi.Input[_builtins.int] realtime_search_jobs_quota: Specify the maximum number of concurrent real-time search jobs for this role. This count is independent from the normal search jobs limit.
         :param pulumi.Input[_builtins.int] search_disk_quota: Specifies the maximum disk space in MB that can be used by a user's search jobs. For example, a value of 100 limits this role to 100 MB total.
         :param pulumi.Input[_builtins.str] search_filter: Specify a search string that restricts the scope of searches run by this role. Search results for this role only show events that also match the search string you specify. In the case that a user has multiple roles with different search filters, they are combined with an OR.
@@ -721,7 +721,7 @@ class AuthorizationRoles(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the user role to create.
+        The name of the user role to create. Splunk stores role names in lowercase. The provider lowercases this value in API calls and in state.
         """
         return pulumi.get(self, "name")
 

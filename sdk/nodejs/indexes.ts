@@ -72,7 +72,7 @@ export class Indexes extends pulumi.CustomResource {
      * less than 2GB RAM = 67108864 (64MB) tsidx
      * 2GB to 8GB RAM = 134217728 (128MB) tsidx
      * more than 8GB RAM = 268435456 (256MB) tsidx<br>
-     * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+     * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
      */
     declare public readonly bucketRebuildMemoryHint: pulumi.Output<string>;
     /**
@@ -139,6 +139,7 @@ export class Indexes extends pulumi.CustomResource {
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+     * <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
      */
     declare public readonly maxHotBuckets: pulumi.Output<number>;
     /**
@@ -222,6 +223,7 @@ export class Indexes extends pulumi.CustomResource {
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
+     * Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
      */
     declare public readonly repFactor: pulumi.Output<string>;
     /**
@@ -376,7 +378,7 @@ export interface IndexesState {
      * less than 2GB RAM = 67108864 (64MB) tsidx
      * 2GB to 8GB RAM = 134217728 (128MB) tsidx
      * more than 8GB RAM = 268435456 (256MB) tsidx<br>
-     * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+     * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
      */
     bucketRebuildMemoryHint?: pulumi.Input<string | undefined>;
     /**
@@ -443,6 +445,7 @@ export interface IndexesState {
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+     * <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
      */
     maxHotBuckets?: pulumi.Input<number | undefined>;
     /**
@@ -526,6 +529,7 @@ export interface IndexesState {
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
+     * Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
      */
     repFactor?: pulumi.Input<string | undefined>;
     /**
@@ -582,7 +586,7 @@ export interface IndexesArgs {
      * less than 2GB RAM = 67108864 (64MB) tsidx
      * 2GB to 8GB RAM = 134217728 (128MB) tsidx
      * more than 8GB RAM = 268435456 (256MB) tsidx<br>
-     * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent.
+     * Values other than "auto" must be 16MB-1GB. Highest legal value (of the numerical part) is 4294967295 You can specify the value using a size suffix: "16777216" or "16MB" are equivalent. A refresh treats a size suffix and the same byte count as equal.
      */
     bucketRebuildMemoryHint?: pulumi.Input<string | undefined>;
     /**
@@ -649,6 +653,7 @@ export interface IndexesArgs {
     /**
      * Maximum hot buckets that can exist per index. Defaults to 3.
      * <br>When maxHotBuckets is exceeded, Splunk software rolls the least recently used (LRU) hot bucket to warm. Both normal hot buckets and quarantined hot buckets count towards this total. This setting operates independently of maxHotIdleSecs, which can also cause hot buckets to roll.
+     * <br>Splunk 8.2 and later can return this as a numeric string or as `"auto"`. `"auto"` means 3. This argument stays a number, so `maxHotBuckets = 6` remains valid.
      */
     maxHotBuckets?: pulumi.Input<number | undefined>;
     /**
@@ -732,6 +737,7 @@ export interface IndexesArgs {
      * Index replication control. This parameter applies to only clustering slaves.
      * auto = Use the master index replication configuration value.
      * 0 = Turn off replication for this index.
+     * Splunk returns 0 for both values. Terraform sends the value you set, and a later refresh does not plan a change between `0` and `auto`.
      */
     repFactor?: pulumi.Input<string | undefined>;
     /**
