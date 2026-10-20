@@ -5814,7 +5814,7 @@
                 },
                 "actions": {
                     "type": "string",
-                    "description": "A comma-separated list of actions to enable. For example: rss,email\n"
+                    "description": "A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed\n"
                 },
                 "alertComparator": {
                     "type": "string",
@@ -6737,7 +6737,7 @@
                 },
                 "actions": {
                     "type": "string",
-                    "description": "A comma-separated list of actions to enable. For example: rss,email\n"
+                    "description": "A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed\n"
                 },
                 "alertComparator": {
                     "type": "string",
@@ -7535,7 +7535,7 @@
                     },
                     "actions": {
                         "type": "string",
-                        "description": "A comma-separated list of actions to enable. For example: rss,email\n"
+                        "description": "A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed\n"
                     },
                     "alertComparator": {
                         "type": "string",
