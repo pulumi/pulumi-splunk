@@ -360,7 +360,7 @@ type SavedSearches struct {
 	ActionVictoropsParamStateMessage pulumi.StringPtrOutput `pulumi:"actionVictoropsParamStateMessage"`
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl pulumi.StringPtrOutput `pulumi:"actionWebhookParamUrl"`
-	// A comma-separated list of actions to enable. For example: rss,email
+	// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
 	Actions pulumi.StringOutput `pulumi:"actions"`
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
 	AlertComparator pulumi.StringOutput `pulumi:"alertComparator"`
@@ -814,7 +814,7 @@ type savedSearchesState struct {
 	ActionVictoropsParamStateMessage *string `pulumi:"actionVictoropsParamStateMessage"`
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl *string `pulumi:"actionWebhookParamUrl"`
-	// A comma-separated list of actions to enable. For example: rss,email
+	// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
 	Actions *string `pulumi:"actions"`
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
 	AlertComparator *string `pulumi:"alertComparator"`
@@ -1209,7 +1209,7 @@ type SavedSearchesState struct {
 	ActionVictoropsParamStateMessage pulumi.StringPtrInput
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl pulumi.StringPtrInput
-	// A comma-separated list of actions to enable. For example: rss,email
+	// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
 	Actions pulumi.StringPtrInput
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
 	AlertComparator pulumi.StringPtrInput
@@ -1598,7 +1598,7 @@ type savedSearchesArgs struct {
 	ActionVictoropsParamStateMessage *string `pulumi:"actionVictoropsParamStateMessage"`
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl *string `pulumi:"actionWebhookParamUrl"`
-	// A comma-separated list of actions to enable. For example: rss,email
+	// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
 	Actions *string `pulumi:"actions"`
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
 	AlertComparator *string `pulumi:"alertComparator"`
@@ -1984,7 +1984,7 @@ type SavedSearchesArgs struct {
 	ActionVictoropsParamStateMessage pulumi.StringPtrInput
 	// URL to send the HTTP POST request to. Must be accessible from the Splunk server
 	ActionWebhookParamUrl pulumi.StringPtrInput
-	// A comma-separated list of actions to enable. For example: rss,email
+	// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
 	Actions pulumi.StringPtrInput
 	// One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alertThreshold to trigger alert actions.
 	AlertComparator pulumi.StringPtrInput
@@ -2869,7 +2869,7 @@ func (o SavedSearchesOutput) ActionWebhookParamUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.ActionWebhookParamUrl }).(pulumi.StringPtrOutput)
 }
 
-// A comma-separated list of actions to enable. For example: rss,email
+// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
 func (o SavedSearchesOutput) Actions() pulumi.StringOutput {
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.Actions }).(pulumi.StringOutput)
 }
