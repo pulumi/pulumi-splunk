@@ -1986,14 +1986,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionWebhookParamUrl);
     }
     /**
-     * A comma-separated list of actions to enable. For example: rss,email
+     * A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
      * 
      */
     @Export(name="actions", refs={String.class}, tree="[0]")
     private Output<String> actions;
 
     /**
-     * @return A comma-separated list of actions to enable. For example: rss,email
+     * @return A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
      * 
      */
     public Output<String> actions() {

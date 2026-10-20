@@ -345,7 +345,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
-        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
+        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[_builtins.str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
         :param pulumi.Input[_builtins.bool] alert_digest_mode: Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
@@ -2353,7 +2353,7 @@ class SavedSearchesArgs:
     @pulumi.getter
     def actions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        A comma-separated list of actions to enable. For example: rss,email
+        A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         """
         return pulumi.get(self, "actions")
 
@@ -3418,7 +3418,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
-        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
+        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[_builtins.str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
         :param pulumi.Input[_builtins.bool] alert_digest_mode: Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
@@ -5486,7 +5486,7 @@ class _SavedSearchesState:
     @pulumi.getter
     def actions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        A comma-separated list of actions to enable. For example: rss,email
+        A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         """
         return pulumi.get(self, "actions")
 
@@ -6620,7 +6620,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
-        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
+        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[_builtins.str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
         :param pulumi.Input[_builtins.bool] alert_digest_mode: Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
@@ -7515,7 +7515,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_victorops_param_routing_key_override: You can override the VictorOps routing key here if you need to send the alert message to a different VictorOps team
         :param pulumi.Input[_builtins.str] action_victorops_param_state_message: Description of the alert condition
         :param pulumi.Input[_builtins.str] action_webhook_param_url: URL to send the HTTP POST request to. Must be accessible from the Splunk server
-        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email
+        :param pulumi.Input[_builtins.str] actions: A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         :param pulumi.Input[_builtins.str] alert_comparator: One of the following strings: greater than, less than, equal to, rises by, drops by, rises by perc, drops by percUsed with alert_threshold to trigger alert actions.
         :param pulumi.Input[_builtins.str] alert_condition: Contains a conditional search that is evaluated against the results of the saved search. Defaults to an empty string.
         :param pulumi.Input[_builtins.bool] alert_digest_mode: Specifies whether alert actions are applied to the entire result set or on each individual result.Defaults to 1 (true).
@@ -8856,7 +8856,7 @@ class SavedSearches(pulumi.CustomResource):
     @pulumi.getter
     def actions(self) -> pulumi.Output[_builtins.str]:
         """
-        A comma-separated list of actions to enable. For example: rss,email
+        A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         """
         return pulumi.get(self, "actions")
 

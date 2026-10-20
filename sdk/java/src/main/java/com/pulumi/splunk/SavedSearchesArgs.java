@@ -1956,14 +1956,14 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A comma-separated list of actions to enable. For example: rss,email
+     * A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
      * 
      */
     @Import(name="actions")
     private @Nullable Output<String> actions;
 
     /**
-     * @return A comma-separated list of actions to enable. For example: rss,email
+     * @return A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
      * 
      */
     public Optional<Output<String>> actions() {
@@ -5809,7 +5809,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actions A comma-separated list of actions to enable. For example: rss,email
+         * @param actions A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
          * 
          * @return builder
          * 
@@ -5820,7 +5820,7 @@ public final class SavedSearchesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actions A comma-separated list of actions to enable. For example: rss,email
+         * @param actions A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
          * 
          * @return builder
          * 

@@ -889,7 +889,7 @@ namespace Pulumi.Splunk
         public Output<string?> ActionWebhookParamUrl { get; private set; } = null!;
 
         /// <summary>
-        /// A comma-separated list of actions to enable. For example: rss,email
+        /// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         /// </summary>
         [Output("actions")]
         public Output<string> Actions { get; private set; } = null!;
@@ -2150,7 +2150,7 @@ namespace Pulumi.Splunk
         }
 
         /// <summary>
-        /// A comma-separated list of actions to enable. For example: rss,email
+        /// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         /// </summary>
         [Input("actions")]
         public Input<string>? Actions { get; set; }
@@ -3394,7 +3394,7 @@ namespace Pulumi.Splunk
         }
 
         /// <summary>
-        /// A comma-separated list of actions to enable. For example: rss,email
+        /// A comma-separated list of actions to enable. For example: rss,email. Arguments for alert actions that are not built into Splunk are sent only when set, so a saved search does not require those add-ons to be installed
         /// </summary>
         [Input("actions")]
         public Input<string>? Actions { get; set; }
