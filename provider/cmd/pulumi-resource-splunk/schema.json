@@ -6182,8 +6182,6 @@
                 "disabled",
                 "dispatchBuckets",
                 "dispatchEarliestTime",
-                "dispatchIndexEarliest",
-                "dispatchIndexLatest",
                 "dispatchIndexedRealtime",
                 "dispatchIndexedRealtimeMinspan",
                 "dispatchIndexedRealtimeOffset",
