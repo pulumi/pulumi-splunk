@@ -761,11 +761,11 @@ export class SavedSearches extends pulumi.CustomResource {
     /**
      * A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    declare public readonly dispatchIndexEarliest: pulumi.Output<string>;
+    declare public readonly dispatchIndexEarliest: pulumi.Output<string | undefined>;
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */
-    declare public readonly dispatchIndexLatest: pulumi.Output<string>;
+    declare public readonly dispatchIndexLatest: pulumi.Output<string | undefined>;
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      */

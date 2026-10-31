@@ -2424,28 +2424,28 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dispatchIndexEarliest", refs={String.class}, tree="[0]")
-    private Output<String> dispatchIndexEarliest;
+    private Output</* @Nullable */ String> dispatchIndexEarliest;
 
     /**
      * @return A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    public Output<String> dispatchIndexEarliest() {
-        return this.dispatchIndexEarliest;
+    public Output<Optional<String>> dispatchIndexEarliest() {
+        return Codegen.optional(this.dispatchIndexEarliest);
     }
     /**
      * A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
     @Export(name="dispatchIndexLatest", refs={String.class}, tree="[0]")
-    private Output<String> dispatchIndexLatest;
+    private Output</* @Nullable */ String> dispatchIndexLatest;
 
     /**
      * @return A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
      * 
      */
-    public Output<String> dispatchIndexLatest() {
-        return this.dispatchIndexLatest;
+    public Output<Optional<String>> dispatchIndexLatest() {
+        return Codegen.optional(this.dispatchIndexLatest);
     }
     /**
      * A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.

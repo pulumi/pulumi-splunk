@@ -9102,7 +9102,7 @@ class SavedSearches(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexEarliest")
-    def dispatch_index_earliest(self) -> pulumi.Output[_builtins.str]:
+    def dispatch_index_earliest(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
@@ -9110,7 +9110,7 @@ class SavedSearches(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="dispatchIndexLatest")
-    def dispatch_index_latest(self) -> pulumi.Output[_builtins.str]:
+    def dispatch_index_latest(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         """
