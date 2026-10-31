@@ -1078,13 +1078,13 @@ namespace Pulumi.Splunk
         /// A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         /// </summary>
         [Output("dispatchIndexEarliest")]
-        public Output<string> DispatchIndexEarliest { get; private set; } = null!;
+        public Output<string?> DispatchIndexEarliest { get; private set; } = null!;
 
         /// <summary>
         /// A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
         /// </summary>
         [Output("dispatchIndexLatest")]
-        public Output<string> DispatchIndexLatest { get; private set; } = null!;
+        public Output<string?> DispatchIndexLatest { get; private set; } = null!;
 
         /// <summary>
         /// A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.

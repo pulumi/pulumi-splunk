@@ -423,9 +423,9 @@ type SavedSearches struct {
 	// A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
 	DispatchEarliestTime pulumi.StringOutput `pulumi:"dispatchEarliestTime"`
 	// A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
-	DispatchIndexEarliest pulumi.StringOutput `pulumi:"dispatchIndexEarliest"`
+	DispatchIndexEarliest pulumi.StringPtrOutput `pulumi:"dispatchIndexEarliest"`
 	// A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
-	DispatchIndexLatest pulumi.StringOutput `pulumi:"dispatchIndexLatest"`
+	DispatchIndexLatest pulumi.StringPtrOutput `pulumi:"dispatchIndexLatest"`
 	// A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
 	DispatchIndexedRealtime pulumi.BoolOutput `pulumi:"dispatchIndexedRealtime"`
 	// Allows for a per-job override of the [search] indexedRealtimeDiskSyncDelay setting in limits.conf.
@@ -3025,13 +3025,13 @@ func (o SavedSearchesOutput) DispatchEarliestTime() pulumi.StringOutput {
 }
 
 // A time string that specifies the earliest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
-func (o SavedSearchesOutput) DispatchIndexEarliest() pulumi.StringOutput {
-	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchIndexEarliest }).(pulumi.StringOutput)
+func (o SavedSearchesOutput) DispatchIndexEarliest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.DispatchIndexEarliest }).(pulumi.StringPtrOutput)
 }
 
 // A time string that specifies the latest index time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
-func (o SavedSearchesOutput) DispatchIndexLatest() pulumi.StringOutput {
-	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.DispatchIndexLatest }).(pulumi.StringOutput)
+func (o SavedSearchesOutput) DispatchIndexLatest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringPtrOutput { return v.DispatchIndexLatest }).(pulumi.StringPtrOutput)
 }
 
 // A time string that specifies the earliest time for this search. Can be a relative or absolute time. If this value is an absolute time, use the dispatch.time_format to format the value.
