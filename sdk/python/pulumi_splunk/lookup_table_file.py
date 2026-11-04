@@ -408,6 +408,24 @@ class LookupTableFile(pulumi.CustomResource):
         __props__.__dict__["owner"] = owner
         return LookupTableFile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app: pulumi.Input[Optional[_builtins.str]] = None,
+            file_contents: pulumi.Input[Optional[Sequence[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]]] = None,
+            file_contents_hash: pulumi.Input[Optional[_builtins.str]] = None,
+            file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_path: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["app"] = app
+        __props__["fileContents"] = file_contents
+        __props__["fileContentsHash"] = file_contents_hash
+        __props__["fileName"] = file_name
+        __props__["filePath"] = file_path
+        __props__["owner"] = owner
+        return pulumi.runtime.exists_resource(None, 'splunk:index/lookupTableFile:LookupTableFile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def app(self) -> pulumi.Output[_builtins.str]:

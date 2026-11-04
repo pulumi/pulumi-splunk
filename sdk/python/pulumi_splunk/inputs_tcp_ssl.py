@@ -329,6 +329,22 @@ class InputsTcpSsl(pulumi.CustomResource):
         __props__.__dict__["server_cert"] = server_cert
         return InputsTcpSsl(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            require_client_cert: pulumi.Input[Optional[_builtins.bool]] = None,
+            root_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            server_cert: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["disabled"] = disabled
+        __props__["password"] = password
+        __props__["requireClientCert"] = require_client_cert
+        __props__["rootCa"] = root_ca
+        __props__["serverCert"] = server_cert
+        return pulumi.runtime.exists_resource(None, 'splunk:index/inputsTcpSsl:InputsTcpSsl', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def disabled(self) -> pulumi.Output[_builtins.bool]:

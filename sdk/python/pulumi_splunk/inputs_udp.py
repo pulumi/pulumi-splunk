@@ -644,6 +644,36 @@ class InputsUdp(pulumi.CustomResource):
         __props__.__dict__["sourcetype"] = sourcetype
         return InputsUdp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['InputsUdpAclArgs', 'InputsUdpAclArgsDict', 'outputs.InputsUdpAcl']]] = None,
+            connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            no_appending_timestamp: pulumi.Input[Optional[_builtins.bool]] = None,
+            no_priority_stripping: pulumi.Input[Optional[_builtins.bool]] = None,
+            queue: pulumi.Input[Optional[_builtins.str]] = None,
+            restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            sourcetype: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["connectionHost"] = connection_host
+        __props__["disabled"] = disabled
+        __props__["host"] = host
+        __props__["index"] = index
+        __props__["name"] = name
+        __props__["noAppendingTimestamp"] = no_appending_timestamp
+        __props__["noPriorityStripping"] = no_priority_stripping
+        __props__["queue"] = queue
+        __props__["restrictToHost"] = restrict_to_host
+        __props__["source"] = source
+        __props__["sourcetype"] = sourcetype
+        return pulumi.runtime.exists_resource(None, 'splunk:index/inputsUdp:InputsUdp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.InputsUdpAcl']:

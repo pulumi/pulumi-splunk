@@ -127,6 +127,12 @@ func (LookupDefinitionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*lookupDefinitionState)(nil)).Elem()
 }
 
+// LookupDefinitionExists checks whether an existing LookupDefinition resource with the given ID exists.
+func LookupDefinitionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LookupDefinitionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/lookupDefinition:LookupDefinition", id, state, "", opts...)
+}
+
 type lookupDefinitionArgs struct {
 	// Defines the access control list (ACL) for the lookup definition. See acl.md for more details.
 	Acl *LookupDefinitionAcl `pulumi:"acl"`

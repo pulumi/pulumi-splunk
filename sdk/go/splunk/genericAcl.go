@@ -150,6 +150,12 @@ func (GenericAclState) ElementType() reflect.Type {
 	return reflect.TypeOf((*genericAclState)(nil)).Elem()
 }
 
+// GenericAclExists checks whether an existing GenericAcl resource with the given ID exists.
+func GenericAclExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenericAclState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/genericAcl:GenericAcl", id, state, "", opts...)
+}
+
 type genericAclArgs struct {
 	// The ACL to apply to the object, including app/owner to properly identify the object.
 	// Though technically optional, it should be explicitly set for this resource to really be valid. Some objects, such as

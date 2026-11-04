@@ -138,6 +138,12 @@ func (InputsTcpCookedState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsTcpCookedState)(nil)).Elem()
 }
 
+// InputsTcpCookedExists checks whether an existing InputsTcpCooked resource with the given ID exists.
+func InputsTcpCookedExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsTcpCookedState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsTcpCooked:InputsTcpCooked", id, state, "", opts...)
+}
+
 type inputsTcpCookedArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsTcpCookedAcl `pulumi:"acl"`

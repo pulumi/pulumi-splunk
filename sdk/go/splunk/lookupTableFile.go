@@ -160,6 +160,12 @@ func (LookupTableFileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*lookupTableFileState)(nil)).Elem()
 }
 
+// LookupTableFileExists checks whether an existing LookupTableFile resource with the given ID exists.
+func LookupTableFileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LookupTableFileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/lookupTableFile:LookupTableFile", id, state, "", opts...)
+}
+
 type lookupTableFileArgs struct {
 	// The app context for the resource.
 	App string `pulumi:"app"`

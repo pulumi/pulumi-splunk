@@ -151,6 +151,12 @@ func (AuthenticationUsersState) ElementType() reflect.Type {
 	return reflect.TypeOf((*authenticationUsersState)(nil)).Elem()
 }
 
+// AuthenticationUsersExists checks whether an existing AuthenticationUsers resource with the given ID exists.
+func AuthenticationUsersExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuthenticationUsersState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/authenticationUsers:AuthenticationUsers", id, state, "", opts...)
+}
+
 type authenticationUsersArgs struct {
 	// User default app. Overrides the default app inherited from the user roles.
 	DefaultApp *string `pulumi:"defaultApp"`

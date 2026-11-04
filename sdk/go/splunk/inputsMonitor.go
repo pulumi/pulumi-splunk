@@ -182,6 +182,12 @@ func (InputsMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsMonitorState)(nil)).Elem()
 }
 
+// InputsMonitorExists checks whether an existing InputsMonitor resource with the given ID exists.
+func InputsMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsMonitor:InputsMonitor", id, state, "", opts...)
+}
+
 type inputsMonitorArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsMonitorAcl `pulumi:"acl"`

@@ -115,6 +115,12 @@ func (AdminProxyssoGroupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*adminProxyssoGroupsState)(nil)).Elem()
 }
 
+// AdminProxyssoGroupsExists checks whether an existing AdminProxyssoGroups resource with the given ID exists.
+func AdminProxyssoGroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AdminProxyssoGroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/adminProxyssoGroups:AdminProxyssoGroups", id, state, "", opts...)
+}
+
 type adminProxyssoGroupsArgs struct {
 	// The name of the external group. Changing this forces a new resource.
 	Name string `pulumi:"name"`

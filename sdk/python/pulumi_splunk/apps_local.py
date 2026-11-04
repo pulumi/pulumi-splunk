@@ -711,6 +711,38 @@ class AppsLocal(pulumi.CustomResource):
         __props__.__dict__["visible"] = visible
         return AppsLocal(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['AppsLocalAclArgs', 'AppsLocalAclArgsDict', 'outputs.AppsLocalAcl']]] = None,
+            auth: pulumi.Input[Optional[_builtins.str]] = None,
+            author: pulumi.Input[Optional[_builtins.str]] = None,
+            configured: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            explicit_appname: pulumi.Input[Optional[_builtins.str]] = None,
+            filename: pulumi.Input[Optional[_builtins.bool]] = None,
+            label: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            session: pulumi.Input[Optional[_builtins.str]] = None,
+            update: pulumi.Input[Optional[_builtins.bool]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            visible: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["auth"] = auth
+        __props__["author"] = author
+        __props__["configured"] = configured
+        __props__["description"] = description
+        __props__["explicitAppname"] = explicit_appname
+        __props__["filename"] = filename
+        __props__["label"] = label
+        __props__["name"] = name
+        __props__["session"] = session
+        __props__["update"] = update
+        __props__["version"] = version
+        __props__["visible"] = visible
+        return pulumi.runtime.exists_resource(None, 'splunk:index/appsLocal:AppsLocal', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.AppsLocalAcl']:

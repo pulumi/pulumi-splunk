@@ -677,6 +677,38 @@ class AuthorizationRoles(pulumi.CustomResource):
         __props__.__dict__["search_time_win"] = search_time_win
         return AuthorizationRoles(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cumulative_realtime_search_jobs_quota: pulumi.Input[Optional[_builtins.int]] = None,
+            cumulative_search_jobs_quota: pulumi.Input[Optional[_builtins.int]] = None,
+            default_app: pulumi.Input[Optional[_builtins.str]] = None,
+            imported_roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            realtime_search_jobs_quota: pulumi.Input[Optional[_builtins.int]] = None,
+            search_disk_quota: pulumi.Input[Optional[_builtins.int]] = None,
+            search_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            search_indexes_alloweds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            search_indexes_defaults: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            search_jobs_quota: pulumi.Input[Optional[_builtins.int]] = None,
+            search_time_win: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["capabilities"] = capabilities
+        __props__["cumulativeRealtimeSearchJobsQuota"] = cumulative_realtime_search_jobs_quota
+        __props__["cumulativeSearchJobsQuota"] = cumulative_search_jobs_quota
+        __props__["defaultApp"] = default_app
+        __props__["importedRoles"] = imported_roles
+        __props__["name"] = name
+        __props__["realtimeSearchJobsQuota"] = realtime_search_jobs_quota
+        __props__["searchDiskQuota"] = search_disk_quota
+        __props__["searchFilter"] = search_filter
+        __props__["searchIndexesAlloweds"] = search_indexes_alloweds
+        __props__["searchIndexesDefaults"] = search_indexes_defaults
+        __props__["searchJobsQuota"] = search_jobs_quota
+        __props__["searchTimeWin"] = search_time_win
+        return pulumi.runtime.exists_resource(None, 'splunk:index/authorizationRoles:AuthorizationRoles', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> pulumi.Output[Sequence[_builtins.str]]:

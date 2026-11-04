@@ -171,6 +171,12 @@ func (InputsHttpEventCollectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsHttpEventCollectorState)(nil)).Elem()
 }
 
+// InputsHttpEventCollectorExists checks whether an existing InputsHttpEventCollector resource with the given ID exists.
+func InputsHttpEventCollectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsHttpEventCollectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsHttpEventCollector:InputsHttpEventCollector", id, state, "", opts...)
+}
+
 type inputsHttpEventCollectorArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsHttpEventCollectorAcl `pulumi:"acl"`

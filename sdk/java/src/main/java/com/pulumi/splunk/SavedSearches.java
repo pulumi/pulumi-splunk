@@ -1146,14 +1146,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionPopulateLookupDest;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)&#92;n&#92;nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
     @Export(name="actionPopulateLookupHostname", refs={String.class}, tree="[0]")
     private Output<String> actionPopulateLookupHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms: hostname (for example, splunkserver, splunkserver.example.com)&#92;n&#92;nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
     public Output<String> actionPopulateLookupHostname() {
@@ -1244,14 +1244,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionRssCommand;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)&#92;n&#92;nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
     @Export(name="actionRssHostname", refs={String.class}, tree="[0]")
     private Output<String> actionRssHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)&#92;n&#92;nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
     public Output<String> actionRssHostname() {
@@ -1384,14 +1384,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.actionScriptFilename;
     }
     /**
-     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)&#92;n&#92;nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
     @Export(name="actionScriptHostname", refs={String.class}, tree="[0]")
     private Output<String> actionScriptHostname;
 
     /**
-     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)\n\nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
+     * @return Sets the hostname used in the web link (url) sent in alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)&#92;n&#92;nprotocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
      * 
      */
     public Output<String> actionScriptHostname() {
@@ -1552,14 +1552,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.actionSlackParamChannel);
     }
     /**
-     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
+     * Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source&#92;*
      * 
      */
     @Export(name="actionSlackParamFields", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionSlackParamFields;
 
     /**
-     * @return Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source\*
+     * @return Show one or more fields from the search results below your Slack message. Comma-separated list of field names. Allows wildcards. eg. index,source&#92;*
      * 
      */
     public Output<Optional<String>> actionSlackParamFields() {
@@ -2196,14 +2196,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeCommand;
     }
     /**
-     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
+     * Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ &#92;* &#92;* &#92;* and corresponds to &#92;`every ten hours&#92;`.
      * 
      */
     @Export(name="autoSummarizeCronSchedule", refs={String.class}, tree="[0]")
     private Output<String> autoSummarizeCronSchedule;
 
     /**
-     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ \* \* \* and corresponds to \`every ten hours\`.
+     * @return Cron schedule that probes and generates the summaries for this saved search.The default value is _/10 _ &#92;* &#92;* &#92;* and corresponds to &#92;`every ten hours&#92;`.
      * 
      */
     public Output<String> autoSummarizeCronSchedule() {
@@ -2350,14 +2350,14 @@ public class SavedSearches extends com.pulumi.resources.CustomResource {
         return this.autoSummarizeTimespan;
     }
     /**
-     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
+     * Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ &#92;* &#92;* &#92;* causes the search to execute every 5 minutes.
      * 
      */
     @Export(name="cronSchedule", refs={String.class}, tree="[0]")
     private Output<String> cronSchedule;
 
     /**
-     * @return Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ \* \* \* causes the search to execute every 5 minutes.
+     * @return Valid values: cron stringThe cron schedule to execute this search. For example: _/5 _ &#92;* &#92;* &#92;* causes the search to execute every 5 minutes.
      * 
      */
     public Output<String> cronSchedule() {

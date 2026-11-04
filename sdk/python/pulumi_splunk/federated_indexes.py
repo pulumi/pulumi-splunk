@@ -335,6 +335,20 @@ class FederatedIndexes(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return FederatedIndexes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dataset_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dataset_type: pulumi.Input[Optional[_builtins.str]] = None,
+            federated_provider: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["datasetName"] = dataset_name
+        __props__["datasetType"] = dataset_type
+        __props__["federatedProvider"] = federated_provider
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'splunk:index/federatedIndexes:FederatedIndexes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="datasetName")
     def dataset_name(self) -> pulumi.Output[_builtins.str]:

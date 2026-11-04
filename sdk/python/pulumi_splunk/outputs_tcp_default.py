@@ -567,6 +567,30 @@ class OutputsTcpDefault(pulumi.CustomResource):
         __props__.__dict__["send_cooked_data"] = send_cooked_data
         return OutputsTcpDefault(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpDefaultAclArgs', 'OutputsTcpDefaultAclArgsDict', 'outputs.OutputsTcpDefaultAcl']]] = None,
+            default_group: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+            heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            index_and_forward: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["defaultGroup"] = default_group
+        __props__["disabled"] = disabled
+        __props__["dropEventsOnQueueFull"] = drop_events_on_queue_full
+        __props__["heartbeatFrequency"] = heartbeat_frequency
+        __props__["indexAndForward"] = index_and_forward
+        __props__["maxQueueSize"] = max_queue_size
+        __props__["name"] = name
+        __props__["sendCookedData"] = send_cooked_data
+        return pulumi.runtime.exists_resource(None, 'splunk:index/outputsTcpDefault:OutputsTcpDefault', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.OutputsTcpDefaultAcl']:

@@ -141,6 +141,12 @@ func (DataUiViewsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataUiViewsState)(nil)).Elem()
 }
 
+// DataUiViewsExists checks whether an existing DataUiViews resource with the given ID exists.
+func DataUiViewsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataUiViewsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/dataUiViews:DataUiViews", id, state, "", opts...)
+}
+
 type dataUiViewsArgs struct {
 	Acl *DataUiViewsAcl `pulumi:"acl"`
 	// Dashboard XML definition.
