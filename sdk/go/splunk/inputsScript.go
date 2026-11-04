@@ -155,6 +155,12 @@ func (InputsScriptState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsScriptState)(nil)).Elem()
 }
 
+// InputsScriptExists checks whether an existing InputsScript resource with the given ID exists.
+func InputsScriptExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsScriptState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsScript:InputsScript", id, state, "", opts...)
+}
+
 type inputsScriptArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsScriptAcl `pulumi:"acl"`

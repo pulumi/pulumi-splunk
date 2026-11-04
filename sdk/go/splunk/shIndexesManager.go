@@ -124,6 +124,12 @@ func (ShIndexesManagerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*shIndexesManagerState)(nil)).Elem()
 }
 
+// ShIndexesManagerExists checks whether an existing ShIndexesManager resource with the given ID exists.
+func ShIndexesManagerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ShIndexesManagerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/shIndexesManager:ShIndexesManager", id, state, "", opts...)
+}
+
 type shIndexesManagerArgs struct {
 	Acl *ShIndexesManagerAcl `pulumi:"acl"`
 	// Valid values: (event | metric). Specifies the type of index.

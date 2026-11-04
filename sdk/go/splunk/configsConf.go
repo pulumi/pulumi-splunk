@@ -140,6 +140,12 @@ func (ConfigsConfState) ElementType() reflect.Type {
 	return reflect.TypeOf((*configsConfState)(nil)).Elem()
 }
 
+// ConfigsConfExists checks whether an existing ConfigsConf resource with the given ID exists.
+func ConfigsConfExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConfigsConfState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/configsConf:ConfigsConf", id, state, "", opts...)
+}
+
 type configsConfArgs struct {
 	// The app/user context that is the namespace for the resource
 	//

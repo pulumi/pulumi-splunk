@@ -413,6 +413,26 @@ class GlobalHttpEventCollector(pulumi.CustomResource):
         __props__.__dict__["use_deployment_server"] = use_deployment_server
         return GlobalHttpEventCollector(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dedicated_io_threads: pulumi.Input[Optional[_builtins.int]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+            max_threads: pulumi.Input[Optional[_builtins.int]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            use_deployment_server: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dedicatedIoThreads"] = dedicated_io_threads
+        __props__["disabled"] = disabled
+        __props__["enableSsl"] = enable_ssl
+        __props__["maxSockets"] = max_sockets
+        __props__["maxThreads"] = max_threads
+        __props__["port"] = port
+        __props__["useDeploymentServer"] = use_deployment_server
+        return pulumi.runtime.exists_resource(None, 'splunk:index/globalHttpEventCollector:GlobalHttpEventCollector', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dedicatedIoThreads")
     def dedicated_io_threads(self) -> pulumi.Output[_builtins.int]:

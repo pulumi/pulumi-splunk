@@ -167,6 +167,12 @@ func (OutputsTcpServerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*outputsTcpServerState)(nil)).Elem()
 }
 
+// OutputsTcpServerExists checks whether an existing OutputsTcpServer resource with the given ID exists.
+func OutputsTcpServerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OutputsTcpServerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/outputsTcpServer:OutputsTcpServer", id, state, "", opts...)
+}
+
 type outputsTcpServerArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *OutputsTcpServerAcl `pulumi:"acl"`

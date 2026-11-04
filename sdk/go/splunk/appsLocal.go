@@ -208,6 +208,12 @@ func (AppsLocalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appsLocalState)(nil)).Elem()
 }
 
+// AppsLocalExists checks whether an existing AppsLocal resource with the given ID exists.
+func AppsLocalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppsLocalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/appsLocal:AppsLocal", id, state, "", opts...)
+}
+
 type appsLocalArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *AppsLocalAcl `pulumi:"acl"`

@@ -108,6 +108,12 @@ func (AdminSamlGroupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*adminSamlGroupsState)(nil)).Elem()
 }
 
+// AdminSamlGroupsExists checks whether an existing AdminSamlGroups resource with the given ID exists.
+func AdminSamlGroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AdminSamlGroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/adminSamlGroups:AdminSamlGroups", id, state, "", opts...)
+}
+
 type adminSamlGroupsArgs struct {
 	// The name of the external group.
 	Name *string `pulumi:"name"`

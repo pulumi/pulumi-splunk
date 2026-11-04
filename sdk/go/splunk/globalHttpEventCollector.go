@@ -131,6 +131,12 @@ func (GlobalHttpEventCollectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*globalHttpEventCollectorState)(nil)).Elem()
 }
 
+// GlobalHttpEventCollectorExists checks whether an existing GlobalHttpEventCollector resource with the given ID exists.
+func GlobalHttpEventCollectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GlobalHttpEventCollectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/globalHttpEventCollector:GlobalHttpEventCollector", id, state, "", opts...)
+}
+
 type globalHttpEventCollectorArgs struct {
 	// Number of threads used by HTTP Input server.
 	DedicatedIoThreads *int `pulumi:"dedicatedIoThreads"`

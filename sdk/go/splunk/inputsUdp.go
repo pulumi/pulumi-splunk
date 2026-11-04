@@ -178,6 +178,12 @@ func (InputsUdpState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsUdpState)(nil)).Elem()
 }
 
+// InputsUdpExists checks whether an existing InputsUdp resource with the given ID exists.
+func InputsUdpExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsUdpState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsUdp:InputsUdp", id, state, "", opts...)
+}
+
 type inputsUdpArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsUdpAcl `pulumi:"acl"`

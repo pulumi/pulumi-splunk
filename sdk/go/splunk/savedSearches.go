@@ -1339,6 +1339,12 @@ func (SavedSearchesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*savedSearchesState)(nil)).Elem()
 }
 
+// SavedSearchesExists checks whether an existing SavedSearches resource with the given ID exists.
+func SavedSearchesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SavedSearchesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/savedSearches:SavedSearches", id, state, "", opts...)
+}
+
 type savedSearchesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *SavedSearchesAcl `pulumi:"acl"`

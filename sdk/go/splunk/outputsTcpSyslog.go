@@ -152,6 +152,12 @@ func (OutputsTcpSyslogState) ElementType() reflect.Type {
 	return reflect.TypeOf((*outputsTcpSyslogState)(nil)).Elem()
 }
 
+// OutputsTcpSyslogExists checks whether an existing OutputsTcpSyslog resource with the given ID exists.
+func OutputsTcpSyslogExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OutputsTcpSyslogState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/outputsTcpSyslog:OutputsTcpSyslog", id, state, "", opts...)
+}
+
 type outputsTcpSyslogArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *OutputsTcpSyslogAcl `pulumi:"acl"`

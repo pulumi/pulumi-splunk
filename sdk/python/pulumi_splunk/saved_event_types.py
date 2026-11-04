@@ -468,6 +468,28 @@ class SavedEventTypes(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         return SavedEventTypes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['SavedEventTypesAclArgs', 'SavedEventTypesAclArgsDict', 'outputs.SavedEventTypesAcl']]] = None,
+            color: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            search: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["color"] = color
+        __props__["description"] = description
+        __props__["disabled"] = disabled
+        __props__["name"] = name
+        __props__["priority"] = priority
+        __props__["search"] = search
+        __props__["tags"] = tags
+        return pulumi.runtime.exists_resource(None, 'splunk:index/savedEventTypes:SavedEventTypes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.SavedEventTypesAcl']:

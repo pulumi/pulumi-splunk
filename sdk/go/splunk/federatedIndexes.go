@@ -141,6 +141,12 @@ func (FederatedIndexesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*federatedIndexesState)(nil)).Elem()
 }
 
+// FederatedIndexesExists checks whether an existing FederatedIndexes resource with the given ID exists.
+func FederatedIndexesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FederatedIndexesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/federatedIndexes:FederatedIndexes", id, state, "", opts...)
+}
+
 type federatedIndexesArgs struct {
 	// Remote index, saved search, scheduled search (for `lastjob`), or data model name, without a type prefix. For example, use `main`, not `index:main`. Changes to either dataset field update the mapping in place.
 	//

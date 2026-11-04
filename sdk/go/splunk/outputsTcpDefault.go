@@ -180,6 +180,12 @@ func (OutputsTcpDefaultState) ElementType() reflect.Type {
 	return reflect.TypeOf((*outputsTcpDefaultState)(nil)).Elem()
 }
 
+// OutputsTcpDefaultExists checks whether an existing OutputsTcpDefault resource with the given ID exists.
+func OutputsTcpDefaultExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OutputsTcpDefaultState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/outputsTcpDefault:OutputsTcpDefault", id, state, "", opts...)
+}
+
 type outputsTcpDefaultArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *OutputsTcpDefaultAcl `pulumi:"acl"`

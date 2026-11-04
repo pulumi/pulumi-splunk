@@ -173,6 +173,12 @@ func (FederatedProvidersState) ElementType() reflect.Type {
 	return reflect.TypeOf((*federatedProvidersState)(nil)).Elem()
 }
 
+// FederatedProvidersExists checks whether an existing FederatedProviders resource with the given ID exists.
+func FederatedProvidersExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FederatedProvidersState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/federatedProviders:FederatedProviders", id, state, "", opts...)
+}
+
 type federatedProvidersArgs struct {
 	// App on the remote search head used by standard-mode searches. Defaults to `search`; transparent mode ignores this value.
 	AppContext *string `pulumi:"appContext"`

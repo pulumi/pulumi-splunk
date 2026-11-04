@@ -152,6 +152,12 @@ func (SavedEventTypesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*savedEventTypesState)(nil)).Elem()
 }
 
+// SavedEventTypesExists checks whether an existing SavedEventTypes resource with the given ID exists.
+func SavedEventTypesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SavedEventTypesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/savedEventTypes:SavedEventTypes", id, state, "", opts...)
+}
+
 type savedEventTypesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *SavedEventTypesAcl `pulumi:"acl"`

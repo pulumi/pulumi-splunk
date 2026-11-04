@@ -1943,6 +1943,90 @@ class Indexes(pulumi.CustomResource):
         __props__.__dict__["warm_to_cold_script"] = warm_to_cold_script
         return Indexes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['IndexesAclArgs', 'IndexesAclArgsDict', 'outputs.IndexesAcl']]] = None,
+            block_sign_size: pulumi.Input[Optional[_builtins.int]] = None,
+            bucket_rebuild_memory_hint: pulumi.Input[Optional[_builtins.str]] = None,
+            cold_path: pulumi.Input[Optional[_builtins.str]] = None,
+            cold_to_frozen_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            cold_to_frozen_script: pulumi.Input[Optional[_builtins.str]] = None,
+            compress_rawdata: pulumi.Input[Optional[_builtins.bool]] = None,
+            datatype: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_online_bucket_repair: pulumi.Input[Optional[_builtins.bool]] = None,
+            frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            home_path: pulumi.Input[Optional[_builtins.str]] = None,
+            max_bloom_backfill_bucket_age: pulumi.Input[Optional[_builtins.str]] = None,
+            max_concurrent_optimizes: pulumi.Input[Optional[_builtins.int]] = None,
+            max_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+            max_hot_buckets: pulumi.Input[Optional[_builtins.int]] = None,
+            max_hot_idle_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            max_hot_span_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            max_mem_mb: pulumi.Input[Optional[_builtins.int]] = None,
+            max_meta_entries: pulumi.Input[Optional[_builtins.int]] = None,
+            max_time_unreplicated_no_acks: pulumi.Input[Optional[_builtins.int]] = None,
+            max_time_unreplicated_with_acks: pulumi.Input[Optional[_builtins.int]] = None,
+            max_total_data_size_mb: pulumi.Input[Optional[_builtins.int]] = None,
+            max_warm_db_count: pulumi.Input[Optional[_builtins.int]] = None,
+            min_raw_file_sync_secs: pulumi.Input[Optional[_builtins.str]] = None,
+            min_stream_group_queue_size: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            partial_service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+            process_tracker_service_interval: pulumi.Input[Optional[_builtins.int]] = None,
+            quarantine_future_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            quarantine_past_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            raw_chunk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            rep_factor: pulumi.Input[Optional[_builtins.str]] = None,
+            rotate_period_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            service_meta_period: pulumi.Input[Optional[_builtins.int]] = None,
+            sync_meta: pulumi.Input[Optional[_builtins.bool]] = None,
+            thawed_path: pulumi.Input[Optional[_builtins.str]] = None,
+            throttle_check_period: pulumi.Input[Optional[_builtins.int]] = None,
+            tstats_home_path: pulumi.Input[Optional[_builtins.str]] = None,
+            warm_to_cold_script: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["blockSignSize"] = block_sign_size
+        __props__["bucketRebuildMemoryHint"] = bucket_rebuild_memory_hint
+        __props__["coldPath"] = cold_path
+        __props__["coldToFrozenDir"] = cold_to_frozen_dir
+        __props__["coldToFrozenScript"] = cold_to_frozen_script
+        __props__["compressRawdata"] = compress_rawdata
+        __props__["datatype"] = datatype
+        __props__["enableOnlineBucketRepair"] = enable_online_bucket_repair
+        __props__["frozenTimePeriodInSecs"] = frozen_time_period_in_secs
+        __props__["homePath"] = home_path
+        __props__["maxBloomBackfillBucketAge"] = max_bloom_backfill_bucket_age
+        __props__["maxConcurrentOptimizes"] = max_concurrent_optimizes
+        __props__["maxDataSize"] = max_data_size
+        __props__["maxHotBuckets"] = max_hot_buckets
+        __props__["maxHotIdleSecs"] = max_hot_idle_secs
+        __props__["maxHotSpanSecs"] = max_hot_span_secs
+        __props__["maxMemMb"] = max_mem_mb
+        __props__["maxMetaEntries"] = max_meta_entries
+        __props__["maxTimeUnreplicatedNoAcks"] = max_time_unreplicated_no_acks
+        __props__["maxTimeUnreplicatedWithAcks"] = max_time_unreplicated_with_acks
+        __props__["maxTotalDataSizeMb"] = max_total_data_size_mb
+        __props__["maxWarmDbCount"] = max_warm_db_count
+        __props__["minRawFileSyncSecs"] = min_raw_file_sync_secs
+        __props__["minStreamGroupQueueSize"] = min_stream_group_queue_size
+        __props__["name"] = name
+        __props__["partialServiceMetaPeriod"] = partial_service_meta_period
+        __props__["processTrackerServiceInterval"] = process_tracker_service_interval
+        __props__["quarantineFutureSecs"] = quarantine_future_secs
+        __props__["quarantinePastSecs"] = quarantine_past_secs
+        __props__["rawChunkSizeBytes"] = raw_chunk_size_bytes
+        __props__["repFactor"] = rep_factor
+        __props__["rotatePeriodInSecs"] = rotate_period_in_secs
+        __props__["serviceMetaPeriod"] = service_meta_period
+        __props__["syncMeta"] = sync_meta
+        __props__["thawedPath"] = thawed_path
+        __props__["throttleCheckPeriod"] = throttle_check_period
+        __props__["tstatsHomePath"] = tstats_home_path
+        __props__["warmToColdScript"] = warm_to_cold_script
+        return pulumi.runtime.exists_resource(None, 'splunk:index/indexes:Indexes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.IndexesAcl']:

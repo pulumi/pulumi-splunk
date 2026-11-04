@@ -640,6 +640,34 @@ class OutputsTcpGroup(pulumi.CustomResource):
         __props__.__dict__["token"] = token
         return OutputsTcpGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpGroupAclArgs', 'OutputsTcpGroupAclArgsDict', 'outputs.OutputsTcpGroupAcl']]] = None,
+            compressed: pulumi.Input[Optional[_builtins.bool]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            drop_events_on_queue_full: pulumi.Input[Optional[_builtins.int]] = None,
+            heartbeat_frequency: pulumi.Input[Optional[_builtins.int]] = None,
+            max_queue_size: pulumi.Input[Optional[_builtins.str]] = None,
+            method: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            send_cooked_data: pulumi.Input[Optional[_builtins.bool]] = None,
+            servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            token: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["compressed"] = compressed
+        __props__["disabled"] = disabled
+        __props__["dropEventsOnQueueFull"] = drop_events_on_queue_full
+        __props__["heartbeatFrequency"] = heartbeat_frequency
+        __props__["maxQueueSize"] = max_queue_size
+        __props__["method"] = method
+        __props__["name"] = name
+        __props__["sendCookedData"] = send_cooked_data
+        __props__["servers"] = servers
+        __props__["token"] = token
+        return pulumi.runtime.exists_resource(None, 'splunk:index/outputsTcpGroup:OutputsTcpGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.OutputsTcpGroupAcl']:

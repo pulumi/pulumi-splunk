@@ -436,6 +436,24 @@ class FederatedProviders(pulumi.CustomResource):
         __props__.__dict__["service_account"] = service_account
         return FederatedProviders(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_context: pulumi.Input[Optional[_builtins.str]] = None,
+            host_port: pulumi.Input[Optional[_builtins.str]] = None,
+            mode: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            service_account: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appContext"] = app_context
+        __props__["hostPort"] = host_port
+        __props__["mode"] = mode
+        __props__["name"] = name
+        __props__["password"] = password
+        __props__["serviceAccount"] = service_account
+        return pulumi.runtime.exists_resource(None, 'splunk:index/federatedProviders:FederatedProviders', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appContext")
     def app_context(self) -> pulumi.Output[Optional[_builtins.str]]:

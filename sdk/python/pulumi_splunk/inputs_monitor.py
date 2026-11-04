@@ -760,6 +760,44 @@ class InputsMonitor(pulumi.CustomResource):
         __props__.__dict__["whitelist"] = whitelist
         return InputsMonitor(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['InputsMonitorAclArgs', 'InputsMonitorAclArgsDict', 'outputs.InputsMonitorAcl']]] = None,
+            blacklist: pulumi.Input[Optional[_builtins.str]] = None,
+            crc_salt: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            follow_tail: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            host_regex: pulumi.Input[Optional[_builtins.str]] = None,
+            host_segment: pulumi.Input[Optional[_builtins.int]] = None,
+            ignore_older_than: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            recursive: pulumi.Input[Optional[_builtins.bool]] = None,
+            rename_source: pulumi.Input[Optional[_builtins.str]] = None,
+            sourcetype: pulumi.Input[Optional[_builtins.str]] = None,
+            time_before_close: pulumi.Input[Optional[_builtins.int]] = None,
+            whitelist: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["blacklist"] = blacklist
+        __props__["crcSalt"] = crc_salt
+        __props__["disabled"] = disabled
+        __props__["followTail"] = follow_tail
+        __props__["host"] = host
+        __props__["hostRegex"] = host_regex
+        __props__["hostSegment"] = host_segment
+        __props__["ignoreOlderThan"] = ignore_older_than
+        __props__["index"] = index
+        __props__["name"] = name
+        __props__["recursive"] = recursive
+        __props__["renameSource"] = rename_source
+        __props__["sourcetype"] = sourcetype
+        __props__["timeBeforeClose"] = time_before_close
+        __props__["whitelist"] = whitelist
+        return pulumi.runtime.exists_resource(None, 'splunk:index/inputsMonitor:InputsMonitor', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.InputsMonitorAcl']:

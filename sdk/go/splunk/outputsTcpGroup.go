@@ -199,6 +199,12 @@ func (OutputsTcpGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*outputsTcpGroupState)(nil)).Elem()
 }
 
+// OutputsTcpGroupExists checks whether an existing OutputsTcpGroup resource with the given ID exists.
+func OutputsTcpGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OutputsTcpGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/outputsTcpGroup:OutputsTcpGroup", id, state, "", opts...)
+}
+
 type outputsTcpGroupArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *OutputsTcpGroupAcl `pulumi:"acl"`

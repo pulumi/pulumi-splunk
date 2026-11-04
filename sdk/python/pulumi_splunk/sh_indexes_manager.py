@@ -343,6 +343,22 @@ class ShIndexesManager(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return ShIndexesManager(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['ShIndexesManagerAclArgs', 'ShIndexesManagerAclArgsDict', 'outputs.ShIndexesManagerAcl']]] = None,
+            datatype: pulumi.Input[Optional[_builtins.str]] = None,
+            frozen_time_period_in_secs: pulumi.Input[Optional[_builtins.str]] = None,
+            max_global_raw_data_size_mb: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["datatype"] = datatype
+        __props__["frozenTimePeriodInSecs"] = frozen_time_period_in_secs
+        __props__["maxGlobalRawDataSizeMb"] = max_global_raw_data_size_mb
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'splunk:index/shIndexesManager:ShIndexesManager', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.ShIndexesManagerAcl']:

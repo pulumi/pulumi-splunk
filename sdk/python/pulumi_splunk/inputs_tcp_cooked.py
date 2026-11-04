@@ -402,6 +402,24 @@ class InputsTcpCooked(pulumi.CustomResource):
         __props__.__dict__["restrict_to_host"] = restrict_to_host
         return InputsTcpCooked(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['InputsTcpCookedAclArgs', 'InputsTcpCookedAclArgsDict', 'outputs.InputsTcpCookedAcl']]] = None,
+            connection_host: pulumi.Input[Optional[_builtins.str]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            restrict_to_host: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["connectionHost"] = connection_host
+        __props__["disabled"] = disabled
+        __props__["host"] = host
+        __props__["name"] = name
+        __props__["restrictToHost"] = restrict_to_host
+        return pulumi.runtime.exists_resource(None, 'splunk:index/inputsTcpCooked:InputsTcpCooked', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.InputsTcpCookedAcl']:

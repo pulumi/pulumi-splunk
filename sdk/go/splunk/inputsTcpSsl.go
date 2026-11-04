@@ -122,6 +122,12 @@ func (InputsTcpSslState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsTcpSslState)(nil)).Elem()
 }
 
+// InputsTcpSslExists checks whether an existing InputsTcpSsl resource with the given ID exists.
+func InputsTcpSslExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsTcpSslState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsTcpSsl:InputsTcpSsl", id, state, "", opts...)
+}
+
 type inputsTcpSslArgs struct {
 	// Indicates if input is disabled.
 	Disabled *bool `pulumi:"disabled"`

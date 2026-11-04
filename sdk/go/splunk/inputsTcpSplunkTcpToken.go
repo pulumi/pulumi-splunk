@@ -110,6 +110,12 @@ func (InputsTcpSplunkTcpTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsTcpSplunkTcpTokenState)(nil)).Elem()
 }
 
+// InputsTcpSplunkTcpTokenExists checks whether an existing InputsTcpSplunkTcpToken resource with the given ID exists.
+func InputsTcpSplunkTcpTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsTcpSplunkTcpTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsTcpSplunkTcpToken:InputsTcpSplunkTcpToken", id, state, "", opts...)
+}
+
 type inputsTcpSplunkTcpTokenArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsTcpSplunkTcpTokenAcl `pulumi:"acl"`

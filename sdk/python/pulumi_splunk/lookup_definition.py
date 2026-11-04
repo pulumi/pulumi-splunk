@@ -279,6 +279,18 @@ class LookupDefinition(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return LookupDefinition(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['LookupDefinitionAclArgs', 'LookupDefinitionAclArgsDict', 'outputs.LookupDefinitionAcl']]] = None,
+            filename: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["filename"] = filename
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'splunk:index/lookupDefinition:LookupDefinition', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.LookupDefinitionAcl']:

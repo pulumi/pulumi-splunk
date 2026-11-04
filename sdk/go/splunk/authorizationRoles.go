@@ -182,6 +182,12 @@ func (AuthorizationRolesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*authorizationRolesState)(nil)).Elem()
 }
 
+// AuthorizationRolesExists checks whether an existing AuthorizationRoles resource with the given ID exists.
+func AuthorizationRolesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuthorizationRolesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/authorizationRoles:AuthorizationRoles", id, state, "", opts...)
+}
+
 type authorizationRolesArgs struct {
 	// List of capabilities assigned to role.
 	Capabilities []string `pulumi:"capabilities"`

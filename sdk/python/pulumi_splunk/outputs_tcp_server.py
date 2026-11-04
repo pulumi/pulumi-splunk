@@ -583,6 +583,34 @@ class OutputsTcpServer(pulumi.CustomResource):
         __props__.__dict__["ssl_verify_server_cert"] = ssl_verify_server_cert
         return OutputsTcpServer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acl: pulumi.Input[Optional[Union['OutputsTcpServerAclArgs', 'OutputsTcpServerAclArgsDict', 'outputs.OutputsTcpServerAcl']]] = None,
+            disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            method: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_alt_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cert_path: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cipher: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_common_name_to_check: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_root_ca_path: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_verify_server_cert: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acl"] = acl
+        __props__["disabled"] = disabled
+        __props__["method"] = method
+        __props__["name"] = name
+        __props__["sslAltNameToCheck"] = ssl_alt_name_to_check
+        __props__["sslCertPath"] = ssl_cert_path
+        __props__["sslCipher"] = ssl_cipher
+        __props__["sslCommonNameToCheck"] = ssl_common_name_to_check
+        __props__["sslPassword"] = ssl_password
+        __props__["sslRootCaPath"] = ssl_root_ca_path
+        __props__["sslVerifyServerCert"] = ssl_verify_server_cert
+        return pulumi.runtime.exists_resource(None, 'splunk:index/outputsTcpServer:OutputsTcpServer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def acl(self) -> pulumi.Output['outputs.OutputsTcpServerAcl']:

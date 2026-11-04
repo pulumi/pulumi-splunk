@@ -191,6 +191,12 @@ func (InputsTcpRawState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inputsTcpRawState)(nil)).Elem()
 }
 
+// InputsTcpRawExists checks whether an existing InputsTcpRaw resource with the given ID exists.
+func InputsTcpRawExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InputsTcpRawState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/inputsTcpRaw:InputsTcpRaw", id, state, "", opts...)
+}
+
 type inputsTcpRawArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *InputsTcpRawAcl `pulumi:"acl"`

@@ -463,6 +463,12 @@ func (IndexesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*indexesState)(nil)).Elem()
 }
 
+// IndexesExists checks whether an existing Indexes resource with the given ID exists.
+func IndexesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IndexesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("splunk:index/indexes:Indexes", id, state, "", opts...)
+}
+
 type indexesArgs struct {
 	// The app/user context that is the namespace for the resource
 	Acl *IndexesAcl `pulumi:"acl"`
