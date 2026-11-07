@@ -58,7 +58,7 @@ namespace Pulumi.Splunk
     /// $ pulumi import splunk:index/savedSearches:SavedSearches example "&lt;saved-search-name&gt;"
     /// ```
     /// 
-    /// Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. URL-encode the saved search name when it contains spaces or other special characters:
+    /// Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. Encode the saved search name as one path segment: a space is `%20` and a literal `+` is `%2B`. A bare `+` in the path is kept as a plus. For example, `Test 30+ days` is `Test%2030%2B%20days`.
     /// 
     /// ```sh
     /// $ pulumi import splunk:index/savedSearches:SavedSearches example "/servicesNS/&lt;owner&gt;/&lt;app&gt;/saved/searches/&lt;url-encoded-saved-search-name&gt;"
@@ -763,10 +763,10 @@ namespace Pulumi.Splunk
         public Output<string> ActionSnowEventParamResource { get; private set; } = null!;
 
         /// <summary>
-        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         /// </summary>
         [Output("actionSnowEventParamSeverity")]
-        public Output<int> ActionSnowEventParamSeverity { get; private set; } = null!;
+        public Output<string> ActionSnowEventParamSeverity { get; private set; } = null!;
 
         /// <summary>
         /// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
@@ -2010,10 +2010,10 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamResource { get; set; }
 
         /// <summary>
-        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         /// </summary>
         [Input("actionSnowEventParamSeverity")]
-        public Input<int>? ActionSnowEventParamSeverity { get; set; }
+        public Input<string>? ActionSnowEventParamSeverity { get; set; }
 
         /// <summary>
         /// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
@@ -3248,10 +3248,10 @@ namespace Pulumi.Splunk
         public Input<string>? ActionSnowEventParamResource { get; set; }
 
         /// <summary>
-        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        /// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         /// </summary>
         [Input("actionSnowEventParamSeverity")]
-        public Input<int>? ActionSnowEventParamSeverity { get; set; }
+        public Input<string>? ActionSnowEventParamSeverity { get; set; }
 
         /// <summary>
         /// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.

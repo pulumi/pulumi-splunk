@@ -131,7 +131,7 @@ class SavedSearchesArgs:
                  action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
-                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
@@ -325,7 +325,7 @@ class SavedSearchesArgs:
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
         :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
-        :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[_builtins.str] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[_builtins.str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[_builtins.str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -2111,14 +2111,14 @@ class SavedSearchesArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamSeverity")
-    def action_snow_event_param_severity(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def action_snow_event_param_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         """
         return pulumi.get(self, "action_snow_event_param_severity")
 
     @action_snow_event_param_severity.setter
-    def action_snow_event_param_severity(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def action_snow_event_param_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_severity", value)
 
     @_builtins.property
@@ -3198,7 +3198,7 @@ class _SavedSearchesState:
                  action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
-                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index: pulumi.Input[Optional[_builtins.bool]] = None,
                  action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
@@ -3397,7 +3397,7 @@ class _SavedSearchesState:
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
         :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
-        :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[_builtins.str] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[_builtins.bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[_builtins.str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -5232,14 +5232,14 @@ class _SavedSearchesState:
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamSeverity")
-    def action_snow_event_param_severity(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def action_snow_event_param_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         """
         return pulumi.get(self, "action_snow_event_param_severity")
 
     @action_snow_event_param_severity.setter
-    def action_snow_event_param_severity(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def action_snow_event_param_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_snow_event_param_severity", value)
 
     @_builtins.property
@@ -6342,7 +6342,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
-                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
@@ -6465,7 +6465,7 @@ class SavedSearches(pulumi.CustomResource):
         $ pulumi import splunk:index/savedSearches:SavedSearches example "<saved-search-name>"
         ```
 
-        Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. URL-encode the saved search name when it contains spaces or other special characters:
+        Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. Encode the saved search name as one path segment: a space is `%20` and a literal `+` is `%2B`. A bare `+` in the path is kept as a plus. For example, `Test 30+ days` is `Test%2030%2B%20days`.
 
         ```sh
         $ pulumi import splunk:index/savedSearches:SavedSearches example "/servicesNS/<owner>/<app>/saved/searches/<url-encoded-saved-search-name>"
@@ -6600,7 +6600,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
         :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
-        :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[_builtins.str] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[_builtins.str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
         :param pulumi.Input[_builtins.str] action_summary_index_hostname: Sets the hostname used in the web link (url) sent in summary-index alert actions.This value accepts two forms:hostname (for example, splunkserver, splunkserver.example.com)protocol://hostname:port (for example, http://splunkserver:8000, https://splunkserver.example.com:443)
@@ -6729,7 +6729,7 @@ class SavedSearches(pulumi.CustomResource):
         $ pulumi import splunk:index/savedSearches:SavedSearches example "<saved-search-name>"
         ```
 
-        Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. URL-encode the saved search name when it contains spaces or other special characters:
+        Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. Encode the saved search name as one path segment: a space is `%20` and a literal `+` is `%2B`. A bare `+` in the path is kept as a plus. For example, `Test 30+ days` is `Test%2030%2B%20days`.
 
         ```sh
         $ pulumi import splunk:index/savedSearches:SavedSearches example "/servicesNS/<owner>/<app>/saved/searches/<url-encoded-saved-search-name>"
@@ -6877,7 +6877,7 @@ class SavedSearches(pulumi.CustomResource):
                  action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
-                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+                 action_snow_event_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
                  action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
                  action_summary_index_hostname: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7291,7 +7291,7 @@ class SavedSearches(pulumi.CustomResource):
             action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
             action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
             action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
-            action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+            action_snow_event_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
             action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
             action_summary_index: pulumi.Input[Optional[_builtins.bool]] = None,
             action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7494,7 +7494,7 @@ class SavedSearches(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action_snow_event_param_description: A brief description of the event.
         :param pulumi.Input[_builtins.str] action_snow_event_param_node: The node, formatted to follow your organization's ITIL standards and mapping. If the node value matches a CI with the same host name, the event is automatically assigned to the matching CI.
         :param pulumi.Input[_builtins.str] action_snow_event_param_resource: The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
-        :param pulumi.Input[_builtins.int] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        :param pulumi.Input[_builtins.str] action_snow_event_param_severity: The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         :param pulumi.Input[_builtins.str] action_snow_event_param_type: The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
         :param pulumi.Input[_builtins.bool] action_summary_index: The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
         :param pulumi.Input[_builtins.str] action_summary_index_command: The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -7896,7 +7896,7 @@ class SavedSearches(pulumi.CustomResource):
             action_snow_event_param_description: pulumi.Input[Optional[_builtins.str]] = None,
             action_snow_event_param_node: pulumi.Input[Optional[_builtins.str]] = None,
             action_snow_event_param_resource: pulumi.Input[Optional[_builtins.str]] = None,
-            action_snow_event_param_severity: pulumi.Input[Optional[_builtins.int]] = None,
+            action_snow_event_param_severity: pulumi.Input[Optional[_builtins.str]] = None,
             action_snow_event_param_type: pulumi.Input[Optional[_builtins.str]] = None,
             action_summary_index: pulumi.Input[Optional[_builtins.bool]] = None,
             action_summary_index_command: pulumi.Input[Optional[_builtins.str]] = None,
@@ -9084,9 +9084,9 @@ class SavedSearches(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="actionSnowEventParamSeverity")
-    def action_snow_event_param_severity(self) -> pulumi.Output[_builtins.int]:
+    def action_snow_event_param_severity(self) -> pulumi.Output[_builtins.str]:
         """
-        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+        The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
         """
         return pulumi.get(self, "action_snow_event_param_severity")
 
