@@ -1715,17 +1715,17 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     * The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
      * 
      */
     @Import(name="actionSnowEventParamSeverity")
-    private @Nullable Output<Integer> actionSnowEventParamSeverity;
+    private @Nullable Output<String> actionSnowEventParamSeverity;
 
     /**
-     * @return The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+     * @return The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
      * 
      */
-    public Optional<Output<Integer>> actionSnowEventParamSeverity() {
+    public Optional<Output<String>> actionSnowEventParamSeverity() {
         return Optional.ofNullable(this.actionSnowEventParamSeverity);
     }
 
@@ -5552,23 +5552,23 @@ public final class SavedSearchesState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param actionSnowEventParamSeverity The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+         * @param actionSnowEventParamSeverity The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
          * 
          * @return builder
          * 
          */
-        public Builder actionSnowEventParamSeverity(@Nullable Output<Integer> actionSnowEventParamSeverity) {
+        public Builder actionSnowEventParamSeverity(@Nullable Output<String> actionSnowEventParamSeverity) {
             $.actionSnowEventParamSeverity = actionSnowEventParamSeverity;
             return this;
         }
 
         /**
-         * @param actionSnowEventParamSeverity The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
+         * @param actionSnowEventParamSeverity The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
          * 
          * @return builder
          * 
          */
-        public Builder actionSnowEventParamSeverity(Integer actionSnowEventParamSeverity) {
+        public Builder actionSnowEventParamSeverity(String actionSnowEventParamSeverity) {
             return actionSnowEventParamSeverity(Output.of(actionSnowEventParamSeverity));
         }
 

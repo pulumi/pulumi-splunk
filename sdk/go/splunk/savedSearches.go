@@ -67,7 +67,7 @@ import (
 // $ pulumi import splunk:index/savedSearches:SavedSearches example "<saved-search-name>"
 // ```
 //
-// Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. URL-encode the saved search name when it contains spaces or other special characters:
+// Saved searches in a specific Splunk namespace can be imported with a Splunk REST path or URL. Encode the saved search name as one path segment: a space is `%20` and a literal `+` is `%2B`. A bare `+` in the path is kept as a plus. For example, `Test 30+ days` is `Test%2030%2B%20days`.
 //
 // ```sh
 // $ pulumi import splunk:index/savedSearches:SavedSearches example "/servicesNS/<owner>/<app>/saved/searches/<url-encoded-saved-search-name>"
@@ -318,8 +318,8 @@ type SavedSearches struct {
 	ActionSnowEventParamNode pulumi.StringOutput `pulumi:"actionSnowEventParamNode"`
 	// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
 	ActionSnowEventParamResource pulumi.StringOutput `pulumi:"actionSnowEventParamResource"`
-	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
-	ActionSnowEventParamSeverity pulumi.IntOutput `pulumi:"actionSnowEventParamSeverity"`
+	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
+	ActionSnowEventParamSeverity pulumi.StringOutput `pulumi:"actionSnowEventParamSeverity"`
 	// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
 	ActionSnowEventParamType pulumi.StringOutput `pulumi:"actionSnowEventParamType"`
 	// The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -772,8 +772,8 @@ type savedSearchesState struct {
 	ActionSnowEventParamNode *string `pulumi:"actionSnowEventParamNode"`
 	// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
 	ActionSnowEventParamResource *string `pulumi:"actionSnowEventParamResource"`
-	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
-	ActionSnowEventParamSeverity *int `pulumi:"actionSnowEventParamSeverity"`
+	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
+	ActionSnowEventParamSeverity *string `pulumi:"actionSnowEventParamSeverity"`
 	// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
 	ActionSnowEventParamType *string `pulumi:"actionSnowEventParamType"`
 	// The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -1167,8 +1167,8 @@ type SavedSearchesState struct {
 	ActionSnowEventParamNode pulumi.StringPtrInput
 	// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
 	ActionSnowEventParamResource pulumi.StringPtrInput
-	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
-	ActionSnowEventParamSeverity pulumi.IntPtrInput
+	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
+	ActionSnowEventParamSeverity pulumi.StringPtrInput
 	// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
 	ActionSnowEventParamType pulumi.StringPtrInput
 	// The state of the summary index action. Read-only attribute. Value ignored on POST. Use actions to specify a list of enabled actions. Defaults to 0.
@@ -1564,8 +1564,8 @@ type savedSearchesArgs struct {
 	ActionSnowEventParamNode *string `pulumi:"actionSnowEventParamNode"`
 	// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
 	ActionSnowEventParamResource *string `pulumi:"actionSnowEventParamResource"`
-	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
-	ActionSnowEventParamSeverity *int `pulumi:"actionSnowEventParamSeverity"`
+	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
+	ActionSnowEventParamSeverity *string `pulumi:"actionSnowEventParamSeverity"`
 	// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
 	ActionSnowEventParamType *string `pulumi:"actionSnowEventParamType"`
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -1950,8 +1950,8 @@ type SavedSearchesArgs struct {
 	ActionSnowEventParamNode pulumi.StringPtrInput
 	// The resource, formatted to follow your organization's ITIL standards and mapping. For example, resource='CPU'.
 	ActionSnowEventParamResource pulumi.StringPtrInput
-	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
-	ActionSnowEventParamSeverity pulumi.IntPtrInput
+	// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
+	ActionSnowEventParamSeverity pulumi.StringPtrInput
 	// The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
 	ActionSnowEventParamType pulumi.StringPtrInput
 	// The search command (or pipeline) which is responsible for executing the action.Generally the command is a template search pipeline which is realized with values from the saved search. To reference saved search field values wrap them in $, for example to reference the savedsearch name use $name$, to reference the search use $search$.
@@ -2770,9 +2770,9 @@ func (o SavedSearchesOutput) ActionSnowEventParamResource() pulumi.StringOutput 
 	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSnowEventParamResource }).(pulumi.StringOutput)
 }
 
-// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning
-func (o SavedSearchesOutput) ActionSnowEventParamSeverity() pulumi.IntOutput {
-	return o.ApplyT(func(v *SavedSearches) pulumi.IntOutput { return v.ActionSnowEventParamSeverity }).(pulumi.IntOutput)
+// The severity associated with the event. 0 - Clear 1 - Critical 2 - Major 3 - Minor 4 - Warning. A Splunk token such as $result.severity$ is also accepted; Splunk expands it when the alert triggers.
+func (o SavedSearchesOutput) ActionSnowEventParamSeverity() pulumi.StringOutput {
+	return o.ApplyT(func(v *SavedSearches) pulumi.StringOutput { return v.ActionSnowEventParamSeverity }).(pulumi.StringOutput)
 }
 
 // The type, formatted to follow your organization's ITIL standards and mapping. For example, type='Virtual Machine'.
